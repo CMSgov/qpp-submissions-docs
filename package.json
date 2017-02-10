@@ -2,18 +2,12 @@
   "name": "qpp-submissions-docs",
   "version": "0.0.0",
   "private": true,
-  "dependencies": {
-    "react": "15.4.2",
-    "react-dom": "15.4.2",
-    "react-scripts": "0.8.5",
-    "uswds": "0.14.0"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build&&gh-pages -d build"
+    "deploy": "npm run build && gh-pages -d build"
   },
   "repository": {
     "type": "git",
@@ -25,6 +19,10 @@
   },
   "homepage": "https://cmsgov.github.io/qpp-submissions-docs",
   "devDependencies": {
-    "gh-pages": "0.12.0"
+    "gh-pages": "0.12.0",
+    "react": "15.4.2",
+    "react-dom": "15.4.2",
+    "react-scripts": "0.8.5",
+    "uswds": "0.14.0"
   }
 }
