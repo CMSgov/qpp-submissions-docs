@@ -5,6 +5,7 @@ import '../node_modules/uswds/dist/js/uswds.js';
 
 import Header from './header';
 import Footer from './footer';
+import InlineApiExample from './inline-api-example';
 
 class App extends Component {
   render() {
@@ -21,11 +22,13 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div className="usa-grid-full">
+        <div className="usa-grid">
           <div className="usa-width-one-half">
-            <h1>Creating & scoring a new submission</h1>
-            <p>There is new performance data to submit - let's send it to CMS! We can do that by asking the API to save our measurement information. In API terms, this means making a POST (synonym for create) request that looks like the following:</p>
-            <pre className="api-request-example">insert example of a POST to /submissions</pre>
+            <h1>Submissions API</h1>
+            <h2>Creating & scoring a new submission</h2>
+            <p>There is new performance data to submit - let's send it to CMS! We can do that by asking the API to save our measurement information. In API terms, this means making a POST (synonym for <em>create</em>) request that looks like the following:</p>
+            <InlineApiExample verb="POST" url="/v1/submissions"/>
+
             <p>Every API request gives us back an immediate response with useful information:</p>
             <pre className="api-request-example">
 {`{
@@ -37,14 +40,14 @@ class App extends Component {
             </pre>
             <p>From this response, we know that the POST request succeeded, implying that our submission was saved and CMS has a record of your submission. Let's see how we scored!</p>
             <p>Since we're going to be making many submissions, we need to ask the API for the score of a specific submission. CMS assigns each submission a unique `id`, and our previous API response includes the `id` for the freshly created submission. We can use that when we ask the API for the submission's score, which is done with a GET request:</p>
-            <pre className="api-request-example">GET to /submissions/:id/score</pre>
+            <InlineApiExample verb="GET" url="/v1/submissions/:id/score"/>
             <pre className="api-request-example">show API response</pre>
             <p>Our API response includes a score and a breakdown of how the individual measurements contribute to the aggregate. The additional visibility helps because sometimes a submission can be valid, but incomplete for scoring purposes - if you're missing information needed to generate a score, the response will make that clear. We can fix the API request and try again.</p>
             <p>We can also edit a previous submission if we want to add another measurement - to do that, we make a PATCH request including a submission ID for the one we want to update:</p>
-            <pre className="api-request-example">PATCH to /submissions/:id></pre>
+            <InlineApiExample verb="PATCH" url="/v1/submissions/:id"/>
             <pre className="api-request-example">show API response</pre>
             <p>This time, the API response shows us the updated submission to confirm that the update was successful. When we try to GET the score again, it will reflect the updates to the submission:</p>
-            <pre className="api-request-example">GET to /submissions/:id/score</pre>
+            <InlineApiExample verb="GET" url="/v1/submissions/:id/score"/>
             <p>In general, we can think about the Submissions API as a way to have a live conversation with CMS about performance measurements.</p>
             <pre className="api-request-example">potential diagram</pre>
             <p>Rather than waiting months to hear back about missing information or a score, the API gives us feedback that is immediate, specific, and actionable - we can easily make another API request.</p>
