@@ -1,0 +1,26 @@
+{
+  "name": "qpp-submissions-docs",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "15.4.2",
+    "react-dom": "15.4.2",
+    "react-scripts": "0.8.5",
+    "uswds": "0.14.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CMSgov/qpp-submissions-docs.git"
+  },
+  "author": "kenshiro@navahq.com",
+  "bugs": {
+    "url": "https://github.com/CMSgov/qpp-submissions-docs/issues"
+  },
+  "homepage": "https://github.com/CMSgov/qpp-submissions-docs#readme"
+}
