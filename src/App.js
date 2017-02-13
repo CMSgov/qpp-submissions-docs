@@ -6,6 +6,7 @@ import '../node_modules/uswds/dist/js/uswds.js';
 import Header from './header';
 import Footer from './footer';
 import InlineApiExample from './inline-api-example';
+import TechnicalDetailsPane from './technical-details-pane';
 
 class App extends Component {
   render() {
@@ -55,69 +56,7 @@ class App extends Component {
             <p>To learn more about what else you can do with the API, visit our API reference here: <a href="">link to API reference</a>.</p>
           </div>
           <div className="usa-width-one-half">
-            <pre>
-{`{
-  "data": {
-    "startIndex": 0,
-    "itemsPerPage": 100,
-    "submissions": [
-      {
-        "id": "060eb4b1-1a93-467e-b3eb-0b8518ed4d49",
-        "createdAt": "2016-11-16T06:43:32.000Z",
-        "updatedAt": "2016-11-16T06:43:32.000Z",
-        "programName": "mips",
-        "entityType": "individual",
-        "taxpayerIdentificationNumber": "000456789",
-        "nationalProviderIdentifier": "9876543210",
-        "performanceYear": 2016,
-        "measurementSets": [
-          {
-            "id": "060eb4b1-1a93-467e-b3eb-0b8518ed4d49",
-            "submissionId": "060eb4b1-1a93-467e-b3eb-0b8518ed4d49",
-            "category": "ia",
-            "source": "provider",
-            "performanceStart": "2016-01-01",
-            "performanceEnd": "2016-06-01",
-            "measurements": [
-              {
-                "measureId": "IA_EPA_4",
-                "value": true,
-                "id": "b24aa2c2-f1ab-4d28-a7a4-882d93e5a31d",
-                "measurementSetId": "d2acc2af-8382-402e-aa97-0fd118451b22"
-              }
-            ]
-          },
-          {
-            "id": "060eb4b1-1a93-467e-b3eb-0b8518ed4d49",
-            "submissionId": "060eb4b1-1a93-467e-b3eb-0b8518ed4d49",
-            "category": "aci",
-            "source": "provider",
-            "performanceStart": "2016-01-01",
-            "performanceEnd": "2016-06-01",
-            "measurements": [
-              {
-                "measureId": "ACI_PHCDRR_5",
-                "value": true,
-                "id": "b24aa2c2-f1ab-4d28-a7a4-882d93e5a31d",
-                "measurementSetId": "d2acc2af-8382-402e-aa97-0fd118451b22"
-              },
-              {
-                "value": {
-                  "numerator": 1,
-                  "denominator": 2
-                },
-                "id": "060eb4b1-1a93-467e-b3eb-0b8518ed4d49",
-                "measurementSetId": "060eb4b1-1a93-467e-b3eb-0b8518ed4d49",
-                "measureId": "ACI_HIE_3"
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}`}
-            </pre>
+            <TechnicalDetailsPane />
           </div>
         </div>
         <script src="/assets/js/vendor/uswds.min.js"></script>

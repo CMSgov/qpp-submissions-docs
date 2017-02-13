@@ -1,0 +1,30 @@
+.technical-details-pane .ReactTabs__Tab {
+  display: inline-block;
+  font-size: 1em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  margin-bottom: 0;
+  color: rgb(4, 80, 115);
+}
+
+.technical-details-pane .ReactTabs__Tab--selected {
+  background-color: rgb(17, 46, 81);
+  color: white;
+}
+
+.technical-details-pane .ReactTabs__Tab.response-pane__tab {
+  // hidden until we make a request
+  display: none;
+}
+
+.technical-details-pane .ReactTabs__TabList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.technical-details-pane .ReactTabs__TabPanel {
+  background-color: rgb(17, 46, 81);
+  color: white;
+  padding: 1em;
+}
