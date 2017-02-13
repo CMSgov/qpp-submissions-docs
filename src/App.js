@@ -31,12 +31,12 @@ class App extends React.PureComponent {
             <InlineApiExample
               verb="POST"
               url="/v1/submissions"
-              body={`{
-  "measureId": "IA_EPA_4",
-  "value": true,
-  "id": "b24aa2c2-f1ab-4d28-a7a4-882d93e5a31d",
-  "measurementSetId": "d2acc2af-8382-402e-aa97-0fd118451b22"
-}`}/>
+              body={`"programName": "mips",
+"entityType": "individual",
+"taxpayerIdentificationNumber": "000456789",
+"nationalProviderIdentifier": "9876543210",
+"performanceYear": 2016
+`}/>
             <button className="usa-button create-submission">
               Create Submission
             </button>
