@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react';
 import '../node_modules/uswds/dist/css/uswds.css';
 import '../node_modules/uswds/dist/js/uswds.js';
+import './App.css';
 
 import Header from './header';
 import Footer from './footer';
@@ -27,8 +27,19 @@ class App extends Component {
           <div className="usa-width-one-half">
             <h1>Submissions API</h1>
             <h2>Creating & scoring a new submission</h2>
-            <p>There is new performance data to submit - let's send it to CMS! We can do that by asking the API to save our measurement information. In API terms, this means making a POST (synonym for <em>create</em>) request that looks like the following:</p>
-            <InlineApiExample verb="POST" url="/v1/submissions"/>
+            <p>There is new performance data to submit - let's send it to CMS! We can do that by asking the API to save our measurement information. In API terms, this means making a POST (synonym for <em>create</em>) request. You can see the details of what this looks like below:</p>
+            <InlineApiExample
+              verb="POST"
+              url="/v1/submissions"
+              body={`{
+  "measureId": "IA_EPA_4",
+  "value": true,
+  "id": "b24aa2c2-f1ab-4d28-a7a4-882d93e5a31d",
+  "measurementSetId": "d2acc2af-8382-402e-aa97-0fd118451b22"
+}`}/>
+            <button className="usa-button create-submission">
+              Create Submission
+            </button>
 
             <p>Every API request gives us back an immediate response with useful information:</p>
             <pre className="api-request-example">
