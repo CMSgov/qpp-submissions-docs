@@ -2,7 +2,7 @@ import React from 'react';
 
 import favicon from '../node_modules/uswds/dist/img/favicons/favicon-57.png';
 
-class Header extends React.Component {
+class Header extends React.PureComponent {
   render() {
     return (
       <header className="usa-header-basic" role="banner">

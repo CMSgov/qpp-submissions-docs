@@ -8,7 +8,7 @@ import Footer from './footer';
 import InlineApiExample from './inline-api-example';
 import TechnicalDetailsPane from './technical-details-pane';
 
-class App extends Component {
+class App extends React.PureComponent {
   render() {
     return (
       <div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Footer extends React.Component {
+class Footer extends React.PureComponent {
   render() {
     return (
       <footer className="usa-footer usa-footer-slim" role="contentinfo">
