@@ -1,9 +1,17 @@
+.ReactTabs.technical-details-pane {
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  width: 100%;
+  overflow-y: auto;
+  background-color: rgb(17, 46, 81);
+}
+
 .technical-details-pane .ReactTabs__Tab {
   display: inline-block;
-  font-size: 1em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
+  padding: 0.4em 1em 0.4em 0.6em;
   margin-bottom: 0;
+  font-size: 1em;
   color: rgb(4, 80, 115);
 }
 
@@ -12,19 +20,19 @@
   color: white;
 }
 
-.technical-details-pane .ReactTabs__Tab.response-pane__tab {
-  // hidden until we make a request
-  display: none;
-}
-
 .technical-details-pane .ReactTabs__TabList {
-  list-style: none;
+  position: fixed;
+  top: 60px;
+  width: 100%;
   padding: 0;
   margin: 0;
+  list-style: none;
+  background-color: white;
 }
 
 .technical-details-pane .ReactTabs__TabPanel {
-  background-color: rgb(17, 46, 81);
+  max-width: 50%;
+  padding: 2em;
+  font-size: 0.9em;
   color: white;
-  padding: 1em;
 }

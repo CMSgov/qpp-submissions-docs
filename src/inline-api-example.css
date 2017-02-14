@@ -7,6 +7,9 @@
 .inline-api-example-request {
   padding-top: 0.6em;
   padding-bottom: 0.6em;
+}
+
+.inline-api-example-request:not(:last-child) {
   border-bottom: 1px solid rgb(66, 123, 149);
 }
 
@@ -25,4 +28,5 @@
 .inline-api-example-body {
   margin: 0.4em;
   color: rgb(4, 80, 115);
+  font-size: 0.9em;
 }
