@@ -22,7 +22,7 @@ class App extends React.PureComponent {
             </div>
           </div>
         </div>
-        <BasicFlow />
+        <AdvancedFlow />
         <script src="/assets/js/vendor/uswds.min.js"></script>
       </div>
     );
