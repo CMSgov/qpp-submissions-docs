@@ -38,11 +38,10 @@ Performance Year: 2016`}/>
             body={`Submission ID: 060eb4b1-1a93-467e-b3eb-0b8518ed4d49
 Category: ACI
 Source: Provider
-Performance Start: 2016-01-01,
-Performance End: 2016-06-01,
+Performance period: 2016-01-01 thru 2016-06-01
 Performance data:
-  Measure ACI_HIE_3, 1 out of 2
-  Measure ACI_PHCDRR_5, true
+  Measure ACI_HIE_3: 1 out of 2
+  Measure ACI_PHCDRR_5: true
 `}
             />
           <p>We'll be sending a little more data here than last time. We're creating a measurement set, which includes a list of measurements that each have their own types and values. Here we've illustrated how a boolean (true or false) measurement and a proportion (x out of x people) measurement would be formatted. If we wanted to add measurements from different categories (Advancing Care Information vs Improvement Activity) or sources (provider vs CMS Web UI), note that we would need to create two separate measurement sets. For now, let's ask the API to add this to our submission!</p>
