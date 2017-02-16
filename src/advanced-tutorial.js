@@ -9,7 +9,7 @@ class AdvancedTutorial extends React.PureComponent {
       <div className="usa-grid">
         <div className="usa-width-one-half">
           <h1>Advanced API Tutorial</h1>
-          <p>In the <a href="/tutorial">first tutorial</a>, we covered how to create a submission, add a measurement set with IA performance data, and retrieve the score in three different API requests. This time we're going to look at creating a submission with embedded ACI performance data in one request, go through ACI scoring (which is a little more complicated than IA), and see how to update a measure with new info.</p>
+          <p>In the <a href="/qpp-submissions-docs/tutorial">first tutorial</a>, we covered how to create a submission, add a measurement set with IA performance data, and retrieve the score in three different API requests. This time we're going to look at creating a submission with embedded ACI performance data in one request, go through ACI scoring (which is a little more complicated than IA), and see how to update a measure with new info.</p>
           <h2 id="submitting-with-performance-data"><a className="tutorial-header-link" href="#submitting-with-performance-data">Creating a submission with performance data</a></h2>
           <p>Now that we know how to submit and score a submission with IA measurements, let's try the same with ACI measurements! The scoring is more complicated for ACI measures, so we'll spend more time going through that.</p>
           <p>Here's a POST request to create a new submission. This time, we're going to create the measurement set and submission together by nesting the measurement set inside the submission info, much like we nested measurements within measurement sets.</p>

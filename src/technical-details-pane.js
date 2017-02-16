@@ -26,10 +26,10 @@ const advancedTutorialSteps = {
 
 class TechnicalDetailsPane extends React.Component {
   render() {
+    Tabs.setUseDefaultStyles(false);
     const component = this.props.tutorial === 'basic' ?
       basicTutorialSteps[this.props.hash] || <Basic1 /> :
       advancedTutorialSteps[this.props.hash] || <Advanced1 />;
-    Tabs.setUseDefaultStyles(false);
     return component;
   }
 }

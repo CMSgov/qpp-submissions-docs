@@ -11,31 +11,29 @@ import AdvancedTutorial from './advanced-tutorial';
 
 class App extends React.PureComponent {
   render() {
-    let path = url.parse(this.props.url).pathname.toLowerCase();
+    const path = url
+      .parse(this.props.url).pathname.toLowerCase()
+      // we're not always mounted at /
+      // so just get the last bit
+      .split('/').pop();
     const hash = url.parse(this.props.url).hash;
-
-    // in prod we're mounted at /qpp-submissions-docs/
-    if (path.startsWith('/qpp-submissions-docs')) {
-      // grab the last bit then
-      path = path.split('/').slice(-1);
-    }
 
     let component;
 
-    if (path === '/tutorial') {
+    if (path === 'tutorial') {
       component = <BasicTutorial hash={hash}/>;
-    } else if (path === '/advanced-tutorial') {
+    } else if (path === 'advanced-tutorial') {
       component = <AdvancedTutorial hash={hash}/>
     } else {
       component = <div className='usa-grid'>
         <h1>Submissions API</h1>
         <ul>
           <li>
-            <p>Learn about how and why you'd use the Submissions API! Walk through <a href="/tutorial">an example of how we can easily submit performance data to CMS.</a>
+            <p>Learn about how and why you'd use the Submissions API! Walk through <a href="/qpp-submissions-docs/tutorial">an example of how we can easily submit performance data to CMS.</a>
             </p>
           </li>
           <li>
-            <p>Dig further into how scoring works and updating existing data in our <a href="/advanced-tutorial">advanced tutorial</a>.
+            <p>Dig further into how scoring works and updating existing data in our <a href="/qpp-submissions-docs/advanced-tutorial">advanced tutorial</a>.
             </p>
           </li>
           <li>
