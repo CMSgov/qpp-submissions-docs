@@ -22,7 +22,7 @@
     "gh-pages": "0.12.0",
     "react": "15.4.2",
     "react-dom": "15.4.2",
-    "react-scripts": "0.8.5",
+    "react-scripts": "0.9.0",
     "react-tabs": "0.8.2",
     "uswds": "0.14.0"
   }
