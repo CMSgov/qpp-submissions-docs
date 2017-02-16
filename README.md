@@ -20,7 +20,7 @@ npm start
 These docs are hosted on GitHub Pages. We do a couple things to make this nice:
 
 * Use the [gh-pages](https://github.com/tschaub/gh-pages) library for deploying
-* Use the [404 redirection trick](https://github.com/rafrex/spa-github-pages) to point to / to /index.html
+* Use the [404 redirection trick](https://github.com/rafrex/spa-github-pages) to pass path/hash as query param to `/index.html`
 
 ```bash
 npm run deploy
