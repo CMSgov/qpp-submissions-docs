@@ -22,10 +22,16 @@ class App extends React.PureComponent {
       component = <AdvancedFlow />
     } else {
       component = <div className='usa-grid'>
-        <h1>Landing page goes here</h1>
+        <h1>Submissions API</h1>
         <ul>
-          <li><a href="/basic-workflow">Basic workflow</a></li>
-          <li><a href="/advanced-workflow">Advanced workflow</a></li>
+          <li>
+            <p>Not sure how or why you'd use the Submissions API? Walk through an example of how we can <a href="/basic-workflow">easily submit performance data to QPP.</a>
+            </p>
+          </li>
+          <li>
+            <p>Dig into ACI scoring and updating existing data in our <a href="/advanced-workflow">advanced workflow</a>.</p>
+          </li>
+          <li>Return to <a href="https://qpp.cms.gov/resources/developers">QPP developer portal</a></li>
         </ul>
       </div>;
     }
