@@ -6,32 +6,45 @@ import '../node_modules/uswds/dist/css/uswds.css';
 import './App.css';
 
 import Header from './header';
-import BasicFlow from './basic-flow';
-import AdvancedFlow from './advanced-flow';
-
+import BasicTutorial from './basic-tutorial';
+import AdvancedTutorial from './advanced-tutorial';
 
 class App extends React.PureComponent {
   render() {
-    const path = url.parse(this.props.url).pathname.toLowerCase();
+    let path = url.parse(this.props.url).pathname.toLowerCase();
+    const hash = url.parse(this.props.url).hash;
+
+    // in prod we're mounted at /qpp-submissions-docs/
+    if (path.startsWith('/qpp-submissions-docs')) {
+      // grab the last bit then
+      path = path.split('/').slice(-1);
+    }
 
     let component;
 
-    if (path === '/basic-workflow') {
-      component = <BasicFlow />;
-    } else if (path === '/advanced-workflow') {
-      component = <AdvancedFlow />
+    if (path === '/tutorial') {
+      component = <BasicTutorial hash={hash}/>;
+    } else if (path === '/advanced-tutorial') {
+      component = <AdvancedTutorial hash={hash}/>
     } else {
       component = <div className='usa-grid'>
         <h1>Submissions API</h1>
         <ul>
           <li>
-            <p>Not sure how or why you'd use the Submissions API? Walk through an example of how we can <a href="/basic-workflow">easily submit performance data to QPP.</a>
+            <p>Learn about how and why you'd use the Submissions API! Walk through <a href="/tutorial">an example of how we can easily submit performance data to CMS.</a>
             </p>
           </li>
           <li>
-            <p>Dig into ACI scoring and updating existing data in our <a href="/advanced-workflow">advanced workflow</a>.</p>
+            <p>Dig further into how scoring works and updating existing data in our <a href="/advanced-tutorial">advanced tutorial</a>.
+            </p>
           </li>
-          <li>Return to <a href="https://qpp.cms.gov/resources/developers">QPP developer portal</a></li>
+          <li>
+            <p>Want more detail? Check out our <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">interactive API reference</a> for an exhaustive list of endpoints.
+            </p>
+          </li>
+          <li>
+            <p>Return to the <a href="https://qpp.cms.gov/resources/developers">QPP developer portal</a>.</p>
+          </li>
         </ul>
       </div>;
     }

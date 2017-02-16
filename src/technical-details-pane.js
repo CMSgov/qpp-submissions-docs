@@ -1,5 +1,4 @@
 import React from 'react';
-import url from 'url';
 import { Tabs } from 'react-tabs';
 
 import './technical-details-pane.css';
@@ -12,10 +11,13 @@ import Advanced2 from './steps/advanced-2';
 import Advanced3 from './steps/advanced-3';
 import Advanced4 from './steps/advanced-4';
 
-const hashToStepMapping = {
+const basicTutorialSteps = {
   'creating-a-submission': <Basic1 />,
   'adding-measurements': <Basic2 />,
-  'scoring-a-submission': <Basic3 />,
+  'scoring-a-submission': <Basic3 />
+};
+
+const advancedTutorialSteps = {
   'submitting-with-performance-data': <Advanced1 />,
   'aci-scoring': <Advanced2 />,
   'updating-a-measure': <Advanced3 />,
@@ -24,9 +26,9 @@ const hashToStepMapping = {
 
 class TechnicalDetailsPane extends React.Component {
   render() {
-    const hash = url.parse(this.props.url).hash;
-    const component = hashToStepMapping[hash] || <Basic1 />;
-    console.log(component);
+    const component = this.props.tutorial === 'basic' ?
+      basicTutorialSteps[this.props.hash] || <Basic1 /> :
+      advancedTutorialSteps[this.props.hash] || <Advanced1 />;
     Tabs.setUseDefaultStyles(false);
     return component;
   }
