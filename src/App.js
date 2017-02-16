@@ -6,7 +6,6 @@ import '../node_modules/uswds/dist/css/uswds.css';
 import './App.css';
 
 import Header from './header';
-import Footer from './footer';
 import BasicTutorial from './basic-tutorial';
 import AdvancedTutorial from './advanced-tutorial';
 
@@ -55,7 +54,6 @@ class App extends React.PureComponent {
           </div>
         </div>
         {component}
-        <Footer />
         <script src="/assets/js/vendor/uswds.min.js"></script>
       </div>
     );

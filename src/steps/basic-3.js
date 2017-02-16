@@ -6,13 +6,14 @@ const cssClass = "technical-details-pane";
 class Basic3 extends React.PureComponent {
   render() {
     return (
-      <Tabs className={cssClass} onSelect={this.handleSelect} selectedIndex={0}>
+      <Tabs className={cssClass} onSelect={this.props.onSelect} selectedIndex={this.props.tabIndex}>
         <TabList>
           <Tab>Request</Tab>
           <Tab>Response</Tab>
         </TabList>
         <TabPanel>
-          <p>Response code: <code>200</code></p>
+          <p>Response code:</p>
+          <pre>200 OK</pre>
           <p>Response body:</p>
           <pre></pre>
         </TabPanel>

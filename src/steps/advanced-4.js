@@ -6,19 +6,16 @@ const cssClass = "technical-details-pane";
 class Advanced4 extends React.PureComponent {
   render() {
     return (
-      <Tabs className={cssClass} onSelect={this.handleSelect} selectedIndex={0}>
+      <Tabs className={cssClass} onSelect={this.props.onSelect} selectedIndex={this.props.tabIndex}>
         <TabList>
           <Tab>Request</Tab>
           <Tab>Response</Tab>
         </TabList>
         <TabPanel>
-          <pre>
-{`{
-}`}
-          </pre>
         </TabPanel>
         <TabPanel>
-          <p>Response code: <code>200 OK</code></p>
+          <p>Response code:</p>
+          <pre>200 OK</pre>
           <p>Response body:</p>
           <pre>
 {`{

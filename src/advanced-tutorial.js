@@ -4,6 +4,58 @@ import TechnicalDetailsPane from './technical-details-pane';
 import InlineApiExample from './inline-api-example';
 
 class AdvancedTutorial extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      hash: props.hash,
+      tabIndex: 0
+    };
+
+    this.handleSelect = this.handleSelect.bind(this);
+    this.createSubmission = this.createSubmission.bind(this);
+    this.getInitialSubmissionScore = this.getInitialSubmissionScore.bind(this);
+    this.updateMeasurement = this.updateMeasurement.bind(this);
+    this.getFinalSubmissionScore = this.getFinalSubmissionScore.bind(this);
+  }
+
+  handleSelect(index) {
+    this.setState({
+      tabIndex: index
+    });
+  }
+
+  createSubmission() {
+    window.location.hash = '#submitting-with-performance-data';
+    this.setState({
+      hash: '#submitting-with-performance-data',
+      tabIndex: 1
+    });
+  }
+
+  getInitialSubmissionScore() {
+    window.location.hash = '#aci-scoring';
+    this.setState({
+      hash: '#aci-scoring',
+      tabIndex: 1
+    });
+  }
+
+  updateMeasurement() {
+    window.location.hash = '#updating-a-measure';
+    this.setState({
+      hash: '#updating-a-measure',
+      tabIndex: 1
+    });
+  }
+
+  getFinalSubmissionScore() {
+    window.location.hash = '#comparing-scoring-changes';
+    this.setState({
+      hash: '#comparing-scoring-changes',
+      tabIndex: 1
+    });
+  }
+
   render() {
     return (
       <div className="usa-grid">
@@ -36,7 +88,7 @@ Measurement Set:
     ACI_HIE_1: 10 out of 100
     ACI_HIE_2: 20 out of 100
 `}/>
-          <p>It may help to look at the request payload on the right side - it can be harder to read, but it contains all of the info above. Since we're able to create a complete and scorable submission in one request, it's common to take this approach instead of creating an empty submission and adding performance data later.</p>
+          <p>The request payload on the right can be harder to read, but it contains all of the info above exactly as it's sent through the API. Since we're able to create a complete and scorable submission in one request, it's common to take this approach instead of creating an empty submission and adding performance data later as we did in the first tutorial.</p>
           <p>Also, we're using a different TIN here - if we wanted to add ACI measurements to an existing submission instead of creating a new one, we would have to make a PUT (full record update) or PATCH (partial record update) request and specify the submission <code>ID</code>. Each unique combination of TIN, NPI, program name, and entity gets one submission record per performance year.</p>
           <button className="usa-button api-example-button" onClick={this.createSubmission}>Create Submission</button>
           <p>A <code>201 Created</code> - great. We can get the score next:</p>
@@ -45,7 +97,7 @@ Measurement Set:
           <InlineApiExample
             verb="GET"
             url="/v1/submissions/:id/score"/>
-          <button className="usa-button api-example-button" onClick={this.createSubmission}>Get Submission Score</button>
+          <button className="usa-button api-example-button" onClick={this.getInitialSubmissionScore}>Get Submission Score</button>
           <p>explain ACI score</p>
           <h2 id="updating-a-measure"><a className="tutorial-header-link" href="#updating-a-measure">Updating a measure</a></h2>
           <p>So far we've only been creating new submission and measurement set records. Since performance data can change over time, we'll need to update CMS. Let's update an existing measure with new performance data! In addition to a measurement <code>ID</code>, we need to provide the measurement set <code>ID</code> and the measure <code>ID</code>. For the performance data itself, let's update the <code>ACI_HIE_1</code> proportion from 10 out of 100 to 50 out of 100.</p>
@@ -61,18 +113,22 @@ Measurement Set:
     "denominator": 100
   }
 }`}/>
-          <button className="usa-button api-example-button" onClick={this.createSubmission}>Update Measurement</button>
+          <button className="usa-button api-example-button" onClick={this.updateMeasurement}>Update Measurement</button>
           <p>A <code>200 OK</code> means we've updated the measurement in question. We can now fetch the latest score:</p>
           <h2 id="comparing-scoring-changes"><a className="tutorial-header-link" href="#comparing-scoring-changes">Comparing scoring changes</a></h2>
           <p>explain how scores can change</p>
           <InlineApiExample
             verb="GET"
             url="/v1/submissions/:id/score"/>
-          <button className="usa-button api-example-button" onClick={this.createSubmission}>Get Submission Score</button>
+          <button className="usa-button api-example-button" onClick={this.getFinalSubmissionScore}>Get Submission Score</button>
           <p>A few things have changed - the final score increased to 15.5. We know this change is due to our PATCH by looking at the score component contributed by <code>ACI_HIE_1</code> - it increased from 1 to 5. The ACI base score went up from 58 to 62, and with the ACI component being 25% of the score our final score increased by 1.</p>
         </div>
         <div className="usa-width-one-half">
-          <TechnicalDetailsPane hash={this.props.hash} tutorial="advanced"/>
+          <TechnicalDetailsPane
+            tutorial="advanced"
+            hash={this.state.hash}
+            tabIndex={this.state.tabIndex}
+            handleSelect={this.handleSelect}/>
         </div>
       </div>
     );
