@@ -41,11 +41,14 @@ Measurement Set:
           <button className="usa-button" onClick={this.createSubmission}> Create Submission
           </button>
           <p>A <code>201 Created</code> - great. We can get the score next:</p>
+          <h2>ACI Scoring</h2>
+          <p>describe ACI scoring</p>
           <InlineApiExample
             verb="GET"
             url="/v1/submissions/:id/score"/>
           <button className="usa-button" onClick={this.createSubmission}> Get Submission Score
           </button>
+          <p>explain ACI score</p>
           <h2>Updating a measure</h2>
           <p>So far we've only been creating new submission and measurement set records. Since performance data can change over time, we'll need to update CMS. Let's update an existing measure with new performance data! In addition to a measurement <code>ID</code>, we need to provide the measurement set <code>ID</code> and the measure <code>ID</code>. For the performance data itself, let's update the <code>ACI_HIE_1</code> proportion from 10 out of 100 to 50 out of 100.</p>
           <InlineApiExample
@@ -64,6 +67,8 @@ Measurement Set:
             Update Measurement
           </button>
           <p>A <code>200 OK</code> means we've updated the measurement in question. We can now fetch the latest score:</p>
+          <h2>Comparing scoring changes</h2>
+          <p>explain how scores can change</p>
           <InlineApiExample
             verb="GET"
             url="/v1/submissions/:id/score"/>
@@ -73,7 +78,7 @@ Measurement Set:
           <p>A few things have changed - the final score increased to 15.5. We know this change is due to our PATCH by looking at the score component contributed by <code>ACI_HIE_1</code> - it increased from 1 to 5. The ACI base score went up from 58 to 62, and with the ACI component being 25% of the score our final score increased by 1.</p>
         </div>
         <div className="usa-width-one-half">
-          <TechnicalDetailsPane />
+          <TechnicalDetailsPane url={document.URL}/>
         </div>
       </div>
     );

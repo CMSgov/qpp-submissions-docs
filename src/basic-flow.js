@@ -62,7 +62,7 @@ Performance data:
           <p>To learn more about what else you can do with the API, visit our <a href="">API reference</a>.</p>
         </div>
         <div className="usa-width-one-half">
-          <TechnicalDetailsPane />
+          <TechnicalDetailsPane url={document.URL}/>
         </div>
       </div>
     );
