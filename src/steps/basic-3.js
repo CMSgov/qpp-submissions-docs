@@ -12,12 +12,12 @@ class Basic3 extends React.PureComponent {
           <Tab>Response</Tab>
         </TabList>
         <TabPanel>
+        </TabPanel>
+        <TabPanel>
           <p>Response code:</p>
           <pre>200 OK</pre>
           <p>Response body:</p>
           <pre></pre>
-        </TabPanel>
-        <TabPanel>
           <pre>{`{
   "data": {
     "score": {

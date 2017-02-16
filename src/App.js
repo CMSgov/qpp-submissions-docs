@@ -48,7 +48,7 @@ class App extends React.PureComponent {
           <div className="usa-navbar">
             <div className="usa-logo" id="logo">
               <em className="usa-logo-text">
-                <a href="/" title="Home" aria-label="Home">QPP Submissions API <br/> Developer Documentation</a>
+                <a href="/qpp-submissions-docs" title="Home" aria-label="Home">QPP Submissions API <br/> Developer Documentation</a>
               </em>
             </div>
           </div>
