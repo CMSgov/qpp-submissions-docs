@@ -6,6 +6,7 @@ import '../node_modules/uswds/dist/css/uswds.css';
 import './App.css';
 
 import Header from './header';
+import Footer from './footer';
 import BasicTutorial from './basic-tutorial';
 import AdvancedTutorial from './advanced-tutorial';
 
@@ -25,26 +26,19 @@ class App extends React.PureComponent {
     } else if (path === 'advanced-tutorial') {
       component = <AdvancedTutorial hash={hash}/>
     } else {
-      component = <div className='usa-grid'>
-        <h1>Submissions API</h1>
-        <ul>
-          <li>
-            <p>Learn about how and why you'd use the Submissions API! Walk through <a href="/qpp-submissions-docs/tutorial">an example of how we can easily submit performance data to CMS.</a>
-            </p>
-          </li>
-          <li>
-            <p>Dig further into how scoring works and updating existing data in our <a href="/qpp-submissions-docs/advanced-tutorial">advanced tutorial</a>.
-            </p>
-          </li>
-          <li>
-            <p>Want more detail? Check out our <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">interactive API reference</a> for an exhaustive list of endpoints.
-            </p>
-          </li>
-          <li>
-            <p>Return to the <a href="https://qpp.cms.gov/resources/developers">QPP developer portal</a>.</p>
-          </li>
-        </ul>
-      </div>;
+      component = <section className="usa-section">
+        <div className="usa-grid">
+          <h1>Submissions API</h1>
+          <h2>Easily submit and score performance data.</h2>
+          <p className="usa-font-lead">The Submissions API is a conversational interface to easily submit and score performance data with CMS. Learn more about what that looks like and how to use the API by walking through a friendly example.</p>
+          <a className="usa-button usa-button-big" href="/qpp-submissions-docs/tutorial">Start the tutorial</a>
+          <h2>Dig into scoring and quickly react to errors.</h2>
+          <p className="usa-font-lead">Demystify how the aggregate score for a complex performance category like ACI is calculated. Updating and correcting performance data is also easy - avoid losing time by solving issues as they arise, rather than reacting months later.</p>
+          <a className="usa-button usa-button-big" href="/qpp-submissions-docs/advanced-tutorial">Start the advanced tutorial</a>
+          <h2>Explore the full API with our interactive reference.</h2>
+          <p className="usa-font-lead">Want more detail? Check out our <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">interactive API reference</a> for an exhaustive list of endpoints with example request and response payloads. Test out what else you can do!</p>
+        </div>
+      </section>;
     }
 
     return (
@@ -61,6 +55,7 @@ class App extends React.PureComponent {
           </div>
         </div>
         {component}
+        <Footer />
         <script src="/assets/js/vendor/uswds.min.js"></script>
       </div>
     );

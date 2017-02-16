@@ -9,16 +9,7 @@ class Footer extends React.PureComponent {
             <nav className="usa-footer-nav usa-width-two-thirds">
               <ul className="usa-unstyled-list">
                 <li className="usa-width-one-fourth usa-footer-primary-content">
-                  <a className="usa-footer-primary-link" href="">Primary link</a>
-                </li>
-                <li className="usa-width-one-fourth usa-footer-primary-content">
-                  <a className="usa-footer-primary-link" href="">Primary link</a>
-                </li>
-                <li className="usa-width-one-fourth usa-footer-primary-content">
-                  <a className="usa-footer-primary-link" href="">Primary link</a>
-                </li>
-                <li className="usa-width-one-fourth usa-footer-primary-content">
-                  <a className="usa-footer-primary-link" href="">Primary link</a>
+                  <a className="usa-footer-primary-link" href="https://qpp.cms.gov/resources/developers">QPP Developer Resources</a>
                 </li>
               </ul>
             </nav>
