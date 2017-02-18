@@ -11,18 +11,9 @@ class InlineApiExample extends React.PureComponent {
           <span className={cssClass + '-request__verb'}>{this.props.verb}</span>
           <span className={cssClass + '-request__url'}>{this.props.url}</span>
         </div>
-        {this.props.body && <RequestBody body={this.props.body}/>}
+        {this.props.params && <table className={cssClass + '__params'}>{this.props.params}</table>}
+        {this.props.button && <div className={cssClass + '__button'}>{this.props.button}</div>}
       </div>
-    );
-  }
-}
-
-class RequestBody extends React.PureComponent {
-  render() {
-    return (
-      <pre className={cssClass + '-body'}>
-        {this.props.body}
-      </pre>
     );
   }
 }

@@ -88,6 +88,37 @@ Measurement Set:
     ACI_HIE_1: 10 out of 100
     ACI_HIE_2: 20 out of 100
 `}/>
+            params={<div>
+              <table className="inline-api-example__params">
+                <tbody>
+                  <tr><td>Program Name</td>
+                      <td>MIPS</td></tr>
+                  <tr><td>Entity</td>
+                      <td>Individual</td></tr>
+                  <tr><td>Taxpayer Identification Number</td>
+                      <td>000345678</td></tr>
+                  <tr><td>National Provider Identifier</td>
+                      <td>9876543210</td></tr>
+                  <tr><td>Performance Year</td>
+                      <td>2016</td></tr>
+                  <tr><td>Measurement Set</td>
+                      <td>Measure ACI_INFBLO_1: true</td></tr>
+                  <tr><td></td>
+                      <td>Measure ACI_ONCDIR_1: true</td></tr>
+                  <tr><td></td>
+                      <td>Measure ACI_EP_1: 100 out of 100</td></tr>
+                  <tr><td></td>
+                      <td>Measure ACI_PPHI_1: true</td></tr>
+                  <tr><td></td>
+                      <td>Measure ACI_PEA_1: 50 out of 100</td></tr>
+                  <tr><td></td>
+                      <td>Measure ACI_HIE_1: 10 out of 100</td></tr>
+                  <tr><td></td>
+                      <td>Measure ACI_HIE_2: 20 out of 100</td></tr>
+                </tbody>
+              </table>
+              <button className="usa-button inline-api-example__button" onClick={this.createMeasurementSet}>Create Measurement Set</button>
+            </div>}/>
           <p>The request payload on the right can be harder to read, but it contains all of the info above exactly as it's sent through the API. Since we're able to create a complete and scorable submission in one request, it's common to take this approach instead of creating an empty submission and adding performance data later as we did in the first tutorial.</p>
           <p>Also, we're using a different TIN here - if we wanted to add ACI measurements to an existing submission instead of creating a new one, we would have to make a PUT (full record update) or PATCH (partial record update) request and specify the submission <code>ID</code>. Each unique combination of TIN, NPI, program name, and entity gets one submission record per performance year.</p>
           <button className="usa-button api-example-button" onClick={this.createSubmission}>Create Submission</button>
