@@ -13,24 +13,25 @@ import Advanced4 from './steps/advanced-4';
 
 class TechnicalDetailsPane extends React.Component {
   render() {
-    const basicTutorialSteps = {
-      '#creating-a-submission': <Basic1 onSelect={this.props.handleSelect} tabIndex={this.props.tabIndex}/>,
-      '#adding-measurements': <Basic2 onSelect={this.props.handleSelect} tabIndex={this.props.tabIndex}/>,
-      '#scoring-a-submission': <Basic3 onSelect={this.props.handleSelect} tabIndex={this.props.tabIndex}/>
-    };
-
-    const advancedTutorialSteps = {
-      '#submitting-with-performance-data': <Advanced1 onSelect={this.props.handleSelect} tabIndex={this.props.tabIndex}/>,
-      '#aci-scoring': <Advanced2 onSelect={this.props.handleSelect} tabIndex={this.props.tabIndex}/>,
-      '#updating-a-measure': <Advanced3 onSelect={this.props.handleSelect} tabIndex={this.props.tabIndex}/>,
-      '#comparing-scoring-changes': <Advanced4 onSelect={this.props.handleSelect} tabIndex={this.props.tabIndex}/>
-    };
-
     Tabs.setUseDefaultStyles(false);
-    const component = this.props.tutorial === 'basic' ?
-      basicTutorialSteps[this.props.hash] || <Basic1 onSelect={this.props.handleSelect} tabIndex={this.props.tabIndex}/> :
-      advancedTutorialSteps[this.props.hash] || <Advanced1 onSelect={this.props.handleSelect} tabIndex={this.props.tabIndex}/>;
-    return component;
+
+    const selectTab = this.props.selectTab;
+    const index = this.props.tabIndex;
+    const basicTutorialSteps = {
+      '#creating-a-submission': <Basic1 onSelect={selectTab} tabIndex={index}/>,
+      '#adding-measurements': <Basic2 onSelect={selectTab} tabIndex={index}/>,
+      '#scoring-a-submission': <Basic3 onSelect={selectTab} tabIndex={index}/>
+    };
+    const advancedTutorialSteps = {
+      '#submitting-with-performance-data': <Advanced1 onSelect={selectTab} tabIndex={index}/>,
+      '#aci-scoring': <Advanced2 onSelect={selectTab} tabIndex={index}/>,
+      '#updating-a-measure': <Advanced3 onSelect={selectTab} tabIndex={index}/>,
+      '#comparing-scoring-changes': <Advanced4 onSelect={selectTab} tabIndex={index}/>
+    };
+
+    return this.props.tutorial === 'basic' ?
+      basicTutorialSteps[this.props.hash] || <Basic1 onSelect={selectTab} tabIndex={index}/> :
+      advancedTutorialSteps[this.props.hash] || <Advanced1 onSelect={selectTab} tabIndex={index}/>;
   }
 }
 

@@ -6,7 +6,10 @@ const cssClass = "technical-details-pane";
 class Basic1 extends React.PureComponent {
   render() {
     return (
-      <Tabs className={cssClass} onSelect={this.props.onSelect} selectedIndex={this.props.tabIndex}>
+      <Tabs
+        className={cssClass}
+        onSelect={this.props.onSelect}
+        selectedIndex={this.props.tabIndex}>
         <TabList>
           <Tab>Request</Tab>
           <Tab>Response</Tab>
@@ -18,7 +21,7 @@ class Basic1 extends React.PureComponent {
   "entityType": "individual",
   "taxpayerIdentificationNumber": "000456789",
   "nationalProviderIdentifier": "9876543210",
-  "performanceYear": 2016
+  "performanceYear": 2017
 }`}
           </pre>
         </TabPanel>
@@ -26,19 +29,19 @@ class Basic1 extends React.PureComponent {
           <p>Response code:</p>
           <pre>201 Created</pre>
           <p>Response body:</p>
-          <pre>
-{`{
-"data": {
-  "submission": {
-    "id": "0bb00f33-8378-46c1-b769-5662d39b8949",
-    "createdAt": "2017-02-13T18:45:58Z",
-    "updatedAt": "2017-02-13T18:45:58Z",
-    "programName": "mips",
-    "entityType": "individual",
-    "taxpayerIdentificationNumber": "000456789",
-    "nationalProviderIdentifier": "9876543210",
-    "performanceYear": 2017,
-    "measurementSets": []
+          <pre>{`{
+  "data": {
+    "submission": {
+      "id": "b6423273-d3a3-42ef-9728-1871b246477e",
+      "createdAt": "2017-02-13T18:45:58Z",
+      "updatedAt": "2017-02-13T18:45:58Z",
+      "programName": "mips",
+      "entityType": "individual",
+      "taxpayerIdentificationNumber": "000456789",
+      "nationalProviderIdentifier": "9876543210",
+      "performanceYear": 2017,
+      "measurementSets": []
+    }
   }
 }`}
           </pre>

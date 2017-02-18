@@ -6,28 +6,24 @@ const cssClass = "technical-details-pane";
 class Basic2 extends React.PureComponent {
   render() {
     return (
-      <Tabs className={cssClass} onSelect={this.props.onSelect} selectedIndex={this.props.tabIndex}>
+      <Tabs
+        className={cssClass}
+        onSelect={this.props.onSelect}
+        selectedIndex={this.props.tabIndex}>
         <TabList>
           <Tab>Request</Tab>
           <Tab>Response</Tab>
         </TabList>
         <TabPanel>
           <pre>{`{
-  "submissionId": "6809a184-1588-4356-a28c-3eef95d5659f",
-  "category": "aci",
+  "submissionId": "b6423273-d3a3-42ef-9728-1871b246477e",
+  "category": "ia",
   "source": "provider",
   "performanceStart": "2016-01-01",
   "performanceEnd": "2016-06-01",
   "measurements": [
     {
-      "measureId": "ACI_HIE_3",
-      "value": {
-        "numerator": 1,
-        "denominator": 2
-      }
-    },
-    {
-      "measureId": "ACI_PHCDRR_5",
+      "measureId": "IA_EPA_4",
       "value": true
     }
   ]
@@ -36,33 +32,24 @@ class Basic2 extends React.PureComponent {
         </TabPanel>
         <TabPanel>
           <p>Response code:</p>
-          <pre>200 OK</pre>
+          <pre>201 Created</pre>
           <p>Response body:</p>
           <pre>
 {`{
   "data": {
     "measurementSet": {
-      "id": "5444423d-26b9-47b4-80e5-499d3fbb827a",
-      "submissionId": "6809a184-1588-4356-a28c-3eef95d5659f",
-      "category": "aci",
+      "id": "88345eab-0082-4a58-a4e8-e3140c7f48ee",
+      "submissionId": "b6423273-d3a3-42ef-9728-1871b246477e",
+      "category": "ia",
       "source": "provider",
       "measureSet": null,
       "performanceStart": "2016-01-01",
       "performanceEnd": "2016-06-01",
       "measurements": [
         {
-          "id": "19ed9c66-27f3-414a-85bc-a19d994b3adc",
-          "measurementSetId": "5444423d-26b9-47b4-80e5-499d3fbb827a",
-          "measureId": "ACI_HIE_3",
-          "value": {
-            "numerator": 1,
-            "denominator": 2
-          }
-        },
-        {
-          "id": "7f396ed5-1b19-41eb-82e8-d9305773197b",
-          "measurementSetId": "5444423d-26b9-47b4-80e5-499d3fbb827a",
-          "measureId": "ACI_PHCDRR_5",
+          "id": "1e039419-171d-4efa-9158-4d62f63823ff",
+          "measurementSetId": "88345eab-0082-4a58-a4e8-e3140c7f48ee",
+          "measureId": "IA_EPA_4",
           "value": true
         }
       ]
