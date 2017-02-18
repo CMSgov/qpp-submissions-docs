@@ -59,7 +59,7 @@ class BasicTutorial extends React.PureComponent {
           <p>We need to create a <em>submission</em> first. We can do that by asking the API to create a submission record in the CMS database. In API terms, this means making a <code>POST</code> (synonym for <em>create</em>) request to the <code>/v1/submissions</code> endpoint. We'll also need to supply some information to tell CMS how to identify this particular submission, which you can see below - every submission is unique to the combination of the fields provided.</p>
           <p>Note that we enforce fake TINs (starting with <code>000</code>) during the preview period to avoid accidentally collecting personally identifiable information. Also, we can submit performance data in this first request as well, but we'll do it in a future request to keep this one small. On the right side, you can see the <code>JSON</code> version of the information below - click the 'Create Submission' button when you're ready.</p>
           <InlineApiExample
-            verb={<code>POST</code>}
+            verb="POST"
             url="/v1/submissions"
             params={
               <tbody>

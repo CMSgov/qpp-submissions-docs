@@ -8,8 +8,8 @@ class InlineApiExample extends React.PureComponent {
     return (
       <div className={cssClass}>
         <div className={cssClass + '-request'}>
-          <span className={cssClass + '-request__verb'}>{this.props.verb}</span>
-          <span className={cssClass + '-request__url'}>{this.props.url}</span>
+          <span className={cssClass + '-request__verb'}><code>{this.props.verb}</code></span>
+          <span className={cssClass + '-request__url'}><code>{this.props.url}</code></span>
         </div>
         {this.props.params && <table className={cssClass + '__params'}>{this.props.params}</table>}
         {this.props.button && <div className={cssClass + '__button'}>{this.props.button}</div>}
