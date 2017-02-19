@@ -103,7 +103,8 @@ class BasicTutorial extends React.PureComponent {
             </a>
           </h2>
           <p>In our example, we have performance data for one measure that we want to send to CMS. Much like creating the submission, we need to create a measurement by making a <code>POST</code> request. This time it'll be addressed to a different endpoint, and we'll include the submission <code>id</code> from earlier so CMS knows which submission we're talking about.</p>
-          <p>Remember that measurements are grouped into measurement sets? The data in our <code>POST</code> request will be organized this way, with the measurement nested inside the data for a measurement set - you can see what that looks like on the right. Our example includes a boolean (<code>true</code> or <code>false</code>) value for measure <code>IA_EPA_4</code>. If we want to add measurements from different categories (Advancing Care Information vs our Improvement Activity) or sources (provider vs CMS Web UI), note that we would need to create two separate measurement sets. Measurement sets become more relevant during scoring - we'll dig into that in our advanced tutorial. For now, let's ask the API to add this to our submission!</p>
+          <p>Remember that measurements are grouped into measurement sets? The data in our <code>POST</code> request will be organized this way, with the measurement nested inside the data for a measurement set - you can see what that looks like on the right. Our example includes a boolean (<code>true</code> or <code>false</code>) value for measure <code>IA_EPA_4</code>.</p>
+          <p>If we want to add measurements from different categories (Advancing Care Information vs our Improvement Activity) or sources (not the provider), we would need to do that in another measurement set. Measurement sets become more important during scoring, since there can be performance data concerning the same care but submitted by different people - we'll dig into that in our advanced tutorial. For now, let's ask the API to add our IA measurement:</p>
           <InlineApiExample
             verb="POST"
             url="/v1/measurement-sets"
@@ -117,8 +118,9 @@ class BasicTutorial extends React.PureComponent {
                     <td>Provider</td></tr>
                 <tr><td>Performance period</td>
                     <td>2016-01-01 through 2016-06-01</td></tr>
-                <tr><td>Performance data</td>
-                    <td>Measure <code>IA_EPA_4</code>: <code>true</code></td></tr>
+                <tr><td className="nested-once">Measurements</td></tr>
+                <tr><td className="nested-twice"><code>IA_EPA_4</code></td>
+                    <td><code>true</code></td></tr>
               </tbody>
             }
             button={
@@ -128,7 +130,7 @@ class BasicTutorial extends React.PureComponent {
                 onClick={this.showResponseOfStep}>
                 Create Measurement Set
               </button>}/>
-          <p>Another <code>201 Created</code>, and we can see that this time the measurement set and created measurement all both been assigned <code>id</code>s. Nothing too surprising in this step, but we've given CMS everything necessary to score this submission.</p>
+          <p>Another <code>201 Created</code>, and we can see that this time the measurement set and measurement have both been assigned <code>id</code>s. Nothing too surprising in this step, but we've given CMS everything necessary to score this submission.</p>
           <button
             className="usa-button"
             data-hash="#scoring-a-submission"
@@ -143,7 +145,7 @@ class BasicTutorial extends React.PureComponent {
               Scoring a submission
             </a>
           </h2>
-          <p>With the same submission <code>id</code> we've been working with, we can ask the API for the submission score via GET request. We don't need to include a request body this time since we're only interested in retrieving the score, not updating an existing record.</p>
+          <p>With the submission <code>id</code> we were given, we can ask the API to calculate the submission score with a GET request. We don't need to include a request body this time since we're only interested in retrieving the score, and CMS doesn't need any information other than the submission <code>id</code>.</p>
           <InlineApiExample
             verb="GET"
             url="/v1/submissions/:id/score"
@@ -154,12 +156,16 @@ class BasicTutorial extends React.PureComponent {
                 onClick={this.showResponseOfStep}>
                 Get Submission Score
               </button>}/>
-          <p>Our API response includes a score and a breakdown of how the individual measurements contribute to the aggregate. The additional visibility helps because sometimes a submission can be valid, but incomplete for scoring purposes.</p>
-          <p>That's it! We've used three API requests to create a submission, add measurements into a measurement set, and get the score, all in minutes. Each API response gives us useful information for the next step.</p>
+          <p>Our API response includes a bunch of new info this time, so let's break it down.</p>
+          <p>The <code>Final Score</code> has a value of <code>3.75</code>. <code>Final</code> here doesn't mean it's the final end of year score for this submission - think of this instead as the <em>current aggregate estimate</em> of your total score.</p>
+          <p>If you look at the first chunk of <code>JSON</code> in the <code>"parts"</code> list, the IA component of final score reads <code>3.75</code>. The <code>"detail"</code> makes clear that the scoring is based on the measurement set we submitted earlier (check the <code>id</code>s, they match!).</p>
+          <p>The second chunk in <code>"parts"</code> is straightforward - we did not submit any ACI data, so our aggregate score has no contribution from ACI measures.</p>
+          <p>That's it! We've used three API requests to (1) create a submission, (2) add measurements into a measurement set, and (3) get the score, all in minutes. Each API response gives us useful information for the next step.</p>
           <p>In general, we can think about the Submissions API as a way to have a live conversation with CMS about performance measurements. Rather than waiting months to hear back about missing information or a score, the API gives us feedback that is immediate, specific, and actionable - we can easily make another API request if necessary.</p>
           <p>What we've shown is an example of working directly with the API - typically these requests are made through a web interface or script, but the requests & responses above illustrate the kind of power and speed the Submissions API and applications built against it can provide.</p>
           <h3>Next steps</h3>
           <p>Explore a more complex and powerful workflow in our <a href="/qpp-submissions-docs/advanced-tutorial">advanced tutorial</a>.</p>
+          <a className="usa-button usa-button-big" href="/qpp-submissions-docs/advanced-tutorial">Start the advanced tutorial</a>
           <p>To learn more about what else you can do with the API, visit our <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">API reference</a>.</p>
         </div>
         <div className="usa-width-one-half">

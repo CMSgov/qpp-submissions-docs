@@ -12,6 +12,17 @@ class Advanced4 extends React.PureComponent {
           <Tab>Response</Tab>
         </TabList>
         <TabPanel>
+          <pre>
+{`{
+  "id": "a3cb7c78-2380-4573-b726-8c8e3b70529a",
+  "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
+  "measureId": "ACI_HIE_1",
+  "value": {
+    "numerator": 50,
+    "denominator": 100
+  }
+}`}
+          </pre>
         </TabPanel>
         <TabPanel>
           <p>Response code:</p>
@@ -20,74 +31,15 @@ class Advanced4 extends React.PureComponent {
           <pre>
 {`{
   "data": {
-    "score": {
-      "name": "final",
-      "title": "Final Score",
-      "detail": "",
-      "value": 15.5,
-      "parts": [
-        {
-          "name": "ia",
-          "title": "IA component of final score",
-          "detail": "No measurement set to score.",
-          "value": 0
-        },
-        {
-          "name": "aci",
-          "title": "ACI component of final score",
-          "detail": "Scoring based on measurement set \"b702d4ee-5a75-4e10-9aaf-3539123956e7\" from source \"provider\" with weight of 25%.",
-          "value": 15.5,
-          "original": {
-            "name": "aci",
-            "title": "Advancing Care Information Score",
-            "value": 62,
-            "parts": [
-              {
-                "name": "aci_base",
-                "value": 62,
-                "detail": "",
-                "parts": [
-                  {
-                    "name": "ACI_PEA_1",
-                    "value": 5
-                  },
-                  {
-                    "name": "ACI_HIE_1",
-                    "value": 5
-                  },
-                  {
-                    "name": "ACI_HIE_2",
-                    "value": 2
-                  }
-                ],
-                "warnings": []
-              },
-              {
-                "name": "aci_performance",
-                "value": 0,
-                "detail": "",
-                "parts": [],
-                "warnings": []
-              },
-              {
-                "name": "aci_bonus",
-                "value": 0,
-                "detail": "",
-                "parts": [],
-                "warnings": []
-              },
-              {
-                "name": "cehrt_bonus",
-                "value": 0,
-                "detail": "",
-                "parts": [],
-                "warnings": []
-              }
-            ],
-            "warnings": []
-          }
-        }
-      ]
+    "measurement": {
+      "id": "a3cb7c78-2380-4573-b726-8c8e3b70529a",
+      "submissionId": "60d2fbbb-7453-47fa-b709-c33090e50843",
+      "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
+      "measureId": "ACI_HIE_1",
+      "value": {
+        "numerator": 50,
+        "denominator": 100
+      }
     }
   }
 }`}

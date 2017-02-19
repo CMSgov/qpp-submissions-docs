@@ -10,6 +10,7 @@ import Advanced1 from './steps/advanced-1';
 import Advanced2 from './steps/advanced-2';
 import Advanced3 from './steps/advanced-3';
 import Advanced4 from './steps/advanced-4';
+import Advanced5 from './steps/advanced-5';
 
 class TechnicalDetailsPane extends React.Component {
   render() {
@@ -24,9 +25,10 @@ class TechnicalDetailsPane extends React.Component {
     };
     const advancedTutorialSteps = {
       '#submitting-with-performance-data': <Advanced1 onSelect={selectTab} tabIndex={index}/>,
-      '#aci-scoring': <Advanced2 onSelect={selectTab} tabIndex={index}/>,
-      '#updating-a-measure': <Advanced3 onSelect={selectTab} tabIndex={index}/>,
-      '#comparing-scoring-changes': <Advanced4 onSelect={selectTab} tabIndex={index}/>
+      '#submitting-with-performance-data-pt2': <Advanced2 onSelect={selectTab} tabIndex={index}/>,
+      '#aci-scoring': <Advanced3 onSelect={selectTab} tabIndex={index}/>,
+      '#updating-a-measure': <Advanced4 onSelect={selectTab} tabIndex={index}/>,
+      '#comparing-scoring-changes': <Advanced5 onSelect={selectTab} tabIndex={index}/>
     };
 
     return this.props.tutorial === 'basic' ?

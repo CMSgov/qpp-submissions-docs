@@ -21,7 +21,7 @@ class Basic1 extends React.PureComponent {
   "entityType": "individual",
   "taxpayerIdentificationNumber": "000456789",
   "nationalProviderIdentifier": "9876543210",
-  "performanceYear": 2017
+  "performanceYear": 2016
 }`}
           </pre>
         </TabPanel>
@@ -39,7 +39,7 @@ class Basic1 extends React.PureComponent {
       "entityType": "individual",
       "taxpayerIdentificationNumber": "000456789",
       "nationalProviderIdentifier": "9876543210",
-      "performanceYear": 2017,
+      "performanceYear": 2016,
       "measurementSets": []
     }
   }

@@ -26,55 +26,31 @@ class Basic3 extends React.PureComponent {
       "name": "final",
       "title": "Final Score",
       "detail": "",
-      "value": 0,
+      "value": 3.75,
       "parts": [
         {
           "name": "ia",
           "title": "IA component of final score",
-          "detail": "No measurement set to score.",
-          "value": 0
+          "detail": "Scoring based on measurement set "88345eab-0082-4a58-a4e8-e3140c7f48ee" from source "provider" with weight of 15%.",
+          "value": 3.75,
+          "original": {
+            "name": "ia",
+            "title": "Improvement Activities Score",
+            "value": 10,
+            "parts": [
+              {
+                "name": "IA_EPA_4",
+                "title": "Additional improvements in access as a result of QIN/QIO TA",
+                "value": 10
+              }
+            ]
+          }
         },
         {
           "name": "aci",
           "title": "ACI component of final score",
-          "detail": "Scoring based on measurement set \"5444423d-26b9-47b4-80e5-499d3fbb827a\" from source \"provider\" with weight of 25%.",
-          "value": 0,
-          "original": {
-            "name": "aci",
-            "title": "Advancing Care Information Score",
-            "value": 0,
-            "parts": [
-              {
-                "name": "aci_base",
-                "value": 0,
-                "detail": "",
-                "parts": [],
-                "warnings": []
-              },
-              {
-                "name": "aci_performance",
-                "value": 0,
-                "detail": "",
-                "parts": [],
-                "warnings": []
-              },
-              {
-                "name": "aci_bonus",
-                "value": 0,
-                "detail": "",
-                "parts": [],
-                "warnings": []
-              },
-              {
-                "name": "cehrt_bonus",
-                "value": 0,
-                "detail": "",
-                "parts": [],
-                "warnings": []
-              }
-            ],
-            "warnings": []
-          }
+          "detail": "No measurement set to score.",
+          "value": 0
         }
       ]
     }

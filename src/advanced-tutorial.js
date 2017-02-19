@@ -11,120 +11,155 @@ class AdvancedTutorial extends React.PureComponent {
       tabIndex: 0
     };
 
-    this.handleSelect = this.handleSelect.bind(this);
-    this.createSubmission = this.createSubmission.bind(this);
-    this.getInitialSubmissionScore = this.getInitialSubmissionScore.bind(this);
-    this.updateMeasurement = this.updateMeasurement.bind(this);
-    this.getFinalSubmissionScore = this.getFinalSubmissionScore.bind(this);
+    this.selectTab = this.selectTab.bind(this);
+    this.showStartOfStep = this.showStartOfStep.bind(this);
+    this.showResponseOfStep = this.showResponseOfStep.bind(this);
   }
 
-  handleSelect(index) {
+  selectTab(index) {
     this.setState({
       tabIndex: index
     });
   }
 
-  createSubmission() {
-    window.location.hash = '#submitting-with-performance-data';
+  showStartOfStep(event) {
+    // the hash of an anchor tag or stored in data
+    const hash = event.target.hash || event.target.dataset.hash;
+    window.location.hash = hash;
     this.setState({
-      hash: '#submitting-with-performance-data',
-      tabIndex: 1
+      hash,
+      tabIndex: 0
     });
   }
 
-  getInitialSubmissionScore() {
-    window.location.hash = '#aci-scoring';
+  showResponseOfStep(event) {
+    const hash = event.target.dataset.hash;
+    window.location.hash = hash;
     this.setState({
-      hash: '#aci-scoring',
-      tabIndex: 1
-    });
-  }
-
-  updateMeasurement() {
-    window.location.hash = '#updating-a-measure';
-    this.setState({
-      hash: '#updating-a-measure',
-      tabIndex: 1
-    });
-  }
-
-  getFinalSubmissionScore() {
-    window.location.hash = '#comparing-scoring-changes';
-    this.setState({
-      hash: '#comparing-scoring-changes',
+      hash,
       tabIndex: 1
     });
   }
 
   render() {
     return (
-      <div className="usa-grid">
+      <div className="usa-grid a-bit-wider">
         <div className="usa-width-one-half">
           <h1>Advanced API Tutorial</h1>
-          <p>In the <a href="/qpp-submissions-docs/tutorial">first tutorial</a>, we covered how to create a submission, add a measurement set with IA performance data, and retrieve the score in three different API requests. This time we're going to look at creating a submission with embedded ACI performance data in one request, go through ACI scoring (which is a little more complicated than IA), and see how to update a measure with new info.</p>
-          <h2 id="submitting-with-performance-data"><a className="tutorial-header-link" href="#submitting-with-performance-data">Creating a submission with performance data</a></h2>
-          <p>Now that we know how to submit and score a submission with IA measurements, let's try the same with ACI measurements! The scoring is more complicated for ACI measures, so we'll spend more time going through that.</p>
-          <p>Here's a POST request to create a new submission. This time, we're going to create the measurement set and submission together by nesting the measurement set inside the submission info, much like we nested measurements within measurement sets.</p>
+          <p>In the <a href="/qpp-submissions-docs/tutorial">first tutorial</a> we covered how to create a submission, add a measurement set with IA category performance data, and retrieve the score in three different API requests. This time we're going to look at creating a submission with embedded ACI performance data in one request, go through ACI scoring (which is a little more complicated than IA), and see how to update a measure with new info (and run into a problem along the way). All of these examples serve to illustrate how the Submissions API can make it easier to react to and fix issues that arise.</p>
+          <h2 id="submitting-with-performance-data">
+            <a
+              className="tutorial-header-link"
+              href="#submitting-with-performance-data"
+              onClick={this.showStartOfStep}>
+              Creating a submission with embedded performance data
+            </a>
+          </h2>
+          <p>Previously, we created a submission and added a measurement set in two requests. It's common to want to do these at the same time - the first time we want to submit performance data for any individual, for instance. It's convenient to be able to do both, so let's try that with ACI performance data.</p>
+          <p>Here's a <code>POST</code> request to create a submission. We're including the  measurement set and submission together by nesting the measurement set inside the submission info, much like we nested measurements within measurement sets.</p>
+          <p>The request payload on the right can be harder to read, but it contains the same info as below formatted exactly as it's sent through the API. Check it out then click the button!</p>
           <InlineApiExample
             verb="POST"
             url="/v1/submissions"
-            body={`Program Name: MIPS
-Entity: Individual
-Taxpayer Identification Number: 000345678
-National Provider Identifier: 9876543210
-Performance Year: 2016
-
-Measurement Set:
-  Category: ACI
-  Source: Provider
-  Performance date range: 2016-01-01 thru 2016-06-01
-
-  Measurements:
-    ACI_INFBLO_1: true
-    ACI_ONCDIR_1: true
-    ACI_EP_1: 100 out of 100
-    ACI_PPHI_1: true
-    ACI_PEA_1: 50 out of 100
-    ACI_HIE_1: 10 out of 100
-    ACI_HIE_2: 20 out of 100
-`}/>
-            params={<div>
-              <table className="inline-api-example__params">
-                <tbody>
-                  <tr><td>Program Name</td>
-                      <td>MIPS</td></tr>
-                  <tr><td>Entity</td>
-                      <td>Individual</td></tr>
-                  <tr><td>Taxpayer Identification Number</td>
-                      <td>000345678</td></tr>
-                  <tr><td>National Provider Identifier</td>
-                      <td>9876543210</td></tr>
-                  <tr><td>Performance Year</td>
-                      <td>2016</td></tr>
-                  <tr><td>Measurement Set</td>
-                      <td>Measure ACI_INFBLO_1: true</td></tr>
-                  <tr><td></td>
-                      <td>Measure ACI_ONCDIR_1: true</td></tr>
-                  <tr><td></td>
-                      <td>Measure ACI_EP_1: 100 out of 100</td></tr>
-                  <tr><td></td>
-                      <td>Measure ACI_PPHI_1: true</td></tr>
-                  <tr><td></td>
-                      <td>Measure ACI_PEA_1: 50 out of 100</td></tr>
-                  <tr><td></td>
-                      <td>Measure ACI_HIE_1: 10 out of 100</td></tr>
-                  <tr><td></td>
-                      <td>Measure ACI_HIE_2: 20 out of 100</td></tr>
-                </tbody>
-              </table>
-              <button className="usa-button inline-api-example__button" onClick={this.createMeasurementSet}>Create Measurement Set</button>
-            </div>}/>
-          <p>The request payload on the right can be harder to read, but it contains all of the info above exactly as it's sent through the API. Since we're able to create a complete and scorable submission in one request, it's common to take this approach instead of creating an empty submission and adding performance data later as we did in the first tutorial.</p>
-          <p>Also, we're using a different TIN here - if we wanted to add ACI measurements to an existing submission instead of creating a new one, we would have to make a PUT (full record update) or PATCH (partial record update) request and specify the submission <code>ID</code>. Each unique combination of TIN, NPI, program name, and entity gets one submission record per performance year.</p>
-          <button className="usa-button api-example-button" onClick={this.createSubmission}>Create Submission</button>
-          <p>A <code>201 Created</code> - great. We can get the score next:</p>
-          <h2 id="aci-scoring"><a className="tutorial-header-link" href="#aci-scoring">ACI Scoring</a></h2>
-          <p>describe ACI scoring</p>
+            params={
+              <tbody>
+                <tr><td>Program Name</td>
+                    <td>MIPS</td></tr>
+                <tr><td>Entity</td>
+                    <td>Individual</td></tr>
+                <tr><td>Taxpayer Identification Number</td>
+                    <td>000456789</td></tr>
+                <tr><td>National Provider Identifier</td>
+                    <td>9876543210</td></tr>
+                <tr><td>Performance Year</td>
+                    <td>2016</td></tr>
+                <tr><td className="nested-once">Measurement Set</td></tr>
+                <tr><td className="nested-twice">Measure <code>ACI_INFBLO_1</code></td>
+                    <td><code>true</code></td></tr>
+                <tr><td className="nested-twice">Measure <code>ACI_ONCDIR_1</code></td>
+                    <td><code>true</code></td></tr>
+                <tr><td className="nested-twice">Measure <code>ACI_EP_1</code></td>
+                    <td>100 out of 100</td></tr>
+                <tr><td className="nested-twice">Measure <code>ACI_PPHI_1</code></td>
+                    <td><code>true</code></td></tr>
+                <tr><td className="nested-twice">Measure <code>ACI_PEA_1</code></td>
+                    <td>50 out of 100</td></tr>
+                <tr><td className="nested-twice">Measure <code>ACI_HIE_1</code></td>
+                    <td>10 out of 100</td></tr>
+                <tr><td className="nested-twice">Measure <code>ACI_HIE_2</code></td>
+                    <td>20 out of 100</td></tr>
+              </tbody>
+            }
+            button={
+              <button
+                className="usa-button"
+                data-hash="#submitting-with-performance-data"
+                onClick={this.showResponseOfStep}>
+                Create Submission
+              </button>
+            }/>
+          <p>Something unexpected: a <code>422 Unprocessable Entity</code> response code. This indicates that the syntax of the request was correct, but the semantics were problematic. The response body includes more specific information: <code>DuplicateEntryError</code>. We've tried to create a duplicate submission - earlier we noted that each taxpayer/provider ID combination can have one submission per year. The <code>POST</code> API request we just sent uses the same identifiers as we did in our first tutorial, but CMS already has a submission on record for this individual.</p>
+          <p>There are a variety of reasons why this collision might happen: it's plausible that we (or someone else) has tried to <code>POST</code> this individual's performance data before, or someone made a typo and used our TIN by accident. Either way, we asked the API to <em>create</em> a record where one already exists. Since the API (and CMS) can't assume what the correct course of action is to take for this problematic API request, the messaging in the response is handy for immediately showing us something went wrong, and what specifically.</p>
+          <p>If we wanted to <em>update</em> the existing submission we could use a <code>PUT</code> (full record update) or <code>PATCH</code> (partial record update) request, but since we're trying to show how we can create a new submission with measurement data embedded, let's use a different TIN and try again.</p>
+          <InlineApiExample
+            verb="POST"
+            url="/v1/submissions"
+            params={
+              <tbody>
+                <tr><td>Program Name</td>
+                    <td>MIPS</td></tr>
+                <tr><td>Entity</td>
+                    <td>Individual</td></tr>
+                <tr><td>Taxpayer Identification Number</td>
+                    <td>000345678</td></tr>
+                <tr><td>National Provider Identifier</td>
+                    <td>9876543210</td></tr>
+                <tr><td>Performance Year</td>
+                    <td>2016</td></tr>
+                <tr><td className="nested-once">Measurement Set</td></tr>
+                <tr><td className="nested-twice">Measure <code>ACI_INFBLO_1</code></td>
+                    <td><code>true</code></td></tr>
+                <tr><td className="nested-twice">Measure <code>ACI_ONCDIR_1</code></td>
+                    <td><code>true</code></td></tr>
+                <tr><td className="nested-twice">Measure <code>ACI_EP_1</code></td>
+                    <td>100 out of 100</td></tr>
+                <tr><td className="nested-twice">Measure <code>ACI_PPHI_1</code></td>
+                    <td><code>true</code></td></tr>
+                <tr><td className="nested-twice">Measure <code>ACI_PEA_1</code></td>
+                    <td>50 out of 100</td></tr>
+                <tr><td className="nested-twice">Measure <code>ACI_HIE_1</code></td>
+                    <td>10 out of 100</td></tr>
+                <tr><td className="nested-twice">Measure <code>ACI_HIE_2</code></td>
+                    <td>20 out of 100</td></tr>
+              </tbody>
+            }
+            button={
+              <button
+                className="usa-button"
+                data-hash="#submitting-with-performance-data-pt2"
+                onClick={this.showResponseOfStep}>
+                Create Submission
+              </button>
+            }/>
+          <p>A <code>201 Created</code> - great. We'll look at ACI scoring next:</p>
+          <button
+            className="usa-button"
+            data-hash="#aci-scoring"
+            onClick={this.showStartOfStep}>
+            Next step
+          </button>
+          <h2 id="aci-scoring">
+            <a
+              className="tutorial-header-link"
+              href="#aci-scoring"
+              onClick={this.showStartOfStep}>
+              ACI Scoring
+            </a>
+          </h2>
+          <p>It's possible that a different measurement set added to this submission could score differently, for example.</p>
+          <p>For submissions with more performance data, this breakdown gives us visibility
+           how the individual measurements contribute to the aggregate. The additional visibility helps because sometimes a submission can be valid, but incomplete for scoring purposes.</p>
+         <p>The scoring is more complicated for ACI measures, so we'll spend more time going through that.</p>
           <InlineApiExample
             verb="GET"
             url="/v1/submissions/:id/score"/>

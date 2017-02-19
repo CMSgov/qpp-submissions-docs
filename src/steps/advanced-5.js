@@ -3,7 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 const cssClass = "technical-details-pane";
 
-class Advanced3 extends React.PureComponent {
+class Advanced5 extends React.PureComponent {
   render() {
     return (
       <Tabs className={cssClass} onSelect={this.props.onSelect} selectedIndex={this.props.tabIndex}>
@@ -24,7 +24,7 @@ class Advanced3 extends React.PureComponent {
       "name": "final",
       "title": "Final Score",
       "detail": "",
-      "value": 14.5,
+      "value": 15.5,
       "parts": [
         {
           "name": "ia",
@@ -36,15 +36,15 @@ class Advanced3 extends React.PureComponent {
           "name": "aci",
           "title": "ACI component of final score",
           "detail": "Scoring based on measurement set \"b702d4ee-5a75-4e10-9aaf-3539123956e7\" from source \"provider\" with weight of 25%.",
-          "value": 14.5,
+          "value": 15.5,
           "original": {
             "name": "aci",
             "title": "Advancing Care Information Score",
-            "value": 58,
+            "value": 62,
             "parts": [
               {
                 "name": "aci_base",
-                "value": 58,
+                "value": 62,
                 "detail": "",
                 "parts": [
                   {
@@ -53,7 +53,7 @@ class Advanced3 extends React.PureComponent {
                   },
                   {
                     "name": "ACI_HIE_1",
-                    "value": 1
+                    "value": 5
                   },
                   {
                     "name": "ACI_HIE_2",
@@ -98,4 +98,4 @@ class Advanced3 extends React.PureComponent {
   }
 }
 
-export default Advanced3;
+export default Advanced5;
