@@ -46,7 +46,7 @@ class AdvancedTutorial extends React.PureComponent {
       <div className="usa-grid a-bit-wider">
         <div className="usa-width-one-half">
           <h1>Advanced API Tutorial</h1>
-          <p>In the <a href="/qpp-submissions-docs/tutorial">first tutorial</a> we covered how to create a submission, add a measurement set with IA category performance data, and retrieve the score in three different API requests. This time we're going to look at creating a submission with embedded ACI performance data in one request, go through ACI scoring (which is a little more complicated than IA), and see how to update a measure with new info (and run into a problem along the way). All of these examples serve to illustrate how the Submissions API can make it easier to react to and fix issues that arise.</p>
+          <p>In the <a href="/qpp-submissions-docs/tutorial">first tutorial</a> we covered how to create a submission, add a measurement set with IA category performance data, and retrieve the score in three different API requests. This time we're going to build on the previous tutorial and look at creating a submission with embedded ACI performance data in one request, go through ACI scoring and how measures compose a score, and see how to update a measure with new info (all while running into a problem along the way). All of these examples serve to illustrate how the Submissions API can make it easier to react to and fix issues that arise.</p>
           <h2 id="submitting-with-performance-data">
             <a
               className="tutorial-header-link"
@@ -141,7 +141,7 @@ class AdvancedTutorial extends React.PureComponent {
                 Create Submission
               </button>
             }/>
-          <p>A <code>201 Created</code> - great. We'll look at ACI scoring next:</p>
+          <p>A <code>201 Created</code> - great. We'll look at what ACI scores look like next:</p>
           <button
             className="usa-button"
             data-hash="#aci-scoring"
@@ -162,32 +162,91 @@ class AdvancedTutorial extends React.PureComponent {
          <p>The scoring is more complicated for ACI measures, so we'll spend more time going through that.</p>
           <InlineApiExample
             verb="GET"
-            url="/v1/submissions/:id/score"/>
-          <button className="usa-button api-example-button" onClick={this.getInitialSubmissionScore}>Get Submission Score</button>
-          <p>explain ACI score</p>
-          <h2 id="updating-a-measure"><a className="tutorial-header-link" href="#updating-a-measure">Updating a measure</a></h2>
-          <p>So far we've only been creating new submission and measurement set records. Since performance data can change over time, we'll need to update CMS. Let's update an existing measure with new performance data! In addition to a measurement <code>ID</code>, we need to provide the measurement set <code>ID</code> and the measure <code>ID</code>. For the performance data itself, let's update the <code>ACI_HIE_1</code> proportion from 10 out of 100 to 50 out of 100.</p>
+            url="/v1/submissions/:id/score"
+            button={
+              <button
+                className="usa-button"
+                data-hash="#aci-scoring"
+                onClick={this.showResponseOfStep}>
+                Get Submission Score
+              </button>
+            }/>
+          <p>The ACI component of our score shows many parts this time. There's a lot of numbers here, but let's decode how we arrive at the total:</p>
+          <p>The <code>aci_base</code> starts at 50 because we've attested to the two required measures (<code>ACI_INFBLO_1</code>, <code>ACI_ONCDIR_1</code>).</p>
+          <p>Three optional measures listed (<code>ACI_PEA_1</code>, <code>ACI_HIE_1</code>, <code>ACI_HIE_2</code>) give a possible 10 points each, multiplied by the proportion attested to, leading to partial contributions of 5, 2, and 1 points respectively.</p>
+          <p>Two measures we included have 0 weighting (<code>ACI_EP_1</code>, <code>ACI_PPHI_1</code>), so they are excluded from scoring.</p>
+          <p>We didn't attest to any measures that qualify for ACI or CEHRT bonuses, so those parts do not contribute to our score. These five measures give us our base ACI score of 58. With ACI contributing 25% of the total score as described in the response, our overall score is 14.5 (25% of 58).</p>
+          <p>As we can see, ACI scoring requires an understanding of what measures are required and how they're weighted. However, if we become familiar with these measures, scoring via the API immediately gives us a clear picture of our score and what parts contribute - this is a big advantage in making sure we get the score we understand and expect.</p>
+          <p>What if we're later in the year and can attest to a greater proportion for one of the measures? We can easily do that in the API as well!</p>
+          <button
+            className="usa-button"
+            data-hash="#updating-a-measure"
+            onClick={this.showStartOfStep}>
+            Next step
+          </button>
+          <h2 id="updating-a-measure">
+            <a
+              className="tutorial-header-link"
+              href="#updating-a-measure"
+              onClick={this.showStartOfStep}>
+              Updating a measure
+            </a>
+          </h2>
+          <p>So far we've only been creating new submission and measurement set records. Since performance data can change over time, we'll need to update CMS. Let's update an existing measure with new performance data! In addition to a measurement <code>ID</code>, we need to provide the measurement set <code>ID</code> and the measure <code>ID</code>. For the performance data itself, let's update the <code>ACI_HIE_1</code> proportion from 10 out of 100 to 50 out of 100 and see how that affects our score.</p>
           <InlineApiExample
             verb="PATCH"
             url="/v1/measurements/:id"
-            body={`{
-  "id": "a3cb7c78-2380-4573-b726-8c8e3b70529a",
-  "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-  "measureId": "ACI_HIE_1",
-  "value": {
-    "numerator": 50,
-    "denominator": 100
-  }
-}`}/>
-          <button className="usa-button api-example-button" onClick={this.updateMeasurement}>Update Measurement</button>
+            params={
+              <tbody>
+                <tr><td>Measurement ID</td>
+                    <td>a3cb7c78-2380-4573-b726-8c8e3b70529a</td></tr>
+                <tr><td>Measurement Set ID</td>
+                    <td>b702d4ee-5a75-4e10-9aaf-3539123956e7</td></tr>
+                <tr><td>Measure ID</td>
+                    <td><code>ACI_HIE_1</code></td></tr>
+                <tr><td>Proportion</td>
+                    <td>50 out of 100</td></tr>
+              </tbody>
+            }
+            button={
+              <button
+                className="usa-button"
+                data-hash="#updating-a-measure"
+                onClick={this.showResponseOfStep}>
+                Update Measurement
+              </button>
+            }/>
           <p>A <code>200 OK</code> means we've updated the measurement in question. We can now fetch the latest score:</p>
-          <h2 id="comparing-scoring-changes"><a className="tutorial-header-link" href="#comparing-scoring-changes">Comparing scoring changes</a></h2>
-          <p>explain how scores can change</p>
+          <button
+            className="usa-button"
+            data-hash="#comparing-scoring-changes"
+            onClick={this.showStartOfStep}>
+            Next step
+          </button>
+          <h2 id="comparing-scoring-changes">
+            <a
+              className="tutorial-header-link"
+              href="#comparing-scoring-changes"
+              onClick={this.showStartOfStep}>
+              Comparing scoring changes
+            </a>
+          </h2>
           <InlineApiExample
             verb="GET"
-            url="/v1/submissions/:id/score"/>
-          <button className="usa-button api-example-button" onClick={this.getFinalSubmissionScore}>Get Submission Score</button>
-          <p>A few things have changed - the final score increased to 15.5. We know this change is due to our PATCH by looking at the score component contributed by <code>ACI_HIE_1</code> - it increased from 1 to 5. The ACI base score went up from 58 to 62, and with the ACI component being 25% of the score our final score increased by 1.</p>
+            url="/v1/submissions/:id/score"
+            button={
+              <button
+                className="usa-button"
+                data-hash="#comparing-scoring-changes"
+                onClick={this.showResponseOfStep}>
+                Get Submission Score
+              </button>
+            }/>
+          <p>A few things have changed - the final score increased to 15.5. We know this change is due to our PATCH by looking at the score component contributed by <code>ACI_HIE_1</code> - it increased from 1 to 5, since the proportion increased from 10 to 50 out of 100 with ten possible points from this measure. The ACI base score went up from 58 to 62, and with the ACI component being 25% of the score our final score increased by 1.</p>
+          <p>It's important to note that we've been working in one measurement set for this tutorial. One of the reasons that performance data for measures is organized into measurement sets is that multiple sources can add their own measurement sets into one submission - measure scores that might overlap the ones we provide, or differ in their attested values. In the case of multiple measurement sets, the Submissions API will calculate scores for each measurement set and pick the highest to present as the final score - that's why the API identifies that the scoring for the ACI component is based on a specific measurement set ID.</p>
+          <p>We've done a lot of work in 5 API requests! In this advanced tutorial, we created a submission with ACI performance attestations, scored it, and updated a piece of one measurement to see how the final score reacts. That means we've successfully used each API endpoint (submission, measurement set, measurement) and understood what the responses tell us, adjusting our approach as needed. Again, all of this work is done on our terms, at our pace - no months-long round trip required.</p>
+          <h3>Next steps</h3>
+          <p>While we've used each API endpoint, we're far from having used every kind of API action. These tutorials have used <code>POST</code>, <code>PATCH</code>, and <code>GET</code> - there are also <code>PUT</code> and <code>DELETE</code>. The API requests we've woven together show us an example of what we can accomplish, but there's a lot more we can do - check out our interactive <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">API reference</a> for an indepth technical look at what the API provides.</p>
         </div>
         <div className="usa-width-one-half">
           <TechnicalDetailsPane
