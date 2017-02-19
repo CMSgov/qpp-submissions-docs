@@ -43,6 +43,13 @@ class BasicTutorial extends React.PureComponent {
 
   render() {
     return (
+      <div>
+      <div className="usa-alert usa-alert-info narrow-screen-warning">
+        <div className="usa-alert-body">
+          <h3 className="usa-alert-heading">Example code on mobile</h3>
+          <p className="usa-alert-text">Looks like the screen is too narrow to show you the API payloads alongside the tutorial. As you see references to code on the right, you'll be able to find it all the way at the bottom. Clicking the buttons to progress through the tutorial will update the code!</p>
+        </div>
+      </div>
       <div className="usa-grid a-bit-wider">
         <div className="usa-width-one-half">
           <h1>API Tutorial</h1>
@@ -175,6 +182,7 @@ class BasicTutorial extends React.PureComponent {
             tabIndex={this.state.tabIndex}
             selectTab={this.selectTab}/>
         </div>
+      </div>
       </div>
     );
   }
