@@ -7,6 +7,10 @@ h2:hover a.tutorial-header-link {
   text-decoration: underline;
 }
 
+.a-bit-wider p:last-child {
+  margin-bottom: 5em;
+}
+
 // Hacks to widen the columns a little
 .usa-grid.a-bit-wider,
 {
