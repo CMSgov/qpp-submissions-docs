@@ -37,7 +37,7 @@ class App extends React.PureComponent {
           <h2>Explore the full API with our interactive reference.</h2>
           <p className="usa-font-lead">Want more detail? Check out our <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">interactive API reference</a> for an exhaustive list of endpoints with example request and response payloads. Test out what else you can do!</p>
           <h2>Understand and integrate with measures data.</h2>
-          <p className="usa-font-lead">Full Improvement Activity and Advancing Care Information measures data is available as an <a href="https://github.com/CMSgov/qpp-measures-data">NPM module</a>. We also provide a JSON schema to explain the structure of ACI, IA, and Quality measures data.</p>
+          <p className="usa-font-lead">A complete list of ACI (Advancing Care Information) and IA (Improvement Activity) measures is available in the <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data repository</a>. Each measure contains a description and additional information around attestation and scoring requirements. Additionally, you can integrate with the qpp-measures-data NPM module to import measures data into your own code base and work with it programatically.</p>
           <h3>All done?</h3>
           <p>Return to the <a href="https://qpp.cms.gov/resources/developers">QPP Developer Resources</a>.</p>
         </div>
