@@ -38,7 +38,7 @@ class Advanced5 extends React.PureComponent {
         {
           "name": "aci",
           "title": "ACI component of final score",
-          "detail": "Scoring based on measurement set "b702d4ee-5a75-4e10-9aaf-3539123956e7" from source "provider" with weight of 25%.",
+          "detail": "Scoring based on measurement set \"b702d4ee-5a75-4e10-9aaf-3539123956e7\" from source \"provider\" with weight of 25%.",
           "value": 15.5,
           "original": {
             "name": "aci",
