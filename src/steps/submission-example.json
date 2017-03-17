@@ -1,10 +1,34 @@
 {
   "programName": "mips",
   "entityType": "individual",
-  "taxpayerIdentificationNumber": "000456789",
+  "taxpayerIdentificationNumber": "123456789",
   "nationalProviderIdentifier": "9876543210",
   "performanceYear": 2016,
   "measurementSets": [
+    {
+      "category": "ia",
+      "source": "provider",
+      "performanceStart": "2016-01-01",
+      "performanceEnd": "2016-06-01",
+      "measurements": [
+          {
+            "measureId": "IA_EPA_4",
+            "value": true
+          },
+          {
+            "measureId": "IA_PSPA_4",
+            "value": true
+          },
+          {
+            "measureId": "IA_PSPA_5",
+            "value": true
+          },
+          {
+            "measureId": "IA_PM_2",
+            "value": true
+          }
+      ]
+    },
     {
       "category": "aci",
       "source": "provider",
@@ -22,8 +46,15 @@
         {
           "measureId": "ACI_EP_1",
           "value": {
-            "numerator": 100,
-            "denominator": 100
+            "numerator": 15,
+            "denominator": 20
+          }
+        },
+        {
+          "measureId": "ACI_PEA_1",
+          "value": {
+            "numerator": 11,
+            "denominator": 13
           }
         },
         {
@@ -31,24 +62,31 @@
           "value": true
         },
         {
-          "measureId": "ACI_PEA_1",
-          "value": {
-            "numerator": 50,
-            "denominator": 100
-          }
-        },
-        {
           "measureId": "ACI_HIE_1",
           "value": {
-            "numerator": 10,
-            "denominator": 100
+            "numerator": 11,
+            "denominator": 13
           }
         },
         {
           "measureId": "ACI_HIE_2",
           "value": {
-            "numerator": 20,
-            "denominator": 100
+            "numerator": 9,
+            "denominator": 13
+          }
+        },
+        {
+          "measureId": "ACI_HIE_3",
+          "value": {
+            "numerator": 1,
+            "denominator": 2
+          }
+        },
+        {
+          "measureId": "ACI_CCTPE_2",
+          "value": {
+            "numerator": 1,
+            "denominator": 2
           }
         }
       ]
