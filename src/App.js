@@ -25,6 +25,8 @@ class App extends React.PureComponent {
       component = <BasicTutorial hash={hash}/>;
     } else if (path === 'advanced-tutorial') {
       component = <AdvancedTutorial hash={hash}/>
+    } else if (path === 'examples') {
+      component = <ExampleDocs hash={hash}/>
     } else {
       component = <section className="usa-section">
         <div className="usa-grid">
@@ -45,7 +47,7 @@ class App extends React.PureComponent {
           <p className="usa-font-lead">A complete list of ACI (Advancing Care Information) and IA (Improvement Activity) measures is available in the <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data repository</a>. Each measure contains a description and additional information around attestation and scoring requirements. Additionally, you can integrate with the qpp-measures-data NPM module to import measures data into your own code base and work with it programatically.</p>
 
           <h2>View or download example submissions</h2>
-          <ExampleDocs />
+          <a className="usa-button usa-button-big" href="/qpp-submissions-docs/examples">See examples</a>
 
           <h3>All done?</h3>
           <p>Return to the <a href="https://qpp.cms.gov/resources/developers">QPP Developer Resources</a>.</p>
