@@ -8,6 +8,7 @@ import './App.css';
 import Header from './header';
 import BasicTutorial from './basic-tutorial';
 import AdvancedTutorial from './advanced-tutorial';
+import ExampleDocs from './example-docs';
 
 class App extends React.PureComponent {
   render() {
@@ -28,16 +29,24 @@ class App extends React.PureComponent {
       component = <section className="usa-section">
         <div className="usa-grid">
           <h1>Submissions API</h1>
+
           <h2>Easily submit and score performance data.</h2>
           <p className="usa-font-lead">The Submissions API is a conversational interface to easily submit and score performance data with CMS. Learn more about what that looks like and how to use the API by walking through a friendly example.</p>
           <a className="usa-button usa-button-big" href="/qpp-submissions-docs/tutorial">Start the tutorial</a>
+
           <h2>Dig into scoring and quickly react to errors.</h2>
           <p className="usa-font-lead">Demystify how the aggregate score for a complex performance category like ACI is calculated. Updating and correcting performance data is also easy - avoid losing time by solving issues as they arise, rather than reacting months later.</p>
           <a className="usa-button usa-button-big" href="/qpp-submissions-docs/advanced-tutorial">Start the advanced tutorial</a>
+
           <h2>Explore the full API with our interactive reference.</h2>
           <p className="usa-font-lead">Want more detail? Check out our <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">interactive API reference</a> for an exhaustive list of endpoints with example request and response payloads. Test out what else you can do!</p>
+
           <h2>Understand and integrate with measures data.</h2>
           <p className="usa-font-lead">A complete list of ACI (Advancing Care Information) and IA (Improvement Activity) measures is available in the <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data repository</a>. Each measure contains a description and additional information around attestation and scoring requirements. Additionally, you can integrate with the qpp-measures-data NPM module to import measures data into your own code base and work with it programatically.</p>
+
+          <h2>View or download example submissions</h2>
+          <ExampleDocs />
+
           <h3>All done?</h3>
           <p>Return to the <a href="https://qpp.cms.gov/resources/developers">QPP Developer Resources</a>.</p>
         </div>
