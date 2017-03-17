@@ -1,0 +1,17 @@
+@media screen and (min-width: 600px) {
+  .technical-details-pane-examples.ReactTabs {
+    position: static;
+  }
+
+  .technical-details-pane .ReactTabs__TabList {
+    position: static;
+  }
+
+  .technical-details-pane .ReactTabs__TabList {
+    max-width: 100%;
+  }  
+}
+
+.technical-details-pane-examples button {
+  margin-top: 0em;
+}

@@ -25,7 +25,10 @@
     "react-dom": "15.4.2",
     "react-scripts": "0.9.0",
     "react-tabs": "0.8.2",
-    "uswds": "0.14.0"
+    "uswds": "0.14.0",
+    "pretty-data": "^0.40.0",
+    "react-copy-to-clipboard": "^4.2.3",
+    "react-file-download": "^0.3.2"    
   },
   "eslintConfig": {
     "extends": "react-app"
