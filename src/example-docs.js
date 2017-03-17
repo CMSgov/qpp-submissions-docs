@@ -1,18 +1,16 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import fileDownload from 'react-file-download';
-
-import submissionJsonExample from './steps/submission-example.json';
-const submissionJsonExampleString = JSON.stringify(submissionJsonExample, null, 4);
-
-import { pd } from 'pretty-data';
-import submissionXmlExample from './steps/submission-example-xml.js';
-const submissionXmlExampleString = pd.xml(submissionXmlExample);
-
 import ReactDOM from 'react-dom';
 import CopyToClipboard from 'react-copy-to-clipboard';
+import { pd } from 'pretty-data';
+import './technical-details-pane-examples.css'
+import submissionJsonExample from './steps/submission-example.json';
+import submissionXmlExample from './steps/submission-example-xml.js';
 
-const cssClass = "technical-details-pane";
+const submissionJsonExampleString = JSON.stringify(submissionJsonExample, null, 4);
+const submissionXmlExampleString = pd.xml(submissionXmlExample);
+const cssClasses = "technical-details-pane technical-details-pane-examples";
 
 class ExampleDocs extends React.PureComponent {
   render() {
@@ -32,7 +30,7 @@ class ExampleDocs extends React.PureComponent {
     return (
       <div className="usa-grid a-bit-wider">
         <Tabs
-          className={cssClass}
+          className={cssClasses}
           onSelect={selectTab} tabIndex={index}>
           <TabList>
             <Tab>Sample JSON</Tab>

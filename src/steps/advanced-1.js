@@ -1,16 +1,15 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-
 import submissionExample from './submission-example.json';
-const submissionExampleString = JSON.stringify(submissionExample, null, 4);
 
-const cssClasses = "technical-details-pane technical-details-pane-tutorial";
+const submissionExampleString = JSON.stringify(submissionExample, null, 4);
+const cssClass = "technical-details-pane";
 
 class Advanced1 extends React.PureComponent {
   render() {
     return (
       <Tabs
-        className={cssClasses}
+        className={cssClass}
         onSelect={this.props.onSelect}
         selectedIndex={this.props.tabIndex}>
         <TabList>

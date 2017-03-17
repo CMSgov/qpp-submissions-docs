@@ -1,5 +1,6 @@
 @media screen and (min-width: 600px) {
   .technical-details-pane.ReactTabs {
+    position: fixed;
     top: 60px;
     bottom: 0;
     width: 100%;
@@ -7,8 +8,13 @@
   }
 
   .technical-details-pane .ReactTabs__TabList {
+    position: fixed;
     top: 60px;
     width: 100%;
+  }
+
+  .technical-details-pane .ReactTabs__TabList {
+    max-width: 50%;
   }
 
   .narrow-screen-warning {
