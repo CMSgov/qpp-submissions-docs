@@ -7,7 +7,7 @@
   "measurementSets": [
     {
       "category": "ia",
-      "source": "provider",
+      "submissionMethod": "cmsWebInterface",
       "performanceStart": "2016-01-01",
       "performanceEnd": "2016-06-01",
       "measurements": [
@@ -31,7 +31,7 @@
     },
     {
       "category": "aci",
-      "source": "provider",
+      "submissionMethod": "cmsWebInterface",
       "performanceStart": "2016-01-01",
       "performanceEnd": "2016-06-01",
       "measurements": [
