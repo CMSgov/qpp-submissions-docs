@@ -12,8 +12,15 @@ const submissionXmlExampleString = pd.xml(submissionXmlExample);
 import ReactDOM from 'react-dom';
 import CopyToClipboard from 'react-copy-to-clipboard';
 
+const cssClass = "technical-details-pane";
+
 class ExampleDocs extends React.PureComponent {
   render() {
+    Tabs.setUseDefaultStyles(false);
+
+    const selectTab = this.props.selectTab;
+    const index = this.props.tabIndex;
+
     function downloadJsonExample(e) {
       e.preventDefault();
       fileDownload(submissionJsonExampleString, 'submission-example.json');
@@ -24,8 +31,8 @@ class ExampleDocs extends React.PureComponent {
     }
     return (
       <Tabs
-        onSelect={this.props.onSelect}
-        selectedIndex={this.props.tabIndex}>
+        className={cssClass}
+        onSelect={selectTab} tabIndex={index}>
         <TabList>
           <Tab>Sample JSON</Tab>
           <Tab>Sample XML</Tab>
