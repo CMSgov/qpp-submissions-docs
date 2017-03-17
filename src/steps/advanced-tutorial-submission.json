@@ -1,0 +1,57 @@
+{
+  "programName": "mips",
+  "entityType": "individual",
+  "taxpayerIdentificationNumber": "000456789",
+  "nationalProviderIdentifier": "9876543210",
+  "performanceYear": 2016,
+  "measurementSets": [
+    {
+      "category": "aci",
+      "submissionMethod": "cmsWebInterface",
+      "performanceStart": "2016-01-01",
+      "performanceEnd": "2016-06-01",
+      "measurements": [
+        {
+          "measureId": "ACI_INFBLO_1",
+          "value": true
+        },
+        {
+          "measureId": "ACI_ONCDIR_1",
+          "value": true
+        },
+        {
+          "measureId": "ACI_EP_1",
+          "value": {
+            "numerator": 100,
+            "denominator": 100
+          }
+        },
+        {
+          "measureId": "ACI_PPHI_1",
+          "value": true
+        },
+        {
+          "measureId": "ACI_PEA_1",
+          "value": {
+            "numerator": 50,
+            "denominator": 100
+          }
+        },
+        {
+          "measureId": "ACI_HIE_1",
+          "value": {
+            "numerator": 10,
+            "denominator": 100
+          }
+        },
+        {
+          "measureId": "ACI_HIE_2",
+          "value": {
+            "numerator": 20,
+            "denominator": 100
+          }
+        }
+      ]
+    }
+  ]
+}

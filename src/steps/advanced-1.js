@@ -1,8 +1,8 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import submissionExample from './submission-example.json';
+import submissionObject from './advanced-tutorial-submission.json';
 
-const submissionExampleString = JSON.stringify(submissionExample, null, 4);
+const submissionJsonString = JSON.stringify(submissionObject, null, 4);
 const cssClass = "technical-details-pane";
 
 class Advanced1 extends React.PureComponent {
@@ -17,7 +17,7 @@ class Advanced1 extends React.PureComponent {
           <Tab>Response</Tab>
         </TabList>
         <TabPanel>
-          <pre>{`${submissionExampleString}`}</pre>
+          <pre>{`${submissionJsonString}`}</pre>
         </TabPanel>
         <TabPanel>
           <p>Response code:</p>
