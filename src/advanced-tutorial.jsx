@@ -44,17 +44,17 @@ class AdvancedTutorial extends React.PureComponent {
   render() {
     return (
       <div>
-      <div className="usa-alert usa-alert-info narrow-screen-warning">
-        <div className="usa-alert-body">
-          <h3 className="usa-alert-heading">Example code on mobile</h3>
-          <p className="usa-alert-text">Looks like the screen is too narrow to show you the API payloads alongside the tutorial. As you see references to code on the right, you'll be able to find it all the way at the bottom. Clicking the buttons to progress through the tutorial will update the code!</p>
+      <div className="ds-c-alert ds-c-alert--info narrow-screen-warning">
+        <div className="ds-c-alert--body">
+          <h3 className="ds-c-alert--heading">Example code on mobile</h3>
+          <p className="ds-c-alert--text">Looks like the screen is too narrow to show you the API payloads alongside the tutorial. As you see references to code on the right, you'll be able to find it all the way at the bottom. Clicking the buttons to progress through the tutorial will update the code!</p>
         </div>
       </div>
-      <div className="usa-grid a-bit-wider">
-        <div className="usa-width-one-half">
-          <h1>Advanced API Tutorial</h1>
+      <div className="temp-grid-container">
+        <div className="temp-grid-half">
+          <h1 className="ds-h1">Advanced API Tutorial</h1>
           <p>In the <a href="/qpp-submissions-docs/tutorial">first tutorial</a> we covered how to create a submission, add a measurement set with IA category performance data, and retrieve the score in three different API requests. This time we're going to build on the previous tutorial and look at creating a submission with embedded ACI performance data in one request, go through ACI scoring and how measures compose a score, and see how to update a measure with new info (all while running into a problem along the way). All of these examples serve to illustrate how the Submissions API can make it easier to react to and fix issues that arise.</p>
-          <h2 id="submitting-with-performance-data">
+          <h2 className="ds-h2" id="submitting-with-performance-data">
             <a
               className="tutorial-header-link"
               href="#submitting-with-performance-data"
@@ -99,7 +99,7 @@ class AdvancedTutorial extends React.PureComponent {
             }
             button={
               <button
-                className="usa-button"
+                className="ds-c-button ds-c-button--primary"
                 data-hash="#submitting-with-performance-data"
                 onClick={this.showResponseOfStep}>
                 Create Submission
@@ -142,7 +142,7 @@ class AdvancedTutorial extends React.PureComponent {
             }
             button={
               <button
-                className="usa-button"
+                className="ds-c-button ds-c-button--primary"
                 data-hash="#submitting-with-performance-data-pt2"
                 onClick={this.showResponseOfStep}>
                 Create Submission
@@ -150,7 +150,7 @@ class AdvancedTutorial extends React.PureComponent {
             }/>
           <p>A <code>201 Created</code> - great. We'll look at what ACI scores look like next:</p>
           <button
-            className="usa-button"
+            className="ds-c-button ds-c-button--primary"
             data-hash="#aci-scoring"
             onClick={this.showStartOfStep}>
             Next step
@@ -172,7 +172,7 @@ class AdvancedTutorial extends React.PureComponent {
             url="/v1/submissions/:id/score"
             button={
               <button
-                className="usa-button"
+                className="ds-c-button ds-c-button--primary"
                 data-hash="#aci-scoring"
                 onClick={this.showResponseOfStep}>
                 Get Submission Score
@@ -186,7 +186,7 @@ class AdvancedTutorial extends React.PureComponent {
           <p>As we can see, ACI scoring requires an understanding of what measures are required and how they're weighted. However, if we become familiar with these measures, scoring via the API immediately gives us a clear picture of our score and what parts contribute - this is a big advantage in making sure we get the score we understand and expect.</p>
           <p>What if we're later in the year and can attest to a greater proportion for one of the measures? We can easily do that in the API as well!</p>
           <button
-            className="usa-button"
+            className="ds-c-button ds-c-button--primary"
             data-hash="#updating-a-measure"
             onClick={this.showStartOfStep}>
             Next step
@@ -217,7 +217,7 @@ class AdvancedTutorial extends React.PureComponent {
             }
             button={
               <button
-                className="usa-button"
+                className="ds-c-button ds-c-button--primary"
                 data-hash="#updating-a-measure"
                 onClick={this.showResponseOfStep}>
                 Update Measurement
@@ -225,7 +225,7 @@ class AdvancedTutorial extends React.PureComponent {
             }/>
           <p>A <code>200 OK</code> means we've updated the measurement in question. We can now fetch the latest score:</p>
           <button
-            className="usa-button"
+            className="ds-c-button ds-c-button--primary"
             data-hash="#comparing-scoring-changes"
             onClick={this.showStartOfStep}>
             Next step
@@ -243,7 +243,7 @@ class AdvancedTutorial extends React.PureComponent {
             url="/v1/submissions/:id/score"
             button={
               <button
-                className="usa-button"
+                className="ds-c-button ds-c-button--primary"
                 data-hash="#comparing-scoring-changes"
                 onClick={this.showResponseOfStep}>
                 Get Submission Score
@@ -256,7 +256,7 @@ class AdvancedTutorial extends React.PureComponent {
           <p>While we've used each API endpoint, we're far from having used every kind of API action. These tutorials have used <code>POST</code>, <code>PATCH</code>, and <code>GET</code> - there are also <code>PUT</code> and <code>DELETE</code> for each of the three resources we worked with.</p>
           <p>The tutorials have shown how requests can be strung together to complete complex workflows in minutes rather than months. For more technical detail about these API requests, check out our interactive <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">API reference</a>.</p>
         </div>
-        <div className="usa-width-one-half">
+        <div className="temp-grid-half">
           <TechnicalDetailsPane
             tutorial="advanced"
             hash={this.state.hash}

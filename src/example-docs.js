@@ -36,17 +36,19 @@ class ExampleDocs extends React.PureComponent {
             <Tab>Sample JSON</Tab>
             <Tab>Sample XML</Tab>
           </TabList>
-          <TabPanel>
-            <button onClick={downloadJsonExample}>Download</button>
+          <TabPanel className="ds-base--inverse">
+            <button className="ds-c-button ds-c-button--small ds-u-margin-right--1"
+              onClick={downloadJsonExample}>Download</button>
             <CopyToClipboard text={submissionJsonExampleString}>
-              <button>Copy to clipboard</button>
+              <button className="ds-c-button ds-c-button--small">Copy to clipboard</button>
             </CopyToClipboard>
             <pre>{`${submissionJsonExampleString}`}</pre>
           </TabPanel>
           <TabPanel>
-            <button onClick={downloadXmlExample}>Download</button>
+            <button className="ds-c-button ds-c-button--small ds-u-margin-right--1"
+              onClick={downloadXmlExample}>Download</button>
             <CopyToClipboard text={submissionXmlExampleString}>
-              <button>Copy to clipboard</button>
+              <button className="ds-c-button ds-c-button--small">Copy to clipboard</button>
             </CopyToClipboard>
             <pre>{`${submissionXmlExampleString}`}</pre>
           </TabPanel>
