@@ -33,27 +33,3 @@ h2 a.tutorial-header-link {
 h2:hover a.tutorial-header-link {
   text-decoration: underline;
 }
-
-.a-bit-wider p:last-child {
-  margin-bottom: 5em;
-}
-
-.temp-nav-text {
-  margin: 0 10px;
-}
-.temp-nav-text a {
-  color: black;
-  text-decoration: none;
-}
-
-.temp-grid-container {
-}
-
-.temp-grid-half {
-  width: 50%;
-  float: left;
-}
-
-.temp-grid-half {
-  padding-right: 1em;
-}

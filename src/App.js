@@ -5,6 +5,7 @@ import '../node_modules/uswds/dist/js/uswds.js';
 // import '../node_modules/uswds/dist/css/uswds.css';
 import '../node_modules/@cmsgov/design-system-core/dist/index.css';
 import './App.css';
+import './temp-grid.css';
 import './usa-banner.css';
 
 import Header from './header';
@@ -59,7 +60,7 @@ class App extends React.PureComponent {
     }
 
     const nav = (
-      <div className="temp-nav-text ds-h3">
+      <div className="temp-nav ds-h3">
         <a href="/qpp-submissions-docs" title="Home" aria-label="Home">QPP Submissions API <br/> Developer Documentation</a>
       </div>
     );

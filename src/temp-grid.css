@@ -1,0 +1,20 @@
+.temp-nav {
+  margin: 0 10px;
+}
+.temp-nav a {
+  color: black;
+  text-decoration: none;
+}
+
+.temp-grid-container {
+}
+
+@media screen and (min-width: 600px) {
+  .temp-grid-half {
+    width: 50%;
+    float: left;
+  }
+  .temp-grid-half {
+    padding-right: 1em;
+  }
+}
