@@ -9,8 +9,12 @@ class Header extends React.PureComponent {
         <div className="usa-banner">
           <div className="usa-accordion">
             <header className="usa-banner-header">
-              <div className="usa-grid usa-banner-inner">
-              <img src={favicon} alt="U.S. flag"/>
+              <div className="usa-grid container ds-u-padding-y--1 ds-u-font-size--small">
+              <img src={favicon}
+                alt="U.S. flag"
+                height="16"
+                className="ds-u-margin-right--1 ds-u-valign--middle"
+              />
               <p>An official website of the United States government</p>
               </div>
             </header>

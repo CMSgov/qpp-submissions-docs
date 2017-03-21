@@ -138,21 +138,6 @@
   }
 }
 
-.usa-banner-inner {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
-  max-width: 1040px;
-}
-
-.usa-banner-inner::after {
-  clear: both;
-  content: "";
-  display: block;
-}
-
 @media screen and (min-width: 951px) {
   .usa-banner-inner {
     padding-right: 3rem;
@@ -187,20 +172,6 @@
     margin-top: 2px;
     margin-bottom: 2px;
     display: inline-block;
-  }
-}
-
-.usa-banner-header img {
-  float: left;
-  margin-right: 1rem;
-  margin-top: 1px;
-  width: 2.4rem;
-}
-
-@media screen and (min-width: 481px) {
-  .usa-banner-header img {
-    margin-right: 0.7rem;
-    width: 2rem;
   }
 }
 
