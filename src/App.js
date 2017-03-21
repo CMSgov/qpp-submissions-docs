@@ -59,17 +59,13 @@ class App extends React.PureComponent {
       </section>;
     }
 
-    const nav = (
-      <div className="temp-nav ds-h3">
-        <a href="/qpp-submissions-docs" title="Home" aria-label="Home">QPP Submissions API <br/> Developer Documentation</a>
-      </div>
-    );
-
     return (
       <div>
         <a className="usa-skipnav" href="#main-content">Skip to main content</a>
         <Header />
-        {nav}
+        <div className="temp-nav ds-h3">
+          <a href="/qpp-submissions-docs" title="Home" aria-label="Home">QPP Submissions API <br/> Developer Documentation</a>
+        </div>
         <div className="container">
           {component}
         </div>
