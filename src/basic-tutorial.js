@@ -44,18 +44,18 @@ class BasicTutorial extends React.PureComponent {
   render() {
     return (
       <div>
-      <div className="usa-alert usa-alert-info narrow-screen-warning">
-        <div className="usa-alert-body">
-          <h3 className="usa-alert-heading">Example code on mobile</h3>
-          <p className="usa-alert-text">Looks like the screen is too narrow to show you the API payloads alongside the tutorial. As you see references to code on the right, you'll be able to find it all the way at the bottom. Clicking the buttons to progress through the tutorial will update the code!</p>
+      <div className="ds-c-alert ds-c-alert--warn narrow-screen-warning">
+        <div className="ds-c-alert__body">
+          <h3 className="ds-c-alert__heading">Example code on mobile</h3>
+          <p className="ds-c-alert__text">Looks like the screen is too narrow to show you the API payloads alongside the tutorial. As you see references to code on the right, you'll be able to find it all the way at the bottom. Clicking the buttons to progress through the tutorial will update the code!</p>
         </div>
       </div>
-      <div className="usa-grid a-bit-wider">
-        <div className="usa-width-one-half">
-          <h1>API Tutorial</h1>
+      <div className="temp-grid-container">
+        <div className="temp-grid-half">
+          <h1 className="ds-h1">API Tutorial</h1>
           <p>The Submissions API is an easy way to manage your performance data with CMS. Performance data is organized into <em>submissions</em>, which can have many <em>measurements</em>. Measurements within a submission are also grouped by category (e.g. Improvement Activities) and source (e.g. provider) into <em>measurement sets</em>.</p>
           <p>Let's walk through an example of how we might submit performance data!</p>
-          <h2 id="creating-a-submission">
+          <h2 className="ds-h2" id="creating-a-submission">
             <a
               className="tutorial-header-link"
               href="#creating-a-submission"
@@ -84,7 +84,7 @@ class BasicTutorial extends React.PureComponent {
             }
             button={
               <button
-                className="usa-button"
+                className="ds-c-button ds-c-button--primary"
                 data-hash="#creating-a-submission"
                 onClick={this.showResponseOfStep}>
                 Create Submission
@@ -96,12 +96,12 @@ class BasicTutorial extends React.PureComponent {
           <p>If you're interested in comparing the API requests and responses, you can click between the tabs on the right side at any time.</p>
           <p>Anyway, CMS can't do much without our performance numbers. Let's add some!</p>
           <button
-            className="usa-button"
+            className="ds-c-button ds-c-button--primary"
             data-hash="#adding-measurements"
             onClick={this.showStartOfStep}>
             Next step
           </button>
-          <h2 id="adding-measurements">
+          <h2 className="ds-h2" id="adding-measurements">
             <a
               className="tutorial-header-link"
               href="#adding-measurements"
@@ -132,19 +132,19 @@ class BasicTutorial extends React.PureComponent {
             }
             button={
               <button
-                className="usa-button"
+                className="ds-c-button ds-c-button--primary"
                 data-hash="#adding-measurements"
                 onClick={this.showResponseOfStep}>
                 Create Measurement Set
               </button>}/>
           <p>Another <code>201 Created</code>, and we can see that this time the measurement set and measurement have both been assigned <code>id</code>s. Nothing too surprising in this step, but we've given CMS everything necessary to score this submission.</p>
           <button
-            className="usa-button"
+            className="ds-c-button ds-c-button--primary"
             data-hash="#scoring-a-submission"
             onClick={this.showStartOfStep}>
             Next step
           </button>
-          <h2 id="scoring-a-submission">
+          <h2 className="ds-h2" id="scoring-a-submission">
             <a
               className="tutorial-header-link"
               href="#scoring-a-submission"
@@ -158,7 +158,7 @@ class BasicTutorial extends React.PureComponent {
             url="/v1/submissions/:id/score"
             button={
               <button
-                className="usa-button"
+                className="ds-c-button ds-c-button--primary"
                 data-hash="#scoring-a-submission"
                 onClick={this.showResponseOfStep}>
                 Get Submission Score
@@ -172,10 +172,10 @@ class BasicTutorial extends React.PureComponent {
           <p>What we've shown is an example of working directly with the API - typically these requests are made through a web interface or script, but the requests & responses above illustrate the kind of power and speed the Submissions API and applications built against it can provide.</p>
           <h3>Next steps</h3>
           <p>Explore a more complex and powerful workflow in our <a href="/qpp-submissions-docs/advanced-tutorial">advanced tutorial</a>.</p>
-          <a className="usa-button usa-button-big" href="/qpp-submissions-docs/advanced-tutorial">Start the advanced tutorial</a>
+          <a className="ds-c-button ds-c-button--primary ds-c-button--big" href="/qpp-submissions-docs/advanced-tutorial">Start the advanced tutorial</a>
           <p>To learn more about what else you can do with the API, visit our <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">API reference</a>.</p>
         </div>
-        <div className="usa-width-one-half">
+        <div className="temp-grid-half">
           <TechnicalDetailsPane
             tutorial="basic"
             hash={this.state.hash}

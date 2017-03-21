@@ -5,8 +5,8 @@
 }
 
 .inline-api-example-request {
-  padding-top: 0.6em;
-  padding-bottom: 0.6em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 .inline-api-example-request:not(:last-child) {

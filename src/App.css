@@ -1,3 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+table {
+  border-collapse: collapse;
+  min-width: 100%;
+  border-spacing: 0;
+}
+table td {
+  border: 1px solid #5b616b;
+}
+
+.container {
+  margin: 10px;
+}
+
+section {
+  padding: 3rem 0;
+}
+
 h1 {
   margin-top: 1em;
 }
@@ -15,20 +38,22 @@ h2:hover a.tutorial-header-link {
   margin-bottom: 5em;
 }
 
-// Hacks to widen the columns a little
-.usa-grid.a-bit-wider,
-{
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1240px;
-  padding-right: 1rem;
-  padding-left: 1rem;
+.temp-nav-text {
+  margin: 0 10px;
+}
+.temp-nav-text a {
+  color: black;
+  text-decoration: none;
 }
 
-@media screen and (min-width: 600px) {
-  .usa-grid.a-bit-wider {
-    padding-right: 2rem;
-    padding-left: 2rem;
-  }
+.temp-grid-container {
+}
+
+.temp-grid-half {
+  width: 50%;
+  float: left;
+}
+
+.temp-grid-half {
+  padding-right: 1em;
 }
