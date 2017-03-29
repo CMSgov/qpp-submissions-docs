@@ -19,8 +19,7 @@ class Submission extends React.PureComponent {
   render() {
 
     return (
-      <div className="usa-grid a-bit-wider">
-        <div className="ds-u-measure--wide">
+       <div>
           <h1 className="ds-h1">Submissions</h1>
           <p className="ds-text--lead">The Submissions resource represents one year of performance data for a given individual or group.</p>
           <p className="ds-text--lead">For a list of methods for this resource, view the <a href="https://qpp-submissions-sandbox.navapbc.com/#/Submissions">OpenAPI documentation</a>.</p>
@@ -44,7 +43,6 @@ class Submission extends React.PureComponent {
           </div>
           <DataModelTable fields={FIELDS} />
         </div>
-      </div>
     );
   }
 }

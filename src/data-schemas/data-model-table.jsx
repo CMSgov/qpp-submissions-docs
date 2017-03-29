@@ -18,7 +18,7 @@ class DataModelTable extends React.Component {
     var rows = [];
     var lastCategory = null;
     this.props.fields.forEach(function(field) {
-      rows.push(<DataModelRow field={field} />);
+      rows.push(<DataModelRow field={field} key={field.name}/>);
     });
     return (
       <table className="ds-c-table ds-c-table--borderless ds-u-font-size--small">

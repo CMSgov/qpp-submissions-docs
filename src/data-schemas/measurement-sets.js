@@ -18,8 +18,7 @@ class MeasurementSets extends React.PureComponent {
   render() {
 
     return (
-      <div className="usa-grid a-bit-wider">
-        <div className="ds-u-measure--wide">
+       <div>
           <h1 className="ds-h1">Measurement Sets</h1>
           <p className="ds-text--lead">The Measurement Sets resource represents performance data for a specified category. Each <a href="/qpp-submissions-docs/submission">Submission</a> has multiple Measurement Sets. Each Measurement Set in a given Submission must be uniquely identified by category and submission method.</p>
           <p className="ds-text--lead">For a list of methods for this resource, view the <a href="https://qpp-submissions-sandbox.navapbc.com/#/MeasurementSets">OpenAPI documentation</a>.</p>
@@ -42,7 +41,6 @@ class MeasurementSets extends React.PureComponent {
           </div>
           <DataModelTable fields={FIELDS} />
         </div>
-      </div>
     );
   }
 }

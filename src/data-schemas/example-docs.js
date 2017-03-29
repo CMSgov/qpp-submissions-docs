@@ -4,9 +4,9 @@ import fileDownload from 'react-file-download';
 import ReactDOM from 'react-dom';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { pd } from 'pretty-data';
-import './technical-details-pane-examples.css'
-import submissionJsonExample from './examples/submission-example.json';
-import submissionXmlExample from './examples/submission-example-xml.js';
+import '../technical-details-pane-examples.css'
+import submissionJsonExample from '../examples/submission-example.json';
+import submissionXmlExample from '../examples/submission-example-xml.js';
 
 const submissionJsonExampleString = JSON.stringify(submissionJsonExample, null, 4);
 const submissionXmlExampleString = pd.xml(submissionXmlExample);
@@ -28,7 +28,7 @@ class ExampleDocs extends React.PureComponent {
       fileDownload(submissionXmlExampleString, 'submission-example.xml');
     }
     return (
-      <div className="usa-grid a-bit-wider">
+      <div>
         <Tabs
           className={cssClasses}
           onSelect={selectTab} tabIndex={index}>
