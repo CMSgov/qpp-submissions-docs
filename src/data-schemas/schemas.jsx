@@ -45,7 +45,7 @@ class Schemas extends React.PureComponent {
     return (
       <div>
       <div className="temp-grid-container">
-        <div className="ds-u-float--left ds-u-padding--2 ds-u-padding-right--6">
+        <div className="ds-u-float--left ds-u-padding-right--6 ds-u-padding-top--2">
           <ul className="ds-c-vertical-nav__subnav">
             <li className="ds-c-vertical-nav__item"><b>APIs & Reference</b></li>
             <ul className="ds-c-vertical-nav__subnav">
@@ -64,10 +64,10 @@ class Schemas extends React.PureComponent {
                 onClick={this.showSchemaDetail}>Performance Rate</a></li>
               </ul>
             </ul>
-            <li className="ds-c-vertical-nav__item"><b>Example Submission</b></li>
+            <li className="ds-c-vertical-nav__item"><b>Examples</b></li>
             <ul className="ds-c-vertical-nav__subnav">
               <li><a href="#" data-hash="example"
-              onClick={this.showSchemaDetail}>Example</a></li>
+              onClick={this.showSchemaDetail}>Submission JSON & XML</a></li>
             </ul>
           </ul>
         </div>

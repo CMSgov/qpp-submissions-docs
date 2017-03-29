@@ -53,9 +53,6 @@ class ExampleDocs extends React.PureComponent {
             <pre>{`${submissionXmlExampleString}`}</pre>
           </TabPanel>
         </Tabs>
-        <h3>Next steps</h3>
-        <p>Ready to try creating a submission?</p>
-        <p>Check out our interactive <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">API reference</a>.</p>
       </div>
     );
   }

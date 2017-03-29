@@ -21,7 +21,7 @@ class Submission extends React.PureComponent {
     return (
        <div>
           <h1 className="ds-h1">Submissions</h1>
-          <p className="ds-text--lead">The Submissions resource represents one year of performance data for a given individual or group.</p>
+          <p className="ds-text--lead">The Submissions resource represents one year of performance data for a given individual or group. Submissions contain MeasurementSets which can be accessed both via Submissions methods and MeasurementSets methods.</p>
           <p className="ds-text--lead">For a list of methods for this resource, view the <a href="https://qpp-submissions-sandbox.navapbc.com/#/Submissions">OpenAPI documentation</a>.</p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
@@ -36,7 +36,7 @@ class Submission extends React.PureComponent {
   "nationalProviderIdentifier": string,
   "performanceYear": integer,
   "measurementSets": [`}
-    <a href="/qpp-submissions-docs/measurement-sets">measurementSets Resource</a>
+    <a href="#">MeasurementSets Resource</a>
   {`]
 }`}
             </pre>

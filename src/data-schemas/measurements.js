@@ -39,7 +39,7 @@ class Measurements extends React.PureComponent {
     return (
        <div>
           <h1 className="ds-h1">Measurements</h1>
-          <p className="ds-text--lead">The Measurements resource represents performance data for a specified category. Each <a href="/qpp-submissions-docs/submission">Submission</a> has multiple Measurement Sets. Each Measurement Set in a given Submission must be uniquely identified by category and submission method.</p>
+          <p className="ds-text--lead">The Measurements resource represents performance data for a single MeasurementSet. There are three types of Measurements: Boolean, Proportion and Performance Rate. Each MeasurementSet can have multiple Measurements. No two Measurements in a given MeasurementSet can have the same measureId.</p>
           <p className="ds-text--lead">For a list of methods for this resource, view the <a href="https://qpp-submissions-sandbox.navapbc.com/#/Measurements">OpenAPI documentation</a>.</p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
@@ -49,13 +49,14 @@ class Measurements extends React.PureComponent {
   "measurementSetId": string,
   "measureId": string,
   "value": [`}
-    <a href="/qpp-submissions-docs/measurements">value Resource</a>
+    <a href="/qpp-submissions-docs/measurements">object</a>
   {`]
 }`}
             </pre>
           </div>
           <DataModelTable fields={FIELDS} />
           <h1 className="ds-h1" name="boolean">Boolean Measurements</h1>
+          <p className="ds-text--lead">Boolean Measurements are applicable to Improvement Activity (IA) and Advancing Care Information (ACI) measures.</p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
             <pre className='ds-u-border--1 ds-u-padding--1'>
@@ -69,6 +70,7 @@ class Measurements extends React.PureComponent {
           </div>
           <DataModelTable fields={BOOLEAN_FIELDS} />
           <h1 className="ds-h1" name="proportion">Proportion Measurements</h1>
+          <p className="ds-text--lead">Proportion Measurements are applicable to Advancing Care Information (ACI) measures.</p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
             <pre className='ds-u-border--1 ds-u-padding--1'>
@@ -85,6 +87,7 @@ class Measurements extends React.PureComponent {
           </div>
           <DataModelTable fields={PROPORTION_FIELDS} />
           <h1 className="ds-h1" name="performance-rate">Performance Rate Measurements</h1>
+          <p className="ds-text--lead">Performance Rate Measurements are applicable to Quality measures. There are two types of Performance Rate Measurements: single and multi. Single-Performance Rate Measurements contain only one stratum. Multi-Performance Rate Measurements contain multiple strata and the stratum field is required for each.</p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
             <pre className='ds-u-border--1 ds-u-padding--1'>
@@ -95,14 +98,14 @@ class Measurements extends React.PureComponent {
   "value": {
     "isEndToEndReported": boolean,
     "strata": [`}
-      <a href="/qpp-submissions-docs/measurements">perforamance rate stratum Resource</a>
+      <a href="#">Perforamance Rate Stratum</a>
     {`]
   }
 }`}
             </pre>
           </div>
           <DataModelTable fields={PERFORMANCE_RATE_FIELDS} />
-          <h1 className="ds-h1">Performance Rate Strata</h1>
+          <h1 className="ds-h1">Performance Rate Stratum</h1>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
             <pre className='ds-u-border--1 ds-u-padding--1'>
