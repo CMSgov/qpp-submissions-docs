@@ -12,6 +12,9 @@ import Header from './header';
 import BasicTutorial from './basic-tutorial';
 import AdvancedTutorial from './advanced-tutorial';
 import ExampleDocs from './example-docs';
+import Submission from './objects/submission';
+import Measurements from './objects/measurements';
+import MeasurementSets from './objects/measurement-sets';
 
 class App extends React.PureComponent {
   render() {
@@ -30,6 +33,12 @@ class App extends React.PureComponent {
       component = <AdvancedTutorial hash={hash}/>
     } else if (path === 'examples') {
       component = <ExampleDocs hash={hash}/>
+    } else if (path === 'submission') {
+      component = <Submission hash={hash}/>
+    } else if (path === 'measurement-sets') {
+      component = <MeasurementSets hash={hash}/>
+    } else if (path === 'measurements') {
+      component = <Measurements hash={hash}/>
     } else {
       component = <section>
         <div className="ds-u-measure--wide">
