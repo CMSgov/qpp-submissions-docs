@@ -33,12 +33,5 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "dependencies": {
-    "google-code-prettify": "^1.0.5",
-    "marky-markdown": "^9.0.2",
-    "prismjs": "^1.6.0",
-    "react-highlight": "^0.9.0",
-    "react-syntax-highlighter": "^5.1.2"
   }
 }
