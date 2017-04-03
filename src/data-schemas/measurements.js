@@ -98,7 +98,7 @@ class Measurements extends React.PureComponent {
   "value": {
     "isEndToEndReported": boolean,
     "strata": [`}
-      <a href="#stratum">Perforamance Rate Stratum</a>
+      <a href="#stratum">Performance Rate Stratum</a>
     {`]
   }
 }`}
