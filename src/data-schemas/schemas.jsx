@@ -1,7 +1,5 @@
 import React from 'react';
 
-import TechnicalDetailsPane from '../technical-details-pane';
-import InlineApiExample from '../inline-api-example';
 import Submission from './submission';
 import Measurements from './measurements';
 import MeasurementSets from './measurement-sets';
@@ -27,7 +25,8 @@ class Schemas extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      name: props.name
+      name: props.name,
+      hash: props.hash
     };
 
     this.showSchemaDetail = this.showSchemaDetail.bind(this);
@@ -35,9 +34,11 @@ class Schemas extends React.PureComponent {
 
   showSchemaDetail(event) {
     // the hash of an anchor tag or stored in data
-    const name = event.target.hash || event.target.dataset.hash;
+    const nameAndHash = event.target.hash || event.target.dataset.hash;
+    window.location.hash = nameAndHash.split("#")[1];
     this.setState({
-      name
+      name: nameAndHash.split("#")[0],
+      hash: window.location.hash
     });
   }
 
@@ -56,11 +57,11 @@ class Schemas extends React.PureComponent {
               <li><a href="#" data-hash="measurements"
               onClick={this.showSchemaDetail}>Measurements</a></li>
               <ul>
-                <li><a href="#" data-hash="measurements"
+                <li><a href="#" data-hash="measurements#boolean"
                 onClick={this.showSchemaDetail}>Boolean</a></li>
-                <li><a href="#" data-hash="measurements"
+                <li><a href="#" data-hash="measurements#proportion"
                 onClick={this.showSchemaDetail}>Proportion</a></li>
-                <li><a href="#" data-hash="measurements"
+                <li><a href="#" data-hash="measurements#performance-rate"
                 onClick={this.showSchemaDetail}>Performance Rate</a></li>
               </ul>
             </ul>

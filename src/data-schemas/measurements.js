@@ -55,7 +55,7 @@ class Measurements extends React.PureComponent {
             </pre>
           </div>
           <DataModelTable fields={FIELDS} />
-          <h1 className="ds-h1" name="boolean">Boolean Measurements</h1>
+          <h1 className="ds-h1" id="boolean">Boolean Measurements</h1>
           <p className="ds-text--lead">Boolean Measurements are applicable to Improvement Activity (IA) and Advancing Care Information (ACI) measures.</p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
@@ -69,7 +69,7 @@ class Measurements extends React.PureComponent {
             </pre>
           </div>
           <DataModelTable fields={BOOLEAN_FIELDS} />
-          <h1 className="ds-h1" name="proportion">Proportion Measurements</h1>
+          <h1 className="ds-h1" id="proportion">Proportion Measurements</h1>
           <p className="ds-text--lead">Proportion Measurements are applicable to Advancing Care Information (ACI) measures.</p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
@@ -86,7 +86,7 @@ class Measurements extends React.PureComponent {
             </pre>
           </div>
           <DataModelTable fields={PROPORTION_FIELDS} />
-          <h1 className="ds-h1" name="performance-rate">Performance Rate Measurements</h1>
+          <h1 className="ds-h1" id="performance-rate">Performance Rate Measurements</h1>
           <p className="ds-text--lead">Performance Rate Measurements are applicable to Quality measures. There are two types of Performance Rate Measurements: single and multi. Single-Performance Rate Measurements contain only one stratum. Multi-Performance Rate Measurements contain multiple strata and the stratum field is required for each.</p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
@@ -98,14 +98,14 @@ class Measurements extends React.PureComponent {
   "value": {
     "isEndToEndReported": boolean,
     "strata": [`}
-      <a href="#">Perforamance Rate Stratum</a>
+      <a href="#stratum">Perforamance Rate Stratum</a>
     {`]
   }
 }`}
             </pre>
           </div>
           <DataModelTable fields={PERFORMANCE_RATE_FIELDS} />
-          <h1 className="ds-h1">Performance Rate Stratum</h1>
+          <h1 className="ds-h1" id="stratum">Performance Rate Stratum</h1>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
             <pre className='ds-u-border--1 ds-u-padding--1'>
