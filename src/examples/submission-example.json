@@ -90,6 +90,34 @@
           }
         }
       ]
+    },
+    {
+      "category": "quality",
+      "submissionMethod": "cmsWebInterface",
+      "performanceStart": "2016-01-01",
+      "performanceEnd": "2016-06-01",
+      "measurements": [
+        {
+          "measureId": "0391099",
+          "value": {
+             "isEndToEndReported": true,
+             "strata": [
+               {
+                 "performanceMet": 1,
+                 "populationTotal": 2,
+                 "stratum": "20-50 years old"
+               },
+               {
+                 "performanceMet": 1,
+                 "performanceExclusion": 1,
+                 "performanceNotMet": 1,
+                 "populationTotal": 10,
+                 "stratum": "50-80 years old"
+               }
+             ]
+           }
+        }
+      ]
     }
   ]
 }
