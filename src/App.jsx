@@ -11,7 +11,7 @@ import './usa-banner.css';
 import Header from './header';
 import BasicTutorial from './basic-tutorial';
 import AdvancedTutorial from './advanced-tutorial';
-import ExampleDocs from './example-docs';
+import Schemas from './data-schemas/schemas';
 
 class App extends React.PureComponent {
   render() {
@@ -28,8 +28,8 @@ class App extends React.PureComponent {
       component = <BasicTutorial hash={hash}/>;
     } else if (path === 'advanced-tutorial') {
       component = <AdvancedTutorial hash={hash}/>
-    } else if (path === 'examples') {
-      component = <ExampleDocs hash={hash}/>
+    } else if (path === 'schemas') {
+      component = <Schemas hash={hash}/>
     } else {
       component = <section>
         <div className="ds-u-measure--wide">
@@ -49,9 +49,8 @@ class App extends React.PureComponent {
           <h2 className="ds-h2">Understand and integrate with measures data.</h2>
           <p className="ds-text--lead">A complete list of ACI (Advancing Care Information) and IA (Improvement Activity) measures is available in the <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data repository</a>. Each measure contains a description and additional information around attestation and scoring requirements. Additionally, you can integrate with the qpp-measures-data NPM module to import measures data into your own code base and work with it programatically.</p>
 
-          <h2 className="ds-h2">View or download example submissions</h2>
-          <p className="ds-text--lead">To view or download sample submission data, <a href="/qpp-submissions-docs/examples">click here</a>. This will let you validate your own submission formatting in XML or JSON.</p>
-          <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/examples">See examples</a>
+          <h2 className="ds-h2">View the API Reference</h2>
+          <p className="ds-text--lead">The technical reference information for the Submissions API and sample submission data are available <a href="/qpp-submissions-docs/schemas">here</a>. This will let you validate your own submission formatting in XML or JSON.</p>
 
           <h3 className="ds-h3">All done?</h3>
           <p>Return to the <a href="https://qpp.cms.gov/resources/developers">QPP Developer Resources</a>.</p>
