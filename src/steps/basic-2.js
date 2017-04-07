@@ -18,7 +18,7 @@ class Basic2 extends React.PureComponent {
           <pre>{`{
   "submissionId": "b6423273-d3a3-42ef-9728-1871b246477e",
   "category": "ia",
-  "source": "provider",
+  "submissionMethod": "provider",
   "performanceStart": "2016-01-01",
   "performanceEnd": "2016-06-01",
   "measurements": [
@@ -41,7 +41,7 @@ class Basic2 extends React.PureComponent {
       "id": "88345eab-0082-4a58-a4e8-e3140c7f48ee",
       "submissionId": "b6423273-d3a3-42ef-9728-1871b246477e",
       "category": "ia",
-      "source": "provider",
+      "submissionMethod": "provider",
       "measureSet": null,
       "performanceStart": "2016-01-01",
       "performanceEnd": "2016-06-01",

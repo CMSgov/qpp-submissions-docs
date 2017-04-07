@@ -53,7 +53,7 @@ class BasicTutorial extends React.PureComponent {
       <div className="temp-grid-container">
         <div className="temp-grid-half">
           <h1 className="ds-h1">API Tutorial</h1>
-          <p>The Submissions API is an easy way to manage your performance data with CMS. Performance data is organized into <em>submissions</em>, which can have many <em>measurements</em>. Measurements within a submission are also grouped by category (e.g. Improvement Activities) and source (e.g. provider) into <em>measurement sets</em>.</p>
+          <p>The Submissions API is an easy way to manage your performance data with CMS. Performance data is organized into <em>submissions</em>, which can have many <em>measurements</em>. Measurements within a submission are also grouped by category (e.g. Improvement Activities) and submission method (e.g. provider) into <em>measurement sets</em>.</p>
           <p>Let's walk through an example of how we might submit performance data!</p>
           <h2 className="ds-h2" id="creating-a-submission">
             <a
@@ -111,7 +111,7 @@ class BasicTutorial extends React.PureComponent {
           </h2>
           <p>In our example, we have performance data for one measure that we want to send to CMS. Much like creating the submission, we need to create a measurement by making a <code>POST</code> request. This time it'll be addressed to a different endpoint, and we'll include the submission <code>id</code> from earlier so CMS knows which submission we're talking about.</p>
           <p>Remember that measurements are grouped into measurement sets? The data in our <code>POST</code> request will be organized this way, with the measurement nested inside the data for a measurement set - you can see what that looks like on the right. Our example includes a boolean (<code>true</code> or <code>false</code>) value for measure <code>IA_EPA_4</code>.</p>
-          <p>If we want to add measurements from different categories (Advancing Care Information vs our Improvement Activity) or sources (not the provider), we would need to do that in another measurement set. Measurement sets become more important during scoring, since there can be performance data concerning the same care but submitted by different people - we'll dig into that in our advanced tutorial. For now, let's ask the API to add our IA measurement:</p>
+          <p>If we want to add measurements from different categories (Advancing Care Information vs our Improvement Activity) or submission methods (not the provider), we would need to do that in another measurement set. Measurement sets become more important during scoring, since there can be performance data concerning the same care but submitted by different people - we'll dig into that in our advanced tutorial. For now, let's ask the API to add our IA measurement:</p>
           <InlineApiExample
             verb="POST"
             url="/v1/measurement-sets"
@@ -121,7 +121,7 @@ class BasicTutorial extends React.PureComponent {
                     <td>b6423273-d3a3-42ef-9728-1871b246477e</td></tr>
                 <tr><td>Category</td>
                     <td>IA</td></tr>
-                <tr><td>Source</td>
+                <tr><td>Submission Method</td>
                     <td>Provider</td></tr>
                 <tr><td>Performance period</td>
                     <td>2016-01-01 through 2016-06-01</td></tr>
