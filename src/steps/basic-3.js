@@ -31,7 +31,7 @@ class Basic3 extends React.PureComponent {
         {
           "name": "ia",
           "title": "IA component of final score",
-          "detail": "Scoring based on measurement set \\"88345eab-0082-4a58-a4e8-e3140c7f48ee\\" from submission method \\"provider\\" with weight of 15%.",
+          "detail": "Scoring based on measurement set \\"88345eab-0082-4a58-a4e8-e3140c7f48ee\\" from submission method \\"cmsWebInterface\\" with weight of 15%.",
           "value": 3.75,
           "original": {
             "name": "ia",
