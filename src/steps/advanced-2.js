@@ -25,7 +25,7 @@ class Advanced2 extends React.PureComponent {
   "measurementSets": [
     {
       "category": "aci",
-      "source": "provider",
+      "submissionMethod": "cmsWebInterface",
       "performanceStart": "2016-01-01",
       "performanceEnd": "2016-06-01",
       "measurements": [
@@ -95,7 +95,7 @@ class Advanced2 extends React.PureComponent {
         "id": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
         "submissionId": "60d2fbbb-7453-47fa-b709-c33090e50843",
         "category": "aci",
-        "source": "provider",
+        "submissionMethod": "cmsWebInterface",
         "measureSet": null,
         "performanceStart": "2016-01-01",
         "performanceEnd": "2016-06-01",
