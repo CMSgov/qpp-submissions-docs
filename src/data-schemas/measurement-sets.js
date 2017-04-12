@@ -6,7 +6,7 @@ var FIELDS = [
   {name: 'id', value: 'string', description: 'The id of the measurement set.'},
   {name: 'submissionId', value: 'string', description: 'The id of the submission in which the measurement set belongs.'},
   {name: 'category', value: 'datetime', description: 'The category of the measurement set. Acceptable values are <b>"ia"</b>, <b>"aci"</b> and <b>"quality"</b>.', notes: 'writable'},
-  {name: 'submissionMethod', value: 'string', description: 'The method by which the measurement set data was submitted. Acceptable values are <b>"cmsWebInterface"</b>, <b>"ehr"</b>, <b>"claims"</b>, <b>"registry"</b>, <b>"csv"</b> and <b>"administrativeClaims"</b>.', notes: 'writable'},
+  {name: 'submissionMethod', value: 'string', description: 'The method by which the measurement set data was submitted. Acceptable values are <b>"cmsWebInterface"</b>, <b>"electronicHealthRecord"</b>, <b>"claims"</b>, <b>"registry"</b>, <b>"certifiedSurveyVendor"</b> and <b>"administrativeClaims"</b>.', notes: 'writable'},
   {name: 'performanceStart', value: 'string', description: 'A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). The first date when the measurement data is applicable.', notes: 'writable, optional'},
   {name: 'performanceEnd', value: 'string', description: 'A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). The last date when the measurement data is applicable.', notes: 'writable, optional'},
   {name: 'measureSet', value: 'string', description: 'The speciality set which the measurement set is attesting.', notes: 'writable, optional'},
