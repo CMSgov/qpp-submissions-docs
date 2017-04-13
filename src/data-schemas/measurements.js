@@ -37,7 +37,7 @@ var STRATA_FIELDS = [
   {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},
   {name: 'performanceExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure.', notes: 'writable, optional'},
   {name: 'populationTotal', value: 'integer', description: 'The total number of patients. Must be greater than or equal to zero.', notes: 'writable'},
-  {name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable, optional if only one stratum in the performance rate measurement'}
+  {name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable'}
 ];
 
 class Measurements extends React.PureComponent {
@@ -135,7 +135,7 @@ class Measurements extends React.PureComponent {
           </div>
           <DataModelTable fields={MULTI_PERFORMANCE_RATE_FIELDS} />
           <h1 className="ds-h1" id="stratum">Multi-Performance Rate Stratum</h1>
-          <p className="ds-text--lead">A Multi-Performance Rate Stratum represents the performance data for a specified subset of the population, as described by the stratum field. In the case where the stratum field is null, the performance data is applicable to the entire population.</p>
+          <p className="ds-text--lead">A Multi-Performance Rate Stratum represents the performance data for a specified subset of the population, as described by the stratum field.</p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
             <pre className='ds-u-border--1 ds-u-padding--1'>
