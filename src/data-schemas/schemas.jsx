@@ -61,8 +61,10 @@ class Schemas extends React.PureComponent {
                 onClick={this.showSchemaDetail}>Boolean</a></li>
                 <li><a href="#" data-hash="measurements#proportion"
                 onClick={this.showSchemaDetail}>Proportion</a></li>
-                <li><a href="#" data-hash="measurements#performance-rate"
-                onClick={this.showSchemaDetail}>Performance Rate</a></li>
+                <li><a href="#" data-hash="measurements#single-performance-rate"
+                onClick={this.showSchemaDetail}>Single-Performance Rate</a></li>
+                <li><a href="#" data-hash="measurements#multi-performance-rate"
+                onClick={this.showSchemaDetail}>Multi-Performance Rate</a></li>
               </ul>
             </ul>
             <li className="ds-c-vertical-nav__item"><b>Examples</b></li>
