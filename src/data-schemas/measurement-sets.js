@@ -9,7 +9,7 @@ var FIELDS = [
   {name: 'submissionMethod', value: 'string', description: 'The method by which the measurement set data was submitted. Acceptable values are <b>"cmsWebInterface"</b>, <b>"electronicHealthRecord"</b>, <b>"claims"</b>, <b>"registry"</b>, <b>"certifiedSurveyVendor"</b> and <b>"administrativeClaims"</b>.', notes: 'writable'},
   {name: 'performanceStart', value: 'string', description: 'A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). The first date when the measurement data is applicable.', notes: 'writable, optional'},
   {name: 'performanceEnd', value: 'string', description: 'A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). The last date when the measurement data is applicable.', notes: 'writable, optional'},
-  {name: 'measureSet', value: 'string', description: 'The speciality set which the measurement set is attesting.', notes: 'writable, optional'},
+  {name: 'measureSet', value: 'string', description: 'Optional field. The speciality set which the measurement set is attesting. Acceptable values are <b>"generalSurgery"</b> or <b>"other"</b>', notes: 'writable, optional'},
   {name: 'measurements', value: 'list', description: 'Measurements associated with the measurement set.',  notes: 'writable, optional'}
 ];
 
