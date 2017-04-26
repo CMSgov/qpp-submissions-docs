@@ -28,7 +28,7 @@ var SINGLE_PERFORMANCE_RATE_FIELDS = [
 
 var MULTI_PERFORMANCE_RATE_FIELDS = [
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported  via certified EHR technology without any manual interference.', notes: 'writable'},
-  {name: 'strata', value: 'list', description: 'The strata associated with the performance rate measurement.', notes: 'writable'}
+  {name: 'strata', value: 'list', description: 'The strata name associated with the performance rate measurement. Needs to match with the strata names in <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data</a>.', notes: 'writable'}
 ];
 
 var STRATA_FIELDS = [
