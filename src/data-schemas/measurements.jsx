@@ -2,23 +2,23 @@ import React from 'react';
 import '../technical-details-pane-examples.css'
 import DataModelTable from './data-model-table';
 
-var FIELDS = [
+const FIELDS = [
   {name: 'id', value: 'string', description: 'The id of the measurement.'},
   {name: 'measurementSetId', value: 'string', description: 'The id of the measurement set in which the measurement belongs.'},
   {name: 'measureId', value: 'string', description: 'The id of the measure to which the measurement is attesting. All measures and their IDs are available in <a href="https://github.com/CMSgov/qpp-measures-data/blob/master/measures/measures-data.json">qpp-measures-data</a>.', notes: 'writable'},
   {name: 'value', value: 'object', description: 'Different measurements will have different values. Acceptable measurement types are <b>boolean</b>, <b>proportion</b> and <b>performance rate</b>.', notes: 'writable'}
 ];
 
-var BOOLEAN_FIELDS = [
+const BOOLEAN_FIELDS = [
   {name: 'value', value: 'boolean', description: 'True if attesting to the associated measure.', notes: 'writable'}
 ];
 
-var PROPORTION_FIELDS = [
+const PROPORTION_FIELDS = [
   {name: 'numerator', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>denominator</b>.', notes: 'writable'},
   {name: 'denominator', value: 'integer', description: 'The total number of patients. Must be greater than or equal to zero.', notes: 'writable'},
 ];
 
-var SINGLE_PERFORMANCE_RATE_FIELDS = [
+const SINGLE_PERFORMANCE_RATE_FIELDS = [
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported  via certified EHR technology without any manual interference.', notes: 'writable'},
   {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>populationTotal</b>', notes: 'writable'},
   {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},
@@ -26,12 +26,12 @@ var SINGLE_PERFORMANCE_RATE_FIELDS = [
   {name: 'populationTotal', value: 'integer', description: 'The total number of patients. Must be greater than or equal to zero.', notes: 'writable'}
 ];
 
-var MULTI_PERFORMANCE_RATE_FIELDS = [
+const MULTI_PERFORMANCE_RATE_FIELDS = [
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported  via certified EHR technology without any manual interference.', notes: 'writable'},
   {name: 'strata', value: 'list', description: 'The strata associated with the performance rate measurement.', notes: 'writable'}
 ];
 
-var STRATA_FIELDS = [
+const STRATA_FIELDS = [
   {name: 'measurementId', value: 'string', description: 'The id of the measurement in which the stratum belongs.'},
   {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>populationTotal</b>', notes: 'writable'},
   {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},

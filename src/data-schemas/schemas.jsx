@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Benchmarks from './benchmarks';
 import Submission from './submission';
 import Measurements from './measurements';
 import MeasurementSets from './measurement-sets';
@@ -8,8 +9,11 @@ import './schemas.css';
 
 class SchemaDetail extends React.Component {
   render() {
-    var schemaName = this.props.name;
-    if (schemaName === 'measurements') {
+    const schemaName = this.props.name;
+
+    if (schemaName === 'benchmarks') {
+      return <Benchmarks/>;
+    } else if (schemaName === 'measurements') {
       return <Measurements/>;
     } else if (schemaName === 'measurement-sets') {
       return <MeasurementSets/>;
@@ -21,7 +25,7 @@ class SchemaDetail extends React.Component {
   }
 }
 
-class Schemas extends React.PureComponent {
+export default class Schemas extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -66,6 +70,8 @@ class Schemas extends React.PureComponent {
                 <li><a href="#" data-hash="measurements#multi-performance-rate"
                 onClick={this.showSchemaDetail}>Multi-Performance Rate</a></li>
               </ul>
+              <li><a href="#" data-hash="benchmarks"
+                     onClick={this.showSchemaDetail}>Benchmarks</a></li>
             </ul>
             <li className="ds-c-vertical-nav__item"><b>Examples</b></li>
             <ul className="ds-c-vertical-nav__subnav">
@@ -82,5 +88,3 @@ class Schemas extends React.PureComponent {
     );
   }
 }
-
-export default Schemas;

@@ -11,7 +11,7 @@ const submissionJsonExampleString = JSON.stringify(submissionJsonExample, null, 
 const submissionXmlExampleString = pd.xml(submissionXmlExample);
 const cssClasses = "technical-details-pane technical-details-pane-examples";
 
-class ExampleDocs extends React.PureComponent {
+export default class ExampleDocs extends React.PureComponent {
   render() {
     Tabs.setUseDefaultStyles(false);
 
@@ -56,5 +56,3 @@ class ExampleDocs extends React.PureComponent {
     );
   }
 }
-
-export default ExampleDocs;
