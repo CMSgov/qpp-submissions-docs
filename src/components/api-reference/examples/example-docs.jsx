@@ -3,7 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import fileDownload from 'react-file-download';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { pd } from 'pretty-data';
-// import '../technical-details-pane-examples.css'
+import '../../../styles/api-reference/examples/technical-details-pane-examples.css'
 import submissionJsonExample from './submission-example.json';
 import submissionXmlExample from './submission-example-xml.js';
 

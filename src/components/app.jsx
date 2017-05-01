@@ -4,9 +4,9 @@ import '../../node_modules/uswds/dist/js/uswds.js';
 
 // import '../node_modules/uswds/dist/css/uswds.css';
 import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
-import './app.css';
-import '../temp-grid.css';
-import '../usa-banner.css';
+import '../styles/app.css';
+import '../styles/temp-grid.css';
+import '../styles/usa-banner.css';
 
 import Header from './header';
 import BasicTutorial from './tutorials/basic-tutorial';
