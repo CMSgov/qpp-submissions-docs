@@ -1,6 +1,5 @@
 import React from 'react';
-import '../technical-details-pane-examples.css'
-import DataModelTable from './data-model-table';
+import DataModelTable from './common/data-model-table';
 
 const FIELDS = [
   {name: 'id', value: 'string', description: 'The id of the measurement.'},

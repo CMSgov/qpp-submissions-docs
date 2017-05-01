@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import DataModelTable from './data-model-table';
+import DataModelTable from './common/data-model-table';
 
 const FIELDS = [
   {name: 'benchmarkYear', value: 'integer', description: 'A four digit integer', notes: 'Read-only<br/>Optional<br/><br/>The benchmarkYear corresponds to the year of performance data that was used to generate this benchmark. In other words, submissions for performanceYear x will be compared against the benchmarkYear y\'s results.'},

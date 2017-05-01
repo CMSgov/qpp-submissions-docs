@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Benchmarks from './benchmarks';
-import Submission from './submission';
-import Measurements from './measurements';
-import MeasurementSets from './measurement-sets';
-import ExampleDocs from './example-docs';
-import './schemas.css';
+import Benchmarks from './data-model-schemas/benchmarks';
+import Submission from './data-model-schemas/submission';
+import Measurements from './data-model-schemas/measurements';
+import MeasurementSets from './data-model-schemas/measurement-sets';
+import ExampleDocs from './examples/example-docs';
+import './api-reference.css';
 
 class SchemaDetail extends React.Component {
   render() {
