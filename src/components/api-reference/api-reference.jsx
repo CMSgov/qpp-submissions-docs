@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Benchmark from './schemas/benchmark';
 import Benchmarks from './schemas/benchmarks';
 import ExampleDocs from './examples/example-docs';
 import Measurements from './schemas/measurements';
@@ -17,8 +16,6 @@ class SchemaDetail extends React.Component {
       return <Scoring/>
     } else if (schemaName === 'benchmarks') {
       return <Benchmarks/>;
-    } else if (schemaName === 'benchmark') {
-      return <Benchmark/>;
     } else if (schemaName === 'measurements') {
       return <Measurements/>;
     } else if (schemaName === 'measurement-sets') {
@@ -80,18 +77,17 @@ export default class Schemas extends React.PureComponent {
               <li>
                 <a href="#" data-hash="benchmarks"
                    onClick={this.showSchemaDetail}>Benchmarks</a>
-              </li>
-              <li>
-                <a href="#" data-hash="benchmark"
-                   onClick={this.showSchemaDetail}>Benchmark</a>
                 <ul>
-                  <li><a href="#" data-hash="benchmark#historical-benchmarks"
+                  <li><a href="#" data-hash="benchmarks#benchmark"
+                         onClick={this.showSchemaDetail}>Benchmark</a>
+                  </li>
+                  <li><a href="#" data-hash="benchmarks#historical-benchmarks"
                          onClick={this.showSchemaDetail}>Historical Benchmarks</a>
                   </li>
-                  <li><a href="#" data-hash="benchmark#current-benchmarks"
+                  <li><a href="#" data-hash="benchmarks#current-benchmarks"
                          onClick={this.showSchemaDetail}>Current Benchmarks</a>
                   </li>
-                  <li><a href="#" data-hash="benchmark#benchmark-calculations"
+                  <li><a href="#" data-hash="benchmarks#benchmark-calculations"
                          onClick={this.showSchemaDetail}>Benchmark Calculations</a>
                   </li>
                 </ul>
