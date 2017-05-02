@@ -86,7 +86,7 @@ export default class Schemas extends React.PureComponent {
                            onClick={this.showSchemaDetail}>Current Benchmarks</a>
                     </li>
                     <li><a href="#" data-hash="benchmarks"
-                           onClick={this.showSchemaDetail}>Benchmarks Calculations</a>
+                           onClick={this.showSchemaDetail}>Benchmark Calculations</a>
                     </li>
                   </ul>
                 </li>
