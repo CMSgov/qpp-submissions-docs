@@ -15,7 +15,7 @@ class DataModelRow extends React.Component {
 
 export default class DataModelTable extends React.Component {
   render() {
-    let rows = [];
+    const rows = [];
     this.props.fields.forEach(function(field) {
       rows.push(<DataModelRow field={field} key={field.name}/>);
     });
