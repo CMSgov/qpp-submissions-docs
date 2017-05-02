@@ -1,7 +1,7 @@
 import React from 'react';
 
-import TechnicalDetailsPane from './technical-details-pane';
-import InlineApiExample from './inline-api-example';
+import TechnicalDetailsPane from './common/technical-details-pane';
+import InlineApiExample from './common/inline-api-example';
 
 class AdvancedTutorial extends React.PureComponent {
   constructor(props) {

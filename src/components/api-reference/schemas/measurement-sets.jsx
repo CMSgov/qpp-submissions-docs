@@ -1,8 +1,7 @@
 import React from 'react';
-import '../technical-details-pane-examples.css'
-import DataModelTable from './data-model-table';
+import DataModelTable from '../common/data-model-table';
 
-var FIELDS = [
+const FIELDS = [
   {name: 'id', value: 'string', description: 'The id of the measurement set.'},
   {name: 'submissionId', value: 'string', description: 'The id of the submission in which the measurement set belongs.'},
   {name: 'category', value: 'datetime', description: 'The category of the measurement set. Acceptable values are <b>"ia"</b>, <b>"aci"</b> and <b>"quality"</b>.', notes: 'writable'},
@@ -13,7 +12,7 @@ var FIELDS = [
   {name: 'measurements', value: 'list', description: 'Measurements associated with the measurement set.',  notes: 'writable, optional'}
 ];
 
-class MeasurementSets extends React.PureComponent {
+export default class MeasurementSets extends React.PureComponent {
 
   render() {
     return (
@@ -43,5 +42,3 @@ class MeasurementSets extends React.PureComponent {
     );
   }
 }
-
-export default MeasurementSets;

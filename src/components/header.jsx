@@ -1,6 +1,6 @@
 import React from 'react';
 
-import favicon from '../node_modules/uswds/dist/img/favicons/favicon-57.png';
+import favicon from '../../node_modules/uswds/dist/img/favicons/favicon-57.png';
 
 class Header extends React.PureComponent {
   render() {

@@ -1,17 +1,17 @@
 import React from 'react';
 import url from 'url';
-import '../node_modules/uswds/dist/js/uswds.js';
+import '../../node_modules/uswds/dist/js/uswds.js';
 
 // import '../node_modules/uswds/dist/css/uswds.css';
-import '../node_modules/@cmsgov/design-system-core/dist/index.css';
-import './App.css';
-import './temp-grid.css';
-import './usa-banner.css';
+import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
+import '../styles/app.css';
+import '../styles/temp-grid.css';
+import '../styles/usa-banner.css';
 
 import Header from './header';
-import BasicTutorial from './basic-tutorial';
-import AdvancedTutorial from './advanced-tutorial';
-import Schemas from './data-schemas/schemas';
+import BasicTutorial from './tutorials/basic-tutorial';
+import AdvancedTutorial from './tutorials/advanced-tutorial';
+import Schemas from './api-reference/api-reference';
 
 class App extends React.PureComponent {
   render() {

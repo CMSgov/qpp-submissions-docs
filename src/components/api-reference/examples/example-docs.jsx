@@ -3,15 +3,15 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import fileDownload from 'react-file-download';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { pd } from 'pretty-data';
-import '../technical-details-pane-examples.css'
-import submissionJsonExample from '../examples/submission-example.json';
-import submissionXmlExample from '../examples/submission-example-xml.js';
+import '../../../styles/api-reference/examples/technical-details-pane-examples.css'
+import submissionJsonExample from './submission-example.json';
+import submissionXmlExample from './submission-example-xml.js';
 
 const submissionJsonExampleString = JSON.stringify(submissionJsonExample, null, 4);
 const submissionXmlExampleString = pd.xml(submissionXmlExample);
 const cssClasses = "technical-details-pane technical-details-pane-examples";
 
-class ExampleDocs extends React.PureComponent {
+export default class ExampleDocs extends React.PureComponent {
   render() {
     Tabs.setUseDefaultStyles(false);
 
@@ -56,5 +56,3 @@ class ExampleDocs extends React.PureComponent {
     );
   }
 }
-
-export default ExampleDocs;

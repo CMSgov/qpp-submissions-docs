@@ -1,7 +1,7 @@
 import React from 'react';
-import DataModelTable from './data-model-table';
+import DataModelTable from '../common/data-model-table';
 
-var FIELDS = [
+const FIELDS = [
   {name: 'id', value: 'string', description: 'The id of the submission.'},
   {name: 'createdAt', value: 'datetime', description: 'The creation time of the submission in <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a> format.'},
   {name: 'updatedAt', value: 'datetime', description: 'The modification time of the submission in <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a> format.'},
@@ -13,10 +13,8 @@ var FIELDS = [
   {name: 'measurementSets', value: 'list', description: 'Measurement sets associated with the submission.',  notes: 'writable, optional'}
 ];
 
-class Submission extends React.PureComponent {
-
+export default class Submission extends React.PureComponent {
   render() {
-
     return (
        <div>
           <h1 className="ds-h1">Submissions</h1>
@@ -45,5 +43,3 @@ class Submission extends React.PureComponent {
     );
   }
 }
-
-export default Submission;

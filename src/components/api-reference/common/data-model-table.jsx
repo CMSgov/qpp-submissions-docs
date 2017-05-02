@@ -7,15 +7,15 @@ class DataModelRow extends React.Component {
         <td><pre>{this.props.field.name}</pre></td>
         <td><pre>{this.props.field.value}</pre></td>
         <td dangerouslySetInnerHTML={{__html: this.props.field.description}} />
-        <td>{this.props.field.notes}</td>
+        <td dangerouslySetInnerHTML={{__html: this.props.field.notes}}/>
       </tr>
     );
   }
 }
 
-class DataModelTable extends React.Component {
+export default class DataModelTable extends React.Component {
   render() {
-    var rows = [];
+    const rows = [];
     this.props.fields.forEach(function(field) {
       rows.push(<DataModelRow field={field} key={field.name}/>);
     });
@@ -34,5 +34,3 @@ class DataModelTable extends React.Component {
     );
   }
 }
-
-export default DataModelTable;
