@@ -1,5 +1,5 @@
 import React from 'react';
-import DataModelTable from './common/data-model-table';
+import DataModelTable from '../common/data-model-table';
 
 const FIELDS = [
   {name: 'id', value: 'string', description: 'The id of the submission.'},
@@ -14,7 +14,6 @@ const FIELDS = [
 ];
 
 export default class Submission extends React.PureComponent {
-
   render() {
     return (
        <div>

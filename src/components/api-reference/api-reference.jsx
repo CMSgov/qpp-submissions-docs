@@ -1,17 +1,20 @@
 import React from 'react';
 
 import Benchmarks from './data-model-schemas/benchmarks';
-import Submission from './data-model-schemas/submission';
+import ExampleDocs from './examples/example-docs';
 import Measurements from './data-model-schemas/measurements';
 import MeasurementSets from './data-model-schemas/measurement-sets';
-import ExampleDocs from './examples/example-docs';
-import './api-reference.css';
+import Scoring from './scoring';
+import Submission from './data-model-schemas/submission';
+import '../../styles/api-reference/api-reference.css';
 
 class SchemaDetail extends React.Component {
   render() {
     const schemaName = this.props.name;
 
-    if (schemaName === 'benchmarks') {
+    if (schemaName === 'scoring') {
+      return <Scoring/>
+    } else if (schemaName === 'benchmarks') {
       return <Benchmarks/>;
     } else if (schemaName === 'measurements') {
       return <Measurements/>;
@@ -70,8 +73,24 @@ export default class Schemas extends React.PureComponent {
                 <li><a href="#" data-hash="measurements#multi-performance-rate"
                 onClick={this.showSchemaDetail}>Multi-Performance Rate</a></li>
               </ul>
-              <li><a href="#" data-hash="benchmarks"
-                     onClick={this.showSchemaDetail}>Benchmarks</a></li>
+              <li><a href="#" data-hash="scoring"
+                     onClick={this.showSchemaDetail}>Scoring</a></li>
+              <ul>
+                <li><a href="#" data-hash="benchmarks"
+                       onClick={this.showSchemaDetail}>Benchmarks</a>
+                  <ul>
+                    <li><a href="#" data-hash="benchmarks"
+                           onClick={this.showSchemaDetail}>Historical Benchmarks</a>
+                    </li>
+                    <li><a href="#" data-hash="benchmarks"
+                           onClick={this.showSchemaDetail}>Current Benchmarks</a>
+                    </li>
+                    <li><a href="#" data-hash="benchmarks"
+                           onClick={this.showSchemaDetail}>Benchmarks Calculations</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
             </ul>
             <li className="ds-c-vertical-nav__item"><b>Examples</b></li>
             <ul className="ds-c-vertical-nav__subnav">
