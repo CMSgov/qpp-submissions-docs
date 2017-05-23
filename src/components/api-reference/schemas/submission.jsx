@@ -10,7 +10,7 @@ const FIELDS = [
   {name: 'taxypayerIdentificationNumber', value: 'string', description: 'The 9-digit identifier of the provider associated with the submission. As the API does not yet collect personally identifying information, all TINs must begin with "000".', notes: 'writable'},
   {name: 'nationalProviderIdentifier', value: 'string', description: 'The 10-digit identifier of the provider associated with the submission.', notes: 'writable, optional if entityType is "individual"'},
   {name: 'performanceYear', value: 'integer', description: 'The year in which performance data for the submission was collected.',  notes: 'writable'},
-  {name: 'measurementSets', value: 'list', description: 'Measurement sets associated with the submission.',  notes: 'writable, optional'}
+  {name: 'measurementSets', value: 'array<measurementSet>', description: 'Measurement sets associated with the submission.',  notes: 'writable, optional'}
 ];
 
 export default class Submission extends React.PureComponent {
@@ -32,9 +32,9 @@ export default class Submission extends React.PureComponent {
   "taxpayerIdentificationNumber": string,
   "nationalProviderIdentifier": string,
   "performanceYear": integer,
-  "measurementSets": [`}
+  "measurementSets": array<`}
     <a href="#">MeasurementSets Resource</a>
-  {`]
+  {`>
 }`}
             </pre>
           </div>
