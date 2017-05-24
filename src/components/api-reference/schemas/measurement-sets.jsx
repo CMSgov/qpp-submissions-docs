@@ -9,7 +9,7 @@ const FIELDS = [
   {name: 'performanceStart', value: 'string', description: 'A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). The first date when the measurement data is applicable.', notes: 'writable, optional'},
   {name: 'performanceEnd', value: 'string', description: 'A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). The last date when the measurement data is applicable.', notes: 'writable, optional'},
   {name: 'measureSet', value: 'string', description: 'The speciality set which the measurement set is attesting.', notes: 'writable, optional'},
-  {name: 'measurements', value: 'list', description: 'Measurements associated with the measurement set.',  notes: 'writable, optional'}
+  {name: 'measurements', value: 'array<measurements>', description: 'Measurements associated with the measurement set.',  notes: 'writable, optional'}
 ];
 
 export default class MeasurementSets extends React.PureComponent {
@@ -31,9 +31,9 @@ export default class MeasurementSets extends React.PureComponent {
   "performanceStart": date,
   "performanceEnd": date,
   "measureSet": string,
-  "measurements": [`}
+  "measurements": array<`}
     <a href="#">Measurements Resource</a>
-  {`]
+  {`>
 }`}
           </pre>
         </div>

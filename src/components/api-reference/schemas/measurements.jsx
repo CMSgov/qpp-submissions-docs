@@ -27,7 +27,7 @@ const SINGLE_PERFORMANCE_RATE_FIELDS = [
 
 const MULTI_PERFORMANCE_RATE_FIELDS = [
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported  via certified EHR technology without any manual interference.', notes: 'writable'},
-  {name: 'strata', value: 'list', description: 'The strata associated with the performance rate measurement.', notes: 'writable'}
+  {name: 'strata', value: 'array<performanceRateStratum>', description: 'The strata associated with the performance rate measurement.', notes: 'writable'}
 ];
 
 const STRATA_FIELDS = [
@@ -131,9 +131,9 @@ class Measurements extends React.PureComponent {
   "measureId": string,
   "value": {
     "isEndToEndReported": boolean,
-    "strata": [`}
+    "strata": array<`}
       <a href="#stratum">Performance Rate Stratum</a>
-    {`]
+    {`>
   }
 }`}
             </pre>
