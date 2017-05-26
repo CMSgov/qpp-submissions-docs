@@ -11,7 +11,7 @@
 
 ## Merging to master
 
-Before merging to master, PR should have been approved following code review and the last commit should have a big green checkmark from CI.
+Before merging to master, PR should have been approved following code review.
 
 1. Do a squash merge:
 
