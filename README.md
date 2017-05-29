@@ -1,5 +1,7 @@
 # QPP Submissions API Developer Documentation
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/CMSgov/qpp-submissions-docs.svg?token=04d49144b23313bff7de12f1e73056361a1e4951e3737d5385cf5dd1b00f82b1&ts=1496084472985)](https://greenkeeper.io/)
+
 WIP Developer documentation for the QPP Submissions API.
 
 Accessible publicly at https://cmsgov.github.io/qpp-submissions-docs.
