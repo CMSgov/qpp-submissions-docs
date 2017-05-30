@@ -23,6 +23,8 @@ const SINGLE_PERFORMANCE_RATE_FIELDS = [
   {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},
   {name: 'performanceExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure.', notes: 'writable, optional'},
   {name: 'populationTotal', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero.', notes: 'writable'}
+  {name: 'reportingRate', value: 'float', description: 'The quotient that results from dividing the sum of performanceMet, performanceExclusion, and performanceNotMet by the populationTotal.', notes: ''},
+  {name: 'performanceRate', value: 'float', description: 'The performance rate is calculated based on the overallAlgorithm of the measure. Currently, a measure\'s overallAlgorithm can be simpleAverage, weightedAverage, or sumNumerators.',  notes: ''}
 ];
 
 const MULTI_PERFORMANCE_RATE_FIELDS = [
@@ -36,7 +38,9 @@ const STRATA_FIELDS = [
   {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},
   {name: 'performanceExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure.', notes: 'writable, optional'},
   {name: 'populationTotal', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero.', notes: 'writable'},
-  {name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable'}
+  {name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable'},
+  {name: 'reportingRate', value: 'float', description: 'The quotient that results from dividing the sum of performanceMet, performanceExclusion, and performanceNotMet by the populationTotal.', notes: ''},
+  {name: 'performanceRate', value: 'float', description: 'The performance rate is calculated based on the overallAlgorithm of the measure. Currently, a measure\'s overallAlgorithm can be simpleAverage, weightedAverage, or sumNumerators.',  notes: ''}
 ];
 
 class Measurements extends React.PureComponent {
