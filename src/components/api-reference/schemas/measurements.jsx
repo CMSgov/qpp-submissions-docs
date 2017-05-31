@@ -13,16 +13,16 @@ const BOOLEAN_FIELDS = [
 ];
 
 const PROPORTION_FIELDS = [
-  {name: 'numerator', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>denominator</b>.', notes: 'writable'},
-  {name: 'denominator', value: 'integer', description: 'The total number of patients. Must be greater than or equal to zero.', notes: 'writable'},
+  {name: 'numerator', value: 'integer', description: 'The number of occurrences for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>denominator</b>.', notes: 'writable'},
+  {name: 'denominator', value: 'integer', description: 'The total number of occurrences as described by the measure. Must be greater than or equal to zero.', notes: 'writable'},
 ];
 
 const SINGLE_PERFORMANCE_RATE_FIELDS = [
-  {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported  via certified EHR technology without any manual interference.', notes: 'writable'},
+  {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable'},
   {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>populationTotal</b>', notes: 'writable'},
   {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},
   {name: 'performanceExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure.', notes: 'writable, optional'},
-  {name: 'populationTotal', value: 'integer', description: 'The total number of patients. Must be greater than or equal to zero.', notes: 'writable'}
+  {name: 'populationTotal', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero.', notes: 'writable'}
 ];
 
 const MULTI_PERFORMANCE_RATE_FIELDS = [
@@ -35,7 +35,7 @@ const STRATA_FIELDS = [
   {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>populationTotal</b>', notes: 'writable'},
   {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},
   {name: 'performanceExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure.', notes: 'writable, optional'},
-  {name: 'populationTotal', value: 'integer', description: 'The total number of patients. Must be greater than or equal to zero.', notes: 'writable'},
+  {name: 'populationTotal', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero.', notes: 'writable'},
   {name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable'}
 ];
 
