@@ -54,6 +54,8 @@ class AdvancedTutorial extends React.PureComponent {
         <div className="temp-grid-half">
           <h1 className="ds-h1">Advanced API Tutorial</h1>
           <p>In the <a href="/qpp-submissions-docs/tutorial">first tutorial</a> we covered how to create a submission, add a measurement set with IA category performance data, and retrieve the score in three different API requests. This time we're going to build on the previous tutorial and look at creating a submission with embedded ACI performance data in one request, go through ACI scoring and how measures compose a score, and see how to update a measure with new info (all while running into a problem along the way). All of these examples serve to illustrate how the Submissions API can make it easier to react to and fix issues that arise.</p>
+          <p>
+          Like the previous tutorial, please remember that the score calculation may be inaccurate until the API is finalized. The <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">interactive API</a> will always return the latest score calculation.</p>
           <h2 className="ds-h2" id="submitting-with-performance-data">
             <a
               className="tutorial-header-link"
