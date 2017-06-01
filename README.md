@@ -3,7 +3,7 @@
 Developer documentation for building against the QPP Submissions API. Accessible publicly at https://cmsgov.github.io/qpp-submissions-docs.
 
 ### API Tutorials
-These are static tutorials designed to illustrate some common workflows when composing API requests together to submit and score performance data. The sample request and response data may be out of date as the API changes, but the workflows must valid.
+These are static tutorials designed to illustrate some common workflows when composing API requests together to submit and score performance data. The sample request and response data may be out of date as the API changes, but the workflows must remain valid.
 
 ### Data Schema
 It's also useful to describe the data being submitted and updated through the API, so these data schemas list the fields belonging to each resource type as well as some supplementary details about concepts like scoring.
