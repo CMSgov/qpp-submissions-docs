@@ -21,6 +21,8 @@ yarn
 yarn start
 ```
 
+We use Travis CI for testing - add a test if it makes sense, and make sure the build is green before merging.
+
 ## Deploy
 
 These docs are hosted on GitHub Pages. We do a couple things to make this nice:
