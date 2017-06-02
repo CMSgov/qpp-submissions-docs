@@ -8,7 +8,7 @@ const FIELDS = [
   {name: 'programName', value: 'string', description: 'The quality payment program under which the submission belongs. Acceptable values are <b>"mips"</b>.', notes: 'writable'},
   {name: 'entityType', value: 'string', description: 'The type of provider associated with the submission. Acceptable values are <b>"individual"</b> and <b>"group"</b>.', notes: 'writable'},
   {name: 'taxypayerIdentificationNumber', value: 'string', description: 'The 9-digit identifier of the provider associated with the submission. As the API does not yet collect personally identifying information, all TINs must begin with "000".', notes: 'writable'},
-  {name: 'nationalProviderIdentifier', value: 'string', description: 'The 10-digit identifier of the provider associated with the submission.', notes: 'writable, optional if entityType is "individual"'},
+  {name: 'nationalProviderIdentifier', value: 'string', description: 'The 10-digit identifier of the provider associated with the submission.', notes: 'writable, optional if entityType is "group"'},
   {name: 'performanceYear', value: 'integer', description: 'The year in which performance data for the submission was collected.',  notes: 'writable'},
   {name: 'measurementSets', value: 'array<measurementSet>', description: 'Measurement sets associated with the submission.',  notes: 'writable, optional'}
 ];
