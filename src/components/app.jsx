@@ -46,6 +46,9 @@ class App extends React.PureComponent {
           <h2 className="ds-h2">Explore the API with our interactive reference.</h2>
           <p className="ds-text--lead">Want more detail? Check out our <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">interactive API reference</a> for an exhaustive list of endpoints with example request and response payloads. This is the best place to test the most current Submissions API and scoring behavior. Test out what else you can do!</p>
 
+          <h2 className="ds-h2">Test and develop using public sandbox API.</h2>
+          <p className="ds-text--lead">The endpoints described in the <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">interactive API reference</a> can be accessed via the command line using the URL 'https://qpp-submissions-sandbox.navapbc.com/v1/{path}'. </p>         
+          
           <h2 className="ds-h2">Understand and integrate with measures data.</h2>
           <p className="ds-text--lead">A complete list of ACI (Advancing Care Information) and IA (Improvement Activity) measures is available in the <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data repository</a>. Each measure contains a description and additional information around attestation and scoring requirements. Additionally, you can integrate with the qpp-measures-data NPM module to import measures data into your own code base and work with it programatically.</p>
 
