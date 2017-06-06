@@ -23,8 +23,8 @@ const SINGLE_PERFORMANCE_RATE_FIELDS = [
   {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},
   {name: 'performanceExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure.', notes: 'writable, optional'},
   {name: 'populationTotal', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero.', notes: 'writable'}
-  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + performanceExclusion + and performanceNotMet) / populationTotal) * 100: .', notes: ''},
-  {name: 'performanceRate', value: 'float', description: 'The performance rate for a single performance rate measurement, ranging from zero to one-hundred and representing a percentage, is equal to (performanceMet / (performanceMet + performanceNotMet)) * 100.',  notes: ''}
+  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + performanceExclusion + and performanceNotMet) / populationTotal) * 100: .'},
+  {name: 'performanceRate', value: 'float', description: 'The performance rate for a single performance rate measurement, ranging from zero to one-hundred and representing a percentage, is equal to (performanceMet / (performanceMet + performanceNotMet)) * 100.'}
 ];
 
 const MULTI_PERFORMANCE_RATE_FIELDS = [
@@ -39,8 +39,8 @@ const STRATA_FIELDS = [
   {name: 'performanceExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure.', notes: 'writable, optional'},
   {name: 'populationTotal', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero.', notes: 'writable'},
   {name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable'},
-  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + performanceExclusion + and performanceNotMet) / populationTotal) * 100: .', notes: ''},
-  {name: 'performanceRate', value: 'float', description: 'The performance rate for a multiple performance rate measurement is calculated based on the overallAlgorithm of the corresponding measure. Currently, a measure\'s overallAlgorithm can be a <b>simpleAverage</b>: ((sum of performanceMet all the non-overall stratum) / (sum of performanceMet and performanceNotMet from all all the non-overall)) / (number of non-overall strata), <b>weightedAverage</b>: ((sum of performanceMet all the non-overall strata) / (sum of performanceMet and performanceNotMet from all of the non-overall strata)) * 100, or <b>sumNumerators</b>: the sum of the performanceMet property from each non-overall stratum.',  notes: ''}
+  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + performanceExclusion + and performanceNotMet) / populationTotal) * 100: .'},
+  {name: 'performanceRate', value: 'float', description: 'The performance rate for a multiple performance rate measurement is calculated based on the overallAlgorithm of the corresponding measure. Currently, a measure\'s overallAlgorithm can be a <b>simpleAverage</b>: ((sum of performanceMet all the non-overall stratum) / (sum of performanceMet and performanceNotMet from all all the non-overall)) / (number of non-overall strata), <b>weightedAverage</b>: ((sum of performanceMet all the non-overall strata) / (sum of performanceMet and performanceNotMet from all of the non-overall strata)) * 100, or <b>sumNumerators</b>: the sum of the performanceMet property from each non-overall stratum.'}
 ];
 
 class Measurements extends React.PureComponent {
