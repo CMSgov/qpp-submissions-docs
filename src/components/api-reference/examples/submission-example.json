@@ -104,14 +104,15 @@
              "strata": [
                {
                  "performanceMet": 1,
-                 "populationTotal": 2,
+                 "eligiblePopulation": 2,
                  "stratum": "20-50 years old"
                },
                {
                  "performanceMet": 1,
-                 "performanceExclusion": 1,
+                 "eligiblePopulationExclusion": 1,
+                 "eligiblePopulationException": 1,
                  "performanceNotMet": 1,
-                 "populationTotal": 10,
+                 "eligiblePopulation": 10,
                  "stratum": "50-80 years old"
                }
              ]

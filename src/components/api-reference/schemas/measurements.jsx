@@ -19,11 +19,12 @@ const PROPORTION_FIELDS = [
 
 const SINGLE_PERFORMANCE_RATE_FIELDS = [
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable'},
-  {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>populationTotal</b>', notes: 'writable'},
+  {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>eligiblePopulation</b>', notes: 'writable'},
   {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},
-  {name: 'performanceExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure.', notes: 'writable, optional'},
-  {name: 'populationTotal', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero.', notes: 'writable'},
-  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + performanceExclusion + and performanceNotMet) / populationTotal) * 100.'},
+  {name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure.', notes: 'writable, optional'},
+  {name: 'eligiblePopulationException', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure.', notes: 'writable, optional'},
+  {name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero.', notes: 'writable'},
+  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100.'},
   {name: 'performanceRate', value: 'float', description: 'The performance rate for a single performance rate measurement, ranging from zero to one-hundred and representing a percentage, is equal to (performanceMet / (performanceMet + performanceNotMet)) * 100.'}
 ];
 
@@ -34,12 +35,13 @@ const MULTI_PERFORMANCE_RATE_FIELDS = [
 
 const STRATA_FIELDS = [
   {name: 'measurementId', value: 'string', description: 'The id of the measurement in which the stratum belongs.'},
-  {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>populationTotal</b>', notes: 'writable'},
+  {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>eligiblePopulation</b>', notes: 'writable'},
   {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},
-  {name: 'performanceExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure.', notes: 'writable, optional'},
-  {name: 'populationTotal', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero.', notes: 'writable'},
+  {name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure.', notes: 'writable, optional'},
+  {name: 'eligiblePopulationException', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure.', notes: 'writable, optional'},
+  {name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero.', notes: 'writable'},
   {name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable'},
-  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + performanceExclusion + and performanceNotMet) / populationTotal) * 100.'},
+  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100.'},
   {name: 'performanceRate', value: 'float', description: 'The performance rate for a multiple performance rate measurement is calculated based on the overallAlgorithm of the corresponding measure. Currently, a measure\'s overallAlgorithm can be a <b>simpleAverage</b>: ((sum of performanceMet from all of the non-overall strata) / (sum of performanceMet and performanceNotMet from all of the non-overall strata)) / (number of non-overall strata), <b>weightedAverage</b>: ((sum of performanceMet from all of the non-overall strata) / (sum of performanceMet and performanceNotMet from all of the non-overall strata)) * 100, or <b>sumNumerators</b>: the sum of the performanceMet property from each non-overall stratum.'}
 ];
 
@@ -117,8 +119,9 @@ class Measurements extends React.PureComponent {
     "isEndToEndReported": boolean,
     "performanceMet": integer,
     "performanceNotMet": integer,
-    "performanceExclusion": integer,
-    "populationTotal": integer
+    "eligiblePopulationExclusion": integer,
+    "eligiblePopulationException": integer,
+    "eligiblePopulation": integer
   }
 }`}
             </pre>
@@ -152,8 +155,9 @@ class Measurements extends React.PureComponent {
   "measurementId": string,
   "performanceMet": integer,
   "performanceNotMet": integer,
-  "performanceExclusion": integer,
-  "populationTotal": integer,
+  "eligiblePopulationExclusion": integer,
+  "eligiblePopulationException": integer,
+  "eligiblePopulation": integer,
   "stratum": string
 }`}
             </pre>
