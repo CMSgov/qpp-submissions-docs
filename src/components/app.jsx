@@ -50,7 +50,7 @@ class App extends React.PureComponent {
           <p className="ds-text--lead">A complete list of ACI (Advancing Care Information) and IA (Improvement Activity) measures is available in the <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data repository</a>. Each measure contains a description and additional information around attestation and scoring requirements. Additionally, you can integrate with the qpp-measures-data NPM module to import measures data into your own code base and work with it programatically.</p>
 
           <h2 className="ds-h2">View the API Reference</h2>
-          <p className="ds-text--lead">The technical reference information for the Submissions API and sample submission data are available <a href="/qpp-submissions-docs/schemas">here</a>. This will let you validate your own submission formatting in XML or JSON.</p>
+          <p className="ds-text--lead">The technical reference information for the Submissions API and sample submission data are available <a href="/qpp-submissions-docs/schemas">here</a>. This will let you validate your own submission formatting in XML or JSON. JSON and XML schema files are available in the <a href="https://github.com/CMSgov/qpp-submissions-schema">qpp-submissions-schema</a> repository.</p>
 
           <h2 className="ds-h2">Need help or have feedback?</h2>
           <p className="ds-text--lead">Join our <a href="https://groups.google.com/forum/#!forum/qpp-apis">Google Group</a>, where you can interact with other developers and ask questions, find answers and share experiences using the API. If you need further help, you can <a href="mailto:QPP@cms.hhs.gov">contact</a> the QPP Service Center.</p>
