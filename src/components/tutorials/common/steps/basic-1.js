@@ -39,6 +39,7 @@ class Basic1 extends React.PureComponent {
       "entityType": "individual",
       "taxpayerIdentificationNumber": "000456789",
       "nationalProviderIdentifier": "9876543210",
+      "entityId": null,
       "performanceYear": 2016,
       "measurementSets": []
     }
