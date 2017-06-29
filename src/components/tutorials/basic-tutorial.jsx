@@ -171,6 +171,7 @@ class BasicTutorial extends React.PureComponent {
           <p>That's it! We've used three API requests to (1) create a submission, (2) add measurements into a measurement set, and (3) get the score, all in minutes. Each API response gives us useful information for the next step.</p>
           <p>In general, we can think about the Submissions API as a way to have a live conversation with CMS about performance measurements. Rather than waiting months to hear back about missing information or a score, the API gives us feedback that is immediate, specific, and actionable - we can easily make another API request if necessary.</p>
           <p>What we've shown is an example of working directly with the API - typically these requests are made through a web interface or script, but the requests & responses above illustrate the kind of power and speed the Submissions API and applications built against it can provide.</p>
+          <p><em>Disclaimer:</em> Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments.</p>
           <h3>Next steps</h3>
           <p>Explore a more complex and powerful workflow in our <a href="/qpp-submissions-docs/advanced-tutorial">advanced tutorial</a>.</p>
           <a className="ds-c-button ds-c-button--primary ds-c-button--big" href="/qpp-submissions-docs/advanced-tutorial">Start the advanced tutorial</a>

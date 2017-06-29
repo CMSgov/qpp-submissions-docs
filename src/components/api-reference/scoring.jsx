@@ -13,6 +13,7 @@ export default class ScoringEngine extends PureComponent {
       <div id="scoring-engine">
         <h1 className="ds-h1">Scoring</h1>
         <p className="ds-text--lead">Scores are calculated by a scoring engine package. This functionality is not yet publicly exposed.</p>
+        <p><em>Disclaimer:</em> Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments.</p>
         <h2 className="ds-h2">Method Signature</h2>
         <p className="ds-text--lead">Improvement activities (IA), advancing care information (ACI), and quality measures are scored differently. The scoring engine package used provides one scoring engine that scores and combines these three categories.</p>
         <div className='markup markup--html'>
