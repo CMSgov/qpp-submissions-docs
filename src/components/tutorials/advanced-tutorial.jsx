@@ -79,7 +79,7 @@ class AdvancedTutorial extends React.PureComponent {
                 <tr><td>Taxpayer Identification Number</td>
                     <td>000456789</td></tr>
                 <tr><td>National Provider Identifier</td>
-                    <td>9876543210</td></tr>
+                    <td>0123456789</td></tr>
                 <tr><td>Performance Year</td>
                     <td>2016</td></tr>
                 <tr><td className="nested-once">Measurement Set</td></tr>
@@ -122,7 +122,7 @@ class AdvancedTutorial extends React.PureComponent {
                 <tr><td>Taxpayer Identification Number</td>
                     <td>000345678</td></tr>
                 <tr><td>National Provider Identifier</td>
-                    <td>9876543210</td></tr>
+                    <td>0123456789</td></tr>
                 <tr><td>Performance Year</td>
                     <td>2016</td></tr>
                 <tr><td className="nested-once">Measurement Set</td></tr>

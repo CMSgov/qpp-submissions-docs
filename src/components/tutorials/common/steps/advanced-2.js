@@ -20,7 +20,7 @@ class Advanced2 extends React.PureComponent {
   "programName": "mips",
   "entityType": "individual",
   "taxpayerIdentificationNumber": "000345678",
-  "nationalProviderIdentifier": "9876543210",
+  "nationalProviderIdentifier": "0123456789",
   "performanceYear": 2016,
   "measurementSets": [
     {
@@ -88,7 +88,7 @@ class Advanced2 extends React.PureComponent {
     "programName": "mips",
     "entityType": "individual",
     "taxpayerIdentificationNumber": "000345678",
-    "nationalProviderIdentifier": "9876543210",
+    "nationalProviderIdentifier": "0123456789",
     "entityId": null,
     "performanceYear": 2016,
     "measurementSets": [

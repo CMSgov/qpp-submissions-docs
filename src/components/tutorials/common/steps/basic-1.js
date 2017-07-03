@@ -20,7 +20,7 @@ class Basic1 extends React.PureComponent {
   "programName": "mips",
   "entityType": "individual",
   "taxpayerIdentificationNumber": "000456789",
-  "nationalProviderIdentifier": "9876543210",
+  "nationalProviderIdentifier": "0123456789",
   "performanceYear": 2016
 }`}
           </pre>
@@ -38,7 +38,7 @@ class Basic1 extends React.PureComponent {
       "programName": "mips",
       "entityType": "individual",
       "taxpayerIdentificationNumber": "000456789",
-      "nationalProviderIdentifier": "9876543210",
+      "nationalProviderIdentifier": "0123456789",
       "entityId": null,
       "performanceYear": 2016,
       "measurementSets": []
