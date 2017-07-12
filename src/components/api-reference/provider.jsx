@@ -53,7 +53,7 @@ const providerStubRules = [
   }    
 ];
 
-const listItems = providerStubRules.map((rule) =>
+const profileStubItems = providerStubRules.map((rule) =>
   <li>The <b>{rule.position}</b> {rule.ruleText} <em>{rule.field}</em>.
     <ul>
       {rule.ruleDetails.map((detail) => <li>{detail}</li>)}
@@ -71,7 +71,7 @@ export default class Provider extends PureComponent {
         <p className="ds-text--lead">In order to support testing of special scoring scenarios, the Submissions API features a provider profile stub in the <a href="http://qpp-submissions-sandbox.navapbc.com/">sandbox</a> environment. In this environment, the Submissions API enforces the use of fake TINs, requiring TINs to start with 3 "000"s.</p>
         <p className="ds-text--lead">The trailing 6 positions of fake TINs are used to populate a provider profile stub. The stub logic is detailed below and enables a tester to provide variations of fake TINs which result in different provider profiles.</p>
         <p className="ds-text--lead">The provider profile stub enforces the following rules:</p>
-        <ul className="ds-text--lead">{listItems}</ul>
+        <ul className="ds-text--lead">{profileStubItems}</ul>
       </div>
     );
   }
