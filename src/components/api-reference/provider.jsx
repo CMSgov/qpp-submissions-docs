@@ -39,7 +39,7 @@ const providerStubRules = [
     ruleText: "corresponds to the attribution of",
     field: "various provider characteristics",
     ruleDetails: [
-      "2 in positions 7, 8 or 9 indicate the provider is part of a small practice",
+      "A \"2\" in positions 7, 8 or 9 indicates the provider is part of a small practice",
       "3: Is part of a rural practice",
       "4: Is in a shortage area",
       "5: Is excluded due to low volume",
@@ -69,7 +69,7 @@ export default class Provider extends PureComponent {
         <p className="ds-text--lead">A submission to the Submissions API requires a Taxpayer Identification Number (TIN) and may include a National Provider Identifier (NPI). These identifiers are used to accurately attribute the submission to a provider. A provider's profile includes information which is used to trigger special scoring scenarios.</p>
         <p className="ds-text--lead"><b>Note:</b> For the Beta 1 Release, no special scoring scenarios will be applied in the production environment. Every submission will be attributed with the default provider profile which incurs no special scoring.</p>
         <p className="ds-text--lead">In order to support testing of special scoring scenarios, the Submissions API features a provider profile stub in the <a href="http://qpp-submissions-sandbox.navapbc.com/">sandbox</a> environment. In this environment, the Submissions API enforces the use of fake TINs, requiring TINs to start with 3 "000"s.</p>
-        <p className="ds-text--lead">The trailing 6 positions of fake TINs are used to populate a provider profile stub. The stub logic is detailed below and enables a tester to provide variations of fake TINs which results in different provider profiles.</p>
+        <p className="ds-text--lead">The trailing 6 positions of fake TINs are used to populate a provider profile stub. The stub logic is detailed below and enables a tester to provide variations of fake TINs which result in different provider profiles.</p>
         <p className="ds-text--lead">The provider profile stub enforces the following rules:</p>
         <ul className="ds-text--lead">{listItems}</ul>
       </div>
