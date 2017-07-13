@@ -3,9 +3,11 @@
 Developer documentation for building against the QPP Submissions API. Accessible publicly at https://cmsgov.github.io/qpp-submissions-docs.
 
 ### API Tutorials
+
 These are static tutorials designed to illustrate some common workflows when composing API requests together to submit and score performance data. The sample request and response data may be out of date as the API changes, but the workflows must remain valid.
 
 ### Data Schema
+
 It's also useful to describe the data being submitted and updated through the API, so these data schemas list the fields belonging to each resource type as well as some supplementary details about concepts like scoring.
 
 References to [qpp-measures-data](https://github.com/CMSgov/qpp-measures-data), the [interactive API reference](https://qpp-submissions-sandbox.navapbc.com/api-explorer), and the Google Group are also listed.
@@ -25,11 +27,13 @@ We use Travis CI for testing - add a test if it makes sense, and make sure the b
 
 ## Deploy
 
-These docs are hosted on GitHub Pages. We do a couple things to make this nice:
-
-* Use the [gh-pages](https://github.com/tschaub/gh-pages) library for deploying
-* Use the [404 redirection trick](https://github.com/rafrex/spa-github-pages) to pass path/hash as query param to `/index.html`
+These docs are hosted on GitHub Pages. To deploy what you have locally:
 
 ```bash
 yarn run deploy
 ```
+
+Under the hood, we use a few tools to make this work:
+
+* Use the [gh-pages](https://github.com/tschaub/gh-pages) library for deploying
+* Use the [404 redirection trick](https://github.com/rafrex/spa-github-pages) to pass path/hash as query param to `/index.html`
