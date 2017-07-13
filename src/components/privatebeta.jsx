@@ -8,12 +8,7 @@ import '../styles/app.css';
 import '../styles/temp-grid.css';
 import '../styles/usa-banner.css';
 
-import Header from './header';
-import BasicTutorial from './tutorials/basic-tutorial';
-import AdvancedTutorial from './tutorials/advanced-tutorial';
-import Schemas from './api-reference/api-reference';
-
-class App extends React.PureComponent {
+class Beta extends React.PureComponent {
   render() {
     const path = url
       .parse(this.props.url).pathname.toLowerCase()
@@ -22,16 +17,6 @@ class App extends React.PureComponent {
       .split('/').pop();
     const hash = url.parse(this.props.url).hash;
 
-    let component;
-
-    if (path === 'tutorial') {
-      component = <BasicTutorial hash={hash}/>;
-    } else if (path === 'advanced-tutorial') {
-      component = <AdvancedTutorial hash={hash}/>
-    } else if (path === 'schemas') {
-      component = <Schemas hash={hash}/>
-    } else {
-      component = <section>
         <div className="ds-u-measure--wide">
           <h1 className="ds-h1">Submissions API Private Beta</h1>
           <p className="ds-text--lead">Learn more about how to participate in the private beta, what you can do with your unique API key, and what functionality is available in the private beta.</p>
@@ -105,4 +90,4 @@ class App extends React.PureComponent {
   }
 }
 
-export default App;
+export default Beta;
