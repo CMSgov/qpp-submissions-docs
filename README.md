@@ -27,13 +27,12 @@ We use Travis CI for testing - add a test if it makes sense, and make sure the b
 
 ## Deploy
 
-These docs are hosted on GitHub Pages. To deploy what you have locally:
+These docs are hosted on GitHub Pages.
+
+To deploy changes, merge a feature branch into to the master branch (see [CONTRIBUTING.md#merging-to-master](CONTRIBUTING.md#merging-to-master)) and deploy the master branch with the following command:
 
 ```bash
 yarn run deploy
 ```
 
-Under the hood, we use a few tools to make this work:
-
-* Use the [gh-pages](https://github.com/tschaub/gh-pages) library for deploying
-* Use the [404 redirection trick](https://github.com/rafrex/spa-github-pages) to pass path/hash as query param to `/index.html`
+Under the hood, the [gh-pages](https://github.com/tschaub/gh-pages) library is used for managing the gh-pages branch.
