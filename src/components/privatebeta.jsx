@@ -8,15 +8,9 @@ import '../styles/app.css';
 import '../styles/temp-grid.css';
 import '../styles/usa-banner.css';
 
-class Beta extends React.PureComponent {
+export default class Beta extends React.PureComponent {
   render() {
-    const path = url
-      .parse(this.props.url).pathname.toLowerCase()
-      // we're not always mounted at /
-      // so just get the last bit
-      .split('/').pop();
-    const hash = url.parse(this.props.url).hash;
-
+    return (
         <div className="ds-u-measure--wide">
           <h1 className="ds-h1">Submissions API Private Beta</h1>
           <p className="ds-text--lead">Learn more about how to participate in the private beta, what you can do with your unique API key, and what functionality is available in the private beta.</p>
@@ -71,10 +65,11 @@ class Beta extends React.PureComponent {
           <h3 className="ds-h3">All done?</h3>
           <p>Return to the <a href="https://qpp.cms.gov/resources/developers">QPP Developer Resources</a>.</p>
         </div>
-      </section>;
-    }
-
-    return (
+   );
+  }
+ }
+     
+ {/*  return (
       <div>
         <a className="usa-skipnav" href="#main-content">Skip to main content</a>
         <Header />
@@ -91,3 +86,4 @@ class Beta extends React.PureComponent {
 }
 
 export default Beta;
+*/}
