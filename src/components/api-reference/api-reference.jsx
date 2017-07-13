@@ -5,6 +5,7 @@ import ExampleDocs from './examples/example-docs';
 import Measurements from './schemas/measurements';
 import MeasurementSets from './schemas/measurement-sets';
 import Scoring from './scoring';
+import Provider from './provider';
 import Submission from './schemas/submission';
 import '../../styles/api-reference/api-reference.css';
 
@@ -13,7 +14,9 @@ class SchemaDetail extends React.Component {
     const schemaName = this.props.name;
 
     if (schemaName === 'scoring') {
-      return <Scoring/>
+      return <Scoring/>;
+    } else if (schemaName === 'provider') {
+      return <Provider/>;
     } else if (schemaName === 'benchmarks') {
       return <Benchmarks/>;
     } else if (schemaName === 'measurements') {
@@ -91,6 +94,8 @@ export default class Schemas extends React.PureComponent {
               </li>
               <li><a href="#" data-hash="scoring"
                      onClick={this.showSchemaDetail}>Scoring</a></li>
+              <li><a href="#" data-hash="provider"
+                     onClick={this.showSchemaDetail}>Provider Profile Stub</a></li>                     
             </ul>
             <li className="ds-c-vertical-nav__item"><b>Examples</b></li>
             <ul className="ds-c-vertical-nav__subnav">
