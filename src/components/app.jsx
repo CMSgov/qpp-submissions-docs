@@ -8,6 +8,7 @@ import '../styles/temp-grid.css';
 import '../styles/usa-banner.css';
 
 import Header from './header';
+import Beta from './privatebeta';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
 import Schemas from './api-reference/api-reference';
@@ -29,6 +30,8 @@ class App extends React.PureComponent {
       component = <AdvancedTutorial hash={hash}/>
     } else if (path === 'schemas') {
       component = <Schemas hash={hash}/>
+    } else if (path === 'privatebeta') {
+      component = <Beta hash={hash}/>
     } else {
       component = <section>
         <div className="ds-u-measure--wide">
@@ -44,6 +47,11 @@ class App extends React.PureComponent {
 
           <h2 className="ds-h2">Explore the API using the public sandbox.</h2>
           <p className="ds-text--lead">The public sandbox API allows you to test integrating with the API before the reporting period begins - without making a real submission to QPP. You can access the public sandbox API endpoints via the command line using the URL 'https://qpp-submissions-sandbox.navapbc.com/v1/'. Check out the <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">interactive API reference</a> for an exhaustive list of endpoints with example request and response payloads.</p>
+
+          <h2 className="ds-h2">Participate in the Submissions API Private Beta</h2>
+          <p className="ds-text--lead">The QPP Submissions API is currently in private beta, and will be open from July 2017 through December 2017. During this period, we will collect participants' feedback and make refinements before we open the API for public use.</p>
+          <p className="ds-text--lead">At this time, the private beta is open only to 2017 CMS-approved Qualified Registries ("registries") and Qualified Clinical Data Registries ("QCDRs").  To participate, you will need to request an API key using <a href="https://goo.gl/forms/85W7sk8s6Sf0fOsN2">this form</a>.</p>
+          <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/privatebeta">Learn more about the private beta</a>
 
           <h2 className="ds-h2">Understand and integrate with measures data.</h2>
           <p className="ds-text--lead">A complete list of ACI (Advancing Care Information) and IA (Improvement Activity) measures is available in the <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data repository</a>. Each measure contains a description and additional information around attestation and scoring requirements. Additionally, you can integrate with the qpp-measures-data NPM module to import measures data into your own code base and work with it programatically.</p>
