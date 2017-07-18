@@ -47,12 +47,12 @@ export default class Beta extends React.PureComponent {
           <p class="ds-text">If you are associated with a third party vendor, you can only view scores based on the data you've submitted. In the future, there will be a way for MIPS-eligible clinicians and practices to grant organizations additional permissions so that the organization can get a final score that represents all data submitted on the clinician/practice's behalf (not just based on data they've submitted).</p>
 
           <h2 className="ds-h2">How to request an API key</h2>
-          <p class="ds-text">At this time, the private beta is open only to 2017 CMS-approved Qualified Registries ("registries") and Qualified Clinical Data Registries ("QCDRs").  Request an API key by contacting the Quality Payment Program Service Center at <a href="mailto:QPP@cms.hhs.gov">QPP@cms.hhs.gov</a>.</p>
+          <p class="ds-text">At this time, the private beta is open only to 2017 CMS-approved Qualified Registries ("registries") and Qualified Clinical Data Registries ("QCDRs").  Request an API key by contacting the Quality Payment Program Service Center at <a href="mailto:QPP@cms.hhs.gov?subject=Request%20API%20Key%20for%20Submissions%20API%20Beta">QPP@cms.hhs.gov</a>.</p>
           <p class="ds-text">We will verify that you are associated with a 2017 CMS-approved registry or QCDR, and manually generate an API key for you. Your API key permits authenticated access to the Submissions API private beta, and will expire November 1, 2017. After this date, you will be able to request a new API key through an automated, self-service process.</p>
           <p class="ds-text">When you get this key:
           <ul>
             <li>Keep it secure. Treat your API key like you would treat any account password.</li>
-            <li>Copy and save it for your records. For security reasons, we will only re-send the API key to you once. After that, you will need to contact <a href="mailto:qpp@cms.hhs.gov">QPP@cms.hhs.gov</a> to request a new API key.</li>
+            <li>Copy and save it for your records. For security reasons, we will only re-send the API key to you once. After that, you will need to contact <a href="mailto:qpp@cms.hhs.gov?subject=Request%20API%20Key%20for%20Submissions%20API%20Beta">QPP@cms.hhs.gov</a> to request a new API key.</li>
             <li>Do not share your API key with anyone outside your organization.</li>
             <li>Within your organization, limit access to only the staff person/s who will embed it in your software.</li>
           </ul>
@@ -65,8 +65,7 @@ export default class Beta extends React.PureComponent {
           <h2 className="ds-h2">Where to go for support</h2>
           <p class="ds-text">
             <ul>
-              <li>Request an API key for the private beta by contacting the Quality Payment Program Service Center at <a href="mailto:QPP@cms.hhs.gov">QPP@cms.hhs.gov</a>.</li>
-              <li>Contact the <a href="mailto:qpp@cms.hhs.gov">QPP Service Center</a>.</li>
+              <li>Request an API key for the private beta by contacting the Quality Payment Program Service Center at <a href="mailto:QPP@cms.hhs.gov?subject=Request%20API%20Key%20for%20Submissions%20API%20Beta">QPP@cms.hhs.gov</a>.</li>
               <li>If you're a developer, visit the <a href="https://cmsgov.github.io/qpp-submissions-docs/">API documentation</a>.</li>
             </ul>
           </p>
