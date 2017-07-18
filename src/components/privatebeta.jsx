@@ -2,7 +2,6 @@ import React from 'react';
 import url from 'url';
 import '../../node_modules/uswds/dist/js/uswds.js';
 
-// import '../node_modules/uswds/dist/css/uswds.css';
 import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
 import '../styles/app.css';
 import '../styles/temp-grid.css';
@@ -69,22 +68,3 @@ export default class Beta extends React.PureComponent {
    );
   }
  }
-
- {/*  return (
-      <div>
-        <a className="usa-skipnav" href="#main-content">Skip to main content</a>
-        <Header />
-        <div className="container temp-nav ds-h3 ds-u-margin-y--3">
-          <a href="/qpp-submissions-docs" title="Home" aria-label="Home">QPP Submissions API <br/> Developer Documentation</a>
-        </div>
-        <div className="container">
-          {component}
-        </div>
-        <script src="/assets/js/vendor/uswds.min.js"></script>
-      </div>
-    );
-  }
-}
-
-export default Beta;
-*/}
