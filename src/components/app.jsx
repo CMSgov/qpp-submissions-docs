@@ -50,7 +50,7 @@ class App extends React.PureComponent {
 
           <h2 className="ds-h2">Participate in the Submissions API Private Beta</h2>
           <p className="ds-text--lead">The QPP Submissions API will be in private beta from July 2017 through December 2017. During this period, we will collect participants' feedback and make refinements before we open the API for public use.</p>
-          <p className="ds-text--lead">At this time, the private beta is open only to 2017 CMS-approved Qualified Registries ("registries") and Qualified Clinical Data Registries ("QCDRs").  To participate, you will need to request an API key by contacting the Quality Payment Program Service Center at <a href="mailto:qpp@cms.hhs.gov">QPP@cms.hhs.gov</a>.</p>
+          <p className="ds-text--lead">At this time, the private beta is open only to 2017 CMS-approved Qualified Registries ("registries") and Qualified Clinical Data Registries ("QCDRs").  To participate, you will need to request an API key by contacting the Quality Payment Program Service Center at <a href="mailto:qpp@cms.hhs.gov?subject=Request%20API%20Key%20for%20Submissions%20API%20Beta">QPP@cms.hhs.gov</a>.</p>
           <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/privatebeta">Learn more about the private beta</a>
 
           <h2 className="ds-h2">Understand and integrate with measures data.</h2>
