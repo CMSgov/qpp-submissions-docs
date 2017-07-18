@@ -49,8 +49,8 @@ class App extends React.PureComponent {
           <p className="ds-text--lead">The public sandbox API allows you to test integrating with the API before the reporting period begins - without making a real submission to QPP. You can access the public sandbox API endpoints via the command line using the URL 'https://qpp-submissions-sandbox.navapbc.com/v1/'. Check out the <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">interactive API reference</a> for an exhaustive list of endpoints with example request and response payloads.</p>
 
           <h2 className="ds-h2">Participate in the Submissions API Private Beta</h2>
-          <p className="ds-text--lead">The QPP Submissions API is currently in private beta, and will be open from July 2017 through December 2017. During this period, we will collect participants' feedback and make refinements before we open the API for public use.</p>
-          <p className="ds-text--lead">At this time, the private beta is open only to 2017 CMS-approved Qualified Registries ("registries") and Qualified Clinical Data Registries ("QCDRs").  To participate, you will need to request an API key using <a href="https://goo.gl/forms/85W7sk8s6Sf0fOsN2">this form</a>.</p>
+          <p className="ds-text--lead">The QPP Submissions API will be in private beta from July 2017 through December 2017. During this period, we will collect participants' feedback and make refinements before we open the API for public use.</p>
+          <p className="ds-text--lead">At this time, the private beta is open only to 2017 CMS-approved Qualified Registries ("registries") and Qualified Clinical Data Registries ("QCDRs").  To participate, you will need to request an API key by contacting the Quality Payment Program Service Center at <a href="mailto:qpp@cms.hhs.gov?subject=Request%20API%20Key%20for%20Submissions%20API%20Beta">QPP@cms.hhs.gov</a>.</p>
           <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/privatebeta">Learn more about the private beta</a>
 
           <h2 className="ds-h2">Understand and integrate with measures data.</h2>
