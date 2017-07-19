@@ -55,7 +55,6 @@ export default class Beta extends React.PureComponent {
           <h2 className="ds-h2">Where to go for support</h2>
           <p class="ds-text">
             <ul>
-              <li>Request access to the private beta by completing <a href="https://goo.gl/forms/85W7sk8s6Sf0fOsN2">this form</a>.</li>
               <li>Contact the <a href="mailto:qpp@cms.hhs.gov">QPP Service Center</a>.</li>
               <li>If you're a developer, visit the <a href="https://cmsgov.github.io/qpp-submissions-docs/">API documentation</a>.</li>
             </ul>
