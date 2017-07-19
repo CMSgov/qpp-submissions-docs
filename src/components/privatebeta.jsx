@@ -30,14 +30,14 @@ export default class Beta extends React.PureComponent {
           <p class="ds-text">API requests without authentication will fail.</p>
 
           <h2 className="ds-h2">Permissions</h2>
-          <p class="ds-text">The Submissions API has three types of objects: 
+          <p class="ds-text">The Submissions API has three types of objects:
             <ul>
             <li>submissions</li>
             <li>measurement sets</li>
             <li>measurements</li>
             </ul>
           </p>
-          
+
           <p class="ds-text">A submission object contains any performance data submitted on behalf of a single MIPS-eligible clinician, practice or group. A measurement set object represents a set of performance data related to one specific category (Quality, Improvement Activities, or Advancing Care Information), and is tied to a submission object. A measurement object represents one single data point related to a specific measure in a given category, and is tied to a measurement set object.</p>
 
           <h2 className="ds-h2">Creating, reading, updating and deleting data</h2>
@@ -65,7 +65,7 @@ export default class Beta extends React.PureComponent {
           <h2 className="ds-h2">Where to go for support</h2>
           <p class="ds-text">
             <ul>
-              <li>Request an API key for the private beta by contacting the Quality Payment Program Service Center at <a href="mailto:QPP@cms.hhs.gov?subject=Request%20API%20Key%20for%20Submissions%20API%20Beta">QPP@cms.hhs.gov</a>.</li>
+              <li>Contact the <a href="mailto:qpp@cms.hhs.gov">QPP Service Center</a>.</li>
               <li>If you're a developer, visit the <a href="https://cmsgov.github.io/qpp-submissions-docs/">API documentation</a>.</li>
             </ul>
           </p>

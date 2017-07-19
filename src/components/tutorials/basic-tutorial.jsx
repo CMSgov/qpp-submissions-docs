@@ -54,7 +54,7 @@ class BasicTutorial extends React.PureComponent {
         <div className="temp-grid-half">
           <h1 className="ds-h1">API Tutorial</h1>
           <p>The Submissions API is an easy way to manage your performance data with CMS. Performance data is organized into <em>submissions</em>, which can have many <em>measurements</em>. Measurements within a submission are also grouped by category (e.g. Improvement Activities) and submission method (e.g. CMS web interface) into <em>measurement sets</em>.</p>
-          <p>Since the API and scoring calculations are still being finalized, please note that some numbers (especially scoring) may be inaccurate. The <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">interactive API</a> will always reflect the latest design.</p>
+          <p>Since the API and scoring calculations are still being finalized, please note that some numbers (especially scoring) may be inaccurate. The <a href="https://qpp-submissions-sandbox.navapbc.com/">interactive API</a> will always reflect the latest design.</p>
           <p>Let's walk through an example of how we might submit performance data!</p>
           <h2 className="ds-h2" id="creating-a-submission">
             <a
@@ -175,7 +175,7 @@ class BasicTutorial extends React.PureComponent {
           <h3>Next steps</h3>
           <p>Explore a more complex and powerful workflow in our <a href="/qpp-submissions-docs/advanced-tutorial">advanced tutorial</a>.</p>
           <a className="ds-c-button ds-c-button--primary ds-c-button--big" href="/qpp-submissions-docs/advanced-tutorial">Start the advanced tutorial</a>
-          <p>To learn more about what else you can do with the API, visit our <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">API reference</a>.</p>
+          <p>To learn more about what else you can do with the API, visit our <a href="https://qpp-submissions-sandbox.navapbc.com/">API reference</a>.</p>
         </div>
         <div className="temp-grid-half">
           <TechnicalDetailsPane
