@@ -46,7 +46,7 @@ class App extends React.PureComponent {
           <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/advanced-tutorial">Start the advanced tutorial</a>
 
           <h2 className="ds-h2">Explore the API using the public sandbox.</h2>
-          <p className="ds-text--lead">The public sandbox API allows you to test integrating with the API before the reporting period begins - without making a real submission to QPP. You can access the public sandbox API endpoints via the command line using the URL 'https://qpp-submissions-sandbox.navapbc.com/v1/'. Check out the <a href="https://qpp-submissions-sandbox.navapbc.com/api-explorer">interactive API reference</a> for an exhaustive list of endpoints with example request and response payloads.</p>
+          <p className="ds-text--lead">The public sandbox API allows you to test integrating with the API before the reporting period begins - without making a real submission to QPP. You can access the public sandbox API endpoints via the command line using the URL 'https://qpp-submissions-sandbox.navapbc.com/v1/'. Check out the <a href="https://qpp-submissions-sandbox.navapbc.com/">interactive API reference</a> for an exhaustive list of endpoints with example request and response payloads.</p>
 
           <h2 className="ds-h2">Participate in the Submissions API Private Beta</h2>
           <p className="ds-text--lead">The QPP Submissions API is currently in private beta, and will be open from July 2017 through December 2017. During this period, we will collect participants' feedback and make refinements before we open the API for public use.</p>
