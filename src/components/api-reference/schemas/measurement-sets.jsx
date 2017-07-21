@@ -27,6 +27,8 @@ export default class MeasurementSets extends React.PureComponent {
           <pre className='ds-u-border--1 ds-u-padding--1'>
             {`{
   "id": string,
+  "createdAt": datetime,
+  "updatedAt": datetime,
   "submissionId": string,
   "category": string,
   "submissionMethod": string,
