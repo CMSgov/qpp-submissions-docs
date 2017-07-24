@@ -13,6 +13,10 @@ export default class Beta extends React.PureComponent {
           <h1 className="ds-h1">Submissions API Private Beta</h1>
           <p className="ds-text--lead">Learn more about how to participate in the private beta, what you can do with your unique API key, and what functionality is available in the private beta.</p>
 
+          <h2 className="ds-h2">Using the API</h2>
+          <p class="ds-text">The Submissions API is accessed on <b><code>https://qpp.cms.gov/api/submissions</code></b>.</p>
+          <p class="ds-text">Visit the <a href="https://qpp-submissions-sandbox.navapbc.com/">interactive API reference</a> for an exhaustive list of endpoints with example request and response payloads.</p>
+        
           <h2 className="ds-h2">What you can do with the private beta Submissions API</h2>
           <p class="ds-text">Build direct integrations with other software to test programmatically submitting QPP performance data to CMS. Using the data we expose through the API, you can:
           <ul>
@@ -22,10 +26,6 @@ export default class Beta extends React.PureComponent {
           </ul>
           </p>
           <p class="ds-text">The private beta is different from the public sandbox in that it is authenticated and accepts personally identifiable information (e.g. Taxpayer Identification Numbers). This mirrors the general availability Submissions API, which will be released in mid-December, so that integrators can better prepare to integrate with the Submissions API for official usage.</p>
-
-          <h2 className="ds-h2">Using the API</h2>
-          <p class="ds-text">The Submissions API is accessed on <code>https://qpp.cms.gov/api/submissions</code>.</p>
-          <p class="ds-text">Visit the <a href="https://qpp-submissions-sandbox.navapbc.com/">interactive API reference</a> for an exhaustive list of endpoints with example request and response payloads.</p>
         
           <h2 className="ds-h2">Authentication</h2>
           <p class="ds-text">Authenticate your account when using the API by including your secret API key in the header of every request to the API using the key value pair: <code>"Authentication":"Bearer [YOUR API TOKEN]"</code>.</p>
