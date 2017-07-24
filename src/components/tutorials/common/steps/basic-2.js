@@ -39,6 +39,8 @@ class Basic2 extends React.PureComponent {
   "data": {
     "measurementSet": {
       "id": "88345eab-0082-4a58-a4e8-e3140c7f48ee",
+      "createdAt": "2017-02-15T22:23:08Z",
+      "updatedAt": "2017-02-15T22:23:08Z",
       "submissionId": "b6423273-d3a3-42ef-9728-1871b246477e",
       "category": "ia",
       "submissionMethod": "cmsWebInterface",

@@ -94,6 +94,8 @@ class Advanced2 extends React.PureComponent {
     "measurementSets": [
       {
         "id": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
+        "createdAt": "2017-02-15T22:23:08Z",
+        "updatedAt": "2017-02-15T22:23:08Z",
         "submissionId": "60d2fbbb-7453-47fa-b709-c33090e50843",
         "category": "aci",
         "submissionMethod": "cmsWebInterface",
