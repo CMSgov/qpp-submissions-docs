@@ -1,5 +1,4 @@
 import React from 'react';
-import url from 'url';
 import '../../node_modules/uswds/dist/js/uswds.js';
 
 import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
