@@ -24,6 +24,10 @@ export default class Beta extends React.PureComponent {
           </p>
           <p class="ds-text">The private beta is different from the public sandbox in that it is authenticated and accepts personally identifiable information (e.g. Taxpayer Identification Numbers). This mirrors the general availability Submissions API, which will be released in mid-December, so that integrators can better prepare to integrate with the Submissions API for official usage.</p>
 
+          <h2 className="ds-h2">Using the API</h2>
+          <p class="ds-text">The Submissions API is accessed on <code>https://qpp.cms.gov/api/submissions</code>.</p>
+          <p class="ds-text">Visit the <a href="https://qpp-submissions-sandbox.navapbc.com/">interactive API reference</a> for an exhaustive list of endpoints with example request and response payloads.</p>
+        
           <h2 className="ds-h2">Authentication</h2>
           <p class="ds-text">Authenticate your account when using the API by including your secret API key in the header of every request to the API using the key value pair: <code>"Authentication":"Bearer [YOUR API TOKEN]"</code>.</p>
           <p class="ds-text">Learn more about requesting an API key below. Your API key carries many privileges, so be sure to keep it secret! Do not share your API key in publicly accessible areas such as GitHub, client-side code, and so forth. Within your organization, limit access to only the staff person/s who will embed it in your software.</p>
