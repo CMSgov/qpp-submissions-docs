@@ -50,13 +50,13 @@ const providerStubRules = [
       "For example: The TIN 000-xx-x369 represents a provider who is part of a rural practice, is non-patient facing and is a hospital reporter.",
       "For example: 000-xx-x000 represents a provider who features none of these characteristics."
     ]
-  }    
+  }
 ];
 
-const profileStubItems = providerStubRules.map((rule) =>
-  <li>The <b>{rule.position}</b> {rule.ruleText} <em>{rule.field}</em>.
+const profileStubItems = providerStubRules.map((rule, index) =>
+  <li key={index}>The <b>{rule.position}</b> {rule.ruleText} <em>{rule.field}</em>.
     <ul>
-      {rule.ruleDetails.map((detail) => <li>{detail}</li>)}
+      {rule.ruleDetails.map((detail, index) => <li key={index}>{detail}</li>)}
     </ul>
   </li>
 );

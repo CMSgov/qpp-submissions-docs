@@ -53,10 +53,10 @@ class Measurements extends React.PureComponent {
        <div>
           <h1 className="ds-h1">Measurements</h1>
          <ul>
-           <li><a href="#boolean">Boolean</a></li>
-           <li><a href="#proportion">Proportion</a></li>
-           <li><a href="#single-performance-rate">Single-Performance Rate</a></li>
-           <li><a href="#multi-performance-rate">Multi-Performance Rate</a></li>
+           <li><a href="#boolean-measurements">Boolean</a></li>
+           <li><a href="#proportion-measurements">Proportion</a></li>
+           <li><a href="#single-performance-rate-measurements">Single-Performance Rate</a></li>
+           <li><a href="#multi-performance-rate-measurements">Multi-Performance Rate</a></li>
          </ul>
           <p className="ds-text--lead">The Measurements resource represents performance data for a specific measure within a MeasurementSet. There are three types of Measurements: Boolean, Proportion, Single-Performance Rate and Multi-Performance Rate. Each MeasurementSet can have multiple Measurements. No two Measurements in a given MeasurementSet can have the same measureId.</p>
           <p className="ds-text--lead"><a href="https://qpp-submissions-sandbox.navapbc.com/#/Measurements">Try it out!</a></p>
@@ -68,14 +68,14 @@ class Measurements extends React.PureComponent {
   "measurementSetId": string,
   "measureId": string,
   "value": [`}
-    <a href="#boolean">Boolean</a> | <a href="#proportion">Proportion</a> | <a href="#single-performance-rate">Single-Performance Rate</a> | {`
-  `} <a href="#multi-performance-rate">Multi-Performance Rate</a>
+    <a href="#boolean-measurements">Boolean</a> | <a href="#proportion-measurements">Proportion</a> | <a href="#single-performance-rate-measurements">Single-Performance Rate</a> | {`
+  `} <a href="#multi-performance-rate-measurements">Multi-Performance Rate</a>
   {`]
 }`}
             </pre>
           </div>
           <DataModelTable fields={FIELDS} />
-          <h1 className="ds-h1" id="boolean">Boolean Measurements</h1>
+          <h1 className="ds-h1" id="boolean-measurements">Boolean Measurements</h1>
           <p className="ds-text--lead">Boolean Measurements are applicable to Improvement Activity (IA) and Advancing Care Information (ACI) measures.</p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
@@ -89,7 +89,7 @@ class Measurements extends React.PureComponent {
             </pre>
           </div>
           <DataModelTable fields={BOOLEAN_FIELDS} />
-          <h1 className="ds-h1" id="proportion">Proportion Measurements</h1>
+          <h1 className="ds-h1" id="proportion-measurements">Proportion Measurements</h1>
           <p className="ds-text--lead">Proportion Measurements are applicable to Advancing Care Information (ACI) measures.</p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
@@ -106,7 +106,7 @@ class Measurements extends React.PureComponent {
             </pre>
           </div>
           <DataModelTable fields={PROPORTION_FIELDS} />
-          <h1 className="ds-h1" id="single-performance-rate">Single-Performance Rate Measurements</h1>
+          <h1 className="ds-h1" id="single-performance-rate-measurements">Single-Performance Rate Measurements</h1>
           <p className="ds-text--lead">Single-Performance Rate Measurements are applicable to Quality measures.</p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
@@ -127,7 +127,7 @@ class Measurements extends React.PureComponent {
             </pre>
           </div>
           <DataModelTable fields={SINGLE_PERFORMANCE_RATE_FIELDS} />
-          <h1 className="ds-h1" id="multi-performance-rate">Multi-Performance Rate Measurements</h1>
+          <h1 className="ds-h1" id="multi-performance-rate-measurements">Multi-Performance Rate Measurements</h1>
           <p className="ds-text--lead">Multi-Performance Rate Measurements are applicable to Quality measures. Multi-Performance Rate Measurements contain multiple strata and the stratum field is required for each.</p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import fileDownload from 'react-file-download';
 import CopyToClipboard from 'react-copy-to-clipboard';
@@ -11,8 +11,9 @@ const submissionJsonExampleString = JSON.stringify(submissionJsonExample, null, 
 const submissionXmlExampleString = pd.xml(submissionXmlExample);
 const cssClasses = "technical-details-pane technical-details-pane-examples";
 
-export default class ExampleDocs extends React.PureComponent {
+export default class ExampleDocs extends PureComponent {
   render() {
+    console.log('rendering');
     Tabs.setUseDefaultStyles(false);
 
     const selectTab = this.props.selectTab;

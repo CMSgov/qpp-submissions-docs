@@ -11,19 +11,19 @@ import '../../styles/api-reference/api-reference.css';
 
 class SchemaDetail extends React.Component {
   render() {
-    const schemaName = this.props.name;
+    const schemaName = this.props.hash;
 
-    if (schemaName === 'scoring') {
+    if (schemaName === '#scoring') {
       return <Scoring/>;
-    } else if (schemaName === 'provider') {
+    } else if (schemaName === '#provider') {
       return <Provider/>;
-    } else if (schemaName === 'benchmarks') {
+    } else if (schemaName.includes('benchmark')) {
       return <Benchmarks/>;
-    } else if (schemaName === 'measurements') {
+    } else if (schemaName.includes('measurements')) {
       return <Measurements/>;
-    } else if (schemaName === 'measurement-sets') {
+    } else if (schemaName === '#measurement-sets') {
       return <MeasurementSets/>;
-    } else if (schemaName === 'example') {
+    } else if (schemaName === '#example') {
       return <ExampleDocs/>;
     } else {
       return <Submission/>;
@@ -35,80 +35,73 @@ export default class Schemas extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      name: props.name,
       hash: props.hash
     };
+    console.log(this.state);
 
     this.showSchemaDetail = this.showSchemaDetail.bind(this);
   }
 
   showSchemaDetail(event) {
-    // the hash of an anchor tag or stored in data
-    const nameAndHash = event.target.hash || event.target.dataset.hash;
-    window.location.hash = nameAndHash.split("#")[1];
-    this.setState({
-      name: nameAndHash.split("#")[0],
-      hash: window.location.hash
-    });
+    window.location.hash = event.target.hash;
+    this.setState({ hash: event.target.hash });
   }
 
   render() {
     return (
-      <div>
       <div className="temp-grid-container">
         <div className="ds-u-float--left ds-u-padding-right--6 ds-u-padding-top--2">
           <ul className="ds-c-vertical-nav__subnav">
             <li className="ds-c-vertical-nav__item"><b>APIs & Reference</b></li>
             <ul className="ds-c-vertical-nav__subnav">
-              <li><a href="#" data-hash="submission"
+              <li><a href="#submission"
               onClick={this.showSchemaDetail}>Submissions</a></li>
-              <li><a href="#" data-hash="measurement-sets"
+              <li><a href="#measurement-sets"
               onClick={this.showSchemaDetail}>MeasurementSets</a></li>
-              <li><a href="#" data-hash="measurements"
+              <li><a href="#measurements"
               onClick={this.showSchemaDetail}>Measurements</a>
                 <ul>
-                  <li><a href="#" data-hash="measurements#boolean"
+                  <li><a href="#boolean-measurements"
                          onClick={this.showSchemaDetail}>Boolean</a></li>
-                  <li><a href="#" data-hash="measurements#proportion"
+                  <li><a href="#proportion-measurements"
                          onClick={this.showSchemaDetail}>Proportion</a></li>
-                  <li><a href="#" data-hash="measurements#single-performance-rate"
+                  <li><a href="#single-performance-rate-measurements"
                          onClick={this.showSchemaDetail}>Single-Performance Rate</a></li>
-                  <li><a href="#" data-hash="measurements#multi-performance-rate"
+                  <li><a href="#multi-performance-rate-measurements"
                          onClick={this.showSchemaDetail}>Multi-Performance Rate</a></li>
                 </ul>
               </li>
               <li>
-                <a href="#" data-hash="benchmarks"
+                <a href="#benchmarks"
                    onClick={this.showSchemaDetail}>Benchmarks</a>
                 <ul>
-                  <li><a href="#" data-hash="benchmarks#historical-benchmarks"
+                  <li><a href="#historical-benchmarks"
                          onClick={this.showSchemaDetail}>Historical Benchmarks</a>
                   </li>
-                  <li><a href="#" data-hash="benchmarks#current-benchmarks"
+                  <li><a href="#current-benchmarks"
                          onClick={this.showSchemaDetail}>Current Benchmarks</a>
                   </li>
-                  <li><a href="#" data-hash="benchmarks#benchmark-calculations"
+                  <li><a href="#benchmark-calculations"
                          onClick={this.showSchemaDetail}>Benchmark Calculations</a>
                   </li>
                 </ul>
               </li>
-              <li><a href="#" data-hash="scoring"
+              <li><a href="#scoring"
                      onClick={this.showSchemaDetail}>Scoring</a></li>
-              <li><a href="#" data-hash="provider"
+              <li><a href="#provider"
                      onClick={this.showSchemaDetail}>Provider Profile Stub</a></li>
             </ul>
             <li className="ds-c-vertical-nav__item"><b>Examples</b></li>
             <ul className="ds-c-vertical-nav__subnav">
-              <li><a href="#" data-hash="example"
+              <li><a href="#example"
               onClick={this.showSchemaDetail}>Submission JSON & XML</a></li>
               <li><a href="https://qpp-submissions-sandbox.navapbc.com/">Interactive Docs</a></li>
             </ul>
           </ul>
         </div>
         <div className="ds-u-float--left ds-u-padding--1 page">
-          <SchemaDetail name={this.state.name}/>
+          <SchemaDetail hash={this.state.hash}/>
         </div>
-      </div>
       </div>
     );
   }
