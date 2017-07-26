@@ -19,7 +19,8 @@ export default class Beta extends React.PureComponent {
           <p class="ds-text">Visit the <a href="https://qpp-submissions-sandbox.navapbc.com/">interactive API reference</a> for an exhaustive list of endpoints with example request and response payloads.</p>
         
           <h2 className="ds-h2">What developers can do with the Submissions API</h2>
-          <p class="ds-text">Using the data exposed through the API, developers can:
+          <p class="ds-text">Using the data exposed through the API, developers can:</p>
+          <p class="ds-text">
           <ul>
             <li>Submit, update or delete Advancing Care Information, Improvement Activities and Quality measures data</li>
             <li>Receive feedback on whether or not you correctly formatted your submission</li>
@@ -29,13 +30,14 @@ export default class Beta extends React.PureComponent {
         </p>
 
           <h2 className="ds-h2">Object Types</h2>
-          <p class="ds-text">The Submissions API has three types of objects:
+          <p class="ds-text">The Submissions API has three types of objects:</p>
+          <p class="ds-text">
             <ul>
               <li><b>Submissions</b>: A submission object contains any performance data submitted on behalf of a single MIPS-eligible clinician, practice or group.</li>
               <li><b>Measurement sets</b>: A measurement set object represents a set of performance data related to one specific category (Quality, Improvement Activities, or Advancing Care Information), and is tied to a submission object.</li>
               <li><b>Measurements</b>: A measurement object represents one single data point related to a specific measure in a given category, and is tied to a measurement set object.</li>
             </ul>
-            </p>
+          </p>
       
           <h2 className="ds-h2">Authentication</h2>
           <p class="ds-text">The Developer Preview is different from the <a href="https://qpp-submissions-sandbox.navapbc.com">public sandbox</a> in that API calls require a JSON Web Token for authentication purposes since submissions may contain personally identifiable information (e.g., Taxpayer Identification Numbers, or TINs).</p>
@@ -47,8 +49,8 @@ export default class Beta extends React.PureComponent {
             <ul>
               <li>All data submitted to the Submissions API Developer Preview will be discarded at the end of the Developer Preview and will not count toward a MIPS-eligible clinician or group's final score in Quality Payment Program Year 1 (2017).</li>
               <li>Since this is a preview release of the Submissions API, it may be changed in ways that break backward compatibility and is not subject to any service level guarantees or deprecation policy.</li>
-        </ul>
-        </p>
+            </ul>
+          </p>
 
           <h2 className="ds-h2">Where to go for support</h2>
           <p class="ds-text">
