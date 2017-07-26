@@ -10,8 +10,7 @@ export default class Beta extends React.PureComponent {
   render() {
     return (
         <div className="ds-u-measure--wide">
-          <h2 className="ds-h2">Developer Preview</h2>
-          <h1 className="ds-h1">QPP Submissions API</h1>  
+          <h1 className="ds-h1">QPP Submissions API Developer Preview</h1>  
           <h3 className="ds-h3">July 25, 2017 - November 1, 2017</h3>          
           <p className="ds-text--lead">CMS is inviting developers to provide feedback on the new Submissions API for the purpose of improved development. During this three-month period, participants in the Developer Preview can build direct integrations with other software to test programmatically submitting Quality Payment Program (QPP) performance data to CMS. The API’s functionality in the Developer Preview closely matches that of the QPP system which will be put into production on January 1, 2018 when the Submissions window opens for QPP Year 1 (2017) reporting.</p>
 
