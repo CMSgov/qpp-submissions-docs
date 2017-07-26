@@ -28,16 +28,14 @@ export default class Beta extends React.PureComponent {
             <li>Receive a <b>sample</b> score for a submission. Since sample scores only reflect measure categories submitted to date, they do not represent a guarantee of the final score, and therefore, should not be used to make business decisions. Additionally, in the current version, third party vendors can only view scores based on data they submitted.</li>
             <li>Read, update, and delete submissions. Developers can read, update, and delete data that the developer submitted. However, only a MIPS-eligible doctor or practice can edit a submission object for their own performance data. Organizations, such as Qualified Registries and Qualified Clinical Data Registries, can create measurement sets and add them to any submission object.</li>
           </ul>
-          </p>
 
           <h2 className="ds-h2">Object Types</h2>
-          <p class="ds-text">The Submissions API has three types of objects:
+          <p class="ds-text">The Submissions API has three types of objects:<p>
             <ul>
               <li><b>Submissions</b>: A submission object contains any performance data submitted on behalf of a single MIPS-eligible clinician, practice or group.</li>
               <li><b>Measurement sets</b>: A measurement set object represents a set of performance data related to one specific category (Quality, Improvement Activities, or Advancing Care Information), and is tied to a submission object.</li>
               <li><b>Measurements</b>: A measurement object represents one single data point related to a specific measure in a given category, and is tied to a measurement set object.</li>
             </ul>
-          </p>
       
           <h2 className="ds-h2">Authentication</h2>
           <p class="ds-text">The Developer Preview is different from the <a href="https://qpp-submissions-sandbox.navapbc.com">public sandbox</a> in that API calls require a JSON Web Token for authentication purposes since submissions may contain personally identifiable information (e.g., Taxpayer Identification Numbers, or TINs).</p>
