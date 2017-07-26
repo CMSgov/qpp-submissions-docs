@@ -19,8 +19,8 @@ We use [`create-react-app`](https://github.com/facebookincubator/create-react-ap
 We also rely on the [CMSGov Design System](https://github.com/CMSgov/design-system) and the [U.S. Web Design Standards](https://standards.usa.gov/) to help ensure consistency with other government properties.
 
 ```bash
-yarn
-yarn start
+npm install
+npm start
 ```
 
 We use Travis CI for testing - add a test if it makes sense, and make sure the build is green before merging.
@@ -32,7 +32,13 @@ These docs are hosted on GitHub Pages.
 To deploy changes, merge a feature branch into to the master branch (see [CONTRIBUTING.md#merging-to-master](CONTRIBUTING.md#merging-to-master)) and deploy the master branch with the following command:
 
 ```bash
-yarn run deploy
+npm run deploy
 ```
 
 Under the hood, the [gh-pages](https://github.com/tschaub/gh-pages) library is used for managing the gh-pages branch.
+
+## Licenses
+
+This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
+
+All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to comply with this waiver of copyright interest.
