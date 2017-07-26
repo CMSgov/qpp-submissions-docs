@@ -1,19 +1,18 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import fileDownload from 'react-file-download';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { pd } from 'pretty-data';
-import '../../../styles/api-reference/examples/technical-details-pane-examples.css'
-import submissionJsonExample from './submission-example.json';
-import submissionXmlExample from './submission-example-xml.js';
+import '../../styles/api-reference/example-docs.css';
+import submissionJsonExample from './common/submission-example.json';
+import submissionXmlExample from './common/submission-example-xml.js';
 
 const submissionJsonExampleString = JSON.stringify(submissionJsonExample, null, 4);
 const submissionXmlExampleString = pd.xml(submissionXmlExample);
-const cssClasses = "technical-details-pane technical-details-pane-examples";
+const cssClasses = "technical-details-pane example-docs";
 
-export default class ExampleDocs extends PureComponent {
+export default class ExampleDocs extends React.PureComponent {
   render() {
-    console.log('rendering');
     Tabs.setUseDefaultStyles(false);
 
     const selectTab = this.props.selectTab;

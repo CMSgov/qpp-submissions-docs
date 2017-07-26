@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tabs } from 'react-tabs';
 
-import '../../../styles/tutorials/common/technical-details-pane.css';
+import '../../../styles/common/technical-details-pane.css';
 
 import Basic1 from './steps/basic-1';
 import Basic2 from './steps/basic-2';

@@ -36,7 +36,7 @@ export default class MeasurementSets extends React.PureComponent {
   "performanceEnd": date,
   "measureSet": string,
   "measurements": array<`}
-    <a href="#">Measurements Resource</a>
+    <a href="#measurements">Measurements Resource</a>
   {`>
 }`}
           </pre>

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../styles/tutorials/common/inline-api-example.css';
+import '../../../styles/tutorials/inline-api-example.css';
 
 const cssClass = "inline-api-example";
 

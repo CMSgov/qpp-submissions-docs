@@ -35,7 +35,7 @@ export default class Submission extends React.PureComponent {
   "entityId": string,
   "performanceYear": integer,
   "measurementSets": array<`}
-    <a href="#">MeasurementSets Resource</a>
+    <a href="#measurement-sets">MeasurementSets Resource</a>
   {`>
 }`}
             </pre>
