@@ -30,7 +30,7 @@ class App extends React.PureComponent {
       component = <AdvancedTutorial hash={hash}/>
     } else if (path === 'schemas') {
       component = <Schemas hash={hash}/>
-    } else if (['developerpreview', 'privatebeta'].include(path)) {
+    } else if (['developerpreview', 'privatebeta'].includes(path)) {
       component = <Beta hash={hash}/>
     } else {
       component = <section>
