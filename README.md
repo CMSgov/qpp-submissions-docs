@@ -32,6 +32,8 @@ These docs are hosted on GitHub Pages.
 To deploy changes, merge a feature branch into to the master branch (see [CONTRIBUTING.md#merging-to-master](CONTRIBUTING.md#merging-to-master)) and deploy the master branch with the following command:
 
 ```bash
+git checkout master
+git pull # make sure you've pulled the latest version of master
 npm run deploy
 ```
 
