@@ -8,7 +8,7 @@ import '../styles/temp-grid.css';
 import '../styles/usa-banner.css';
 
 import Header from './header';
-import Beta from './developerpreview';
+import Beta from './developer-preview';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
 import Schemas from './api-reference/api-reference';
@@ -30,7 +30,7 @@ class App extends React.PureComponent {
       component = <AdvancedTutorial hash={hash}/>
     } else if (path === 'schemas') {
       component = <Schemas hash={hash}/>
-    } else if (['developerpreview', 'privatebeta'].includes(path)) {
+    } else if (['developer-preview', 'privatebeta'].includes(path)) {
       component = <Beta hash={hash}/>
     } else {
       component = <section>
