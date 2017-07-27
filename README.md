@@ -23,7 +23,12 @@ npm install
 npm start
 ```
 
+
+## Testing
+
 We use Travis CI for testing - add a test if it makes sense, and make sure the build is green before merging.
+
+[Read about how tests are written and run](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests). Following the linked recommendations, we use `enzyme` for testing components in isolation and put test files alongside app files - search for app.test.js and api-reference.test.js.
 
 ## Deploy
 
