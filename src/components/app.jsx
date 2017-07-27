@@ -50,7 +50,7 @@ class App extends React.PureComponent {
 
           <h2 className="ds-h2">Participate in the Submissions API Developer Preview</h2>
           <p className="ds-text--lead">CMS is inviting developers to provide feedback on the new Submissions API for the purpose of improved development. From July 2017 through December 2017, participants in the Developer Preview can build direct integrations with other software to test programmatically submitting Quality Payment Program (QPP) performance data to CMS.</p>
-          <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/developerpreview">Learn more about the Developer Preview</a>
+          <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/developer-preview">Learn more about the Developer Preview</a>
 
           <h2 className="ds-h2">Understand and integrate with measures data.</h2>
           <p className="ds-text--lead">A complete list of ACI (Advancing Care Information) and IA (Improvement Activity) measures is available in the <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data repository</a>. Each measure contains a description and additional information around attestation and scoring requirements. Additionally, you can integrate with the qpp-measures-data NPM module to import measures data into your own code base and work with it programatically.</p>
