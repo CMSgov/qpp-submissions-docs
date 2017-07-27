@@ -8,7 +8,7 @@ import '../styles/temp-grid.css';
 import '../styles/usa-banner.css';
 
 import Header from './header';
-import DeveloperPreview from './developerpreview';
+import Beta from './developerpreview';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
 import Schemas from './api-reference/api-reference';
@@ -31,7 +31,7 @@ class App extends React.PureComponent {
     } else if (path === 'schemas') {
       component = <Schemas hash={hash}/>
     } else if (['developerpreview', 'privatebeta'].include(path)) {
-      component = <DeveloperPreview hash={hash}/>
+      component = <Beta hash={hash}/>
     } else {
       component = <section>
         <div className="ds-u-measure--wide">
