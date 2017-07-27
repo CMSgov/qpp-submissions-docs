@@ -6,7 +6,7 @@ import '../styles/app.css';
 import '../styles/temp-grid.css';
 import '../styles/usa-banner.css';
 
-export default class DeveloperPreview extends React.PureComponent {
+export default class Beta extends React.PureComponent {
   render() {
     return (
         <div className="ds-u-measure--wide">
