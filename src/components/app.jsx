@@ -8,7 +8,7 @@ import '../styles/temp-grid.css';
 import '../styles/usa-banner.css';
 
 import Header from './header';
-import Beta from './developerpreview';
+import DeveloperPreview from './developerpreview';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
 import Schemas from './api-reference/api-reference';
