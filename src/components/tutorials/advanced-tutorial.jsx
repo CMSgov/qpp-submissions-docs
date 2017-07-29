@@ -55,7 +55,7 @@ class AdvancedTutorial extends React.PureComponent {
           <h1 className="ds-h1">Advanced API Tutorial</h1>
           <p>In the <a href="/qpp-submissions-docs/tutorial">first tutorial</a> we covered how to create a submission, add a measurement set with IA category performance data, and retrieve the score in three different API requests. This time we're going to build on the previous tutorial and look at creating a submission with embedded ACI performance data in one request, go through ACI scoring and how measures compose a score, and see how to update a measure with new info (all while running into a problem along the way). All of these examples serve to illustrate how the Submissions API can make it easier to react to and fix issues that arise.</p>
           <p>
-          Like the previous tutorial, please remember that the score calculation may be inaccurate until the API is finalized. The <a href="https://qpp-submissions-sandbox.navapbc.com/">interactive API</a> will always return the latest score calculation.</p>
+          Like the previous tutorial, please remember that the score calculation may be inaccurate until the API is finalized. The <a href="https://qpp-submissions-sandbox.navapbc.com/">Interactive Docs</a> will always return the latest score calculation.</p>
           <h2 className="ds-h2" id="submitting-with-performance-data">
             <a
               className="tutorial-header-link"
@@ -258,7 +258,8 @@ class AdvancedTutorial extends React.PureComponent {
           <p><em>Disclaimer:</em> Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments.</p>
           <h3>Next steps</h3>
           <p>While we've used each API endpoint, we're far from having used every kind of API action. These tutorials have used <code>POST</code>, <code>PATCH</code>, and <code>GET</code> - there are also <code>PUT</code> and <code>DELETE</code> for each of the three resources we worked with.</p>
-          <p>The tutorials have shown how requests can be strung together to complete complex workflows in minutes rather than months. For more technical detail about these API requests, check out our interactive <a href="https://qpp-submissions-sandbox.navapbc.com/">API reference</a>.</p>
+          <p>The tutorials have shown how requests can be strung together to complete complex workflows in minutes rather than months. </p>
+          <p>Now, try using the <a href="https://qpp-submissions-sandbox.navapbc.com/">Interactive Docs</a> to experiment with some of your data.</p>
         </div>
         <div className="temp-grid-half">
           <TechnicalDetailsPane
