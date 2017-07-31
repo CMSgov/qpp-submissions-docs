@@ -95,12 +95,13 @@ export default class Schemas extends React.PureComponent {
               <li><a href="#" data-hash="scoring"
                      onClick={this.showSchemaDetail}>Scoring</a></li>
               <li><a href="#" data-hash="provider"
-                     onClick={this.showSchemaDetail}>Provider Profile Stub</a></li>                     
+                     onClick={this.showSchemaDetail}>Provider Profile Stub</a></li>
             </ul>
             <li className="ds-c-vertical-nav__item"><b>Examples</b></li>
             <ul className="ds-c-vertical-nav__subnav">
               <li><a href="#" data-hash="example"
               onClick={this.showSchemaDetail}>Submission JSON & XML</a></li>
+              <li><a href="https://qpp-submissions-sandbox.navapbc.com/">Interactive Docs</a></li>
             </ul>
           </ul>
         </div>

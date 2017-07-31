@@ -21,7 +21,7 @@ export default class Benchmarks extends PureComponent {
           <li><a href="#benchmark-calculations">Benchmark Calculations</a></li>
         </ul>
         <p className="ds-text--lead">Benchmarks serve as the reference points for measurements and are used to score submissions. Each benchmark is unique based upon its combination of measureId, submissionMethod, and performanceYear, and each has a list of 9 deciles. Deciles are the data points that divide the range of measurements recorded into ten equal-sized populations.</p>
-        <p className="ds-text--lead">For a list of methods for this resource, view the <a href="https://qpp-submissions-sandbox.navapbc.com/#/Benchmarks">OpenAPI documentation</a>.</p>
+        <p className="ds-text--lead"><a href="https://qpp-submissions-sandbox.navapbc.com/#/Benchmarks">Try it out!</a></p>
         <h3 className="ds-h2">Resource Representation</h3>
         <div className='markup markup--html'>
           <pre className='ds-u-border--1 ds-u-padding--1'>

@@ -54,7 +54,7 @@ class BasicTutorial extends React.PureComponent {
         <div className="temp-grid-half">
           <h1 className="ds-h1">API Tutorial</h1>
           <p>The Submissions API is an easy way to manage your performance data with CMS. Performance data is organized into <em>submissions</em>, which can have many <em>measurements</em>. Measurements within a submission are also grouped by category (e.g. Improvement Activities) and submission method (e.g. CMS web interface) into <em>measurement sets</em>.</p>
-          <p>Since the API and scoring calculations are still being finalized, please note that some numbers (especially scoring) may be inaccurate. The <a href="https://qpp-submissions-sandbox.navapbc.com/">interactive API</a> will always reflect the latest design.</p>
+          <p>Since the API and scoring calculations are still being finalized, please note that some numbers (especially scoring) may be inaccurate. The <a href="https://qpp-submissions-sandbox.navapbc.com/">Interactive Docs</a> will always reflect the latest design.</p>
           <p>Let's walk through an example of how we might submit performance data!</p>
           <h2 className="ds-h2" id="creating-a-submission">
             <a
@@ -172,10 +172,11 @@ class BasicTutorial extends React.PureComponent {
           <p>In general, we can think about the Submissions API as a way to have a live conversation with CMS about performance measurements. Rather than waiting months to hear back about missing information or a score, the API gives us feedback that is immediate, specific, and actionable - we can easily make another API request if necessary.</p>
           <p>What we've shown is an example of working directly with the API - typically these requests are made through a web interface or script, but the requests & responses above illustrate the kind of power and speed the Submissions API and applications built against it can provide.</p>
           <p><em>Disclaimer:</em> Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments.</p>
+
           <h3>Next steps</h3>
-          <p>Explore a more complex and powerful workflow in our <a href="/qpp-submissions-docs/advanced-tutorial">advanced tutorial</a>.</p>
-          <a className="ds-c-button ds-c-button--primary ds-c-button--big" href="/qpp-submissions-docs/advanced-tutorial">Start the advanced tutorial</a>
-          <p>To learn more about what else you can do with the API, visit our <a href="https://qpp-submissions-sandbox.navapbc.com/">API reference</a>.</p>
+          <p>Demystify how the aggregate score for a complex performance category like ACI by seeing an example of how it might be calculated. Updating and correcting performance data is also easy - avoid losing time by solving issues as they arise, rather than reacting months later.</p>
+          <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/advanced-tutorial">Start the advanced tutorial</a>
+
         </div>
         <div className="temp-grid-half">
           <TechnicalDetailsPane

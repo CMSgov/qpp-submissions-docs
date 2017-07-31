@@ -59,7 +59,7 @@ class Measurements extends React.PureComponent {
            <li><a href="#multi-performance-rate">Multi-Performance Rate</a></li>
          </ul>
           <p className="ds-text--lead">The Measurements resource represents performance data for a specific measure within a MeasurementSet. There are three types of Measurements: Boolean, Proportion, Single-Performance Rate and Multi-Performance Rate. Each MeasurementSet can have multiple Measurements. No two Measurements in a given MeasurementSet can have the same measureId.</p>
-          <p className="ds-text--lead">For a list of methods for this resource, view the <a href="https://qpp-submissions-sandbox.navapbc.com/#/Measurements">OpenAPI documentation</a>.</p>
+          <p className="ds-text--lead"><a href="https://qpp-submissions-sandbox.navapbc.com/#/Measurements">Try it out!</a></p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div className='markup markup--html'>
             <pre className='ds-u-border--1 ds-u-padding--1'>

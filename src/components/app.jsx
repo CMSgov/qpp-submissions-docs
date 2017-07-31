@@ -35,34 +35,26 @@ class App extends React.PureComponent {
     } else {
       component = <section>
         <div className="ds-u-measure--wide">
-          <h1 className="ds-h1">Submissions API</h1>
+          <h2 className="ds-h2">Easily submit and score QPP data in real-time via API</h2>
+          <p className="ds-text--lead">The Submissions API enables submission and real-time performance scoring of Quality Payment Program (QPP) data. CMS is inviting developers to provide feedback on the new Submissions API for the purpose of improved development. </p>
+          <p className="ds-text--lead">From July 2017 through November 2017, participants in the Developer Preview can build integrations with their software to test submission and scoring of Quality Payment Program (QPP) performance data via API.</p>
+          <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/developer-preview">Join the QPP Developer Preview</a>
 
-          <h2 className="ds-h2">Easily submit and score performance data.</h2>
-          <p className="ds-text--lead">The Submissions API is a conversational interface to easily submit and score performance data with CMS. Learn more about what that looks like and how to use the API by walking through a friendly example.</p>
+          <h2 className="ds-h2">Explore the API</h2>
+          <p class="ds-text">View the <a href="https://cmsgov.github.io/qpp-submissions-docs/schemas">API documentation</a> or play around with the <a href="https://qpp-submissions-sandbox.navapbc.com/">Interactive Docs</a> using your own data.</p>
+          <p class="ds-text">The Submissions API has three types of objects:</p>
+          <p class="ds-text">
+            <ul>
+              <li><b>Submissions</b> contain any performance data submitted on behalf of a single MIPS-eligible clinician, practice or group.</li>
+              <li><b>Measurement sets</b> represent a set of performance data related to one specific category (Quality, Improvement Activities, or Advancing Care Information), and is tied to a submission object.</li>
+              <li><b>Measurements</b> represent one single data point related to a specific measure in a given category, and is tied to a measurement set object.</li>
+            </ul>
+          </p>
+
+          <p class="ds-text">Walk through how to create a new submission, submit measures and receive real-time scoring in the below tutorial.</p>
           <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/tutorial">Start the tutorial</a>
 
-          <h2 className="ds-h2">Dig into scoring and quickly react to errors.</h2>
-          <p className="ds-text--lead">Demystify how the aggregate score for a complex performance category like ACI by seeing an example of how it might be calculated. Updating and correcting performance data is also easy - avoid losing time by solving issues as they arise, rather than reacting months later.</p>
-          <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/advanced-tutorial">Start the advanced tutorial</a>
-
-          <h2 className="ds-h2">Explore the API using the public sandbox.</h2>
-          <p className="ds-text--lead">The public sandbox API allows you to test integrating with the API before the reporting period begins - without making a real submission to QPP. You can access the public sandbox API endpoints via the command line using the URL 'https://qpp-submissions-sandbox.navapbc.com/v1/'. Check out the <a href="https://qpp-submissions-sandbox.navapbc.com/">interactive API reference</a> for an exhaustive list of endpoints with example request and response payloads.</p>
-
-          <h2 className="ds-h2">Participate in the Submissions API Developer Preview</h2>
-          <p className="ds-text--lead">CMS is inviting developers to provide feedback on the new Submissions API for the purpose of improved development. From July 2017 through December 2017, participants in the Developer Preview can build direct integrations with other software to test programmatically submitting Quality Payment Program (QPP) performance data to CMS.</p>
-          <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/developer-preview">Learn more about the Developer Preview</a>
-
-          <h2 className="ds-h2">Understand and integrate with measures data.</h2>
-          <p className="ds-text--lead">A complete list of ACI (Advancing Care Information) and IA (Improvement Activity) measures is available in the <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data repository</a>. Each measure contains a description and additional information around attestation and scoring requirements. Additionally, you can integrate with the qpp-measures-data NPM module to import measures data into your own code base and work with it programatically.</p>
-
-          <h2 className="ds-h2">View the API Reference</h2>
-          <p className="ds-text--lead">The technical reference information for the Submissions API and sample submission data are available <a href="/qpp-submissions-docs/schemas">here</a>. This will let you validate your own submission formatting in XML or JSON. JSON and XML schema files are available in the <a href="https://github.com/CMSgov/qpp-submissions-schema">qpp-submissions-schema</a> repository.</p>
-
-          <h2 className="ds-h2">Need help or have feedback?</h2>
-          <p className="ds-text--lead">Join our <a href="https://groups.google.com/forum/#!forum/qpp-apis">Google Group</a>, where you can interact with other developers and ask questions, find answers and share experiences using the API. If you need further help, you can <a href="mailto:QPP@cms.hhs.gov">contact</a> the QPP Service Center.</p>
-
-          <h3 className="ds-h3">All done?</h3>
-          <p>Return to the <a href="https://qpp.cms.gov/resources/developers">QPP Developer Resources</a>.</p>
+          <p><br/>Return to the <a href="https://qpp.cms.gov/resources/developers">QPP Developer Tools</a>.</p>
         </div>
       </section>;
     }
