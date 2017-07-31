@@ -29,9 +29,11 @@ We use Travis CI for testing - add a test if it makes sense, and make sure the b
 
 These docs are hosted on GitHub Pages.
 
-To deploy changes, merge a feature branch into to the master branch (see [CONTRIBUTING.md#merging-to-master](CONTRIBUTING.md#merging-to-master)) and deploy the master branch with the following command:
+To deploy changes, you'll need to be a collaborator on the GitHub repo, merge a feature branch into to the master branch (see [CONTRIBUTING.md#merging-to-master](CONTRIBUTING.md#merging-to-master)), and deploy the master branch with the following command:
 
 ```bash
+git checkout master
+git pull # make sure you've pulled the latest version of master
 npm run deploy
 ```
 
