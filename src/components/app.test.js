@@ -10,7 +10,7 @@ it('renders without crashing', () => {
 
 it('renders landing page by default', () => {
   const app = mount(<App url={document.URL}/>);
-  expect(app.text().includes('Easily submit and score performance data.')).toEqual(true);
+  expect(app.text().includes('Easily submit and score QPP data in real-time via API')).toEqual(true);
 });
 
 it('routes to tutorial when the path ends with /tutorial', () => {

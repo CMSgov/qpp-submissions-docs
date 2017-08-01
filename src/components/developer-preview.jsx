@@ -59,7 +59,7 @@ export default class DeveloperPreview extends React.PureComponent {
             <li>Since this is a preview release of the Submissions API, it may be changed in ways that break backward compatibility and is not subject to any service level guarantees or deprecation policy.</li>
           </ul>
 
-          <p class="ds-text">Return to the <a href="https://qpp.cms.gov/resources/developers">QPP Developer Tools</a>.</p>
+          <p className="ds-text">Return to the <a href="https://qpp.cms.gov/resources/developers">QPP Developer Tools</a>.</p>
         </div>
    );
   }
