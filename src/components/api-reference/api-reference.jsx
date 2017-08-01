@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Benchmarks from './schemas/benchmarks';
-import ExampleDocs from './examples/example-docs';
+import ExampleDocs from './example-docs';
 import Measurements from './schemas/measurements';
 import MeasurementSets from './schemas/measurement-sets';
 import Scoring from './scoring';
@@ -9,47 +9,37 @@ import Provider from './provider';
 import Submission from './schemas/submission';
 import '../../styles/api-reference/api-reference.css';
 
-class SchemaDetail extends React.Component {
-  render() {
-    const schemaName = this.props.name;
-
-    if (schemaName === 'scoring') {
-      return <Scoring/>;
-    } else if (schemaName === 'provider') {
-      return <Provider/>;
-    } else if (schemaName === 'benchmarks') {
-      return <Benchmarks/>;
-    } else if (schemaName === 'measurements') {
-      return <Measurements/>;
-    } else if (schemaName === 'measurement-sets') {
-      return <MeasurementSets/>;
-    } else if (schemaName === 'example') {
-      return <ExampleDocs/>;
-    } else {
-      return <Submission/>;
-    }
+function sectionForHash(maybeHash) {
+  const hash = maybeHash || '';
+  if (hash === '#scoring') {
+    return <Scoring/>;
+  } else if (hash === '#provider') {
+    return <Provider/>;
+  } else if (hash.includes('benchmark')) {
+    return <Benchmarks/>;
+  } else if (hash.includes('measurements')) {
+    return <Measurements/>;
+  } else if (hash === '#measurement-sets') {
+    return <MeasurementSets/>;
+  } else if (hash === '#example') {
+    return <ExampleDocs/>;
+  } else {
+    return <Submission/>;
   }
 }
 
-export default class Schemas extends React.PureComponent {
+export default class ApiReference extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      name: props.name,
       hash: props.hash
     };
 
-    this.showSchemaDetail = this.showSchemaDetail.bind(this);
+    this.showSection = this.showSection.bind(this);
   }
 
-  showSchemaDetail(event) {
-    // the hash of an anchor tag or stored in data
-    const nameAndHash = event.target.hash || event.target.dataset.hash;
-    window.location.hash = nameAndHash.split("#")[1];
-    this.setState({
-      name: nameAndHash.split("#")[0],
-      hash: window.location.hash
-    });
+  showSection(event) {
+    this.setState({ hash: event.target.hash });
   }
 
   render() {
@@ -60,53 +50,53 @@ export default class Schemas extends React.PureComponent {
           <ul className="ds-c-vertical-nav__subnav">
             <li className="ds-c-vertical-nav__item"><b>APIs & Reference</b></li>
             <ul className="ds-c-vertical-nav__subnav">
-              <li><a href="#" data-hash="submission"
-              onClick={this.showSchemaDetail}>Submissions</a></li>
-              <li><a href="#" data-hash="measurement-sets"
-              onClick={this.showSchemaDetail}>MeasurementSets</a></li>
-              <li><a href="#" data-hash="measurements"
-              onClick={this.showSchemaDetail}>Measurements</a>
+              <li><a href="#submission"
+              onClick={this.showSection}>Submissions</a></li>
+              <li><a href="#measurement-sets"
+              onClick={this.showSection}>MeasurementSets</a></li>
+              <li><a href="#measurements"
+              onClick={this.showSection}>Measurements</a>
                 <ul>
-                  <li><a href="#" data-hash="measurements#boolean"
-                         onClick={this.showSchemaDetail}>Boolean</a></li>
-                  <li><a href="#" data-hash="measurements#proportion"
-                         onClick={this.showSchemaDetail}>Proportion</a></li>
-                  <li><a href="#" data-hash="measurements#single-performance-rate"
-                         onClick={this.showSchemaDetail}>Single-Performance Rate</a></li>
-                  <li><a href="#" data-hash="measurements#multi-performance-rate"
-                         onClick={this.showSchemaDetail}>Multi-Performance Rate</a></li>
+                  <li><a href="#boolean-measurements"
+                         onClick={this.showSection}>Boolean</a></li>
+                  <li><a href="#proportion-measurements"
+                         onClick={this.showSection}>Proportion</a></li>
+                  <li><a href="#single-performance-rate-measurements"
+                         onClick={this.showSection}>Single-Performance Rate</a></li>
+                  <li><a href="#multi-performance-rate-measurements"
+                         onClick={this.showSection}>Multi-Performance Rate</a></li>
                 </ul>
               </li>
               <li>
-                <a href="#" data-hash="benchmarks"
-                   onClick={this.showSchemaDetail}>Benchmarks</a>
+                <a href="#benchmarks"
+                   onClick={this.showSection}>Benchmarks</a>
                 <ul>
-                  <li><a href="#" data-hash="benchmarks#historical-benchmarks"
-                         onClick={this.showSchemaDetail}>Historical Benchmarks</a>
+                  <li><a href="#historical-benchmarks"
+                         onClick={this.showSection}>Historical Benchmarks</a>
                   </li>
-                  <li><a href="#" data-hash="benchmarks#current-benchmarks"
-                         onClick={this.showSchemaDetail}>Current Benchmarks</a>
+                  <li><a href="#current-benchmarks"
+                         onClick={this.showSection}>Current Benchmarks</a>
                   </li>
-                  <li><a href="#" data-hash="benchmarks#benchmark-calculations"
-                         onClick={this.showSchemaDetail}>Benchmark Calculations</a>
+                  <li><a href="#benchmark-calculations"
+                         onClick={this.showSection}>Benchmark Calculations</a>
                   </li>
                 </ul>
               </li>
-              <li><a href="#" data-hash="scoring"
-                     onClick={this.showSchemaDetail}>Scoring</a></li>
-              <li><a href="#" data-hash="provider"
-                     onClick={this.showSchemaDetail}>Provider Profile Stub</a></li>
+              <li><a href="#scoring"
+                     onClick={this.showSection}>Scoring</a></li>
+              <li><a href="#provider"
+                     onClick={this.showSection}>Provider Profile Stub</a></li>
             </ul>
             <li className="ds-c-vertical-nav__item"><b>Examples</b></li>
             <ul className="ds-c-vertical-nav__subnav">
-              <li><a href="#" data-hash="example"
-              onClick={this.showSchemaDetail}>Submission JSON & XML</a></li>
+              <li><a href="#example"
+              onClick={this.showSection}>Submission JSON & XML</a></li>
               <li><a href="https://qpp-submissions-sandbox.navapbc.com/">Interactive Docs</a></li>
             </ul>
           </ul>
         </div>
         <div className="ds-u-float--left ds-u-padding--1 page">
-          <SchemaDetail name={this.state.name}/>
+          { sectionForHash(this.state.hash) }
         </div>
       </div>
       </div>

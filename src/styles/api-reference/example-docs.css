@@ -1,5 +1,5 @@
 @media screen and (min-width: 600px) {
-  .technical-details-pane-examples.ReactTabs {
+  .example-docs.ReactTabs {
     position: static;
   }
 
@@ -9,7 +9,7 @@
 
   .technical-details-pane .ReactTabs__TabList {
     max-width: 100%;
-  }  
+  }
 }
 
 .technical-details-pane-examples button {
