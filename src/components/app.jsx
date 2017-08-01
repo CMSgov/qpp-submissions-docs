@@ -41,7 +41,7 @@ class App extends React.PureComponent {
           <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/developer-preview">Join the QPP Developer Preview</a>
 
           <h2 className="ds-h2">Explore the API</h2>
-          <p className="ds-text">View the <a href="https://cmsgov.github.io/qpp-submissions-docs/schemas">API documentation</a> or play around with the <a href="https://qpp-submissions-sandbox.navapbc.com/">Interactive Docs</a> using your own data.</p>
+          <p className="ds-text">View the <a href="/qpp-submissions-docs/schemas">API documentation</a> or play around with the <a href="https://qpp-submissions-sandbox.navapbc.com/">Interactive Docs</a> using your own data.</p>
           <p className="ds-text">The Submissions API has three types of objects:</p>
           <ul>
             <li><b>Submissions</b> contain any performance data submitted on behalf of a single MIPS-eligible clinician, practice or group.</li>
