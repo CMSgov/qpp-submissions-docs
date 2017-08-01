@@ -35,7 +35,7 @@ export default class DeveloperPreview extends React.PureComponent {
           <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/tutorial">Start the tutorial</a>
 
           <h2 className="ds-h2">Step 3: Make your first API call</h2>
-          <p class="ds-text">Base URL: <b><code>https://qpp.cms.gov/api/</code></b></p>
+          <p class="ds-text">Base URL: <b><code>https://qpp.cms.gov/api/submissions</code></b></p>
           <p class="ds-text">Add your API Token to the header of every API request using the key value: <code>"Authentication":"Bearer [YOUR API TOKEN]"</code>. </p>
 
           <p class="ds-text">
