@@ -64,11 +64,11 @@ class BasicTutorial extends React.PureComponent {
                 Creating a new submission
             </a>
           </h2>
-          <p>We need to create a <em>submission</em> first. We can do that by asking the API to create a submission record in the CMS database. In API terms, this means making a <code>POST</code> (synonym for <em>create</em>) request to the <code>/v1/submissions</code> endpoint. We'll also need to supply some information to tell CMS how to identify this particular submission, which you can see below - every submission is unique to the combination of the fields provided.</p>
+          <p>We need to create a <em>submission</em> first. We can do that by asking the API to create a submission record in the CMS database. In API terms, this means making a <code>POST</code> (synonym for <em>create</em>) request to the <code>/submissions</code> endpoint. We'll also need to supply some information to tell CMS how to identify this particular submission, which you can see below - every submission is unique to the combination of the fields provided.</p>
           <p>Note that we enforce fake TINs (starting with <code>000</code>) during the preview period to avoid accidentally collecting personally identifiable information. Also, we can submit performance data in this first request as well, but we'll do it in a future request to keep this one small. On the right side, you can see the <code>JSON</code> version of the information below - click the 'Create Submission' button when you're ready.</p>
           <InlineApiExample
             verb="POST"
-            url="/v1/submissions"
+            url="/submissions"
             params={
               <tbody>
                 <tr><td>Program Name</td>
@@ -115,7 +115,7 @@ class BasicTutorial extends React.PureComponent {
           <p>If we want to add measurements from different categories (Advancing Care Information vs our Improvement Activity) or submission methods (not the CMS web interface), we would need to do that in another measurement set. Measurement sets become more important during scoring, since there can be performance data concerning the same care but submitted by different people - we'll dig into that in our advanced tutorial. For now, let's ask the API to add our IA measurement:</p>
           <InlineApiExample
             verb="POST"
-            url="/v1/measurement-sets"
+            url="/measurement-sets"
             params={
               <tbody>
                 <tr><td>Submission ID</td>
@@ -156,7 +156,7 @@ class BasicTutorial extends React.PureComponent {
           <p>With the submission <code>id</code> we were given, we can ask the API to calculate the submission score with a GET request. We don't need to include a request body this time since we're only interested in retrieving the score, and CMS doesn't need any information other than the submission <code>id</code>.</p>
           <InlineApiExample
             verb="GET"
-            url="/v1/submissions/:id/score"
+            url="/submissions/:id/score"
             button={
               <button
                 className="ds-c-button ds-c-button--primary"
