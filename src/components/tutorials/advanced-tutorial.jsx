@@ -69,7 +69,7 @@ class AdvancedTutorial extends React.PureComponent {
           <p>The request payload on the right can be harder to read, but it contains the same info as below formatted exactly as it's sent through the API. Check it out then click the button!</p>
           <InlineApiExample
             verb="POST"
-            url="/v1/submissions"
+            url="/submissions"
             params={
               <tbody>
                 <tr><td>Program Name</td>
@@ -112,7 +112,7 @@ class AdvancedTutorial extends React.PureComponent {
           <p>If we wanted to <em>update</em> the existing submission we could use a <code>PUT</code> (full record update) or <code>PATCH</code> (partial record update) request, but since we're trying to show how we can create a new submission with measurement data embedded, let's use a different TIN and try again.</p>
           <InlineApiExample
             verb="POST"
-            url="/v1/submissions"
+            url="/submissions"
             params={
               <tbody>
                 <tr><td>Program Name</td>
@@ -171,7 +171,7 @@ class AdvancedTutorial extends React.PureComponent {
          <p>The scoring is more complicated for ACI measures, so we'll spend more time going through that.</p>
           <InlineApiExample
             verb="GET"
-            url="/v1/submissions/:id/score"
+            url="/submissions/:id/score"
             button={
               <button
                 className="ds-c-button ds-c-button--primary"
@@ -205,7 +205,7 @@ class AdvancedTutorial extends React.PureComponent {
           <p>So far we've only been creating new submission and measurement set records. Since performance data can change over time, we'll need to update CMS. Let's update an existing measure with new performance data! In addition to a measurement <code>ID</code>, we need to provide the measurement set <code>ID</code> and the measure <code>ID</code>. For the performance data itself, let's update the <code>ACI_HIE_1</code> proportion from 10 out of 100 to 50 out of 100 and see how that affects our score.</p>
           <InlineApiExample
             verb="PATCH"
-            url="/v1/measurements/:id"
+            url="/measurements/:id"
             params={
               <tbody>
                 <tr><td>Measurement ID</td>
@@ -243,7 +243,7 @@ class AdvancedTutorial extends React.PureComponent {
           </h2>
           <InlineApiExample
             verb="GET"
-            url="/v1/submissions/:id/score"
+            url="/submissions/:id/score"
             button={
               <button
                 className="ds-c-button ds-c-button--primary"
