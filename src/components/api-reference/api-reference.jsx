@@ -56,14 +56,14 @@ export default class ApiReference extends React.PureComponent {
     Object.keys(ReferenceNavBarItemsMap).forEach((itemName) => {
       referenceNavListItems.push(
         // the onClick property sends the NavBarListItem an onClick property which is the handleClick function
-        <NavBarListItem name={itemName} isActive={ this.state.activeComponent === itemName } onClick={this.handleClick} />
+        <NavBarListItem key={itemName} name={itemName} isActive={ this.state.activeComponent === itemName } onClick={this.handleClick} />
       )
     });
     var samplesNavListItems = [];
     Object.keys(SamplesNavBarItemsMap).forEach((itemName) => {
       samplesNavListItems.push(
         // the onClick property sends the NavBarListItem an onClick property which is the handleClick function
-        <NavBarListItem name={itemName} isActive={ this.state.activeComponent === itemName } onClick={this.handleClick} />
+        <NavBarListItem key={itemName} name={itemName} isActive={ this.state.activeComponent === itemName } onClick={this.handleClick} />
       )
     });
 
