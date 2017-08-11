@@ -80,8 +80,8 @@ export default class ApiReference extends React.PureComponent {
     });
 
     return (
-      <div>
-      <div className="temp-grid-container">
+      <div className="ds-l-container">
+      <div className="ds-l-row">
         <div id="dropdown-nav">
           <form className="usa-form">
             <select value={this.state.value} onChange={this.handleDropdownSelect} id="options">
@@ -90,7 +90,7 @@ export default class ApiReference extends React.PureComponent {
           </form>
         </div>
 
-        <div id="left-nav" className="ds-u-float--left ds-u-padding-right--6 ds-u-padding-top--2">
+        <div id="left-nav" className="ds-l-col--6 ds-u-float--left ds-u-padding-right--6 ds-u-padding-top--2">
           <ul className="ds-c-vertical-nav__subnav">
             <li className="ds-c-vertical-nav__item"><b>REFERENCE</b></li>
             <ul className="ds-c-vertical-nav__subnav usa-sidenav-list">
@@ -102,9 +102,8 @@ export default class ApiReference extends React.PureComponent {
             </ul>
           </ul>
         </div>
-        <div className="ds-u-float--left ds-u-padding--1 page">
-          { ReferenceNavBarItemsMap[this.state.activeComponent] ||
-            SamplesNavBarItemsMap[this.state.activeComponent] }
+        <div className="ds-u-float--left ds-u-padding--1 ds-l-col--6">
+          { allNavItems[this.state.activeComponent] }
         </div>
       </div>
       </div>
