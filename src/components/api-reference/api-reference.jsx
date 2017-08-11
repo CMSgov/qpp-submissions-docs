@@ -22,6 +22,8 @@ const SamplesNavBarItemsMap = {
   "example-submission-JSON-&-XML": <ExampleDocs />
 };
 
+const allNavItems = Object.assign({}, ReferenceNavBarItemsMap, SamplesNavBarItemsMap);
+
 function capitalize(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -45,10 +47,16 @@ export default class ApiReference extends React.PureComponent {
       activeComponent: "submission"
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleDropdownSelect = this.handleDropdownSelect.bind(this);
   }
 
   handleClick(e) {
+    // REVIEW: Should this also update the selected dropdown item?
     this.setState({ activeComponent: e.target.name })
+  }
+
+  handleDropdownSelect(e) {
+    this.setState({ activeComponent: e.target.value });
   }
 
   render() {
@@ -66,11 +74,23 @@ export default class ApiReference extends React.PureComponent {
         <NavBarListItem key={itemName} name={itemName} isActive={ this.state.activeComponent === itemName } onClick={this.handleClick} />
       )
     });
+    var dropdownListItems = [];
+    Object.keys(allNavItems).forEach((itemName) => {
+      dropdownListItems.push(<option value={itemName}>{ keyToTitle(itemName) }</option>)
+    });
 
     return (
       <div>
       <div className="temp-grid-container">
-        <div className="ds-u-float--left ds-u-padding-right--6 ds-u-padding-top--2">
+        <div id="dropdown-nav">
+          <form className="usa-form">
+            <select value={this.state.value} onChange={this.handleDropdownSelect} id="options">
+              {dropdownListItems}
+            </select>
+          </form>
+        </div>
+
+        <div id="left-nav" className="ds-u-float--left ds-u-padding-right--6 ds-u-padding-top--2">
           <ul className="ds-c-vertical-nav__subnav">
             <li className="ds-c-vertical-nav__item"><b>REFERENCE</b></li>
             <ul className="ds-c-vertical-nav__subnav usa-sidenav-list">

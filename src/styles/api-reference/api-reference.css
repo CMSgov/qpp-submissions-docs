@@ -1,3 +1,25 @@
 .page {
   width: 700px;
+  max-width: 100%;
+}
+
+@media (min-width: 360px) {
+  #dropdown-nav {
+    display: none;
+  }
+  #left-nav {
+    display: block;
+  }
+}
+
+@media (max-width: 360px) {
+  #dropdown-nav {
+    display: block;
+  }
+  #left-nav {
+    display: none;
+  }
+  .ds-text--lead {
+    font-size: 12px;
+  }
 }
