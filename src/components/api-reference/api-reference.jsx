@@ -9,14 +9,25 @@ import Provider from './provider';
 import Submission from './schemas/submission';
 import '../../styles/api-reference/api-reference.css';
 
-const NavBarItemsMap = {
+class NavBarListItem extends React.Component {
+  render() {
+    return <li name={this.props.name} className={ this.props.isActive ? 'active' : '' } onClick={this.props.onClick}>
+      <a name={this.props.name} href="javascript:void(0);">{ keyToTitle(this.props.name) }</a>
+    </li>
+  }
+}
+
+const ReferenceNavBarItemsMap = {
   "submission": <Submission />,
   "measurement-sets": <MeasurementSets />,
   "measurements": <Measurements />,
   "benchmarks": <Benchmarks />,
   "scoring": <Scoring />,
-  "provider-profile-stub": <Provider />,
-  "example-docs": <ExampleDocs />
+  "provider-profile-stub": <Provider />
+};
+
+const SamplesNavBarItemsMap = {
+  "example-submission-JSON-&-XML": <ExampleDocs />
 };
 
 function capitalize(string) {
@@ -41,12 +52,18 @@ export default class ApiReference extends React.PureComponent {
   }
 
   render() {
-    var navListItems = [];
-    Object.keys(NavBarItemsMap).forEach((itemName) => {
-      navListItems.push(
-        <li className={ itemName === this.state.activeComponent ? 'active' : '' } onClick={this.handleClick}>
-          <a name={itemName} href="javascript:void(0);">{ keyToTitle(itemName) }</a>
-        </li>
+    var referenceNavListItems = [];
+    Object.keys(ReferenceNavBarItemsMap).forEach((itemName) => {
+      referenceNavListItems.push(
+        // the onClick property sends the NavBarListItem an onClick property which is the handleClick function
+        <NavBarListItem name={itemName} isActive={ this.state.activeComponent === itemName } onClick={this.handleClick} />
+      )
+    });
+    var samplesNavListItems = [];
+    Object.keys(SamplesNavBarItemsMap).forEach((itemName) => {
+      samplesNavListItems.push(
+        // the onClick property sends the NavBarListItem an onClick property which is the handleClick function
+        <NavBarListItem name={itemName} isActive={ this.state.activeComponent === itemName } onClick={this.handleClick} />
       )
     });
 
@@ -55,14 +72,19 @@ export default class ApiReference extends React.PureComponent {
       <div className="temp-grid-container">
         <div className="ds-u-float--left ds-u-padding-right--6 ds-u-padding-top--2">
           <ul className="ds-c-vertical-nav__subnav">
-            <li className="ds-c-vertical-nav__item"><b>APIs & Reference</b></li>
+            <li className="ds-c-vertical-nav__item"><b>REFERENCE</b></li>
             <ul className="ds-c-vertical-nav__subnav usa-sidenav-list">
-              {navListItems}
+              {referenceNavListItems}
+            </ul>
+            <li className="ds-c-vertical-nav__item"><b>SAMPLES</b></li>
+            <ul className="ds-c-vertical-nav__subnav usa-sidenav-list">
+              {samplesNavListItems}
             </ul>
           </ul>
         </div>
         <div className="ds-u-float--left ds-u-padding--1 page">
-          { NavBarItemsMap[this.state.activeComponent] }
+          { ReferenceNavBarItemsMap[this.state.activeComponent] ||
+            SamplesNavBarItemsMap[this.state.activeComponent] }
         </div>
       </div>
       </div>
