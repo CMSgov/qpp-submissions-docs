@@ -9,94 +9,60 @@ import Provider from './provider';
 import Submission from './schemas/submission';
 import '../../styles/api-reference/api-reference.css';
 
-function sectionForHash(maybeHash) {
-  const hash = maybeHash || '';
-  if (hash === '#scoring') {
-    return <Scoring/>;
-  } else if (hash === '#provider') {
-    return <Provider/>;
-  } else if (hash.includes('benchmark')) {
-    return <Benchmarks/>;
-  } else if (hash.includes('measurements')) {
-    return <Measurements/>;
-  } else if (hash === '#measurement-sets') {
-    return <MeasurementSets/>;
-  } else if (hash === '#example') {
-    return <ExampleDocs/>;
-  } else {
-    return <Submission/>;
-  }
+const NavBarItemsMap = {
+  "submission": <Submission />,
+  "measurement-sets": <MeasurementSets />,
+  "measurements": <Measurements />,
+  "benchmarks": <Benchmarks />,
+  "scoring": <Scoring />,
+  "provider-profile-stub": <Provider />,
+  "example-docs": <ExampleDocs />
+};
+
+function capitalize(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function keyToTitle(key) {
+  return key.split("-").map((string) => capitalize(string)).join(" ");
 }
 
 export default class ApiReference extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      hash: props.hash
+      activeComponent: "submission"
     };
-
-    this.showSection = this.showSection.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  showSection(event) {
-    this.setState({ hash: event.target.hash });
+  handleClick(e) {
+    this.setState({ activeComponent: e.target.name })
   }
 
   render() {
+    var navListItems = [];
+    Object.keys(NavBarItemsMap).forEach((itemName) => {
+      navListItems.push(
+        <li className={ itemName === this.state.activeComponent ? 'active' : '' } onClick={this.handleClick}>
+          <a name={itemName} href="javascript:void(0);">{ keyToTitle(itemName) }</a>
+        </li>
+      )
+    });
+
     return (
       <div>
       <div className="temp-grid-container">
         <div className="ds-u-float--left ds-u-padding-right--6 ds-u-padding-top--2">
           <ul className="ds-c-vertical-nav__subnav">
             <li className="ds-c-vertical-nav__item"><b>APIs & Reference</b></li>
-            <ul className="ds-c-vertical-nav__subnav">
-              <li><a href="#submission"
-              onClick={this.showSection}>Submissions</a></li>
-              <li><a href="#measurement-sets"
-              onClick={this.showSection}>MeasurementSets</a></li>
-              <li><a href="#measurements"
-              onClick={this.showSection}>Measurements</a>
-                <ul>
-                  <li><a href="#boolean-measurements"
-                         onClick={this.showSection}>Boolean</a></li>
-                  <li><a href="#proportion-measurements"
-                         onClick={this.showSection}>Proportion</a></li>
-                  <li><a href="#single-performance-rate-measurements"
-                         onClick={this.showSection}>Single-Performance Rate</a></li>
-                  <li><a href="#multi-performance-rate-measurements"
-                         onClick={this.showSection}>Multi-Performance Rate</a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="#benchmarks"
-                   onClick={this.showSection}>Benchmarks</a>
-                <ul>
-                  <li><a href="#historical-benchmarks"
-                         onClick={this.showSection}>Historical Benchmarks</a>
-                  </li>
-                  <li><a href="#current-benchmarks"
-                         onClick={this.showSection}>Current Benchmarks</a>
-                  </li>
-                  <li><a href="#benchmark-calculations"
-                         onClick={this.showSection}>Benchmark Calculations</a>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#scoring"
-                     onClick={this.showSection}>Scoring</a></li>
-              <li><a href="#provider"
-                     onClick={this.showSection}>Provider Profile Stub</a></li>
-            </ul>
-            <li className="ds-c-vertical-nav__item"><b>Examples</b></li>
-            <ul className="ds-c-vertical-nav__subnav">
-              <li><a href="#example"
-              onClick={this.showSection}>Submission JSON & XML</a></li>
-              <li><a href="https://qpp-submissions-sandbox.navapbc.com/">Interactive Docs</a></li>
+            <ul className="ds-c-vertical-nav__subnav usa-sidenav-list">
+              {navListItems}
             </ul>
           </ul>
         </div>
         <div className="ds-u-float--left ds-u-padding--1 page">
-          { sectionForHash(this.state.hash) }
+          { NavBarItemsMap[this.state.activeComponent] }
         </div>
       </div>
       </div>
