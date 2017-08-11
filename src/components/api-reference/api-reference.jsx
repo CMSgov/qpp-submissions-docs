@@ -9,14 +9,6 @@ import Provider from './provider';
 import Submission from './schemas/submission';
 import '../../styles/api-reference/api-reference.css';
 
-class NavBarListItem extends React.Component {
-  render() {
-    return <li name={this.props.name} className={ this.props.isActive ? 'active' : '' } onClick={this.props.onClick}>
-      <a name={this.props.name} href="javascript:void(0);">{ keyToTitle(this.props.name) }</a>
-    </li>
-  }
-}
-
 const ReferenceNavBarItemsMap = {
   "submission": <Submission />,
   "measurement-sets": <MeasurementSets />,
@@ -36,6 +28,14 @@ function capitalize(string) {
 
 function keyToTitle(key) {
   return key.split("-").map((string) => capitalize(string)).join(" ");
+}
+
+class NavBarListItem extends React.Component {
+  render() {
+    return <li className={ this.props.isActive ? 'active' : '' } onClick={this.props.onClick}>
+      <a name={this.props.name} href="javascript:void(0);">{ keyToTitle(this.props.name) }</a>
+    </li>
+  }
 }
 
 export default class ApiReference extends React.PureComponent {
