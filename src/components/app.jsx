@@ -38,7 +38,7 @@ class App extends React.PureComponent {
 
     this.state = {
       path: path,
-      component: pathsMap[path]
+      component: pathsMap[path] || Introduction
     };
   }
 
@@ -53,7 +53,7 @@ class App extends React.PureComponent {
           </div>
           <div className="container">
             <Route path={"/qpp-submissions-docs/" + this.state.path} component={this.state.component} />
-            <Route path="/qpp-submissions-docs" component={Introduction} />
+            <Route path="" component={Introduction} />
           </div>
           <script src="/assets/js/vendor/uswds.min.js"></script>
         </div>
