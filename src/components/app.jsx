@@ -18,6 +18,14 @@ import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
 import Schemas from './api-reference/api-reference';
 
+const pathsMap = {
+  'tutorial': BasicTutorial,
+  'advanced-tutorial': AdvancedTutorial,
+  'schemas': Schemas,
+  'developer-preview': DeveloperPreview,
+  'privatebeta': DeveloperPreview
+}
+
 class App extends React.PureComponent {
   constructor(props) {
     super(props);
@@ -27,14 +35,6 @@ class App extends React.PureComponent {
       // we're not always mounted at /
       // so just get the last bit
       .split('/').pop();
-
-    const pathsMap = {
-      'tutorial': BasicTutorial,
-      'advanced-tutorial': AdvancedTutorial,
-      'schemas': Schemas,
-      'developer-preview': DeveloperPreview,
-      'privatebeta': DeveloperPreview
-    }
 
     this.state = {
       path: path,
