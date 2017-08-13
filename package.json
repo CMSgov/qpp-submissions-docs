@@ -36,5 +36,8 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "dependencies": {
+    "react-router-dom": "^4.1.2"
   }
 }
