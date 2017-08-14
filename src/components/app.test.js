@@ -16,7 +16,7 @@ test('it displays default content', () => {
 test('it displays developer-preview', () => {
   const div = document.createElement('div')
   render((
-    <MemoryRouter initialEntries={[ '/developer-preview' ]} initialIndex={0}>
+    <MemoryRouter initialEntries={[ '/developer-preview' ]}>
       <App />
     </MemoryRouter>
   ), div)
@@ -26,7 +26,7 @@ test('it displays developer-preview', () => {
 test('it displays tutorial', () => {
   const div = document.createElement('div')
   render((
-    <MemoryRouter initialEntries={[ '/tutorial' ]} initialIndex={0}>
+    <MemoryRouter initialEntries={[ '/tutorial' ]}>
       <App />
     </MemoryRouter>
   ), div)
