@@ -44,8 +44,8 @@ const guidesPathsMap = {
 
 const allPaths = Object.assign({}, topicsPathsMap, guidesPathsMap)
 
-const getContent = ({ match }) => {
-  var activeComponent = allPaths[match.params.contentKey].component;
+const getComponent = ({ match }) => {
+  var activeComponent = allPaths[match.params.componentKey].component;
   return <div>{activeComponent}</div>
 }
 
@@ -60,7 +60,7 @@ class App extends React.PureComponent {
         </div>
         <div className="container">
           <Route exact path="/" component={Introduction} />
-          <Route path="/:contentKey" render={getContent} />
+          <Route path="/:componentKey" render={getComponent} />
         </div>
         <script src="/assets/js/vendor/uswds.min.js"></script>
       </div>
