@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../node_modules/uswds/dist/js/uswds.js';
 import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import '../styles/app.css';
 import '../styles/temp-grid.css';
@@ -52,20 +52,18 @@ const getContent = ({ match }) => {
 class App extends React.PureComponent {
   render() {
     return (
-      <BrowserRouter basename="/qpp-submissions-docs/">
-        <div>
-          <a className="usa-skipnav" href="#main-content">Skip to main content</a>
-          <Header />
-          <div className="container temp-nav ds-h3 ds-u-margin-y--3">
-            <a href="/qpp-submissions-docs" title="Home" aria-label="Home">QPP Submissions API <br/> Developer Documentation</a>
-          </div>
-          <div className="container">
-            <Route exact path="/" component={Introduction} />
-            <Route path="/:contentKey" render={getContent} />
-          </div>
-          <script src="/assets/js/vendor/uswds.min.js"></script>
+      <div>
+        <a className="usa-skipnav" href="#main-content">Skip to main content</a>
+        <Header />
+        <div className="container temp-nav ds-h3 ds-u-margin-y--3">
+          <a href="/qpp-submissions-docs" title="Home" aria-label="Home">QPP Submissions API <br/> Developer Documentation</a>
         </div>
-      </BrowserRouter>
+        <div className="container">
+          <Route exact path="/" component={Introduction} />
+          <Route path="/:contentKey" render={getContent} />
+        </div>
+        <script src="/assets/js/vendor/uswds.min.js"></script>
+      </div>
     );
   }
 }

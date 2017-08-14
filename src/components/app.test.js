@@ -1,39 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {shallow, mount} from 'enzyme';
-import App from './app';
+import { render } from 'react-dom'
+import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
+import App from './app'
 
-it('renders without crashing', () => {
-  shallow(<App url={document.URL}/>);
-});
-
-it('renders the landing page by default', () => {
-  const node = document.createElement('div')
-  ReactDOM.render((
+test('it displays default content', () => {
+  const div = document.createElement('div')
+  render((
     <MemoryRouter>
-      <App url={document.URL}/>
+      <App />
     </MemoryRouter>
-  ), node)
-  expect.stringContaining('Easily submit and score QPP data in real-time via API');
-});
+  ), div)
+  console.assert(div.innerHTML.match(/Easily submit and score QPP data in real-time via API/))
+})
 
-it('routes to tutorial when the path ends with /tutorial', () => {
-  const node = document.createElement('div')
-  ReactDOM.render((
-    <MemoryRouter>
-      <App url={document.URL + 'tutorial'}/>
+test('it displays developer-preview', () => {
+  const div = document.createElement('div')
+  render((
+    <MemoryRouter initialEntries={[ '/developer-preview' ]} initialIndex={0}>
+      <App />
     </MemoryRouter>
-  ), node)
-  expect.stringContaining('API Tutorial');
-});
+  ), div)
+  console.assert(div.innerHTML.match(/Developer Preview/))
+})
 
-it('routes to tutorial when the path ends with /tutorial', () => {
-  const node = document.createElement('div')
-  ReactDOM.render((
-    <MemoryRouter>
-      <App url={document.URL + 'privatebeta'}/>
+test('it displays tutorial', () => {
+  const div = document.createElement('div')
+  render((
+    <MemoryRouter initialEntries={[ '/tutorial' ]} initialIndex={0}>
+      <App />
     </MemoryRouter>
-  ), node)
-  expect.stringContaining('Developer Preview');
-});
+  ), div)
+  console.assert(div.innerHTML.match(/API Tutorial/))
+})
