@@ -59,7 +59,7 @@ class App extends React.PureComponent {
           <a href="/qpp-submissions-docs" title="Home" aria-label="Home">QPP Submissions API <br/> Developer Documentation</a>
         </div>
         <div className="container">
-          <Route path="/" component={Introduction} />
+          <Route exact path="/" component={Introduction} />
           <Route path="/:contentKey" render={getContent} />
         </div>
         <script src="/assets/js/vendor/uswds.min.js"></script>
