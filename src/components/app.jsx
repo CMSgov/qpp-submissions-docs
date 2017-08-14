@@ -1,10 +1,7 @@
 import React from 'react';
 import '../../node_modules/uswds/dist/js/uswds.js';
 import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
-import {
-  BrowserRouter as Router,
-  Route
-} from 'react-router-dom'
+import { BrowserRouter, Route } from 'react-router-dom'
 
 import '../styles/app.css';
 import '../styles/temp-grid.css';
@@ -55,7 +52,7 @@ const getContent = ({ match }) => {
 class App extends React.PureComponent {
   render() {
     return (
-      <Router basename="/qpp-submissions-docs/">
+      <BrowserRouter basename="/qpp-submissions-docs/">
         <div>
           <a className="usa-skipnav" href="#main-content">Skip to main content</a>
           <Header />
@@ -68,7 +65,7 @@ class App extends React.PureComponent {
           </div>
           <script src="/assets/js/vendor/uswds.min.js"></script>
         </div>
-      </Router>
+      </BrowserRouter>
     );
   }
 }
