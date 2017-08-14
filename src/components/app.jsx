@@ -1,5 +1,4 @@
 import React from 'react';
-import url from 'url';
 import '../../node_modules/uswds/dist/js/uswds.js';
 import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
 import {
@@ -18,33 +17,45 @@ import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
 import Schemas from './api-reference/api-reference';
 
-const pathsMap = {
-  'tutorial': BasicTutorial,
-  'advanced-tutorial': AdvancedTutorial,
-  'schemas': Schemas,
-  'developer-preview': DeveloperPreview,
-  'privatebeta': DeveloperPreview
+// linkText only becomes relevant when building links, which we're not doing
+// (yet).
+const topicsPathsMap = {
+  'introduction': {
+    linkText: 'Introduction',
+    component: <Introduction />
+  },
+  'developer-preview': {
+    linkText: 'Getting a Key',
+    component: <DeveloperPreview />
+  },
+  'schemas': {
+    linkText: 'Schemas',
+    component: <Schemas />
+  }
+}
+
+const guidesPathsMap = {
+  'tutorial': {
+    linkText: 'Quickstart',
+    component: <BasicTutorial />
+  },
+  'advanced-tutorial':{
+    linkText: 'Advanced Tutorial',
+    component: <AdvancedTutorial />
+  }
+}
+
+const allPaths = Object.assign({}, topicsPathsMap, guidesPathsMap)
+
+const getContent = ({ match }) => {
+  var activeComponent = allPaths[match.params.contentKey].component;
+  return <div>{activeComponent}</div>
 }
 
 class App extends React.PureComponent {
-  constructor(props) {
-    super(props);
-
-    const path = url
-      .parse(this.props.url).pathname.toLowerCase()
-      // we're not always mounted at /
-      // so just get the last bit
-      .split('/').pop();
-
-    this.state = {
-      path: path,
-      component: pathsMap[path] || Introduction
-    };
-  }
-
   render() {
     return (
-      <Router>
+      <Router basename="/qpp-submissions-docs/">
         <div>
           <a className="usa-skipnav" href="#main-content">Skip to main content</a>
           <Header />
@@ -52,8 +63,8 @@ class App extends React.PureComponent {
             <a href="/qpp-submissions-docs" title="Home" aria-label="Home">QPP Submissions API <br/> Developer Documentation</a>
           </div>
           <div className="container">
-            <Route path={"/qpp-submissions-docs/" + this.state.path} component={this.state.component} />
-            <Route path="" component={Introduction} />
+            <Route exact path="/" component={Introduction} />
+            <Route path="/:contentKey" render={getContent} />
           </div>
           <script src="/assets/js/vendor/uswds.min.js"></script>
         </div>
