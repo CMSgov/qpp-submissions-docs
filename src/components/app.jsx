@@ -12,7 +12,13 @@ import DeveloperPreview from './developer-preview';
 import Introduction from './introduction';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
-import Schemas from './api-reference/api-reference';
+
+import Submission from './api-reference/schemas/submission';
+import MeasurementSets from './api-reference/schemas/measurement-sets';
+import Measurements from './api-reference/schemas/measurements';
+import Benchmarks from './api-reference/schemas/benchmarks';
+import Scoring from './api-reference/scoring';
+import Provider from './api-reference/provider';
 
 // linkText only becomes relevant when building links, which we're not doing
 // (yet).
@@ -24,10 +30,6 @@ const topicsPathsMap = {
   'developer-preview': {
     linkText: 'Getting a Key',
     component: <DeveloperPreview />
-  },
-  'schemas': {
-    linkText: 'Schemas',
-    component: <Schemas />
   }
 }
 
@@ -42,7 +44,34 @@ const guidesPathsMap = {
   }
 }
 
-const allPaths = Object.assign({}, topicsPathsMap, guidesPathsMap)
+const referencePathsMap = {
+  'submission': {
+    linkText: 'Submission',
+    component: <Submission />
+  },
+  'measurement-sets': {
+    linkText: 'Measurement Sets',
+    component: <MeasurementSets />,
+  },
+  'measurements': {
+    linkText: 'Measurements',
+    component: <Measurements />
+  },
+  'benchmarks': {
+    linkText: 'Benchmarks',
+    component: <Benchmarks />
+  },
+  'scoring': {
+    linkText: 'Scoring',
+    component: <Scoring />
+  },
+  'provider-profile': {
+    linkText: 'Provider Profile Stub',
+    component: <Provider />
+  }
+}
+
+const allPaths = Object.assign({}, topicsPathsMap, guidesPathsMap, referencePathsMap)
 
 const getComponent = ({ match }) => (
   <div>{allPaths[match.params.componentKey].component}</div>
@@ -63,6 +92,7 @@ class App extends React.PureComponent {
   render() {
     const topicsNavItems = createLinksListItems(topicsPathsMap);
     const guidesNavItems = createLinksListItems(guidesPathsMap);
+    const referenceNavItems = createLinksListItems(referencePathsMap);
 
     return (
       <div>
@@ -83,11 +113,17 @@ class App extends React.PureComponent {
                 <ul className="ds-c-vertical-nav__subnav">
                   {guidesNavItems}
                 </ul>
+                <li className="ds-c-vertical-nav__item"><b>REFERENCE</b></li>
+                <ul className="ds-c-vertical-nav__subnav">
+                  {referenceNavItems}
+                </ul>
               </ul>
             </div>
             <div className="ds-u-float--left ds-u-padding--1 page">
-              <Route exact path="/" component={Introduction} />
-              <Route path="/:componentKey" component={getComponent} />
+              <div className="ds-u-measure--wide">
+                <Route exact path="/" component={Introduction} />
+                <Route path="/:componentKey" component={getComponent} />
+              </div>
             </div>
           </div>
         </div>
