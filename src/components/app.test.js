@@ -29,10 +29,15 @@ test('has all the required links', () => {
       <App />
     </MemoryRouter>
   ), div)
+  // Topics
   console.assert(div.innerHTML.match('<a href="/introduction">Introduction</a>'))
   console.assert(div.innerHTML.match('<a href="/developer-preview">Getting a Key</a>'))
-  console.assert(div.innerHTML.match('<a href="/tutorial">Quickstart</a>'))
-  console.assert(div.innerHTML.match('<a href="/advanced-tutorial">Advanced Tutorial</a>'))
+  // Guides
+  console.assert(div.innerHTML.match('<a href="/tutorial">Creating and editing a submission</a>'))
+  console.assert(div.innerHTML.match('<a href="/advanced-tutorial">Updating and scoring a submission</a>'))
+  // References
   console.assert(div.innerHTML.match('<a href="/submission">Submission</a>'))
   console.assert(div.innerHTML.match('<a href="/measurement-sets">Measurement Sets</a>'))
+  // Examples
+  console.assert(div.innerHTML.match('<a href="/examples">Example Submission JSON &amp; XML</a>'))
 })

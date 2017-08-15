@@ -11,6 +11,7 @@ import Measurements from './api-reference/schemas/measurements';
 import Benchmarks from './api-reference/schemas/benchmarks';
 import Scoring from './api-reference/scoring';
 import Provider from './api-reference/provider';
+import ExampleDocs from './api-reference/example-docs';
 
 const topicsPathsMap = {
   'introduction': {
@@ -25,11 +26,11 @@ const topicsPathsMap = {
 
 const guidesPathsMap = {
   'tutorial': {
-    linkText: 'Quickstart',
+    linkText: 'Creating and editing a submission',
     component: <BasicTutorial />
   },
   'advanced-tutorial':{
-    linkText: 'Advanced Tutorial',
+    linkText: 'Updating and scoring a submission',
     component: <AdvancedTutorial />
   }
 }
@@ -61,10 +62,18 @@ const referencePathsMap = {
   }
 }
 
+const samplePathsMap = {
+  'examples': {
+    linkText: 'Example Submission JSON & XML',
+    component: <ExampleDocs />
+  }
+}
+
 const allPaths = {
   topics: topicsPathsMap,
   guides: guidesPathsMap,
-  references: referencePathsMap
+  references: referencePathsMap,
+  samples: samplePathsMap
 }
 
 export default allPaths;
