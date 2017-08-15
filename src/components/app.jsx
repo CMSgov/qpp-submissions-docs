@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../node_modules/uswds/dist/js/uswds.js';
 import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
-import { Route, NavLink } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
 import '../styles/app.css';
 import '../styles/temp-grid.css';
@@ -9,37 +9,12 @@ import '../styles/usa-banner.css';
 
 import Header from './header';
 import Routes from './routes';
+import LeftNav from './left-nav';
 import Introduction from './introduction';
 
 const mergedRoutes = Object.values(Routes).reduce(function(result, routesGroup) {
   return Object.assign(result, routesGroup);
 }, {});
-
-const createLinksListItems = function(pathsMap) {
-  return Object.keys(pathsMap).reduce((result, pathKeyName) => {
-    return result.concat(
-      // <NavLink> is special version of the <Link> that will add styling attributes to the rendered element when it matches the current URL.
-      <li key={pathKeyName}>
-        <NavLink to={"/" + pathKeyName} activeClassName="active">{pathsMap[pathKeyName].linkText}</NavLink>
-      </li>
-    )
-  }, []);
-}
-
-class NavSection extends React.Component {
-  render() {
-    return <li className="ds-c-vertical-nav__item">
-      <b>{this.props.name.toUpperCase()}</b>
-      <ul className="ds-c-vertical-nav__subnav">
-        {createLinksListItems(Routes[this.props.name])}
-      </ul>
-    </li>;
-  }
-}
-
-const LeftNav = Object.keys(Routes).reduce(function(result, sectionName) {
-  return result.concat(<NavSection key={sectionName} name={sectionName}/>)
-}, []);
 
 const getComponent = ({ match, location }) => {
   return <div>{mergedRoutes[match.params.componentKey].component}</div>
