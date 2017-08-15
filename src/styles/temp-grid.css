@@ -4,11 +4,7 @@
 }
 
 @media screen and (min-width: 600px) {
-  .temp-grid-half {
-    width: 50%;
-    float: left;
-  }
-  .temp-grid-half {
+  .temp-grid {
     padding-right: 1em;
   }
 }
