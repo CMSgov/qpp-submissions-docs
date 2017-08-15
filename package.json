@@ -32,13 +32,11 @@
     "react-scripts": "1.0.10",
     "react-tabs": "0.8.3",
     "react-test-renderer": "15.6.1",
-    "uswds": "1.0.0"
+    "uswds": "1.0.0",
+    "jest-cli": "^20.0.4",
+    "react-router-dom": "^4.1.2"
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "dependencies": {
-    "jest-cli": "^20.0.4",
-    "react-router-dom": "^4.1.2"
   }
 }
