@@ -50,8 +50,8 @@ class BasicTutorial extends React.PureComponent {
           <p className="ds-c-alert__text">Looks like the screen is too narrow to show you the API payloads alongside the tutorial. As you see references to code on the right, you'll be able to find it all the way at the bottom. Clicking the buttons to progress through the tutorial will update the code!</p>
         </div>
       </div>
-      <div className="temp-grid-container">
-        <div className="temp-grid-half">
+      <div className="container">
+        <div className="temp-grid">
           <h1 className="ds-h1">API Tutorial</h1>
           <p>The Submissions API is an easy way to manage your performance data with CMS. Performance data is organized into <em>submissions</em>, which can have many <em>measurements</em>. Measurements within a submission are also grouped by category (e.g. Improvement Activities) and submission method (e.g. CMS web interface) into <em>measurement sets</em>.</p>
           <p>Since the API and scoring calculations are still being finalized, please note that some numbers (especially scoring) may be inaccurate. The <a href="https://qpp-submissions-sandbox.navapbc.com/">Interactive Docs</a> will always reflect the latest design.</p>
@@ -82,15 +82,14 @@ class BasicTutorial extends React.PureComponent {
                 <tr><td>Performance Year</td>
                     <td>2017</td></tr>
               </tbody>
-            }
-            button={
-              <button
-                className="ds-c-button ds-c-button--primary"
-                data-hash="#creating-a-submission"
-                onClick={this.showResponseOfStep}>
-                Create Submission
-              </button>
             }/>
+          <div>
+            <TechnicalDetailsPane
+              tutorial="basic"
+              hash="#creating-a-submission"
+              tabIndex={this.state.tabIndex}
+              selectTab={this.selectTab}/>
+          </div>
           <p>Every API request gives us back an immediate response with useful information, which we can see to the right. Much like a good conversation, this response includes a restatement of what we said, plus additional input from CMS's understanding to make sure we're both on the same page.</p>
           <p>This response has two key pieces of information - the <em>response code</em>, which is a number that indicates success (<code>200</code> to <code>299</code>) or failure (<code>400</code> to <code>499</code>). The other piece is the <em>response body</em>, which contains <code>JSON</code> or <code>XML</code> describing in more detail the record stored with CMS.</p>
           <p>We know that the <code>POST</code> request succeeded from the response code (<code>201 Created</code>). CMS also gives us an <code>id</code> that tells how to refer to this submission later, some timestamps to let us know when this submission was created and last updated, and that there are no measurement sets for this submission yet (an empty list, represented by <code>[]</code>).</p>
@@ -130,14 +129,14 @@ class BasicTutorial extends React.PureComponent {
                 <tr><td className="nested-twice"><code>IA_EPA_4</code></td>
                     <td><code>true</code></td></tr>
               </tbody>
-            }
-            button={
-              <button
-                className="ds-c-button ds-c-button--primary"
-                data-hash="#adding-measurements"
-                onClick={this.showResponseOfStep}>
-                Create Measurement Set
-              </button>}/>
+            }/>
+          <div>
+            <TechnicalDetailsPane
+              tutorial="basic"
+              hash="#adding-measurements"
+              tabIndex={this.state.tabIndex}
+              selectTab={this.selectTab}/>
+          </div>
           <p>Another <code>201 Created</code>, and we can see that this time the measurement set and measurement have both been assigned <code>id</code>s. Nothing too surprising in this step, but we've given CMS everything necessary to score this submission.</p>
           <button
             className="ds-c-button ds-c-button--primary"
@@ -156,14 +155,14 @@ class BasicTutorial extends React.PureComponent {
           <p>With the submission <code>id</code> we were given, we can ask the API to calculate the submission score with a GET request. We don't need to include a request body this time since we're only interested in retrieving the score, and CMS doesn't need any information other than the submission <code>id</code>.</p>
           <InlineApiExample
             verb="GET"
-            url="/submissions/:id/score"
-            button={
-              <button
-                className="ds-c-button ds-c-button--primary"
-                data-hash="#scoring-a-submission"
-                onClick={this.showResponseOfStep}>
-                Get Submission Score
-              </button>}/>
+            url="/submissions/:id/score"/>
+          <div>
+            <TechnicalDetailsPane
+              tutorial="basic"
+              hash="#scoring-a-submission"
+              tabIndex={this.state.tabIndex}
+              selectTab={this.selectTab}/>
+          </div>
           <p>Our API response includes a bunch of new info this time, so let's break it down.</p>
           <p>The <code>Final Score</code> has a value of <code>3.75</code>. <code>Final</code> here doesn't mean it's the final end of year score for this submission - think of this instead as the <em>current aggregate estimate</em> of your total score.</p>
           <p>If you look at the first chunk of <code>JSON</code> in the <code>"parts"</code> list, the IA component of final score reads <code>3.75</code>. The <code>"detail"</code> makes clear that the scoring is based on the measurement set we submitted earlier (check the <code>id</code>s, they match!).</p>
@@ -177,13 +176,6 @@ class BasicTutorial extends React.PureComponent {
           <p>Demystify how the aggregate score for a complex performance category like ACI by seeing an example of how it might be calculated. Updating and correcting performance data is also easy - avoid losing time by solving issues as they arise, rather than reacting months later.</p>
           <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/advanced-tutorial">Start the advanced tutorial</a>
 
-        </div>
-        <div className="temp-grid-half">
-          <TechnicalDetailsPane
-            tutorial="basic"
-            hash={this.state.hash}
-            tabIndex={this.state.tabIndex}
-            selectTab={this.selectTab}/>
         </div>
       </div>
       </div>

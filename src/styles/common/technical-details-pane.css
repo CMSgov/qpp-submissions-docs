@@ -1,15 +1,10 @@
 @media screen and (min-width: 600px) {
   .technical-details-pane.ReactTabs {
-    position: fixed;
-    top: 60px;
-    bottom: 0;
     width: 100%;
     overflow-y: auto;
   }
 
   .technical-details-pane .ReactTabs__TabList {
-    position: fixed;
-    top: 60px;
     width: 100%;
   }
 

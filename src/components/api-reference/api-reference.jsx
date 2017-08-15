@@ -45,7 +45,7 @@ export default class ApiReference extends React.PureComponent {
   render() {
     return (
       <div>
-      <div className="temp-grid-container">
+      <div className="container">
         <div className="ds-u-float--left ds-u-padding-right--6 ds-u-padding-top--2">
           <ul className="ds-c-vertical-nav__subnav">
             <li className="ds-c-vertical-nav__item"><b>APIs & Reference</b></li>

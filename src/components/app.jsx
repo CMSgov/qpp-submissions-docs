@@ -1,17 +1,28 @@
 import React from 'react';
 import url from 'url';
-import '../../node_modules/uswds/dist/js/uswds.js';
-import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
 
+import $ from 'jquery';
+import 'uswds/dist/js/uswds.js';
+
+import '@cmsgov/design-system-core/dist/index.css';
+import 'bootstrap/dist/css/bootstrap.css';
+
+import '../styles/qpp-style/css/qpp-style.css';
 import '../styles/app.css';
 import '../styles/temp-grid.css';
-import '../styles/usa-banner.css';
 
 import Header from './header';
+import Footer from './footer';
+import SubscribeModal from './subscribe-modal';
 import DeveloperPreview from './developer-preview';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
 import Schemas from './api-reference/api-reference';
+
+// bootstrap js needs window.jQuery to be defined, but imports are always hoisted
+// so we need to require (as import 'bootstrap...' would get hoisted before window.jQuery is set)
+window.jQuery = window.$ = $;
+require('bootstrap');
 
 class App extends React.PureComponent {
   render() {
@@ -51,23 +62,29 @@ class App extends React.PureComponent {
 
           <p className="ds-text">Walk through how to create a new submission, submit measures and receive real-time scoring in the below tutorial.</p>
           <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/tutorial">Start the tutorial</a>
-
-          <p><br/>Return to the <a href="https://qpp.cms.gov/resources/developers">QPP Developer Tools</a>.</p>
         </div>
       </section>;
     }
 
     return (
       <div>
-        <a className="usa-skipnav" href="#main-content">Skip to main content</a>
-        <Header />
-        <div className="container temp-nav ds-h3 ds-u-margin-y--3">
-          <a href="/qpp-submissions-docs" title="Home" aria-label="Home">QPP Submissions API <br/> Developer Documentation</a>
-        </div>
-        <div className="container">
-          {component}
-        </div>
-        <script src="/assets/js/vendor/uswds.min.js"></script>
+        <main id="panel">
+          <Header />
+          <div className="qpp-docs-title-container">
+            <div className="content-container">
+              <a className="qpp-docs-title-back" href="https://qpp.cms.gov/developers">&lt; back to QPP Developer Tools</a>
+              <h3 className="qpp-docs-title-text">QPP Submissions API Documentation</h3>
+            </div>
+          </div>
+          <div className="content-block">
+            <div className="content-container">
+              {component}
+            </div>
+          </div>
+          <Footer />
+          <script src="/assets/js/vendor/uswds.min.js"></script>
+        </main>
+        <SubscribeModal />
       </div>
     );
   }
