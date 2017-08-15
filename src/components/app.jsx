@@ -1,7 +1,7 @@
 import React from 'react';
 import url from 'url';
-import 'jquery/src/jquery';
 
+import '../../node_modules/jquery/src/jquery';
 import '../../node_modules/uswds/dist/js/uswds.js';
 import '../../node_modules/bootstrap/dist/js/bootstrap.js';
 
