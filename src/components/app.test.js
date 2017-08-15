@@ -3,7 +3,7 @@ import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import App from './app'
 
-test('it displays default content', () => {
+it('displays default content', () => {
   const div = document.createElement('div')
   render((
     <MemoryRouter>
@@ -13,7 +13,7 @@ test('it displays default content', () => {
   console.assert(div.innerHTML.match(/Easily submit and score QPP data in real-time via API/))
 })
 
-test('it displays developer-preview', () => {
+it('displays the developer-preview', () => {
   const div = document.createElement('div')
   render((
     <MemoryRouter initialEntries={[ '/developer-preview' ]}>
@@ -23,7 +23,7 @@ test('it displays developer-preview', () => {
   console.assert(div.innerHTML.match(/Developer Preview/))
 })
 
-test('it displays tutorial', () => {
+it('displays the tutorial', () => {
   const div = document.createElement('div')
   render((
     <MemoryRouter initialEntries={[ '/tutorial' ]}>
