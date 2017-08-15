@@ -3,31 +3,44 @@ import React from 'react';
 class Footer extends React.PureComponent {
   render() {
     return (
-      <footer className="usa-footer usa-footer-slim" role="contentinfo">
-        <div className="usa-footer-primary-section">
-          <div className="usa-grid-full">
-            <nav className="usa-footer-nav usa-width-two-thirds">
-              <ul className="usa-unstyled-list">
-                <li className="usa-width-one-fourth usa-footer-primary-content">
-                  <a className="usa-footer-primary-link" href="https://qpp.cms.gov/resources/developers">QPP Developer Resources</a>
-                </li>
-              </ul>
-            </nav>
-            <div className="usa-width-one-third">
-              <div className="usa-footer-primary-content usa-footer-contact_info">
-                <p>(800) CALL-GOVT</p>
+      <footer>
+        <div className="container">
+          <div className="row">
+            <div className="col-sm-8 col-md-9 col-lg-9">
+              <div className="logo-container">
+                <img className="qpp-logo" src="https://qpp.cms.gov/images/qpp_logo_reversed.png" alt="qpp logo"></img>
               </div>
-              <div className="usa-footer-primary-content usa-footer-contact_info">
-                <a href="mailto:info@agency.gov">info@agency.gov</a>
+              <div className="links">
+                <ul>
+                  <li>
+                    <a href="https://qpp.cms.gov/developers" data-track-category="FooterNav" data-track-action="OpenDeveloperTools" data-track-label="Quality Payment Program">Developer Tools</a>
+                  </li>
+                  <li>
+                    <a href="https://qpp.cms.gov/about/resource-library" data-track-category="FooterNav" data-track-action="OpenEducationAndTools" data-track-label="Education and Tools">Resource Library</a>
+                  </li>
+                  <li>
+                    <a href="mailto:QPP@cms.hhs.gov">Send US Questions</a>
+                  </li>
+                  <li>
+                    <a href="#modal-subscribe" data-toggle="modal" data-target="#modal-subscribe" data-track-category="FooterNav" data-track-action="OpenModal" data-track-label="Subscribe to Email Updates">Subscribe to Updates</a>
+                  </li>
+                </ul>
+                <ul className="small">
+                  <li>
+                    <a href="https://qpp.cms.gov/privacy" data-track-category="FooterNav" data-track-action="OpenPrivacyDisclaimer" data-track-label="Notice of Privacy and Disclaimer">CMS Privacy Notice</a>
+                  </li>
+                  <li>
+                    <a href="https://qpp.cms.gov/accessibility" data-track-category="FooterNav" data-track-action="OpenAccessibility" data-track-label="Accessibility">Accessibility</a>
+                  </li>
+                  <li>1-866-288-8292</li>
+                  <li>TTY: 1-877-715-6222</li>
+                </ul>
               </div>
             </div>
-          </div>
-        </div>
-
-        <div className="usa-footer-secondary_section">
-          <div className="usa-grid">
-            <div className="usa-footer">
-              <h3 className="usa-footer-slim-logo-heading">Centers for Medicare and Medicaid Services</h3>
+            <div className="col-sm-4 col-md-3 col-lg-3">
+              <div className="hhs-logo-container">
+                <img alt="Center for Medicaid & Medicare Services" src="https://qpp.cms.gov/images/hhs-logo-white.svg"></img>
+              </div>
             </div>
           </div>
         </div>

@@ -1,9 +1,18 @@
 * {
   box-sizing: border-box;
 }
+
 body {
   margin: 0;
+  padding-top: 85px;
 }
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 108px;
+  }
+}
+
 table {
   border-collapse: collapse;
   min-width: 100%;
@@ -13,6 +22,12 @@ table td {
   border: 1px solid #5b616b;
 }
 
+.content-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1100px;
+  width: 90%;
+}
 .container {
   margin-left: auto;
   margin-right: auto;
@@ -35,4 +50,26 @@ h2 a.tutorial-header-link {
 
 h2:hover a.tutorial-header-link {
   text-decoration: underline;
+}
+
+.qpp-docs-title-container {
+	background: #036;
+	padding-top: 30px;
+	padding-bottom: 10px;
+}
+
+.qpp-docs-title-content-container {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1100px;
+	width: 90%
+}
+
+a.qpp-docs-title-back {
+	color: #FFFFFF;
+}
+
+.qpp-docs-title-text {
+	color: #FFFFFF;
+	font-weight: 600;
 }

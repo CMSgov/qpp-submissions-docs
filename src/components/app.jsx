@@ -1,13 +1,20 @@
 import React from 'react';
 import url from 'url';
+import $ from '../../node_modules/jquery/dist/jquery.js';
+
 import '../../node_modules/uswds/dist/js/uswds.js';
+import '../../node_modules/bootstrap/dist/js/bootstrap.js';
+
 import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
+import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+import '../../node_modules/qpp-style/build/css/qpp-style.css';
 
 import '../styles/app.css';
 import '../styles/temp-grid.css';
-import '../styles/usa-banner.css';
 
 import Header from './header';
+import Footer from './footer';
+import SubscribeModal from './subscribe-modal';
 import DeveloperPreview from './developer-preview';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
@@ -51,23 +58,29 @@ class App extends React.PureComponent {
 
           <p className="ds-text">Walk through how to create a new submission, submit measures and receive real-time scoring in the below tutorial.</p>
           <a className="ds-c-button ds-c-button--primary" href="/qpp-submissions-docs/tutorial">Start the tutorial</a>
-
-          <p><br/>Return to the <a href="https://qpp.cms.gov/resources/developers">QPP Developer Tools</a>.</p>
         </div>
       </section>;
     }
 
     return (
       <div>
-        <a className="usa-skipnav" href="#main-content">Skip to main content</a>
-        <Header />
-        <div className="container temp-nav ds-h3 ds-u-margin-y--3">
-          <a href="/qpp-submissions-docs" title="Home" aria-label="Home">QPP Submissions API <br/> Developer Documentation</a>
-        </div>
-        <div className="container">
-          {component}
-        </div>
-        <script src="/assets/js/vendor/uswds.min.js"></script>
+        <main id="panel">
+          <Header />
+          <div className="qpp-docs-title-container">
+            <div className="qpp-docs-title-content-container">
+              <a className="qpp-docs-title-back" href="https://qpp.cms.gov/developers">&lt; back to QPP Developer Tools</a>
+              <h3 className="qpp-docs-title-text">QPP Submissions API Documentation</h3>
+            </div>
+          </div>
+          <div className="content-block">
+            <div className="content-container">
+              {component}
+            </div>
+            <Footer />
+          </div>
+          <script src="/assets/js/vendor/uswds.min.js"></script>
+        </main>
+        <SubscribeModal />
       </div>
     );
   }
