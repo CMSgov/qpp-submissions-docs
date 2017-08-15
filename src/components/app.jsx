@@ -44,7 +44,7 @@ const guidesPathsMap = {
 
 const allPaths = Object.assign({}, topicsPathsMap, guidesPathsMap)
 
-const getComponent = ({ match }) => {
+function getComponent({match}) {
   var activeComponent = allPaths[match.params.componentKey].component;
   return <div>{activeComponent}</div>
 }
