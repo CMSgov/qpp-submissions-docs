@@ -7,8 +7,8 @@ import '../../node_modules/bootstrap/dist/js/bootstrap.js';
 
 import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
 import '../../node_modules/bootstrap/dist/css/bootstrap.css';
-import '../../node_modules/qpp-style/build/css/qpp-style.css';
 
+import '../styles/qpp-style/css/qpp-style.css';
 import '../styles/app.css';
 import '../styles/temp-grid.css';
 
