@@ -1,12 +1,12 @@
 import React from 'react';
 import url from 'url';
 
-import '../../node_modules/jquery/src/jquery';
-import '../../node_modules/uswds/dist/js/uswds.js';
-import '../../node_modules/bootstrap/dist/js/bootstrap.js';
+import 'jquery/src/jquery';
+import 'uswds/dist/js/uswds.js';
+import 'bootstrap/dist/js/bootstrap.js';
 
-import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
-import '../../node_modules/bootstrap/dist/css/bootstrap.css';
+import '@cmsgov/design-system-core/dist/index.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 import '../styles/qpp-style/css/qpp-style.css';
 import '../styles/app.css';
@@ -67,7 +67,7 @@ class App extends React.PureComponent {
         <main id="panel">
           <Header />
           <div className="qpp-docs-title-container">
-            <div className="qpp-docs-title-content-container">
+            <div className="content-container">
               <a className="qpp-docs-title-back" href="https://qpp.cms.gov/developers">&lt; back to QPP Developer Tools</a>
               <h3 className="qpp-docs-title-text">QPP Submissions API Documentation</h3>
             </div>

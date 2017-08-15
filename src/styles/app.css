@@ -28,9 +28,9 @@ table td {
   max-width: 1100px;
   width: 90%;
 }
+
 .container {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0px auto;
   max-width: 1100px;
 }
 
@@ -52,23 +52,16 @@ h2:hover a.tutorial-header-link {
 }
 
 .qpp-docs-title-container {
-	background: #036;
-	padding-top: 30px;
-	padding-bottom: 10px;
-}
-
-.qpp-docs-title-content-container {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 1100px;
-	width: 90%
+  background: #036;
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 
 a.qpp-docs-title-back {
-	color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 .qpp-docs-title-text {
-	color: #FFFFFF;
-	font-weight: 600;
+  color: #FFFFFF;
+  font-weight: 600;
 }

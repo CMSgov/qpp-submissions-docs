@@ -13,24 +13,24 @@ class Footer extends React.PureComponent {
               <div className="links">
                 <ul>
                   <li>
-                    <a href="https://qpp.cms.gov/developers" data-track-category="FooterNav" data-track-action="OpenDeveloperTools" data-track-label="Quality Payment Program">Developer Tools</a>
+                    <a href="https://qpp.cms.gov/developers">Developer Tools</a>
                   </li>
                   <li>
-                    <a href="https://qpp.cms.gov/about/resource-library" data-track-category="FooterNav" data-track-action="OpenEducationAndTools" data-track-label="Education and Tools">Resource Library</a>
+                    <a href="https://qpp.cms.gov/about/resource-library" >Resource Library</a>
                   </li>
                   <li>
-                    <a href="mailto:QPP@cms.hhs.gov">Send US Questions</a>
+                    <a href="mailto:QPP@cms.hhs.gov">Send Us Questions</a>
                   </li>
                   <li>
-                    <a href="#modal-subscribe" data-toggle="modal" data-target="#modal-subscribe" data-track-category="FooterNav" data-track-action="OpenModal" data-track-label="Subscribe to Email Updates">Subscribe to Updates</a>
+                    <a href="#modal-subscribe" data-toggle="modal" data-target="#modal-subscribe">Subscribe to Updates</a>
                   </li>
                 </ul>
                 <ul className="small">
                   <li>
-                    <a href="https://qpp.cms.gov/privacy" data-track-category="FooterNav" data-track-action="OpenPrivacyDisclaimer" data-track-label="Notice of Privacy and Disclaimer">CMS Privacy Notice</a>
+                    <a href="https://qpp.cms.gov/privacy">CMS Privacy Notice</a>
                   </li>
                   <li>
-                    <a href="https://qpp.cms.gov/accessibility" data-track-category="FooterNav" data-track-action="OpenAccessibility" data-track-label="Accessibility">Accessibility</a>
+                    <a href="https://qpp.cms.gov/accessibility">Accessibility</a>
                   </li>
                   <li>1-866-288-8292</li>
                   <li>TTY: 1-877-715-6222</li>
