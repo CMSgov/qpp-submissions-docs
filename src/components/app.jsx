@@ -1,9 +1,8 @@
 import React from 'react';
 import url from 'url';
 
-import 'jquery/src/jquery';
+import $ from 'jquery';
 import 'uswds/dist/js/uswds.js';
-import 'bootstrap/dist/js/bootstrap.js';
 
 import '@cmsgov/design-system-core/dist/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
@@ -19,6 +18,11 @@ import DeveloperPreview from './developer-preview';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
 import Schemas from './api-reference/api-reference';
+
+// bootstrap js needs window.jQuery to be defined, but imports are always hoisted
+// so we need to require (as import 'bootstrap...' would get hoisted before window.jQuery is set)
+window.jQuery = window.$ = $;
+require('bootstrap');
 
 class App extends React.PureComponent {
   render() {
