@@ -76,8 +76,8 @@ class App extends React.PureComponent {
             <div className="content-container">
               {component}
             </div>
-            <Footer />
           </div>
+          <Footer />
           <script src="/assets/js/vendor/uswds.min.js"></script>
         </main>
         <SubscribeModal />
