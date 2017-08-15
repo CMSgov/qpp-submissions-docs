@@ -45,36 +45,11 @@ const referencePathsMap = {
   },
   'measurements': {
     linkText: 'Measurements',
-    component: <Measurements />,
-    sections: {
-      'boolean-measurements': {
-        linkText: 'Boolean'
-      },
-      'proportion-measurements': {
-        linkText: 'Proportion'
-      },
-      'single-performance-rate-measurements': {
-        linkText: 'Single-Performance Rate Measurements'
-      },
-      'multi-performance-rate-measurements': {
-        linkText: 'Multi-Performance Rate Measurements'
-      }
-    }
+    component: <Measurements />
   },
   'benchmarks': {
     linkText: 'Benchmarks',
-    component: <Benchmarks />,
-    sections: {
-      'historical-benchmarks': {
-        'linkText': 'Historical Benchmarks'
-      },
-      'current-benchmarks': {
-        'linkText': 'Current Benchmarks'
-      },
-      'benchmark-calculations': {
-        'linkText': 'Benchmark Calculations'
-      }
-    }
+    component: <Benchmarks />
   },
   'scoring': {
     linkText: 'Scoring',
