@@ -8,91 +8,45 @@ import '../styles/temp-grid.css';
 import '../styles/usa-banner.css';
 
 import Header from './header';
-import DeveloperPreview from './developer-preview';
+import Routes from './routes';
 import Introduction from './introduction';
-import BasicTutorial from './tutorials/basic-tutorial';
-import AdvancedTutorial from './tutorials/advanced-tutorial';
 
-import Submission from './api-reference/schemas/submission';
-import MeasurementSets from './api-reference/schemas/measurement-sets';
-import Measurements from './api-reference/schemas/measurements';
-import Benchmarks from './api-reference/schemas/benchmarks';
-import Scoring from './api-reference/scoring';
-import Provider from './api-reference/provider';
+const allPaths = Object.assign({}, Routes.topics, Routes.guides, Routes.references)
 
-// linkText only becomes relevant when building links, which we're not doing
-// (yet).
-const topicsPathsMap = {
-  'introduction': {
-    linkText: 'Introduction',
-    component: <Introduction />
-  },
-  'developer-preview': {
-    linkText: 'Getting a Key',
-    component: <DeveloperPreview />
-  }
+const getComponent = ({ match, location }) => {
+  return <div>{allPaths[match.params.componentKey].component}</div>
 }
-
-const guidesPathsMap = {
-  'tutorial': {
-    linkText: 'Quickstart',
-    component: <BasicTutorial />
-  },
-  'advanced-tutorial':{
-    linkText: 'Advanced Tutorial',
-    component: <AdvancedTutorial />
-  }
-}
-
-const referencePathsMap = {
-  'submission': {
-    linkText: 'Submission',
-    component: <Submission />
-  },
-  'measurement-sets': {
-    linkText: 'Measurement Sets',
-    component: <MeasurementSets />,
-  },
-  'measurements': {
-    linkText: 'Measurements',
-    component: <Measurements />
-  },
-  'benchmarks': {
-    linkText: 'Benchmarks',
-    component: <Benchmarks />
-  },
-  'scoring': {
-    linkText: 'Scoring',
-    component: <Scoring />
-  },
-  'provider-profile': {
-    linkText: 'Provider Profile Stub',
-    component: <Provider />
-  }
-}
-
-const allPaths = Object.assign({}, topicsPathsMap, guidesPathsMap, referencePathsMap)
-
-const getComponent = ({ match }) => (
-  <div>{allPaths[match.params.componentKey].component}</div>
-)
 
 const createLinksListItems = function(pathsMap) {
   var linkListItems = [];
   Object.keys(pathsMap).forEach((pathKeyName) => {
     linkListItems.push(
       // <NavLink> is special version of the <Link> that will add styling attributes to the rendered element when it matches the current URL.
-      <li key={pathKeyName}><NavLink to={"/" + pathKeyName} activeClassName="active">{pathsMap[pathKeyName].linkText}</NavLink></li>
+      <li key={pathKeyName}>
+        <NavLink to={"/" + pathKeyName} activeClassName="active">{pathsMap[pathKeyName].linkText}</NavLink>
+      </li>
     )
+    // if there are sections, add ul starting and ending tags and a link for each
+    // FIXME: may want this conditional to be a bit more specific, e.g. test for a non-empty array
+    const subSections = pathsMap[pathKeyName].sections;
+    if (subSections !== undefined) {
+      linkListItems.push(
+        <ul key={pathKeyName + '-subList'}>
+          {Object.keys(subSections).map((subKey) => {
+            return <li key={subKey}><a href={"/qpp-submissions-docs/" + pathKeyName + '#' + subKey}>{subSections[subKey].linkText}</a></li> 
+          })}
+        </ul>
+      )
+    }
   });
   return linkListItems;
 }
 
 class App extends React.PureComponent {
   render() {
-    const topicsNavItems = createLinksListItems(topicsPathsMap);
-    const guidesNavItems = createLinksListItems(guidesPathsMap);
-    const referenceNavItems = createLinksListItems(referencePathsMap);
+    const topicsNavItems = createLinksListItems(Routes.topics);
+    const guidesNavItems = createLinksListItems(Routes.guides);
+    const referenceNavItems = createLinksListItems(Routes.references);
 
     return (
       <div>
@@ -122,7 +76,7 @@ class App extends React.PureComponent {
             <div className="ds-u-float--left ds-u-padding--1 page">
               <div className="ds-u-measure--wide">
                 <Route exact path="/" component={Introduction} />
-                <Route path="/:componentKey" component={getComponent} />
+                <Route exact path="/:componentKey" render={getComponent}/>
               </div>
             </div>
           </div>
