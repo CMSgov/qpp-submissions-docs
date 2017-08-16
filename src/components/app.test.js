@@ -1,7 +1,12 @@
+import { shallow } from 'enzyme';
 import { render } from 'react-dom'
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import App from './app'
+
+it('renders without crashing', () => {
+  shallow(<App />);
+});
 
 it('displays default content', () => {
   const div = document.createElement('div')
