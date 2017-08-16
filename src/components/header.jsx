@@ -8,7 +8,7 @@ class Header extends React.PureComponent {
           <div className="container">
             <div className="navbar-header">
               <div className="header-mobile-brand">
-                <a className="header-brand" href="/">
+                <a className="header-brand" href="https://qpp.cms.gov/">
                   <img className="qpp-logo" src="https://qpp.cms.gov/images/qpp_logo_rgb_color.png" alt="qpp logo"></img>
                 </a>
               </div>
