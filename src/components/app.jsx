@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../node_modules/uswds/dist/js/uswds.js';
 import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
-import { Route } from 'react-router-dom'
+import { Route } from 'react-router-dom';
 
 import '../styles/app.css';
 import '../styles/temp-grid.css';
