@@ -9,7 +9,7 @@ import '../styles/usa-banner.css';
 export default class DeveloperPreview extends React.Component {
   render() {
     return (
-        <div className="ds-u-measure--wide">
+        <div>
         <h1 className="ds-h1">Developer Preview</h1>
           <h3 className="ds-h3">July 25, 2017 - November 1, 2017</h3>
           <p className="ds-text">CMS is inviting Developers to provide feedback on the new Submissions API for the purpose of improved development. During this three-month period, participants in the Developer Preview can build integrations and test submitting Quality Payment Program (QPP) performance data to CMS via API. </p>

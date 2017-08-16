@@ -4,13 +4,7 @@
 
 body {
   margin: 0;
-  padding-top: 85px;
-}
-
-@media (min-width: 768px) {
-  body {
-    padding-top: 108px;
-  }
+  background: #f1f1f1;
 }
 
 table {
@@ -18,20 +12,16 @@ table {
   min-width: 100%;
   border-spacing: 0;
 }
+
 table td {
   border: 1px solid #5b616b;
 }
 
-.content-container {
+.container {
   margin-left: auto;
   margin-right: auto;
   max-width: 1100px;
   width: 90%;
-}
-
-.container {
-  margin: 0px auto;
-  max-width: 1100px;
 }
 
 section {
@@ -51,17 +41,74 @@ h2:hover a.tutorial-header-link {
   text-decoration: underline;
 }
 
-.qpp-docs-title-container {
-  background: #036;
-  padding-top: 30px;
-  padding-bottom: 10px;
+@media (min-width: 360px) {
+  #dropdown-nav {
+    display: none;
+  }
+  #left-nav {
+    display: block;
+  }
 }
 
-a.qpp-docs-title-back {
-  color: #FFFFFF;
+@media (max-width: 360px) {
+  #dropdown-nav {
+    display: block;
+  }
+  #left-nav {
+    display: none;
+  }
+  .ds-text--lead {
+    font-size: 12px;
+  }
 }
 
-.qpp-docs-title-text {
-  color: #FFFFFF;
-  font-weight: 600;
+/*Overrides*/
+.usa-sidenav-list a.usa-current {
+  border-left: 4px solid #2eb1ed;
+  color: #125496;
+  font-weight: 500;
+  background-color: #f1f1f1;
+}
+
+.usa-sidenav-list>li {
+  border-top: none;
+}
+
+.usa-sidenav-list a {
+  padding-left: 1.4rem;
+  font-weight: 500;
+}
+
+.usa-sidenav-list a:hover {
+  border-left: 4px solid #2eb1ed;
+  color: #125496;
+}
+
+.left-nav-label {
+  display: block;
+  padding-top: 2rem;
+  padding-left: 1.4rem;
+}
+
+.light-grey-border {
+  border-radius: 3px;
+  border: 1px solid #dcdcdc;
+}
+
+div#left-nav-div {
+  background: white;
+  padding: 0px;
+}
+
+div#outer-content-div {
+  padding-left: 4%;
+}
+
+div#inner-content-div {
+  padding: 1.4rem;
+  background-color: white;
+}
+
+a.ds-c-button--primary:visited {
+  color: white;
 }

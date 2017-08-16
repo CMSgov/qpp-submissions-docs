@@ -7,7 +7,7 @@ const createLinksListItems = function(pathsMap) {
     return result.concat(
       // <NavLink> is special version of the <Link> that will add styling attributes to the rendered element when it matches the current URL.
       <li key={pathKeyName}>
-        <NavLink to={"/" + pathKeyName} activeClassName="active">{pathsMap[pathKeyName].linkText}</NavLink>
+        <NavLink to={"/" + pathKeyName} activeClassName="usa-current">{pathsMap[pathKeyName].linkText}</NavLink>
       </li>
     )
   }, []);
@@ -15,9 +15,9 @@ const createLinksListItems = function(pathsMap) {
 
 class NavSection extends React.Component {
   render() {
-    return <li className="ds-c-vertical-nav__item">
-      <b>{this.props.name.toUpperCase()}</b>
-      <ul className="ds-c-vertical-nav__subnav">
+    return <li>
+      <span className="left-nav-label"><b>{this.props.name.toUpperCase()}</b></span>
+      <ul className="usa-sidenav-list">
         {createLinksListItems(Routes[this.props.name])}
       </ul>
     </li>;
