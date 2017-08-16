@@ -2,7 +2,6 @@ import React from 'react';
 
 class SubscribeModal extends React.PureComponent {
   render() {
-    // eslint no-use
     return (
       <div id='modal-subscribe' className='modal fade' tabIndex='-1' role='dialog' aria-labelledby='modal-subscribe-label'>
         <div className='modal-dialog modal-lg'>
