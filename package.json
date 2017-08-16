@@ -45,6 +45,12 @@
     "extends": [
       "nava",
       "react-app"
-    ]
+    ],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    }
   }
 }

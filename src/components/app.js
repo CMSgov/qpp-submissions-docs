@@ -1,12 +1,10 @@
 import React from 'react';
-import '../../node_modules/uswds/dist/js/uswds.js';
-import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
+import 'uswds/dist/js/uswds.js';
+import '@cmsgov/design-system-core/dist/index.css';
 import { Route } from 'react-router-dom';
 
 import $ from 'jquery';
-import 'uswds/dist/js/uswds.js';
 
-import '@cmsgov/design-system-core/dist/index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 import '../styles/qpp-style/css/qpp-style.css';
@@ -37,7 +35,7 @@ const topicsPathsMap = {
     linkText: 'Schemas',
     component: <Schemas />
   }
-}
+};
 
 // bootstrap js needs window.jQuery to be defined, but imports are always hoisted
 // so we need to require (as import 'bootstrap...' would get hoisted before window.jQuery is set)
@@ -49,39 +47,40 @@ const guidesPathsMap = {
     linkText: 'Quickstart',
     component: <BasicTutorial />
   },
-  'advanced-tutorial':{
+  'advanced-tutorial': {
     linkText: 'Advanced Tutorial',
     component: <AdvancedTutorial />
   }
-}
+};
 
-const allPaths = Object.assign({}, topicsPathsMap, guidesPathsMap)
+const allPaths = Object.assign({}, topicsPathsMap, guidesPathsMap);
 
+// eslint-disable-next-line
 function getComponent({match}) {
-  var activeComponent = allPaths[match.params.componentKey].component;
-  return <div>{activeComponent}</div>
+  const activeComponent = allPaths[match.params.componentKey].component;
+  return <div>{activeComponent}</div>;
 }
 
 class App extends React.Component {
   render() {
     return (
       <div>
-        <main id="panel">
+        <main id='panel'>
           <Header />
-          <div className="qpp-docs-title-container">
-            <div className="content-container">
-              <a className="qpp-docs-title-back" href="https://qpp.cms.gov/developers">&lt; back to QPP Developer Tools</a>
-              <h3 className="qpp-docs-title-text">QPP Submissions API Documentation</h3>
+          <div className='qpp-docs-title-container'>
+            <div className='content-container'>
+              <a className='qpp-docs-title-back' href='https://qpp.cms.gov/developers'>&lt; back to QPP Developer Tools</a>
+              <h3 className='qpp-docs-title-text'>QPP Submissions API Documentation</h3>
             </div>
           </div>
-          <div className="content-block">
-            <div className="content-container">
-              <Route exact path="/" component={Introduction} />
-              <Route path="/:componentKey" render={getComponent} />
+          <div className='content-block'>
+            <div className='content-container'>
+              <Route exact path='/' component={Introduction} />
+              <Route path='/:componentKey' render={getComponent} />
             </div>
           </div>
           <Footer />
-          <script src="/assets/js/vendor/uswds.min.js"></script>
+          <script src='/assets/js/vendor/uswds.min.js' />
         </main>
         <SubscribeModal />
       </div>
