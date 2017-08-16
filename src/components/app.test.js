@@ -1,7 +1,12 @@
+import { shallow } from 'enzyme';
 import { render } from 'react-dom'
 import React from 'react'
 import { MemoryRouter } from 'react-router-dom'
 import App from './app'
+
+it('renders without crashing', () => {
+  shallow(<App />);
+});
 
 const contentTestStrings = {
   '/': 'Easily submit and score QPP data in real-time via API',
@@ -11,7 +16,7 @@ const contentTestStrings = {
 }
 
 Object.keys(contentTestStrings).forEach(function(pathname) {
-  test('it displays the right content for ' + pathname, () => {
+  it('displays the right content for ' + pathname, () => {
     const div = document.createElement('div')
     render((
       <MemoryRouter initialEntries={[ pathname ]}>
@@ -22,7 +27,7 @@ Object.keys(contentTestStrings).forEach(function(pathname) {
   })
 });
 
-test('has all the required links', () => {
+it('has all the required links', () => {
   const div = document.createElement('div')
   render((
     <MemoryRouter>
