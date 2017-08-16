@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-const cssClass = "technical-details-pane";
+const cssClass = 'technical-details-pane';
 
 class Advanced5 extends React.PureComponent {
   render() {
@@ -14,14 +15,13 @@ class Advanced5 extends React.PureComponent {
           <Tab>Request</Tab>
           <Tab>Response</Tab>
         </TabList>
-        <TabPanel>
-        </TabPanel>
+        <TabPanel />
         <TabPanel>
           <p>Response code:</p>
           <pre>200 OK</pre>
           <p>Response body:</p>
           <pre>
-{`{
+            {`{
   "data": {
     "score": {
       "name": "final",
@@ -100,5 +100,10 @@ class Advanced5 extends React.PureComponent {
     );
   }
 }
+
+Advanced5.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  tabIndex: PropTypes.number.isRequired
+};
 
 export default Advanced5;

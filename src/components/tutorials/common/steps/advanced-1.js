@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
 import submissionObject from './advanced-tutorial-submission.json';
 
 const submissionJsonString = JSON.stringify(submissionObject, null, 4);
-const cssClass = "technical-details-pane";
+const cssClass = 'technical-details-pane';
 
 class Advanced1 extends React.PureComponent {
   render() {
@@ -24,7 +26,7 @@ class Advanced1 extends React.PureComponent {
           <pre>422 Unprocessable Entity</pre>
           <p>Response body:</p>
           <pre>
-{`{
+            {`{
   "error": {
     "type": "DuplicateEntryError",
     "message": "Duplicate entry for key unique_performance_year_entity_type_npi_and_tin_encrypted"
@@ -36,5 +38,10 @@ class Advanced1 extends React.PureComponent {
     );
   }
 }
+
+Advanced1.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  tabIndex: PropTypes.number.isRequired
+};
 
 export default Advanced1;

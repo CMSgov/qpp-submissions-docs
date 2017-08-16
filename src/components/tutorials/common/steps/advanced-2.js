@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-const cssClass = "technical-details-pane";
+const cssClass = 'technical-details-pane';
 
 class Advanced2 extends React.PureComponent {
   render() {
@@ -16,7 +17,7 @@ class Advanced2 extends React.PureComponent {
         </TabList>
         <TabPanel>
           <pre>
-{`{
+            {`{
   "programName": "mips",
   "entityType": "individual",
   "taxpayerIdentificationNumber": "000345678",
@@ -80,7 +81,7 @@ class Advanced2 extends React.PureComponent {
           <pre>201 Created</pre>
           <p>Response body:</p>
           <pre>
-{`"data": {
+            {`"data": {
   "submission": {
     "id": "60d2fbbb-7453-47fa-b709-c33090e50843",
     "createdAt": "2017-02-15T22:23:08Z",
@@ -193,5 +194,10 @@ class Advanced2 extends React.PureComponent {
     );
   }
 }
+
+Advanced2.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  tabIndex: PropTypes.number.isRequired
+};
 
 export default Advanced2;
