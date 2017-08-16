@@ -2,6 +2,7 @@ import React from 'react';
 
 class SubscribeModal extends React.PureComponent {
   render() {
+    // eslint no-use
     return (
       <div id='modal-subscribe' className='modal fade' tabIndex='-1' role='dialog' aria-labelledby='modal-subscribe-label'>
         <div className='modal-dialog modal-lg'>
@@ -24,7 +25,7 @@ class SubscribeModal extends React.PureComponent {
                 <p>To sign up for updates or to access your subscriber preferences, please enter your contact information below.</p>
                 <div className='row'>
                   <div className='col-sm-6 form-group'><label className='control-label' htmlFor='email'>* Email Address</label><input className='form-control' id='email' type='email' name='email' /></div>
-                  <div className='col-sm-12'><button className='btn btn-primary js-subscribe-submit' type='submit' name='commit' onClick="document.getElementById('subscribe-submit-form').submit();">Submit</button><br /><br /><button className='btn btn-tertiary' type='button' data-dismiss='modal'>Cancel</button></div>
+                  <div className='col-sm-12'><button className='btn btn-primary js-subscribe-submit' type='submit' name='commit' >Submit</button><br /><br /><button className='btn btn-tertiary' type='button' data-dismiss='modal'>Cancel</button></div>
                 </div>
                 <div className='row'>
                   <div className='col-sm-12'>
