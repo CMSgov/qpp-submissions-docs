@@ -74,9 +74,11 @@ class App extends React.Component {
               <h3 className="qpp-docs-title-text">QPP Submissions API Documentation</h3>
             </div>
           </div>
-          <div className="container">
-            <Route exact path="/" component={Introduction} />
-            <Route path="/:componentKey" render={getComponent} />
+          <div className="content-block">
+            <div className="content-container">
+              <Route exact path="/" component={Introduction} />
+              <Route path="/:componentKey" render={getComponent} />
+            </div>
           </div>
           <Footer />
           <script src="/assets/js/vendor/uswds.min.js"></script>
