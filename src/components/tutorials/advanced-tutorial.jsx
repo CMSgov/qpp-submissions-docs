@@ -3,7 +3,7 @@ import React from 'react';
 import TechnicalDetailsPane from './common/technical-details-pane';
 import InlineApiExample from './common/inline-api-example';
 
-class AdvancedTutorial extends React.PureComponent {
+class AdvancedTutorial extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

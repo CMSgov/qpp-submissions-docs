@@ -14,7 +14,7 @@ const FIELDS = [
   {name: 'measurementSets', value: 'array<measurementSet>', description: 'Measurement sets associated with the submission.',  notes: 'writable, optional'}
 ];
 
-export default class Submission extends React.PureComponent {
+export default class Submission extends React.Component {
   render() {
     return (
        <div>

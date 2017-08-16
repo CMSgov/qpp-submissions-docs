@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-class Introduction extends React.PureComponent {
+class Introduction extends React.Component {
   render() {
     return (
       <section>

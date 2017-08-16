@@ -49,7 +49,7 @@ function getComponent({match}) {
   return <div>{activeComponent}</div>
 }
 
-class App extends React.PureComponent {
+class App extends React.Component {
   render() {
     return (
       <div>
