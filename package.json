@@ -21,10 +21,13 @@
   "homepage": "https://cmsgov.github.io/qpp-submissions-docs",
   "devDependencies": {
     "@cmsgov/design-system-core": "1.0.0-rc.2",
+    "bootstrap": "3.3.7",
     "enzyme": "2.9.1",
     "eslint": "4.3.0",
     "gh-pages": "1.0.0",
+    "jquery": "3.2.1",
     "pretty-data": "0.40.0",
+    "qpp-style": "1.4.2",
     "react": "15.6.1",
     "react-copy-to-clipboard": "5.0.0",
     "react-dom": "15.6.1",
