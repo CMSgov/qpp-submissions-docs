@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../node_modules/uswds/dist/js/uswds.js';
 import '../../node_modules/@cmsgov/design-system-core/dist/index.css';
+import '../../node_modules/@cmsgov/design-system-layout/dist/index.css';
 import { Route } from 'react-router-dom';
 
 import $ from 'jquery';
@@ -46,13 +47,13 @@ class App extends React.Component {
             </div>
           </div>
           <div className="content-block">
-            <div className="content-container">
-              <div className="ds-u-float--left ds-u-padding-right--6 ds-u-padding-top--2">
+            <div className="content-container ds-l-row">
+              <div className="ds-u-float--left ds-u-padding-right--6 ds-u-padding-top--2 ds-l-col--3">
                 <ul className="ds-c-vertical-nav__subnav">
                   {LeftNav}
                 </ul>
               </div>
-              <div className="ds-u-float--left ds-u-padding--1 page">
+              <div className="ds-u-float--left ds-u-padding--1 ds-l-col--9">
                 <div className="ds-u-measure--wide">
                   <Route exact path="/" component={Introduction} />
                   <Route exact path="/:componentKey" render={getComponent}/>

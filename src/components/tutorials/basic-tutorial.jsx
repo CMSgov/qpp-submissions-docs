@@ -50,7 +50,7 @@ class BasicTutorial extends React.Component {
           <p className="ds-c-alert__text">Looks like the screen is too narrow to show you the API payloads alongside the tutorial. As you see references to code on the right, you'll be able to find it all the way at the bottom. Clicking the buttons to progress through the tutorial will update the code!</p>
         </div>
       </div>
-      <div className="container">
+      <div>
         <div className="temp-grid">
           <h1 className="ds-h1">API Tutorial</h1>
           <p>The Submissions API is an easy way to manage your performance data with CMS. Performance data is organized into <em>submissions</em>, which can have many <em>measurements</em>. Measurements within a submission are also grouped by category (e.g. Improvement Activities) and submission method (e.g. CMS web interface) into <em>measurement sets</em>.</p>
