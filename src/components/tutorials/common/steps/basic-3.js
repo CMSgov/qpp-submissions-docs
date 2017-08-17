@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-const cssClass = "technical-details-pane";
+const cssClass = 'technical-details-pane';
 
 class Basic3 extends React.PureComponent {
   render() {
@@ -14,8 +15,7 @@ class Basic3 extends React.PureComponent {
           <Tab>Request</Tab>
           <Tab>Response</Tab>
         </TabList>
-        <TabPanel>
-        </TabPanel>
+        <TabPanel />
         <TabPanel>
           <p>Response code:</p>
           <pre>200 OK</pre>
@@ -62,5 +62,10 @@ class Basic3 extends React.PureComponent {
     );
   }
 }
+
+Basic3.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  tabIndex: PropTypes.number.isRequired
+};
 
 export default Basic3;
