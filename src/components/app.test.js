@@ -27,6 +27,9 @@ Object.keys(contentTestStrings).forEach(function(pathname) {
   });
 });
 
+// TODO(aimee): Not really happy with the structure of these tests at the
+// moment, the requirement of `const classes` seems like it's exposing how
+// brittle this test is.
 it('has all the required links', () => {
   const div = document.createElement('div');
   const classes = 'class="ds-u-padding-right--3 ds-u-padding-left--3 ds-u-padding-top--1 ds-u-padding-bottom--1"';
