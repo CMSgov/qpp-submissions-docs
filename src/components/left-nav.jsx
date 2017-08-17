@@ -16,7 +16,7 @@ const createLinksListItems = function(pathsMap) {
 class NavSection extends React.Component {
   render() {
     return <li>
-      <span className="left-nav-label"><b>{this.props.name.toUpperCase()}</b></span>
+      <span className="left-nav-label inset-content"><b>{this.props.name.toUpperCase()}</b></span>
       <ul className="usa-sidenav-list">
         {createLinksListItems(Routes[this.props.name])}
       </ul>

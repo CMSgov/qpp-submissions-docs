@@ -56,13 +56,13 @@ class App extends React.Component {
                 </form>
               </div>
 
-              <div id="left-nav-div" className="ds-l-col--3 light-grey-border">
-                <ul id="left-nav" className="usa-sidenav-list">
+              <div className="ds-l-col--3 no-padding top-margin">
+                <ul id="left-nav" className="usa-sidenav-list light-grey-border">
                   {LeftNav}
                 </ul>
               </div>
-              <div id="outer-content-div" className="ds-u-float--left ds-l-col--9">
-                <div id="inner-content-div" className="light-grey-border">
+              <div className="ds-u-float--left ds-l-col--9 top-margin">
+                <div className="light-grey-border inset-content">
                   <Route exact path="/" component={Introduction} />
                   <Route exact path="/:componentKey" render={getComponent}/>
                 </div>

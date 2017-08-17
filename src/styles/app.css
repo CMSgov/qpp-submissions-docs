@@ -4,7 +4,14 @@
 
 body {
   margin: 0;
+  padding-top: 85px;
   background: #f1f1f1;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 108px;
+  }
 }
 
 table {
@@ -17,11 +24,16 @@ table td {
   border: 1px solid #5b616b;
 }
 
-.container {
+.content-container {
   margin-left: auto;
   margin-right: auto;
   max-width: 1100px;
   width: 90%;
+}
+
+.container {
+  margin: 0px auto;
+  max-width: 1100px;
 }
 
 section {
@@ -39,6 +51,82 @@ h2 a.tutorial-header-link {
 
 h2:hover a.tutorial-header-link {
   text-decoration: underline;
+}
+
+.qpp-docs-title-container {
+  background: #036;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+a.qpp-docs-title-back {
+  color: #FFFFFF;
+}
+
+.qpp-docs-title-text {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/*Overrides*/
+.usa-sidenav-list a.usa-current {
+  border-left: 4px solid #2eb1ed;
+  color: #125496;
+  font-weight: 500;
+  background-color: #f1f1f1;
+}
+
+.usa-sidenav-list>li {
+  border-top: none;
+  font-size: 1em;
+  background: white;
+}
+
+.usa-sidenav-list a {
+  padding: 0.5rem 1.8rem 0.5rem 1.8rem;
+  font-weight: 500;
+}
+
+.usa-sidenav-list a:hover {
+  border-left: 4px solid #2eb1ed;
+  color: #125496;
+}
+
+a.ds-c-button--primary:visited {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .ds-text {
+    font-size: 0.8em;
+  }
+  .usa-sidenav-list > li {
+    font-size: 0.9em;
+  }
+}
+
+/* New styles*/
+.inset-content {
+  padding: 1.8rem;
+  background: white;
+}
+
+.top-margin {
+  margin-top: 30px;
+}
+
+.left-nav-label {
+  display: block;
+  padding-bottom: 0.4em;
+}
+
+.light-grey-border {
+  border-radius: 3px;
+  border: 1px solid #dcdcdc;
+}
+
+.no-padding {
+  padding: 0px;
 }
 
 @media (min-width: 360px) {
@@ -60,55 +148,9 @@ h2:hover a.tutorial-header-link {
   .ds-text--lead {
     font-size: 12px;
   }
+  .ds-l-col--9 {
+    flex: none;
+    max-width: 100%;
+  }
 }
 
-/*Overrides*/
-.usa-sidenav-list a.usa-current {
-  border-left: 4px solid #2eb1ed;
-  color: #125496;
-  font-weight: 500;
-  background-color: #f1f1f1;
-}
-
-.usa-sidenav-list>li {
-  border-top: none;
-}
-
-.usa-sidenav-list a {
-  padding-left: 1.4rem;
-  font-weight: 500;
-}
-
-.usa-sidenav-list a:hover {
-  border-left: 4px solid #2eb1ed;
-  color: #125496;
-}
-
-.left-nav-label {
-  display: block;
-  padding-top: 2rem;
-  padding-left: 1.4rem;
-}
-
-.light-grey-border {
-  border-radius: 3px;
-  border: 1px solid #dcdcdc;
-}
-
-div#left-nav-div {
-  background: white;
-  padding: 0px;
-}
-
-div#outer-content-div {
-  padding-left: 4%;
-}
-
-div#inner-content-div {
-  padding: 1.4rem;
-  background-color: white;
-}
-
-a.ds-c-button--primary:visited {
-  color: white;
-}
