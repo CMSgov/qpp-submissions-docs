@@ -29,20 +29,21 @@ Object.keys(contentTestStrings).forEach(function(pathname) {
 
 it('has all the required links', () => {
   const div = document.createElement('div');
+  const classes = 'class="ds-u-padding-right--3 ds-u-padding-left--3 ds-u-padding-top--1 ds-u-padding-bottom--1"';
   render((
     <MemoryRouter>
       <App />
     </MemoryRouter>
   ), div);
   // Topics
-  console.assert(div.innerHTML.match('<a href="/introduction">Introduction</a>'));
-  console.assert(div.innerHTML.match('<a href="/developer-preview">Getting a Key</a>'));
+  console.assert(div.innerHTML.match('<a ' + classes + ' href="/introduction">Introduction</a>'));
+  console.assert(div.innerHTML.match('<a ' + classes + ' href="/developer-preview">Getting a Key</a>'));
   // Guides
-  console.assert(div.innerHTML.match('<a href="/tutorial">Creating and editing a submission</a>'));
-  console.assert(div.innerHTML.match('<a href="/advanced-tutorial">Updating and scoring a submission</a>'));
+  console.assert(div.innerHTML.match('<a ' + classes + ' href="/tutorial">Creating and editing a submission</a>'));
+  console.assert(div.innerHTML.match('<a ' + classes + ' href="/advanced-tutorial">Updating and scoring a submission</a>'));
   // References
-  console.assert(div.innerHTML.match('<a href="/submission">Submission</a>'));
-  console.assert(div.innerHTML.match('<a href="/measurement-sets">Measurement Sets</a>'));
+  console.assert(div.innerHTML.match('<a ' + classes + ' href="/submission">Submission</a>'));
+  console.assert(div.innerHTML.match('<a ' + classes + ' href="/measurement-sets">Measurement Sets</a>'));
   // Examples
-  console.assert(div.innerHTML.match('<a href="/examples">Example Submission JSON &amp; XML</a>'));
+  console.assert(div.innerHTML.match('<a ' + classes + ' href="/examples">Example Submission JSON &amp; XML</a>'));
 });

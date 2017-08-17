@@ -50,13 +50,13 @@ class App extends React.Component {
             </div>
           </div>
           <div className='content-container ds-l-row'>
-            <div id='dropdown-nav'>
+            <div id='dropdown-nav' className='ds-l-col--12'>
               <form className='usa-form'>
                 <DropdownNav />
               </form>
             </div>
 
-            <div className='ds-l-col--3 ds-u-padding-top--4'>
+            <div id='left-nav' className='ds-l-col--3 ds-u-padding-top--4'>
               <div className='content-block'>
                 <ul className='ds-c-list--bare ds-u-padding-top--2'>
                   {LeftNav}
@@ -64,7 +64,7 @@ class App extends React.Component {
               </div>
             </div>
 
-            <div className='ds-u-float--left ds-u-padding-top--4 ds-l-col--9'>
+            <div className='ds-u-float--left ds-u-padding-top--4 ds-l-col--12 ds-l-sm-col--9'>
               <div className='content-block ds-u-padding--3'>
                 <Route exact path='/' component={Introduction} />
                 <Route exact path='/:componentKey' render={ActiveComponent} />

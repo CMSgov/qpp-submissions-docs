@@ -119,7 +119,16 @@ a.ds-c-button:visited {
 }
 
 /* New styles*/
-@media (min-width: 360px) {
+@media (max-width: 544px) {
+  #dropdown-nav {
+    display: block;
+  }
+  #left-nav {
+    display: none;
+  }
+}
+
+@media (min-width: 544px) {
   #dropdown-nav {
     display: none;
   }
@@ -127,20 +136,3 @@ a.ds-c-button:visited {
     display: block;
   }
 }
-
-@media (max-width: 360px) {
-  #dropdown-nav {
-    display: block;
-  }
-  #left-nav {
-    display: none;
-  }
-  .ds-text--lead {
-    font-size: 12px;
-  }
-  .ds-l-col--9 {
-    flex: none;
-    max-width: 100%;
-  }
-}
-

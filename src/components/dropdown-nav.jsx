@@ -9,7 +9,7 @@ const mergedRoutes = Object.values(Routes).reduce(function(result, routesGroup) 
 }, {});
 
 const DropdownListItems = Object.keys(mergedRoutes).reduce(function(result, itemName) {
-  return result.concat(<option key={itemName} value={itemName}>{ itemName }</option>)
+  return result.concat(<option key={itemName} value={itemName}>{ mergedRoutes[itemName].linkText }</option>)
 }, []);
 
 class DropdownNav extends React.PureComponent {
