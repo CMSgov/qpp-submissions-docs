@@ -38,9 +38,6 @@ window.jQuery = window.$ = $;
 require('bootstrap');
 
 class App extends React.Component {
-  propTypes: {
-    match: PropTypes.string.isRequired
-  }
   render() {
     return (
       <div>
