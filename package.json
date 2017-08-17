@@ -24,7 +24,7 @@
     "@cmsgov/design-system-core": "1.0.0-rc.2",
     "bootstrap": "3.3.7",
     "enzyme": "2.9.1",
-    "eslint": "4.3.0",
+    "eslint": "3.19.0",
     "eslint-config-nava": "^2.0.0",
     "gh-pages": "1.0.0",
     "jquery": "3.2.1",
@@ -45,12 +45,6 @@
     "extends": [
       "nava",
       "react-app"
-    ],
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "ecmaFeatures": {
-            "jsx": true
-        }
-    }
+    ]
   }
 }
