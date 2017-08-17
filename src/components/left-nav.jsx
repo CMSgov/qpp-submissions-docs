@@ -6,7 +6,7 @@ const createLinksListItems = function(pathsMap) {
   return Object.keys(pathsMap).reduce((result, pathKeyName) => {
     return result.concat(
       // <NavLink> is special version of the <Link> that will add styling
-      // <attributes to the rendered element when it matches the current URL
+      // attributes to the rendered element when it matches the current URL
       // by applying activeClassName.
       <li key={pathKeyName}>
         <NavLink to={"/" + pathKeyName} activeClassName=''>{pathsMap[pathKeyName].linkText}</NavLink>
