@@ -49,7 +49,7 @@ class App extends React.Component {
               <h3 className='qpp-docs-title-text'>QPP Submissions API Documentation</h3>
             </div>
           </div>
-          <div className='content-container ds-l-row'>
+          <div className='content-container ds-l-row ds-u-font-size--small ds-u-md-font-size--base'>
             <div id='dropdown-nav' className='ds-l-col--12'>
               <form className='usa-form'>
                 <DropdownNav />

@@ -97,7 +97,7 @@ a.ds-c-button:visited {
 /* USA standards Overrides */
 .usa-sidenav-list li {
   border-top: none;
-  font-size: 1rem;
+  font-size: inherit;
 }
 
 .usa-sidenav-list a.usa-current {
