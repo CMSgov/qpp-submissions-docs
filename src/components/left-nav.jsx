@@ -9,7 +9,7 @@ const createLinksListItems = function(pathsMap) {
       // attributes to the rendered element when it matches the current URL
       // by applying activeClassName.
       <li key={pathKeyName}>
-        <NavLink to={"/" + pathKeyName} className='ds-u-padding-right--3 ds-u-padding-left--3' activeClassName="usa-current">{pathsMap[pathKeyName].linkText}</NavLink>
+        <NavLink to={"/" + pathKeyName} className='ds-u-padding-right--3 ds-u-padding-left--3 ds-u-padding-top--1 ds-u-padding-bottom--1' activeClassName="usa-current">{pathsMap[pathKeyName].linkText}</NavLink>
       </li>
     )
   }, []);
@@ -19,7 +19,7 @@ class NavSection extends React.Component {
   render() {
     return <li>
       <ul className="usa-sidenav-list">
-        <li className='ds-u-padding-right--3 ds-u-padding-left--3'>{this.props.name.toUpperCase()}</li>
+        <li className='ds-u-padding-right--3 ds-u-padding-left--3 ds-u-padding-top--1 ds-u-font-weight--semibold'>{this.props.name.toUpperCase()}</li>
         {createLinksListItems(Routes[this.props.name])}
       </ul>
     </li>;

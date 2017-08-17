@@ -75,7 +75,6 @@ a.qpp-docs-title-back {
 
 .qpp-docs-title-text {
   color: #FFFFFF;
-  font-weight: 600;
 }
 
 @media (max-width: 768px) {
@@ -92,15 +91,34 @@ a.qpp-docs-title-back {
   font-family: Rubik, Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+.ds-u-font-weight--semibold {
+  font-weight: 500!important;
+}
+
 .usa-sidenav-list li {
   border-top: none;
   font-size: 1rem;
 }
 
-/* New styles*/
-.content-inner {
-
+.usa-sidenav-list a.usa-current {
+  /* QPP "Medium Teal" */
+  border-color: #209fa6;
+  font-weight: normal;
+  color: inherit;
+  background: #f1f1f1;
+  /* QPP "Navy" */
+  color: #125496;
 }
+
+.ds-h1, .ds-h2, .ds-h3, .ds-h4 {
+  font-weight: normal;
+}
+
+a.ds-c-button:visited {
+  color: white;
+}
+
+/* New styles*/
 @media (min-width: 360px) {
   #dropdown-nav {
     display: none;

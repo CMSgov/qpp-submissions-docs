@@ -56,15 +56,15 @@ class App extends React.Component {
               </form>
             </div>
 
-            <div className='ds-l-col--3 ds-u-padding--2'>
+            <div className='ds-l-col--3 ds-u-padding-top--4'>
               <div className='content-block'>
-                <ul className='ds-c-list--bare ds-u-padding-top--3 ds-u-padding-bottom--3'>
+                <ul className='ds-c-list--bare ds-u-padding-top--2'>
                   {LeftNav}
                 </ul>
               </div>
             </div>
 
-            <div className='ds-u-float--left ds-u-padding--2 ds-l-col--9'>
+            <div className='ds-u-float--left ds-u-padding-top--4 ds-l-col--9'>
               <div className='content-block ds-u-padding--3'>
                 <Route exact path='/' component={Introduction} />
                 <Route exact path='/:componentKey' render={ActiveComponent} />
