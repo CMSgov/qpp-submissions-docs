@@ -4,7 +4,6 @@ export default class SubmissionsObjects extends React.Component {
   render() {
     return (
       <div>
-        <p className='ds-text'>The Submissions API has three types of objects:</p>
         <p>The Submissions API has three types of objects:</p>
         <ul>
           <li><b>Submissions</b> contain any performance data submitted on behalf of a single MIPS-eligible clinician, practice or group.</li>
