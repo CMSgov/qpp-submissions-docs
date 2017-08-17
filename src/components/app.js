@@ -49,7 +49,7 @@ class App extends React.Component {
               <h3 className='qpp-docs-title-text'>QPP Submissions API Documentation</h3>
             </div>
           </div>
-          <div className='content-container ds-l-row'>
+          <div className='content-container ds-l-row ds-u-font-size--small ds-u-md-font-size--base'>
             <div id='dropdown-nav' className='ds-l-col--12'>
               <form className='usa-form'>
                 <DropdownNav />
@@ -66,10 +66,8 @@ class App extends React.Component {
 
             <div className='ds-u-float--left ds-u-padding-top--4 ds-l-col--12 ds-l-sm-col--9'>
               <div className='content-block ds-u-padding--3'>
-                <div className="ds-u-font-size--small ds-u-sm-font-size--small ds-u-md-font-size--base ds-u-lg-font-size--lead">
-                  <Route exact path='/' component={Introduction} />
-                  <Route exact path='/:componentKey' render={ActiveComponent} />
-                </div>
+                <Route exact path='/' component={Introduction} />
+                <Route exact path='/:componentKey' render={ActiveComponent} />
               </div>
             </div>
           </div>
