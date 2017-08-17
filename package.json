@@ -5,6 +5,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "pretest": "eslint src",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
@@ -23,22 +24,27 @@
     "@cmsgov/design-system-core": "1.0.0-rc.2",
     "bootstrap": "3.3.7",
     "enzyme": "2.9.1",
-    "eslint": "4.3.0",
+    "eslint": "3.19.0",
+    "eslint-config-nava": "^2.0.0",
     "gh-pages": "1.0.0",
     "jquery": "3.2.1",
     "pretty-data": "0.40.0",
+    "prop-types": "^15.5.10",
     "qpp-style": "1.4.2",
     "react": "15.6.1",
     "react-copy-to-clipboard": "5.0.0",
     "react-dom": "15.6.1",
     "react-file-download": "0.3.2",
+    "react-router-dom": "^4.1.2",
     "react-scripts": "1.0.10",
     "react-tabs": "0.8.3",
     "react-test-renderer": "15.6.1",
-    "uswds": "1.0.0",
-    "react-router-dom": "^4.1.2"
+    "uswds": "1.0.0"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "nava",
+      "react-app"
+    ]
   }
 }

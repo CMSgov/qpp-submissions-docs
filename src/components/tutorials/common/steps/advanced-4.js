@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-const cssClass = "technical-details-pane";
+const cssClass = 'technical-details-pane';
 
 class Advanced4 extends React.PureComponent {
   render() {
@@ -16,7 +17,7 @@ class Advanced4 extends React.PureComponent {
         </TabList>
         <TabPanel>
           <pre>
-{`{
+            {`{
   "id": "a3cb7c78-2380-4573-b726-8c8e3b70529a",
   "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
   "measureId": "ACI_HIE_1",
@@ -32,7 +33,7 @@ class Advanced4 extends React.PureComponent {
           <pre>200 OK</pre>
           <p>Response body:</p>
           <pre>
-{`{
+            {`{
   "data": {
     "measurement": {
       "id": "a3cb7c78-2380-4573-b726-8c8e3b70529a",
@@ -52,5 +53,10 @@ class Advanced4 extends React.PureComponent {
     );
   }
 }
+
+Advanced4.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  tabIndex: PropTypes.number.isRequired
+};
 
 export default Advanced4;

@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-const cssClass = "technical-details-pane";
+const cssClass = 'technical-details-pane';
 
 class Basic1 extends React.PureComponent {
   render() {
@@ -16,7 +17,7 @@ class Basic1 extends React.PureComponent {
         </TabList>
         <TabPanel>
           <pre>
-{`{
+            {`{
   "programName": "mips",
   "entityType": "individual",
   "taxpayerIdentificationNumber": "000456789",
@@ -51,5 +52,10 @@ class Basic1 extends React.PureComponent {
     );
   }
 }
+
+Basic1.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  tabIndex: PropTypes.number.isRequired
+};
 
 export default Basic1;
