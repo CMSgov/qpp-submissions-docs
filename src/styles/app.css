@@ -77,15 +77,6 @@ a.qpp-docs-title-back {
   color: #FFFFFF;
 }
 
-@media (max-width: 768px) {
-  .ds-text {
-    font-size: 0.8em;
-  }
-  .usa-sidenav-list > li {
-    font-size: 0.9em;
-  }
-}
-
 /* Overrides */
 .ds-base {
   font-family: Rubik, Arial, "Helvetica Neue", Helvetica, sans-serif;
