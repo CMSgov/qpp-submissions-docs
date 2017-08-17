@@ -5,9 +5,11 @@ import Routes from './routes';
 const createLinksListItems = function(pathsMap) {
   return Object.keys(pathsMap).reduce((result, pathKeyName) => {
     return result.concat(
-      // <NavLink> is special version of the <Link> that will add styling attributes to the rendered element when it matches the current URL.
+      // <NavLink> is special version of the <Link> that will add styling
+      // attributes to the rendered element when it matches the current URL
+      // by applying activeClassName.
       <li key={pathKeyName}>
-        <NavLink to={"/" + pathKeyName} activeClassName="usa-current">{pathsMap[pathKeyName].linkText}</NavLink>
+        <NavLink to={"/" + pathKeyName} className='ds-u-padding-right--3 ds-u-padding-left--3' activeClassName="usa-current">{pathsMap[pathKeyName].linkText}</NavLink>
       </li>
     )
   }, []);
@@ -16,8 +18,8 @@ const createLinksListItems = function(pathsMap) {
 class NavSection extends React.Component {
   render() {
     return <li>
-      <span className="left-nav-label inset-content"><b>{this.props.name.toUpperCase()}</b></span>
       <ul className="usa-sidenav-list">
+        <li className='ds-u-padding-right--3 ds-u-padding-left--3'>{this.props.name.toUpperCase()}</li>
         {createLinksListItems(Routes[this.props.name])}
       </ul>
     </li>;

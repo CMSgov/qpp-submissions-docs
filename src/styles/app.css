@@ -36,6 +36,16 @@ table td {
   max-width: 1100px;
 }
 
+.content-block {
+  border-radius: 3px;
+  border: 1px solid #dcdcdc;
+  background: white;
+}
+
+.inset-content {
+  padding: 1.8em;
+}
+
 section {
   padding: 3rem 0;
 }
@@ -68,34 +78,6 @@ a.qpp-docs-title-back {
   font-weight: 600;
 }
 
-/*Overrides*/
-.usa-sidenav-list a.usa-current {
-  border-left: 4px solid #2eb1ed;
-  color: #125496;
-  font-weight: 500;
-  background-color: #f1f1f1;
-}
-
-.usa-sidenav-list>li {
-  border-top: none;
-  font-size: 1em;
-  background: white;
-}
-
-.usa-sidenav-list a {
-  padding: 0.5rem 1.8rem 0.5rem 1.8rem;
-  font-weight: 500;
-}
-
-.usa-sidenav-list a:hover {
-  border-left: 4px solid #2eb1ed;
-  color: #125496;
-}
-
-a.ds-c-button--primary:visited {
-  color: white;
-}
-
 @media (max-width: 768px) {
   .ds-text {
     font-size: 0.8em;
@@ -105,30 +87,20 @@ a.ds-c-button--primary:visited {
   }
 }
 
+/* Overrides */
+.ds-base {
+  font-family: Rubik, Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.usa-sidenav-list li {
+  border-top: none;
+  font-size: 1rem;
+}
+
 /* New styles*/
-.inset-content {
-  padding: 1.8rem;
-  background: white;
-}
+.content-inner {
 
-.top-margin {
-  margin-top: 30px;
 }
-
-.left-nav-label {
-  display: block;
-  padding-bottom: 0.4em;
-}
-
-.light-grey-border {
-  border-radius: 3px;
-  border: 1px solid #dcdcdc;
-}
-
-.no-padding {
-  padding: 0px;
-}
-
 @media (min-width: 360px) {
   #dropdown-nav {
     display: none;

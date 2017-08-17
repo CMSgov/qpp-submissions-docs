@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-const cssClass = "technical-details-pane";
+const cssClass = 'technical-details-pane';
 
 class Basic2 extends React.PureComponent {
   render() {
@@ -35,7 +36,7 @@ class Basic2 extends React.PureComponent {
           <pre>201 Created</pre>
           <p>Response body:</p>
           <pre>
-{`{
+            {`{
   "data": {
     "measurementSet": {
       "id": "88345eab-0082-4a58-a4e8-e3140c7f48ee",
@@ -64,5 +65,10 @@ class Basic2 extends React.PureComponent {
     );
   }
 }
+
+Basic2.propTypes = {
+  onSelect: PropTypes.func.isRequired,
+  tabIndex: PropTypes.number.isRequired
+};
 
 export default Basic2;
