@@ -15,7 +15,7 @@ const contentTestStrings = {
   '/submission': 'The Submissions resource represents one year of performance data'
 };
 
-Object.keys(contentTestStrings).forEach(function(pathname) {
+Object.entries(contentTestStrings).forEach(function([pathname, stringContent]) {
   it('displays the right content for ' + pathname, () => {
     const div = document.createElement('div');
     render((
@@ -23,7 +23,7 @@ Object.keys(contentTestStrings).forEach(function(pathname) {
         <App />
       </MemoryRouter>
     ), div);
-    console.assert(div.innerHTML.match(contentTestStrings[pathname]));
+    console.assert(div.innerHTML.match(stringContent));
   });
 });
 
