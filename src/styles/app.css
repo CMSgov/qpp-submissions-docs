@@ -77,15 +77,24 @@ a.qpp-docs-title-back {
   color: #FFFFFF;
 }
 
-/* Overrides */
+/* Design System Overrides */
 .ds-base {
   font-family: Rubik, Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.ds-h1, .ds-h2, .ds-h3, .ds-h4 {
+  font-weight: normal;
 }
 
 .ds-u-font-weight--semibold {
   font-weight: 500!important;
 }
 
+a.ds-c-button:visited {
+  color: white;
+}
+
+/* USA standards Overrides */
 .usa-sidenav-list li {
   border-top: none;
   font-size: 1rem;
@@ -99,14 +108,6 @@ a.qpp-docs-title-back {
   background: #f1f1f1;
   /* QPP "Navy" */
   color: #125496;
-}
-
-.ds-h1, .ds-h2, .ds-h3, .ds-h4 {
-  font-weight: normal;
-}
-
-a.ds-c-button:visited {
-  color: white;
 }
 
 /* New styles*/
