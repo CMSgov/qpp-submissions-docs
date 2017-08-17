@@ -16,8 +16,8 @@ const createLinksListItems = function(pathsMap) {
 class NavSection extends React.Component {
   render() {
     return <li className="ds-c-vertical-nav__item">
-      <b>{this.props.name.toUpperCase()}</b>
       <ul className="ds-c-vertical-nav__subnav">
+        <li><b>{this.props.name.toUpperCase()}</b></li>
         {createLinksListItems(Routes[this.props.name])}
       </ul>
     </li>;
