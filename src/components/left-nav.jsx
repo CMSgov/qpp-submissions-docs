@@ -3,13 +3,13 @@ import { NavLink } from 'react-router-dom'
 import Routes from './routes';
 
 const createLinksListItems = function(pathsMap) {
-  return Object.keys(pathsMap).reduce((result, pathKeyName) => {
+  return pathsMap.reduce((result, pathsMap) => {
     return result.concat(
       // <NavLink> is special version of the <Link> that will add styling
       // attributes to the rendered element when it matches the current URL
       // by applying activeClassName.
-      <li key={pathKeyName}>
-        <NavLink to={"/" + pathKeyName} activeClassName=''>{pathsMap[pathKeyName].linkText}</NavLink>
+      <li key={pathsMap.path}>
+        <NavLink to={"/" + pathsMap.path} activeClassName=''>{pathsMap.linkText}</NavLink>
       </li>
     )
   }, []);

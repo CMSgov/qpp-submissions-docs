@@ -21,16 +21,9 @@ import Footer from './footer';
 import SubscribeModal from './subscribe-modal';
 
 const mergedRoutes = Object.values(Routes).reduce(function(result, routesGroup) {
-  return Object.assign(result, routesGroup);
-}, {});
-
-function ActiveComponent({match}) {
-  return mergedRoutes[match.params.componentKey].component;
-};
-
-ActiveComponent.propTypes = {
-  match: PropTypes.string.isRequired
-};
+  return result.concat(routesGroup);
+}, []);
+console.log((mergedRoutes));
 
 // bootstrap js needs window.jQuery to be defined, but imports are always hoisted
 // so we need to require (as import 'bootstrap...' would get hoisted before window.jQuery is set)
@@ -58,8 +51,14 @@ class App extends React.Component {
               </div>
               <div className='ds-u-float--left ds-u-padding--1 ds-l-col--9'>
                 <div className='ds-u-measure--wide'>
-                  <Route exact path='/' component={Introduction} />
-                  <Route exact path='/:componentKey' render={ActiveComponent} />
+                  {mergedRoutes.map((route, index) => (
+                    <Route
+                      key={index}
+                      path={'/' + route.path}
+                      exact={route.exact}
+                      component={route.component}
+                      />
+                  ))}
                 </div>
               </div>
             </div>
