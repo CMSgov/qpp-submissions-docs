@@ -25,7 +25,7 @@ const mergedRoutes = Object.values(Routes).reduce(function(result, routesGroup) 
 }, {});
 
 function ActiveComponent({match}) {
-  return <div>{mergedRoutes[match.params.componentKey].component}</div>;
+  return mergedRoutes[match.params.componentKey].component;
 };
 
 ActiveComponent.propTypes = {
