@@ -90,11 +90,23 @@ const samplePaths = [
   }
 ];
 
-const allPaths = {
-  topics: topicsPaths,
-  guides: guidesPaths,
-  references: referencePaths,
-  samples: samplePaths
-}
+const allPaths = [
+  {
+    groupTitle: 'TOPICS',
+    paths: topicsPaths
+  },
+  {
+    groupTitle: 'GUIDES',
+    paths: guidesPaths
+  },
+  {
+    groupTitle: 'REFERENCES',
+    paths: referencePaths
+  },
+  {
+    groupTitle: 'SAMPLES',
+    paths: samplePaths
+  }
+];
 
 export default allPaths;

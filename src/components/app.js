@@ -20,10 +20,9 @@ import Introduction from './introduction';
 import Footer from './footer';
 import SubscribeModal from './subscribe-modal';
 
-const mergedRoutes = Object.values(Routes).reduce(function(result, routesGroup) {
-  return result.concat(routesGroup);
+const mergedRoutes = Routes.reduce((result, routesGroup) => {
+  return result.concat(routesGroup.paths);
 }, []);
-console.log((mergedRoutes));
 
 // bootstrap js needs window.jQuery to be defined, but imports are always hoisted
 // so we need to require (as import 'bootstrap...' would get hoisted before window.jQuery is set)
