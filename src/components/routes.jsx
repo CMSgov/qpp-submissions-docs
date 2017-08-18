@@ -1,5 +1,3 @@
-import React from 'react';
-
 import DeveloperPreview from './developer-preview';
 import Introduction from './introduction';
 import BasicTutorial from './tutorials/basic-tutorial';
@@ -17,13 +15,13 @@ const topicsPaths = [
     path: '',
     exact: true,
     linkText: 'Introduction',
-    component: () => <Introduction />
+    component: Introduction
   },
   {
     path: 'developer-preview',
     exact: false,
     linkText: 'Getting a Key',
-    component: () => <DeveloperPreview />
+    component: DeveloperPreview
   }
 ];
 
@@ -32,13 +30,13 @@ const guidesPaths = [
     path: 'tutorial',
     exact: false,
     linkText: 'Creating and editing a submission',
-    component: () => <BasicTutorial />
+    component: BasicTutorial
   },
   {
     path: 'advanced-tutorial',
     exact: false,
     linkText: 'Updating and scoring a submission',
-    component: () => <AdvancedTutorial />
+    component: AdvancedTutorial
   }
 ];
 
@@ -47,37 +45,37 @@ const referencePaths = [
     path: 'submission',
     exact: false,
     linkText: 'Submission',
-    component: () => <Submission />
+    component: Submission
   },
   {
     path: 'measurement-sets',
     exact: false,
     linkText: 'Measurement Sets',
-    component: () => <MeasurementSets  />
+    component: MeasurementSets
   },
   {
     path: 'measurements',
     exact: false,
     linkText: 'Measurements',
-    component: () => <Measurements />
+    component: Measurements
   },
   {
     path: 'benchmarks',
     exact: false,
     linkText: 'Benchmarks',
-    component: () => <Benchmarks />
+    component: Benchmarks
   },
   {
     path: 'scoring',
     exact: false,
     linkText: 'Scoring',
-    component: () => <Scoring />
+    component: Scoring
   },
   {
     path: 'provider-profile',
     exact: false,
     linkText: 'Provider Profile Stub',
-    component: () => <Provider />
+    component: Provider
   }
 ];
 
@@ -86,7 +84,7 @@ const samplePaths = [
     path: 'examples',
     exact: false,
     linkText: 'Example Submission JSON & XML',
-    component: () => <ExampleDocs />
+    component: ExampleDocs
   }
 ];
 
