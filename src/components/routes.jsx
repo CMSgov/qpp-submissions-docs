@@ -1,5 +1,3 @@
-import React from 'react';
-
 import DeveloperPreview from './developer-preview';
 import Introduction from './introduction';
 import BasicTutorial from './tutorials/basic-tutorial';
@@ -12,67 +10,101 @@ import Scoring from './api-reference/scoring';
 import Provider from './api-reference/provider';
 import ExampleDocs from './api-reference/example-docs';
 
-const topicsPathsMap = {
-  'introduction': {
+const topicsPaths = [
+  {
+    path: '',
+    exact: true,
     linkText: 'Introduction',
-    component: <Introduction />
+    component: Introduction
   },
-  'developer-preview': {
+  {
+    path: 'developer-preview',
+    exact: false,
     linkText: 'Getting a Key',
-    component: <DeveloperPreview />
+    component: DeveloperPreview
   }
-}
+];
 
-const guidesPathsMap = {
-  'tutorial': {
+const guidesPaths = [
+  {
+    path: 'tutorial',
+    exact: false,
     linkText: 'Creating and editing a submission',
-    component: <BasicTutorial />
+    component: BasicTutorial
   },
-  'advanced-tutorial':{
+  {
+    path: 'advanced-tutorial',
+    exact: false,
     linkText: 'Updating and scoring a submission',
-    component: <AdvancedTutorial />
+    component: AdvancedTutorial
   }
-}
+];
 
-const referencePathsMap = {
-  'submission': {
+const referencePaths = [
+  {
+    path: 'submission',
+    exact: false,
     linkText: 'Submission',
-    component: <Submission />
+    component: Submission
   },
-  'measurement-sets': {
+  {
+    path: 'measurement-sets',
+    exact: false,
     linkText: 'Measurement Sets',
-    component: <MeasurementSets />,
+    component: MeasurementSets
   },
-  'measurements': {
+  {
+    path: 'measurements',
+    exact: false,
     linkText: 'Measurements',
-    component: <Measurements />
+    component: Measurements
   },
-  'benchmarks': {
+  {
+    path: 'benchmarks',
+    exact: false,
     linkText: 'Benchmarks',
-    component: <Benchmarks />
+    component: Benchmarks
   },
-  'scoring': {
+  {
+    path: 'scoring',
+    exact: false,
     linkText: 'Scoring',
-    component: <Scoring />
+    component: Scoring
   },
-  'provider-profile': {
+  {
+    path: 'provider-profile',
+    exact: false,
     linkText: 'Provider Profile Stub',
-    component: <Provider />
+    component: Provider
   }
-}
+];
 
-const samplePathsMap = {
-  'examples': {
+const samplePaths = [
+  {
+    path: 'examples',
+    exact: false,
     linkText: 'Example Submission JSON & XML',
-    component: <ExampleDocs />
+    component: ExampleDocs
   }
-}
+];
 
-const allPaths = {
-  topics: topicsPathsMap,
-  guides: guidesPathsMap,
-  references: referencePathsMap,
-  samples: samplePathsMap
-}
+const allPaths = [
+  {
+    groupTitle: 'TOPICS',
+    paths: topicsPaths
+  },
+  {
+    groupTitle: 'GUIDES',
+    paths: guidesPaths
+  },
+  {
+    groupTitle: 'REFERENCES',
+    paths: referencePaths
+  },
+  {
+    groupTitle: 'SAMPLES',
+    paths: samplePaths
+  }
+];
 
 export default allPaths;

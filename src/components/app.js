@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import 'uswds/dist/js/uswds.js';
 import 'uswds/dist/css/uswds.min.css';
 import '@cmsgov/design-system-core/dist/index.css';
@@ -16,26 +15,17 @@ import Header from './header';
 import Routes from './routes';
 import DropdownNav from './dropdown-nav';
 import LeftNav from './left-nav';
-import Introduction from './introduction';
 import Footer from './footer';
 import SubscribeModal from './subscribe-modal';
-
-const mergedRoutes = Object.values(Routes).reduce(function(result, routesGroup) {
-  return Object.assign(result, routesGroup);
-}, {});
-
-function ActiveComponent({match}) {
-  return mergedRoutes[match.params.componentKey].component;
-};
-
-ActiveComponent.propTypes = {
-  match: PropTypes.string.isRequired
-};
 
 // bootstrap js needs window.jQuery to be defined, but imports are always hoisted
 // so we need to require (as import 'bootstrap...' would get hoisted before window.jQuery is set)
 window.jQuery = window.$ = $;
 require('bootstrap');
+
+const mergedRoutes = Routes.reduce((result, routesGroup) => {
+  return result.concat(routesGroup.paths);
+}, []);
 
 class App extends React.Component {
   render() {
@@ -49,6 +39,7 @@ class App extends React.Component {
               <h3 className='qpp-docs-title-text'>QPP Submissions API Documentation</h3>
             </div>
           </div>
+
           <div className='content-container ds-l-row'>
             <div id='dropdown-nav' className='ds-l-col--12'>
               <form className='usa-form'>
@@ -66,8 +57,14 @@ class App extends React.Component {
 
             <div className='ds-u-float--left ds-u-padding-top--4 ds-l-col--12 ds-l-sm-col--9'>
               <div className='content-block ds-u-padding--3'>
-                <Route exact path='/' component={Introduction} />
-                <Route exact path='/:componentKey' render={ActiveComponent} />
+                {mergedRoutes.map(({path, exact, component}, index) => (
+                  <Route
+                    key={index}
+                    path={'/' + path}
+                    exact={exact}
+                    component={component}
+                    />
+                ))}
               </div>
             </div>
           </div>
