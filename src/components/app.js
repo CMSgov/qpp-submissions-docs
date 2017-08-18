@@ -48,12 +48,12 @@ class App extends React.Component {
               </div>
               <div className='ds-u-float--left ds-u-padding--1 ds-l-col--9'>
                 <div className='ds-u-measure--wide'>
-                  {mergedRoutes.map((route, index) => (
+                  {mergedRoutes.map(({path, exact, component}, index) => (
                     <Route
                       key={index}
-                      path={'/' + route.path}
-                      exact={route.exact}
-                      component={route.component}
+                      path={'/' + path}
+                      exact={exact}
+                      component={component}
                       />
                   ))}
                 </div>
