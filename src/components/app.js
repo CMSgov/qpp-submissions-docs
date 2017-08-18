@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import 'uswds/dist/js/uswds.js';
 import '@cmsgov/design-system-core/dist/index.css';
 import '@cmsgov/design-system-layout/dist/index.css';
@@ -16,7 +15,6 @@ import '../styles/temp-grid.css';
 import Header from './header';
 import Routes from './routes';
 import LeftNav from './left-nav';
-import Introduction from './introduction';
 import Footer from './footer';
 import SubscribeModal from './subscribe-modal';
 

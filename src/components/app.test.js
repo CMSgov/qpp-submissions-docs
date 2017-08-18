@@ -35,7 +35,7 @@ it('has all the required links', () => {
     </MemoryRouter>
   ), div);
   // Topics
-  console.assert(div.innerHTML.match('<a href="/introduction">Introduction</a>'));
+  console.assert(div.innerHTML.match('<a class="" href="/">Introduction</a>'));
   console.assert(div.innerHTML.match('<a href="/developer-preview">Getting a Key</a>'));
   // Guides
   console.assert(div.innerHTML.match('<a href="/tutorial">Creating and editing a submission</a>'));
