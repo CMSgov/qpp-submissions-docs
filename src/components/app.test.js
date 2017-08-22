@@ -39,7 +39,7 @@ it('has all the required links', () => {
     </MemoryRouter>
   ), div);
   // Topics
-  console.assert(div.innerHTML.match('<a class="usa-current ' + classes + '" href="/">Introduction</a>'));
+  console.assert(div.innerHTML.match('<a class="ds-c-vertical-nav__label--current ' + classes + '" href="/introduction">Introduction</a>'));
   console.assert(div.innerHTML.match('<a class="' + classes + '" href="/developer-preview">Getting a Key</a>'));
   // Guides
   console.assert(div.innerHTML.match('<a class="' + classes + '" href="/tutorial">Creating and editing a submission</a>'));

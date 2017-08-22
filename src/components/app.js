@@ -53,7 +53,7 @@ class App extends React.Component {
 
             <div className='ds-u-float--left ds-u-padding-top--4 ds-l-col--12 ds-l-sm-col--9'>
               <div className='content-block ds-u-padding--3'>
-                <Route path='/' exact={true} component={Introduction} />
+                <Route path='/' exact component={Introduction} />
                 {Routes.mergedRoutes.map(({path, exact, component}, index) => (
                   <Route
                     key={index}
