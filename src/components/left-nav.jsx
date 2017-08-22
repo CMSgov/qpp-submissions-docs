@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom'
 import Routes from './routes';
 
+import '../styles/left-nav.css';
+
 const createLinksListItems = function(pathsMap) {
   return pathsMap.paths.map((path) => {
       // <NavLink> is special version of the <Link> that will add styling
