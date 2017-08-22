@@ -16,7 +16,6 @@ import DropdownNav from './dropdown-nav';
 import LeftNav from './left-nav';
 import Footer from './footer';
 import SubscribeModal from './subscribe-modal';
-import Introduction from './introduction';
 
 // bootstrap js needs window.jQuery to be defined, but imports are always hoisted
 // so we need to require (as import 'bootstrap...' would get hoisted before window.jQuery is set)
@@ -37,8 +36,8 @@ class App extends React.Component {
           </div>
 
           <div className='content-container ds-l-row'>
-            <div id='dropdown-nav' className='ds-l-col--12'>
-              <form className='usa-form'>
+            <div id='dropdown-nav' className='ds-l-col--12 ds-u-padding-top--3'>
+              <form>
                 <DropdownNav />
               </form>
             </div>
