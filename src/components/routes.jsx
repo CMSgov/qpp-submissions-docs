@@ -107,4 +107,8 @@ const allPaths = [
   }
 ];
 
+allPaths.mergedRoutes = allPaths.reduce((result, routesGroup) => {
+  return result.concat(routesGroup.paths);
+}, []);
+
 export default allPaths;

@@ -23,10 +23,6 @@ import SubscribeModal from './subscribe-modal';
 window.jQuery = window.$ = $;
 require('bootstrap');
 
-const mergedRoutes = Routes.reduce((result, routesGroup) => {
-  return result.concat(routesGroup.paths);
-}, []);
-
 class App extends React.Component {
   render() {
     return (
@@ -57,7 +53,7 @@ class App extends React.Component {
 
             <div className='ds-u-float--left ds-u-padding-top--4 ds-l-col--12 ds-l-sm-col--9'>
               <div className='content-block ds-u-padding--3'>
-                {mergedRoutes.map(({path, exact, component}, index) => (
+                {Routes.mergedRoutes.map(({path, exact, component}, index) => (
                   <Route
                     key={index}
                     path={'/' + path}
