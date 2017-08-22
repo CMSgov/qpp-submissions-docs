@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './components/app';
 
 ReactDOM.render(
-  <BrowserRouter basename='/qpp-submissions-docs/'>
+  <BrowserRouter basename='/qpp-submissions-docs'>
     <App />
   </BrowserRouter>,
   document.getElementById('root')

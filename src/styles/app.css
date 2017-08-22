@@ -42,10 +42,6 @@ table td {
   background: white;
 }
 
-.inset-content {
-  padding: 1.8em;
-}
-
 section {
   padding: 3rem 0;
 }
@@ -94,18 +90,22 @@ a.ds-c-button:visited {
   color: white;
 }
 
-/* USA standards Overrides */
-.usa-sidenav-list li {
+.ds-c-vertical-nav>.ds-c-vertical-nav__item {
   border-top: none;
-  font-size: 1rem;
+  margin-bottom: 0px;
 }
 
-.usa-sidenav-list a.usa-current {
+.ds-c-vertical-nav a.ds-c-vertical-nav__label--current {
   /* QPP "Medium Teal" */
   border-color: #209fa6;
   font-weight: normal;
   color: inherit;
   background: #f1f1f1;
+  /* QPP "Navy" */
+  color: #125496;
+}
+
+.ds-c-vertical-nav a.ds-c-vertical-nav__label:visited {
   /* QPP "Navy" */
   color: #125496;
 }

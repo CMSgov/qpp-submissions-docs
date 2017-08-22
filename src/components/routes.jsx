@@ -12,13 +12,13 @@ import ExampleDocs from './api-reference/example-docs';
 
 const topicsPaths = [
   {
-    path: '',
-    exact: true,
+    path: '/introduction',
+    exact: false,
     linkText: 'Introduction',
     component: Introduction
   },
   {
-    path: 'developer-preview',
+    path: '/developer-preview',
     exact: false,
     linkText: 'Getting a Key',
     component: DeveloperPreview
@@ -27,13 +27,13 @@ const topicsPaths = [
 
 const guidesPaths = [
   {
-    path: 'tutorial',
+    path: '/tutorial',
     exact: false,
     linkText: 'Creating and editing a submission',
     component: BasicTutorial
   },
   {
-    path: 'advanced-tutorial',
+    path: '/advanced-tutorial',
     exact: false,
     linkText: 'Updating and scoring a submission',
     component: AdvancedTutorial
@@ -42,37 +42,37 @@ const guidesPaths = [
 
 const referencePaths = [
   {
-    path: 'submission',
+    path: '/submission',
     exact: false,
     linkText: 'Submission',
     component: Submission
   },
   {
-    path: 'measurement-sets',
+    path: '/measurement-sets',
     exact: false,
     linkText: 'Measurement Sets',
     component: MeasurementSets
   },
   {
-    path: 'measurements',
+    path: '/measurements',
     exact: false,
     linkText: 'Measurements',
     component: Measurements
   },
   {
-    path: 'benchmarks',
+    path: '/benchmarks',
     exact: false,
     linkText: 'Benchmarks',
     component: Benchmarks
   },
   {
-    path: 'scoring',
+    path: '/scoring',
     exact: false,
     linkText: 'Scoring',
     component: Scoring
   },
   {
-    path: 'provider-profile',
+    path: '/provider-profile',
     exact: false,
     linkText: 'Provider Profile Stub',
     component: Provider
@@ -81,7 +81,7 @@ const referencePaths = [
 
 const samplePaths = [
   {
-    path: 'examples',
+    path: '/examples',
     exact: false,
     linkText: 'Example Submission JSON & XML',
     component: ExampleDocs

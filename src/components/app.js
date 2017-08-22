@@ -17,6 +17,7 @@ import DropdownNav from './dropdown-nav';
 import LeftNav from './left-nav';
 import Footer from './footer';
 import SubscribeModal from './subscribe-modal';
+import Introduction from './introduction';
 
 // bootstrap js needs window.jQuery to be defined, but imports are always hoisted
 // so we need to require (as import 'bootstrap...' would get hoisted before window.jQuery is set)
@@ -53,10 +54,11 @@ class App extends React.Component {
 
             <div className='ds-u-float--left ds-u-padding-top--4 ds-l-col--12 ds-l-sm-col--9'>
               <div className='content-block ds-u-padding--3'>
+                <Route path='/' exact={true} component={Introduction} />
                 {Routes.mergedRoutes.map(({path, exact, component}, index) => (
                   <Route
                     key={index}
-                    path={'/' + path}
+                    path={path}
                     exact={exact}
                     component={component}
                     />
