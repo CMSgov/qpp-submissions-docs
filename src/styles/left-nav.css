@@ -1,19 +1,23 @@
-.ds-c-vertical-nav>.ds-c-vertical-nav__item {
+.ds-c-vertical-nav > .ds-c-vertical-nav__item {
   border-top: none;
   margin-bottom: 0px;
 }
 
-.ds-c-vertical-nav a.ds-c-vertical-nav__label--current {
-  /* QPP "Medium Teal" */
-  border-color: #209fa6;
-  font-weight: normal;
-  color: inherit;
-  background: #f1f1f1;
+.ds-c-vertical-nav a.ds-c-vertical-nav__label:visited {
   /* QPP "Navy" */
   color: #125496;
 }
 
-.ds-c-vertical-nav a.ds-c-vertical-nav__label:visited {
+.ds-c-vertical-nav a.ds-c-vertical-nav__label {
+  border: none;
+}
+
+.ds-c-vertical-nav a.ds-c-vertical-nav__label--current {
+  /* QPP "Medium Teal" */
+  border-left: 4px solid #209fa6;
+  font-weight: normal;
+  color: inherit;
+  background: #f1f1f1;
   /* QPP "Navy" */
   color: #125496;
 }

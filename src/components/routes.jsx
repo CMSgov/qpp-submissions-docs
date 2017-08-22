@@ -88,6 +88,15 @@ const samplePaths = [
   }
 ];
 
+const communityPaths = [
+  {
+    path: 'https://groups.google.com/forum/#!forum/qpp-apis',
+    exact: false,
+    linkText: 'Google Group',
+    external: true
+  }
+];
+
 const allPaths = [
   {
     groupTitle: 'TOPICS',
@@ -104,6 +113,10 @@ const allPaths = [
   {
     groupTitle: 'SAMPLES',
     paths: samplePaths
+  },
+  {
+    groupTitle: 'COMMUNITY',
+    paths: communityPaths
   }
 ];
 
