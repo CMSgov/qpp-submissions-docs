@@ -88,7 +88,7 @@ const samplePaths = [
   }
 ];
 
-const communityPaths = [
+const supportPaths = [
   {
     path: 'https://groups.google.com/forum/#!forum/qpp-apis',
     exact: false,
@@ -115,8 +115,8 @@ const allPaths = [
     paths: samplePaths
   },
   {
-    groupTitle: 'COMMUNITY',
-    paths: communityPaths
+    groupTitle: 'SUPPORT',
+    paths: supportPaths
   }
 ];
 
