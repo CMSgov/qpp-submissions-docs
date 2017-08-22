@@ -7,19 +7,11 @@ class AdvancedTutorial extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hash: props.hash,
-      tabIndex: 0
+      hash: props.hash
     };
 
-    this.selectTab = this.selectTab.bind(this);
     this.showStartOfStep = this.showStartOfStep.bind(this);
     this.showResponseOfStep = this.showResponseOfStep.bind(this);
-  }
-
-  selectTab(index) {
-    this.setState({
-      tabIndex: index
-    });
   }
 
   showStartOfStep(event) {
@@ -102,9 +94,7 @@ class AdvancedTutorial extends React.Component {
           <div className="temp-grid">
             <TechnicalDetailsPane
               tutorial="advanced"
-              hash="#submitting-with-performance-data"
-              tabIndex={this.state.tabIndex}
-              handleSelect={this.handleSelect}/>
+              hash="#submitting-with-performance-data" />
           </div>
           <p>Something unexpected: a <code>422 Unprocessable Entity</code> response code. This indicates that the syntax of the request was correct, but the semantics were problematic. The response body includes more specific information: <code>DuplicateEntryError</code>. We've tried to create a duplicate submission - earlier we noted that each taxpayer/provider ID combination can have one submission per year. The <code>POST</code> API request we just sent uses the same identifiers as we did in our first tutorial, but CMS already has a submission on record for this individual.</p>
           <p>There are a variety of reasons why this collision might happen: it's plausible that we (or someone else) has tried to <code>POST</code> this individual's performance data before, or someone made a typo and used our TIN by accident. Either way, we asked the API to <em>create</em> a record where one already exists. Since the API (and CMS) can't assume what the correct course of action is to take for this problematic API request, the messaging in the response is handy for immediately showing us something went wrong, and what specifically.</p>
@@ -144,9 +134,7 @@ class AdvancedTutorial extends React.Component {
           <div className="temp-grid">
             <TechnicalDetailsPane
               tutorial="advanced"
-              hash="#submitting-with-performance-data-pt2"
-              tabIndex={this.state.tabIndex}
-              handleSelect={this.handleSelect}/>
+              hash="#submitting-with-performance-data-pt2" />
           </div>
           <p>A <code>201 Created</code> - great. We'll look at what ACI scores look like next:</p>
           <button
@@ -173,9 +161,7 @@ class AdvancedTutorial extends React.Component {
           <div className="temp-grid">
             <TechnicalDetailsPane
               tutorial="advanced"
-              hash="#aci-scoring"
-              tabIndex={this.state.tabIndex}
-              handleSelect={this.handleSelect}/>
+              hash="#aci-scoring" />
           </div>
           <p>The ACI component of our score shows many parts this time. There's a lot of numbers here, but let's decode how we arrive at the total:</p>
           <p>The <code>aci_base</code> starts at 50 because we've attested to the two required measures (<code>ACI_INFBLO_1</code>, <code>ACI_ONCDIR_1</code>).</p>
@@ -218,9 +204,7 @@ class AdvancedTutorial extends React.Component {
           <div className="temp-grid">
             <TechnicalDetailsPane
               tutorial="advanced"
-              hash="#updating-a-measure"
-              tabIndex={this.state.tabIndex}
-              handleSelect={this.handleSelect}/>
+              hash="#updating-a-measure" />
           </div>
           <p>A <code>200 OK</code> means we've updated the measurement in question. We can now fetch the latest score:</p>
           <button
@@ -243,9 +227,7 @@ class AdvancedTutorial extends React.Component {
           <div className="temp-grid">
             <TechnicalDetailsPane
               tutorial="advanced"
-              hash="#comparing-scoring-engines"
-              tabIndex={this.state.tabIndex}
-              handleSelect={this.handleSelect}/>
+              hash="#comparing-scoring-engines" />
           </div>
           <p>A few things have changed - the final score increased to 15.5. We know this change is due to our PATCH by looking at the score component contributed by <code>ACI_HIE_1</code> - it increased from 1 to 5, since the proportion increased from 10 to 50 out of 100 with ten possible points from this measure. The ACI base score went up from 58 to 62, and with the ACI component being 25% of the score our final score increased by 1.</p>
           <p>It's important to note that we've been working in one measurement set for this tutorial. One of the reasons that performance data for measures is organized into measurement sets is that multiple submission methods can add their own measurement sets into one submission - measure scores that might overlap the ones we provide, or differ in their attested values. In the case of multiple measurement sets, the Submissions API will calculate scores for each measurement set and pick the highest to present as the final score - that's why the API identifies that the scoring for the ACI component is based on a specific measurement set ID.</p>
