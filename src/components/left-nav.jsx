@@ -12,7 +12,7 @@ const createLinksListItems = function(pathsMap) {
   return pathsMap.paths.map((path) => {
       var linkComponent;
       if (!path.external) {
-        linkComponent = <NavLink to={path.path} className={linkClasses} activeClassName='ds-c-vertical-nav__label--current'>{path.linkText}</NavLink>;
+        linkComponent = <NavLink to={path.path} exact={path.exact} className={linkClasses} activeClassName='ds-c-vertical-nav__label--current'>{path.linkText}</NavLink>;
       } else {
         linkComponent = <a href={path.path} className={linkClasses}>{path.linkText}</a>;
       }

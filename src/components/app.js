@@ -60,7 +60,7 @@ class App extends React.Component {
                     path={path}
                     exact={exact}
                     component={component}
-                    />
+                  />
                 ))}
               </div>
             </div>
