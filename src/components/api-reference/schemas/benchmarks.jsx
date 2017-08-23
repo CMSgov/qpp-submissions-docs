@@ -1,4 +1,6 @@
 import React, {PureComponent} from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
 import DataModelTable from '../common/data-model-table';
 
 const FIELDS = [
@@ -23,17 +25,39 @@ export default class Benchmarks extends PureComponent {
         <p className="ds-text--lead">Benchmarks serve as the reference points for measurements and are used to score submissions. Each benchmark is unique based upon its combination of measureId, submissionMethod, and performanceYear, and each has a list of 9 deciles. Deciles are the data points that divide the range of measurements recorded into ten equal-sized populations.</p>
         <p className="ds-text--lead"><a href="https://qpp-submissions-sandbox.navapbc.com/#/Benchmarks">Try it out!</a></p>
         <h3 className="ds-h2">Resource Representation</h3>
-        <div className='markup markup--html'>
-          <pre className='ds-u-border--1 ds-u-padding--1'>
+        <div>
+          <Tabs
+            className='technical-details-pane'>
+          <TabList>
+            <Tab>JSON</Tab>
+            <Tab>XML</Tab>
+          </TabList>
+          <TabPanel>
+            <pre>
           {`{
-  benchmarkYear: integer,
-  performanceYear: integer,
-  submissionMethod: string,
-  measureId: string,
-  deciles: array<float>,
-  status: string
+  "benchmarkYear": integer,
+  "performanceYear": integer,
+  "submissionMethod": string,
+  "measureId": string,
+  "deciles": array<float>,
+  "status": string
 }`}
-          </pre>
+            </pre>
+          </TabPanel>
+          <TabPanel>
+            <pre>
+{`<data>
+  <benchmarkYear>integer</benchmarkYear>
+  <performanceYear>integer</performanceYear>
+  <submissionMethod>string</submissionMethod>
+  <measureId>string</measureId>
+  <deciles>array[float]</deciles>
+  <status>string</status>
+</data>
+`}
+            </pre>
+          </TabPanel>
+          </Tabs>
         </div>
         <DataModelTable fields={FIELDS} />
         <h3 className="ds-h1" id="historical-benchmarks">Historical Benchmarks</h3>

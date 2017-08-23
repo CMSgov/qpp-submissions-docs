@@ -1,4 +1,6 @@
 import React from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
 import DataModelTable from '../common/data-model-table';
 
 const FIELDS = [
@@ -23,8 +25,15 @@ export default class MeasurementSets extends React.PureComponent {
         <p className="ds-text--lead">The MeasurementSets resource represents performance data for a specified category. Each Submission can have multiple MeasurementSets. Each MeasurementSet in a given Submission must be uniquely identified by category and submission method. MeasurementSets contain Measurements, which can be accessed both via MeasurementSets methods and Measurements methods.</p>
         <p className="ds-text--lead"><a href="https://qpp-submissions-sandbox.navapbc.com/#/MeasurementSets">Try it out!</a></p>
         <h2 className="ds-h2">Resource Representation</h2>
-        <div className='markup markup--html'>
-          <pre className='ds-u-border--1 ds-u-padding--1'>
+        <div>
+          <Tabs
+            className='technical-details-pane'>
+          <TabList>
+            <Tab>JSON</Tab>
+            <Tab>XML</Tab>
+          </TabList>
+          <TabPanel>
+            <pre>
             {`{
   "id": string,
   "createdAt": datetime,
@@ -36,10 +45,31 @@ export default class MeasurementSets extends React.PureComponent {
   "performanceEnd": date,
   "measureSet": string,
   "measurements": array<`}
-    <a href="#measurements">Measurements Resource</a>
+    <a href="measurements">Measurements Resource</a>
   {`>
 }`}
-          </pre>
+            </pre>
+          </TabPanel>
+          <TabPanel>
+            <pre>
+{`<data>
+  <id>string</id>
+  <createdAt>datetime</createdAt>
+  <updatedAt>datetime</updatedAt>
+  <submissionId>string>/submissionId>
+  <category>string</category>
+  <submissionMethod>string</submissionMethod>
+  <performanceStart>date</performanceStart>
+  <performanceEnd>date</performanceEnd>
+  <measureSet>string</measureSet>
+  <measurements>array[`}
+    <a href="measurements">Measurements Resource</a>
+  {`]</measurements>
+</data>
+`}
+            </pre>
+          </TabPanel>
+          </Tabs>
         </div>
         <DataModelTable fields={FIELDS} />
       </div>

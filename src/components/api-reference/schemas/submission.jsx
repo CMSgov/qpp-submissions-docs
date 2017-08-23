@@ -1,4 +1,6 @@
 import React from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
 import DataModelTable from '../common/data-model-table';
 
 const FIELDS = [
@@ -22,8 +24,15 @@ export default class Submission extends React.Component {
           <p className="ds-text--lead">The Submissions resource represents one year of performance data for a given individual or group. Submissions contain MeasurementSets which can be accessed both via Submissions methods and MeasurementSets methods.</p>
           <p className="ds-text--lead"><a href="https://qpp-submissions-sandbox.navapbc.com/#/Submissions">Try it out!</a></p>
           <h2 className="ds-h2">Resource Representation</h2>
-          <div className='markup markup--html'>
-            <pre className='ds-u-border--1 ds-u-padding--1'>
+          <div>
+            <Tabs
+              className='technical-details-pane'>
+            <TabList>
+              <Tab>JSON</Tab>
+              <Tab>XML</Tab>
+            </TabList>
+            <TabPanel>
+              <pre>
               {`{
   "id": string,
   "createdAt": datetime,
@@ -34,11 +43,32 @@ export default class Submission extends React.Component {
   "nationalProviderIdentifier": string,
   "entityId": string,
   "performanceYear": integer,
-  "measurementSets": array<`}
-    <a href="#measurement-sets">MeasurementSets Resource</a>
-  {`>
+  "measurementSets": array(`}
+    <a href="measurement-sets">MeasurementSets Resource</a>
+  {`)
 }`}
-            </pre>
+              </pre>
+            </TabPanel>
+            <TabPanel>
+              <pre>
+{`<data>
+  <id>string</id>
+  <createdAt>datetime</createdAt>
+  <updatedAt>datetime</updatedAt>
+  <programName>string</programName>
+  <entityType>string</entityType>
+  <taxpayerIdentificationNumber>string</taxpayerIdentificationNumber>
+  <nationalProviderIdentifier>string</nationalProviderIdentifier>
+  <entityId>string</entityId>
+  <performanceYear>integer</performanceYear>
+  <measurementSets>array(`}
+    <a href="measurement-sets">MeasurementSets Resource</a>
+  {`)</measurementSets>
+</data>
+`}
+              </pre>
+            </TabPanel>
+            </Tabs>
           </div>
           <DataModelTable fields={FIELDS} />
         </div>
