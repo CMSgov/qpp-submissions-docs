@@ -32,7 +32,7 @@ const SINGLE_PERFORMANCE_RATE_FIELDS = [
 
 const MULTI_PERFORMANCE_RATE_FIELDS = [
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported  via certified EHR technology without any manual interference.', notes: 'writable'},
-  {name: 'strata', value: 'array<performanceRateStratum>', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data</a>.', notes: 'writable'}
+  {name: 'strata', value: 'array(performanceRateStratum)', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data</a>.', notes: 'writable'}
 ];
 
 const STRATA_FIELDS = [
@@ -242,9 +242,9 @@ class Measurements extends React.PureComponent {
   "measureId": string,
   "value": {
     "isEndToEndReported": boolean,
-    "strata": array<`}
+    "strata": array(`}
       <a href="#stratum">Performance Rate Stratum</a>
-    {`>
+    {`)
   }
 }`}
             </pre>

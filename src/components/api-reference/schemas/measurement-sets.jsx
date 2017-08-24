@@ -46,9 +46,9 @@ export default class MeasurementSets extends React.PureComponent {
   "performanceStart": date,
   "performanceEnd": date,
   "measureSet": string,
-  "measurements": array<`}
+  "measurements": array(`}
     <a href="measurements">Measurements Resource</a>
-  {`>
+  {`)
 }`}
             </pre>
           </TabPanel>
@@ -64,9 +64,9 @@ export default class MeasurementSets extends React.PureComponent {
   <performanceStart>date</performanceStart>
   <performanceEnd>date</performanceEnd>
   <measureSet>string</measureSet>
-  <measurements>array[`}
+  <measurements>array(`}
     <a href="measurements">Measurements Resource</a>
-  {`]</measurements>
+  {`)</measurements>
 </data>
 `}
             </pre>

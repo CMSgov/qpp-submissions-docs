@@ -13,7 +13,7 @@ const FIELDS = [
   {name: 'nationalProviderIdentifier', value: 'string', description: 'The 10-digit identifier of the provider associated with the submission. As the API does not yet collect personally identifying information, all NPIs must begin with "0"', notes: 'writable, optional if entityType is "group" or entityId is provided'},
   {name: 'entityId', value: 'string', description: ' The identifier for Alternative Payment Models (APM)', notes: 'writable, optional'},
   {name: 'performanceYear', value: 'integer', description: 'The year in which performance data for the submission was collected.',  notes: 'writable'},
-  {name: 'measurementSets', value: 'array<measurementSet>', description: 'Measurement sets associated with the submission.',  notes: 'writable, optional'}
+  {name: 'measurementSets', value: 'array(measurementSet)', description: 'Measurement sets associated with the submission.',  notes: 'writable, optional'}
 ];
 
 export default class Submission extends React.Component {
