@@ -18,6 +18,8 @@ const FIELDS = [
 
 export default class Submission extends React.Component {
   render() {
+    // This is necessary to disable the default styles
+    Tabs.setUseDefaultStyles(false);
     return (
        <div>
           <h1 className="ds-h1">Submissions</h1>

@@ -14,6 +14,8 @@ const FIELDS = [
 
 export default class Benchmarks extends PureComponent {
   render() {
+    // This is necessary to disable the default styles
+    Tabs.setUseDefaultStyles(false);
     return (
       <div>
         <h2 className="ds-h1" id="benchmarks">Benchmarks</h2>

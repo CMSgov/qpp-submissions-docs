@@ -19,6 +19,8 @@ const FIELDS = [
 export default class MeasurementSets extends React.PureComponent {
 
   render() {
+    // This is necessary to disable the default styles
+    Tabs.setUseDefaultStyles(false);
     return (
       <div>
         <h1 className="ds-h1">Measurement Sets</h1>

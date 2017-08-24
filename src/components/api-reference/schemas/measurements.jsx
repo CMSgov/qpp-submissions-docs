@@ -50,6 +50,8 @@ const STRATA_FIELDS = [
 class Measurements extends React.PureComponent {
 
   render() {
+    // This is necessary to disable the default styles
+    Tabs.setUseDefaultStyles(false);
 
     return (
        <div>
