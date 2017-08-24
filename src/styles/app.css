@@ -30,18 +30,6 @@ ul {
   margin-top: 0px!important;
 }
 
-.content-container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1100px;
-  width: 90%;
-}
-
-.container {
-  margin: 0px auto;
-  max-width: 1100px;
-}
-
 .content-block {
   border-radius: 3px;
   border: 1px solid #dcdcdc;
@@ -94,23 +82,4 @@ a.qpp-docs-title-back {
 
 a.ds-c-button:visited {
   color: white;
-}
-
-/* New styles*/
-@media (max-width: 544px) {
-  #dropdown-nav {
-    display: block;
-  }
-  #left-nav {
-    display: none;
-  }
-}
-
-@media (min-width: 544px) {
-  #dropdown-nav {
-    display: none;
-  }
-  #left-nav {
-    display: block;
-  }
 }
