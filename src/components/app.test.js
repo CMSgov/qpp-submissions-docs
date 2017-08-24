@@ -34,6 +34,7 @@ it('has all the required links', () => {
       <App />
     </MemoryRouter>
   ), div);
+  console.log(div.innerHTML);
   // Topics
   console.assert(div.innerHTML.match('<a class="" href="/">Introduction</a>'));
   console.assert(div.innerHTML.match('<a href="/developer-preview">Getting a Key</a>'));
