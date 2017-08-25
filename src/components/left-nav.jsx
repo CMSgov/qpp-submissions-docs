@@ -26,7 +26,7 @@ const createLinksListItems = function(pathsMap) {
 class NavSection extends React.Component {
   render() {
     return <li>
-      <ul className="ds-c-vertical-nav">
+      <ul className="ds-c-vertical-nav left-nav">
         <li className={'ds-c-vertical-nav__item ds-u-font-weight--semibold ' + leftNavPaddingClasses}>{this.props.name.toUpperCase()}</li>
         {createLinksListItems(Routes[this.props.groupIndex])}
       </ul>
