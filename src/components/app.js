@@ -36,7 +36,7 @@ class App extends React.Component {
           </div>
 
           <div className='ds-l-container'>
-            <div className='content-container ds-l-row'>
+            <div className='ds-l-row'>
               <div className='ds-l-col--12 ds-u-padding-top--3 ds-u-display--block ds-u-sm-display--none'>
                 <form>
                   <DropdownNav />
