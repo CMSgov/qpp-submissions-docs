@@ -1,4 +1,6 @@
 import React from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
 import DataModelTable from '../common/data-model-table';
 
 const FIELDS = [
@@ -30,7 +32,7 @@ const SINGLE_PERFORMANCE_RATE_FIELDS = [
 
 const MULTI_PERFORMANCE_RATE_FIELDS = [
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported  via certified EHR technology without any manual interference.', notes: 'writable'},
-  {name: 'strata', value: 'array<performanceRateStratum>', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data</a>.', notes: 'writable'}
+  {name: 'strata', value: 'array(performanceRateStratum)', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data</a>.', notes: 'writable'}
 ];
 
 const STRATA_FIELDS = [
@@ -48,6 +50,8 @@ const STRATA_FIELDS = [
 class Measurements extends React.PureComponent {
 
   render() {
+    // This is necessary to disable the default styles
+    Tabs.setUseDefaultStyles(false);
 
     return (
        <div>
@@ -61,8 +65,15 @@ class Measurements extends React.PureComponent {
           <p className="ds-text--lead">The Measurements resource represents performance data for a specific measure within a MeasurementSet. There are three types of Measurements: Boolean, Proportion, Single-Performance Rate and Multi-Performance Rate. Each MeasurementSet can have multiple Measurements. No two Measurements in a given MeasurementSet can have the same measureId.</p>
           <p className="ds-text--lead"><a href="https://qpp-submissions-sandbox.navapbc.com/#/Measurements">Try it out!</a></p>
           <h2 className="ds-h2">Resource Representation</h2>
-          <div className='markup markup--html'>
-            <pre className='ds-u-border--1 ds-u-padding--1'>
+          <div>
+            <Tabs
+              className='technical-details-pane'>
+            <TabList>
+              <Tab>JSON</Tab>
+              <Tab>XML</Tab>
+            </TabList>
+            <TabPanel>
+              <pre>
               {`{
   "id": string,
   "measurementSetId": string,
@@ -72,28 +83,71 @@ class Measurements extends React.PureComponent {
   `} <a href="#multi-performance-rate-measurements">Multi-Performance Rate</a>
   {`]
 }`}
-            </pre>
+              </pre>
+            </TabPanel>
+            <TabPanel>
+              <pre>
+{`<data>
+  <id>string</id>
+  <measurementSetId>string</measurementSetId>
+  <measureId>string</measureId>
+  <value>[`}
+    <a href="#boolean-measurements">Boolean</a> | <a href="#proportion-measurements">Proportion</a> | <a href="#single-performance-rate-measurements">Single-Performance Rate</a> | {`
+  `} <a href="#multi-performance-rate-measurements">Multi-Performance Rate</a>
+  {`]</value>
+</data>
+`}
+              </pre>
+            </TabPanel>
+            </Tabs>
           </div>
           <DataModelTable fields={FIELDS} />
           <h1 className="ds-h1" id="boolean-measurements">Boolean Measurements</h1>
           <p className="ds-text--lead">Boolean Measurements are applicable to Improvement Activity (IA) and Advancing Care Information (ACI) measures.</p>
           <h2 className="ds-h2">Resource Representation</h2>
-          <div className='markup markup--html'>
-            <pre className='ds-u-border--1 ds-u-padding--1'>
+          <div>
+            <Tabs
+              className='technical-details-pane'>
+            <TabList>
+              <Tab>JSON</Tab>
+              <Tab>XML</Tab>
+            </TabList>
+            <TabPanel>
+              <pre>
               {`{
   "id": string,
   "measurementSetId": string,
   "measureId": string,
   "value": boolean
 }`}
-            </pre>
+              </pre>
+            </TabPanel>
+            <TabPanel>
+              <pre>
+{`<data>
+  <id>string</id>
+  <measurementSetId>string</measurementSetId>
+  <measureId>string</measureId>
+  <value>boolean</value>
+</data>
+`}
+              </pre>
+            </TabPanel>
+            </Tabs>
           </div>
           <DataModelTable fields={BOOLEAN_FIELDS} />
           <h1 className="ds-h1" id="proportion-measurements">Proportion Measurements</h1>
           <p className="ds-text--lead">Proportion Measurements are applicable to Advancing Care Information (ACI) measures.</p>
           <h2 className="ds-h2">Resource Representation</h2>
-          <div className='markup markup--html'>
-            <pre className='ds-u-border--1 ds-u-padding--1'>
+          <div>
+            <Tabs
+              className='technical-details-pane'>
+            <TabList>
+              <Tab>JSON</Tab>
+              <Tab>XML</Tab>
+            </TabList>
+            <TabPanel>
+              <pre>
               {`{
   "id": string,
   "measurementSetId": string,
@@ -104,13 +158,36 @@ class Measurements extends React.PureComponent {
   }
 }`}
             </pre>
+            </TabPanel>
+            <TabPanel>
+              <pre>
+{`<data>
+  <id>string</id>
+  <measurementSetId>string</measurementSetId>
+  <measureId>string</measureId>
+  <value>
+    <numerator>integer</numerator>
+    <denominator>integer</denominator>
+  </value>
+</data>
+`}
+              </pre>
+            </TabPanel>
+            </Tabs>
           </div>
           <DataModelTable fields={PROPORTION_FIELDS} />
           <h1 className="ds-h1" id="single-performance-rate-measurements">Single-Performance Rate Measurements</h1>
           <p className="ds-text--lead">Single-Performance Rate Measurements are applicable to Quality measures.</p>
           <h2 className="ds-h2">Resource Representation</h2>
-          <div className='markup markup--html'>
-            <pre className='ds-u-border--1 ds-u-padding--1'>
+          <div>
+            <Tabs
+              className='technical-details-pane'>
+            <TabList>
+              <Tab>JSON</Tab>
+              <Tab>XML</Tab>
+            </TabList>
+            <TabPanel>
+              <pre>
               {`{
   "id": string,
   "measurementSetId": string,
@@ -125,32 +202,84 @@ class Measurements extends React.PureComponent {
   }
 }`}
             </pre>
+            </TabPanel>
+            <TabPanel>
+              <pre>
+{`<data>
+  <id>string</id>
+  <measurementSetId>string</measurementSetId>
+  <measureId>string</measureId>
+  <value>
+    <isEndToEndReported>boolean</isEndToEndReported>
+    <performanceMet>integer</performanceMet>
+    <performanceNotMet>integer</performanceNotMet>
+    <eligiblePopulationExclusion>integer</eligiblePopulationExclusion>
+    <eligiblePopulationException>integer</eligiblePopulationException>
+    <eligiblePopulation>integer</eligiblePopulation>
+  </value>
+</data>
+`}
+              </pre>
+            </TabPanel>
+            </Tabs>
           </div>
           <DataModelTable fields={SINGLE_PERFORMANCE_RATE_FIELDS} />
           <h1 className="ds-h1" id="multi-performance-rate-measurements">Multi-Performance Rate Measurements</h1>
           <p className="ds-text--lead">Multi-Performance Rate Measurements are applicable to Quality measures. Multi-Performance Rate Measurements contain multiple strata and the stratum field is required for each.</p>
           <h2 className="ds-h2">Resource Representation</h2>
-          <div className='markup markup--html'>
-            <pre className='ds-u-border--1 ds-u-padding--1'>
+          <div>
+            <Tabs
+              className='technical-details-pane'>
+            <TabList>
+              <Tab>JSON</Tab>
+              <Tab>XML</Tab>
+            </TabList>
+            <TabPanel>
+              <pre>
               {`{
   "id": string,
   "measurementSetId": string,
   "measureId": string,
   "value": {
     "isEndToEndReported": boolean,
-    "strata": array<`}
+    "strata": array(`}
       <a href="#stratum">Performance Rate Stratum</a>
-    {`>
+    {`)
   }
 }`}
             </pre>
+            </TabPanel>
+            <TabPanel>
+              <pre>
+{`<data>
+  <id>string</id>
+  <measurementSetId>string</measurementSetId>
+  <measureId>string</measureId>
+  <value>
+    <isEndToEndReported>boolean</isEndToEndReported>
+    <strata>array(`}
+      <a href="#stratum">Performance Rate Stratum</a>
+    {`)</strata>
+  </value>
+</data>
+`}
+              </pre>
+            </TabPanel>
+            </Tabs>
           </div>
           <DataModelTable fields={MULTI_PERFORMANCE_RATE_FIELDS} />
           <h1 className="ds-h1" id="stratum">Multi-Performance Rate Stratum</h1>
           <p className="ds-text--lead">A Multi-Performance Rate Stratum represents the performance data for a specified subset of the population, as described by the stratum field.</p>
           <h2 className="ds-h2">Resource Representation</h2>
-          <div className='markup markup--html'>
-            <pre className='ds-u-border--1 ds-u-padding--1'>
+          <div>
+            <Tabs
+              className='technical-details-pane'>
+            <TabList>
+              <Tab>JSON</Tab>
+              <Tab>XML</Tab>
+            </TabList>
+            <TabPanel>
+              <pre>
               {`{
   "measurementId": string,
   "performanceMet": integer,
@@ -161,6 +290,22 @@ class Measurements extends React.PureComponent {
   "stratum": string
 }`}
             </pre>
+            </TabPanel>
+            <TabPanel>
+              <pre>
+{`<data>
+  <measurementId>string</measurementId>
+  <performanceMet>integer</performanceMet>
+  <performanceNotMet>integer</performanceNotMet>
+  <eligiblePopulationExclusion>integer</eligiblePopulationExclusion>
+  <eligiblePopulationException>integer</eligiblePopulationException>
+  <eligiblePopulation>integer</eligiblePopulation>
+  <stratum>string</stratum>
+</data>
+`}
+              </pre>
+            </TabPanel>
+            </Tabs>
           </div>
           <DataModelTable fields={STRATA_FIELDS} />
         </div>
