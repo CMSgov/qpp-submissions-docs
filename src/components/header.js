@@ -5,7 +5,7 @@ class Header extends React.PureComponent {
     return (
       <header id='top'>
         <nav className='navbar navbar-default navbar-fixed-top'>
-          <div className='container'>
+          <div className='ds-l-container'>
             <div className='navbar-header'>
               <div className='header-mobile-brand'>
                 <a className='header-brand' href='https://qpp.cms.gov/'>
