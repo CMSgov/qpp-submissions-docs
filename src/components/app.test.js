@@ -21,7 +21,6 @@ it('renders without crashing', () => {
 
 const expectedRoutes = {
   '/': <Introduction />,
-  '/introduction': <Introduction />,
   '/developer-preview': <DeveloperPreview />,
   '/tutorial': <BasicTutorial />,
   '/advanced-tutorial': <AdvancedTutorial />,
@@ -34,6 +33,17 @@ const expectedRoutes = {
   '/examples': <ExampleDocs />
 };
 
+Object.keys(expectedRoutes).forEach(function(path) {
+  it('has a link for ' + path, () => {
+    const wrapper = mount(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+    expect(wrapper.find('[href="' + path + '"]').length).toBeGreaterThanOrEqual(1);
+  });
+});
+
 Object.entries(expectedRoutes).forEach(function([path, component]) {
   it('displays the right component for ' + path, () => {
     const wrapper = mount(
@@ -44,27 +54,3 @@ Object.entries(expectedRoutes).forEach(function([path, component]) {
     expect(wrapper.containsMatchingElement(component)).toEqual(true);
   });
 });
-
-// TODO(aimee): Not really happy with the structure of these tests at the
-// moment, the requirement of `const classes` seems like it's exposing how
-// brittle this test is.
-// it('has all the required links', () => {
-//   const div = document.createElement('div');
-//   const classes = 'ds-u-padding-right--3 ds-u-padding-left--3 ds-u-padding-top--1 ds-u-padding-bottom--1';
-//   render((
-//     <MemoryRouter>
-//       <App />
-//     </MemoryRouter>
-//   ), div);
-//   // Topics
-//   console.assert(div.innerHTML.match('<a class="ds-c-vertical-nav__label--current ' + classes + '" href="/introduction">Introduction</a>'));
-//   console.assert(div.innerHTML.match('<a class="' + classes + '" href="/developer-preview">Getting a Key</a>'));
-//   // Guides
-//   console.assert(div.innerHTML.match('<a class="' + classes + '" href="/tutorial">Creating and editing a submission</a>'));
-//   console.assert(div.innerHTML.match('<a class="' + classes + '" href="/advanced-tutorial">Updating and scoring a submission</a>'));
-//   // References
-//   console.assert(div.innerHTML.match('<a class="' + classes + '" href="/submission">Submission</a>'));
-//   console.assert(div.innerHTML.match('<a class="' + classes + '" href="/measurement-sets">Measurement Sets</a>'));
-//   // Examples
-//   console.assert(div.innerHTML.match('<a class="' + classes + '" href="/examples">Example Submission JSON &amp; XML</a>'));
-// });

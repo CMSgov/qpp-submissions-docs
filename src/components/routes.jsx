@@ -12,8 +12,8 @@ import ExampleDocs from './api-reference/example-docs';
 
 const topicsPaths = [
   {
-    path: '/introduction',
-    exact: false,
+    path: '/',
+    exact: true,
     linkText: 'Introduction',
     component: Introduction
   },

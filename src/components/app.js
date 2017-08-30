@@ -16,7 +16,6 @@ import DropdownNav from './dropdown-nav';
 import LeftNav from './left-nav';
 import Footer from './footer';
 import SubscribeModal from './subscribe-modal';
-import Introduction from './introduction';
 
 // bootstrap js needs window.jQuery to be defined, but imports are always hoisted
 // so we need to require (as import 'bootstrap...' would get hoisted before window.jQuery is set)
@@ -30,38 +29,39 @@ class App extends React.Component {
         <main id='panel'>
           <Header />
           <div className='qpp-docs-title-container'>
-            <div className='content-container'>
+            <div className='ds-l-container'>
               <a className='qpp-docs-title-back' href='https://qpp.cms.gov/developers'>&lt; back to QPP Developer Tools</a>
               <h3 className='qpp-docs-title-text'>QPP Submissions API Documentation</h3>
             </div>
           </div>
 
-          <div className='content-container ds-l-row'>
-            <div id='dropdown-nav' className='ds-l-col--12'>
-              <form className='usa-form'>
-                <DropdownNav />
-              </form>
-            </div>
-
-            <div id='left-nav' className='ds-l-col--3 ds-u-padding-top--4'>
-              <div className='content-block'>
-                <ul className='ds-c-list--bare ds-u-padding-top--2'>
-                  {LeftNav}
-                </ul>
+          <div className='ds-l-container'>
+            <div className='ds-l-row'>
+              <div className='ds-l-col--12 ds-u-padding-top--3 ds-u-display--block ds-u-sm-display--none'>
+                <form>
+                  <DropdownNav />
+                </form>
               </div>
-            </div>
 
-            <div className='ds-u-float--left ds-u-padding-top--4 ds-l-col--12 ds-l-sm-col--9'>
-              <div className='content-block ds-u-padding--3'>
-                <Route path='/' exact component={Introduction} />
-                {Routes.mergedRoutes.map(({path, exact, component}, index) => (
-                  <Route
-                    key={index}
-                    path={path}
-                    exact={exact}
-                    component={component}
+              <div className='ds-l-col--3 ds-u-padding-top--4 ds-u-display--none ds-u-sm-display--block'>
+                <div className='content-block'>
+                  <ul className='ds-c-list--bare ds-u-padding-top--2'>
+                    {LeftNav}
+                  </ul>
+                </div>
+              </div>
+
+              <div className='ds-u-padding-top--4 ds-l-col--12 ds-l-sm-col--9'>
+                <div className='content-block ds-u-padding--3'>
+                  {Routes.mergedRoutes.map(({path, exact, component}, index) => (
+                    <Route
+                      key={index}
+                      path={path}
+                      exact={exact}
+                      component={component}
                     />
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>
