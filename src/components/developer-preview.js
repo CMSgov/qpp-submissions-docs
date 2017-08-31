@@ -31,7 +31,7 @@ export default class DeveloperPreview extends React.Component {
 
         <h2 className='ds-h2'>Step 3: Make your first API call</h2>
         <p className='ds-text'>Base URL: <b><code>https://qpp.cms.gov/api/submissions</code></b></p>
-        <p className='ds-text'>Add your API Token to the header of every API request using the key value: <code>"Authentication":"Bearer [YOUR API TOKEN]"</code>. </p>
+        <p className='ds-text'>Add your API Token to the header of every API request using the key value: <code>Authorization: Bearer [YOUR API TOKEN]</code>. </p>
 
         <p className='ds-text'>
           Today, Developers are using the Submission API to:
