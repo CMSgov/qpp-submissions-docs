@@ -23,7 +23,7 @@ export default class DeveloperPreview extends React.Component {
         <p className='ds-text'>Please note: API Tokens expire at the end of the Developer Preview period, at which time new API Tokens will become available through an automated, self-service process.</p>
 
         <h2 className='ds-h2'>Step 2: Explore the API</h2>
-        <p className='ds-text'>View the <a href='https://cmsgov.github.io/qpp-submissions-docs/schemas'>API documentation</a> or play around with the <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Docs</a> using your own data.</p>
+        <p className='ds-text'>For a comprehensive list of endpoints and documentation on how to format your requests, play around with the <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Docs</a> using your own data.</p>
         <SubmissionsObjects />
 
         <p className='ds-text'>Walk through how to create a new submission, submit measures and receive real-time scoring in the below tutorial.</p>
