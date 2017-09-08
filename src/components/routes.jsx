@@ -48,23 +48,23 @@ const guidesPaths = [
 
 const referencePaths = [
   {
-    path: '/submission',
+    path: '/measurements',
     exact: false,
-    linkText: 'Submission',
-    component: Submission
+    linkText: 'Measurements',
+    component: Measurements
   },
   {
     path: '/measurement-sets',
     exact: false,
     linkText: 'Measurement Sets',
     component: MeasurementSets
-  },
+  },  
   {
-    path: '/measurements',
+    path: '/submission',
     exact: false,
-    linkText: 'Measurements',
-    component: Measurements
-  },
+    linkText: 'Submission',
+    component: Submission
+  },  
   {
     path: '/benchmarks',
     exact: false,
