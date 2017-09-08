@@ -1,7 +1,5 @@
 import React from 'react';
 import 'uswds/dist/js/uswds.js';
-import Iframe from 'react-iframe';
-
 import '@cmsgov/design-system-core/dist/index.css';
 import '../styles/app.css';
 import '../styles/temp-grid.css';
