@@ -13,7 +13,6 @@ class Introduction extends React.Component {
         <Link to='/developer-preview' className='ds-c-button ds-c-button--primary'>Join the QPP Developer Preview</Link>
 
         <h2 className='ds-h2'>Explore the API</h2>
-        <p className='ds-text'>View the <Link to='/schemas'>API documentation</Link> or play around with the <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Docs</a> using your own data.</p>
         <SubmissionsObjects />
 
         <p className='ds-text'>Walk through how to create a new submission, submit measures and receive real-time scoring in the below tutorial.</p>
