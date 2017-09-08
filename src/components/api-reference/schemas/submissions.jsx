@@ -16,14 +16,14 @@ const FIELDS = [
   {name: 'measurementSets', value: 'array(measurementSet)', description: 'Measurement sets associated with the submission.',  notes: 'writable, optional'}
 ];
 
-export default class Submission extends React.Component {
+export default class Submissions extends React.Component {
   render() {
     // This is necessary to disable the default styles
     Tabs.setUseDefaultStyles(false);
     return (
        <div>
           <h1 className="ds-h1">Submissions</h1>
-          <p className="ds-text--lead">The Submissions resource represents one year of performance data for a given individual or group. Submissions contain MeasurementSets which can be accessed both via Submissions methods and MeasurementSets methods.</p>
+          <p className="ds-text--lead">The Submissions resource represents one year of performance data for a given individual or group. Submissions contain MeasurementSets which can be accessed both via Submissions methods and MeasurementSets methods. Submissions resources are 'shared' in the sense that they contain Measurement Sets that may be created by multiple users.</p>
           <p className="ds-text--lead"><a href="https://qpp-submissions-sandbox.navapbc.com/#/Submissions">Try it out!</a></p>
           <h2 className="ds-h2">Resource Representation</h2>
           <div>
