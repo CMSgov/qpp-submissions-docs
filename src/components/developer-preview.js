@@ -36,7 +36,7 @@ export default class DeveloperPreview extends React.Component {
           Check out the video below to help you get started:
         </p>
         <p className='ds-text'>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/702HKMoYqI0?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/702HKMoYqI0?rel=0" frameborder="0" allowfullscreen></iframe>
         </p>
         <p className='ds-text'>
           Today, Developers are using the Submission API to:
