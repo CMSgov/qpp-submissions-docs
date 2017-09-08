@@ -20,7 +20,7 @@ const topicsPaths = [
   {
     path: '/developer-preview',
     exact: false,
-    linkText: 'Getting a Key',
+    linkText: 'Developer Preview',
     component: DeveloperPreview
   }
 ];
