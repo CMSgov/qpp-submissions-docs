@@ -2,7 +2,7 @@ import DeveloperPreview from './developer-preview';
 import Introduction from './introduction';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
-import Submission from './api-reference/schemas/submission';
+import Submissions from './api-reference/schemas/submissions';
 import MeasurementSets from './api-reference/schemas/measurement-sets';
 import Measurements from './api-reference/schemas/measurements';
 import Benchmarks from './api-reference/schemas/benchmarks';
@@ -20,8 +20,14 @@ const topicsPaths = [
   {
     path: '/developer-preview',
     exact: false,
-    linkText: 'Getting a Key',
+    linkText: 'Developer Preview',
     component: DeveloperPreview
+  },
+  {
+    path: 'https://qpp-submissions-sandbox.navapbc.com',
+    exact: false,
+    linkText: 'Interactive Documentation',
+    external: true
   }
 ];
 
@@ -42,23 +48,23 @@ const guidesPaths = [
 
 const referencePaths = [
   {
-    path: '/submission',
+    path: '/measurements',
     exact: false,
-    linkText: 'Submission',
-    component: Submission
+    linkText: 'Measurements',
+    component: Measurements
   },
   {
     path: '/measurement-sets',
     exact: false,
     linkText: 'Measurement Sets',
     component: MeasurementSets
-  },
+  },  
   {
-    path: '/measurements',
+    path: '/submissions',
     exact: false,
-    linkText: 'Measurements',
-    component: Measurements
-  },
+    linkText: 'Submissions',
+    component: Submissions
+  },  
   {
     path: '/benchmarks',
     exact: false,

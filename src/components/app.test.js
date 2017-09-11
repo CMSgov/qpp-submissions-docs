@@ -7,7 +7,7 @@ import Introduction from './introduction';
 import DeveloperPreview from './developer-preview';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
-import Submission from './api-reference/schemas/submission';
+import Submissions from './api-reference/schemas/submissions';
 import MeasurementSets from './api-reference/schemas/measurement-sets';
 import Measurements from './api-reference/schemas/measurements';
 import Benchmarks from './api-reference/schemas/benchmarks';
@@ -24,7 +24,7 @@ const expectedRoutes = {
   '/developer-preview': <DeveloperPreview />,
   '/tutorial': <BasicTutorial />,
   '/advanced-tutorial': <AdvancedTutorial />,
-  '/submission': <Submission />,
+  '/submissions': <Submissions />,
   '/measurement-sets': <MeasurementSets />,
   '/measurements': <Measurements />,
   '/benchmarks': <Benchmarks />,

@@ -1,6 +1,5 @@
 import React from 'react';
 import 'uswds/dist/js/uswds.js';
-
 import '@cmsgov/design-system-core/dist/index.css';
 import '../styles/app.css';
 import '../styles/temp-grid.css';
@@ -23,7 +22,7 @@ export default class DeveloperPreview extends React.Component {
         <p className='ds-text'>Please note: API Tokens expire at the end of the Developer Preview period, at which time new API Tokens will become available through an automated, self-service process.</p>
 
         <h2 className='ds-h2'>Step 2: Explore the API</h2>
-        <p className='ds-text'>View the <a href='https://cmsgov.github.io/qpp-submissions-docs/schemas'>API documentation</a> or play around with the <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Docs</a> using your own data.</p>
+        <p className='ds-text'>For a comprehensive list of endpoints and documentation on how to format your requests, play around with the <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Docs</a> using your own data.</p>
         <SubmissionsObjects />
 
         <p className='ds-text'>Walk through how to create a new submission, submit measures and receive real-time scoring in the below tutorial.</p>
@@ -32,7 +31,10 @@ export default class DeveloperPreview extends React.Component {
         <h2 className='ds-h2'>Step 3: Make your first API call</h2>
         <p className='ds-text'>Base URL: <b><code>https://qpp.cms.gov/api/submissions</code></b></p>
         <p className='ds-text'>Add your API Token to the header of every API request using the key value: <code>Authorization: Bearer [YOUR API TOKEN]</code>. </p>
-
+        <p className='ds-text'>
+          Check out the video below to help you get started:
+        </p>
+        <iframe title='How to make your first call in the Developer Preview' width='560' height='315' src='https://www.youtube.com/embed/702HKMoYqI0?rel=0' frameBorder='0' allowFullScreen />
         <p className='ds-text'>
           Today, Developers are using the Submission API to:
         </p>
