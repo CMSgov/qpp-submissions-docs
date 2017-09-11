@@ -34,7 +34,7 @@ export default class DeveloperPreview extends React.Component {
         <p className='ds-text'>
           Check out the video below to help you get started:
         </p>
-          <iframe title='How to make your first call in the Developer Preview' width='560' height='315' align='center' src='https://www.youtube.com/embed/702HKMoYqI0?rel=0' frameBorder='0' allowFullScreen />
+          <iframe title='How to make your first call in the Developer Preview' width='560' height='315' align='middle' src='https://www.youtube.com/embed/702HKMoYqI0?rel=0' frameBorder='0' allowFullScreen />
         <p className='ds-text'>
           Today, Developers are using the Submission API to:
         </p>
