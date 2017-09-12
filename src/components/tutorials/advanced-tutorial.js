@@ -1,48 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Tabs } from 'react-tabs';
 
-import TechnicalDetailsPane from './common/technical-details-pane';
+import '../../styles/common/example-code-tabs.css';
+
 import InlineApiExample from './common/inline-api-example';
+import Advanced1 from './common/steps/advanced-1';
+import Advanced2 from './common/steps/advanced-2';
+import Advanced3 from './common/steps/advanced-3';
+import Advanced4 from './common/steps/advanced-4';
+import Advanced5 from './common/steps/advanced-5';
 
 class AdvancedTutorial extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hash: props.hash,
-      tabIndex: 0
-    };
-
-    this.selectTab = this.selectTab.bind(this);
-    this.showStartOfStep = this.showStartOfStep.bind(this);
-    this.showResponseOfStep = this.showResponseOfStep.bind(this);
-  }
-
-  selectTab(index) {
-    this.setState({
-      tabIndex: index
-    });
-  }
-
-  showStartOfStep(event) {
-    // the hash of an anchor tag or stored in data
-    const hash = event.target.hash || event.target.dataset.hash;
-    window.location.hash = hash;
-    this.setState({
-      hash,
-      tabIndex: 0
-    });
-  }
-
-  showResponseOfStep(event) {
-    const hash = event.target.dataset.hash;
-    window.location.hash = hash;
-    this.setState({
-      hash,
-      tabIndex: 1
-    });
-  }
-
   render() {
+    Tabs.setUseDefaultStyles(false);
+
     return (
       <div>
         <div className='ds-c-alert ds-c-alert--info narrow-screen-warning'>
@@ -60,8 +31,7 @@ class AdvancedTutorial extends React.Component {
             <h2 className='ds-h2' id='submitting-with-performance-data'>
               <a
                 className='tutorial-header-link'
-                href='#submitting-with-performance-data'
-                onClick={this.showStartOfStep}>
+                href='#submitting-with-performance-data'>
               Creating a submission with embedded performance data
             </a>
             </h2>
@@ -100,13 +70,7 @@ class AdvancedTutorial extends React.Component {
                     <td>20 out of 100</td></tr>
                 </tbody>
             } />
-            <div className='temp-grid'>
-              <TechnicalDetailsPane
-                tutorial='advanced'
-                hash='#submitting-with-performance-data'
-                tabIndex={this.state.tabIndex}
-                handleSelect={this.handleSelect} />
-            </div>
+            <Advanced1 />
             <p>Something unexpected: a <code>422 Unprocessable Entity</code> response code. This indicates that the syntax of the request was correct, but the semantics were problematic. The response body includes more specific information: <code>DuplicateEntryError</code>. We've tried to create a duplicate submission - earlier we noted that each taxpayer/provider ID combination can have one submission per year. The <code>POST</code> API request we just sent uses the same identifiers as we did in our first tutorial, but CMS already has a submission on record for this individual.</p>
             <p>There are a variety of reasons why this collision might happen: it's plausible that we (or someone else) has tried to <code>POST</code> this individual's performance data before, or someone made a typo and used our TIN by accident. Either way, we asked the API to <em>create</em> a record where one already exists. Since the API (and CMS) can't assume what the correct course of action is to take for this problematic API request, the messaging in the response is handy for immediately showing us something went wrong, and what specifically.</p>
             <p>If we wanted to <em>update</em> the existing submission we could use a <code>PUT</code> (full record update) or <code>PATCH</code> (partial record update) request, but since we're trying to show how we can create a new submission with measurement data embedded, let's use a different TIN and try again.</p>
@@ -142,25 +106,12 @@ class AdvancedTutorial extends React.Component {
                     <td>20 out of 100</td></tr>
                 </tbody>
             } />
-            <div className='temp-grid'>
-              <TechnicalDetailsPane
-                tutorial='advanced'
-                hash='#submitting-with-performance-data-pt2'
-                tabIndex={this.state.tabIndex}
-                handleSelect={this.handleSelect} />
-            </div>
+            <Advanced2 />
             <p>A <code>201 Created</code> - great. We'll look at what ACI scores look like next:</p>
-            <button
-              className='ds-c-button ds-c-button--primary'
-              data-hash='#aci-scoring'
-              onClick={this.showStartOfStep}>
-            Next step
-          </button>
             <h2 id='aci-scoring'>
               <a
                 className='tutorial-header-link'
-                href='#aci-scoring'
-                onClick={this.showStartOfStep}>
+                href='#aci-scoring'>
               ACI Scoring
             </a>
             </h2>
@@ -171,13 +122,7 @@ class AdvancedTutorial extends React.Component {
             <InlineApiExample
               verb='GET'
               url='/submissions/:id/score' />
-            <div className='temp-grid'>
-              <TechnicalDetailsPane
-                tutorial='advanced'
-                hash='#aci-scoring'
-                tabIndex={this.state.tabIndex}
-                handleSelect={this.handleSelect} />
-            </div>
+            <Advanced3 />
             <p>The ACI component of our score shows many parts this time. There's a lot of numbers here, but let's decode how we arrive at the total:</p>
             <p>The <code>aci_base</code> starts at 50 because we've attested to the two required measures (<code>ACI_INFBLO_1</code>, <code>ACI_ONCDIR_1</code>).</p>
             <p>Three optional measures listed (<code>ACI_PEA_1</code>, <code>ACI_HIE_1</code>, <code>ACI_HIE_2</code>) give a possible 10 points each, multiplied by the proportion attested to, leading to partial contributions of 5, 2, and 1 points respectively.</p>
@@ -186,17 +131,10 @@ class AdvancedTutorial extends React.Component {
             <p>As we can see, ACI scoring requires an understanding of what measures are required and how they're weighted. However, if we become familiar with these measures, scoring via the API immediately gives us a clear picture of our score and what parts contribute - this is a big advantage in making sure we get the score we understand and expect.</p>
             <p><em>Disclaimer:</em> Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments.</p>
             <p>What if we're later in the year and can attest to a greater proportion for one of the measures? We can easily do that in the API as well!</p>
-            <button
-              className='ds-c-button ds-c-button--primary'
-              data-hash='#updating-a-measure'
-              onClick={this.showStartOfStep}>
-            Next step
-          </button>
             <h2 id='updating-a-measure'>
               <a
                 className='tutorial-header-link'
-                href='#updating-a-measure'
-                onClick={this.showStartOfStep}>
+                href='#updating-a-measure'>
               Updating a measure
             </a>
             </h2>
@@ -216,38 +154,19 @@ class AdvancedTutorial extends React.Component {
                     <td>50 out of 100</td></tr>
                 </tbody>
             } />
-            <div className='temp-grid'>
-              <TechnicalDetailsPane
-                tutorial='advanced'
-                hash='#updating-a-measure'
-                tabIndex={this.state.tabIndex}
-                handleSelect={this.handleSelect} />
-            </div>
+            <Advanced4 />
             <p>A <code>200 OK</code> means we've updated the measurement in question. We can now fetch the latest score:</p>
-            <button
-              className='ds-c-button ds-c-button--primary'
-              data-hash='#comparing-scoring-changes'
-              onClick={this.showStartOfStep}>
-            Next step
-          </button>
             <h2 id='comparing-scoring-changes'>
               <a
                 className='tutorial-header-link'
-                href='#comparing-scoring-changes'
-                onClick={this.showStartOfStep}>
+                href='#comparing-scoring-changes'>
               Comparing scoring changes
             </a>
             </h2>
             <InlineApiExample
               verb='GET'
               url='/submissions/:id/score' />
-            <div className='temp-grid'>
-              <TechnicalDetailsPane
-                tutorial='advanced'
-                hash='#comparing-scoring-engines'
-                tabIndex={this.state.tabIndex}
-                handleSelect={this.handleSelect} />
-            </div>
+            <Advanced5 />
             <p>A few things have changed - the final score increased to 15.5. We know this change is due to our PATCH by looking at the score component contributed by <code>ACI_HIE_1</code> - it increased from 1 to 5, since the proportion increased from 10 to 50 out of 100 with ten possible points from this measure. The ACI base score went up from 58 to 62, and with the ACI component being 25% of the score our final score increased by 1.</p>
             <p>It's important to note that we've been working in one measurement set for this tutorial. One of the reasons that performance data for measures is organized into measurement sets is that multiple submission methods can add their own measurement sets into one submission - measure scores that might overlap the ones we provide, or differ in their attested values. In the case of multiple measurement sets, the Submissions API will calculate scores for each measurement set and pick the highest to present as the final score - that's why the API identifies that the scoring for the ACI component is based on a specific measurement set ID.</p>
             <p>We've done a lot of work in 5 API requests! In this advanced tutorial, we created a submission with ACI performance attestations, scored it, and updated a piece of one measurement to see how the final score reacts. That means we've successfully used each API endpoint (submission, measurement set, measurement) and understood what the responses tell us, adjusting our approach as needed. Again, all of this work is done on our terms, at our pace - no months-long round trip required.</p>
@@ -262,9 +181,5 @@ class AdvancedTutorial extends React.Component {
     );
   }
 }
-
-AdvancedTutorial.propTypes = {
-  hash: PropTypes.string
-};
 
 export default AdvancedTutorial;

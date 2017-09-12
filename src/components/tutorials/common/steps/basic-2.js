@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-const cssClass = 'technical-details-pane';
+const cssClass = 'example-code-tabs';
 
 class Basic2 extends React.PureComponent {
   render() {

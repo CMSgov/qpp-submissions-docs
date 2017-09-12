@@ -1,6 +1,8 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
+import '../../../styles/common/example-code-tabs.css';
+
 import DataModelTable from '../common/data-model-table';
 
 const FIELDS = [
@@ -66,7 +68,7 @@ class Measurements extends React.PureComponent {
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
-            className='technical-details-pane'>
+            className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
               <Tab>XML</Tab>
@@ -106,7 +108,7 @@ class Measurements extends React.PureComponent {
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
-            className='technical-details-pane'>
+            className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
               <Tab>XML</Tab>
@@ -140,7 +142,7 @@ class Measurements extends React.PureComponent {
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
-            className='technical-details-pane'>
+            className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
               <Tab>XML</Tab>
@@ -180,7 +182,7 @@ class Measurements extends React.PureComponent {
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
-            className='technical-details-pane'>
+            className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
               <Tab>XML</Tab>
@@ -228,7 +230,7 @@ class Measurements extends React.PureComponent {
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
-            className='technical-details-pane'>
+            className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
               <Tab>XML</Tab>
@@ -272,7 +274,7 @@ class Measurements extends React.PureComponent {
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
-            className='technical-details-pane'>
+            className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
               <Tab>XML</Tab>

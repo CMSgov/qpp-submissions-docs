@@ -5,7 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import submissionObject from './advanced-tutorial-submission.json';
 
 const submissionJsonString = JSON.stringify(submissionObject, null, 4);
-const cssClass = 'technical-details-pane';
+const cssClass = 'example-code-tabs';
 
 class Advanced1 extends React.PureComponent {
   render() {

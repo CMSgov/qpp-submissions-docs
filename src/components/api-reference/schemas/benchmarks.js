@@ -1,6 +1,8 @@
 import React, {PureComponent} from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
+import '../../../styles/common/example-code-tabs.css';
+
 import DataModelTable from '../common/data-model-table';
 
 const FIELDS = [
@@ -29,7 +31,7 @@ export default class Benchmarks extends PureComponent {
         <h3 className='ds-h2'>Resource Representation</h3>
         <div>
           <Tabs
-            className='technical-details-pane'>
+            className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
               <Tab>XML</Tab>

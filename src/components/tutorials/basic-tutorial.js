@@ -1,48 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Tabs } from 'react-tabs';
 
-import TechnicalDetailsPane from './common/technical-details-pane';
+import '../../styles/common/example-code-tabs.css';
+
 import InlineApiExample from './common/inline-api-example';
+import Basic1 from './common/steps/basic-1';
+import Basic2 from './common/steps/basic-2';
+import Basic3 from './common/steps/basic-3';
 
 class BasicTutorial extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      hash: props.hash,
-      tabIndex: 0
-    };
-
-    this.selectTab = this.selectTab.bind(this);
-    this.showStartOfStep = this.showStartOfStep.bind(this);
-    this.showResponseOfStep = this.showResponseOfStep.bind(this);
-  }
-
-  selectTab(index) {
-    this.setState({
-      tabIndex: index
-    });
-  }
-
-  showStartOfStep(event) {
-    // the hash of an anchor tag or stored in data
-    const hash = event.target.hash || event.target.dataset.hash;
-    window.location.hash = hash;
-    this.setState({
-      hash,
-      tabIndex: 0
-    });
-  }
-
-  showResponseOfStep(event) {
-    const hash = event.target.dataset.hash;
-    window.location.hash = hash;
-    this.setState({
-      hash,
-      tabIndex: 1
-    });
-  }
-
   render() {
+    Tabs.setUseDefaultStyles(false);
+
     return (
       <div>
         <div className='ds-c-alert ds-c-alert--info narrow-screen-warning'>
@@ -60,8 +29,7 @@ class BasicTutorial extends React.Component {
             <h2 className='ds-h2' id='creating-a-submission'>
               <a
                 className='tutorial-header-link'
-                href='#creating-a-submission'
-                onClick={this.showStartOfStep}>
+                href='#creating-a-submission'>
                 Creating a new submission
             </a>
             </h2>
@@ -84,29 +52,16 @@ class BasicTutorial extends React.Component {
                     <td>2017</td></tr>
                 </tbody>
             } />
-            <div>
-              <TechnicalDetailsPane
-                tutorial='basic'
-                hash='#creating-a-submission'
-                tabIndex={this.state.tabIndex}
-                selectTab={this.selectTab} />
-            </div>
+            <Basic1 />
             <p>Every API request gives us back an immediate response with useful information, which we can see to the right. Much like a good conversation, this response includes a restatement of what we said, plus additional input from CMS's understanding to make sure we're both on the same page.</p>
             <p>This response has two key pieces of information - the <em>response code</em>, which is a number that indicates success (<code>200</code> to <code>299</code>) or failure (<code>400</code> to <code>499</code>). The other piece is the <em>response body</em>, which contains <code>JSON</code> or <code>XML</code> describing in more detail the record stored with CMS.</p>
             <p>We know that the <code>POST</code> request succeeded from the response code (<code>201 Created</code>). CMS also gives us an <code>id</code> that tells how to refer to this submission later, some timestamps to let us know when this submission was created and last updated, and that there are no measurement sets for this submission yet (an empty list, represented by <code>[]</code>).</p>
             <p>If you're interested in comparing the API requests and responses, you can click between the tabs on the right side at any time.</p>
             <p>Anyway, CMS can't do much without our performance numbers. Let's add some!</p>
-            <button
-              className='ds-c-button ds-c-button--primary'
-              data-hash='#adding-measurements'
-              onClick={this.showStartOfStep}>
-            Next step
-          </button>
             <h2 className='ds-h2' id='adding-measurements'>
               <a
                 className='tutorial-header-link'
-                href='#adding-measurements'
-                onClick={this.showStartOfStep}>
+                href='#adding-measurements'>
               Adding measurements
             </a>
             </h2>
@@ -131,25 +86,12 @@ class BasicTutorial extends React.Component {
                     <td><code>true</code></td></tr>
                 </tbody>
             } />
-            <div>
-              <TechnicalDetailsPane
-                tutorial='basic'
-                hash='#adding-measurements'
-                tabIndex={this.state.tabIndex}
-                selectTab={this.selectTab} />
-            </div>
+            <Basic2 />
             <p>Another <code>201 Created</code>, and we can see that this time the measurement set and measurement have both been assigned <code>id</code>s. Nothing too surprising in this step, but we've given CMS everything necessary to score this submission.</p>
-            <button
-              className='ds-c-button ds-c-button--primary'
-              data-hash='#scoring-a-submission'
-              onClick={this.showStartOfStep}>
-            Next step
-          </button>
             <h2 className='ds-h2' id='scoring-a-submission'>
               <a
                 className='tutorial-header-link'
-                href='#scoring-a-submission'
-                onClick={this.showStartOfStep}>
+                href='#scoring-a-submission'>
               Scoring a submission
             </a>
             </h2>
@@ -157,13 +99,7 @@ class BasicTutorial extends React.Component {
             <InlineApiExample
               verb='GET'
               url='/submissions/:id/score' />
-            <div>
-              <TechnicalDetailsPane
-                tutorial='basic'
-                hash='#scoring-a-submission'
-                tabIndex={this.state.tabIndex}
-                selectTab={this.selectTab} />
-            </div>
+            <Basic3 />
             <p>Our API response includes a bunch of new info this time, so let's break it down.</p>
             <p>The <code>Final Score</code> has a value of <code>3.75</code>. <code>Final</code> here doesn't mean it's the final end of year score for this submission - think of this instead as the <em>current aggregate estimate</em> of your total score.</p>
             <p>If you look at the first chunk of <code>JSON</code> in the <code>"parts"</code> list, the IA component of final score reads <code>3.75</code>. The <code>"detail"</code> makes clear that the scoring is based on the measurement set we submitted earlier (check the <code>id</code>s, they match!).</p>
@@ -183,9 +119,5 @@ class BasicTutorial extends React.Component {
     );
   }
 }
-
-BasicTutorial.propTypes = {
-  hash: PropTypes.string
-};
 
 export default BasicTutorial;

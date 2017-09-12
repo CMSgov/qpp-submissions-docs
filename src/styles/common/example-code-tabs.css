@@ -1,14 +1,14 @@
 @media screen and (min-width: 600px) {
-  .technical-details-pane.ReactTabs {
+  .example-code-tabs.ReactTabs {
     width: 100%;
     overflow-y: auto;
   }
 
-  .technical-details-pane .ReactTabs__TabList {
+  .example-code-tabs .ReactTabs__TabList {
     width: 100%;
   }
 
-  .technical-details-pane .ReactTabs__TabList {
+  .example-code-tabs .ReactTabs__TabList {
     max-width: 50%;
   }
 
@@ -22,11 +22,11 @@
   margin-bottom: 1em;
 }
 
-.technical-details-pane.ReactTabs {
+.example-code-tabs.ReactTabs {
   background-color: rgb(17, 46, 81);
 }
 
-.technical-details-pane .ReactTabs__Tab {
+.example-code-tabs .ReactTabs__Tab {
   display: inline-block;
   padding: 0.4em 1em 0.4em 0.6em;
   margin-bottom: 0;
@@ -34,19 +34,19 @@
   color: rgb(4, 80, 115);
 }
 
-.technical-details-pane .ReactTabs__Tab--selected {
+.example-code-tabs .ReactTabs__Tab--selected {
   background-color: rgb(17, 46, 81);
   color: white;
 }
 
-.technical-details-pane .ReactTabs__TabList {
+.example-code-tabs .ReactTabs__TabList {
   padding: 0;
   margin: 0;
   list-style: none;
   background-color: white;
 }
 
-.technical-details-pane .ReactTabs__TabPanel {
+.example-code-tabs .ReactTabs__TabPanel {
   padding: 2em;
   font-size: 0.9em;
   color: white;

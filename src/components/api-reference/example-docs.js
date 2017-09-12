@@ -5,12 +5,13 @@ import fileDownload from 'react-file-download';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { pd } from 'pretty-data';
 import '../../styles/api-reference/example-docs.css';
+import '../../styles/common/example-code-tabs.css';
 import submissionJsonExample from './common/submission-example.json';
 import submissionXmlExample from './common/submission-example-xml.js';
 
 const submissionJsonExampleString = JSON.stringify(submissionJsonExample, null, 4);
 const submissionXmlExampleString = pd.xml(submissionXmlExample);
-const cssClasses = 'technical-details-pane example-docs';
+const cssClasses = 'example-code-tabs example-docs';
 
 class ExampleDocs extends React.PureComponent {
   render() {
