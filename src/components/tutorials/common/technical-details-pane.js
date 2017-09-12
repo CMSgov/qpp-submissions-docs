@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Tabs } from 'react-tabs';
 
 import '../../../styles/common/technical-details-pane.css';
@@ -19,22 +20,29 @@ class TechnicalDetailsPane extends React.Component {
     const selectTab = this.props.selectTab;
     const index = this.props.tabIndex;
     const basicTutorialSteps = {
-      '#creating-a-submission': <Basic1 onSelect={selectTab} tabIndex={index}/>,
-      '#adding-measurements': <Basic2 onSelect={selectTab} tabIndex={index}/>,
-      '#scoring-a-submission': <Basic3 onSelect={selectTab} tabIndex={index}/>
+      '#creating-a-submission': <Basic1 onSelect={selectTab} tabIndex={index} />,
+      '#adding-measurements': <Basic2 onSelect={selectTab} tabIndex={index} />,
+      '#scoring-a-submission': <Basic3 onSelect={selectTab} tabIndex={index} />
     };
     const advancedTutorialSteps = {
-      '#submitting-with-performance-data': <Advanced1 onSelect={selectTab} tabIndex={index}/>,
-      '#submitting-with-performance-data-pt2': <Advanced2 onSelect={selectTab} tabIndex={index}/>,
-      '#aci-scoring': <Advanced3 onSelect={selectTab} tabIndex={index}/>,
-      '#updating-a-measure': <Advanced4 onSelect={selectTab} tabIndex={index}/>,
-      '#comparing-scoring-changes': <Advanced5 onSelect={selectTab} tabIndex={index}/>
+      '#submitting-with-performance-data': <Advanced1 onSelect={selectTab} tabIndex={index} />,
+      '#submitting-with-performance-data-pt2': <Advanced2 onSelect={selectTab} tabIndex={index} />,
+      '#aci-scoring': <Advanced3 onSelect={selectTab} tabIndex={index} />,
+      '#updating-a-measure': <Advanced4 onSelect={selectTab} tabIndex={index} />,
+      '#comparing-scoring-changes': <Advanced5 onSelect={selectTab} tabIndex={index} />
     };
 
-    return this.props.tutorial === 'basic' ?
-      basicTutorialSteps[this.props.hash] || <Basic1 onSelect={selectTab} tabIndex={index}/> :
-      advancedTutorialSteps[this.props.hash] || <Advanced1 onSelect={selectTab} tabIndex={index}/>;
+    return this.props.tutorial === 'basic'
+      ? basicTutorialSteps[this.props.hash] || <Basic1 onSelect={selectTab} tabIndex={index} />
+      : advancedTutorialSteps[this.props.hash] || <Advanced1 onSelect={selectTab} tabIndex={index} />;
   }
 }
+
+TechnicalDetailsPane.propTypes = {
+  selectTab: PropTypes.func,
+  tabIndex: PropTypes.number,
+  tutorial: PropTypes.string,
+  hash: PropTypes.string
+};
 
 export default TechnicalDetailsPane;

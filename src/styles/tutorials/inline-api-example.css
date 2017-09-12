@@ -59,10 +59,3 @@
 .inline-api-example__params tr:last-child td {
   border-bottom: none;
 }
-
-.inline-api-example__button button {
-  width: 100%;
-  height: 3em;
-  border-radius: 0;
-  margin: 0;
-}

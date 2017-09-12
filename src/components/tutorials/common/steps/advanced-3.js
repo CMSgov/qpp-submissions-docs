@@ -102,8 +102,8 @@ class Advanced3 extends React.PureComponent {
 }
 
 Advanced3.propTypes = {
-  onSelect: PropTypes.func.isRequired,
-  tabIndex: PropTypes.number.isRequired
+  onSelect: PropTypes.func,
+  tabIndex: PropTypes.number
 };
 
 export default Advanced3;

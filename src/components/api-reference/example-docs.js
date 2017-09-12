@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import fileDownload from 'react-file-download';
 import CopyToClipboard from 'react-copy-to-clipboard';
@@ -9,9 +10,9 @@ import submissionXmlExample from './common/submission-example-xml.js';
 
 const submissionJsonExampleString = JSON.stringify(submissionJsonExample, null, 4);
 const submissionXmlExampleString = pd.xml(submissionXmlExample);
-const cssClasses = "technical-details-pane example-docs";
+const cssClasses = 'technical-details-pane example-docs';
 
-export default class ExampleDocs extends React.PureComponent {
+class ExampleDocs extends React.PureComponent {
   render() {
     Tabs.setUseDefaultStyles(false);
 
@@ -35,19 +36,19 @@ export default class ExampleDocs extends React.PureComponent {
             <Tab>Sample JSON</Tab>
             <Tab>Sample XML</Tab>
           </TabList>
-          <TabPanel className="ds-base--inverse">
-            <button className="ds-c-button ds-c-button--small ds-u-margin-right--1"
+          <TabPanel className='ds-base--inverse'>
+            <button className='ds-c-button ds-c-button--small ds-u-margin-right--1'
               onClick={downloadJsonExample}>Download</button>
             <CopyToClipboard text={submissionJsonExampleString}>
-              <button className="ds-c-button ds-c-button--small">Copy to clipboard</button>
+              <button className='ds-c-button ds-c-button--small'>Copy to clipboard</button>
             </CopyToClipboard>
             <pre>{`${submissionJsonExampleString}`}</pre>
           </TabPanel>
           <TabPanel>
-            <button className="ds-c-button ds-c-button--small ds-u-margin-right--1"
+            <button className='ds-c-button ds-c-button--small ds-u-margin-right--1'
               onClick={downloadXmlExample}>Download</button>
             <CopyToClipboard text={submissionXmlExampleString}>
-              <button className="ds-c-button ds-c-button--small">Copy to clipboard</button>
+              <button className='ds-c-button ds-c-button--small'>Copy to clipboard</button>
             </CopyToClipboard>
             <pre>{`${submissionXmlExampleString}`}</pre>
           </TabPanel>
@@ -56,3 +57,10 @@ export default class ExampleDocs extends React.PureComponent {
     );
   }
 }
+
+ExampleDocs.propTypes = {
+  selectTab: PropTypes.number,
+  tabIndex: PropTypes.number
+};
+
+export default ExampleDocs;

@@ -54,8 +54,8 @@ class Basic1 extends React.PureComponent {
 }
 
 Basic1.propTypes = {
-  onSelect: PropTypes.func.isRequired,
-  tabIndex: PropTypes.number.isRequired
+  onSelect: PropTypes.func,
+  tabIndex: PropTypes.number
 };
 
 export default Basic1;

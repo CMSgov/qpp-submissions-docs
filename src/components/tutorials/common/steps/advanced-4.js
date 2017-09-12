@@ -55,8 +55,8 @@ class Advanced4 extends React.PureComponent {
 }
 
 Advanced4.propTypes = {
-  onSelect: PropTypes.func.isRequired,
-  tabIndex: PropTypes.number.isRequired
+  onSelect: PropTypes.func,
+  tabIndex: PropTypes.number
 };
 
 export default Advanced4;
