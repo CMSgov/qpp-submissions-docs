@@ -1,8 +1,6 @@
 import React from 'react';
 import { Tabs } from 'react-tabs';
 
-import '../../styles/common/example-code-tabs.css';
-
 import InlineApiExample from './common/inline-api-example';
 import Advanced1 from './common/steps/advanced-1';
 import Advanced2 from './common/steps/advanced-2';

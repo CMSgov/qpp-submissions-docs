@@ -1,7 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
+import '../../../../styles/common/example-code-tabs.css';
 import submissionObject from './advanced-tutorial-submission.json';
 
 const submissionJsonString = JSON.stringify(submissionObject, null, 4);
@@ -10,10 +10,7 @@ const cssClass = 'example-code-tabs';
 class Advanced1 extends React.PureComponent {
   render() {
     return (
-      <Tabs
-        className={cssClass}
-        onSelect={this.props.onSelect}
-        selectedIndex={this.props.tabIndex}>
+      <Tabs className={cssClass}>
         <TabList>
           <Tab>Request</Tab>
           <Tab>Response</Tab>
@@ -38,10 +35,5 @@ class Advanced1 extends React.PureComponent {
     );
   }
 }
-
-Advanced1.propTypes = {
-  onSelect: PropTypes.func,
-  tabIndex: PropTypes.number
-};
 
 export default Advanced1;
