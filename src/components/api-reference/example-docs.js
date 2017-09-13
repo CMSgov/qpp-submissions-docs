@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import fileDownload from 'react-file-download';
 import CopyToClipboard from 'react-copy-to-clipboard';
@@ -13,26 +12,23 @@ const submissionJsonExampleString = JSON.stringify(submissionJsonExample, null, 
 const submissionXmlExampleString = pd.xml(submissionXmlExample);
 const cssClasses = 'example-code-tabs example-docs';
 
+function downloadJsonExample(e) {
+  e.preventDefault();
+  fileDownload(submissionJsonExampleString, 'submission-example.json');
+}
+
+function downloadXmlExample(e) {
+  e.preventDefault();
+  fileDownload(submissionXmlExampleString, 'submission-example.xml');
+}
+
 class ExampleDocs extends React.PureComponent {
   render() {
     Tabs.setUseDefaultStyles(false);
 
-    const selectTab = this.props.selectTab;
-    const index = this.props.tabIndex;
-
-    function downloadJsonExample(e) {
-      e.preventDefault();
-      fileDownload(submissionJsonExampleString, 'submission-example.json');
-    }
-    function downloadXmlExample(e) {
-      e.preventDefault();
-      fileDownload(submissionXmlExampleString, 'submission-example.xml');
-    }
     return (
       <div>
-        <Tabs
-          className={cssClasses}
-          onSelect={selectTab} tabIndex={index}>
+        <Tabs className={cssClasses}>
           <TabList>
             <Tab>Sample JSON</Tab>
             <Tab>Sample XML</Tab>
@@ -58,10 +54,5 @@ class ExampleDocs extends React.PureComponent {
     );
   }
 }
-
-ExampleDocs.propTypes = {
-  selectTab: PropTypes.number,
-  tabIndex: PropTypes.number
-};
 
 export default ExampleDocs;
