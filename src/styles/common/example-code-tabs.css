@@ -11,15 +11,6 @@
   .example-code-tabs .ReactTabs__TabList {
     max-width: 50%;
   }
-
-  .narrow-screen-warning {
-    display: none;
-  }
-}
-
-.narrow-screen-warning {
-  margin-top: 0;
-  margin-bottom: 1em;
 }
 
 .example-code-tabs.ReactTabs {

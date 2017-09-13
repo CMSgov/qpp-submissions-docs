@@ -12,12 +12,6 @@ class BasicTutorial extends React.Component {
 
     return (
       <div>
-        <div className='ds-c-alert ds-c-alert--info narrow-screen-warning'>
-          <div className='ds-c-alert__body'>
-            <h3 className='ds-c-alert__heading'>Example code on mobile</h3>
-            <p className='ds-c-alert__text'>Looks like the screen is too narrow to show you the API payloads alongside the tutorial. As you see references to code on the right, you'll be able to find it all the way at the bottom. Clicking the buttons to progress through the tutorial will update the code!</p>
-          </div>
-        </div>
         <div>
           <div className='temp-grid'>
             <h1 className='ds-h1'>API Tutorial</h1>
