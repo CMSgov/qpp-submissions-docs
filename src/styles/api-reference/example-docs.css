@@ -3,15 +3,15 @@
     position: static;
   }
 
-  .technical-details-pane .ReactTabs__TabList {
+  .example-code-tabs .ReactTabs__TabList {
     position: static;
   }
 
-  .technical-details-pane .ReactTabs__TabList {
+  .example-code-tabs .ReactTabs__TabList {
     max-width: 100%;
   }
 }
 
-.technical-details-pane-examples button {
+.example-code-tabs-examples button {
   margin-top: 0em;
 }

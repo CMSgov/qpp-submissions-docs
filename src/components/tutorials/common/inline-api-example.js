@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import '../../../styles/tutorials/inline-api-example.css';
 
-const cssClass = "inline-api-example";
+const cssClass = 'inline-api-example';
 
 class InlineApiExample extends React.PureComponent {
   render() {
@@ -12,10 +14,15 @@ class InlineApiExample extends React.PureComponent {
           <span className={cssClass + '-request__url'}><code>{this.props.url}</code></span>
         </div>
         {this.props.params && <table className={cssClass + '__params'}>{this.props.params}</table>}
-        {this.props.button && <div className={cssClass + '__button'}>{this.props.button}</div>}
       </div>
     );
   }
 }
+
+InlineApiExample.propTypes = {
+  verb: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  params: PropTypes.element
+};
 
 export default InlineApiExample;

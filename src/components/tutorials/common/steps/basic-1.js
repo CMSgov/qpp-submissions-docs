@@ -1,16 +1,14 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-const cssClass = 'technical-details-pane';
+import '../../../../styles/common/example-code-tabs.css';
+
+const cssClass = 'example-code-tabs';
 
 class Basic1 extends React.PureComponent {
   render() {
     return (
-      <Tabs
-        className={cssClass}
-        onSelect={this.props.onSelect}
-        selectedIndex={this.props.tabIndex}>
+      <Tabs className={cssClass}>
         <TabList>
           <Tab>Request</Tab>
           <Tab>Response</Tab>
@@ -52,10 +50,5 @@ class Basic1 extends React.PureComponent {
     );
   }
 }
-
-Basic1.propTypes = {
-  onSelect: PropTypes.func.isRequired,
-  tabIndex: PropTypes.number.isRequired
-};
 
 export default Basic1;

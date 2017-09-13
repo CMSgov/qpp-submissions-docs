@@ -1,10 +1,11 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom'
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 
 import Routes from './routes';
 
 const DropdownListItems = Routes.mergedRoutes.reduce(function(result, routeObject) {
-  return result.concat(<option key={routeObject.path} value={routeObject.path}>{ routeObject.linkText }</option>)
+  return result.concat(<option key={routeObject.path} value={routeObject.path}>{ routeObject.linkText }</option>);
 }, []);
 
 class DropdownNav extends React.PureComponent {
@@ -19,10 +20,15 @@ class DropdownNav extends React.PureComponent {
   }
 
   render() {
-    return <select id="options" className='ds-c-field ds-c-field--select' value={this.props.location.pathname} onChange={this.handleDropdownSelect}>
+    return <select id='options' className='ds-c-field ds-c-field--select' value={this.props.location.pathname} onChange={this.handleDropdownSelect}>
       {DropdownListItems}
-    </select>
+    </select>;
   }
 }
+
+DropdownNav.propTypes = {
+  history: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
+};
 
 export default withRouter(DropdownNav);

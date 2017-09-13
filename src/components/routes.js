@@ -58,13 +58,13 @@ const referencePaths = [
     exact: false,
     linkText: 'Measurement Sets',
     component: MeasurementSets
-  },  
+  },
   {
     path: '/submissions',
     exact: false,
     linkText: 'Submissions',
     component: Submissions
-  },  
+  },
   {
     path: '/benchmarks',
     exact: false,

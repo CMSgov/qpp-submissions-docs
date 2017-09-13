@@ -1,6 +1,8 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
+import '../../../styles/common/example-code-tabs.css';
+
 import DataModelTable from '../common/data-model-table';
 
 const FIELDS = [
@@ -13,30 +15,29 @@ const FIELDS = [
   {name: 'performanceStart', value: 'string', description: 'A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). The first date when the measurement data is applicable.', notes: 'writable'},
   {name: 'performanceEnd', value: 'string', description: 'A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). The last date when the measurement data is applicable.', notes: 'writable'},
   {name: 'measureSet', value: 'string', description: 'The speciality set which the measurement set is attesting. Acceptable values are "generalSurgery" or "other"', notes: 'writable, optional'},
-  {name: 'measurements', value: 'array<measurements>', description: 'Measurements associated with the measurement set.',  notes: 'writable, optional'}
+  {name: 'measurements', value: 'array<measurements>', description: 'Measurements associated with the measurement set.', notes: 'writable, optional'}
 ];
 
 export default class MeasurementSets extends React.PureComponent {
-
   render() {
     // This is necessary to disable the default styles
     Tabs.setUseDefaultStyles(false);
     return (
       <div>
-        <h1 className="ds-h1">Measurement Sets</h1>
-        <p className="ds-text--lead">The MeasurementSets resource represents performance data for a specified category. Each Submission can have multiple MeasurementSets. Each MeasurementSet in a given Submission must be uniquely identified by category and submission method. MeasurementSets contain Measurements, which can be accessed both via MeasurementSets methods and Measurements methods.</p>
-        <p className="ds-text--lead"><a href="https://qpp-submissions-sandbox.navapbc.com/#/MeasurementSets">Try it out!</a></p>
-        <h2 className="ds-h2">Resource Representation</h2>
+        <h1 className='ds-h1'>Measurement Sets</h1>
+        <p className='ds-text--lead'>The MeasurementSets resource represents performance data for a specified category. Each Submission can have multiple MeasurementSets. Each MeasurementSet in a given Submission must be uniquely identified by category and submission method. MeasurementSets contain Measurements, which can be accessed both via MeasurementSets methods and Measurements methods.</p>
+        <p className='ds-text--lead'><a href='https://qpp-submissions-sandbox.navapbc.com/#/MeasurementSets'>Try it out!</a></p>
+        <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
-            className='technical-details-pane'>
-          <TabList>
-            <Tab>JSON</Tab>
-            <Tab>XML</Tab>
-          </TabList>
-          <TabPanel>
-            <pre>
-            {`{
+            className='example-code-tabs'>
+            <TabList>
+              <Tab>JSON</Tab>
+              <Tab>XML</Tab>
+            </TabList>
+            <TabPanel>
+              <pre>
+                {`{
   "id": string,
   "createdAt": datetime,
   "updatedAt": datetime,
@@ -47,14 +48,14 @@ export default class MeasurementSets extends React.PureComponent {
   "performanceEnd": date,
   "measureSet": string,
   "measurements": array(`}
-    <a href="measurements">Measurements Resource</a>
-  {`)
+                <a href='measurements'>Measurements Resource</a>
+                {`)
 }`}
-            </pre>
-          </TabPanel>
-          <TabPanel>
-            <pre>
-{`<data>
+              </pre>
+            </TabPanel>
+            <TabPanel>
+              <pre>
+                {`<data>
   <id>string</id>
   <createdAt>datetime</createdAt>
   <updatedAt>datetime</updatedAt>
@@ -65,12 +66,12 @@ export default class MeasurementSets extends React.PureComponent {
   <performanceEnd>date</performanceEnd>
   <measureSet>string</measureSet>
   <measurements>array(`}
-    <a href="measurements">Measurements Resource</a>
-  {`)</measurements>
+                <a href='measurements'>Measurements Resource</a>
+                {`)</measurements>
 </data>
 `}
-            </pre>
-          </TabPanel>
+              </pre>
+            </TabPanel>
           </Tabs>
         </div>
         <DataModelTable fields={FIELDS} />
