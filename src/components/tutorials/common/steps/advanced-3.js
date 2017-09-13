@@ -10,10 +10,8 @@ class Advanced3 extends React.PureComponent {
     return (
       <Tabs className={cssClass}>
         <TabList>
-          <Tab>Request</Tab>
           <Tab>Response</Tab>
         </TabList>
-        <TabPanel />
         <TabPanel>
           <p>Response code:</p>
           <pre>200 OK</pre>
