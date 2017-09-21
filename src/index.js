@@ -6,9 +6,10 @@ import App from './components/app';
 
 const basePath = '/qpp-submissions-docs';
 const history = createBrowserHistory({
-	basename: basePath
+  basename: basePath
 });
 
+/* eslint-disable */
 const initGA = (history) => {
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -16,14 +17,15 @@ const initGA = (history) => {
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
   // allow cross-domain tracking from qpp.cms.gov to cmsgov.github.io
-	window.ga('create', 'UA-15356370-63', 'auto', {'allowLinker': true});
-	window.ga('require', 'linker');
-	window.ga('linker:autoLink', ['qpp.cms.gov'] );
+  window.ga('create', 'UA-15356370-63', 'auto', {'allowLinker': true});
+  window.ga('require', 'linker');
+  window.ga('linker:autoLink', ['qpp.cms.gov'] );
 
   history.listen((location) => {
     window.ga('send', 'pageview', basePath + location.pathname);
   });
 };
+/*eslint-enable */
 
 initGA(history);
 
