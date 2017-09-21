@@ -1,11 +1,35 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
 import App from './components/app';
 
+const basePath = '/qpp-submissions-docs';
+const history = createBrowserHistory({
+	basename: basePath
+});
+
+const initGA = (history) => {
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  // allow cross-domain tracking from qpp.cms.gov to cmsgov.github.io
+	window.ga('create', 'UA-15356370-63', 'auto', {'allowLinker': true});
+	window.ga('require', 'linker');
+	window.ga('linker:autoLink', ['qpp.cms.gov'] );
+
+  history.listen((location) => {
+    window.ga('send', 'pageview', basePath + location.pathname);
+  });
+};
+
+initGA(history);
+
 ReactDOM.render(
-  <BrowserRouter basename='/qpp-submissions-docs'>
+  <Router history={history}>
     <App />
-  </BrowserRouter>,
+  </Router>,
   document.getElementById('root')
 );
