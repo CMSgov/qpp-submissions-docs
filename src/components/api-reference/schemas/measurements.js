@@ -9,7 +9,7 @@ const FIELDS = [
   {name: 'id', value: 'string', description: 'The id of the measurement.'},
   {name: 'measurementSetId', value: 'string', description: 'The id of the measurement set in which the measurement belongs.'},
   {name: 'measureId', value: 'string', description: 'The id of the measure to which the measurement is attesting. All measures and their IDs are available in <a href="https://github.com/CMSgov/qpp-measures-data/blob/master/measures/measures-data.json">qpp-measures-data</a>. For quality measures, the measureId is the same as the quality number. For an advancing care information (ACI) measure, the measureId is the measure identifier for the ACI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.', notes: 'writable'},
-  {name: 'value', value: 'object', description: 'Different measurements will have different values. Acceptable measurement types are <b>boolean</b>, <b>proportion</b> and <b>performance rate</b>.', notes: 'writable'}
+  {name: 'value', value: 'object', description: 'Different measurements will have different values. Acceptable measurement types are <b>boolean</b>, <b>proportion</b>, <b>continuous variable</b>, and <b>performance rate</b>.', notes: 'writable'}
 ];
 
 const BOOLEAN_FIELDS = [
@@ -18,7 +18,12 @@ const BOOLEAN_FIELDS = [
 
 const PROPORTION_FIELDS = [
   {name: 'numerator', value: 'integer', description: 'The number of occurrences for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>denominator</b>.', notes: 'writable'},
-  {name: 'denominator', value: 'integer', description: 'The total number of occurrences as described by the measure. Must be greater than or equal to zero.', notes: 'writable'}
+  {name: 'denominator', value: 'integer', description: 'The total number of occurrences as described by the measure. Must be greater than or equal to zero. Can only be 0 if the numerator is 0 as well.', notes: 'writable'}
+];
+
+const CONTINUOUS_VARIABLE_FIELDS = [
+  {name: 'numerator', value: 'float', description: 'Must be greater than or equal to zero.', notes: 'writable'},
+  {name: 'denominator', value: 'float', description: 'Must be greater than or equal to zero.', notes: 'writable'}
 ];
 
 const SINGLE_PERFORMANCE_RATE_FIELDS = [
@@ -60,10 +65,11 @@ class Measurements extends React.PureComponent {
         <ul>
           <li><a href='#boolean-measurements'>Boolean</a></li>
           <li><a href='#proportion-measurements'>Proportion</a></li>
+          <li><a href='#continuous-variable-measurements'>Continuous Variable</a></li>
           <li><a href='#single-performance-rate-measurements'>Single-Performance Rate</a></li>
           <li><a href='#multi-performance-rate-measurements'>Multi-Performance Rate</a></li>
         </ul>
-        <p className='ds-text--lead'>The Measurements resource represents performance data for a specific measure within a MeasurementSet. There are three types of Measurements: Boolean, Proportion, Single-Performance Rate and Multi-Performance Rate. Each MeasurementSet can have multiple Measurements. No two Measurements in a given MeasurementSet can have the same measureId.</p>
+        <p className='ds-text--lead'>The Measurements resource represents performance data for a specific measure within a MeasurementSet. There are five types of Measurements: Boolean, Proportion, Continuous Variable, Single-Performance Rate, and Multi-Performance Rate. Each MeasurementSet can have multiple Measurements. No two Measurements in a given MeasurementSet can have the same measureId.</p>
         <p className='ds-text--lead'><a href='https://qpp-submissions-sandbox.navapbc.com/#/Measurements'>Try it out!</a></p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
@@ -80,8 +86,8 @@ class Measurements extends React.PureComponent {
   "measurementSetId": string,
   "measureId": string,
   "value": [`}
-                <a href='#boolean-measurements'>Boolean</a> | <a href='#proportion-measurements'>Proportion</a> | <a href='#single-performance-rate-measurements'>Single-Performance Rate</a> | {`
-  `} <a href='#multi-performance-rate-measurements'>Multi-Performance Rate</a>
+                <a href='#boolean-measurements'>Boolean</a> | <a href='#proportion-measurements'>Proportion</a> | <a href='#continuous-variable'>Continuous Variable</a> | {`
+    `} <a href='#single-performance-rate-measurements'>Single-Performance Rate</a> | <a href='#multi-performance-rate-measurements'>Multi-Performance Rate</a>
                 {`]
 }`}
               </pre>
@@ -93,8 +99,8 @@ class Measurements extends React.PureComponent {
   <measurementSetId>string</measurementSetId>
   <measureId>string</measureId>
   <value>[`}
-                <a href='#boolean-measurements'>Boolean</a> | <a href='#proportion-measurements'>Proportion</a> | <a href='#single-performance-rate-measurements'>Single-Performance Rate</a> | {`
-  `} <a href='#multi-performance-rate-measurements'>Multi-Performance Rate</a>
+                <a href='#boolean-measurements'>Boolean</a> | <a href='#proportion-measurements'>Proportion</a> | <a href='#continuous-variable'>Continuous Variable</a> | {`
+  `} <a href='#single-performance-rate-measurements'>Single-Performance Rate</a> | <a href='#multi-performance-rate-measurements'>Multi-Performance Rate</a>
                 {`]</value>
 </data>
 `}
@@ -103,6 +109,7 @@ class Measurements extends React.PureComponent {
           </Tabs>
         </div>
         <DataModelTable fields={FIELDS} />
+
         <h1 className='ds-h1' id='boolean-measurements'>Boolean Measurements</h1>
         <p className='ds-text--lead'>Boolean Measurements are applicable to Improvement Activity (IA) and Advancing Care Information (ACI) measures.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
@@ -137,6 +144,7 @@ class Measurements extends React.PureComponent {
           </Tabs>
         </div>
         <DataModelTable fields={BOOLEAN_FIELDS} />
+
         <h1 className='ds-h1' id='proportion-measurements'>Proportion Measurements</h1>
         <p className='ds-text--lead'>Proportion Measurements are applicable to Advancing Care Information (ACI) measures.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
@@ -177,6 +185,48 @@ class Measurements extends React.PureComponent {
           </Tabs>
         </div>
         <DataModelTable fields={PROPORTION_FIELDS} />
+
+        <h1 className='ds-h1' id='continuous-variable-measurements'>Continuous Variable Measurements</h1>
+        <p className='ds-text--lead'>Continuous Variable Measurements are applicable to quality measures.</p>
+        <h2 className='ds-h2'>Resource Representation</h2>
+        <div>
+          <Tabs
+            className='example-code-tabs'>
+            <TabList>
+              <Tab>JSON</Tab>
+              <Tab>XML</Tab>
+            </TabList>
+            <TabPanel>
+              <pre>
+                {`{
+  "id": string,
+  "measurementSetId": string,
+  "measureId": string,
+  "value": {
+    "numerator": float,
+    "denominator": float
+  }
+}`}
+              </pre>
+            </TabPanel>
+            <TabPanel>
+              <pre>
+                {`<data>
+  <id>string</id>
+  <measurementSetId>string</measurementSetId>
+  <measureId>string</measureId>
+  <value>
+    <numerator>float</numerator>
+    <denominator>float</denominator>
+  </value>
+</data>
+`}
+              </pre>
+            </TabPanel>
+          </Tabs>
+        </div>
+        <DataModelTable fields={CONTINUOUS_VARIABLE_FIELDS} />
+
         <h1 className='ds-h1' id='single-performance-rate-measurements'>Single-Performance Rate Measurements</h1>
         <p className='ds-text--lead'>Single-Performance Rate Measurements are applicable to Quality measures.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
@@ -225,6 +275,7 @@ class Measurements extends React.PureComponent {
           </Tabs>
         </div>
         <DataModelTable fields={SINGLE_PERFORMANCE_RATE_FIELDS} />
+
         <h1 className='ds-h1' id='multi-performance-rate-measurements'>Multi-Performance Rate Measurements</h1>
         <p className='ds-text--lead'>Multi-Performance Rate Measurements are applicable to Quality measures. Multi-Performance Rate Measurements contain multiple strata and the stratum field is required for each.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
@@ -269,6 +320,7 @@ class Measurements extends React.PureComponent {
           </Tabs>
         </div>
         <DataModelTable fields={MULTI_PERFORMANCE_RATE_FIELDS} />
+
         <h1 className='ds-h1' id='stratum'>Multi-Performance Rate Stratum</h1>
         <p className='ds-text--lead'>A Multi-Performance Rate Stratum represents the performance data for a specified subset of the population, as described by the stratum field.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
