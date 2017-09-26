@@ -17,13 +17,13 @@ const BOOLEAN_FIELDS = [
 ];
 
 const PROPORTION_FIELDS = [
-  {name: 'numerator', value: 'integer', description: 'The number of occurrences for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>denominator</b>.', notes: 'writable'},
-  {name: 'denominator', value: 'integer', description: 'The total number of occurrences as described by the measure. Must be greater than or equal to zero. Can only be 0 if the numerator is 0 as well.', notes: 'writable'}
+  {name: 'numerator', value: 'integer', description: 'The number of patients or episodes of care for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>denominator</b>.', notes: 'writable'},
+  {name: 'denominator', value: 'integer', description: 'The total number of patients or episodes of care as described by the measure. Must be greater than or equal to zero. Can only be 0 if the numerator is 0 as well.', notes: 'writable'}
 ];
 
 const CONTINUOUS_VARIABLE_FIELDS = [
-  {name: 'numerator', value: 'float', description: 'Must be greater than or equal to zero.', notes: 'writable'},
-  {name: 'denominator', value: 'float', description: 'Must be greater than or equal to zero.', notes: 'writable'}
+  {name: 'numerator', value: 'float', description: 'The number of patients or episodes of care for which the measure criteria are satisfied. Must be greater than or equal to zero. For differences from proportion measurements, <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/EHRIncentivePrograms/Downloads/eCQM_LogicGuidance_v1-11_061915.pdf">view the guidance</a>.', notes: 'writable'},
+  {name: 'denominator', value: 'float', description: 'The total number of patients or episodes of care as described by the measure. Must be greater than or equal to zero. For differences from proportion measurements, <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/EHRIncentivePrograms/Downloads/eCQM_LogicGuidance_v1-11_061915.pdf">view the guidance</a>', notes: 'writable'}
 ];
 
 const SINGLE_PERFORMANCE_RATE_FIELDS = [
