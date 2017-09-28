@@ -26,7 +26,13 @@ const topicsPaths = [
   {
     path: 'https://qpp-submissions-sandbox.navapbc.com',
     exact: false,
-    linkText: 'Interactive Documentation',
+    linkText: 'Interactive Docs',
+    external: true
+  },
+  {
+    path: 'https://github.com/CMSgov/qpp-measures-data',
+    exact: false,
+    linkText: 'QPP Measures Data Repo',
     external: true
   }
 ];
