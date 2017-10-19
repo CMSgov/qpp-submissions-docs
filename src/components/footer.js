@@ -4,7 +4,7 @@ class Footer extends React.PureComponent {
   render() {
     return (
       <footer>
-        <div className='container'>
+        <div className='ds-l-container'>
           <div className='row'>
             <div className='col-sm-8 col-md-9 col-lg-9'>
               <div className='logo-container'>
