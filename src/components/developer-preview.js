@@ -12,14 +12,13 @@ export default class DeveloperPreview extends React.Component {
     return (
       <div>
         <h1 className='ds-h1'>Developer Preview</h1>
-        <h3 className='ds-h3'>July 25, 2017 - November 1, 2017</h3>
+        <h3 className='ds-h3'>July 25, 2017 - December 15, 2017</h3>
         <p className='ds-text'>CMS is inviting Developers to provide feedback on the new Submissions API for the purpose of improved development. During this three-month period, participants in the Developer Preview can build integrations and test submitting Quality Payment Program (QPP) performance data to CMS via API. </p>
         <p className='ds-text'>The API’s functionality in the Developer Preview closely matches that which will be put into production on January 1, 2018 when the Submissions window opens for QPP Year 1 (2017) reporting.</p>
 
         <h2 className='ds-h2'>Step 1: Get an API Token</h2>
         <p className='ds-text'>Email <a href='mailto:QPP@cms.hhs.gov?subject=Request%20API%20Key%20for%20Submissions%20API%20Developer%20Preview'>QPP@cms.hhs.gov</a> to request your API Token for the Developer Preview.</p>
-        <p className='ds-text'>CMS will verify that the requestor’s organization is a 2017 Qualified Registry or QCDR (additional partners such as EHR vendors may soon qualify) and contact you with your API Token. </p>
-        <p className='ds-text'>Please note: API Tokens expire at the end of the Developer Preview period, at which time new API Tokens will become available through an automated, self-service process.</p>
+        <p className='ds-text'>CMS will verify that the requestor’s organization is a 2017 Qualified Registry or QCDR and contact you with your API Token. </p>
 
         <h2 className='ds-h2'>Step 2: Explore the API</h2>
         <p className='ds-text'>For a comprehensive list of endpoints and documentation on how to format your requests, play around with the <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Docs</a> using your own data.</p>

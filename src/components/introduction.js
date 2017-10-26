@@ -9,7 +9,7 @@ class Introduction extends React.Component {
       <div>
         <h2 className='ds-h2'>Easily submit and score QPP data in real-time via API</h2>
         <p className='ds-text--lead'>The Submissions API enables submission and real-time performance scoring of Quality Payment Program (QPP) data. CMS is inviting developers to provide feedback on the new Submissions API for the purpose of improved development. </p>
-        <p className='ds-text--lead'>From July 2017 through November 2017, participants in the Developer Preview can build integrations with their software to test submission and scoring of Quality Payment Program (QPP) performance data via API.</p>
+        <p className='ds-text--lead'>From July 2017 through December 2017, participants in the Developer Preview can build integrations with their software to test submission and scoring of Quality Payment Program (QPP) performance data via API.</p>
         <Link to='/developer-preview' className='ds-c-button ds-c-button--primary'>Join the QPP Developer Preview</Link>
 
         <h2 className='ds-h2'>Explore the API</h2>
