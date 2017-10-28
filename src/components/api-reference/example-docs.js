@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import fileDownload from 'react-file-download';
+import fileDownload from 'js-file-download';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { pd } from 'pretty-data';
 import '../../styles/api-reference/example-docs.css';
