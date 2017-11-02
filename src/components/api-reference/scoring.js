@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import PropTypes from 'prop-types';
+// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import '../../styles/common/example-code-tabs.css';
 
@@ -65,7 +66,17 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
 };
 
 const CodeBlock = ({code}) => {
-  const reformattedCode = code.split('\n').map(l => l.trim()).map((line, idx, arr) => idx > 0 && idx < arr.length - 1 ? '  ' + line : line).join('\n');
+  const reformattedCode = code
+    .split('\n')
+    .map(l => l.trim())
+    .map((line, idx, arr) => {
+      if (idx > 0 && idx < arr.length - 1) {
+        return `  ${line}`;
+      }
+
+      return line;
+    })
+    .join('\n');
 
   return (
     <div className='markup markup--html'>
@@ -76,6 +87,10 @@ const CodeBlock = ({code}) => {
       </pre>
     </div>
   );
+};
+
+CodeBlock.propTypes = {
+  code: PropTypes.string.isRequired
 };
 
 const Resource = ({title, description, example}) => {
@@ -89,6 +104,12 @@ const Resource = ({title, description, example}) => {
       <DataModelTable fields={FIELDS} />
     </div>
   );
+};
+
+Resource.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  example: PropTypes.string.isRequired
 };
 
 export default class ScoringEngine extends PureComponent {
