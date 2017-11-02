@@ -1,17 +1,10 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-// import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import '../../styles/common/example-code-tabs.css';
 
 import DataModelTable from './common/data-model-table';
-
-// Dummy fields for now to help layout page
-const FIELDS = [
-  {name: 'submission', value: 'Submission', description: '', notes: 'Please see <a href="/schemas#submissions">Submissions</a> in API Reference.'},
-  {name: 'provider', value: 'Provider', description: '', notes: ''},
-  {name: 'benchmarks', value: 'Benchmarks', description: '', notes: 'Please see <a href="/schemas#benchmarks">Benchmarks</a> in API Reference.'}
-];
 
 const SCORE_RESOURCE = {
   title: 'Score Resource',
@@ -25,7 +18,57 @@ const SCORE_RESOURCE = {
     "metadata": object(ScoreMetadata),
     "warnings": array(string),
     "errors": array(string)
-  }`
+  }`,
+  fields: [
+    {
+      name: 'name',
+      value: 'string',
+      description: 'name of score object',
+      notes: 'static'
+    },
+    {
+      name: 'title',
+      value: 'string',
+      description: 'title of score object',
+      notes: 'static'
+    },
+    {
+      name: 'detail',
+      value: 'string',
+      description: 'semantic version of scoring engine',
+      notes: 'Semantic version of the Scoring Engine used to compute the score Object'
+    },
+    {
+      name: 'value',
+      value: 'number',
+      description: 'total score of submission',
+      notes: 'Final, total score for the submission'
+    },
+    {
+      name: 'parts',
+      value: 'array',
+      description: 'array ofScoreParts',
+      notes: 'Reweighted category score parts, which build the final, total score'
+    },
+    {
+      name: 'metadata',
+      value: 'object',
+      description: 'top level scoring metadata',
+      notes: ''
+    },
+    {
+      name: 'warnings',
+      value: 'array',
+      description: 'array of Warnings',
+      notes: 'Scoring issues that do not halt the scoring process'
+    },
+    {
+      name: 'errors',
+      value: 'array',
+      description: 'array of Errors',
+      notes: 'Scoring issues that halt the scoring process'
+    }
+  ]
 };
 
 const SCORE_PART_RESOURCE = {
@@ -38,7 +81,45 @@ const SCORE_PART_RESOURCE = {
     "value": number,
     "original": object(CategoryScore),
     "metadata": object(ScorePartMetadata)
-  ]`
+  ]`,
+  fields: [
+    {
+      name: 'name',
+      value: 'string',
+      description: 'category identifier',
+      notes: ''
+    },
+    {
+      name: 'title',
+      value: 'string',
+      description: 'title of score part object',
+      notes: 'e.g., "ACI component of final score"'
+    },
+    {
+      name: 'detail',
+      value: 'string',
+      description: 'details category score weight',
+      notes: 'e.g., "Scoring based on weight of 15%"'
+    },
+    {
+      name: 'value',
+      value: 'number',
+      description: 'weighted category score',
+      notes: ''
+    },
+    {
+      name: 'original',
+      value: 'object',
+      description: 'Original category score part from individual category scoring engine',
+      notes: 'Unweighted category score'
+    },
+    {
+      name: 'metadata',
+      value: 'object',
+      description: 'Score Part metadata',
+      notes: 'e.g. "{ maxContribution: 15 }"'
+    }
+  ]
 };
 
 const CATEGORY_SCORE_RESOURCE = {
@@ -49,7 +130,39 @@ const CATEGORY_SCORE_RESOURCE = {
     "value": number,
     "detail": string,
     "parts": array(MeasurementSetScorePart)
-  }`
+  }`,
+  fields: [
+    {
+      name: 'name',
+      value: 'string',
+      description: 'Category identifier',
+      notes: ''
+    },
+    {
+      name: 'value',
+      value: 'number',
+      description: 'Category score',
+      notes: ''
+    },
+    {
+      name: 'detail',
+      value: 'string',
+      description: 'Details the highest scoring measurement set by submission method',
+      notes: 'Should be moved to a metadata field with an identifier by measurement set ID'
+    },
+    {
+      name: 'parts',
+      value: 'array',
+      description: 'Scored measurement sets matching the category identifier',
+      notes: 'Sorted descending by score'
+    },
+    {
+      name: 'warnings',
+      value: 'array',
+      description: 'Warnings array inserted by the ACI scoring engine. This field is obsolete.',
+      notes: 'Should be removed.'
+    }
+  ]
 };
 
 const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
@@ -60,9 +173,148 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
     "value": number,
     "title": string,
     "detail": string,
-    "parts": array(MeasurementScore | MeasurementScorePart),
+    "parts": array(MeasurementScorePart | MeasurementScore),
     "metadata": object(MeasurementSetScorePartMetadata)
-  ]`
+  ]`,
+  fields: [
+    {
+      name: 'name',
+      value: 'string',
+      description: 'Category identifier',
+      notes: ''
+    },
+    {
+      name: 'value',
+      value: 'number',
+      description: 'Category score if highest scoring measurement set',
+      notes: ''
+    },
+    {
+      name: 'title',
+      value: 'string',
+      description: 'Measurement set title',
+      notes: ''
+    },
+    {
+      name: 'detail',
+      value: 'string',
+      description: 'Submission method',
+      notes: ''
+    },
+    {
+      name: 'parts',
+      value: 'array',
+      description: 'Scored measurements for IA or Quality measurement sets, or measurement score parts for ACI measurement sets',
+      notes: ''
+    },
+    {
+      name: 'metadata',
+      value: 'object',
+      description: '',
+      notes: ''
+    },
+    {
+      name: 'warnings',
+      value: 'array',
+      description: 'Warnings array inserted by the ACI scoring engine. This field is obsolete.',
+      notes: 'Should be removed'
+    }
+  ]
+};
+
+const MEASUREMENT_SCORE_PART_RESOURCE = {
+  title: 'Measurement Score Part Resource',
+  description: 'The Measurement Score Part resource represents the structured organization of Measurement Scores organized into score parts. ACI scoring has individual score parts, which scored measurements are grouped into unlike IA and Quality scores.',
+  example: `[
+    "name": string,
+    "value": number,
+    "detail": string,
+    "parts": array(MeasurementScore),
+    "metadata": object(MeasurementScorePartMetadata),
+    "warnings": array
+  ]`,
+  fields: [
+    {
+      name: 'name',
+      value: 'string',
+      description: 'Score part identifier',
+      notes: ''
+    },
+    {
+      name: 'value',
+      value: 'number',
+      description: 'Total score the score part contributes',
+      notes: ''
+    },
+    {
+      name: 'detail',
+      value: 'string',
+      description: 'Empty string',
+      notes: 'Should be removed'
+    },
+    {
+      name: 'parts',
+      value: 'array',
+      description: 'Array of Measurement Scores',
+      notes: ''
+    },
+    {
+      name: 'metadata',
+      value: 'object',
+      description: '',
+      notes: ''
+    },
+    {
+      name: 'warnings',
+      value: 'array',
+      description: 'Warnings array inserted by the ACI scoring engine. This field is obsolete.',
+      notes: 'Should be removed'
+    }
+  ]
+};
+
+const MEASUREMENT_SCORE_RESOURCE = {
+  title: 'Measurement Score Resource',
+  description: 'The Measurement Score resource represents the scoring result for each measurement within a submission’s measurement sets.',
+  example: `[
+    "name": string,
+    "title": string,
+    "value": number,
+    "detail": string,
+    "metadata": object
+  ]`,
+  fields: [
+    {
+      name: 'name',
+      value: 'string',
+      description: 'Measurement identifier',
+      notes: 'The required measure ID from the measure\'s qpp-measures-data definition'
+    },
+    {
+      name: 'title',
+      value: 'string',
+      description: 'Measurement title',
+      notes: 'Utilized for IA measurements only'
+    },
+    {
+      name: 'value',
+      value: 'number',
+      description: 'Measurement score value',
+      notes: 'Required'
+    },
+    {
+      name: 'detail',
+      value: 'string',
+      description: 'Measurement scoring detail',
+      notes: 'Utilized for Quality measurements only'
+    },
+    {
+      name: 'metadata',
+      value: 'object',
+      description: '',
+      notes: ''
+    }
+  ]
 };
 
 const CodeBlock = ({code}) => {
@@ -79,13 +331,16 @@ const CodeBlock = ({code}) => {
     .join('\n');
 
   return (
-    <div className='markup markup--html'>
-      <pre className='ds-u-border--1 ds-u-padding--1'>
-        <code>
+    <Tabs className='example-code-tabs'>
+      <TabList>
+        <Tab disabled>JSON</Tab>
+      </TabList>
+      <TabPanel>
+        <pre>
           {`${reformattedCode}`}
-        </code>
-      </pre>
-    </div>
+        </pre>
+      </TabPanel>
+    </Tabs>
   );
 };
 
@@ -93,34 +348,46 @@ CodeBlock.propTypes = {
   code: PropTypes.string.isRequired
 };
 
-const Resource = ({title, description, example}) => {
+const Resource = ({title, description, example, fields}) => {
   return (
     <div className='ds-u-margin-bottom--4'>
       <h1 className='ds-h1'>{title}</h1>
       <p className='ds-text--lead'>{description}</p>
-      <h2 className='ds-h2'>{title} Representation</h2>
+      <h2 className='ds-h2'>Resource Representation</h2>
       <CodeBlock code={example} />
-      <h2 className='ds-h2'>{title} Details</h2>
-      <DataModelTable fields={FIELDS} />
+      <DataModelTable fields={fields} />
     </div>
   );
 };
 
+const ResourceFieldPropType = PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  notes: PropTypes.string
+}).isRequired;
+
 Resource.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  example: PropTypes.string.isRequired
+  example: PropTypes.string.isRequired,
+  fields: PropTypes.arrayOf(ResourceFieldPropType).isRequired
 };
 
 export default class ScoringEngine extends PureComponent {
   render() {
+    // This is necessary to disable the default styles
+    Tabs.setUseDefaultStyles(false);
+
     return (
       <div id='scoring-engine'>
         <h1 className='ds-h1'>Scoring</h1>
         <h1 className='ds-h1'>Overview</h1>
         <p className='ds-text--lead'>
-          The Scoring Engine resides within the QPP Submissions API application and calculates a performance score when it receives QPP submission data. A performance score is generated in two different ways. Firstly, submission by GET request with the identifier of a stored submission to the Submissions API’s submissions endpoint located at /submissions/:id/score will produce a score, and secondly, submission by POST request with a full submission in QPP JSON format to the Submissions API’s score preview endpoint located at /submissions/score-preview will also produce a score.
-          Using the provided submission sent through the Submissions API, the scoring engine evaluates the contained: provider profile information, measurement set performance data, and available benchmarking data, for each performance category.
+          The Scoring Engine resides within the QPP Submissions API application and calculates a performance score when it receives QPP submission data. By sending a submission through the Submissions API, the scoring engine evaluates the contained: provider profile information, measurement set performance data, and available benchmarking data, for each performance category.
+        </p>
+        <p className='ds-text--lead'>
+          A performance score is generated in two different ways. Firstly, submission by GET request with the identifier of a stored submission to the Submissions API’s submissions endpoint located at <code>/submissions/:id/score</code> will produce a score. Secondly, submission by POST request with a full submission in QPP JSON format to the Submissions API’s score preview endpoint located at <code>/submissions/score-preview</code> will also produce a score.
         </p>
         <p className='ds-text--lead'>
           Next, each performance category is individually processed and scored by evaluating the corresponding measurement sets. Processing “metadata" and "messages" attached to the scored measurement sets and measurements are also compiled to generate a Score Object.
@@ -136,6 +403,8 @@ export default class ScoringEngine extends PureComponent {
         <Resource {...SCORE_PART_RESOURCE} />
         <Resource {...CATEGORY_SCORE_RESOURCE} />
         <Resource {...MEASUREMENT_SET_SCORE_PART_RESOURCE} />
+        <Resource {...MEASUREMENT_SCORE_PART_RESOURCE} />
+        <Resource {...MEASUREMENT_SCORE_RESOURCE} />
         <p className='ds-text--lead'>Improvement activities (IA), advancing care information (ACI), and Quality measures are scored differently. The scoring engine package used provides one scoring engine that scores and combines these three categories.</p>
         <div>
           <p className='ds-text--lead'>Scores are calculated by a scoring engine package. This functionality is not yet publicly exposed.</p>

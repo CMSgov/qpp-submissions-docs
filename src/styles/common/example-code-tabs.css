@@ -22,12 +22,16 @@
   padding: 0.4em 1em 0.4em 0.6em;
   margin-bottom: 0;
   font-size: 1em;
-  color: rgb(4, 80, 115);
+  color: rgb(40, 80, 115);
 }
 
 .example-code-tabs .ReactTabs__Tab--selected {
   background-color: rgb(17, 46, 81);
   color: white;
+}
+
+.example-code-tabs .ReactTabs__Tab--disabled {
+  outline: none;
 }
 
 .example-code-tabs .ReactTabs__TabList {
