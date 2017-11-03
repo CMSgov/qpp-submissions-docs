@@ -68,7 +68,60 @@ const SCORE_RESOURCE = {
       description: 'array of Errors',
       notes: 'Scoring issues that halt the scoring process'
     }
-  ]
+  ],
+  metadata_messages: {
+    default: {
+      metadata: [
+        {
+          name: 'messages',
+          value: 'object',
+          description: 'Key identifiers with value strings as messages',
+          notes: ''
+        },
+        {
+          name: 'maxMediumContributionIA',
+          value: 'number',
+          description: 'Medium score contribution of IA measurements',
+          notes: 'Dependent on provider profile'
+        },
+        {
+          name: 'maxHighContributionIA',
+          value: 'number',
+          description: 'High score contribution for IA measurements',
+          notes: 'Dependent on provider profile'
+        },
+        {
+          name: 'maxContributionIA',
+          value: 'number',
+          description: 'Maximum score the IA category can contribute to the final score',
+          notes: 'Dependent on provider profile'
+        },
+        {
+          name: 'maxContributionACI',
+          value: 'number',
+          description: 'Maximum score the ACI category can contribute to the final score',
+          notes: 'Dependent on provider profile'
+        },
+        {
+          name: 'maxContributionQuality',
+          value: 'number',
+          description: 'Maximum score the Quality category can contribute to the final score',
+          notes: 'Dependent on provider profile'
+        }
+      ],
+      messages: [
+        {
+          name: 'containsEmaGhost',
+          value: 'string',
+          description: 'EMA Ghost Submission messaging',
+          notes: ''
+        }
+      ]
+    },
+    ia: null,
+    aci: null,
+    quality: null
+  }
 };
 
 const SCORE_PART_RESOURCE = {
@@ -119,7 +172,23 @@ const SCORE_PART_RESOURCE = {
       description: 'Score Part metadata',
       notes: 'e.g. "{ maxContribution: 15 }"'
     }
-  ]
+  ],
+  metadata_messages: {
+    default: {
+      metadata: [
+        {
+          name: 'maxContribution',
+          value: 'number',
+          description: 'Maximum score the Score Part can contribute to the final score',
+          notes: ''
+        }
+      ],
+      messages: null
+    },
+    ia: null,
+    aci: null,
+    quality: null
+  }
 };
 
 const CATEGORY_SCORE_RESOURCE = {
@@ -162,7 +231,135 @@ const CATEGORY_SCORE_RESOURCE = {
       description: 'Warnings array inserted by the ACI scoring engine. This field is obsolete.',
       notes: 'Should be removed.'
     }
-  ]
+  ],
+  metadata_messages: {
+    default: null,
+    ia: {
+      metadata: [
+        {
+          name: 'maxContribution',
+          value: 'number',
+          description: 'Maximum contribution the measurement set could contribute to the category score',
+          notes: ''
+        }
+      ],
+      messages: null
+    },
+    aci: {
+      metadata: [
+        {
+          name: 'maxContribution',
+          value: 'number',
+          description: 'Maximum contribution the measurement set could contribute to the category score',
+          notes: ''
+        },
+        {
+          name: 'messages',
+          value: 'object',
+          description: '',
+          notes: ''
+        }
+      ],
+      messages: [
+        {
+          name: 'preAttestationCheck',
+          value: 'string',
+          description: 'Messaging detailing completeness of pre-attestation checks',
+          notes: ''
+        },
+        {
+          name: 'baseMeasureCheck',
+          value: 'string',
+          description: 'Messaging detailing completeness of base measure checks',
+          notes: ''
+        }
+      ]
+    },
+    quality: {
+      metadata: [
+        {
+          name: 'measuresPicked',
+          value: 'array',
+          description: 'Array of measure IDs, which were picked to count towards the quality base score',
+          notes: 'These measures contribute to the base score, before bonuses are applied'
+        },
+        {
+          name: 'totalMeasurementPoints',
+          value: 'number',
+          description: 'The sum of individual measurement base scores whether picked or skipped',
+          notes: ''
+        },
+        {
+          name: 'totalBonusPoints',
+          value: 'number',
+          description: 'The sum of individual measurement bonus scores whether the measurement was picked or skipped',
+          notes: ''
+        },
+        {
+          name: 'denominator',
+          value: 'number',
+          description: 'The denominator value used when calculating the measurement set score',
+          notes: ''
+        },
+        {
+          name: 'e2eBonusScore',
+          value: 'number',
+          description: 'Total end-to-end bonus score for the measurement set',
+          notes: ''
+        },
+        {
+          name: 'reweightedScore',
+          value: 'number',
+          description: 'A score as if this measurement set was chosen as its overall category score and sent to final scoring and reweighted',
+          notes: ''
+        },
+        {
+          name: 'hasHighPriorityMeasurements',
+          value: 'boolean',
+          description: 'Flag if measurement set contains high priority measurements',
+          notes: ''
+        },
+        {
+          name: 'isEmaEligible',
+          value: 'boolean',
+          description: 'Flag if measurement set satisfies an EMA scoring scenario',
+          notes: ''
+        },
+        {
+          name: 'messages',
+          value: '',
+          description: '',
+          notes: ''
+        }
+      ],
+      messages: [
+        {
+          name: 'denominator',
+          value: 'string',
+          description: 'Details how denominator was determined',
+          notes: ''
+        },
+        {
+          name: 'totalMeasurementPoints',
+          value: 'string',
+          description: 'Description of this metadata field',
+          notes: ''
+        },
+        {
+          name: 'totalBonusPoints',
+          value: 'string',
+          description: 'Description of this metadata field',
+          notes: ''
+        },
+        {
+          name: 'hasHighPriorityMeasurements',
+          value: 'string',
+          description: 'Describes Scoring Engine detection of high priority measurements',
+          notes: ''
+        }
+      ]
+    }
+  }
 };
 
 const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
