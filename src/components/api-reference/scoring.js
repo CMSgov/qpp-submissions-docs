@@ -234,6 +234,69 @@ const CATEGORY_SCORE_RESOURCE = {
   ],
   metadata_messages: {
     default: null,
+    ia: null,
+    aci: null,
+    quality: null
+  }
+};
+
+const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
+  title: 'Measurement Set Score Part Resource',
+  description: 'The Scored Measurement Set represents the scoring output for each category measurement set in a submission.',
+  example: `[
+    "name": string,
+    "value": number,
+    "title": string,
+    "detail": string,
+    "parts": array(MeasurementScorePart | MeasurementScore),
+    "metadata": object(MeasurementSetScorePartMetadata)
+  ]`,
+  fields: [
+    {
+      name: 'name',
+      value: 'string',
+      description: 'Category identifier',
+      notes: ''
+    },
+    {
+      name: 'value',
+      value: 'number',
+      description: 'Category score if highest scoring measurement set',
+      notes: ''
+    },
+    {
+      name: 'title',
+      value: 'string',
+      description: 'Measurement set title',
+      notes: ''
+    },
+    {
+      name: 'detail',
+      value: 'string',
+      description: 'Submission method',
+      notes: ''
+    },
+    {
+      name: 'parts',
+      value: 'array',
+      description: 'Scored measurements for IA or Quality measurement sets, or measurement score parts for ACI measurement sets',
+      notes: ''
+    },
+    {
+      name: 'metadata',
+      value: 'object',
+      description: '',
+      notes: ''
+    },
+    {
+      name: 'warnings',
+      value: 'array',
+      description: 'Warnings array inserted by the ACI scoring engine. This field is obsolete.',
+      notes: 'Should be removed'
+    }
+  ],
+  metadata_messages: {
+    default: null,
     ia: {
       metadata: [
         {
@@ -362,63 +425,6 @@ const CATEGORY_SCORE_RESOURCE = {
   }
 };
 
-const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
-  title: 'Measurement Set Score Part Resource',
-  description: 'The Scored Measurement Set represents the scoring output for each category measurement set in a submission.',
-  example: `[
-    "name": string,
-    "value": number,
-    "title": string,
-    "detail": string,
-    "parts": array(MeasurementScorePart | MeasurementScore),
-    "metadata": object(MeasurementSetScorePartMetadata)
-  ]`,
-  fields: [
-    {
-      name: 'name',
-      value: 'string',
-      description: 'Category identifier',
-      notes: ''
-    },
-    {
-      name: 'value',
-      value: 'number',
-      description: 'Category score if highest scoring measurement set',
-      notes: ''
-    },
-    {
-      name: 'title',
-      value: 'string',
-      description: 'Measurement set title',
-      notes: ''
-    },
-    {
-      name: 'detail',
-      value: 'string',
-      description: 'Submission method',
-      notes: ''
-    },
-    {
-      name: 'parts',
-      value: 'array',
-      description: 'Scored measurements for IA or Quality measurement sets, or measurement score parts for ACI measurement sets',
-      notes: ''
-    },
-    {
-      name: 'metadata',
-      value: 'object',
-      description: '',
-      notes: ''
-    },
-    {
-      name: 'warnings',
-      value: 'array',
-      description: 'Warnings array inserted by the ACI scoring engine. This field is obsolete.',
-      notes: 'Should be removed'
-    }
-  ]
-};
-
 const MEASUREMENT_SCORE_PART_RESOURCE = {
   title: 'Measurement Score Part Resource',
   description: 'The Measurement Score Part resource represents the structured organization of Measurement Scores organized into score parts. ACI scoring has individual score parts, which scored measurements are grouped into unlike IA and Quality scores.',
@@ -467,7 +473,23 @@ const MEASUREMENT_SCORE_PART_RESOURCE = {
       description: 'Warnings array inserted by the ACI scoring engine. This field is obsolete.',
       notes: 'Should be removed'
     }
-  ]
+  ],
+  metadata_messages: {
+    default: null,
+    ia: null,
+    aci: {
+      metadata: [
+        {
+          name: 'maxContribution',
+          value: 'number',
+          description: 'Maximum contribution the score part could contribute to the measurement set score',
+          notes: ''
+        }
+      ],
+      messages: null
+    },
+    quality: null
+  }
 };
 
 const MEASUREMENT_SCORE_RESOURCE = {
@@ -511,7 +533,230 @@ const MEASUREMENT_SCORE_RESOURCE = {
       description: '',
       notes: ''
     }
-  ]
+  ],
+  metadata_messages: {
+    default: null,
+    ia: {
+      metadata: [
+        {
+          name: 'maxContribution',
+          value: 'number',
+          description: 'Maximum point contribution possible for the measurement',
+          notes: ''
+        },
+        {
+          name: 'measurementId',
+          value: 'string',
+          description: 'Data store ID for measurement',
+          notes: 'A v4 UUID'
+        }
+      ],
+      messages: null
+    },
+    aci: {
+      metadata: [
+        {
+          name: 'maxContribution',
+          value: 'number',
+          description: 'Maximum point contribution possible for the measurement',
+          notes: ''
+        },
+        {
+          name: 'measurementId',
+          value: 'string',
+          description: 'Data store ID for measurement',
+          notes: 'A v4 UUID'
+        }
+      ],
+      messages: null
+    },
+    quality: {
+      metadata: [
+        {
+          name: 'performanceRate',
+          value: 'number',
+          description: 'Performance rate for the measurement',
+          notes: 'Expressed as a percentage, not a decimal'
+        },
+        {
+          name: 'reportingRate',
+          value: 'string',
+          description: 'Reporting rate for the measurement',
+          notes: 'Expressed as a percentage, not a decimal'
+        },
+        {
+          name: 'measurementId',
+          value: 'string',
+          description: 'Data store ID for the measurement',
+          notes: 'A V4 UUID'
+        },
+        {
+          name: 'measurementSetId',
+          value: 'string',
+          description: 'Data store ID for the measurement’s measurement set',
+          notes: 'A V4 UUID'
+        },
+        {
+          name: 'measureClass',
+          value: 'string enum',
+          description: 'Measure classification, whether Class I or Class II',
+          notes: 'Should be converted into integer enum and renamed to “measurementClass”'
+        },
+        {
+          name: 'measureTitle',
+          value: 'string',
+          description: 'Title of the measurement',
+          notes: 'Should be moved to the measurement title'
+        },
+        {
+          name: 'endToEndBonus',
+          value: 'number',
+          description: 'How many end-to-end bonus points this measurement can contribute',
+          notes: ''
+        },
+        {
+          name: 'outcomeOrPatientExperienceBonus',
+          value: 'number',
+          description: 'How many outcome or patient experience bonus points this measurement can contribute',
+          notes: ''
+        },
+        {
+          name: 'highPriorityBonus',
+          value: 'number',
+          description: 'How many high priority bonus points this measurement can contribute',
+          notes: ''
+        },
+        {
+          name: 'highPriorityBonusIgnored',
+          value: 'boolean',
+          description: 'First high priority bonus measure ignored',
+          notes: ''
+        },
+        {
+          name: 'decileScore',
+          value: 'number',
+          description: 'The decile according to the benchmark if the measurement is a Class I measurement or the base score if the measurement is a Class II',
+          notes: ''
+        },
+        {
+          name: 'performanceDenominator',
+          value: 'number',
+          description: 'The performance denominator used in calculating the performance and reporting rates',
+          notes: ''
+        },
+        {
+          name: 'performanceNumerator',
+          value: 'number',
+          description: 'The performance numerator used in calculating the performance and reporting rates',
+          notes: ''
+        },
+        {
+          name: 'eligiblePopulation',
+          value: 'number',
+          description: 'Eligible population passed in from the submission',
+          notes: ''
+        },
+        {
+          name: 'partialDecileScore',
+          value: 'number',
+          description: 'For Class I measurements, the decimal part of the decile score.',
+          notes: ''
+        },
+        {
+          name: 'partialPoints',
+          value: 'number',
+          description: 'For Class I measurements, the difference between the performance rate and the lower bound of the decile range.',
+          notes: 'Thought of as “how far into” the decile the measurement fits'
+        },
+        {
+          name: 'decile',
+          value: 'number',
+          description: 'The decile a Class I measurement fits in to according to its benchmark data',
+          notes: ''
+        },
+        {
+          name: 'deciles',
+          value: 'array',
+          description: 'Array of deciles taken from benchmark data',
+          notes: 'Obtained from the measurement’s benchmark data'
+        },
+        {
+          name: 'processingStatus',
+          value: 'string enum',
+          description: 'Whether or not the measurement was picked to calculate the base score',
+          notes: 'Skipped measurements may still contribute to the score by bonuses'
+        },
+        {
+          name: 'totalMeasurementPoints',
+          value: 'number',
+          description: 'Total points the measurement can contribute including base and bonus',
+          notes: ''
+        },
+        {
+          name: 'totalBonusPoints',
+          value: 'number',
+          description: 'Total bonus points the measurement can contribute',
+          notes: ''
+        },
+        {
+          name: 'noBenchmarks',
+          value: 'boolean',
+          description: 'If the measurement lacks benchmark data',
+          notes: ''
+        },
+        {
+          name: 'benchmarkType',
+          value: 'string',
+          description: 'Submission method with which the measurement benchmark data corresponds',
+          notes: ''
+        },
+        {
+          name: 'eMeasureId',
+          value: 'string',
+          description: 'The measurements eMeasureId',
+          notes: 'The eMeasureId from the measure\'s qpp-measures-data definition'
+        },
+        {
+          name: 'cpcPlusGroup',
+          value: 'string char',
+          description: 'CPC+ group identifier for the measurement if it belongs to a CPC+ eligible measurement set',
+          notes: ''
+        },
+        {
+          name: 'messages',
+          value: '',
+          description: '',
+          notes: ''
+        }
+      ],
+      messages: [
+        {
+          name: 'measurementClass',
+          value: 'string',
+          description: 'Details of how the measurement class was determined',
+          notes: ''
+        },
+        {
+          name: 'decileScore',
+          value: 'string',
+          description: 'Details how the decile score was applied according to the classification of the measurement',
+          notes: ''
+        },
+        {
+          name: 'measurementPicker',
+          value: 'string',
+          description: 'The place in which the measurement was picked for scoring',
+          notes: ''
+        },
+        {
+          name: 'totalMeasurementPoints',
+          value: 'string',
+          description: 'How points are included in the total score for the measurement based on its processing status',
+          notes: ''
+        }
+      ]
+    }
+  }
 };
 
 const CodeBlock = ({code}) => {
