@@ -70,7 +70,7 @@ const SCORE_RESOURCE = {
     }
   ],
   metadata_messages: {
-    default: {
+    base: {
       metadata: [
         {
           name: 'messages',
@@ -118,9 +118,9 @@ const SCORE_RESOURCE = {
         }
       ]
     },
-    ia: null,
-    aci: null,
-    quality: null
+    ia: {},
+    aci: {},
+    quality: {}
   }
 };
 
@@ -174,7 +174,7 @@ const SCORE_PART_RESOURCE = {
     }
   ],
   metadata_messages: {
-    default: {
+    base: {
       metadata: [
         {
           name: 'maxContribution',
@@ -185,9 +185,9 @@ const SCORE_PART_RESOURCE = {
       ],
       messages: null
     },
-    ia: null,
-    aci: null,
-    quality: null
+    ia: {},
+    aci: {},
+    quality: {}
   }
 };
 
@@ -233,10 +233,10 @@ const CATEGORY_SCORE_RESOURCE = {
     }
   ],
   metadata_messages: {
-    default: null,
-    ia: null,
-    aci: null,
-    quality: null
+    base: {},
+    ia: {},
+    aci: {},
+    quality: {}
   }
 };
 
@@ -296,7 +296,7 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
     }
   ],
   metadata_messages: {
-    default: null,
+    base: {},
     ia: {
       metadata: [
         {
@@ -475,8 +475,8 @@ const MEASUREMENT_SCORE_PART_RESOURCE = {
     }
   ],
   metadata_messages: {
-    default: null,
-    ia: null,
+    base: {},
+    ia: {},
     aci: {
       metadata: [
         {
@@ -488,7 +488,7 @@ const MEASUREMENT_SCORE_PART_RESOURCE = {
       ],
       messages: null
     },
-    quality: null
+    quality: {}
   }
 };
 
@@ -535,7 +535,7 @@ const MEASUREMENT_SCORE_RESOURCE = {
     }
   ],
   metadata_messages: {
-    default: null,
+    base: {},
     ia: {
       metadata: [
         {
@@ -790,7 +790,48 @@ CodeBlock.propTypes = {
   code: PropTypes.string.isRequired
 };
 
-const Resource = ({title, description, example, fields}) => {
+const DataTableWithHeader = ({fields, header}) => {
+  if (fields) {
+    return (
+      <div className='ds-u-margin-top--2'>
+        <h3 className='ds-h3'>{header}</h3>
+        <DataModelTable fields={fields}/>
+      </div>
+    );
+  } else {
+    return null;
+  }
+};
+
+const MetadataMessagesTitle = () => <h2 className='ds-h2'>Metadata and Message Resource</h2>;
+
+const MetadataMessages = ({base, ia, aci, quality}) => {
+  if (Object.values(base).length > 0) {
+    return (
+      <div className='ds-u-margin-top--4'>
+        <MetadataMessagesTitle />
+        <DataTableWithHeader fields={base.metadata} header='Metadata'/>
+        <DataTableWithHeader fields={base.messages} header='Messages' />
+      </div>
+    );
+  } else if (Object.values(ia).concat(Object.values(aci).concat(Object.values(quality))).length > 0) {
+    return (
+      <div className='ds-u-margin-top--4'>
+        <MetadataMessagesTitle />
+        <DataTableWithHeader fields={ia.metadata} header='Improvement Activities Metadata'/>
+        <DataTableWithHeader fields={ia.messages} header='Improvement Activities Messages' />
+        <DataTableWithHeader fields={aci.metadata} header='Advancing Care Information Metadata'/>
+        <DataTableWithHeader fields={aci.messages} header='Advancing Care Information Messages' />
+        <DataTableWithHeader fields={quality.metadata} header='Quality Metadata'/>
+        <DataTableWithHeader fields={quality.messages} header='Quality Messages' />
+      </div>
+    );
+  } else {
+    return null;
+  }
+};
+
+const Resource = ({title, description, example, fields, metadata_messages}) => {
   return (
     <div className='ds-u-margin-bottom--4'>
       <h1 className='ds-h1'>{title}</h1>
@@ -798,6 +839,7 @@ const Resource = ({title, description, example, fields}) => {
       <h2 className='ds-h2'>Resource Representation</h2>
       <CodeBlock code={example} />
       <DataModelTable fields={fields} />
+      <MetadataMessages {...metadata_messages} />
     </div>
   );
 };
@@ -847,9 +889,7 @@ export default class ScoringEngine extends PureComponent {
         <Resource {...MEASUREMENT_SET_SCORE_PART_RESOURCE} />
         <Resource {...MEASUREMENT_SCORE_PART_RESOURCE} />
         <Resource {...MEASUREMENT_SCORE_RESOURCE} />
-        <p className='ds-text--lead'>Improvement activities (IA), advancing care information (ACI), and Quality measures are scored differently. The scoring engine package used provides one scoring engine that scores and combines these three categories.</p>
         <div>
-          <p className='ds-text--lead'>Scores are calculated by a scoring engine package. This functionality is not yet publicly exposed.</p>
           <p><em>Disclaimer:</em> Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments.</p>
         </div>
       </div>

@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b327f66-f983-4dc4-951a-1b687372bb28" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/api-reference/scoring.js" afterPath="$PROJECT_DIR$/src/components/api-reference/scoring.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -21,8 +19,8 @@
       <file leaf-file-name="scoring.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/api-reference/scoring.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="671">
-              <caret line="771" column="5" lean-forward="false" selection-start-line="771" selection-start-column="5" selection-end-line="771" selection-end-column="5" />
+            <state relative-caret-position="1038">
+              <caret line="892" column="0" lean-forward="true" selection-start-line="892" selection-start-column="0" selection-end-line="892" selection-end-column="0" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -63,18 +61,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data-model-table.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/api-reference/common/data-model-table.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
@@ -90,8 +76,8 @@
       <list>
         <option value="$PROJECT_DIR$/src/styles/common/example-code-tabs.css" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch_1.json" />
-        <option value="$PROJECT_DIR$/src/components/api-reference/scoring.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/components/api-reference/scoring.js" />
       </list>
     </option>
   </component>
@@ -114,8 +100,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="291" />
-    <option name="y" value="38" />
+    <option name="x" value="21" />
+    <option name="y" value="32" />
     <option name="width" value="2404" />
     <option name="height" value="1384" />
   </component>
@@ -258,15 +244,15 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1509591860554</updated>
-      <workItem from="1509591862344" duration="23733000" />
+      <workItem from="1509591862344" duration="30104000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23733000" />
+    <option name="totallyTimeSpent" value="30104000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="291" y="38" width="2404" height="1384" extended-state="0" />
+    <frame x="21" y="32" width="2404" height="1384" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2660512" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
@@ -359,7 +345,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -423,6 +409,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/api-reference/schemas/measurements.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1156">
@@ -454,18 +448,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/api-reference/scoring.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="671">
-          <caret line="771" column="5" lean-forward="false" selection-start-line="771" selection-start-column="5" selection-end-line="771" selection-end-column="5" />
+        <state relative-caret-position="1038">
+          <caret line="892" column="0" lean-forward="true" selection-start-line="892" selection-start-column="0" selection-end-line="892" selection-end-column="0" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>
