@@ -16,8 +16,8 @@ const SCORE_RESOURCE = {
       "title": string,
       "detail": string,
       "value": number
-      "parts": array(ScorePart),
-      "metadata": object(ScoreMetadata),
+      "parts": array(<a href='#score-part-resource'>Score Part</a>),
+      "metadata": object(<a href='#score-resource-meta'>Score Metadata</a>),
       "warnings": array(string),
       "errors": array(string)
     }`,
@@ -138,8 +138,8 @@ const SCORE_PART_RESOURCE = {
       "title": string,
       "detail": string,
       "value": number,
-      "original": object(CategoryScore),
-      "metadata": object(ScorePartMetadata)
+      "original": object(<a href='#category-score-resource'>Category Score</a>),
+      "metadata": object(<a href='#score-part-resource-meta'>Score Part Metadata</a>)
     ]`,
     xml: `Coming soon!`
   },
@@ -208,7 +208,7 @@ const CATEGORY_SCORE_RESOURCE = {
       "name": string,
       "value": number,
       "detail": string,
-      "parts": array(MeasurementSetScorePart)
+      "parts": array(<a href='#measurement-set-score-part-resource'>Measurement Set Score Part</a>)
     }`,
     xml: `Coming soon!`
   },
@@ -262,8 +262,8 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
       "value": number,
       "title": string,
       "detail": string,
-      "parts": array(MeasurementScorePart | MeasurementScore),
-      "metadata": object(MeasurementSetScorePartMetadata)
+      "parts": array(<a href='#measurement-score-part-resource'>Measurement Score Part</a> | <a href='#measurement-score-resource'>Measurement Score</a>),
+      "metadata": object(<a href='#measurement-set-score-part-resource-meta'>Measurement Set Score Part Metadata</a>)
     ]`,
     xml: `Coming soon!`
   },
@@ -450,8 +450,8 @@ const MEASUREMENT_SCORE_PART_RESOURCE = {
       "name": string,
       "value": number,
       "detail": string,
-      "parts": array(MeasurementScore),
-      "metadata": object(MeasurementScorePartMetadata),
+      "parts": array(<a href='#measurement-score-resource'>Measurement Score</a>),
+      "metadata": object(<a href='#measurement-score-part-resource-meta'>Measurement Score Part Metadata</a>),
       "warnings": array
     ]`,
     xml: `Coming soon!`
@@ -522,7 +522,7 @@ const MEASUREMENT_SCORE_RESOURCE = {
       "title": string,
       "value": number,
       "detail": string,
-      "metadata": object
+      "metadata": object(<a href='#measurement-score-resource-meta'>Measurement Score Metadata</a>)
     ]`,
     xml: `Coming soon!`
   },
@@ -838,18 +838,22 @@ DataTableWithHeader.propTypes = {
   header: PropTypes.string.isRequired
 };
 
-const MetadataMessagesTitle = () => <h2 className='ds-h2'>Metadata and Message Resource</h2>;
+const MetadataMessagesTitle = ({id}) => <h2 id={`${id}-meta`} className='ds-h2'>Metadata and Message Resource</h2>;
+
+MetadataMessagesTitle.propTypes = {
+  id: PropTypes.string.isRequired
+};
 
 const MetadataMessagePropType = PropTypes.shape({
   metadata: PropTypes.arrayOf(PropTypes.object),
   messages: PropTypes.arrayOf(PropTypes.object)
 });
 
-const MetadataMessages = ({base, ia, aci, quality}) => {
+const MetadataMessages = ({id, base, ia, aci, quality}) => {
   if (Object.values(base).length > 0) {
     return (
       <div className='ds-u-margin-top--4'>
-        <MetadataMessagesTitle />
+        <MetadataMessagesTitle id={id} />
         <DataTableWithHeader fields={base.metadata} header='Metadata' />
         <DataTableWithHeader fields={base.messages} header='Messages' />
       </div>
@@ -857,7 +861,7 @@ const MetadataMessages = ({base, ia, aci, quality}) => {
   } else if (Object.values(ia).concat(Object.values(aci).concat(Object.values(quality))).length > 0) {
     return (
       <div className='ds-u-margin-top--4'>
-        <MetadataMessagesTitle />
+        <MetadataMessagesTitle id={id} />
         <DataTableWithHeader fields={ia.metadata} header='Improvement Activities Metadata' />
         <DataTableWithHeader fields={ia.messages} header='Improvement Activities Messages' />
         <DataTableWithHeader fields={aci.metadata} header='Advancing Care Information Metadata' />
@@ -872,6 +876,7 @@ const MetadataMessages = ({base, ia, aci, quality}) => {
 };
 
 MetadataMessages.propTypes = {
+  id: PropTypes.string.isRequired,
   base: MetadataMessagePropType,
   ia: MetadataMessagePropType,
   aci: MetadataMessagePropType,
@@ -886,7 +891,7 @@ const Resource = ({id, title, description, example, fields, metadata_messages: m
       <h2 className='ds-h2'>Resource Representation</h2>
       <CodeBlock {...example} />
       <DataModelTable fields={fields} />
-      <MetadataMessages {...metadataMessages} />
+      <MetadataMessages {...metadataMessages} id={id} />
     </div>
   );
 };
