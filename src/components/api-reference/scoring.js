@@ -21,7 +21,16 @@ const SCORE_RESOURCE = {
       "warnings": array(string),
       "errors": array(string)
     }`,
-    xml: `Coming soon!`
+    xml: `<data>
+      <name>string</name>
+      <title>string</title>
+      <detail>string</detail>
+      <value>number</value>
+      <parts>array(<a href='#score-part-resource'>Score Part</a>)</parts>
+      <metadata>object(<a href='#score-resource-meta'>Score Metadata</a>)</metadata>
+      <warnings>array(string)</warnings>
+      <errors>array(string)</errors>
+    </data>`
   },
   fields: [
     {
@@ -141,7 +150,14 @@ const SCORE_PART_RESOURCE = {
       "original": object(<a href='#category-score-resource'>Category Score</a>),
       "metadata": object(<a href='#score-part-resource-meta'>Score Part Metadata</a>)
     ]`,
-    xml: `Coming soon!`
+    xml: `<data>
+      <name>string</name>
+      <title>string</title>
+      <detail>string</detail>
+      <value>number</value>
+      <original>object(<a href='#category-score-resource'>Category Score</a>)</original>
+      <metadata>object(<a href='#score-part-resource-meta'>Score Part Metadata</a>)</metadata>
+    </data>`
   },
   fields: [
     {
@@ -210,7 +226,12 @@ const CATEGORY_SCORE_RESOURCE = {
       "detail": string,
       "parts": array(<a href='#measurement-set-score-part-resource'>Measurement Set Score Part</a>)
     }`,
-    xml: `Coming soon!`
+    xml: `<data>
+      <name>string</name>
+      <value>number</value>
+      <detail>string</detail>
+      <parts>array(<a href='#measurement-set-score-part-resource'>Measurement Set Score Part</a>)</parts>
+    </data>`
   },
   fields: [
     {
@@ -265,7 +286,14 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
       "parts": array(<a href='#measurement-score-part-resource'>Measurement Score Part</a> | <a href='#measurement-score-resource'>Measurement Score</a>),
       "metadata": object(<a href='#measurement-set-score-part-resource-meta'>Measurement Set Score Part Metadata</a>)
     ]`,
-    xml: `Coming soon!`
+    xml: `<data>
+      <name>string</name>
+      <value>number</value>
+      <title>string</title>
+      <detail>string</detail>
+      <parts>array(<a href='#measurement-score-part-resource'>Measurement Score Part</a> | <a href='#measurement-score-resource'>Measurement Score</a>)</parts>
+      <metadata>object(<a href='#measurement-set-score-part-resource-meta'>Measurement Set Score Part Metadata</a>)</metadata>
+    </data>`
   },
   fields: [
     {
@@ -452,9 +480,16 @@ const MEASUREMENT_SCORE_PART_RESOURCE = {
       "detail": string,
       "parts": array(<a href='#measurement-score-resource'>Measurement Score</a>),
       "metadata": object(<a href='#measurement-score-part-resource-meta'>Measurement Score Part Metadata</a>),
-      "warnings": array
+      "warnings": array(string)
     ]`,
-    xml: `Coming soon!`
+    xml: `<data>
+      <name>string</name>
+      <value>number</value>
+      <detail>string</detail>
+      <parts>array(<a href='#measurement-score-resource'>Measurement Score</a>)</parts>
+      <metadata>object(<a href='#measurement-score-part-resource-meta'>Measurement Score Part Metadata</a>)</metadata>
+      <warnings>array(string)</warnings>
+    </data>`
   },
   fields: [
     {
@@ -524,7 +559,13 @@ const MEASUREMENT_SCORE_RESOURCE = {
       "detail": string,
       "metadata": object(<a href='#measurement-score-resource-meta'>Measurement Score Metadata</a>)
     ]`,
-    xml: `Coming soon!`
+    xml: `<data>
+      <name>string</name>
+      <title>string</title>
+      <value>number</value>
+      <detail>string</detail>
+      <metadata>object(<a href='#measurement-score-resource-meta'>Measurement Score Metadata</a>)</metadata>
+    </data>`
   },
   fields: [
     {
@@ -797,7 +838,8 @@ const reformattedCode = (code) => code
 
 const CodeBlock = ({json, xml}) => {
   const reformattedJSON = reformattedCode(json);
-  const reformattedXML = reformattedCode(xml);
+  // Need some extra processing to get hyperlinks to work without processing XML as JSX
+  const reformattedXML = reformattedCode(xml.replace(/<(?!a|\/a)/g, '&lt;').replace(/(!<\/a)>/g, '&gt;'));
 
   return (
     <Tabs className='example-code-tabs'>
