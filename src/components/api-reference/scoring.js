@@ -218,7 +218,7 @@ const SCORE_PART_RESOURCE = {
 const CATEGORY_SCORE_RESOURCE = {
   id: 'category-score-resource',
   title: 'Category Score Resource',
-  description: 'The Category Score resource represents for each of the three individual category scoring engines, the scoring output for a category’s measurement sets contained in a submission.',
+  description: 'Each of the three individual category scoring engines has a Category Score resource. It represents the scoring output contained in a submission.',
   example: {
     json: `{
       "name": string,
@@ -261,8 +261,8 @@ const CATEGORY_SCORE_RESOURCE = {
     {
       name: 'warnings',
       value: 'array',
-      description: 'Warnings array inserted by the ACI scoring engine. This field is obsolete.',
-      notes: 'Should be removed.'
+      description: 'Warnings array inserted by the ACI scoring engine. This field is obsolete',
+      notes: 'Should be removed'
     }
   ],
   metadata_messages: {
@@ -472,7 +472,7 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
 const MEASUREMENT_SCORE_PART_RESOURCE = {
   id: 'measurement-score-part-resource',
   title: 'Measurement Score Part Resource',
-  description: 'The Measurement Score Part resource represents the structured organization of Measurement Scores organized into score parts. ACI scoring has individual score parts, which scored measurements are grouped into unlike IA and Quality scores.',
+  description: 'The Measurement Score Part resource represents the structured organization of Measurement Scores organized into score parts. ACI is unique in that scored measurements are grouped into individual score parts.',
   example: {
     json: `[
       "name": string,
@@ -789,7 +789,7 @@ const MEASUREMENT_SCORE_RESOURCE = {
         },
         {
           name: 'messages',
-          value: '',
+          value: 'string',
           description: '',
           notes: ''
         }
