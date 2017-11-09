@@ -26,7 +26,7 @@ const NON_PROPORTION_FIELDS = [
   {name: 'denominator', value: 'float', description: 'The denominator as described in the QCDR measure specification.', notes: 'writable'},
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable'},
   {name: 'numeratorExclusion', value: 'float', description: 'The exclusions from the numerator field as described in the QCDR measure specification.', notes: 'writable, optional'},
-  {name: 'denominatorException', value: 'float', description: 'The exceptions from the denominator field as described in the QCDR measure specification.', notes: 'writable, optional'},
+  {name: 'denominatorException', value: 'float', description: 'The exceptions from the denominator field as described in the QCDR measure specification.', notes: 'writable, optional'}
 ];
 
 const SINGLE_PERFORMANCE_RATE_FIELDS = [
