@@ -22,8 +22,8 @@ const PROPORTION_FIELDS = [
 ];
 
 const NON_PROPORTION_FIELDS = [
-  {name: 'numerator', value: 'float', description: 'The numerator as described in the QCDR measure specification. For differences from proportion measurements, <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/EHRIncentivePrograms/Downloads/eCQM_LogicGuidance_v1-11_061915.pdf">view the guidance</a>.', notes: 'writable'},
-  {name: 'denominator', value: 'float', description: 'The denominator as described in the QCDR measure specification. For differences from proportion measurements, <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/EHRIncentivePrograms/Downloads/eCQM_LogicGuidance_v1-11_061915.pdf">view the guidance</a>', notes: 'writable'},
+  {name: 'numerator', value: 'float', description: 'The numerator as described in the QCDR measure specification.', notes: 'writable'},
+  {name: 'denominator', value: 'float', description: 'The denominator as described in the QCDR measure specification.', notes: 'writable'},
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable'},
   {name: 'numeratorExclusion', value: 'float', description: 'The exclusions from the numerator field as described in the QCDR measure specification.', notes: 'writable, optional'},
   {name: 'denominatorException', value: 'float', description: 'The exceptions from the denominator field as described in the QCDR measure specification.', notes: 'writable, optional'},
