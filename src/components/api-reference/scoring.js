@@ -9,7 +9,7 @@ import DataModelTable from './common/data-model-table';
 const SCORE_RESOURCE = {
   id: 'score-resource',
   title: 'Score Resource',
-  description: 'The Score resource represents the top level scoring data for a submission object. Each Score will have multiple Score Parts and may have multiple Score Warnings or Score Errors. The Score Detail field lists the current version of the Scoring Engine used to score the corresponding submission.',
+  description: 'The Score Resource represents the top level scoring data for a submission object. Each Score will have multiple Score Parts and may have multiple Score Warnings or Score Errors. The Score Detail field lists the current version of the Scoring Engine used to score the corresponding submission.',
   example: {
     json: `{
       "name": string,
@@ -60,7 +60,7 @@ const SCORE_RESOURCE = {
     {
       name: 'parts',
       value: 'array',
-      description: 'Array ofScoreParts',
+      description: 'Array of Score Parts',
       notes: 'Performance category score parts, that contribute to total score'
     },
     {
@@ -140,7 +140,7 @@ const SCORE_RESOURCE = {
 const SCORE_PART_RESOURCE = {
   id: 'score-part-resource',
   title: 'Score Part Resource',
-  description: 'The Score Part resource represents the Categorical scoring data for a submission object. Categorical scoring refers to one of the three QPP Performance Categories, which are IA, ACI or Quality.',
+  description: 'The Score Part resource represents the categorical scoring data for a submission object. Categorical scoring refers to one of the three QPP Performance Categories, which are IA, ACI or Quality.',
   example: {
     json: `[
       "name": string,
@@ -979,16 +979,16 @@ export default class ScoringEngine extends PureComponent {
         </ul>
         <h1 className='ds-h1'>Overview</h1>
         <p className='ds-text--lead'>
-          The Scoring Engine resides within the QPP Submissions API application and calculates a performance score when it receives QPP submission data. By sending a submission through the Submissions API, the scoring engine evaluates the contained: provider profile information, measurement set performance data, and available benchmarking data, for each performance category.
+          The Scoring Engine resides within the QPP Submissions API application and calculates a performance score when it receives QPP submission data. When a submission is sent through the Submissions API, the scoring engine will evaluate provider profile information, measurement set performance data, and available benchmarking data for each performance category.
         </p>
         <p className='ds-text--lead'>
-          A performance score is generated in two different ways. Firstly, submission by GET request with the identifier of a stored submission to the Submissions API’s submissions endpoint located at <code>/submissions/:id/score</code> will produce a score. Secondly, submission by POST request with a full submission in QPP JSON format to the Submissions API’s score preview endpoint located at <code>/submissions/score-preview</code> will also produce a score.
+          A performance score is generated in two different ways. First, submission by GET request with the identifier of a stored submission to the Submissions API’s submissions endpoint located at <code>/submissions/:id/score</code> will produce a score. Second, submission by POST request with a full submission in QPP JSON format to the Submissions API’s score preview endpoint located at <code>/submissions/score-preview</code> will also produce a score.
         </p>
         <p className='ds-text--lead'>
-          Next, each performance category is individually processed and scored by evaluating the corresponding measurement sets. Processing “metadata" and "messages" attached to the scored measurement sets and measurements are also compiled to generate a Score Object.
+          Next, each performance category is individually processed and scored by evaluating the corresponding measurement sets. Processing "metadata" and "messages" attached to the scored measurement sets and measurements are also compiled to generate a Score Object.
         </p>
         <p className='ds-text--lead'>
-          Lastly, the Score Object is passed back to the QPP Submissions API, which builds the application response by inserting the Score Object into the response body and returns this response to the requester. This response body contains JSON describing in detail the record of the current aggregate estimate of the submission score.
+          Last, the Score Object is passed back to the QPP Submissions API, which builds the application response by inserting the Score Object into the response body and returns this response to the requester. This response body contains JSON describing in detail the record of the current aggregate estimate of the submission score.
         </p>
         <Resource {...SCORE_RESOURCE} />
         <Resource {...SCORE_PART_RESOURCE} />
