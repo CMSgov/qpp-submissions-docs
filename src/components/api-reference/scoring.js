@@ -531,7 +531,7 @@ const MEASUREMENT_SCORE_RESOURCE = {
       name: 'name',
       value: 'string',
       description: 'Measurement identifier',
-      notes: 'The required measure ID from the measure\'s qpp-measures-data definition'
+      notes: 'The required measure ID from the measure\'s <a href="https://github.com/CMSgov/qpp-measures-data/blob/master/measures/measures-data.json">qpp-measures-data</a> definition'
     },
     {
       name: 'title',
@@ -738,7 +738,7 @@ const MEASUREMENT_SCORE_RESOURCE = {
           name: 'eMeasureId',
           value: 'string',
           description: 'The measurements eMeasureId',
-          notes: 'The eMeasureId from the measure\'s qpp-measures-data definition'
+          notes: 'The eMeasureId from the measure\'s <a href="https://github.com/CMSgov/qpp-measures-data/blob/master/measures/measures-data.json">qpp-measures-data</a> definition'
         },
         {
           name: 'cpcPlusGroup',
