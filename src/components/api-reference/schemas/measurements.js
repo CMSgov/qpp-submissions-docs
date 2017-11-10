@@ -9,7 +9,7 @@ const FIELDS = [
   {name: 'id', value: 'string', description: 'The id of the measurement.'},
   {name: 'measurementSetId', value: 'string', description: 'The id of the measurement set in which the measurement belongs.'},
   {name: 'measureId', value: 'string', description: 'The id of the measure to which the measurement is attesting. All measures and their IDs are available in <a href="https://github.com/CMSgov/qpp-measures-data/blob/master/measures/measures-data.json">qpp-measures-data</a>. For quality measures, the measureId is the same as the quality number. For an advancing care information (ACI) measure, the measureId is the measure identifier for the ACI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.', notes: 'writable'},
-  {name: 'value', value: 'object', description: 'Different measurements will have different values. Acceptable measurement types are <b>boolean</b>, <b>proportion</b>, <b>continuous variable</b>, and <b>performance rate</b>.', notes: 'writable'}
+  {name: 'value', value: 'object', description: 'Different measurements will have different values. Acceptable measurement types are <b>boolean</b>, <b>proportion</b>, <b>non-proportion</b>, and <b>performance rate</b>.', notes: 'writable'}
 ];
 
 const BOOLEAN_FIELDS = [
@@ -21,9 +21,12 @@ const PROPORTION_FIELDS = [
   {name: 'denominator', value: 'integer', description: 'The total number of patients or episodes of care as described by the measure. Must be greater than or equal to zero. Can only be 0 if the numerator is 0 as well.', notes: 'writable'}
 ];
 
-const CONTINUOUS_VARIABLE_FIELDS = [
-  {name: 'numerator', value: 'float', description: 'The number of patients or episodes of care for which the measure criteria are satisfied. Must be greater than or equal to zero. For differences from proportion measurements, <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/EHRIncentivePrograms/Downloads/eCQM_LogicGuidance_v1-11_061915.pdf">view the guidance</a>.', notes: 'writable'},
-  {name: 'denominator', value: 'float', description: 'The total number of patients or episodes of care as described by the measure. Must be greater than or equal to zero. For differences from proportion measurements, <a href="https://www.cms.gov/Regulations-and-Guidance/Legislation/EHRIncentivePrograms/Downloads/eCQM_LogicGuidance_v1-11_061915.pdf">view the guidance</a>', notes: 'writable'}
+const NON_PROPORTION_FIELDS = [
+  {name: 'numerator', value: 'float', description: 'The numerator as described in the QCDR measure specification.', notes: 'writable'},
+  {name: 'denominator', value: 'float', description: 'The denominator as described in the QCDR measure specification.', notes: 'writable'},
+  {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable'},
+  {name: 'numeratorExclusion', value: 'float', description: 'The exclusions from the numerator field as described in the QCDR measure specification.', notes: 'writable, optional'},
+  {name: 'denominatorException', value: 'float', description: 'The exceptions from the denominator field as described in the QCDR measure specification.', notes: 'writable, optional'}
 ];
 
 const SINGLE_PERFORMANCE_RATE_FIELDS = [
@@ -65,11 +68,11 @@ class Measurements extends React.PureComponent {
         <ul>
           <li><a href='#boolean-measurements'>Boolean</a></li>
           <li><a href='#proportion-measurements'>Proportion</a></li>
-          <li><a href='#continuous-variable-measurements'>Continuous Variable</a></li>
+          <li><a href='#non-proportion-measurements'>Non-Proportion</a></li>
           <li><a href='#single-performance-rate-measurements'>Single-Performance Rate</a></li>
           <li><a href='#multi-performance-rate-measurements'>Multi-Performance Rate</a></li>
         </ul>
-        <p className='ds-text--lead'>The Measurements resource represents performance data for a specific measure within a MeasurementSet. There are five types of Measurements: Boolean, Proportion, Continuous Variable, Single-Performance Rate, and Multi-Performance Rate. Each MeasurementSet can have multiple Measurements. No two Measurements in a given MeasurementSet can have the same measureId.</p>
+        <p className='ds-text--lead'>The Measurements resource represents performance data for a specific measure within a MeasurementSet. There are five types of Measurements: Boolean, Proportion, Non-Proportion, Single-Performance Rate, and Multi-Performance Rate. Each MeasurementSet can have multiple Measurements. No two Measurements in a given MeasurementSet can have the same measureId.</p>
         <p className='ds-text--lead'><a href='https://qpp-submissions-sandbox.navapbc.com/#/Measurements'>Try it out!</a></p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
@@ -86,7 +89,7 @@ class Measurements extends React.PureComponent {
   "measurementSetId": string,
   "measureId": string,
   "value": [`}
-                <a href='#boolean-measurements'>Boolean</a> | <a href='#proportion-measurements'>Proportion</a> | <a href='#continuous-variable'>Continuous Variable</a> | {`
+                <a href='#boolean-measurements'>Boolean</a> | <a href='#proportion-measurements'>Proportion</a> | <a href='#non-proportion'>Non-Proportion</a> | {`
     `} <a href='#single-performance-rate-measurements'>Single-Performance Rate</a> | <a href='#multi-performance-rate-measurements'>Multi-Performance Rate</a>
                 {`]
 }`}
@@ -99,7 +102,7 @@ class Measurements extends React.PureComponent {
   <measurementSetId>string</measurementSetId>
   <measureId>string</measureId>
   <value>[`}
-                <a href='#boolean-measurements'>Boolean</a> | <a href='#proportion-measurements'>Proportion</a> | <a href='#continuous-variable'>Continuous Variable</a> | {`
+                <a href='#boolean-measurements'>Boolean</a> | <a href='#proportion-measurements'>Proportion</a> | <a href='#non-proportion'>Non-Proportion</a> | {`
   `} <a href='#single-performance-rate-measurements'>Single-Performance Rate</a> | <a href='#multi-performance-rate-measurements'>Multi-Performance Rate</a>
                 {`]</value>
 </data>
@@ -186,8 +189,8 @@ class Measurements extends React.PureComponent {
         </div>
         <DataModelTable fields={PROPORTION_FIELDS} />
 
-        <h1 className='ds-h1' id='continuous-variable-measurements'>Continuous Variable Measurements</h1>
-        <p className='ds-text--lead'>Continuous Variable Measurements are applicable to quality measures.</p>
+        <h1 className='ds-h1' id='non-proportion-measurements'>Non-Proportion Measurements</h1>
+        <p className='ds-text--lead'>Non-Proportion Measurements are applicable to quality measures. They are exclusively authored by QCDRs and are used to attest to measures that are otherwise categorized as 'ratio', 'continuous variable', or a combination of 'proportion' and the former. Note this means that having a false value in the proportion field of QCDR documentation is sufficient to determine that a measure as non-proportional, but having a true value for proportion is insufficient to determine that measure as proportional. Non-proportion measurements are unconstrained, so while the fields are 'numerator' and 'denominator' there is no validation that the numerator must be less than or equal to the denominator or that the denominator is greater than 0, as is the case for proportion measurements.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
@@ -204,7 +207,10 @@ class Measurements extends React.PureComponent {
   "measureId": string,
   "value": {
     "numerator": float,
-    "denominator": float
+    "denominator": float,
+    "isEndToEndReported": boolean,
+    "denominatorException": float,
+    "numeratorExclusion": float
   }
 }`}
               </pre>
@@ -218,6 +224,9 @@ class Measurements extends React.PureComponent {
   <value>
     <numerator>float</numerator>
     <denominator>float</denominator>
+    <isEndToEndReported>boolean</isEndToEndReported>
+    <denominatorException>float</denominatorException>
+    <numeratorExclusion>float</numeratorExclusion>
   </value>
 </data>
 `}
@@ -225,7 +234,7 @@ class Measurements extends React.PureComponent {
             </TabPanel>
           </Tabs>
         </div>
-        <DataModelTable fields={CONTINUOUS_VARIABLE_FIELDS} />
+        <DataModelTable fields={NON_PROPORTION_FIELDS} />
 
         <h1 className='ds-h1' id='single-performance-rate-measurements'>Single-Performance Rate Measurements</h1>
         <p className='ds-text--lead'>Single-Performance Rate Measurements are applicable to Quality measures.</p>
