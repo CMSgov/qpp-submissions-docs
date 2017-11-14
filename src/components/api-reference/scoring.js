@@ -82,7 +82,7 @@ const SCORE_RESOURCE = {
       notes: 'Scoring issues that halt the scoring process'
     }
   ],
-  metadata_messages: {
+  metadataMessages: {
     base: {
       metadata: [
         {
@@ -197,7 +197,7 @@ const SCORE_PART_RESOURCE = {
       notes: 'e.g. "{ maxContribution: 15 }"'
     }
   ],
-  metadata_messages: {
+  metadataMessages: {
     base: {
       metadata: [
         {
@@ -265,7 +265,7 @@ const CATEGORY_SCORE_RESOURCE = {
       notes: 'Should be removed'
     }
   ],
-  metadata_messages: {
+  metadataMessages: {
     base: {},
     ia: {},
     aci: {},
@@ -339,7 +339,7 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
       notes: 'Should be removed'
     }
   ],
-  metadata_messages: {
+  metadataMessages: {
     base: {},
     ia: {
       metadata: [
@@ -529,7 +529,7 @@ const MEASUREMENT_SCORE_PART_RESOURCE = {
       notes: 'Should be removed'
     }
   ],
-  metadata_messages: {
+  metadataMessages: {
     base: {},
     ia: {},
     aci: {
@@ -599,7 +599,7 @@ const MEASUREMENT_SCORE_RESOURCE = {
       notes: ''
     }
   ],
-  metadata_messages: {
+  metadataMessages: {
     base: {},
     ia: {
       metadata: [
@@ -824,21 +824,29 @@ const MEASUREMENT_SCORE_RESOURCE = {
   }
 };
 
-const reformattedCode = (code) => code
-  .split('\n')
-  .map(l => l.trim())
-  .map((line, idx, arr) => {
-    if (idx > 0 && idx < arr.length - 1) {
-      return `  ${line}`;
-    }
+/**
+ * Reformats a multi-line string to display correctly in <pre></pre> tags, so a developer does not need to manage
+ * indentation within JSON blobs
+ * @param code
+ */
+const reformattedCode = (code) => {
+  return code
+    .split('\n')
+    .map(l => l.trim())
+    .map((line, idx, arr) => {
+      if (idx > 0 && idx < arr.length - 1) {
+        return `  ${line}`;
+      }
 
-    return line;
-  })
-  .join('\n');
+      return line;
+    })
+    .join('\n');
+};
 
 const CodeBlock = ({json, xml}) => {
   const reformattedJSON = reformattedCode(json);
-  // Need some extra processing to get hyperlinks to work without processing XML as JSX
+  // Extra processing is used to format '<' and '>' into HTML character entity references for XML snippets
+  // so React doesn't process XML tags as JSX inside 'dangerouslySetInnerHTML' in <pre></pre> tags
   const reformattedXML = reformattedCode(xml.replace(/<(?!a|\/a)/g, '&lt;').replace(/(!<\/a)>/g, '&gt;'));
 
   return (
@@ -863,16 +871,13 @@ CodeBlock.propTypes = {
 };
 
 const DataTableWithHeader = ({fields, header}) => {
-  if (fields) {
-    return (
-      <div className='ds-u-margin-top--2'>
-        <h3 className='ds-h3'>{header}</h3>
-        <DataModelTable fields={fields} />
-      </div>
-    );
-  } else {
-    return null;
-  }
+  if (!fields) return null;
+  return (
+    <div className='ds-u-margin-top--2'>
+      <h3 className='ds-h3'>{header}</h3>
+      <DataModelTable fields={fields} />
+    </div>
+  );
 };
 
 DataTableWithHeader.propTypes = {
@@ -925,7 +930,7 @@ MetadataMessages.propTypes = {
   quality: MetadataMessagePropType
 };
 
-const Resource = ({id, title, description, example, fields, metadata_messages: metadataMessages}) => {
+const Resource = ({id, title, description, example, fields, metadataMessages}) => {
   return (
     <div className='ds-u-margin-bottom--4'>
       <h1 className='ds-h1' id={id}>{title}</h1>
@@ -958,7 +963,7 @@ Resource.propTypes = {
   description: PropTypes.string.isRequired,
   example: PropTypes.objectOf(PropTypes.string).isRequired,
   fields: PropTypes.arrayOf(ResourceFieldsPropType).isRequired,
-  metadata_messages: ResourceMetadataMessagesPropType.isRequired
+  metadataMessages: ResourceMetadataMessagesPropType.isRequired
 };
 
 export default class ScoringEngine extends PureComponent {
