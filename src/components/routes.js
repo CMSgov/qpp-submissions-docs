@@ -32,7 +32,7 @@ const topicsPaths = [
   {
     path: 'https://github.com/CMSgov/qpp-measures-data',
     exact: false,
-    linkText: 'QPP Measures Data Repo',
+    linkText: 'QPP Measures Data Repository',
     external: true
   }
 ];
