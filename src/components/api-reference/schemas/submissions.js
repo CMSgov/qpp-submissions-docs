@@ -12,7 +12,6 @@ const FIELDS = [
   {name: 'entityType', value: 'string', description: 'The type of provider associated with the submission. Acceptable values are <b>"individual"</b> and <b>"group"</b>.', notes: 'writable'},
   {name: 'taxpayerIdentificationNumber', value: 'string', description: 'The 9-digit identifier of the provider associated with the submission.', notes: 'writable'},
   {name: 'nationalProviderIdentifier', value: 'string', description: 'The 10-digit identifier of the provider associated with the submission.', notes: 'writable only if entityType is "individual"'},
-  {name: 'entityId', value: 'string', description: ' The identifier for Alternative Payment Models (APM)', notes: 'writable, optional'},
   {name: 'performanceYear', value: 'integer', description: 'The year in which performance data for the submission was collected.', notes: 'writable'},
   {name: 'measurementSets', value: 'array(measurementSet)', description: 'Measurement sets associated with the submission.', notes: 'writable, optional'}
 ];
@@ -44,7 +43,6 @@ export default class Submissions extends React.Component {
   "entityType": string,
   "taxpayerIdentificationNumber": string,
   "nationalProviderIdentifier": string,
-  "entityId": string,
   "performanceYear": integer,
   "measurementSets": array(`}
                 <a href='measurement-sets'>MeasurementSets Resource</a>
@@ -61,7 +59,6 @@ export default class Submissions extends React.Component {
   <entityType>string</entityType>
   <taxpayerIdentificationNumber>string</taxpayerIdentificationNumber>
   <nationalProviderIdentifier>string</nationalProviderIdentifier>
-  <entityId>string</entityId>
   <performanceYear>integer</performanceYear>
   <measurementSets>array(`}
                 <a href='measurement-sets'>MeasurementSets Resource</a>

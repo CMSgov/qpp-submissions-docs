@@ -86,7 +86,6 @@ class Advanced2 extends React.PureComponent {
     "entityType": "individual",
     "taxpayerIdentificationNumber": "000345678",
     "nationalProviderIdentifier": "0123456789",
-    "entityId": null,
     "performanceYear": 2016,
     "measurementSets": [
       {
