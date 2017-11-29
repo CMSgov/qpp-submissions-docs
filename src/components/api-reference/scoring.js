@@ -92,6 +92,12 @@ const SCORE_RESOURCE = {
           notes: ''
         },
         {
+          name: 'maxFinalScore',
+          value: 'number',
+          description: 'Maximum possible final score',
+          notes: ''
+        },
+        {
           name: 'maxMediumContributionIA',
           value: 'number',
           description: 'Medium score contribution of IA measurements',
@@ -348,6 +354,12 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
           value: 'number',
           description: 'Maximum contribution the measurement set could contribute to the category score',
           notes: ''
+        },
+        {
+          name: 'measurementSetPicked',
+          value: 'boolean',
+          description: 'Flag if the measurement set contributed to the final score',
+          notes: ''
         }
       ],
       messages: null
@@ -358,6 +370,12 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
           name: 'maxContribution',
           value: 'number',
           description: 'Maximum contribution the measurement set could contribute to the category score',
+          notes: ''
+        },
+        {
+          name: 'measurementSetPicked',
+          value: 'boolean',
+          description: 'Flag if the measurement set contributed to the final score',
           notes: ''
         },
         {
@@ -430,6 +448,18 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
           name: 'isEmaEligible',
           value: 'boolean',
           description: 'Flag if measurement set satisfies an EMA scoring scenario',
+          notes: ''
+        },
+        {
+          name: 'measurementSetPicked',
+          value: 'boolean',
+          description: 'Flag if the measurement set contributed to the final score',
+          notes: ''
+        },
+        {
+          name: 'maxContribution',
+          value: 'number',
+          description: 'Maximum contribution the measurement set could contribute to the category score',
           notes: ''
         },
         {
