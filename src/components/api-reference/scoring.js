@@ -360,6 +360,12 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
           value: 'boolean',
           description: 'Flag if the measurement set contributed to the final score',
           notes: ''
+        },
+        {
+          name: 'measurementSetId',
+          value: 'string',
+          description: 'Data store ID for the measurement’s measurement set',
+          notes: 'A V4 UUID'
         }
       ],
       messages: null
