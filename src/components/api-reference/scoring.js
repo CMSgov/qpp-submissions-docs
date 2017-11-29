@@ -379,6 +379,12 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
           notes: ''
         },
         {
+          name: 'measurementSetId',
+          value: 'string',
+          description: 'Data store ID for the measurement’s measurement set',
+          notes: 'A V4 UUID'
+        },
+        {
           name: 'messages',
           value: 'object',
           description: '',
