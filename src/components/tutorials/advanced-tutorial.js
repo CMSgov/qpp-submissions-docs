@@ -164,7 +164,7 @@ class AdvancedTutorial extends React.Component {
             <p>We've done a lot of work in 5 API requests! In this advanced tutorial, we created a submission with ACI performance attestations, scored it, and updated a piece of one measurement to see how the final score reacts. That means we've successfully used each API endpoint (submission, measurement set, measurement) and understood what the responses tell us, adjusting our approach as needed. Again, all of this work is done on our terms, at our pace - no months-long round trip required.</p>
             <p><em>Disclaimer:</em> Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments.</p>
             <h3>Next steps</h3>
-            <p>While we've used each API endpoint, we're far from having used every kind of API action. These tutorials have used <code>POST</code>, <code>PATCH</code>, and <code>GET</code> - there are also <code>PUT</code> and <code>DELETE</code> for each of the three resources we worked with.</p>
+            <p>While we've used each API endpoint, we're far from having used every kind of API action. These tutorials have used <code>POST</code>, <code>PATCH</code>, and <code>GET</code> - there are also <code>PUT</code> and <code>DELETE</code>.</p>
             <p>The tutorials have shown how requests can be strung together to complete complex workflows in minutes rather than months. </p>
             <p>Now, try using the <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Docs</a> to experiment with some of your data.</p>
           </div>
