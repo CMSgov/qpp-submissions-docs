@@ -16,7 +16,6 @@ class Basic1 extends React.PureComponent {
         <TabPanel>
           <pre>
             {`{
-  "programName": "mips",
   "entityType": "individual",
   "taxpayerIdentificationNumber": "000456789",
   "nationalProviderIdentifier": "0123456789",
@@ -34,11 +33,9 @@ class Basic1 extends React.PureComponent {
       "id": "b6423273-d3a3-42ef-9728-1871b246477e",
       "createdAt": "2017-02-13T18:45:58Z",
       "updatedAt": "2017-02-13T18:45:58Z",
-      "programName": "mips",
       "entityType": "individual",
       "taxpayerIdentificationNumber": "000456789",
       "nationalProviderIdentifier": "0123456789",
-      "entityId": null,
       "performanceYear": 2016,
       "measurementSets": []
     }

@@ -16,7 +16,6 @@ class Advanced2 extends React.PureComponent {
         <TabPanel>
           <pre>
             {`{
-  "programName": "mips",
   "entityType": "individual",
   "taxpayerIdentificationNumber": "000345678",
   "nationalProviderIdentifier": "0123456789",
@@ -84,11 +83,9 @@ class Advanced2 extends React.PureComponent {
     "id": "60d2fbbb-7453-47fa-b709-c33090e50843",
     "createdAt": "2017-02-15T22:23:08Z",
     "updatedAt": "2017-02-15T22:23:08Z",
-    "programName": "mips",
     "entityType": "individual",
     "taxpayerIdentificationNumber": "000345678",
     "nationalProviderIdentifier": "0123456789",
-    "entityId": null,
     "performanceYear": 2016,
     "measurementSets": [
       {

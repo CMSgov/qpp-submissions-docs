@@ -35,8 +35,6 @@ class AdvancedTutorial extends React.Component {
               url='/submissions'
               params={
                 <tbody>
-                  <tr><td>Program Name</td>
-                    <td>MIPS</td></tr>
                   <tr><td>Entity</td>
                     <td>Individual</td></tr>
                   <tr><td>Taxpayer Identification Number</td>
@@ -71,8 +69,6 @@ class AdvancedTutorial extends React.Component {
               url='/submissions'
               params={
                 <tbody>
-                  <tr><td>Program Name</td>
-                    <td>MIPS</td></tr>
                   <tr><td>Entity</td>
                     <td>Individual</td></tr>
                   <tr><td>Taxpayer Identification Number</td>
