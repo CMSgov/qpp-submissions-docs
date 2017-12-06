@@ -4,8 +4,10 @@ import '@cmsgov/design-system-core/dist/index.css';
 import '../styles/app.css';
 import '../styles/temp-grid.css';
 import '../styles/usa-banner.css';
+import { Link } from 'react-router-dom';
 
-export default class TermsOfService extends React.Component {
+
+class TermsOfService extends React.Component {
   render() {
     return (
       <div>
@@ -54,3 +56,5 @@ export default class TermsOfService extends React.Component {
     );
   }
 }
+
+export default TermsOfService;
