@@ -110,7 +110,7 @@ const supportPaths = [
   },
   {
     path: '/terms-of-service',
-    exact: false,
+    exact: true,
     linkText: 'Terms of Service',
     component: TermsOfService
   }
