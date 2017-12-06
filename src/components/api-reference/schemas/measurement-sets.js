@@ -12,9 +12,11 @@ const FIELDS = [
   {name: 'submissionId', value: 'string', description: 'The id of the submission in which the measurement set belongs.'},
   {name: 'category', value: 'string', description: 'The category of the measurement set. Acceptable values are <b>"ia"</b>, <b>"aci"</b> and <b>"quality"</b>.', notes: 'writable'},
   {name: 'submissionMethod', value: 'string', description: 'The method by which the measurement set data was submitted. Acceptable values are <b>"cmsWebInterface"</b>, <b>"electronicHealthRecord"</b>, <b>"claims"</b>, <b>"registry"</b>, <b>"certifiedSurveyVendor"</b> and <b>"administrativeClaims"</b>.', notes: 'writable'},
+  {name: 'programName', value: 'string', description: 'The quality payment program under which the measurement set belongs, MIPS or CPC+. Acceptable values are <b>"mips"</b> and <b>"cpcPlus"</b>. If not provided, programName will be recorded as "mips".', notes: 'writable, optional'},
+  {name: 'practiceId', value: 'string', description: 'The ID of the practice associated with the measurement set. Required if programName is set to "cpcPlus". Must be omitted if programName is not set to "cpcPlus".', notes: 'writable, optional'},
   {name: 'performanceStart', value: 'string', description: 'A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). The first date when the measurement data is applicable.', notes: 'writable'},
   {name: 'performanceEnd', value: 'string', description: 'A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). The last date when the measurement data is applicable.', notes: 'writable'},
-  {name: 'measureSet', value: 'string', description: 'The speciality set which the measurement set is attesting. Acceptable values are "generalSurgery" or "other"', notes: 'writable, optional'},
+  {name: 'measureSet', value: 'string', description: 'The speciality set which the measurement set is attesting. Acceptable values are <b>"allergyImmunology"</b>, <b>"anesthesiology"</b>, <b>"cardiology"</b>, <b>"dermatology"</b>, <b>"diagnosticRadiology"</b>, <b>"electrophysiologyCardiacSpecialist"</b>, <b>"emergencyMedicine"</b>, <b>"gastroenterology"</b>, <b>"generalOncology"</b>, <b>"generalPracticeFamilyMedicine"</b>, <b>"generalSurgery"</b>, <b>"hospitalists"</b>, <b>"internalMedicine"</b>, <b>"interventionalRadiology"</b>, <b>"mentalBehavioralHealth"</b>, <b>"neurology"</b>, <b>"obstetricsGynecology"</b>, <b>"ophthalmology"</b>, <b>"orthopedicSurgery"</b>, <b>"otolaryngology"</b>, <b>"pathology"</b>, <b>"pediatrics"</b>, <b>"physicalMedicine"</b>, <b>"plasticSurgery"</b>, <b>"preventiveMedicine"</b>, <b>"radiationOncology"</b>, <b>"rheumatology"</b>, <b>"thoracicSurgery"</b>, <b>"urology"</b>, or <b>"vascularSurgery"</b>.', notes: 'writable, optional'},
   {name: 'measurements', value: 'array<measurements>', description: 'Measurements associated with the measurement set.', notes: 'writable, optional'}
 ];
 
@@ -44,6 +46,8 @@ export default class MeasurementSets extends React.PureComponent {
   "submissionId": string,
   "category": string,
   "submissionMethod": string,
+  "programName": string,
+  "practiceId": string,
   "performanceStart": date,
   "performanceEnd": date,
   "measureSet": string,
@@ -62,6 +66,8 @@ export default class MeasurementSets extends React.PureComponent {
   <submissionId>string>/submissionId>
   <category>string</category>
   <submissionMethod>string</submissionMethod>
+  <programName>string</programName>
+  <practiceId>string</practiceId>
   <performanceStart>date</performanceStart>
   <performanceEnd>date</performanceEnd>
   <measureSet>string</measureSet>
