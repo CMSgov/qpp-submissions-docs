@@ -10,7 +10,7 @@ class TermsOfService extends React.Component {
     return (
       <div>
         <h1 className='ds-h1'>QPP APIs Terms of Service</h1>
-        <p className='ds-text'>Thank you for using The Centers for Medicare and Medicaid Services ("CMS") APIs and other developer services (collectively, "APIs"). By accessing or using our APIs, you are agreeing to the terms below as well as any relevant sections of CMS's <a href="https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/Privacy-Policy.html">Website Policies</a>.</p>
+        <p className='ds-text'>Thank you for using The Centers for Medicare and Medicaid Services ("CMS") APIs and other developer services (collectively, "APIs"). By accessing or using our APIs, you are agreeing to the terms below as well as any relevant sections of CMS's <a href='https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/Privacy-Policy.html'>Website Policies</a>.</p>
 
         <h2 className='ds-h2'>Scope</h2>
         <p className='ds-text'>The service (“API”) through which you interact with CMS data is subject to these terms. Use of the API constitutes acceptance to these Terms.</p>
@@ -24,7 +24,7 @@ class TermsOfService extends React.Component {
         <p className='ds-text'>You acknowledge that Protected Health Information requires special safeguarding and agree to abide by the laws of your company, state, and HIPAA regarding the protection and disclosure of Protected Health Information contained in the Site.</p>
 
         <p className='ds-text'><b>Privacy</b></p>
-        <p className='ds-text'>When a user's non-public content is obtained through the APIs, you may not expose that content to other users or to third parties without explicit opt-in consent from that user. If you would like more information about the application of the Privacy Act at CMS, please read the Privacy Act of 1974 located at <a href="https://www.cms.gov/Research-Statistics-Data-and-Systems/Computer-Data-and-Systems/Privacy/PrivacyActof1974.html">https://www.cms.gov/Research-Statistics-Data-and-Systems/Computer-Data-and-Systems/Privacy/PrivacyActof1974.html</a>.</p>
+        <p className='ds-text'>When a user's non-public content is obtained through the APIs, you may not expose that content to other users or to third parties without explicit opt-in consent from that user. If you would like more information about the application of the Privacy Act at CMS, please read the Privacy Act of 1974 located at <a href='https://www.cms.gov/Research-Statistics-Data-and-Systems/Computer-Data-and-Systems/Privacy/PrivacyActof1974.html'>https://www.cms.gov/Research-Statistics-Data-and-Systems/Computer-Data-and-Systems/Privacy/PrivacyActof1974.html</a>.</p>
 
         <p className='ds-text'><b>Attribution</b></p>
         <p className='ds-text'>While not required, when using content, data, documentation, code, and related materials associated with the API in your own work, we ask that proper credit be given.</p>
@@ -45,7 +45,7 @@ class TermsOfService extends React.Component {
         <p className='ds-text'>Any disputes arising out of this Agreement and access to or use of the API shall be governed by federal law.  Some APIs may have API specific Terms. If there is a conflict between these terms and additional terms applicable to a specific API, the additional terms will control for that conflict.</p>
 
         <h2 className='ds-h2'>No Waiver Rights</h2>
-        <p className='ds-text'>CMS's failure to exercise or enforce any right or provision of this Agreement shall not constitute waiver of such right or provision.</p>  
+        <p className='ds-text'>CMS's failure to exercise or enforce any right or provision of this Agreement shall not constitute waiver of such right or provision.</p>
         <p className='ds-text'>Return to the <a href='https://qpp.cms.gov/resources/developers'>QPP Developer Tools</a>.</p>
       </div>
     );
