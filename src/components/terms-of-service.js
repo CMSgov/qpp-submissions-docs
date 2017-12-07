@@ -24,7 +24,7 @@ class TermsOfService extends React.Component {
         <p className='ds-text'>You acknowledge that Protected Health Information requires special safeguarding and agree to abide by the laws of your company, state, and HIPAA regarding the protection and disclosure of Protected Health Information contained in the Site.</p>
 
         <p className='ds-text'><b>Privacy</b></p>
-        <p className='ds-text'>When a user's non-public content is obtained through the APIs, you may not expose that content to other users or to third parties without explicit opt-in consent from that user. If you would like more information about the application of the Privacy Act at CMS, please read the Privacy Act of 1974 located at <a href="https://www.cms.gov/Research-Statistics-Data-and-Systems/Computer-Data-and-Systems/Privacy/PrivacyActof1974.html">https://www.cms.gov/Research-Statistics-Data-and-Systems/Computer-Data-and-Systems/Privacy/PrivacyActof1974.html</a>.</p>      
+        <p className='ds-text'>When a user's non-public content is obtained through the APIs, you may not expose that content to other users or to third parties without explicit opt-in consent from that user. If you would like more information about the application of the Privacy Act at CMS, please read the Privacy Act of 1974 located at <a href="https://www.cms.gov/Research-Statistics-Data-and-Systems/Computer-Data-and-Systems/Privacy/PrivacyActof1974.html">https://www.cms.gov/Research-Statistics-Data-and-Systems/Computer-Data-and-Systems/Privacy/PrivacyActof1974.html</a>.</p>
 
         <p className='ds-text'><b>Attribution</b></p>
         <p className='ds-text'>While not required, when using content, data, documentation, code, and related materials associated with the API in your own work, we ask that proper credit be given.</p>
@@ -39,16 +39,15 @@ class TermsOfService extends React.Component {
         <h2 className='ds-h2'>Liability</h2>
         <p className='ds-text'><b>Disclaimer of Warranties</b></p>
         <p className='ds-text'>The API platform is provided "as is" and on an "as-available" basis. While we will do our best to ensure the service is available and functional at all times, CMS hereby disclaim all warranties of any kind, express or implied, including without limitation the warranties of merchantability, fitness for a particular purpose, and non-infringement. CMS makes no warranty that data will be error free or that access thereto will be continuous or uninterrupted.</p>
-        <p className='ds-text'><b>Limitations on Liability</b></p>   
+        <p className='ds-text'><b>Limitations on Liability</b></p>
         <p className='ds-text'>In no event will CMS be liable with respect to any subject matter of this Agreement under any contract, negligence, strict liability or other legal or equitable theory for: (1) any special, incidental, or consequential damages; (2) the cost of procurement of substitute products or services; or (3) for interruption of use or loss or corruption of data.</p>
         <h2 className='ds-h2'>Disputes</h2>
         <p className='ds-text'>Any disputes arising out of this Agreement and access to or use of the API shall be governed by federal law.  Some APIs may have API specific Terms. If there is a conflict between these terms and additional terms applicable to a specific API, the additional terms will control for that conflict.</p>
 
         <h2 className='ds-h2'>No Waiver Rights</h2>
-        <p className='ds-text'>CMS's failure to exercise or enforce any right or provision of this Agreement shall not constitute waiver of such right or provision.</p>
-        
+        <p className='ds-text'>CMS's failure to exercise or enforce any right or provision of this Agreement shall not constitute waiver of such right or provision.</p>  
         <p className='ds-text'>Return to the <a href='https://qpp.cms.gov/resources/developers'>QPP Developer Tools</a>.</p>
-          </div>
+      </div>
     );
   }
 }
