@@ -9,7 +9,6 @@ import Benchmarks from './api-reference/schemas/benchmarks';
 import Scoring from './api-reference/scoring';
 import Provider from './api-reference/provider';
 import ExampleDocs from './api-reference/example-docs';
-import TermsOfService from './terms-of-service';
 
 const topicsPaths = [
   {
@@ -107,12 +106,6 @@ const supportPaths = [
     exact: false,
     linkText: 'Google Group',
     external: true
-  },
-  {
-    path: '/terms-of-service',
-    exact: false,
-    linkText: 'Terms of Service',
-    component: TermsOfService
   }
 ];
 
