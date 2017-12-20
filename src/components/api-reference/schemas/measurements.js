@@ -58,6 +58,7 @@ const STRATA_FIELDS = [
     name: 'performanceRate',
     value: 'float',
     description: 'Performance rates are stored and represented as percentages with values from 0.00 to 100.00. The performance rate for a multiple performance rate measurement is calculated based on the overallAlgorithm of the corresponding measure. ' +
+      'Each stratum\'s performance rate is calculated as performanceMet / (performanceMet + performanceNotMet - exclusions).' +
       'Performance rate algorithms exclude any "overall" strata in calculations. Currently, a measure\'s overallAlgorithm may be one of the following:<ul>' +
       '<li><b>simpleAverage:</b> <samp>(sum strata\'s performance rates) / (number of strata) * 100</samp>,</li>' +
       '<li><b>weightedAverage:</b> <samp>((sum strata\'s performanceMet) / (sum strata\'s performanceMet and performanceNotMet)) * 100</samp>, or,</li>' +
