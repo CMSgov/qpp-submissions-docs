@@ -55,10 +55,10 @@ const STRATA_FIELDS = [
   {name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable'},
   {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100.'},
   {name: 'performanceRate', value: 'float', description: 'Performance rates are stored and represented as percentages with values from 0.00 to 100.00. The performance rate for a multiple performance rate measurement is calculated based on the overallAlgorithm of the corresponding measure. ' +
-    'NOTE: Performance rate algorithms exclude any "overall" stratum in calculatoins. Currently, a measure\'s overallAlgorithm can be a:<ul>' +
-    '<li><b>simpleAverage</b>: <span style="font-family:Courier">(sum strata\'s performance rates) / (number of strata) * 100</span>,</li>' +
-    '<li><b>weightedAverage</b>: <span style="font-family:Courier">((sum strata\'s performanceMet) / (sum strata\'s performanceMet and performanceNotMet)) * 100</span>, or,</li>' +
-    '<li><b>sumNumerators</b>: <span style="font-family:Courier">sum strata\'s performanceMet</span>.</li></ul>'}
+    'Performance rate algorithms exclude any "overall" strata in calculations. Currently, a measure\'s overallAlgorithm may be one of the following:<ul>' +
+    '<li><b>simpleAverage:</b> <samp>(sum strata\'s performance rates) / (number of strata) * 100</samp>,</li>' +
+    '<li><b>weightedAverage:</b> <samp>((sum strata\'s performanceMet) / (sum strata\'s performanceMet and performanceNotMet)) * 100</samp>, or,</li>' +
+    '<li><b>sumNumerators:</b> <samp>sum strata\'s performanceMet</samp>.</li></ul>'}
 ];
 
 class Measurements extends React.PureComponent {
