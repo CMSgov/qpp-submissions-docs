@@ -54,11 +54,15 @@ const STRATA_FIELDS = [
   {name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Numerator/Denominator".', notes: 'writable'},
   {name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable'},
   {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100.'},
-  {name: 'performanceRate', value: 'float', description: 'Performance rates are stored and represented as percentages with values from 0.00 to 100.00. The performance rate for a multiple performance rate measurement is calculated based on the overallAlgorithm of the corresponding measure. ' +
-    'Performance rate algorithms exclude any "overall" strata in calculations. Currently, a measure\'s overallAlgorithm may be one of the following:<ul>' +
-    '<li><b>simpleAverage:</b> <samp>(sum strata\'s performance rates) / (number of strata) * 100</samp>,</li>' +
-    '<li><b>weightedAverage:</b> <samp>((sum strata\'s performanceMet) / (sum strata\'s performanceMet and performanceNotMet)) * 100</samp>, or,</li>' +
-    '<li><b>sumNumerators:</b> <samp>sum strata\'s performanceMet</samp>.</li></ul>'}
+  {
+    name: 'performanceRate',
+    value: 'float',
+    description: 'Performance rates are stored and represented as percentages with values from 0.00 to 100.00. The performance rate for a multiple performance rate measurement is calculated based on the overallAlgorithm of the corresponding measure. ' +
+      'Performance rate algorithms exclude any "overall" strata in calculations. Currently, a measure\'s overallAlgorithm may be one of the following:<ul>' +
+      '<li><b>simpleAverage:</b> <samp>(sum strata\'s performance rates) / (number of strata) * 100</samp>,</li>' +
+      '<li><b>weightedAverage:</b> <samp>((sum strata\'s performanceMet) / (sum strata\'s performanceMet and performanceNotMet)) * 100</samp>, or,</li>' +
+      '<li><b>sumNumerators:</b> <samp>sum strata\'s performanceMet</samp>.</li></ul>'
+  }
 ];
 
 class Measurements extends React.PureComponent {
