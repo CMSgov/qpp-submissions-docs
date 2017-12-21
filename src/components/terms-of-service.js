@@ -10,7 +10,7 @@ class TermsOfService extends React.Component {
     return (
       <div>
         <h1 className='ds-h1'>API Terms of Service Agreement</h1>
-        <p className='ds-text'>Thank you for using The Centers for Medicare and Medicaid Services ("CMS") APIs and other developer services (collectively, "APIs"). By accessing or using our APIs, you are agreeing to the terms below as well as any relevant sections of CMS's Website Policies (<a>https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/Privacy-Policy.html</a>).</p>
+        <p className='ds-text'>Thank you for using The Centers for Medicare and Medicaid Services ("CMS") APIs and other developer services (collectively, "APIs"). By accessing or using our APIs, you are agreeing to the terms below as well as any relevant sections of CMS's Website Policies (<a href"https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/Privacy-Policy.html">https://www.cms.gov/About-CMS/Agency-Information/Aboutwebsite/Privacy-Policy.html</a>).</p>
 
         <h2 className='ds-h2'>Scope</h2>
         <p className='ds-text'>The service ("API") through which you interact with CMS data is subject to these terms. Use of the API constitutes acceptance to these Terms.</p>
