@@ -54,8 +54,8 @@ const MULTI_PERFORMANCE_RATE_FIELDS = [
       '<li><b>simpleAverage:</b> <samp>(sum strata\'s performance rates) / (number of strata) * 100</samp>,</li>' +
       '<li><b>weightedAverage:</b> <samp>((sum strata\'s performanceMet) / (sum strata\'s performanceMet and performanceNotMet)) * 100</samp>, or,</li>' +
       '<li><b>sumNumerators:</b> <samp>sum strata\'s performanceMet</samp>, or,</li>' +
-      '<li><b>overallStratumOnly:</b> performance rate of the "overall" stratum.</li></ul>'
-  , notes: 'writable for registry multi-performance rate only'},
+      '<li><b>overallStratumOnly:</b> performance rate of the "overall" stratum.</li></ul>',
+    notes: 'writable for registry multi-performance rate only'},
   {name: 'strata', value: 'array(performanceRateStratum)', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data</a>.', notes: 'writable'}
 ];
 
