@@ -37,22 +37,11 @@ const SINGLE_PERFORMANCE_RATE_FIELDS = [
   {name: 'eligiblePopulationException', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure. In the measures specifications, this field is also referred to as "Denominator Exception".', notes: 'writable, optional'},
   {name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Numerator/Denominator".', notes: 'writable'},
   {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100.'},
-  {name: 'performanceRate', value: 'float', description: 'The performance rate for a single performance rate measurement, ranging from zero to one-hundred and representing a percentage, is equal to (performanceMet / (performanceMet + performanceNotMet)) * 100.'}
+  {name: 'performanceRate', value: 'float', description: 'The performance rate for a single performance rate measurement, ranging from zero to one-hundred and representing a percentage, is equal to (performanceMet / (performanceMet + performanceNotMet)) * 100.', notes: 'writable for registry single-performance rate only'}
 ];
 
 const MULTI_PERFORMANCE_RATE_FIELDS = [
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported  via certified EHR technology without any manual interference.', notes: 'writable'},
-  {name: 'strata', value: 'array(performanceRateStratum)', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data</a>.', notes: 'writable'}
-];
-
-const STRATA_FIELDS = [
-  {name: 'measurementId', value: 'string', description: 'The id of the measurement in which the stratum belongs.'},
-  {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>eligiblePopulation</b>', notes: 'writable'},
-  {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},
-  {name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure. In the measures specifications, this field is also referred to as "Numerator Exclusion".', notes: 'writable, optional'},
-  {name: 'eligiblePopulationException', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure. In the measures specifications, this field is also referred to as "Denominator Exception".', notes: 'writable, optional'},
-  {name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Numerator/Denominator".', notes: 'writable'},
-  {name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable'},
   {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100.'},
   {
     name: 'performanceRate',
@@ -66,7 +55,18 @@ const STRATA_FIELDS = [
       '<li><b>weightedAverage:</b> <samp>((sum strata\'s performanceMet) / (sum strata\'s performanceMet and performanceNotMet)) * 100</samp>, or,</li>' +
       '<li><b>sumNumerators:</b> <samp>sum strata\'s performanceMet</samp>, or,</li>' +
       '<li><b>overallStratumOnly:</b> performance rate of the "overall" stratum.</li></ul>'
-  }
+  , notes: 'writable for registry multi-performance rate only'},
+  {name: 'strata', value: 'array(performanceRateStratum)', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data</a>.', notes: 'writable'}
+];
+
+const STRATA_FIELDS = [
+  {name: 'measurementId', value: 'string', description: 'The id of the measurement in which the stratum belongs.'},
+  {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>eligiblePopulation</b>', notes: 'writable'},
+  {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},
+  {name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure. In the measures specifications, this field is also referred to as "Numerator Exclusion".', notes: 'writable, optional'},
+  {name: 'eligiblePopulationException', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure. In the measures specifications, this field is also referred to as "Denominator Exception".', notes: 'writable, optional'},
+  {name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Numerator/Denominator".', notes: 'writable'},
+  {name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable'}
 ];
 
 class Measurements extends React.PureComponent {
@@ -249,7 +249,7 @@ class Measurements extends React.PureComponent {
         <DataModelTable fields={NON_PROPORTION_FIELDS} />
 
         <h1 className='ds-h1' id='single-performance-rate-measurements'>Single-Performance Rate Measurements</h1>
-        <p className='ds-text--lead'>Single-Performance Rate Measurements are applicable to Quality measures.</p>
+        <p className='ds-text--lead'>Single-Performance Rate Measurements are applicable to Quality measures. There are two types of Single-Performance Rate Measurements: registry and normal. The difference between the two is that for Registry Single-Performance Rate Measurements, the performanceRate field is both writable and required.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
@@ -270,7 +270,9 @@ class Measurements extends React.PureComponent {
     "performanceNotMet": integer,
     "eligiblePopulationExclusion": integer,
     "eligiblePopulationException": integer,
-    "eligiblePopulation": integer
+    "eligiblePopulation": integer,
+    "performanceRate": float,
+    "reportingRate": float
   }
 }`}
               </pre>
@@ -288,6 +290,8 @@ class Measurements extends React.PureComponent {
     <eligiblePopulationExclusion>integer</eligiblePopulationExclusion>
     <eligiblePopulationException>integer</eligiblePopulationException>
     <eligiblePopulation>integer</eligiblePopulation>
+    <performanceRate>float</performanceRate>
+    <reportingRate>float</reportingRate>
   </value>
 </data>
 `}
@@ -298,7 +302,7 @@ class Measurements extends React.PureComponent {
         <DataModelTable fields={SINGLE_PERFORMANCE_RATE_FIELDS} />
 
         <h1 className='ds-h1' id='multi-performance-rate-measurements'>Multi-Performance Rate Measurements</h1>
-        <p className='ds-text--lead'>Multi-Performance Rate Measurements are applicable to Quality measures. Multi-Performance Rate Measurements contain multiple strata and the stratum field is required for each.</p>
+        <p className='ds-text--lead'>Multi-Performance Rate Measurements are applicable to Quality measures. There are two types of Multi-Performance Rate Measurements: registry and normal. The difference between the two is that for Registry Multi-Performance Rate Measurements, the performanceRate field is both writable and required. Multi-Performance Rate Measurements contain multiple strata and the stratum field is required for each.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
@@ -315,6 +319,8 @@ class Measurements extends React.PureComponent {
   "measureId": string,
   "value": {
     "isEndToEndReported": boolean,
+    "performanceRate": float,
+    "reportingRate": float,
     "strata": array(`}
                 <a href='#stratum'>Performance Rate Stratum</a>
                 {`)
@@ -330,6 +336,8 @@ class Measurements extends React.PureComponent {
   <measureId>string</measureId>
   <value>
     <isEndToEndReported>boolean</isEndToEndReported>
+    <performanceRate>float</performanceRate>
+    <reportingRate>float</reportingRate>
     <strata>array(`}
                 <a href='#stratum'>Performance Rate Stratum</a>
                 {`)</strata>
