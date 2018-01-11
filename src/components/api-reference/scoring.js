@@ -1,10 +1,22 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { pd } from 'pretty-data';
 
 import '../../styles/common/example-code-tabs.css';
 
 import DataModelTable from './common/data-model-table';
+import ScoringNavigationTable from './common/data-scoring-navigation-table';
+
+import submissionXmlExample from './common/scoring-example-submission-input-xml';
+import submissionJsonExample from './common/scoring-example-submission-input.json';
+import scoringXmlExample from './common/scoring-example-output-xml';
+import scoringJsonExample from './common/scoring-example-output.json';
+
+const submissionXmlExampleString = pd.xml(submissionXmlExample);
+const submissionJsonExampleString = JSON.stringify(submissionJsonExample, null, 2);
+const scoringXmlExampleString = pd.xml(scoringXmlExample);
+const scoringJsonExampleString = JSON.stringify(scoringJsonExample, null, 2);
 
 const SCORE_RESOURCE = {
   id: 'score-resource',
@@ -866,6 +878,63 @@ const MEASUREMENT_SCORE_RESOURCE = {
   }
 };
 
+const SCORE_NAVIGATION_EXAMPLES = [
+  {
+    find: 'Total Score',
+    xpath: '/data/score/value',
+    jsonpath: '$.data.score.value',
+    value: '100'
+  },
+  {
+    find: 'Quality Contribution to Final Score',
+    xpath: '/data/score/parts[3]/value',
+    jsonpath: '$.data.score.parts[2].value',
+    value: '60'
+  },
+  {
+    find: 'Quality Category Score',
+    xpath: '/data/score/parts[3]/original/value',
+    jsonpath: '$.data.score.parts[2].original.value',
+    value: '100'
+  },
+  {
+    find: 'Quality Measure Total Bonus Points',
+    xpath: '/data/score/parts[3]/original/parts/parts/metadata/totalBonusPoints',
+    jsonpath: '$.data.score.parts[2].original.parts[*].parts[*].metadata.totalBonusPoints',
+    value: 'an integer'
+  },
+  {
+    find: 'ACI Contribution to Final Score',
+    xpath: '/data/score/parts[2]/value',
+    jsonpath: '$.data.score.parts[1].value',
+    value: '25'
+  },
+  {
+    find: 'ACI Category Score',
+    xpath: '/data/score/parts[2]/original/value',
+    jsonpath: '$.data.score.parts[1].original.value',
+    value: '100'
+  },
+  {
+    find: 'ACI Performance Score',
+    xpath: '/data/score/parts[2]/original/parts/parts/metadata/totalBonusPoints',
+    jsonpath: '$.data.score.parts[1].original.parts[0].parts[0].aci_performance.value',
+    value: '20'
+  },
+  {
+    find: 'IA Contribution to Final Score',
+    xpath: '/data/score/parts[1]/value',
+    jsonpath: '$.data.score.parts[0].value',
+    value: '15'
+  },
+  {
+    find: 'IA Category Score',
+    xpath: '/data/score/parts[1]/original/value',
+    jsonpath: '$.data.score.parts[0].original.value',
+    value: '40'
+  }
+];
+
 /**
  * Reformats a multi-line string to display correctly in <pre></pre> tags, so a developer does not need to manage
  * indentation within JSON blobs
@@ -1037,6 +1106,44 @@ export default class ScoringEngine extends PureComponent {
         <p className='ds-text--lead'>
           Last, the Score Object is passed back to the QPP Submissions API, which builds the application response by inserting the Score Object into the response body and returns this response to the requester. This response body contains JSON describing in detail the record of the current aggregate estimate of the submission score.
         </p>
+        <h1 className='ds-h1'>Score Object Navigation</h1>
+        <p className='ds-text--lead'>
+          To help facilitate finding scoring details in the Scoring Output data structure, example navigation to important scoring details is outlined. A sample submission with corresponding scoring output is provided for reference.
+        </p>
+        <div>
+          <h2 className='ds-h2'>Example Submission</h2>
+          <Tabs className='example-code-tabs'>
+            <TabList>
+              <Tab>Sample JSON</Tab>
+              <Tab>Sample XML</Tab>
+            </TabList>
+            <TabPanel>
+              <pre>{`${submissionJsonExampleString}`}</pre>
+            </TabPanel>
+            <TabPanel>
+              <pre>{`${submissionXmlExampleString}`}</pre>
+            </TabPanel>
+          </Tabs>
+        </div>
+        <br />
+        <div>
+          <h2 className='ds-h2'>Example Submission Scoring Object</h2>
+          <Tabs className='example-code-tabs'>
+            <TabList>
+              <Tab>Sample JSON</Tab>
+              <Tab>Sample XML</Tab>
+            </TabList>
+            <TabPanel>
+              <pre>{`${scoringJsonExampleString}`}</pre>
+            </TabPanel>
+            <TabPanel>
+              <pre>{`${scoringXmlExampleString}`}</pre>
+            </TabPanel>
+          </Tabs>
+        </div>
+        <br />
+        <ScoringNavigationTable fields={SCORE_NAVIGATION_EXAMPLES} />
+        <br />
         <Resource {...SCORE_RESOURCE} />
         <Resource {...SCORE_PART_RESOURCE} />
         <Resource {...CATEGORY_SCORE_RESOURCE} />
