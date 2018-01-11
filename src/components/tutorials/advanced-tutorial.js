@@ -28,8 +28,9 @@ class AdvancedTutorial extends React.Component {
             </a>
             </h2>
             <p>Previously, we created a submission and added a measurement set in two requests. It's common to want to do these at the same time - the first time we want to submit performance data for any individual, for instance. It's convenient to be able to do both, so let's try that with ACI performance data.</p>
-            <p>Here's a <code>POST</code> request to create a submission. We're including the  measurement set and submission together by nesting the measurement set inside the submission info, much like we nested measurements within measurement sets.</p>
-            <p>The request payload on the right can be harder to read, but it contains the same info as below formatted exactly as it's sent through the API. Check it out then click the button!</p>
+            <p>Here's a <code>POST</code> request to create a submission. You can pass an <code>Accept</code> header to specify the API version and the desired response format by using our custom mime type, <code>application/vnd.qpp.cms.gov.v1+json</code>. We support JSON and XML by using <code>+json</code> or <code>+xml</code>. Right now, only version <code>v1</code> is supported. You can also continue to use a standard <code>application/json</code> or <code>application/xml</code> header, which will point to the latest version (currently v1).</p>
+            <p>We're including the  measurement set and submission together by nesting the measurement set inside the submission info, much like we nested measurements within measurement sets.</p>
+            <p>The request payload on the right can be harder to read, but it contains the same info as below formatted exactly as it's sent through the API. Check it out then click response!</p>
             <InlineApiExample
               verb='POST'
               url='/submissions'
