@@ -848,6 +848,62 @@ const MEASUREMENT_SCORE_RESOURCE = {
           notes: ''
         }
       ],
+      cpc_plus_metadata: [
+        {
+          name: 'measurementSetId',
+          value: 'string',
+          description: 'Data store ID for the measurement’s measurement set',
+          notes: 'A V4 UUID'
+        },
+        {
+          name: 'measurementId',
+          value: 'string',
+          description: 'Data store ID for the measurement',
+          notes: 'A V4 UUID'
+        },
+        {
+          name: 'measureTitle',
+          value: 'string',
+          description: 'Title of the measurement',
+          notes: 'Should be moved to the measurement title'
+        },
+        {
+          name: 'totalMeasurementPoints',
+          value: 'number',
+          description: 'Total points the measurement can contribute including base and bonus',
+          notes: ''
+        },
+        {
+          name: 'totalBonusPoints',
+          value: 'number',
+          description: 'Total bonus points the measurement can contribute',
+          notes: ''
+        },
+        {
+          name: 'benchmarkType',
+          value: 'string',
+          description: 'Submission method with which the measurement benchmark data corresponds',
+          notes: ''
+        },
+        {
+          name: 'eMeasureId',
+          value: 'string',
+          description: 'The measurements eMeasureId',
+          notes: 'The eMeasureId from the measure\'s <a href="https://github.com/CMSgov/qpp-measures-data/blob/master/measures/measures-data.json">qpp-measures-data</a> definition'
+        },
+        {
+          name: 'cpcPlusGroup',
+          value: 'string char',
+          description: 'CPC+ group identifier for the measurement if it belongs to a CPC+ eligible measurement set',
+          notes: ''
+        },
+        {
+          name: 'messages',
+          value: 'string',
+          description: '',
+          notes: ''
+        }
+      ],
       messages: [
         {
           name: 'measurementClass',
@@ -1026,6 +1082,8 @@ const MetadataMessages = ({id, base, ia, aci, quality}) => {
         <DataTableWithHeader fields={aci.messages} header='Advancing Care Information Messages' />
         <DataTableWithHeader fields={quality.metadata} header='Quality Metadata' />
         <DataTableWithHeader fields={quality.messages} header='Quality Messages' />
+        <DataTableWithHeader fields={quality.cpc_plus_metadata} header='Quality CPC+ Metadata' />
+        <DataTableWithHeader fields={quality.messages} header='Quality CPC+ Messages' />
       </div>
     );
   } else {
