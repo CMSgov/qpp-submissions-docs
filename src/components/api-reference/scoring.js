@@ -411,7 +411,7 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
       ],
       messages: [
         {
-          name: 'preAttestationCheck',
+          name: 'attestationStatementCheck',
           value: 'string',
           description: 'Completeness of pre-attestation checks',
           notes: ''
