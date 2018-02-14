@@ -1,0 +1,535 @@
+{
+  "data": {
+    "score": {
+      "name": "total",
+      "title": "Total Score",
+      "detail": "0.29.0",
+      "value": 100,
+      "parts": [
+        {
+          "name": "ia",
+          "title": "IA component of final score",
+          "detail": "Scoring based on weight of 15%.",
+          "value": 15,
+          "original": {
+            "name": "ia",
+            "value": 40,
+            "detail": "Picked the highest scoring measurement set electronicHealthRecord",
+            "parts": [
+              {
+                "name": "ia",
+                "value": 40,
+                "title": "Improvement Activities Score",
+                "detail": "electronicHealthRecord",
+                "parts": [
+                  {
+                    "name": "IA_AHE_1",
+                    "title": "Engagement of new Medicaid patients and follow-up",
+                    "value": 20,
+                    "metadata": {
+                      "maxContribution": 20
+                    }
+                  },
+                  {
+                    "name": "IA_AHE_2",
+                    "title": "Leveraging a QCDR to standardize processes for screening",
+                    "value": 10,
+                    "metadata": {
+                      "maxContribution": 20
+                    }
+                  },
+                  {
+                    "name": "IA_AHE_3",
+                    "title": "Leveraging a QCDR to promote use of patient-reported outcome tools",
+                    "value": 10,
+                    "metadata": {
+                      "maxContribution": 20
+                    }
+                  },
+                  {
+                    "name": "IA_AHE_4",
+                    "title": "Leveraging a QCDR for use of standard questionnaires",
+                    "value": 10,
+                    "metadata": {
+                      "maxContribution": 20
+                    }
+                  }
+                ],
+                "metadata": {
+                  "messages": {},
+                  "maxContribution": 40,
+                  "measurementSetPicked": true
+                }
+              }
+            ]
+          },
+          "metadata": {
+            "maxContribution": 15
+          }
+        },
+        {
+          "name": "aci",
+          "title": "ACI component of final score",
+          "detail": "Scoring based on weight of 25%.",
+          "value": 25,
+          "original": {
+            "name": "aci",
+            "value": 100,
+            "detail": "Picked the highest scoring measurement set electronicHealthRecord",
+            "parts": [
+              {
+                "name": "aci",
+                "title": "Advancing Care Information Score",
+                "value": 100,
+                "detail": "electronicHealthRecord",
+                "parts": [
+                  {
+                    "name": "aci_base",
+                    "value": 80,
+                    "detail": "",
+                    "metadata": {
+                      "maxContribution": 100
+                    },
+                    "parts": [
+                      {
+                        "name": "ACI_PEA_1",
+                        "value": 10,
+                        "metadata": {
+                          "maxContribution": 10
+                        }
+                      },
+                      {
+                        "name": "ACI_HIE_1",
+                        "value": 10,
+                        "metadata": {
+                          "maxContribution": 10
+                        }
+                      },
+                      {
+                        "name": "ACI_HIE_2",
+                        "value": 10,
+                        "metadata": {
+                          "maxContribution": 10
+                        }
+                      }
+                    ],
+                    "warnings": []
+                  },
+                  {
+                    "name": "aci_performance",
+                    "value": 20,
+                    "detail": "",
+                    "metadata": {
+                      "maxContribution": 100
+                    },
+                    "parts": [
+                      {
+                        "name": "ACI_HIE_3",
+                        "value": 10,
+                        "metadata": {
+                          "maxContribution": 10
+                        }
+                      },
+                      {
+                        "name": "ACI_PHCDRR_1",
+                        "value": 10,
+                        "metadata": {
+                          "maxContribution": 10
+                        }
+                      }
+                    ],
+                    "warnings": []
+                  },
+                  {
+                    "name": "aci_bonus",
+                    "value": 0,
+                    "detail": "",
+                    "metadata": {
+                      "maxContribution": 100
+                    },
+                    "parts": [],
+                    "warnings": []
+                  },
+                  {
+                    "name": "cehrt_bonus",
+                    "value": 0,
+                    "detail": "",
+                    "metadata": {
+                      "maxContribution": 100
+                    },
+                    "parts": [],
+                    "warnings": []
+                  }
+                ],
+                "metadata": {
+                  "messages": {
+                    "attestationStatementCheck": "Attestation Statements are complete",
+                    "baseMeasureCheck": "Base measures are complete"
+                  },
+                  "maxContribution": 100,
+                  "measurementSetPicked": true
+                },
+                "warnings": []
+              }
+            ],
+            "warnings": []
+          },
+          "metadata": {
+            "maxContribution": 25
+          }
+        },
+        {
+          "name": "quality",
+          "title": "QUALITY component of final score",
+          "detail": "Scoring based on weight of 60%.",
+          "value": 60,
+          "original": {
+            "name": "quality",
+            "value": 100,
+            "detail": "Picked the highest scoring measurement set electronicHealthRecord",
+            "parts": [
+              {
+                "name": "quality",
+                "value": 100,
+                "detail": "electronicHealthRecord",
+                "parts": [
+                  {
+                    "name": "191",
+                    "value": 11,
+                    "detail": "Contributing 11",
+                    "metadata": {
+                      "performanceRate": 100,
+                      "reportingRate": 100,
+                      "measureClass": "Class 1",
+                      "measureTitle": "Cataracts: 20/40 or Better Visual Acuity within 90 Days Following Cataract Surgery",
+                      "highPriorityBonusEligible": true,
+                      "endToEndBonusEligible": true,
+                      "endToEndBonus": 1,
+                      "outcomeOrPatientExperienceBonus": 0,
+                      "highPriorityBonus": 0,
+                      "highPriorityBonusIgnored": true,
+                      "decileScore": 10,
+                      "performanceDenominator": 10000,
+                      "performanceNumerator": 10000,
+                      "eligiblePopulation": 10000,
+                      "partialDecileScore": 0,
+                      "partialPoints": 0,
+                      "decile": 10,
+                      "deciles": [
+                        0,
+                        86.61,
+                        91.43,
+                        94.44,
+                        96.08,
+                        97.36,
+                        98.31,
+                        99.25,
+                        100
+                      ],
+                      "processingStatus": "PICKED",
+                      "totalMeasurementPoints": 11,
+                      "totalBonusPoints": 1,
+                      "messages": {
+                        "measurementClass": "Eligible population is greater than or equal to 20, reporting rate is greater than 50% and has benchmarks",
+                        "decileScore": "Applied maximum decile score",
+                        "e2eBonusScore": "Bonus from isEndToEndReported",
+                        "highPriorityBonus": "Measure having highest decile score (preference given to outcome, intermediate outcome, and patient engagement experience) is not eligible for high priority bonus",
+                        "measurementPicker": "Picked at 1",
+                        "totalMeasurementPoints": "Measurement points for PICKED measure include decile score with all bonus points"
+                      },
+                      "noBenchmarks": true,
+                      "benchmarkType": "electronicHealthRecord",
+                      "eMeasureId": "CMS133v5"
+                    }
+                  },
+                  {
+                    "name": "005",
+                    "value": 11,
+                    "detail": "Contributing 11",
+                    "metadata": {
+                      "performanceRate": 100,
+                      "reportingRate": 100,
+                      "measureClass": "Class 1",
+                      "measureTitle": "Heart Failure (HF): Angiotensin-Converting Enzyme (ACE) Inhibitor or Angiotensin Receptor Blocker (ARB) Therapy for Left Ventricular Systolic Dysfunction (LVSD)",
+                      "highPriorityBonusEligible": true,
+                      "endToEndBonusEligible": true,
+                      "endToEndBonus": 1,
+                      "outcomeOrPatientExperienceBonus": 0,
+                      "highPriorityBonus": 0,
+                      "decileScore": 10,
+                      "performanceDenominator": 10000,
+                      "performanceNumerator": 10000,
+                      "eligiblePopulation": 10000,
+                      "partialDecileScore": 0,
+                      "partialPoints": 9.09,
+                      "decile": 10,
+                      "deciles": [
+                        0,
+                        62.16,
+                        66.67,
+                        71.43,
+                        74.91,
+                        77.61,
+                        82.61,
+                        85.71,
+                        90.91
+                      ],
+                      "processingStatus": "PICKED",
+                      "totalMeasurementPoints": 11,
+                      "totalBonusPoints": 1,
+                      "messages": {
+                        "measurementClass": "Eligible population is greater than or equal to 20, reporting rate is greater than 50% and has benchmarks",
+                        "decileScore": "Applied maximum decile score",
+                        "e2eBonusScore": "Bonus from isEndToEndReported",
+                        "outcomeBonus": "Default outcome bonus",
+                        "highPriorityBonus": "Default high priority bonus",
+                        "measurementPicker": "Picked at 2",
+                        "totalMeasurementPoints": "Measurement points for PICKED measure include decile score with all bonus points"
+                      },
+                      "noBenchmarks": true,
+                      "benchmarkType": "electronicHealthRecord",
+                      "eMeasureId": "CMS135v5"
+                    }
+                  },
+                  {
+                    "name": "110",
+                    "value": 11,
+                    "detail": "Contributing 11",
+                    "metadata": {
+                      "performanceRate": 100,
+                      "reportingRate": 100,
+                      "measureClass": "Class 1",
+                      "measureTitle": "Preventive Care and Screening: Influenza Immunization",
+                      "highPriorityBonusEligible": true,
+                      "endToEndBonusEligible": true,
+                      "endToEndBonus": 1,
+                      "outcomeOrPatientExperienceBonus": 0,
+                      "highPriorityBonus": 0,
+                      "decileScore": 10,
+                      "performanceDenominator": 10000,
+                      "performanceNumerator": 10000,
+                      "eligiblePopulation": 10000,
+                      "partialDecileScore": 0,
+                      "partialPoints": 20.98,
+                      "decile": 10,
+                      "deciles": [
+                        0,
+                        11.22,
+                        18.58,
+                        25,
+                        31.85,
+                        38.93,
+                        47.87,
+                        60,
+                        79.02
+                      ],
+                      "processingStatus": "PICKED",
+                      "totalMeasurementPoints": 11,
+                      "totalBonusPoints": 1,
+                      "messages": {
+                        "measurementClass": "Eligible population is greater than or equal to 20, reporting rate is greater than 50% and has benchmarks",
+                        "decileScore": "Applied maximum decile score",
+                        "e2eBonusScore": "Bonus from isEndToEndReported",
+                        "outcomeBonus": "Default outcome bonus",
+                        "highPriorityBonus": "Default high priority bonus",
+                        "measurementPicker": "Picked at 3",
+                        "totalMeasurementPoints": "Measurement points for PICKED measure include decile score with all bonus points"
+                      },
+                      "noBenchmarks": true,
+                      "benchmarkType": "electronicHealthRecord",
+                      "eMeasureId": "CMS147v6"
+                    }
+                  },
+                  {
+                    "name": "128",
+                    "value": 11,
+                    "detail": "Contributing 11",
+                    "metadata": {
+                      "performanceRate": 100,
+                      "reportingRate": 100,
+                      "measureClass": "Class 1",
+                      "measureTitle": "Preventive Care and Screening: Body Mass Index (BMI) Screening and Follow-Up Plan",
+                      "highPriorityBonusEligible": true,
+                      "endToEndBonusEligible": true,
+                      "endToEndBonus": 1,
+                      "outcomeOrPatientExperienceBonus": 0,
+                      "highPriorityBonus": 0,
+                      "decileScore": 10,
+                      "performanceDenominator": 10000,
+                      "performanceNumerator": 10000,
+                      "eligiblePopulation": 10000,
+                      "partialDecileScore": 0,
+                      "partialPoints": 31.1,
+                      "decile": 10,
+                      "deciles": [
+                        0,
+                        26.03,
+                        30.01,
+                        33.33,
+                        36.47,
+                        40,
+                        44.38,
+                        50,
+                        68.9
+                      ],
+                      "processingStatus": "PICKED",
+                      "totalMeasurementPoints": 11,
+                      "totalBonusPoints": 1,
+                      "messages": {
+                        "measurementClass": "Eligible population is greater than or equal to 20, reporting rate is greater than 50% and has benchmarks",
+                        "decileScore": "Applied maximum decile score",
+                        "e2eBonusScore": "Bonus from isEndToEndReported",
+                        "outcomeBonus": "Default outcome bonus",
+                        "highPriorityBonus": "Default high priority bonus",
+                        "measurementPicker": "Picked at 4",
+                        "totalMeasurementPoints": "Measurement points for PICKED measure include decile score with all bonus points"
+                      },
+                      "noBenchmarks": true,
+                      "benchmarkType": "electronicHealthRecord",
+                      "eMeasureId": "CMS69v5"
+                    }
+                  },
+                  {
+                    "name": "192",
+                    "value": 13,
+                    "detail": "Contributing 13",
+                    "metadata": {
+                      "performanceRate": 0,
+                      "reportingRate": 100,
+                      "measureClass": "Class 1",
+                      "measureTitle": "Cataracts: Complications within 30 Days Following Cataract Surgery Requiring Additional Surgical Procedures",
+                      "highPriorityBonusEligible": true,
+                      "endToEndBonusEligible": true,
+                      "endToEndBonus": 1,
+                      "outcomeOrPatientExperienceBonus": 2,
+                      "highPriorityBonus": 0,
+                      "decileScore": 10,
+                      "performanceDenominator": 10000,
+                      "performanceNumerator": 0,
+                      "eligiblePopulation": 10000,
+                      "partialDecileScore": 0,
+                      "partialPoints": 0,
+                      "decile": 10,
+                      "deciles": [
+                        100,
+                        0.92,
+                        0.42,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0
+                      ],
+                      "processingStatus": "PICKED",
+                      "totalMeasurementPoints": 13,
+                      "totalBonusPoints": 3,
+                      "messages": {
+                        "measurementClass": "Eligible population is greater than or equal to 20, reporting rate is greater than 50% and has benchmarks",
+                        "decileScore": "Applied maximum decile score",
+                        "e2eBonusScore": "Bonus from isEndToEndReported",
+                        "outcomeBonus": "Allotting 2 points to outcome bonus for measure type 'outcome'",
+                        "measurementPicker": "Picked at 5",
+                        "totalMeasurementPoints": "Measurement points for PICKED measure include decile score with all bonus points"
+                      },
+                      "noBenchmarks": true,
+                      "benchmarkType": "electronicHealthRecord",
+                      "eMeasureId": "CMS132v5"
+                    }
+                  },
+                  {
+                    "name": "310",
+                    "value": 11,
+                    "detail": "Contributing 11",
+                    "metadata": {
+                      "performanceRate": 100,
+                      "reportingRate": 100,
+                      "measureClass": "Class 1",
+                      "measureTitle": "Chlamydia Screening for Women",
+                      "highPriorityBonusEligible": true,
+                      "endToEndBonusEligible": true,
+                      "endToEndBonus": 1,
+                      "outcomeOrPatientExperienceBonus": 0,
+                      "highPriorityBonus": 0,
+                      "decileScore": 10,
+                      "performanceDenominator": 10000,
+                      "performanceNumerator": 10000,
+                      "eligiblePopulation": 10000,
+                      "partialDecileScore": 0,
+                      "partialPoints": 38.46,
+                      "decile": 10,
+                      "deciles": [
+                        0,
+                        8.33,
+                        12.87,
+                        18.18,
+                        25,
+                        33.33,
+                        40,
+                        50,
+                        61.54
+                      ],
+                      "processingStatus": "PICKED",
+                      "totalMeasurementPoints": 11,
+                      "totalBonusPoints": 1,
+                      "messages": {
+                        "measurementClass": "Eligible population is greater than or equal to 20, reporting rate is greater than 50% and has benchmarks",
+                        "decileScore": "Applied maximum decile score",
+                        "e2eBonusScore": "Bonus from isEndToEndReported",
+                        "outcomeBonus": "Default outcome bonus",
+                        "highPriorityBonus": "Default high priority bonus",
+                        "measurementPicker": "Picked at 6",
+                        "totalMeasurementPoints": "Measurement points for PICKED measure include decile score with all bonus points"
+                      },
+                      "noBenchmarks": true,
+                      "benchmarkType": "electronicHealthRecord",
+                      "eMeasureId": "CMS153v5"
+                    }
+                  }
+                ],
+                "metadata": {
+                  "messages": {
+                    "denominator": "At least 1 high or outcome or patient experience measure available. So denominator is 60",
+                    "totalMeasurementPoints": "Sum of applicable individual measurement points. Capped at the measurement set denominator of 60.",
+                    "totalBonusPoints": "Sum of individual measurement bonus points"
+                  },
+                  "maxContribution": 100,
+                  "measuresPicked": [
+                    "191",
+                    "005",
+                    "110",
+                    "128",
+                    "192",
+                    "310"
+                  ],
+                  "totalMeasurementPoints": 60,
+                  "totalBonusPoints": 8,
+                  "denominator": 60,
+                  "e2eBonusScore": 6,
+                  "measurementSetPicked": true,
+                  "reweightedScore": 60
+                }
+              }
+            ]
+          },
+          "metadata": {
+            "maxContribution": 60
+          }
+        }
+      ],
+      "metadata": {
+        "messages": {},
+        "maxFinalScore": 100,
+        "maxHighContributionIA": 20,
+        "maxMediumContributionIA": 10,
+        "maxContributionIA": 15,
+        "maxContributionACI": 25,
+        "maxContributionQuality": 60
+      },
+      "warnings": [
+        "Disclaimer: Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments."
+      ],
+      "errors": []
+    }
+  }
+}
