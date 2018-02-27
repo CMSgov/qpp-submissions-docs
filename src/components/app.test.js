@@ -3,8 +3,8 @@ import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import App from './app';
 
-import Introduction from './introduction';
-import DeveloperPreview from './developer-preview';
+import Introduction from './introduction-v2';
+// import DeveloperPreview from './developer-preview';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
 import Submissions from './api-reference/schemas/submissions';
@@ -21,7 +21,7 @@ it('renders without crashing', () => {
 
 const expectedRoutes = {
   '/': <Introduction />,
-  '/developer-preview': <DeveloperPreview />,
+  // '/developer-preview': <DeveloperPreview />,
   '/tutorial': <BasicTutorial />,
   '/advanced-tutorial': <AdvancedTutorial />,
   '/submissions': <Submissions />,
@@ -34,19 +34,15 @@ const expectedRoutes = {
 };
 
 Object.keys(expectedRoutes).forEach(function(path) {
-  // while official reporting period is closed, skip test for developer preview
-  if (path !== "/developer-preview"){
-    return
-  } else {
-    it('has a link for ' + path, () => {
-      const wrapper = mount(
-        <MemoryRouter>
-          <App />
-        </MemoryRouter>
-      );
-      expect(wrapper.find('[href="' + path + '"]').length).toBeGreaterThanOrEqual(1);
-    })};
+  it('has a link for ' + path, () => {
+    const wrapper = mount(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+    expect(wrapper.find('[href="' + path + '"]').length).toBeGreaterThanOrEqual(1);
   });
+});
 
 Object.entries(expectedRoutes).forEach(function([path, component]) {
   it('displays the right component for ' + path, () => {
