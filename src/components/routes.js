@@ -1,5 +1,4 @@
-// import DeveloperPreview from './developer-preview';
-import Introduction from './introduction-v2';
+import Introduction from './introduction';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
 import Submissions from './api-reference/schemas/submissions';
@@ -12,24 +11,12 @@ import ExampleDocs from './api-reference/example-docs';
 import TermsOfService from './terms-of-service';
 
 const topicsPaths = [
-  // {
-  //   path: '/',
-  //   exact: true,
-  //   linkText: 'Introduction',
-  //   component: Introduction
-  // },
   {
     path: '/',
     exact: true,
     linkText: 'Introduction',
     component: Introduction
   },
-  // {
-  //   path: '/developer-preview',
-  //   exact: false,
-  //   linkText: 'Developer Preview',
-  //   component: DeveloperPreview
-  // },
   {
     path: 'https://qpp-submissions-sandbox.navapbc.com',
     exact: false,
