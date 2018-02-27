@@ -1,4 +1,3 @@
-import DeveloperPreview from './developer-preview';
 import Introduction from './introduction';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
@@ -17,12 +16,6 @@ const topicsPaths = [
     exact: true,
     linkText: 'Introduction',
     component: Introduction
-  },
-  {
-    path: '/developer-preview',
-    exact: false,
-    linkText: 'Developer Preview',
-    component: DeveloperPreview
   },
   {
     path: 'https://qpp-submissions-sandbox.navapbc.com',
