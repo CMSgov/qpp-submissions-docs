@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import SubmissionsObjects from './submissions-objects';
+
 class Introduction extends React.Component {
   render() {
     return (
       <div>
-        <h2 className='ds-h2'>Quality Payment Program Submissions API Closed for Official Reporting</h2>
+        <h2 className='ds-h2'>Quality Payment Program Submissions API Will Close for Official Reporting March 31, 2018</h2>
         <p className='ds-text--lead'>Performance data for the 2017 Quality Payment Program (QPP) must be submitted by March 31, 2018. After this date, 2017 Qualified Registries and Qualified Clinical Data Registries who have an API token will have limited access to specific endpoints of the Submissions API.</p>
       
         <h2 className='ds-h2'>API Access After the 2017 QPP Submission Window Closes</h2>
@@ -33,6 +35,13 @@ class Introduction extends React.Component {
         <p className='ds-text'>The QPP APIs Google Group is where developers and the CMS QPP Product Managers discuss your questions and feedback. New announcements and discussions are being added everyday.</p>
         <p className='ds-text'>For questions about QPP measures, scores, policy or how the program works, please contact the Quality Payment Program Service Center at QPP@cms.hhs.gov or 1-866-288-8292.</p>
 
+        <h2 className='ds-h2'>Explore the API</h2>
+        <SubmissionsObjects />
+
+        <p className='ds-text'>Walk through how to create a new submission, submit measures and receive real-time scoring in the below tutorial.</p>
+        <Link to='/tutorial' className='ds-c-button ds-c-button--primary'>Start the tutorial</Link>
+
+        <p><br />Return to the <a href='https://qpp.cms.gov/resources/developers'>QPP Developer Tools</a>.</p>
       </div>
     );
   }
