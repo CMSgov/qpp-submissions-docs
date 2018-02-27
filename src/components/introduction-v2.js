@@ -16,11 +16,11 @@ class Introduction extends React.Component {
 
        MeasurementSets
        <ul>
-          <li>POST /measurement-sets </li>
-          <li>PUT, PATCH, POST, DELETE /measurement-sets/<span>&#123;id&#125;</span></li>
-        </ul>
-        
-        Measurements
+         <li>POST /measurement-sets </li>
+         <li>PUT, PATCH, POST, DELETE /measurement-sets/<span>&#123;id&#125;</span></li>
+      </ul>
+       
+       Measurements
         <ul>
           <li>POST /measurements</li>
           <li>PUT, PATCH, POST, DELETE /measurements/<span>&#123;id&#125;</span></li>
@@ -29,7 +29,7 @@ class Introduction extends React.Component {
         <p className='ds-text'>Attempting to access any of these endpoints after March 31, 2018 will return a 401 error.</p>
         <p className='ds-text'>POST https://qpp.cms.gov/api/submissions/submissions/score-preview will still be accessible, as this data is not persisted. Please remember that this endpoint will not return a score for special scoring scenarios.</p>
         
-         <p className='ds-text'>GET https://qpp.cms.gov/api/submissions/submissions/<span>&#123;id&#125;</span>/score will also remain accessible. Please note that this endpoint returns the score for a submission object, and does not represent the final score for a TIN/NPI.</p> 
+        <p className='ds-text'>GET https://qpp.cms.gov/api/submissions/submissions/<span>&#123;id&#125;</span>/score will also remain accessible. Please note that this endpoint returns the score for a submission object, and does not represent the final score for a TIN/NPI.</p>
         
         <h2 className='ds-h2'>Stay Up Date</h2>
         <p className='ds-text'>The QPP APIs Google Group is where developers and the CMS QPP Product Managers discuss your questions and feedback. New announcements and discussions are being added everyday.</p>
