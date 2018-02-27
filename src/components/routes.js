@@ -19,7 +19,7 @@ const topicsPaths = [
   //   component: Introduction
   // },
   {
-    path: '/introduction-v2',
+    path: '/',
     exact: true,
     linkText: 'Introduction',
     component: Introduction
