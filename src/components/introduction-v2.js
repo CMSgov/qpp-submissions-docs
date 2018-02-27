@@ -17,7 +17,6 @@ class Introduction extends React.Component {
           <li>POST /measurement-sets </li>
           <li>PUT, PATCH, POST, DELETE /measurement-sets/<span>&#123;id&#125;</span></li>
         </ul>
-      
         Measurements
         <ul>
           <li>POST /measurements</li>
