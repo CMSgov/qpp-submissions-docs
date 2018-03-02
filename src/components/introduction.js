@@ -14,19 +14,19 @@ class Introduction extends React.Component {
 
         MeasurementSets
         <ul>
-          <li>POST https://qpp.cms.gov/api/submissions/submissions/measurement-sets</li>
-          <li>PUT, PATCH, POST, DELETE https://qpp.cms.gov/api/submissions/submissions/measurement-sets/<span>&#123;id&#125;</span></li>
+          <li>POST https://qpp.cms.gov/api/submissions/measurement-sets</li>
+          <li>PUT, PATCH, POST, DELETE https://qpp.cms.gov/api/submissions/measurement-sets/<span>&#123;id&#125;</span></li>
         </ul>
         Measurements
         <ul>
-          <li>POST https://qpp.cms.gov/api/submissions/submissions/measurements</li>
-          <li>PUT, PATCH, POST, DELETE https://qpp.cms.gov/api/submissions/submissions/measurements/<span>&#123;id&#125;</span></li>
+          <li>POST https://qpp.cms.gov/api/submissions/measurements</li>
+          <li>PUT, PATCH, POST, DELETE https://qpp.cms.gov/api/submissions/measurements/<span>&#123;id&#125;</span></li>
         </ul>
 
         <p className='ds-text'>Attempting to access any of these endpoints after March 31, 2018 will return a 401 error.</p>
 
-        <p className='ds-text'>POST https://qpp.cms.gov/api/submissions/submissions/score-preview will still be accessible, as this data is not persisted. Please remember that this endpoint will not return a score for special scoring scenarios.</p>
-        <p className='ds-text'>GET https://qpp.cms.gov/api/submissions/submissions/<span>&#123;id&#125;</span>/score will also remain accessible. Please note that this endpoint returns the score for a submission object, and does not represent the final score for a TIN/NPI.</p>
+        <p className='ds-text'>POST https://qpp.cms.gov/api/submissions/score-preview will still be accessible, as this data is not persisted. Please remember that this endpoint will not return a score for special scoring scenarios.</p>
+        <p className='ds-text'>GET https://qpp.cms.gov/api/submissions/<span>&#123;id&#125;</span>/score will also remain accessible. Please note that this endpoint returns the score for a submission object, and does not represent the final score for a TIN/NPI.</p>
         <h2 className='ds-h2'>Stay Up Date</h2>
         <p className='ds-text'>The QPP APIs Google Group is where developers and the CMS QPP Product Managers discuss your questions and feedback. New announcements and discussions are being added everyday.</p>
         <p className='ds-text'>For questions about QPP measures, scores, policy or how the program works, please contact the Quality Payment Program Service Center at QPP@cms.hhs.gov or 1-866-288-8292.</p>
