@@ -17,6 +17,11 @@ const topicsPaths = [
     linkText: 'Introduction',
     component: Introduction
   },
+   {
+    path: '/developer-preview',
+    exact: false,
+    component: Introduction
+  },
   {
     path: 'https://qpp-submissions-sandbox.navapbc.com',
     exact: false,
