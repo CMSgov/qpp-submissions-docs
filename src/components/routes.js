@@ -18,6 +18,11 @@ const topicsPaths = [
     component: Introduction
   },
   {
+    path: '/developer-preview',
+    exact: false,
+    component: Introduction
+  },
+  {
     path: 'https://qpp-submissions-sandbox.navapbc.com',
     exact: false,
     linkText: 'Interactive Docs',
