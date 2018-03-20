@@ -17,7 +17,7 @@ const topicsPaths = [
     linkText: 'Introduction',
     component: Introduction
   },
-   {
+  {
     path: '/developer-preview',
     exact: false,
     component: Introduction
