@@ -105,6 +105,12 @@ const ALL_CAUSE_READMISSION_FIELDS = [
   }
 ];
 
+const CAHPS_FIELDS = [
+    {name: 'score', value: 'float', description: 'For CAHPS measurements 1 - 12: score for survey question. For CAHPS measurement 321: average of scores for CAHPS measurements 1 - 12 '},
+    {name: 'reliability', value: 'string', description: 'Reliability of the measurement score.'},
+    {name: 'isBelowMinimum', value: 'boolean', description: 'Whether number of answers to survey question is below minimum threshold.'}
+];
+
 class Measurements extends React.PureComponent {
   render() {
     // This is necessary to disable the default styles
@@ -120,6 +126,7 @@ class Measurements extends React.PureComponent {
           <li><a href='#single-performance-rate-measurements'>Single-Performance Rate</a></li>
           <li><a href='#multi-performance-rate-measurements'>Multi-Performance Rate</a></li>
           <li><a href='#all-cause-readmission-measurements'>All Cause Readmission</a></li>
+          <li><a href='#cahps'>CAHPS</a></li>
         </ul>
         <p className='ds-text--lead'>The Measurements resource represents performance data for a specific measure within a MeasurementSet. There are five types of Measurements: Boolean, Proportion, Non-Proportion, Single-Performance Rate, and Multi-Performance Rate. Each MeasurementSet can have multiple Measurements. No two Measurements in a given MeasurementSet can have the same measureId.</p>
         <p className='ds-text--lead'><a href='https://qpp-submissions-sandbox.navapbc.com/#/Measurements'>Try it out!</a></p>
@@ -140,7 +147,7 @@ class Measurements extends React.PureComponent {
   "value": [`}
                 <a href='#boolean-measurements'>Boolean</a> | <a href='#proportion-measurements'>Proportion</a> | <a href='#non-proportion'>Non-Proportion</a> | {`
     `} <a href='#single-performance-rate-measurements'>Single-Performance Rate</a> | <a href='#multi-performance-rate-measurements'>Multi-Performance Rate</a> | {`
-    `} <a href='#all-cause-readmission-measurements'>All Cause Readmission</a>
+    `} <a href='#all-cause-readmission-measurements'>All Cause Readmission</a> | <a href='#cahps'>CAHPS </a>
                 {`]
 }`}
               </pre>
@@ -154,7 +161,7 @@ class Measurements extends React.PureComponent {
   <value>[`}
                 <a href='#boolean-measurements'>Boolean</a> | <a href='#proportion-measurements'>Proportion</a> | <a href='#non-proportion'>Non-Proportion</a> | {`
   `} <a href='#single-performance-rate-measurements'>Single-Performance Rate</a> | <a href='#multi-performance-rate-measurements'>Multi-Performance Rate</a> | {`
-  `} <a href='#all-cause-readmission-measurements'>All Cause Readmission</a>
+  `} <a href='#all-cause-readmission-measurements'>All Cause Readmission</a> | <a href='#cahps'>CAHPS </a>
                 {`]</value>
 </data>
 `}
@@ -512,6 +519,53 @@ class Measurements extends React.PureComponent {
         </div>
 
         <DataModelTable fields={ALL_CAUSE_READMISSION_FIELDS} />
+
+        <h1 className='ds-h1' id='cahps'>CAHPS Measurements</h1>
+        <p className='ds-text--lead'>CAHPS (Consumer Assessment of Healthcare Providers and Systems) is a series of patient surveys rating
+            health care experiences is an optional Quality measure that groups participating in MIPS can elect to administer.</p>
+        <h2 className='ds-h2'>Resource Representation</h2>
+        <div>
+          <Tabs
+            className='example-code-tabs'>
+            <TabList>
+              <Tab>JSON</Tab>
+              <Tab>XML</Tab>
+            </TabList>
+            <TabPanel>
+              <pre>
+                {`{
+  "id": string,
+  "measurementSetId": string,
+  "measureId": string,
+  "value": {
+    "score": float,
+    "reliability": string,
+    "mask": boolean,
+    "isBelowMinimum": boolean
+  }
+}`}
+              </pre>
+            </TabPanel>
+            <TabPanel>
+              <pre>
+                {`<data>
+  <id>string</id>
+  <measurementSetId>string</measurementSetId>
+  <measureId>string</measureId>
+  <value>
+    <score>float</score>
+    <reliability>string</reliability>
+    <mask>boolean</mask>
+    <isBelowMinimum>boolean</isBelowMinimum>
+  </value>
+</data>
+`}
+              </pre>
+            </TabPanel>
+          </Tabs>
+        </div>
+
+        <DataModelTable fields={CAHPS_FIELDS} />
 
       </div>
     );
