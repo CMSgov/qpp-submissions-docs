@@ -118,7 +118,7 @@ class Measurements extends React.PureComponent {
 
     return (
       <div>
-           <h1 className='ds-h1'>Measurements</h1>
+        <h1 className='ds-h1'>Measurements</h1>
         <ul>
           <li><a href='#boolean-measurements'>Boolean</a></li>
           <li><a href='#proportion-measurements'>Proportion</a></li>
