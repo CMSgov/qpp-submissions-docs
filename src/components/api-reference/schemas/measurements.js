@@ -70,7 +70,7 @@ const STRATA_FIELDS = [
 ];
 
 const ALL_CAUSE_READMISSION_FIELDS = [
-  {name: 'score', value: 'float', description: 'The score of the measurement', notes: 'not writable'},
+  {name: 'score', value: 'float', description: 'The score of the measurement'},
   {
     name: 'numberOfIndexAdmissions',
     value: 'integer',
@@ -439,7 +439,9 @@ class Measurements extends React.PureComponent {
 
         <h1 className='ds-h1' id='all-cause-readmission-measurements'>All Cause Readmission Measurements</h1>
         <p className='ds-text--lead'>An All Cause Readmission Measurement represents beneficiaries aged 65 and older that were hospitalized at a short-stay acute-care hospital
-            and were readmitted to an acute-care hostpital for any reason within 90 days of being discharged from the original hospital.</p>
+            and were readmitted to an acute-care hostpital for any reason within 90 days of being discharged from the original hospital.
+            Third party integrators cannot submit All Cause Readmission measurements.
+        </p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
@@ -522,7 +524,9 @@ class Measurements extends React.PureComponent {
 
         <h1 className='ds-h1' id='cahps'>CAHPS Measurements</h1>
         <p className='ds-text--lead'>CAHPS (Consumer Assessment of Healthcare Providers and Systems) is a series of patient surveys rating
-            health care experiences is an optional Quality measure that groups participating in MIPS can elect to administer.</p>
+            health care experiences is an optional Quality measure that groups participating in MIPS can elect to administer.
+            Third party integrators cannot submit CAHPS measurements.
+        </p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
