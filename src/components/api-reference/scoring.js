@@ -493,6 +493,12 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
           notes: ''
         },
         {
+          name: 'processingStatus',
+          value: 'string',
+          description: 'Represents whether a measurement set can qualify as a category score',
+          notes: ''
+        },
+        {
           name: 'messages',
           value: '',
           description: '',
