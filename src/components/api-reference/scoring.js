@@ -487,6 +487,18 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
           notes: ''
         },
         {
+          name: 'cahpsScore',
+          value: 'number',
+          description: 'The score of a CAHPS measurement set',
+          notes: ''
+        },
+        {
+          name: 'processingStatus',
+          value: 'string',
+          description: 'Represents whether a measurement set can qualify as a category score',
+          notes: ''
+        },
+        {
           name: 'messages',
           value: '',
           description: '',
@@ -839,6 +851,12 @@ const MEASUREMENT_SCORE_RESOURCE = {
           name: 'cpcPlusGroup',
           value: 'string char',
           description: 'CPC+ group identifier for the measurement if it belongs to a CPC+ eligible measurement set',
+          notes: ''
+        },
+        {
+          name: 'isGhost',
+          value: 'boolean',
+          description: 'Measurement is a ghost',
           notes: ''
         },
         {
