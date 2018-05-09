@@ -433,16 +433,22 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
           notes: 'These measures contribute to the base score, before bonuses are applied'
         },
         {
-          name: 'totalMeasurementPoints',
+          name: 'totalDecileScore',
           value: 'number',
-          description: 'Sum of individual measurement base scores whether picked or skipped',
-          notes: ''
+          description: 'Sum of individual measurement base scores for picked measurements',
+          notes: 'These points contribute to the totalMeasurementPoints metadata value'
         },
         {
           name: 'totalBonusPoints',
           value: 'number',
           description: 'Sum of individual measurement bonus scores whether the measurement was picked or skipped',
-          notes: ''
+          notes: 'These points contribute to the totalMeasurementPoints metadata value'
+        },
+        {
+          name: 'totalMeasurementPoints',
+          value: 'number',
+          description: 'Sum of individual measurement scores contributing to measurement set score',
+          notes: 'Sum of totalDecileScore and totalBonusPoints not to exceed the measurement set score denominator value'
         },
         {
           name: 'denominator',
@@ -767,7 +773,7 @@ const MEASUREMENT_SCORE_RESOURCE = {
           name: 'decileScore',
           value: 'number',
           description: 'The decile according to the benchmark if the measurement is a Class I measurement or the base score if the measurement is a Class II',
-          notes: ''
+          notes: 'These points may or may not be included in the measurement set score'
         },
         {
           name: 'performanceDenominator',
@@ -818,16 +824,16 @@ const MEASUREMENT_SCORE_RESOURCE = {
           notes: 'Skipped measurements may still contribute to the score by bonuses'
         },
         {
-          name: 'totalMeasurementPoints',
-          value: 'number',
-          description: 'Total points the measurement can contribute including base and bonus',
-          notes: ''
-        },
-        {
           name: 'totalBonusPoints',
           value: 'number',
           description: 'Total bonus points the measurement can contribute',
-          notes: ''
+          notes: 'These points may or may not be included in the measurement set score'
+        },
+        {
+          name: 'totalMeasurementPoints',
+          value: 'number',
+          description: 'Total points the measurement can contribute, included base and bonus',
+          notes: 'These points may or may not be included in the measurement set score'
         },
         {
           name: 'noBenchmarks',
