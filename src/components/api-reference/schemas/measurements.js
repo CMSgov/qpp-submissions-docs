@@ -129,7 +129,7 @@ class Measurements extends React.PureComponent {
           <li><a href='#cahps'>CAHPS</a></li>
         </ul>
         <p className='ds-text--lead'>The Measurements resource represents performance data for a specific measure within a MeasurementSet. There are five types of Measurements: Boolean, Proportion, Non-Proportion, Single-Performance Rate, and Multi-Performance Rate. Each MeasurementSet can have multiple Measurements. No two Measurements in a given MeasurementSet can have the same measureId.</p>
-        <p className='ds-text--lead'><a href='https://qpp-submissions-sandbox.navapbc.com/#/Measurements'>Try it out!</a></p>
+        <p className='ds-text--lead'><a href='https://preview.qpp.cms.gov/api/submissions/public/docs#/Measurements'>Try it out!</a></p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs

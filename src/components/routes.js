@@ -23,7 +23,7 @@ const topicsPaths = [
     component: Introduction
   },
   {
-    path: 'https://qpp-submissions-sandbox.navapbc.com',
+    path: 'https://preview.qpp.cms.gov/api/submissions/public/docs',
     exact: false,
     linkText: 'Interactive Docs',
     external: true

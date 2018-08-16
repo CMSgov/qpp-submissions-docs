@@ -16,7 +16,7 @@ class BasicTutorial extends React.Component {
           <div className='temp-grid'>
             <h1 className='ds-h1'>API Tutorial</h1>
             <p>The Submissions API is an easy way to manage your performance data with CMS. Performance data is organized into <em>submissions</em>, which can have many <em>measurements</em>. Measurements within a submission are also grouped by category (e.g. Improvement Activities) and submission method (e.g. CMS web interface) into <em>measurement sets</em>.</p>
-            <p>Since the API and scoring calculations are still being finalized, please note that some numbers (especially scoring) may be inaccurate. The <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Docs</a> will always reflect the latest design.</p>
+            <p>Since the API and scoring calculations are still being finalized, please note that some numbers (especially scoring) may be inaccurate. The <a href='https://preview.qpp.cms.gov/api/submissions/public/docs'>Interactive Docs</a> will always reflect the latest design.</p>
             <p>Let's walk through an example of how we might submit performance data!</p>
             <h2 className='ds-h2' id='creating-a-submission'>
               <a
