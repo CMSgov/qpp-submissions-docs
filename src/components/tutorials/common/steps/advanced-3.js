@@ -20,73 +20,77 @@ class Advanced3 extends React.PureComponent {
             {`{
   "data": {
     "score": {
-      "name": "final",
-      "title": "Final Score",
-      "detail": "",
-      "value": 14.5,
+      "name": "total",
+      "title": "Total Score",
+      "detail": "0.45.0",
+      "value": 15,
       "parts": [
         {
           "name": "ia",
-          "title": "IA component of final score",
-          "detail": "No measurement set to score.",
-          "value": 0
-        },
-        {
-          "name": "aci",
-          "title": "ACI component of final score",
-          "detail": "Scoring based on measurement set \\"b702d4ee-5a75-4e10-9aaf-3539123956e7\\" from submission method \\"cmsWebInterface\\" with weight of 25%.",
-          "value": 14.5,
+          "title": "IA component of total score",
+          "detail": "Scoring based on weight of 15%.",
+          "value": 15,
           "original": {
-            "name": "aci",
-            "title": "Advancing Care Information Score",
-            "value": 58,
+            "name": "ia",
+            "value": 40,
+            "detail": "Picked the highest scoring measurement set registry",
             "parts": [
               {
-                "name": "aci_base",
-                "value": 58,
-                "detail": "",
+                "name": "ia",
+                "value": 40,
+                "title": "Improvement Activities Score",
+                "detail": "registry",
                 "parts": [
                   {
-                    "name": "ACI_PEA_1",
-                    "value": 5
+                    "name": "IA_EPA_3",
+                    "title": "Collection and use of patient experience and satisfaction data on access",
+                    "value": 20,
+                    "metadata": {
+                      "measurementId": "0313d5c6-1a2d-4564-9ac3-d006bf03efac",
+                      "maxContribution": 40,
+                      "weight": "medium"
+                    }
                   },
                   {
-                    "name": "ACI_HIE_1",
-                    "value": 1
-                  },
-                  {
-                    "name": "ACI_HIE_2",
-                    "value": 2
+                    "name": "IA_EPA_4",
+                    "title": "Additional improvements in access as a result of QIN/QIO TA",
+                    "value": 20,
+                    "metadata": {
+                      "measurementId": "0313d351-10bd-4419-a593-ece163a67520",
+                      "maxContribution": 40,
+                      "weight": "medium"
+                    }
                   }
                 ],
-                "warnings": []
-              },
-              {
-                "name": "aci_performance",
-                "value": 0,
-                "detail": "",
-                "parts": [],
-                "warnings": []
-              },
-              {
-                "name": "aci_bonus",
-                "value": 0,
-                "detail": "",
-                "parts": [],
-                "warnings": []
-              },
-              {
-                "name": "cehrt_bonus",
-                "value": 0,
-                "detail": "",
-                "parts": [],
-                "warnings": []
+                "metadata": {
+                  "messages": {},
+                  "maxContribution": 40,
+                  "measurementSetId": "0313d351-a094-4dc2-b632-23cd88bffb5e",
+                  "measurementSetPicked": true
+                }
               }
-            ],
-            "warnings": []
+            ]
+          },
+          "metadata": {
+            "unroundedScoreValue": 15,
+            "maxContribution": 15
           }
         }
-      ]
+      ],
+      "metadata": {
+        "messages": {},
+        "maxTotalScore": 100,
+        "maxHighContributionIA": 40,
+        "maxMediumContributionIA": 20,
+        "maxContributionIA": 15,
+        "maxContributionACI": 25,
+        "maxContributionQuality": 60,
+        "maxContributionCost": 0
+      },
+      "warnings": [
+        "Disclaimer: Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments."
+      ],
+      "errors": []
     }
   }
 }`}

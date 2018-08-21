@@ -16,10 +16,22 @@ class Basic1 extends React.PureComponent {
         <TabPanel>
           <pre>
             {`{
-  "entityType": "individual",
-  "taxpayerIdentificationNumber": "000456789",
-  "nationalProviderIdentifier": "0123456789",
-  "performanceYear": 2016
+  "submission": {
+    "entityType": "individual",
+    "taxpayerIdentificationNumber": "000456789",
+    "nationalProviderIdentifier": "000000002",
+    "performanceYear": 2018
+  },
+  "measurements": [
+    {
+      "measureId": "IA_EPA_4",
+      "value": true
+    }
+  ],
+  "category": "ia",
+  "submissionMethod": "registry",
+  "performanceStart": "2018-01-01",
+  "performanceEnd": "2018-06-01"
 }`}
           </pre>
         </TabPanel>
@@ -29,15 +41,28 @@ class Basic1 extends React.PureComponent {
           <p>Response body:</p>
           <pre>{`{
   "data": {
-    "submission": {
-      "id": "b6423273-d3a3-42ef-9728-1871b246477e",
-      "createdAt": "2017-02-13T18:45:58Z",
-      "updatedAt": "2017-02-13T18:45:58Z",
-      "entityType": "individual",
-      "taxpayerIdentificationNumber": "000456789",
-      "nationalProviderIdentifier": "0123456789",
-      "performanceYear": 2016,
-      "measurementSets": []
+    "measurementSet": {
+      "id": "0313d351-a094-4dc2-b632-23cd88bffb5e",
+      "createdAt": "2018-08-21T13:55:29Z",
+      "updatedAt": "2018-08-21T13:55:29Z",
+      "submissionId": "0313d351-624d-409b-837f-500d603819aa",
+      "category": "ia",
+      "submissionMethod": "registry",
+      "measureSet": null,
+      "submitterId": "1234567",
+      "submitterType": "organization",
+      "performanceStart": "2018-01-01",
+      "performanceEnd": "2018-06-01",
+      "measurements": [
+        {
+          "id": "0313d351-10bd-4419-a593-ece163a67520",
+          "measurementSetId": "0313d351-a094-4dc2-b632-23cd88bffb5e",
+          "measureId": "IA_EPA_4",
+          "value": true,
+          "performanceStart": null,
+          "performanceEnd": null
+        }
+      ]
     }
   }
 }`}

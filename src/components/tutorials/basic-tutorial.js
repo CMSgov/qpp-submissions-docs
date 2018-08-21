@@ -4,7 +4,6 @@ import { Tabs } from 'react-tabs';
 import InlineApiExample from './common/inline-api-example';
 import Basic1 from './common/steps/basic-1';
 import Basic2 from './common/steps/basic-2';
-import Basic3 from './common/steps/basic-3';
 
 class BasicTutorial extends React.Component {
   render() {
@@ -59,10 +58,10 @@ class BasicTutorial extends React.Component {
             <InlineApiExample
               verb='GET'
               url='/submissions/:id/score' />
-            <Basic3 />
+            <Basic2 />
             <p>Our API response includes a bunch of new info this time, so let's break it down.</p>
-            <p>The <code>Final Score</code> has a value of <code>3.75</code>. <code>Final</code> here doesn't mean it's the final end of year score for this submission - think of this instead as the <em>current aggregate estimate</em> of your total score.</p>
-            <p>If you look at the first chunk of <code>JSON</code> in the <code>"parts"</code> list, the IA component of final score reads <code>3.75</code>. The <code>"detail"</code> makes clear that the scoring is based on the measurement set we submitted earlier (check the <code>id</code>s, they match!).</p>
+            <p>The <code>Final Score</code> has a value of <code>7.5</code>. <code>Final</code> here doesn't mean it's the final end of year score for this submission - think of this instead as the <em>current aggregate estimate</em> of your total score.</p>
+            <p>If you look at the first chunk of <code>JSON</code> in the <code>"parts"</code> list, the IA component of final score reads <code>7.5</code>. The <code>"detail"</code> makes clear that the scoring is based on the measurement set we submitted earlier (check the <code>id</code>s, they match!).</p>
             <p>The second chunk in <code>"parts"</code> is straightforward - we did not submit any ACI data, so our aggregate score has no contribution from ACI measures.</p>
             <p>That's it! We've used three API requests to (1) create a submission, (2) add measurements into a measurement set, and (3) get the score, all in minutes. Each API response gives us useful information for the next step.</p>
             <p>In general, we can think about the Submissions API as a way to have a live conversation with CMS about performance measurements. Rather than waiting months to hear back about missing information or a score, the API gives us feedback that is immediate, specific, and actionable - we can easily make another API request if necessary.</p>

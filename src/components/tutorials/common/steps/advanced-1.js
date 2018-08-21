@@ -2,9 +2,7 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import '../../../../styles/common/example-code-tabs.css';
-import submissionObject from './advanced-tutorial-submission.json';
 
-const submissionJsonString = JSON.stringify(submissionObject, null, 4);
 const cssClass = 'example-code-tabs';
 
 class Advanced1 extends React.PureComponent {
@@ -16,7 +14,19 @@ class Advanced1 extends React.PureComponent {
           <Tab>Response</Tab>
         </TabList>
         <TabPanel>
-          <pre>{`${submissionJsonString}`}</pre>
+          <pre>{`{
+  "submissionId": "0313d351-624d-409b-837f-500d603819aa",
+  "measurements": [
+    {
+      "measureId": "IA_EPA_10",
+      "value": true
+    }
+  ],
+  "category": "ia",
+  "submissionMethod": "registry",
+  "performanceStart": "2018-01-01",
+  "performanceEnd": "2018-06-01"
+}`}</pre>
         </TabPanel>
         <TabPanel>
           <p>Response code:</p>
