@@ -17,7 +17,7 @@ class AdvancedTutorial extends React.Component {
         <div>
           <div className='temp-grid'>
             <h1 className='ds-h1'>Tutorial: Update Data</h1>
-            <p>In the <a href='/qpp-submissions-docs/tutorial'>first tutorial</a> we covered how to create a measurement set containing Improvement Activities, and retrieve the score in three different API requests. This time we're going to build on the previous tutorial look at adding more Quality performance data to the measurement set we created in the previous tutorial (all while running into a problem along the way). All of these examples serve to illustrate how the Submissions API can make it easier to react to and fix issues that arise.</p>
+            <p>In the <a href='/qpp-submissions-docs/tutorial'>first tutorial</a> we covered how to create a measurement set containing Improvement Activities, and retrieve the score in three different API requests. We're now going to build on the previous tutorial by adding another Improvement Activity to the measurement set we created in the previous tutorial (all while running into a problem along the way). All of these examples serve to illustrate how the Submissions API can make it easier to react to and fix issues that arise.</p>
             <p>
           Like the previous tutorial, please remember that the score calculation may be inaccurate until the API is finalized. The <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Docs</a> will always return the latest score calculation.</p>
             <h2 className='ds-h2' id='add-more-measures'>
@@ -107,8 +107,6 @@ class AdvancedTutorial extends React.Component {
                     <td>0313d5c6-1a2d-4564-9ac3-d006bf03efac</td></tr>
                   <tr><td>Measurement Set ID</td>
                     <td>0313d351-a094-4dc2-b632-23cd88bffb5e</td></tr>
-                  <tr><td>Measure ID</td>
-                    <td><code>ACI_HIE_1</code></td></tr>
                   <tr><td>Measure <code>IA_EPA_4</code></td>
                     <td><code>false</code></td></tr>
                 </tbody>
@@ -126,7 +124,7 @@ class AdvancedTutorial extends React.Component {
               verb='GET'
               url='/submissions/:id/score' />
             <Advanced5 />
-            <p>A few things have changed - the final score decreased from 7.5 to 15. We know this change is due to our PATCH by looking at the score component for IA. Since we changed IA_EPA_4 to false, it is no longer considered for scoring.</p>
+            <p>A few things have changed - the final score decreased from 15 to 7.5. We know this change is due to our PATCH by looking at the score component for IA. Since we changed IA_EPA_4 to false, it is no longer considered for scoring.</p>
             <p>It's important to note that we've been working in one measurement set for this tutorial. One of the reasons that performance data for measures is organized into measurement sets is that multiple submission methods can add their own measurement sets into one submission - measure scores that might overlap the ones we provide, or differ in their attested values. In the case of multiple measurement sets, the Submissions API will calculate scores for each measurement set and pick the highest to present as the final score - that's why the API identifies that the scoring for the ACI component is based on a specific measurement set ID.</p>
             <p>We've done a lot of work in 5 API requests! In this advanced tutorial, we updated a submission with quality performance data, scored it, and updated a piece of one measurement to see how the final score reacts. That means we've successfully used each API endpoint (submission, measurement set, measurement) and understood what the responses tell us, adjusting our approach as needed. Again, all of this work is done on our terms, at our pace - no months-long round trip required.</p>
             <p><em>Disclaimer:</em> Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments.</p>
