@@ -31,9 +31,9 @@ class DeveloperPreview extends React.Component {
         <h2 className='ds-h2'>Object Types</h2>
         <p className='ds-text'>The Submissions API has three types of objects:
           <ul>
-            <li>Submissions: A submission object contains any performance data submitted on behalf of a single MIPS-eligible clinician, practice or group.</li>
-            <li>Measurement sets: A measurement set object represents a set of performance data related to one specific category (Promoting Interoperability, Improvement Activities, Quality), and is tied to a submission object.</li>
-            <li>Measurements: A measurement object represents one single data point related to a specific measure in a given category, and is tied to a measurement set object.</li>
+            <li><strong>Submissions</strong>: A submission object contains any performance data submitted on behalf of a single MIPS-eligible clinician, practice or group.</li>
+            <li><strong>Measurement sets</strong>: A measurement set object represents a set of performance data related to one specific category (Promoting Interoperability, Improvement Activities, Quality), and is tied to a submission object.</li>
+            <li><strong>Measurements</strong>: A measurement object represents one single data point related to a specific measure in a given category, and is tied to a measurement set object.</li>
           </ul>
         </p>
 
@@ -91,7 +91,7 @@ class DeveloperPreview extends React.Component {
         </ul>
 
         <h1 className='ds-h1' id='authentication'>Authentication</h1>
-        <p className='ds-text'>You must authenticate your account when using the <a href='https://cmsgov.github.io/qpp-submissions-docs/developer-preview'>Developer Preview</a> (base url: https://preview.qpp.cms.gov/api/submissions/). Authenticate via bearer auth by adding your API token to the header of every request using the key value: Authorization: Bearer [YOUR API TOKEN].</p>
+        <p className='ds-text'>You must authenticate your account when using the <a href='https://cmsgov.github.io/qpp-submissions-docs/developer-preview'>Developer Preview</a> (base url: https://preview.qpp.cms.gov/api/submissions/). Authenticate via bearer auth by adding your API token to the header of every request using the key value: <strong>Authorization: Bearer [YOUR API TOKEN]</strong>.</p>
         <p className='ds-text'>API keys carry many privileges, and must not be shared in publicly accessible areas such as GitHub and in client-side code.  Even within organizations, access must be limited to staff embedding it in software.</p>
         <p className='ds-text'>Your API key carries many privileges, so be sure to keep it secret! Do not share your secret API key in publicly accessible areas such GitHub, client-side code, and so forth.</p>
         <p className='ds-text'>All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests in the Developer Preview without authentication will also fail.</p>
@@ -171,7 +171,7 @@ class DeveloperPreview extends React.Component {
         <h1 className='ds-h1' id='endpoints'>Endpoints</h1>
         <p className='ds-text'>Visit the <a href='https://qpp-submissions-sandbox.navapbc.com/#!'>Interactive Documentation</a> to learn more about the endpoints available in the Submissions API.</p>
         <p className='ds-text'>If you are a Registry or QCDR using the Developer Preview, you have an API key that is associated with an 'organization'. This affects what endpoints you are authorized to use, and what behavior each endpoint has.</p>
-        <p className='ds-text'>At a high level, your API key allows you to create and edit data using the /measurement-sets and /measurements endpoints. You cannot create data using the /submissions endpoint. For more information about what you're authorized to do with the Submissions API, click <a href='/qpp-submissions-docs/developer-preview#authorization'>here</a>.</p>
+        <p className='ds-text'>At a high level, your API key allows you to create and edit data using the <code>/measurement-sets</code> and <code>/measurements</code> endpoints. You cannot create data using the <code>/submissions</code> endpoint. For more information about what you're authorized to do with the Submissions API, click <a href='/qpp-submissions-docs/developer-preview#authorization'>here</a>.</p>
 
         <h1 className='ds-h1' id='special-scoring'>How to Test Special Scoring Scenarios</h1>
         <p className='ds-text'>A submission to the Submissions API requires a Taxpayer Identification Number (TIN) and may include a National Provider Identifier (NPI). These identifiers are used to accurately attribute the submission to a provider. A provider's profile includes information which is used to trigger special scoring scenarios.</p>
