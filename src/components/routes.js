@@ -1,13 +1,14 @@
-import Introduction from './introduction';
-import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
-import Submissions from './api-reference/schemas/submissions';
+import BasicTutorial from './tutorials/basic-tutorial';
+import Benchmarks from './api-reference/schemas/benchmarks';
+import DeveloperPreview from './developer-preview';
+import ExampleDocs from './api-reference/example-docs';
+import Introduction from './introduction';
 import MeasurementSets from './api-reference/schemas/measurement-sets';
 import Measurements from './api-reference/schemas/measurements';
-import Benchmarks from './api-reference/schemas/benchmarks';
-import Scoring from './api-reference/scoring';
 import Provider from './api-reference/provider';
-import ExampleDocs from './api-reference/example-docs';
+import Scoring from './api-reference/scoring';
+import Submissions from './api-reference/schemas/submissions';
 import TermsOfService from './terms-of-service';
 
 const topicsPaths = [
@@ -15,11 +16,6 @@ const topicsPaths = [
     path: '/',
     exact: true,
     linkText: 'Introduction',
-    component: Introduction
-  },
-  {
-    path: '/developer-preview',
-    exact: false,
     component: Introduction
   },
   {
@@ -33,6 +29,12 @@ const topicsPaths = [
     exact: false,
     linkText: 'QPP Measures Data Repository',
     external: true
+  },
+  {
+    path: '/developer-preview',
+    exact: true,
+    linkText: 'Developer Preview',
+    component: DeveloperPreview
   }
 ];
 
