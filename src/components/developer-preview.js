@@ -56,39 +56,8 @@ class DeveloperPreview extends React.Component {
         </ul>
 
         <h1 className='ds-h1' id='api-key'>Get an API Key</h1>
-        <p className='ds-text'>To make requests in the Developer Preview, you must be a 2018 CMS-approved Qualified Registry (“registry”) or Qualified Clinical Data Registry (“QCDR”).</p>
-        <p className='ds-text'>Most of the API endpoints require basic authentication, meaning that you must send an API key with your request to receive a response. To get an API key, follow the steps below.</p>
+        <p className='ds-text'>This content is not yet available. Please check back later.</p>
 
-        <ol className='ds-text'>
-          <li className='ds-h2'>Create an EIDM account</li>
-          <p>If you do not have an EIDM account, navigate to the <a href='http://links.govdelivery.com/track?type=click&enid=ZWFzPTEmbXNpZD0mYXVpZD0mbWFpbGluZ2lkPTIwMTgwNzEwLjkyMzYwOTAxJm1lc3NhZ2VpZD1NREItUFJELUJVTC0yMDE4MDcxMC45MjM2MDkwMSZkYXRhYmFzZWlkPTEwMDEmc2VyaWFsPTE4MzQ5MTg1JmVtYWlsaWQ9aXZhbmFAbmF2YWhxLmNvbSZ1c2VyaWQ9aXZhbmFAbmF2YWhxLmNvbSZ0YXJnZXRpZD0mZmw9JmV4dHJhPU11bHRpdmFyaWF0ZUlkPSYmJg==&&&102&&&https://portal.cms.gov/wps/portal/unauthportal/home/'>CMS Enterprise Portal</a> and select ‘New User Registration’ to create one. The following information is required for registration:</p>
-          <ul>
-            <li>Application Name</li>
-            <li>Application Role</li>
-            <li>Organization Legal Business Name, Address, and Phone Number</li>
-            <li>Taxpayer Identification Number (TIN) and corresponding individual Provider Transaction Access Number (PTAN)</li>
-          </ul>
-          <p>Your organization or CMS can help you identify the information needed for your application.</p>
-          <p>Once you complete your EIDM account registration, you will receive an e-mail acknowledging your successful account creation with your EIDM User ID. Use your unique EIDM User ID and Password to login to the <a href='https://qpp.cms.gov/login'>Quality Payment Program Portal</a>.</p>
-
-          <li className='ds-h2'>Confirm that your account is associated with your registry.</li>
-          <p>Login to the <a href='https://qpp.cms.gov/login'>Quality Payment Program Portal</a>, and ensure that you can view the Registry Dashboard.</p>
-
-          <li className='ds-h2'>Retrieve your API keys.</li>
-          <p>Send a request to the following endpoints:</p>
-          <ul>
-            <li>https://preview.qpp.cms.gov/api/auth/authn - to authenticate</li>
-            <li>https://preview.qpp.cms.gov/api/auth/verify - to verify your multi-factor authentication</li>
-            <li>https://preview.qpp.cms.gov/api/auth/registries - to retrieve your API key(s)</li>
-          </ul>
-          <p>The response payload from https://preview.qpp.cms.gov/api/auth/registries will contain your API key(s). If your QPP/EIDM username has the Security Official role for more than one organization, this endpoint will return an API key for each of those organizations.</p>
-        </ol>
-
-        <h2 className='ds-h2'>Resources</h2>
-        <ul>
-          <li>Review the <a href='https://www.cms.gov/Medicare/Quality-Payment-Program/Resource-Library/Enterprise-Identity-Data-Management-EIDM-User-Guide.pdf'>EIDM User Guide</a></li>
-          <li>Contact the Quality Payment Program at QPP@cms.hhs.gov or 1-866-288-8292/TTY: 1-877-715-6222.</li>
-        </ul>
 
         <h1 className='ds-h1' id='authentication'>Authentication</h1>
         <p className='ds-text'>You must authenticate your account when using the <a href='https://cmsgov.github.io/qpp-submissions-docs/developer-preview'>Developer Preview</a> (base url: https://preview.qpp.cms.gov/api/submissions/). Authenticate via bearer auth by adding your API token to the header of every request using the key value: <strong>Authorization: Bearer [YOUR API TOKEN]</strong>.</p>
