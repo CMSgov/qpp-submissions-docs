@@ -12,7 +12,7 @@ class Introduction extends React.Component {
 
         <h2 className='ds-h2'>Explore and integrate with the Submissions API</h2>
         <p className='ds-text'>To make the API as explorable as possible, we have <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Documentation</a>, which not only documents the endpoints available but also allows you to make requests to the API and see what response you would get. The Interactive Documentation is connected to the Developer Preview, which is an integration environment for registries and QCDRs.</p>
-        <p className='ds-text'>The <a href='https://cmsgov.github.io/qpp-submissions-docs/developer-preview'>Developer Preview environment</a> will be available in September 2018, and is open to 2018 CMS-approved Qualified Registries (“registries”) and Qualified Clinical Data Registries (“QCDRs”). Participants in the Developer Preview can build integrations with their software to test submission and scoring of Quality Payment Program performance data via API.</p>
+        <p className='ds-text'>The <a href='https://cmsgov.github.io/qpp-submissions-docs/developer-preview'>Developer Preview environment</a> will be available in Fall 2018, and is open to 2018 CMS-approved Qualified Registries (“registries”) and Qualified Clinical Data Registries (“QCDRs”). Participants in the Developer Preview can build integrations with their software to test submission and scoring of Quality Payment Program performance data via API.</p>
         <p className='ds-text'>Requests made in the Interactive Documentation and Developer Preview are not officially submitted to CMS.</p>
 
         <h2 className='ds-h2'>Stay Up Date</h2>
