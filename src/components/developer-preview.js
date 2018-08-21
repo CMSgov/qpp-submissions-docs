@@ -1,7 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-import SubmissionsObjects from './submissions-objects';
 
 class DeveloperPreview extends React.Component {
   render() {
@@ -165,7 +162,7 @@ class DeveloperPreview extends React.Component {
             </tr>
             <tr>
               <td>/measurements</td>
-              <td></td>
+              <td />
               <td>Same as /measurement-sets</td>
             </tr>
           </tbody>

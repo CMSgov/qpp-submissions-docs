@@ -1,7 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-import SubmissionsObjects from './submissions-objects';
 
 class Introduction extends React.Component {
   render() {
