@@ -58,7 +58,6 @@ class DeveloperPreview extends React.Component {
         <h1 className='ds-h1' id='api-key'>Get an API Key</h1>
         <p className='ds-text'>This content is not yet available. Please check back later.</p>
 
-
         <h1 className='ds-h1' id='authentication'>Authentication</h1>
         <p className='ds-text'>You must authenticate your account when using the <a href='https://cmsgov.github.io/qpp-submissions-docs/developer-preview'>Developer Preview</a> (base url: https://preview.qpp.cms.gov/api/submissions/). Authenticate via bearer auth by adding your API token to the header of every request using the key value: <strong>Authorization: Bearer [YOUR API TOKEN]</strong>.</p>
         <p className='ds-text'>API keys carry many privileges, and must not be shared in publicly accessible areas such as GitHub and in client-side code.  Even within organizations, access must be limited to staff embedding it in software.</p>
