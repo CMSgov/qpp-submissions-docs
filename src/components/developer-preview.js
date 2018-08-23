@@ -16,7 +16,7 @@ class DeveloperPreview extends React.Component {
 
         <h1 className='ds-h1' id='overview'>Overview</h1>
         <p className='ds-text'>The Developer Preview allows developers to build direct integrations with other software to test programmatically submitting Quality Payment Program (QPP) performance data to CMS. The API’s functionality in the Developer Preview closely matches that of the QPP system that is in production.</p>
-        <p className='ds-text'>The base URL for the Developer Preview is: https://preview.qpp.cms.gov/api/submissions/</p>
+        <p className='ds-text'>The base URL for the Developer Preview is: <strong>https://preview.qpp.cms.gov/api/submissions/</strong></p>
 
         <h2 className='ds-h2'>What 3rd party developers can do with the Submissions API</h2>
         <p className='ds-text'>Using the data exposed through the API, developers can:
@@ -42,26 +42,12 @@ class DeveloperPreview extends React.Component {
 
         <a className='ds-c-button ds-c-button--primary' href='/qpp-submissions-docs/developer-preview#api-key'>Get an API Key</a>
 
-        <h2 className='ds-h2'>Notes</h2>
-        <ul>
-          <li>Any data submitted in the Developer Preview will not count toward a MIPS-eligible clinician or group's final score in the Quality Payment Program.</li>
-          <li>Since the Developer Preview is an integration environment for the Submissions API, it may be changed in ways that break backward compatibility and is not subject to any service-level guarantees or deprecation policy.</li>
-        </ul>
-
-        <h2 className='ds-h2'>Where to go for support</h2>
-        <ul>
-          <li>Send test API requests in the <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Documentation</a> using your Developer Preview API key.</li>
-          <li>Contact the QPP Service Center.</li>
-          <li>Post product feedback about the Developer Preview in the <a href='https://groups.google.com/forum/#!forum/qpp-apis'>Google Group for QPP APIs</a>.</li>
-        </ul>
-
         <h1 className='ds-h1' id='api-key'>Get an API Key</h1>
         <p className='ds-text'>This content is not yet available. Please check back later.</p>
 
         <h1 className='ds-h1' id='authentication'>Authentication</h1>
-        <p className='ds-text'>You must authenticate your account when using the <a href='https://cmsgov.github.io/qpp-submissions-docs/developer-preview'>Developer Preview</a> (base url: https://preview.qpp.cms.gov/api/submissions/). Authenticate via bearer auth by adding your API token to the header of every request using the key value: <strong>Authorization: Bearer [YOUR API TOKEN]</strong>.</p>
+        <p className='ds-text'>You must authenticate your account when using the Developer Preview (base url: <strong>https://preview.qpp.cms.gov/api/submissions/</strong>). Authenticate via bearer auth by adding your API token to the header of every request using the key value: <strong>Authorization: Bearer [YOUR API TOKEN]</strong>.</p>
         <p className='ds-text'>API keys carry many privileges, and must not be shared in publicly accessible areas such as GitHub and in client-side code.  Even within organizations, access must be limited to staff embedding it in software.</p>
-        <p className='ds-text'>Your API key carries many privileges, so be sure to keep it secret! Do not share your secret API key in publicly accessible areas such GitHub, client-side code, and so forth.</p>
         <p className='ds-text'>All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests in the Developer Preview without authentication will also fail.</p>
         <p className='ds-text'>For instructions on how to get an API token, click <a href='/qpp-submissions-docs/developer-preview#api-key'>here</a>.</p>
 
@@ -69,7 +55,7 @@ class DeveloperPreview extends React.Component {
         <p className='ds-text'>If you are a Registry or QCDR using the Developer Preview, you have an API key that is associated with an 'organization'. This affects what endpoints you are authorized to use, and what behavior each endpoint has.</p>
         <p className='ds-text'>In general, if you have an organization-type API key, you can:</p>
         <ul>
-          <li>Submit data for any TIN without any prior certification</li>
+          <li>Submit data for any TIN</li>
           <li>Edit data that you have submitted</li>
           <li>View scores based on data you've submitted</li>
         </ul>
@@ -86,7 +72,7 @@ class DeveloperPreview extends React.Component {
             <tr>
               <td>/submissions</td>
               <td>GET</td>
-              <td>Returns all submissions that you have submitted measurement sets for, and within those submissions, returns only the measurement sets that you have  submitted. If qpp-taxpayer-identification-number is specified in the header as a query parameter, and you haven't submitted any measurement sets for the specified TIN, this endpoint returns a submission object with an empty measurement sets array.</td>
+              <td>Returns all submissions that you have submitted measurement sets for, and within those submissions, returns only the measurement sets that you have  submitted. If <code>qpp-taxpayer-identification-number</code> is specified in the header as a query parameter, and you haven't submitted any measurement sets for the specified TIN, this endpoint returns a submission object with an empty measurement sets array.</td>
             </tr>
             <tr>
               <td>/submissions/:id</td>
@@ -144,7 +130,7 @@ class DeveloperPreview extends React.Component {
         <h1 className='ds-h1' id='special-scoring'>How to Test Special Scoring Scenarios</h1>
         <p className='ds-text'>A submission to the Submissions API requires a Taxpayer Identification Number (TIN) and may include a National Provider Identifier (NPI). These identifiers are used to accurately attribute the submission to a provider. A provider's profile includes information which is used to trigger special scoring scenarios.</p>
         <p className='ds-text'>Currently, no special scoring scenarios are applied in the production environment. Every submission is attributed with the default provider profile, which incurs no special scoring.</p>
-        <p className='ds-text'>In order to support the testing of special scoring scenarios, the Submissions API features a provider profile stub in the Developer Preview environment for the /score-preview endpoint. The provider profile stub is not applied to the /score endpoint.</p>
+        <p className='ds-text'>In order to support the testing of special scoring scenarios, the Submissions API features a provider profile stub in the Developer Preview environment for the <code>/score-preview</code> endpoint. The provider profile stub is not applied to the <code>/score</code> endpoint.</p>
         <p className='ds-text'>In the Developer Preview, there are 23 pre-defined TINs that represent various special scoring scenarios. By using these TINs to submit data, you will be able to see how certain characteristics of a provider's profile can impact a provider's composite score.</p>
 
         <table className='ds-c-table ds-c-table--borderless ds-u-font-size--small'>
@@ -245,6 +231,19 @@ class DeveloperPreview extends React.Component {
             </tr>
           </tbody>
         </table>
+
+        <h2 className='ds-h2'>Notes</h2>
+        <ul>
+          <li>Any data submitted in the Developer Preview will not count toward a MIPS-eligible clinician or group's final score in the Quality Payment Program.</li>
+          <li>Since the Developer Preview is an integration environment for the Submissions API, it may be changed in ways that break backward compatibility and is not subject to any service-level guarantees or deprecation policy.</li>
+        </ul>
+
+        <h2 className='ds-h2'>Where to go for support</h2>
+        <ul>
+          <li>Send test API requests in the <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Documentation</a> using your Developer Preview API key.</li>
+          <li>Contact the QPP Service Center.</li>
+          <li>Post product feedback about the Developer Preview in the <a href='https://groups.google.com/forum/#!forum/qpp-apis' target='_blank'>Google Group for QPP APIs</a>.</li>
+        </ul>
       </div>
     );
   }

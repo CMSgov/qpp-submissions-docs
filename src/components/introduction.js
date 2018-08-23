@@ -16,8 +16,8 @@ class Introduction extends React.Component {
         <p className='ds-text'>Requests made in the Interactive Documentation and Developer Preview are not officially submitted to CMS.</p>
 
         <h2 className='ds-h2'>Stay Up Date</h2>
-        <p className='ds-text'>The <a href='https://groups.google.com/forum/#!forum/qpp-apis'>QPP APIs Google Group</a> is where developers and the CMS QPP Product Managers discuss your questions and feedback. New announcements and discussions are being added everyday.</p>
-        <p className='ds-text'>For questions about QPP measures, scores, policy or how the program works, please contact the Quality Payment Program Service Center at QPP@cms.hhs.gov or 1-866-288-8292.</p>
+        <p className='ds-text'>The <a href='https://groups.google.com/forum/#!forum/qpp-apis' target='_blank'>QPP APIs Google Group</a> is where developers and the CMS QPP Product Managers discuss your questions and feedback. New announcements and discussions are being added everyday.</p>
+        <p className='ds-text'>For questions about QPP measures, scores, policy or how the program works, please contact the Quality Payment Program Service Center at <a href='QPP@cms.hhs.gov'>QPP@cms.hhs.gov</a> or 1-866-288-8292.</p>
       </div>
     );
   }
