@@ -7,7 +7,6 @@ import ExistingIntegrators from './existing-integrators';
 import Introduction from './introduction';
 import MeasurementSets from './api-reference/schemas/measurement-sets';
 import Measurements from './api-reference/schemas/measurements';
-import Provider from './api-reference/provider';
 import RateLimiting from './rate-limiting';
 import Scoring from './api-reference/scoring';
 import Submissions from './api-reference/schemas/submissions';
