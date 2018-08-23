@@ -35,8 +35,14 @@ class Advanced1 extends React.PureComponent {
           <pre>
             {`{
   "error": {
-    "type": "DuplicateEntryError",
-    "message": "Duplicate entry for key unique_performance_year_entity_type_npi_and_tin_encrypted"
+    "type": "ValidationError",
+    "message": "invalid measurement-set object",
+    "details": [
+      {
+        "message": "field 'measureId' in MeasurementSet.measurements[0] is invalid: IA_EPA_10 does not exist, see qpp-measures-data for list of valid measureIds",
+        "path": "$.measurements[0].measureId"
+      }
+    ]
   }
 }`}
           </pre>

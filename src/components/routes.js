@@ -44,13 +44,13 @@ const guidesPaths = [
   {
     path: '/tutorial',
     exact: false,
-    linkText: 'Creating and editing a submission',
+    linkText: 'Create and score data via API',
     component: BasicTutorial
   },
   {
     path: '/advanced-tutorial',
     exact: false,
-    linkText: 'Updating and scoring a submission',
+    linkText: 'Add and update data via API',
     component: AdvancedTutorial
   }
 ];
