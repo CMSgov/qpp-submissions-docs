@@ -3,10 +3,11 @@ import BasicTutorial from './tutorials/basic-tutorial';
 import Benchmarks from './api-reference/schemas/benchmarks';
 import DeveloperPreview from './developer-preview';
 import ExampleDocs from './api-reference/example-docs';
+import ExistingIntegrators from './existing-integrators';
 import Introduction from './introduction';
 import MeasurementSets from './api-reference/schemas/measurement-sets';
 import Measurements from './api-reference/schemas/measurements';
-import Provider from './api-reference/provider';
+import RateLimiting from './rate-limiting';
 import Scoring from './api-reference/scoring';
 import Submissions from './api-reference/schemas/submissions';
 import TermsOfService from './terms-of-service';
@@ -42,13 +43,13 @@ const guidesPaths = [
   {
     path: '/tutorial',
     exact: false,
-    linkText: 'Creating and editing a submission',
+    linkText: 'Create and score data via API',
     component: BasicTutorial
   },
   {
     path: '/advanced-tutorial',
     exact: false,
-    linkText: 'Updating and scoring a submission',
+    linkText: 'Add and update data via API',
     component: AdvancedTutorial
   }
 ];
@@ -83,12 +84,6 @@ const referencePaths = [
     exact: false,
     linkText: 'Scoring',
     component: Scoring
-  },
-  {
-    path: '/provider-profile',
-    exact: false,
-    linkText: 'Provider Profile Stub',
-    component: Provider
   }
 ];
 
@@ -107,6 +102,18 @@ const supportPaths = [
     exact: false,
     linkText: 'Google Group',
     external: true
+  },
+  {
+    path: '/existing-integrators',
+    exact: false,
+    linkText: 'Existing API Integrators',
+    component: ExistingIntegrators
+  },
+  {
+    path: '/rate-limiting',
+    exact: false,
+    linkText: 'Rate Limiting',
+    component: RateLimiting
   },
   {
     path: '/terms-of-service',

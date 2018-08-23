@@ -16,13 +16,9 @@ class Advanced4 extends React.PureComponent {
         <TabPanel>
           <pre>
             {`{
-  "id": "a3cb7c78-2380-4573-b726-8c8e3b70529a",
-  "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-  "measureId": "ACI_HIE_1",
-  "value": {
-    "numerator": 50,
-    "denominator": 100
-  }
+  "measurementSetId": "0313d351-a094-4dc2-b632-23cd88bffb5e",
+  "measureId": "IA_EPA_4",
+  "value": false
 }`}
           </pre>
         </TabPanel>
@@ -34,14 +30,12 @@ class Advanced4 extends React.PureComponent {
             {`{
   "data": {
     "measurement": {
-      "id": "a3cb7c78-2380-4573-b726-8c8e3b70529a",
-      "submissionId": "60d2fbbb-7453-47fa-b709-c33090e50843",
-      "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-      "measureId": "ACI_HIE_1",
-      "value": {
-        "numerator": 50,
-        "denominator": 100
-      }
+      "id": "0313d351-10bd-4419-a593-ece163a67520",
+      "measurementSetId": "0313d351-a094-4dc2-b632-23cd88bffb5e",
+      "measureId": "IA_EPA_4",
+      "value": false,
+      "performanceStart": null,
+      "performanceEnd": null
     }
   }
 }`}

@@ -11,7 +11,6 @@ import MeasurementSets from './api-reference/schemas/measurement-sets';
 import Measurements from './api-reference/schemas/measurements';
 import Benchmarks from './api-reference/schemas/benchmarks';
 import Scoring from './api-reference/scoring';
-import Provider from './api-reference/provider';
 import ExampleDocs from './api-reference/example-docs';
 
 it('renders without crashing', () => {
@@ -27,7 +26,6 @@ const expectedRoutes = {
   '/measurements': <Measurements />,
   '/benchmarks': <Benchmarks />,
   '/scoring': <Scoring />,
-  '/provider-profile': <Provider />,
   '/examples': <ExampleDocs />
 };
 

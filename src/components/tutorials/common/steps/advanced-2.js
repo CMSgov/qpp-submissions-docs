@@ -16,60 +16,17 @@ class Advanced2 extends React.PureComponent {
         <TabPanel>
           <pre>
             {`{
-  "entityType": "individual",
-  "taxpayerIdentificationNumber": "000345678",
-  "nationalProviderIdentifier": "0123456789",
-  "performanceYear": 2016,
-  "measurementSets": [
+  "submissionId": "0313d351-624d-409b-837f-500d603819aa",
+  "measurements": [
     {
-      "category": "aci",
-      "submissionMethod": "cmsWebInterface",
-      "performanceStart": "2016-01-01",
-      "performanceEnd": "2016-06-01",
-      "measurements": [
-        {
-          "measureId": "ACI_INFBLO_1",
-          "value": true
-        },
-        {
-          "measureId": "ACI_ONCDIR_1",
-          "value": true
-        },
-        {
-          "measureId": "ACI_EP_1",
-          "value": {
-            "numerator": 100,
-            "denominator": 100
-          }
-        },
-        {
-          "measureId": "ACI_PPHI_1",
-          "value": true
-        },
-        {
-          "measureId": "ACI_PEA_1",
-          "value": {
-            "numerator": 50,
-            "denominator": 100
-          }
-        },
-        {
-          "measureId": "ACI_HIE_1",
-          "value": {
-            "numerator": 10,
-            "denominator": 100
-          }
-        },
-        {
-          "measureId": "ACI_HIE_2",
-          "value": {
-            "numerator": 20,
-            "denominator": 100
-          }
-        }
-      ]
+      "measureId": "IA_EPA_3",
+      "value": true
     }
-  ]
+  ],
+  "category": "ia",
+  "submissionMethod": "registry",
+  "performanceStart": "2018-01-01",
+  "performanceEnd": "2018-06-01"
 }`}
           </pre>
         </TabPanel>
@@ -78,111 +35,41 @@ class Advanced2 extends React.PureComponent {
           <pre>201 Created</pre>
           <p>Response body:</p>
           <pre>
-            {`"data": {
-  "submission": {
-    "id": "60d2fbbb-7453-47fa-b709-c33090e50843",
-    "createdAt": "2017-02-15T22:23:08Z",
-    "updatedAt": "2017-02-15T22:23:08Z",
-    "entityType": "individual",
-    "taxpayerIdentificationNumber": "000345678",
-    "nationalProviderIdentifier": "0123456789",
-    "performanceYear": 2016,
-    "measurementSets": [
-      {
-        "id": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-        "createdAt": "2017-02-15T22:23:08Z",
-        "updatedAt": "2017-02-15T22:23:08Z",
-        "submissionId": "60d2fbbb-7453-47fa-b709-c33090e50843",
-        "category": "aci",
-        "submissionMethod": "cmsWebInterface",
-        "measureSet": null,
-        "performanceStart": "2016-01-01",
-        "performanceEnd": "2016-06-01",
-        "measurements": [
-          {
-            "id": "deac9e0f-2a63-4ed2-a79f-6f033ed5e572",
-            "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-            "measureId": "ACI_EP_1",
-            "value": {
-              "numerator": 100,
-              "denominator": 100
-            }
-          },
-          {
-            "id": "a3cb7c78-2380-4573-b726-8c8e3b70529a",
-            "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-            "measureId": "ACI_HIE_1",
-            "value": {
-              "numerator": 10,
-              "denominator": 100
-            }
-          },
-          {
-            "id": "095ff34a-2fae-4a00-84ce-3da182e24de8",
-            "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-            "measureId": "ACI_HIE_2",
-            "value": {
-              "numerator": 20,
-              "denominator": 100
-            }
-          },
-          {
-            "id": "eccb15a0-1ba8-4395-9dca-136365ae8085",
-            "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-            "measureId": "ACI_INFBLO_1",
-            "value": true
-          },
-          {
-            "id": "3d6ad03b-120a-49f8-9884-324e63fc6daa",
-            "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-            "measureId": "ACI_ONCDIR_1",
-            "value": true
-          },
-          {
-            "id": "8c64cc43-27e4-4763-8fa4-0eb035da4b6c",
-            "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-            "measureId": "ACI_PEA_1",
-          },
-          {
-            "id": "095ff34a-2fae-4a00-84ce-3da182e24de8",
-            "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-            "measureId": "ACI_HIE_2",
-            "value": {
-              "numerator": 20,
-              "denominator": 100
-            }
-          },
-          {
-            "id": "eccb15a0-1ba8-4395-9dca-136365ae8085",
-            "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-            "measureId": "ACI_INFBLO_1",
-            "value": true
-          },
-          {
-            "id": "3d6ad03b-120a-49f8-9884-324e63fc6daa",
-            "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-            "measureId": "ACI_ONCDIR_1",
-            "value": true
-          },
-          {
-            "id": "8c64cc43-27e4-4763-8fa4-0eb035da4b6c",
-            "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-            "measureId": "ACI_PEA_1",
-            "value": {
-              "numerator": 50,
-              "denominator": 100
-            }
-          },
-          {
-            "id": "0ba52552-1b30-4312-a9e6-ec52ae5aea66",
-            "measurementSetId": "b702d4ee-5a75-4e10-9aaf-3539123956e7",
-            "measureId": "ACI_PPHI_1",
-            "value": true
-          }
-        ]
-      }
-    ]
-  }`}
+            {`{
+  "data": {
+    "measurementSet": {
+      "id": "0313d351-a094-4dc2-b632-23cd88bffb5e",
+      "createdAt": "2018-08-21T13:55:29Z",
+      "updatedAt": "2018-08-21T14:07:51Z",
+      "submissionId": "0313d351-624d-409b-837f-500d603819aa",
+      "category": "ia",
+      "submissionMethod": "registry",
+      "measureSet": null,
+      "submitterId": "1234567",
+      "submitterType": "organization",
+      "performanceStart": "2018-01-01",
+      "performanceEnd": "2018-06-01",
+      "measurements": [
+        {
+          "id": "0313d5c6-1a2d-4564-9ac3-d006bf03efac",
+          "measurementSetId": "0313d351-a094-4dc2-b632-23cd88bffb5e",
+          "measureId": "IA_EPA_3",
+          "value": true,
+          "performanceStart": null,
+          "performanceEnd": null
+        },
+        {
+          "id": "0313d351-10bd-4419-a593-ece163a67520",
+          "measurementSetId": "0313d351-a094-4dc2-b632-23cd88bffb5e",
+          "measureId": "IA_EPA_4",
+          "value": true,
+          "performanceStart": null,
+          "performanceEnd": null
+        }
+      ]
+    }
+  }
+}`}
           </pre>
         </TabPanel>
       </Tabs>
