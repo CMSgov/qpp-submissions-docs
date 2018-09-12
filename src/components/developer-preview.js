@@ -245,7 +245,7 @@ class DeveloperPreview extends React.Component {
         <ul>
           <li>Send test API requests in the <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Documentation</a> using your Developer Preview API key.</li>
           <li>Contact the QPP Service Center.</li>
-          <li>Post product feedback about the Developer Preview in the <a href='https://groups.google.com/forum/#!forum/qpp-apis' target='_blank'>Google Group for QPP APIs</a>.</li>
+          <li>Post product feedback about the Developer Preview in the <a href='https://groups.google.com/forum/#!forum/qpp-apis' target='_blank' rel="noopener noreferrer">Google Group for QPP APIs</a>.</li>
         </ul>
       </div>
     );
