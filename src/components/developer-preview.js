@@ -235,11 +235,11 @@ class DeveloperPreview extends React.Component {
             <tr>
               <td>000000023</td>
               <td>Participates in a Shared Savings Plan (SSP) APM, has only primary provider relationships to the SSP APM, and participates in an Improvement Activity Study</td>
-            </tr> 
+            </tr>
             <tr>
               <td>000000024</td>
               <td>Participates in a standard MIPS APM, and participates in an Improvement Activity Study</td>
-            </tr>     
+            </tr>
           </tbody>
         </table>
 
