@@ -999,6 +999,12 @@ const SCORE_FEEDBACK_PART_RESOURCE = {
     xml: `<data>
       <name>string</name>
       <detail>string</detail>
+      <parts>
+        &nbsp;&nbsp;<part>
+          &nbsp;&nbsp;&nbsp;&nbsp;<name>string</name>
+          &nbsp;&nbsp;&nbsp;&nbsp;<detail>string</detail>
+        &nbsp;&nbsp;</part>
+      </parts>
     </data>`
   },
   fields: [
