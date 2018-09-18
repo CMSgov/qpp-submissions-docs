@@ -958,6 +958,83 @@ const MEASUREMENT_SCORE_RESOURCE = {
   }
 };
 
+const SCORE_FEEDBACK_PART_RESOURCE = {
+  id: 'score-feedback-part-resource',
+  title: 'Score Feedback Part Resource',
+  description: 'The Score Feedback Part resource represents the feedback provided to the physician on their level of performance and how they compare to historical benchmarks, if applicable. Categorical feedback refers to one of the three QPP Performance Categories, which are IA, ACI or Quality.',
+  example: {
+    json: `[
+    {
+      &nbsp;&nbsp;"name": "feedback-quality",
+      &nbsp;&nbsp;"parts": [
+        &nbsp;&nbsp;&nbsp;&nbsp;{
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "107",
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"detail": "Focus on improving measure 107"
+        &nbsp;&nbsp;&nbsp;&nbsp;},
+        &nbsp;&nbsp;&nbsp;&nbsp;{
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "140",
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"detail": "Focus on improving measure 140"
+        &nbsp;&nbsp;&nbsp;&nbsp;}
+      &nbsp;&nbsp;]
+    },
+    {
+      &nbsp;&nbsp;"name": "feedback-aci",
+      &nbsp;&nbsp;"parts": [
+        &nbsp;&nbsp;&nbsp;&nbsp;{
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "aci-feedback-message",
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"detail": "To achieve points in this category, you must report both attestation statements and all base measures."
+        &nbsp;&nbsp;&nbsp;&nbsp;}
+      &nbsp;&nbsp;]
+    },
+    {
+      &nbsp;&nbsp;"name": "feedback-ia",
+      &nbsp;&nbsp;"parts": [
+        &nbsp;&nbsp;&nbsp;&nbsp;{
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"name": "ia-feedback-message",
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"detail": "You could achieve full credit for this category by submitting 1 additional Medium Weighted Activity."
+        &nbsp;&nbsp;&nbsp;&nbsp;}
+      &nbsp;&nbsp;]
+    }
+    ]`,
+    xml: `<data>
+      <name>string</name>
+      <detail>string</detail>
+      <parts>
+        &nbsp;&nbsp;<part>
+          &nbsp;&nbsp;&nbsp;&nbsp;<name>string</name>
+          &nbsp;&nbsp;&nbsp;&nbsp;<detail>string</detail>
+        &nbsp;&nbsp;</part>
+      </parts>
+    </data>`
+  },
+  fields: [
+    {
+      name: 'name ',
+      value: 'string',
+      description: 'Performance feedback category identifier',
+      notes: ''
+    },
+    {
+      name: 'name',
+      value: 'string',
+      description: 'Name of feedback part message or measure id',
+      notes: 'e.g., "140 or aci-feedback-message"'
+    },
+    {
+      name: 'detail',
+      value: 'string',
+      description: 'Performance feedback message detail',
+      notes: 'e.g., "Focus on improving measure 140"'
+    }
+  ],
+  metadataMessages: {
+    base: {},
+    ia: {},
+    aci: {},
+    quality: {}
+  }
+};
+
 const SCORE_NAVIGATION_EXAMPLES = [
   {
     find: 'Total Score',
@@ -1174,6 +1251,7 @@ export default class ScoringEngine extends PureComponent {
           <li><a href={`#${MEASUREMENT_SET_SCORE_PART_RESOURCE.id}`}>{MEASUREMENT_SET_SCORE_PART_RESOURCE.title}</a></li>
           <li><a href={`#${MEASUREMENT_SCORE_PART_RESOURCE.id}`}>{MEASUREMENT_SCORE_PART_RESOURCE.title}</a></li>
           <li><a href={`#${MEASUREMENT_SCORE_RESOURCE.id}`}>{MEASUREMENT_SCORE_RESOURCE.title}</a></li>
+          <li><a href={`#${SCORE_FEEDBACK_PART_RESOURCE.id}`}>{SCORE_FEEDBACK_PART_RESOURCE.title}</a></li>
         </ul>
         <h1 className='ds-h1'>Overview</h1>
         <p className='ds-text--lead'>
@@ -1232,6 +1310,7 @@ export default class ScoringEngine extends PureComponent {
         <Resource {...MEASUREMENT_SET_SCORE_PART_RESOURCE} />
         <Resource {...MEASUREMENT_SCORE_PART_RESOURCE} />
         <Resource {...MEASUREMENT_SCORE_RESOURCE} />
+        <Resource {...SCORE_FEEDBACK_PART_RESOURCE} />
         <div>
           <p><em>Disclaimer:</em> Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments.</p>
         </div>
