@@ -2,9 +2,7 @@ import React from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import '../../../../styles/common/example-code-tabs.css';
-import submissionObject from './advanced-tutorial-submission.json';
 
-const submissionJsonString = JSON.stringify(submissionObject, null, 4);
 const cssClass = 'example-code-tabs';
 
 class Advanced1 extends React.PureComponent {
@@ -16,7 +14,19 @@ class Advanced1 extends React.PureComponent {
           <Tab>Response</Tab>
         </TabList>
         <TabPanel>
-          <pre>{`${submissionJsonString}`}</pre>
+          <pre>{`{
+  "submissionId": "0313d351-624d-409b-837f-500d603819aa",
+  "measurements": [
+    {
+      "measureId": "IA_EPA_10",
+      "value": true
+    }
+  ],
+  "category": "ia",
+  "submissionMethod": "registry",
+  "performanceStart": "2018-01-01",
+  "performanceEnd": "2018-06-01"
+}`}</pre>
         </TabPanel>
         <TabPanel>
           <p>Response code:</p>
@@ -25,8 +35,14 @@ class Advanced1 extends React.PureComponent {
           <pre>
             {`{
   "error": {
-    "type": "DuplicateEntryError",
-    "message": "Duplicate entry for key unique_performance_year_entity_type_npi_and_tin_encrypted"
+    "type": "ValidationError",
+    "message": "invalid measurement-set object",
+    "details": [
+      {
+        "message": "field 'measureId' in MeasurementSet.measurements[0] is invalid: IA_EPA_10 does not exist, see qpp-measures-data for list of valid measureIds",
+        "path": "$.measurements[0].measureId"
+      }
+    ]
   }
 }`}
           </pre>
