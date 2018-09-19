@@ -19,7 +19,7 @@ class AdvancedTutorial extends React.Component {
             <h1 className='ds-h1'>Tutorial: Add and update Data</h1>
             <p>In the <a href='/qpp-submissions-docs/tutorial'>first tutorial</a> we covered how to create a measurement set containing Improvement Activities, and retrieve the score in two different API requests. We're now going to build on the previous tutorial by adding another Improvement Activity to the measurement set we created in the previous tutorial (all while running into a problem along the way). All of these examples serve to illustrate how the Submissions API can make it easier to react to and fix issues that arise.</p>
             <p>
-          Like the previous tutorial, please remember that the score calculation in this tutorial may not be up to date. The <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Docs</a> will always return the latest score calculation.</p>
+          Like the previous tutorial, please remember that the score calculation in this tutorial may not be up to date. The <a href='https://preview.qpp.cms.gov/api/submissions/public/docs/'>Interactive Docs</a> will always return the latest score calculation.</p>
             <h2 className='ds-h2' id='add-more-measures'>
               <a
                 className='tutorial-header-link'
@@ -138,7 +138,7 @@ class AdvancedTutorial extends React.Component {
             <h3>Next steps</h3>
             <p>While we've used each API endpoint, we're far from having used every kind of API action. These tutorials have used <code>POST</code>, <code>PATCH</code>, and <code>GET</code> - there are also <code>PUT</code> and <code>DELETE</code> for the measurementSet and measurement resources.</p>
             <p>The tutorials have shown how requests can be strung together to complete complex workflows in minutes rather than months.</p>
-            <p>Now, try using the <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Docs</a> or sign up for the Developer Preview to experiment with some of your data.</p>
+            <p>Now, try using the <a href='https://preview.qpp.cms.gov/api/submissions/public/docs/'>Interactive Docs</a> or sign up for the Developer Preview to experiment with some of your data.</p>
           </div>
         </div>
       </div>

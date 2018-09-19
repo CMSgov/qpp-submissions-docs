@@ -15,7 +15,7 @@ class BasicTutorial extends React.Component {
           <div className='temp-grid'>
             <h1 className='ds-h1'>Tutorial: Create and Score Data</h1>
             <p>The Submissions API is an easy way to manage your performance data with CMS. Performance data is organized into submissions, which can have many measurements. Measurements within a submission are also grouped by category (e.g. Quality) and submission method (e.g. registry) into measurement sets.</p>
-            <p>Since the API and scoring logic are updated on a regular basis as per the annual publication of the QPP Final Rule, please note that some numbers (especially scoring) in the tutorial below may be inaccurate. The <a href='https://qpp-submissions-sandbox.navapbc.com/'>Interactive Docs</a> and Developer Preview will always reflect the latest design.</p>
+            <p>Since the API and scoring logic are updated on a regular basis as per the annual publication of the QPP Final Rule, please note that some numbers (especially scoring) in the tutorial below may be inaccurate. The <a href='https://preview.qpp.cms.gov/api/submissions/public/docs/'>Interactive Docs</a> and Developer Preview will always reflect the latest design.</p>
             <p>Let's walk through an example of how you might submit performance data as a registry API user!</p>
             <h2 className='ds-h2' id='creating-a-measurement-set'>
               <a
