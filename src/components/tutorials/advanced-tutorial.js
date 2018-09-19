@@ -138,7 +138,7 @@ class AdvancedTutorial extends React.Component {
             <h3>Next steps</h3>
             <p>While we've used each API endpoint, we're far from having used every kind of API action. These tutorials have used <code>POST</code>, <code>PATCH</code>, and <code>GET</code> - there are also <code>PUT</code> and <code>DELETE</code> for the measurementSet and measurement resources.</p>
             <p>The tutorials have shown how requests can be strung together to complete complex workflows in minutes rather than months.</p>
-            <p>Now, try using the <a href='https://preview.qpp.cms.gov/api/submissions/public/docs'>Interactive Docs</a> or sign up for the Developer Preview to experiment with some of your data.</p>
+            <p>Now, try using the <a href='https://preview.qpp.cms.gov/api/submissions/public/docs/'>Interactive Docs</a> or sign up for the Developer Preview to experiment with some of your data.</p>
           </div>
         </div>
       </div>
