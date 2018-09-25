@@ -8,15 +8,31 @@ import '../../styles/common/example-code-tabs.css';
 import DataModelTable from './common/data-model-table';
 import ScoringNavigationTable from './common/data-scoring-navigation-table';
 
-import submissionXmlExample from './common/scoring-example-submission-input-xml';
-import submissionJsonExample from './common/scoring-example-submission-input.json';
-import scoringXmlExample from './common/scoring-example-output-xml';
-import scoringJsonExample from './common/scoring-example-output.json';
+import submissionJsonExample_ia from './common/submission-example-ia.json'
+import submissionJsonExample_aci from './common/submission-example-aci.json'
+import submissionJsonExample_quality from './common/submission-example-quality.json'
+import submissionXmlExample_ia from './common/submission-example-ia-xml.js';
+import submissionXmlExample_aci from './common/submission-example-aci-xml.js';
+import submissionXmlExample_quality from './common/submission-example-quality-xml.js';
+import scoringXmlExample_ia from './common/scoring-example-output-ia-xml.js';
+import scoringXmlExample_aci from './common/scoring-example-output-aci-xml.js';
+import scoringXmlExample_quality from './common/scoring-example-output-quality-xml.js';
+import scoringJsonExample_ia from './common/scoring-example-output-ia.json';
+import scoringJsonExample_aci from './common/scoring-example-output-aci.json';
+import scoringJsonExample_quality from './common/scoring-example-output-quality.json';
 
-const submissionXmlExampleString = pd.xml(submissionXmlExample);
-const submissionJsonExampleString = JSON.stringify(submissionJsonExample, null, 2);
-const scoringXmlExampleString = pd.xml(scoringXmlExample);
-const scoringJsonExampleString = JSON.stringify(scoringJsonExample, null, 2);
+const submissionXmlExampleString_ia = pd.xml(submissionXmlExample_ia);
+const submissionXmlExampleString_aci = pd.xml(submissionXmlExample_aci);
+const submissionXmlExampleString_quality = pd.xml(submissionXmlExample_quality);
+const submissionJsonExampleString_ia = JSON.stringify(submissionJsonExample_ia, null, 2);
+const submissionJsonExampleString_aci = JSON.stringify(submissionJsonExample_aci, null, 2);
+const submissionJsonExampleString_quality = JSON.stringify(submissionJsonExample_quality, null, 2);
+const scoringXmlExampleString_ia = pd.xml(scoringXmlExample_ia);
+const scoringXmlExampleString_aci = pd.xml(scoringXmlExample_aci);
+const scoringXmlExampleString_quality = pd.xml(scoringXmlExample_quality);
+const scoringJsonExampleString_ia = JSON.stringify(scoringJsonExample_ia, null, 2);
+const scoringJsonExampleString_aci = JSON.stringify(scoringJsonExample_aci, null, 2);
+const scoringJsonExampleString_quality = JSON.stringify(scoringJsonExample_quality, null, 2);
 
 const SCORE_RESOURCE = {
   id: 'score-resource',
@@ -1167,63 +1183,228 @@ export default class ScoringEngine extends PureComponent {
     return (
       <div id='scoring-engine'>
         <h1 className='ds-h1'>Scoring</h1>
-        <ul>
-          <li><a href={`#${SCORE_RESOURCE.id}`}>{SCORE_RESOURCE.title}</a></li>
-          <li><a href={`#${SCORE_PART_RESOURCE.id}`}>{SCORE_PART_RESOURCE.title}</a></li>
-          <li><a href={`#${CATEGORY_SCORE_RESOURCE.id}`}>{CATEGORY_SCORE_RESOURCE.title}</a></li>
-          <li><a href={`#${MEASUREMENT_SET_SCORE_PART_RESOURCE.id}`}>{MEASUREMENT_SET_SCORE_PART_RESOURCE.title}</a></li>
-          <li><a href={`#${MEASUREMENT_SCORE_PART_RESOURCE.id}`}>{MEASUREMENT_SCORE_PART_RESOURCE.title}</a></li>
-          <li><a href={`#${MEASUREMENT_SCORE_RESOURCE.id}`}>{MEASUREMENT_SCORE_RESOURCE.title}</a></li>
+        <ul> 
+          <li><a href="#IA">Improvement Activities</a></li>
+            <ul>
+              <li><a href="#IA-Sub">Improvment Activity Submissions</a></li>
+              <li><a href="IA-Response">Improvement Activity Scoring Response</a></li>
+            </ul>
+          <li><a href="#PI">Promoting Interoperability</a></li>
+            <ul>
+              <li><a href="#PI-Sub">Promoting Interoperability Submissions</a></li>
+              <li><a href="#PI-Response">Promoting Interoperability Scoring Response</a></li>
+            </ul>
+          <li><a href="#Quality">Quality</a></li>
+            <ul>
+              <li><a href="#Quality-Sub">Quality Submissions</a></li>
+              <li><a href="#Quality-Response">Quality Scoring Response</a></li>
+            </ul>
+          <li><a href="#More">Further Resources</a></li>
+            <ul>
+              <li><a href={`#${SCORE_RESOURCE.id}`}>{SCORE_RESOURCE.title}</a></li>
+              <li><a href={`#${SCORE_RESOURCE.id}`}>{SCORE_RESOURCE.title}</a></li>
+              <li><a href={`#${SCORE_PART_RESOURCE.id}`}>{SCORE_PART_RESOURCE.title}</a></li>
+              <li><a href={`#${CATEGORY_SCORE_RESOURCE.id}`}>{CATEGORY_SCORE_RESOURCE.title}</a></li>
+              <li><a href={`#${MEASUREMENT_SET_SCORE_PART_RESOURCE.id}`}>{MEASUREMENT_SET_SCORE_PART_RESOURCE.title}</a></li>
+              <li><a href={`#${MEASUREMENT_SCORE_PART_RESOURCE.id}`}>{MEASUREMENT_SCORE_PART_RESOURCE.title}</a></li>
+              <li><a href={`#${MEASUREMENT_SCORE_RESOURCE.id}`}>{MEASUREMENT_SCORE_RESOURCE.title}</a></li>
+            </ul>
         </ul>
-        <h1 className='ds-h1'>Overview</h1>
-        <p className='ds-text--lead'>
-          The Scoring Engine resides within the QPP Submissions API application and calculates a performance score when it receives QPP submission data. When a submission is sent through the Submissions API, the scoring engine will evaluate provider profile information, measurement set performance data, and available benchmarking data for each performance category.
-        </p>
-        <p className='ds-text--lead'>
-          A performance score is generated in two different ways. First, submission by GET request with the identifier of a stored submission to the Submissions API’s submissions endpoint located at <code>/submissions/:id/score</code> will produce a score. Second, submission by POST request with a full submission in QPP JSON format to the Submissions API’s score preview endpoint located at <code>/submissions/score-preview</code> will also produce a score.
-        </p>
-        <p className='ds-text--lead'>
-          Next, each performance category is individually processed and scored by evaluating the corresponding measurement sets. Processing "metadata" and "messages" attached to the scored measurement sets and measurements are also compiled to generate a Score Object.
-        </p>
-        <p className='ds-text--lead'>
-          Last, the Score Object is passed back to the QPP Submissions API, which builds the application response by inserting the Score Object into the response body and returns this response to the requester. This response body contains JSON describing in detail the record of the current aggregate estimate of the submission score.
-        </p>
-        <h1 className='ds-h1'>Score Object Navigation</h1>
-        <p className='ds-text--lead'>
-          To help facilitate finding scoring details in the Scoring Output data structure, example navigation to important scoring details is outlined. A sample submission with corresponding scoring output is provided for reference.
-        </p>
         <div>
-          <h2 className='ds-h2'>Example Submission</h2>
+          <h1 className='ds-h1'>Overview</h1>
+          <p className='ds-text--lead'>
+            The scoring engine is responsible for interpretting submissions and outputting a score. Each category score is utilized to create the Overall Score for QPP. Related to Registry and QCDR submissions, only an Overall Score will be given. To view a Final Score, permission from the practice must be given.
+          </p>
+          <p className='ds-text--lead'>
+            A performance score is generated in two different ways. First, submission by GET request with the identifier of a stored submission to the Submissions API’s submissions endpoint located at <code>/submissions/:id/score</code> will produce a score. Second, submission by POST request with a full submission in QPP JSON format to the Submissions API’s score preview endpoint located at <code>/submissions/score-preview</code> will also produce a score.
+          </p>
+          <p className='ds-text--lead'>
+            In the sections below, each category within QPP that can be submitted will be explained and examples provided. Measures and Activities available for submission can be found here: <a href="https://github.com/CMSgov/qpp-measures-data/blob/master/measures/2018/measures-data.json">qpp-measures-data</a>.
+          </p>
+          <p className='ds-text--lead'>
+            Last, the Score Object is passed back to the QPP Submissions API, which builds the application response by inserting the Score Object into the response body and returns this response to the requester. This response body contains JSON describing in detail the record of the current aggregate estimate of the submission score.
+          </p>
+        </div>
+        <div>
+          <h1 className='ds-h1'>Group Vs. Individual Submission</h1>
+          <p className='ds-text--lead'>
+            There are two available options for submission, either Group, or Individual. These create two different records and are not combined to create a single score. If you are reporting as a Group, it is important to report every category you are reporting as a Group. If you are reporting as an individual, the same premise applies. The <code>"entityType"</code> field is the indicator within the submission to determine what is being reported. If reporting as a group, only the <code>"taxpayerIdentificationNumber"</code> is applicable. If you are reporting as an individual, you must report both the <code>"taxpayerIdentificationNumber"</code> and the corresponding <code>"nationalProviderIdentifier"</code>.
+          </p>
+          <br />
+        </div>
+        <div>
+          <h1 className='ds-h1' id="IA">Improvement Activities (IA)</h1>
+          <p className= 'ds-text--lead'>
+          The only available option for reporting Improvement Activities is boolean, and only Activities completed need to be reported.
+          <ul>
+            <li><a href="https://cmsgov.github.io/qpp-submissions-docs/measurements#boolean">Boolean</a></li>
+          </ul>
+          </p>
+        <div>
+          <h2 className='ds-h2' id="IA-Sub">Example IA Submission</h2>
+          <p className='ds-text--lead'>
+          The example submission below contains 4 activities. The reported activities contain both High and Medium weighted activities. 
+          </p>
+          <br />
           <Tabs className='example-code-tabs'>
             <TabList>
               <Tab>Sample JSON</Tab>
               <Tab>Sample XML</Tab>
             </TabList>
             <TabPanel>
-              <pre>{`${submissionJsonExampleString}`}</pre>
+              <pre>{`${submissionJsonExampleString_ia}`}</pre>
             </TabPanel>
             <TabPanel>
-              <pre>{`${submissionXmlExampleString}`}</pre>
+              <pre>{`${submissionXmlExampleString_ia}`}</pre>
             </TabPanel>
           </Tabs>
         </div>
+        </div>
         <br />
         <div>
-          <h2 className='ds-h2'>Example Submission Scoring Object</h2>
+          <h2 className='ds-h2' id="IA-Response">Example IA Submission Output Object</h2>
+          <p className='ds-text--lead'>
+          The output below shows the score at multiple levels. Although the IA category score has exceed the maximum points, you can never receive a score higher than the max. Activities that are High weighted are receiving a <code>"value": 20</code> at the actvity level in the response. Medium weighted activities are receiving <code>"value": 10</code>. The category has a <code>"maxContribution"</code> of 40 and the a <code>"maxContribution"</code> of 15 toward Overall Score.
+          </p>
           <Tabs className='example-code-tabs'>
             <TabList>
               <Tab>Sample JSON</Tab>
               <Tab>Sample XML</Tab>
             </TabList>
             <TabPanel>
-              <pre>{`${scoringJsonExampleString}`}</pre>
+              <pre>{`${scoringJsonExampleString_ia}`}</pre>
             </TabPanel>
             <TabPanel>
-              <pre>{`${scoringXmlExampleString}`}</pre>
+              <pre>{`${scoringXmlExampleString_ia}`}</pre>
             </TabPanel>
           </Tabs>
         </div>
         <br />
+        <div>
+        <h1 className='ds-h1' id="PI">Promoting Interoperability (PI)</h1>
+        <p className='ds-text--lead'>
+          The Promoting Interoperability Category is broken into 4 different sub-categories. Attestation Statements and Base Measures are required to receive a score in this category. If these are not submitted, this will result in a score of 0. The categories are outlined below: 
+        <ul>
+            <li>Attest Statements</li>
+            <li>Base Measures</li>
+            <li>Option Performance Measures</li>
+            <li>Bonus Measures</li>
+          </ul>
+          </p>
+            <div>
+            <h2 className='ds-h2' id="PI-Sub">Example PI Submission</h2>
+            <p className='ds-text--lead'>
+            The measure types available for submission are outlined below. Each measure in the repo will dictate which type is to be utilized.
+            <ul>
+              <li><a href="https://cmsgov.github.io/qpp-submissions-docs/measurements#proportion-measurements">Proportion Measures</a></li>
+              <li><a href="https://cmsgov.github.io/qpp-submissions-docs/measurements#boolean">Boolean</a></li>
+            </ul>
+            </p>
+            <br />
+            <Tabs className='example-code-tabs'>
+              <TabList>
+                <Tab>Sample JSON</Tab>
+                <Tab>Sample XML</Tab>
+              </TabList>
+              <TabPanel>
+                <pre>{`${submissionJsonExampleString_aci}`}</pre>
+              </TabPanel>
+              <TabPanel>
+                <pre>{`${submissionXmlExampleString_aci}`}</pre>
+              </TabPanel>
+            </Tabs>
+          </div>
+          <br />
+          <div>
+            <h2 className='ds-h2' id="PI-Response">Example PI Submission Output Object</h2>
+            <p className='ds-text--lead'>
+            The output below shows the score at multiple levels. Although the PI category score has exceed the maximum points, you can never receive a score higher than the max. If no score is return, check the <code>"attestationStatementCheck"</code> and <code>"baseMeasureCheck</code> wihin the <code>"metadata</code>. If either of these are listed as incomplete, the submission must be fixed to receive a score. The category has a <code>"maxContribution"</code> of 100 and the a <code>"maxContribution"</code> of 25 toward Overall Score.
+            </p>
+            <Tabs className='example-code-tabs'>
+              <TabList>
+                <Tab>Sample JSON</Tab>
+                <Tab>Sample XML</Tab>
+              </TabList>
+              <TabPanel>
+                <pre>{`${scoringJsonExampleString_aci}`}</pre>
+              </TabPanel>
+              <TabPanel>
+                <pre>{`${scoringXmlExampleString_aci}`}</pre>
+              </TabPanel>
+            </Tabs>
+          </div>
+        </div>
+        <br />
+        <div>
+          <h1 className='ds=h1' id="Quality">Quality</h1>
+          <p className='ds-text--lead'>
+          The Quality category requires 6 measures to receive full credit, one of which must be either an Outcome measure or High Priority. If no Outcome or High Priority measure is submitted, you will only be scored on the top 5 measures and receive a score of 0 for the sixth measure. 
+          </p>
+        <br />
+        <div>
+          <h2 className='ds-h2' id="Quality-Sub">Example Quality Submission</h2>
+          <p className='ds-text--lead'>
+          Submission structure in the Quality category are contingent on the measure being submitted. If there are questions around the data to be submitted in the fields, please refer to the measure specification. The available types related to the measures are outlined below:
+          <ul>
+            <li><a href="https://cmsgov.github.io/qpp-submissions-docs/measurements#non-proportion-measurements">Non-Proportion Measures</a></li>
+            <li><a href="https://cmsgov.github.io/qpp-submissions-docs/measurements#single-performance-rate-measurements">Single Performance Rates</a></li>
+            <li><a href="https://cmsgov.github.io/qpp-submissions-docs/measurements#multi-performance-rate-measurements">Multi-Performance Rates</a></li>
+          </ul>
+          In the sample below, measure 046 is a multi-strata, 110 is a single performance measure, ACEP32 is a non-proportion measure.
+          </p>
+          <Tabs className='example-code-tabs'>
+            <TabList>
+              <Tab>Sample JSON</Tab>
+              <Tab>Sample XML</Tab>
+            </TabList>
+            <TabPanel>
+              <pre>{`${submissionJsonExampleString_quality}`}</pre>
+            </TabPanel>
+            <TabPanel>
+              <pre>{`${submissionXmlExampleString_quality}`}</pre>
+            </TabPanel>
+          </Tabs>
+        </div>
+        <br />
+        <div>
+          <h2 className='ds-h2' id="Quality-Response">Example Quality Submission Output Object</h2>
+          <p className='ds-text--lead'>
+          Based on the submission details, a data completenss and performance rate is created. The measures are broken into three categories to determine score output.
+          <ul>
+            <li>Class 1 - The measure has met both the data completeness threshold and minimum eligible population criteria</li>
+              <ol type="a">
+              <li>If the measure has a benchmark, the measure will be compared to a benchmark and a score will be awarded based on performance compared to the benchmark</li>
+              <li>If the measure does not have a benchmark, a score of 3 will be awarded</li>
+              </ol>
+            <li>Class 2 - The measure does not meet the 60% data completeness threshold or has below 20 eligible patients in the <code>eligiblePopulation</code> field, the measure will not be compared to a benchmark.</li>
+              <ol type="a">
+              <li>If the clinician is a small practice, they will be awarded 3 points, irregardless of whether they have not either data completess or minimum eligible population criteria</li>
+              <li>If the clinician is not a small practice and has met the data completenss rate but did not meet the minimum eligible population criteria score of 3 will be awarded</li>
+              </ol>
+            <li>Class 3 - If the clinician is not a small practice and has met the necessary eligible population criteria but has met the data completenss rate a score of 1 will be awarded</li>
+          </ul>
+          </p>
+          <br />
+          </div>
+          <Tabs className='example-code-tabs'>
+            <TabList>
+              <Tab>Sample JSON</Tab>
+              <Tab>Sample XML</Tab>
+            </TabList>
+            <TabPanel>
+              <pre>{`${scoringJsonExampleString_quality}`}</pre>
+            </TabPanel>
+            <TabPanel>
+              <pre>{`${scoringXmlExampleString_quality}`}</pre>
+            </TabPanel>
+          </Tabs>
+        </div>
+        <br />
+        <h1 className='ds-h1' id="#More">Further Resources</h1>
+        <p className='ds-text--lead'>
+          Detailed information related to all scoring responses can be found below. Each level of the scoring response details the different information and is specific to the information that is listed above.
+          </p>
+        <br/>
         <ScoringNavigationTable fields={SCORE_NAVIGATION_EXAMPLES} />
         <br />
         <Resource {...SCORE_RESOURCE} />
@@ -1234,8 +1415,8 @@ export default class ScoringEngine extends PureComponent {
         <Resource {...MEASUREMENT_SCORE_RESOURCE} />
         <div>
           <p><em>Disclaimer:</em> Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments.</p>
-        </div>
-      </div>
-    );
-  }
+        </div> 
+    </div>
+    )
+}
 }

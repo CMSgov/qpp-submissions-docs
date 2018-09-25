@@ -1,0 +1,73 @@
+{
+    "data": {
+      "score": {
+        "name": "total",
+        "title": "Total Score",
+        "detail": "0.29.0",
+        "value": 15,
+        "parts": [
+          {
+            "name": "ia",
+            "title": "IA component of final score",
+            "detail": "Scoring based on weight of 15%.",
+            "value": 15,
+            "original": {
+              "name": "ia",
+              "value": 40,
+              "detail": "Picked the highest scoring measurement set electronicHealthRecord",
+              "parts": [
+                {
+                  "name": "ia",
+                  "value": 40,
+                  "title": "Improvement Activities Score",
+                  "detail": "electronicHealthRecord",
+                  "parts": [
+                    {
+                      "name": "IA_AHE_1",
+                      "title": "Engagement of new Medicaid patients and follow-up",
+                      "value": 20,
+                      "metadata": {
+                        "maxContribution": 20
+                      }
+                    },
+                    {
+                      "name": "IA_AHE_2",
+                      "title": "Leveraging a QCDR to standardize processes for screening",
+                      "value": 10,
+                      "metadata": {
+                        "maxContribution": 20
+                      }
+                    },
+                    {
+                      "name": "IA_AHE_3",
+                      "title": "Leveraging a QCDR to promote use of patient-reported outcome tools",
+                      "value": 20,
+                      "metadata": {
+                        "maxContribution": 20
+                      }
+                    },
+                    {
+                      "name": "IA_AHE_4",
+                      "title": "Leveraging a QCDR for use of standard questionnaires",
+                      "value": 10,
+                      "metadata": {
+                        "maxContribution": 20
+                      }
+                    }
+                  ],
+                  "metadata": {
+                    "messages": {},
+                    "maxContribution": 40,
+                    "measurementSetPicked": true
+                  }
+                }
+              ]
+            },
+            "metadata": {
+              "maxContribution": 15
+            }
+          }
+        ]
+    }
+}
+}

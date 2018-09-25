@@ -1,0 +1,214 @@
+{
+  "name": "total",
+  "title": "Total Score",
+  "detail": "0.40.0",
+  "value": 24.54,
+  "parts": [
+    {
+      "name": "quality",
+      "title": "QUALITY component of total score",
+      "detail": "Scoring based on weight of 60%.",
+      "value": 24.54,
+      "original": {
+        "name": "quality",
+        "value": 40.9,
+        "detail": "Picked the highest scoring measurement set registry",
+        "parts": [
+          {
+            "name": "quality",
+            "value": 40.9,
+            "detail": "registry",
+            "parts": [
+              {
+                "name": "ACEP32",
+                "value": 3,
+                "detail": "Contributing 3",
+                "metadata": {
+                  "performanceRate": 0,
+                  "measurementSetId": "0230368f-9875-4346-8007-649f3f06285b",
+                  "measurementId": "0230368f-4a18-4610-b78e-330840ef6485",
+                  "measureTitle": "ED Median Time from ED arrival to ED departure for discharged ED patients for Adult Patients",
+                  "highPriorityBonusEligible": true,
+                  "endToEndBonusEligible": false,
+                  "endToEndBonus": 0,
+                  "outcomeOrPatientExperienceBonus": 0,
+                  "highPriorityBonus": 0,
+                  "highPriorityBonusIgnored": true,
+                  "decileScore": 3,
+                  "eligiblePopulation": 0,
+                  "partialDecileScore": null,
+                  "partialPoints": 0,
+                  "decile": -1,
+                  "deciles": null,
+                  "processingStatus": "PICKED",
+                  "totalMeasurementPoints": 3,
+                  "totalBonusPoints": 0,
+                  "messages": {
+                    "decileScore": "Applied 3 points for QCDR non-proportion metric type measure",
+                    "e2eBonusScore": "Default E2E bonus score",
+                    "highPriorityBonus": "Measure having highest decile score (preference given to outcome, intermediate outcome, intermediate outcome and process) is not eligible for high priority bonus",
+                    "measurementPicker": "Picked at 1",
+                    "totalMeasurementPoints": "Measurement points for PICKED measure include decile score with all bonus points"
+                  },
+                  "noBenchmarks": true,
+                  "benchmarkType": null,
+                  "eMeasureId": null,
+                  "toppedOut": null,
+                  "isGhost": false,
+                  "unroundedScoreValue": 3
+                }
+              },
+              {
+                "name": "046",
+                "value": 12,
+                "detail": "Contributing 12",
+                "metadata": {
+                  "performanceRate": 82.31,
+                  "reportingRate": 100,
+                  "measurementSetId": "0230368f-9875-4346-8007-649f3f06285b",
+                  "measurementId": "0230368f-3003-4b86-8fea-795389fda9cc",
+                  "measureClass": "Class 1",
+                  "measureTitle": "Medication Reconciliation Post-Discharge",
+                  "highPriorityBonusEligible": true,
+                  "endToEndBonusEligible": true,
+                  "endToEndBonus": 1,
+                  "outcomeOrPatientExperienceBonus": 0,
+                  "highPriorityBonus": 1,
+                  "decileScore": 10,
+                  "performanceDenominator": 147,
+                  "performanceNumerator": 121,
+                  "eligiblePopulation": 147,
+                  "partialDecileScore": null,
+                  "partialPoints": 0,
+                  "decile": -1,
+                  "deciles": [
+                    0,
+                    100,
+                    100,
+                    100,
+                    100,
+                    100,
+                    100,
+                    100,
+                    100
+                  ],
+                  "processingStatus": "PICKED",
+                  "totalMeasurementPoints": 12,
+                  "totalBonusPoints": 2,
+                  "messages": {
+                    "measurementClass": "Eligible population is greater than or equal to 20, reporting rate is greater than 50% and has benchmarks",
+                    "decileScore": "Applied maximum decile score for topped out measure",
+                    "e2eBonusScore": "Bonus from isEndToEndReported",
+                    "highPriorityBonus": "Allotting 1 point to high priority bonus for measure type 'process'",
+                    "measurementPicker": "Picked at 2",
+                    "totalMeasurementPoints": "Measurement points for PICKED measure include decile score with all bonus points"
+                  },
+                  "noBenchmarks": false,
+                  "benchmarkType": "registry",
+                  "eMeasureId": null,
+                  "toppedOut": true,
+                  "isGhost": false,
+                  "unroundedScoreValue": 12
+                }
+              },
+              {
+                "name": "110",
+                "value": 9.5,
+                "detail": "Contributing 9.5",
+                "metadata": {
+                  "performanceRate": 54.46,
+                  "reportingRate": 100,
+                  "measurementSetId": "0230368f-9875-4346-8007-649f3f06285b",
+                  "measurementId": "0230368f-4a18-4610-b78e-330840ef6485",
+                  "measureClass": "Class 1",
+                  "measureTitle": "Preventive Care and Screening: Influenza Immunization",
+                  "highPriorityBonusEligible": false,
+                  "endToEndBonusEligible": true,
+                  "endToEndBonus": 1,
+                  "outcomeOrPatientExperienceBonus": 0,
+                  "highPriorityBonus": 0,
+                  "decileScore": 8.54,
+                  "performanceDenominator": 560,
+                  "performanceNumerator": 305,
+                  "eligiblePopulation": 562,
+                  "partialDecileScore": 0.5,
+                  "partialPoints": 6.59,
+                  "decile": 8,
+                  "deciles": [
+                    0,
+                    11.22,
+                    18.58,
+                    25,
+                    31.85,
+                    38.93,
+                    47.87,
+                    60,
+                    79.02
+                  ],
+                  "processingStatus": "PICKED",
+                  "totalMeasurementPoints": 9.54,
+                  "totalBonusPoints": 1,
+                  "messages": {
+                    "benchmarkType": "Override registry benchmark with eHR benchmark because isEndToEndReported is true",
+                    "measurementClass": "Eligible population is greater than or equal to 20, reporting rate is greater than 50% and has benchmarks",
+                    "e2eBonusScore": "Bonus from isEndToEndReported",
+                    "measurementPicker": "Picked at 3",
+                    "totalMeasurementPoints": "Measurement points for PICKED measure include decile score with all bonus points"
+                  },
+                  "noBenchmarks": false,
+                  "benchmarkType": "electronicHealthRecord",
+                  "eMeasureId": "CMS147v6",
+                  "toppedOut": false,
+                  "isGhost": false,
+                  "unroundedScoreValue": 9.54
+                }
+              }
+            ],
+            "metadata": {
+              "messages": {
+                "denominator": "At least 1 high or outcome or patient experience measure available. So denominator is 60",
+                "totalDecileScore": "Decile score points for measurements included in measurement set score, excluding bonus points",
+                "totalBonusPoints": "Sum of measurement bonus points included in the measurement set score",
+                "totalMeasurementPoints": "Sum of applicable measurement points."
+              },
+              "measurementSetId": "0230368f-9875-4346-8007-649f3f06285b",
+              "maxContribution": 100,
+              "measuresPicked": [
+                "ACEP32",
+                "046",
+                "110"
+              ],
+              "totalDecileScore": 21.5,
+              "totalBonusPoints": 3,
+              "totalMeasurementPoints": 24.5,
+              "denominator": 60,
+              "e2eBonusScore": 2,
+              "maxMeasurementsAllowed": 6,
+              "mergedWithCahps": false,
+              "unroundedScoreValue": 24.54,
+              "reweightedScore": 24.5,
+              "measurementSetPicked": true
+            }
+          }
+        ]
+      },
+      "metadata": {
+        "maxContribution": 60,
+        "unroundedScoreValue": 24.54
+      }
+    }
+  ],
+  "metadata": {
+    "messages": {},
+    "maxTotalScore": 100,
+    "maxHighContributionIA": 20,
+    "maxMediumContributionIA": 10,
+    "maxContributionIA": 15,
+    "maxContributionACI": 25,
+    "maxContributionQuality": 60
+  },
+  "warnings": [
+    "Disclaimer: Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments."
+  ],
+  "errors": []
+}
