@@ -25,7 +25,7 @@ export default class Submissions extends React.Component {
         <h1 className='ds-h1'>Submissions</h1>
         <p className='ds-text--lead'>The Submissions resource represents one year of performance data for a given individual or group. Submissions contain MeasurementSets which can be accessed both via Submissions methods and MeasurementSets methods. Submissions resources are 'shared' in the sense that they contain Measurement Sets that may be created by multiple users.</p>
         <p className='ds-text--lead'>Submissions resources are 'shared' in the sense that they contain Measurement Sets that may be created by multiple users.</p>
-        <p className='ds-text--lead'><a href='https://qpp-submissions-sandbox.navapbc.com/#/Submissions'>Try it out!</a></p>
+        <p className='ds-text--lead'><a href='https://preview.qpp.cms.gov/api/submissions/public/docs/#/Submissions'>Try it out!</a></p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
