@@ -1,0 +1,123 @@
+{
+    "data": {
+      "score": {
+        "name": "total",
+        "title": "Total Score",
+        "detail": "0.29.0",
+        "value": 25,
+        "parts": [
+          {
+            "name": "pi",
+            "title": "PI component of final score",
+            "detail": "Scoring based on weight of 25%.",
+            "value": 25,
+            "original": {
+              "name": "pi",
+              "value": 100,
+              "detail": "Picked the highest scoring measurement set electronicHealthRecord",
+              "parts": [
+                {
+                  "name": "pi",
+                  "title": "Promoting Interoperability Score",
+                  "value": 100,
+                  "detail": "electronicHealthRecord",
+                  "parts": [
+                    {
+                      "name": "PI_base",
+                      "value": 80,
+                      "detail": "",
+                      "metadata": {
+                        "maxContribution": 100
+                      },
+                      "parts": [
+                        {
+                          "name": "PI_PEA_1",
+                          "value": 10,
+                          "metadata": {
+                            "maxContribution": 10
+                          }
+                        },
+                        {
+                          "name": "PI_HIE_1",
+                          "value": 10,
+                          "metadata": {
+                            "maxContribution": 10
+                          }
+                        },
+                        {
+                          "name": "PI_HIE_2",
+                          "value": 10,
+                          "metadata": {
+                            "maxContribution": 10
+                          }
+                        }
+                      ],
+                      "warnings": []
+                    },
+                    {
+                      "name": "PI_performance",
+                      "value": 20,
+                      "detail": "",
+                      "metadata": {
+                        "maxContribution": 100
+                      },
+                      "parts": [
+                        {
+                          "name": "PI_HIE_3",
+                          "value": 10,
+                          "metadata": {
+                            "maxContribution": 10
+                          }
+                        },
+                        {
+                          "name": "PI_PHCDRR_1",
+                          "value": 10,
+                          "metadata": {
+                            "maxContribution": 10
+                          }
+                        }
+                      ],
+                      "warnings": []
+                    },
+                    {
+                      "name": "PI_bonus",
+                      "value": 0,
+                      "detail": "",
+                      "metadata": {
+                        "maxContribution": 100
+                      },
+                      "parts": [],
+                      "warnings": []
+                    },
+                    {
+                      "name": "cehrt_bonus",
+                      "value": 10,
+                      "detail": "",
+                      "metadata": {
+                        "maxContribution": 100
+                      },
+                      "parts": [],
+                      "warnings": []
+                    }
+                  ],
+                  "metadata": {
+                    "messages": {
+                      "attestationStatementCheck": "Attestation Statements are complete",
+                      "baseMeasureCheck": "Base measures are complete"
+                    },
+                    "maxContribution": 100,
+                    "measurementSetPicked": true
+                  },
+                  "warnings": []
+                }
+              ],
+              "warnings": []
+            },
+            "metadata": {
+              "maxContribution": 25
+            }
+          }
+        ]
+    }
+    }
+}
