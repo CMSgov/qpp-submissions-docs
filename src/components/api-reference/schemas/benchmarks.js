@@ -10,6 +10,7 @@ const FIELDS = [
   {name: 'performanceYear', value: 'integer', description: 'A four digit integer', notes: 'Read-only<br/><br/>The performanceYear corresponds to the time period in which the performance data that was submitted for scoring originated.'},
   {name: 'submissionMethod', value: 'string', description: 'The method by which data is submitted for this benchmark', notes: 'Read-only<br/><br/>Acceptable values are <b>cmsWebInterface</b>, <b>electronicHealthRecord</b>, <b>claims</b>, <b>registry</b>, <b>certifiedSurveyVendor</b>, and <b>administrativeClaims</b>.'},
   {name: 'measureId', value: 'string', description: 'The id of the measure for which the benchmark has decile values.', notes: 'Read-only<br/><br/>All measures and their IDs are available in <a href="https://github.com/CMSgov/qpp-measures-data/blob/master/measures/measures-data.json">qpp-measures-data</a>.'},
+  {name: 'isToppedOut', value: 'boolean', description: 'A boolean value that represents whether the latter deciles of a benchmark top out and repeat a value of 100'},
   {name: 'deciles', value: 'array(float)', description: 'A list of 9 floats', notes: 'Read-only<br/>Optional<br/><br/>This list represents the deciles for a given measure, submitted via a particular submission method in a particular performance year. The nine numbers represent the inclusive lower bounds of deciles 2 through 10. The upper and lower bounds of the measurement value range are implied to be 100 and 0 respectively for direct measures and 0 and 100 respectively for inverse measures. The range of any given decile begins at its lower bound and continues up to but does not include the subsequent decile\'s lower bound. If the subsequent decile\'s lower bound is equal to the current decile\'s lower bound, then that decile is undefined or, in other words, empty.'},
   {name: 'status', value: 'string', description: '\'current\', \'currentInsufficientData\', \'historical\', or \'historicalNoData\'', notes: 'Read-only<br/>Required<br/><br/><b>\'current\'</b>: current benchmark subject to ongoing updates.<b>\'currentInsufficientData\'</b>: unable to calculate current benchmark. <b>\'historical\'</b>: historical data present. <b>\'historicalNoData\'</b>: historical data expected but not present.'}
 ];
@@ -43,6 +44,7 @@ export default class Benchmarks extends PureComponent {
   "performanceYear": integer,
   "submissionMethod": string,
   "measureId": string,
+  "isToppedOut": boolean,
   "deciles": array(float),
   "status": string
 }`}
@@ -55,6 +57,7 @@ export default class Benchmarks extends PureComponent {
   <performanceYear>integer</performanceYear>
   <submissionMethod>string</submissionMethod>
   <measureId>string</measureId>
+  <isToppedOut>boolean</isToppedOut>
   <deciles>array(float)</deciles>
   <status>string</status>
 </data>
