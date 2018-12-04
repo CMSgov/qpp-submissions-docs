@@ -8,7 +8,7 @@ import DataModelTable from '../common/data-model-table';
 const FIELDS = [
   {name: 'id', value: 'string', description: 'The id of the measurement.'},
   {name: 'measurementSetId', value: 'string', description: 'The id of the measurement set in which the measurement belongs.'},
-  {name: 'measureId', value: 'string', description: 'The id of the measure to which the measurement is attesting. All measures and their IDs are available in <a href="https://github.com/CMSgov/qpp-measures-data/blob/master/measures/measures-data.json">qpp-measures-data</a>. For quality measures, the measureId is the same as the quality number. For an advancing care information (ACI) measure, the measureId is the measure identifier for the ACI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.', notes: 'writable'},
+  {name: 'measureId', value: 'string', description: 'The id of the measure to which the measurement is attesting. All measures and their IDs are available in <a href="https://github.com/CMSgov/qpp-measures-data/blob/master/measures/measures-data.json">qpp-measures-data</a>. For quality measures, the measureId is the same as the quality number. For a promoting interoperability (PI) measure, the measureId is the measure identifier for the PI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.', notes: 'writable'},
   {name: 'value', value: 'object', description: 'Different measurements will have different values. Acceptable measurement types are <b>boolean</b>, <b>proportion</b>, <b>non-proportion</b>, and <b>performance rate</b>.', notes: 'writable'}
 ];
 
@@ -26,7 +26,8 @@ const NON_PROPORTION_FIELDS = [
   {name: 'denominator', value: 'float', description: 'The denominator as described in the QCDR measure specification.', notes: 'writable'},
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable'},
   {name: 'numeratorExclusion', value: 'float', description: 'The exclusions from the numerator field as described in the QCDR measure specification.', notes: 'writable, optional'},
-  {name: 'denominatorException', value: 'float', description: 'The exceptions from the denominator field as described in the QCDR measure specification.', notes: 'writable, optional'}
+  {name: 'denominatorException', value: 'float', description: 'The exceptions from the denominator field as described in the QCDR measure specification.', notes: 'writable, optional'},
+  {name: 'reportingRate', value: 'float', description: 'The data completeness of the measure.', notes: 'writable'}
 ];
 
 const SINGLE_PERFORMANCE_RATE_FIELDS = [
@@ -36,13 +37,13 @@ const SINGLE_PERFORMANCE_RATE_FIELDS = [
   {name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure. In the measures specifications for claims measures and eCQMs, this field is also referred to as "Denominator Exclusion". In measures specifications for registry and QCDR measures, this field is referred to as "Numerator Exclusion".', notes: 'writable, optional'},
   {name: 'eligiblePopulationException', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure. In the measures specifications, this field is also referred to as "Denominator Exception".', notes: 'writable, optional'},
   {name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Denominator".', notes: 'writable'},
-  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100.'},
+  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100. This is also referred to as data completeness.'},
   {name: 'performanceRate', value: 'float', description: 'The performance rate for a single performance rate measurement, ranging from zero to one-hundred and representing a percentage, is equal to (performanceMet / (performanceMet + performanceNotMet)) * 100.', notes: 'writable for registry single-performance rate only'}
 ];
 
 const MULTI_PERFORMANCE_RATE_FIELDS = [
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported  via certified EHR technology without any manual interference.', notes: 'writable'},
-  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100.'},
+  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100. This is also referred to as data completeness.'},
   {
     name: 'performanceRate',
     value: 'float',
@@ -172,7 +173,7 @@ class Measurements extends React.PureComponent {
         <DataModelTable fields={FIELDS} />
 
         <h1 className='ds-h1' id='boolean-measurements'>Boolean Measurements</h1>
-        <p className='ds-text--lead'>Boolean Measurements are applicable to Improvement Activity (IA) and Advancing Care Information (ACI) measures.</p>
+        <p className='ds-text--lead'>Boolean Measurements are applicable to Improvement Activity (IA) and Promoting Interoperability (PI) measures.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
@@ -207,7 +208,7 @@ class Measurements extends React.PureComponent {
         <DataModelTable fields={BOOLEAN_FIELDS} />
 
         <h1 className='ds-h1' id='proportion-measurements'>Proportion Measurements</h1>
-        <p className='ds-text--lead'>Proportion Measurements are applicable to Advancing Care Information (ACI) measures.</p>
+        <p className='ds-text--lead'>Proportion Measurements are applicable to Promoting Interoperability (PI) measures.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
@@ -248,7 +249,7 @@ class Measurements extends React.PureComponent {
         <DataModelTable fields={PROPORTION_FIELDS} />
 
         <h1 className='ds-h1' id='non-proportion-measurements'>Non-Proportion Measurements</h1>
-        <p className='ds-text--lead'>Non-Proportion Measurements are applicable to quality measures. They are exclusively authored by QCDRs and are used to attest to measures that are otherwise categorized as 'ratio', 'continuous variable', or a combination of 'proportion' and the former. Note this means that having a false value in the proportion field of QCDR documentation is sufficient to determine that a measure as non-proportional, but having a true value for proportion is insufficient to determine that measure as proportional. Non-proportion measurements are unconstrained, so while the fields are 'numerator' and 'denominator' there is no validation that the numerator must be less than or equal to the denominator or that the denominator is greater than 0, as is the case for proportion measurements.</p>
+        <p className='ds-text--lead'>Non-Proportion Measurements are applicable to quality measures. Most are authored by QCDRs and are used to attest to measures that are otherwise categorized as 'ratio', 'continuous variable', or a combination of 'proportion' and the former. Note this means that having a false value in the proportion field of QCDR documentation is sufficient to determine that a measure as non-proportional, but having a true value for proportion is insufficient to determine that measure as proportional. Non-proportion measurements are unconstrained, so while the fields are 'numerator' and 'denominator' there is no validation that the numerator must be less than or equal to the denominator or that the denominator is greater than 0, as is the case for proportion measurements.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
@@ -268,7 +269,8 @@ class Measurements extends React.PureComponent {
     "denominator": float,
     "isEndToEndReported": boolean,
     "denominatorException": float,
-    "numeratorExclusion": float
+    "numeratorExclusion": float,
+    "reportingRate": float
   }
 }`}
               </pre>
@@ -285,6 +287,7 @@ class Measurements extends React.PureComponent {
     <isEndToEndReported>boolean</isEndToEndReported>
     <denominatorException>float</denominatorException>
     <numeratorExclusion>float</numeratorExclusion>
+    <reportingRate>float</reportingRate>
   </value>
 </data>
 `}
