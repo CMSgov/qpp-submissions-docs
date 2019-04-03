@@ -10,18 +10,18 @@ class Introduction extends React.Component {
         <h2 className='ds-h2'>API Access After the 2018 QPP Submission Window Closes</h2>
         <p className='ds-text'>After April 2, 2019, 2018 Qualified Registries and Qualified Clinical Data Registries who have an API token will not be able to access <strong>write</strong> and <strong>update</strong> endpoints in the production environment. In other words, the following endpoints, which were available during the submission window, will no longer be accessible:</p>
 
-        <p className='ds-text'>MeasurementSets
-          <ul>
+        <p className='ds-text'>MeasurementSets</p>
+        <ul>
             <li>POST https://qpp.cms.gov/api/submissions/submissions/measurement-sets</li>
             <li>PUT, PATCH, POST, DELETE https://qpp.cms.gov/api/submissions/submissions/measurement-sets/{'{'}id{'}'}</li>
-          </ul>
-        </p>
-        <p className='ds-text'>Measurements
-          <ul>
-            <li>POST https://qpp.cms.gov/api/submissions/submissions/measurements</li>
-            <li>PUT, PATCH, DELETE https://qpp.cms.gov/api/submissions/submissions/measurements/{'{'}id{'}'}</li>
-          </ul>
-        </p>
+        </ul>
+
+        <p className='ds-text'>Measurements</p>
+        <ul>
+          <li>POST https://qpp.cms.gov/api/submissions/submissions/measurements</li>
+          <li>PUT, PATCH, DELETE https://qpp.cms.gov/api/submissions/submissions/measurements/{'{'}id{'}'}</li>
+        </ul>
+
         <p className='ds-text'>Attempting to access any of these endpoints after April 2, 2019 at 8 PM ET will return a 401 error.</p>
 
         <p className='ds-text'>POST https://qpp.cms.gov/api/submissions/submissions/score-preview will still be accessible, as this data is not persisted. Please remember that this endpoint will not return a score for special scoring scenarios and is set up for 2018 PY scoring logic.</p>
@@ -38,7 +38,7 @@ class Introduction extends React.Component {
         <p className='ds-text'>Requests made in the Interactive Documentation and Developer Preview are not officially submitted to CMS. You can learn more about the Developer Preview <a href='https://cmsgov.github.io/qpp-submissions-docs/developer-preview'>here</a></p>
 
         <h2 className='ds-h2'>Stay Up Date</h2>
-        <p className='ds-text'>The <a href='https://groups.google.com/forum/#!forum/qpp-apis' target='_blank'>QPP APIs Google Group</a> is where developers and the CMS QPP Product Managers discuss your questions and feedback. New announcements and discussions are being added everyday.</p>
+        <p className='ds-text'>The <a href='https://groups.google.com/forum/#!forum/qpp-apis' target='_blank' rel='noopener noreferrer'>QPP APIs Google Group</a> is where developers and the CMS QPP Product Managers discuss your questions and feedback. New announcements and discussions are being added everyday.</p>
         <p className='ds-text'>For questions about QPP measures, scores, policy or how the program works, please contact the Quality Payment Program Service Center at <a href='QPP@cms.hhs.gov'>QPP@cms.hhs.gov</a> or 1-866-288-8292.</p>
       </div>
     );
