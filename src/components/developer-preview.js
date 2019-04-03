@@ -40,14 +40,11 @@ class DeveloperPreview extends React.Component {
         <h2 className='ds-h2'>Authentication</h2>
         <p className='ds-text'>Both the Developer Preview and the Production environments require a JSON Web Token ("API key") for authentication purposes.</p>
 
-        <a className='ds-c-button ds-c-button--primary' href='/qpp-submissions-docs/developer-preview#api-key'>Get an API Key</a>
-
         <h1 className='ds-h1' id='api-key'>Get an API Key</h1>
-        <p className='ds-text'>The Developer Preview is open to 2018 CMS-approved Qualified Registries ("registries") and Qualified Clinical Data Registries ("QCDRs"). Each 2018 registry and QCDR will receive a unique API key via email during the week of September 24, 2018. The email will come from <a href='mailto:partnership@cms.hhs.gov'>partnership@cms.hhs.gov</a>, and will be sent to the designated Technical Contact for the organization.</p>
-        <p className='ds-text'>The email will contain a secure URL, which can be used to access the API key. This API key will only work in the Developer Preview environment. It cannot be used for production submissions.</p>
-        <p className='ds-text'>Note that the URL expires a week from when it is sent, so we recommend that the recipient open it right away, and save the API key in a secure location.</p>
-        <p className='ds-text'>If you have any questions or issues getting your API key, please contact the Quality Payment Program Service Center at <a href='mailto:QPP@cms.hhs.gov'>QPP@cms.hhs.gov</a> or 1-866-288-8292 and ask to be put in touch with API Support.</p>
-
+        <a className='ds-c-button ds-c-button--primary' href='/qpp-submissions-docs/developer-preview#api-key'>Get an API Key</a>
+        <p className='ds-text'>The Developer Preview is open year round and currently supports PY 2018 testing. As such, the Developer Preview is open to 2018 CMS-approved Qualified Registries ("registries") and Qualified Clinical Data Registries ("QCDRs").</p>
+        <p className='ds-text'>Developer Preview tokens for 2019 registries and QCDRs will become available when the testing environment switches from supporting PY 2018 to PY 2019 later this year.</p>
+        <p className='ds-text'>Anyone may continue to test the current iteration of the Developer Preview environment through our <a href='https://preview.qpp.cms.gov/api/submissions/public/docs/'>Interactive Documentation</a>. A default API token is embedded on this website, which you may also use for testing. To retrieve this token, test any endpoint on the website and then copy it from the API's cURL response.</p>
         <h1 className='ds-h1' id='authentication'>Authentication</h1>
         <p className='ds-text'>You must authenticate your account when using the Developer Preview (base url: <strong>https://preview.qpp.cms.gov/api/submissions/</strong>). Authenticate via bearer auth by adding your API token to the header of every request using the key value: <strong>Authorization: Bearer [YOUR API TOKEN]</strong>.</p>
         <p className='ds-text'>API keys carry many privileges, and must not be shared in publicly accessible areas such as GitHub and in client-side code.  Even within organizations, access must be limited to staff embedding it in software.</p>
