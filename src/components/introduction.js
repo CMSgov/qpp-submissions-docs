@@ -12,15 +12,16 @@ class Introduction extends React.Component {
 
         <p className='ds-text'>MeasurementSets
           <ul>
-          <li>POST https://qpp.cms.gov/api/submissions/submissions/measurement-sets</li>
-          <li>PUT, PATCH, POST, DELETE https://qpp.cms.gov/api/submissions/submissions/measurement-sets/{'{'}id{'}'}</li>
+            <li>POST https://qpp.cms.gov/api/submissions/submissions/measurement-sets</li>
+            <li>PUT, PATCH, POST, DELETE https://qpp.cms.gov/api/submissions/submissions/measurement-sets/{'{'}id{'}'}</li>
           </ul>
         </p>
-        <p className='ds-text'>Measurements</p>
-        <ul>
-        <li>POST https://qpp.cms.gov/api/submissions/submissions/measurements</li>
-        <li>PUT, PATCH, DELETE https://qpp.cms.gov/api/submissions/submissions/measurements/{'{'}id{'}'}</li>
-        </ul>
+        <p className='ds-text'>Measurements
+          <ul>
+            <li>POST https://qpp.cms.gov/api/submissions/submissions/measurements</li>
+            <li>PUT, PATCH, DELETE https://qpp.cms.gov/api/submissions/submissions/measurements/{'{'}id{'}'}</li>
+          </ul>
+        </p>
         <p className='ds-text'>Attempting to access any of these endpoints after April 2, 2019 at 8 PM ET will return a 401 error.</p>
 
         <p className='ds-text'>POST https://qpp.cms.gov/api/submissions/submissions/score-preview will still be accessible, as this data is not persisted. Please remember that this endpoint will not return a score for special scoring scenarios and is set up for 2018 PY scoring logic.</p>
