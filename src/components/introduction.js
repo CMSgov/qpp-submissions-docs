@@ -12,8 +12,8 @@ class Introduction extends React.Component {
 
         <p className='ds-text'>MeasurementSets</p>
         <ul>
-            <li>POST https://qpp.cms.gov/api/submissions/submissions/measurement-sets</li>
-            <li>PUT, PATCH, POST, DELETE https://qpp.cms.gov/api/submissions/submissions/measurement-sets/{'{'}id{'}'}</li>
+          <li>POST https://qpp.cms.gov/api/submissions/submissions/measurement-sets</li>
+          <li>PUT, PATCH, POST, DELETE https://qpp.cms.gov/api/submissions/submissions/measurement-sets/{'{'}id{'}'}</li>
         </ul>
 
         <p className='ds-text'>Measurements</p>
