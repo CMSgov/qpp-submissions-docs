@@ -2,14 +2,12 @@ import AdvancedTutorial from './tutorials/advanced-tutorial';
 import BasicTutorial from './tutorials/basic-tutorial';
 import Benchmarks from './api-reference/schemas/benchmarks';
 import DeveloperPreview from './developer-preview';
-import ExampleDocs from './api-reference/example-docs';
-import ExistingIntegrators from './existing-integrators';
 import Introduction from './introduction';
 import MeasurementSets from './api-reference/schemas/measurement-sets';
 import Measurements from './api-reference/schemas/measurements';
-import RateLimiting from './rate-limiting';
 import Scoring from './api-reference/scoring';
 import Submissions from './api-reference/schemas/submissions';
+import SubmittingToQppSubmissionApi from './tutorials/submitting-to-submissions-api';
 import TermsOfService from './terms-of-service';
 
 const topicsPaths = [
@@ -46,18 +44,18 @@ const guidesPaths = [
     linkText: 'Tutorial: Add and update data via API',
     component: AdvancedTutorial
   },
-  {
-    path: '/authorization-and-authentication',
-    exact: false,
-    linkText: 'Submissions API Authentication and Authorization',
-    component: SubmissionsApiAuthenticationAndAuthorization
-  },
-  {
-    path: '/getting-started-with-oauth2',
-    exact: false,
-    linkText: 'Getting Started Using QPP OAuth2',
-    component: GettingStartedUsingQppOauth2
-  }
+  // {
+  //   path: '/authorization-and-authentication',
+  //   exact: false,
+  //   linkText: 'Submissions API Authentication and Authorization',
+  //   component: SubmissionsApiAuthenticationAndAuthorization
+  // },
+  // {
+  //   path: '/getting-started-with-oauth2',
+  //   exact: false,
+  //   linkText: 'Getting Started Using QPP OAuth2',
+  //   component: GettingStartedUsingQppOauth2
+  // }
 ];
 
 const referencePaths = [
@@ -91,12 +89,12 @@ const referencePaths = [
     linkText: 'Scoring',
     component: Scoring
   },
-  {
-    path: '/scoring-engine',
-    exact: false,
-    linkText: 'Scoring Engine',
-    component: ScoringEngine
-  }
+  // {
+  //   path: '/scoring-engine',
+  //   exact: false,
+  //   linkText: 'Scoring Engine',
+  //   component: ScoringEngine
+  // }
 ];
 
 const supportPaths = [
