@@ -20,18 +20,6 @@ const topicsPaths = [
     component: Introduction
   },
   {
-    path: 'https://preview.qpp.cms.gov/api/submissions/public/docs/',
-    exact: false,
-    linkText: 'Interactive Docs',
-    external: true
-  },
-  {
-    path: 'https://github.com/CMSgov/qpp-measures-data',
-    exact: false,
-    linkText: 'QPP Measures Data Repository',
-    external: true
-  },
-  {
     path: '/developer-preview',
     exact: true,
     linkText: 'Developer Preview',
@@ -41,16 +29,34 @@ const topicsPaths = [
 
 const guidesPaths = [
   {
+    path: '/submitting-to-submissions-api',
+    exact: false,
+    linkText: 'Submitting to QPP using the Submission API',
+    component: SubmittingToQppSubmissionApi
+  },
+  {
     path: '/tutorial',
     exact: false,
-    linkText: 'Create and score data via API',
+    linkText: 'Tutorial: Create and score data via API',
     component: BasicTutorial
   },
   {
     path: '/advanced-tutorial',
     exact: false,
-    linkText: 'Add and update data via API',
+    linkText: 'Tutorial: Add and update data via API',
     component: AdvancedTutorial
+  },
+  {
+    path: '/authorization-and-authentication',
+    exact: false,
+    linkText: 'Submissions API Authentication and Authorization',
+    component: SubmissionsApiAuthenticationAndAuthorization
+  },
+  {
+    path: '/getting-started-with-oauth2',
+    exact: false,
+    linkText: 'Getting Started Using QPP OAuth2',
+    component: GettingStartedUsingQppOauth2
   }
 ];
 
@@ -84,36 +90,45 @@ const referencePaths = [
     exact: false,
     linkText: 'Scoring',
     component: Scoring
-  }
-];
-
-const samplePaths = [
+  },
   {
-    path: '/examples',
+    path: '/scoring-engine',
     exact: false,
-    linkText: 'Example Submission JSON & XML',
-    component: ExampleDocs
+    linkText: 'Scoring Engine',
+    component: ScoringEngine
   }
 ];
 
 const supportPaths = [
   {
-    path: 'https://groups.google.com/forum/#!forum/qpp-apis',
+    path: 'https://github.com/CMSgov/qpp-measures-data',
     exact: false,
-    linkText: 'Google Group',
+    linkText: 'QPP Measures Data Repository',
     external: true
   },
   {
-    path: '/existing-integrators',
+    path: 'https://preview.qpp.cms.gov/api/submissions/public/docs/',
     exact: false,
-    linkText: 'Existing API Integrators',
-    component: ExistingIntegrators
+    linkText: 'Interactive QPP Submissions API Documentation',
+    external: true
   },
   {
-    path: '/rate-limiting',
+    path: 'https://qpp.cms.gov/api/auth/docs/#/',
     exact: false,
-    linkText: 'Rate Limiting',
-    component: RateLimiting
+    linkText: 'Interactive QPP Auth Service API Documentation',
+    external: true
+  },
+  // {
+  //   path: 'example.com',
+  //   exact: false,
+  //   linkText: 'Interactive Test Data Service Documentation',
+  //   external: true
+  // },
+  {
+    path: 'https://groups.google.com/forum/#!forum/qpp-apis',
+    exact: false,
+    linkText: 'Developer Group for QPP APIs',
+    external: true
   },
   {
     path: '/terms-of-service',
@@ -137,11 +152,7 @@ const allPaths = [
     paths: referencePaths
   },
   {
-    groupTitle: 'SAMPLES',
-    paths: samplePaths
-  },
-  {
-    groupTitle: 'SUPPORT',
+    groupTitle: 'RESOURCES AND SUPPORT',
     paths: supportPaths
   }
 ];
