@@ -7,6 +7,7 @@ import MeasurementSets from './api-reference/schemas/measurement-sets';
 import Measurements from './api-reference/schemas/measurements';
 import Scoring from './api-reference/scoring';
 import Submissions from './api-reference/schemas/submissions';
+import SubmissionsApiAuthenticationAndAuthorization from './tutorials/authorization-and-authentication.js';
 import SubmittingToQppSubmissionApi from './tutorials/submitting-to-submissions-api';
 import TermsOfService from './terms-of-service';
 
@@ -44,12 +45,18 @@ const guidesPaths = [
     linkText: 'Tutorial: Add and update data via API',
     component: AdvancedTutorial
   },
+  {
+    path: '/authorization-and-authentication',
+    exact: false,
+    linkText: 'Submissions API Authentication and Authorization',
+    component: SubmissionsApiAuthenticationAndAuthorization
+  },
   // {
-  //   path: '/authorization-and-authentication',
+  //   path: '/qualified-registries-and-qcdrs',
   //   exact: false,
-  //   linkText: 'Submissions API Authentication and Authorization',
-  //   component: SubmissionsApiAuthenticationAndAuthorization
-  // },
+  //   linkText: 'Qualified Registries and QCDRs',
+  //   component: QualifiedRegistriesAndQcdrs
+  // }
   // {
   //   path: '/getting-started-with-oauth2',
   //   exact: false,
