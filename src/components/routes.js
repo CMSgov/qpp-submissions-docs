@@ -104,13 +104,7 @@ const referencePaths = [
     exact: false,
     linkText: 'Scoring',
     component: Scoring
-  },
-  // {
-  //   path: '/scoring-engine',
-  //   exact: false,
-  //   linkText: 'Scoring Engine',
-  //   component: ScoringEngine
-  // }
+  }
 ];
 
 const supportPaths = [
