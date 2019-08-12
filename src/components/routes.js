@@ -5,6 +5,7 @@ import DeveloperPreview from './developer-preview';
 // Guides
 import AdvancedTutorial from './tutorials/advanced-tutorial';
 import BasicTutorial from './tutorials/basic-tutorial';
+import GettingStartedUsingQppOauth2 from './tutorials/getting-started-with-oauth2';
 import QualifiedRegistriesAndQcdrs from './tutorials/qualified-registries-and-qcdrs';
 import SubmissionsApiAuthenticationAndAuthorization from './tutorials/authorization-and-authentication.js';
 import SubmittingToQppSubmissionApi from './tutorials/submitting-to-submissions-api';
@@ -64,13 +65,13 @@ const guidesPaths = [
     exact: false,
     linkText: 'Qualified Registries and QCDRs',
     component: QualifiedRegistriesAndQcdrs
+  },
+  {
+    path: '/getting-started-with-oauth2',
+    exact: false,
+    linkText: 'Getting Started Using QPP OAuth2',
+    component: GettingStartedUsingQppOauth2
   }
-  // {
-  //   path: '/getting-started-with-oauth2',
-  //   exact: false,
-  //   linkText: 'Getting Started Using QPP OAuth2',
-  //   component: GettingStartedUsingQppOauth2
-  // }
 ];
 
 const referencePaths = [

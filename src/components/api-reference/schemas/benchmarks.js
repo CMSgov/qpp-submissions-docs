@@ -35,7 +35,6 @@ export default class Benchmarks extends PureComponent {
             className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
-              <Tab>XML</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -48,20 +47,6 @@ export default class Benchmarks extends PureComponent {
   "deciles": array(float),
   "status": string
 }`}
-              </pre>
-            </TabPanel>
-            <TabPanel>
-              <pre>
-                {`<data>
-  <benchmarkYear>integer</benchmarkYear>
-  <performanceYear>integer</performanceYear>
-  <submissionMethod>string</submissionMethod>
-  <measureId>string</measureId>
-  <isToppedOut>boolean</isToppedOut>
-  <deciles>array(float)</deciles>
-  <status>string</status>
-</data>
-`}
               </pre>
             </TabPanel>
           </Tabs>

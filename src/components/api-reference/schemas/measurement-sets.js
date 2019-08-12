@@ -35,7 +35,6 @@ export default class MeasurementSets extends React.PureComponent {
             className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
-              <Tab>XML</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -55,27 +54,6 @@ export default class MeasurementSets extends React.PureComponent {
                 <a href='measurements'>Measurements Resource</a>
                 {`)
 }`}
-              </pre>
-            </TabPanel>
-            <TabPanel>
-              <pre>
-                {`<data>
-  <id>string</id>
-  <createdAt>datetime</createdAt>
-  <updatedAt>datetime</updatedAt>
-  <submissionId>string>/submissionId>
-  <category>string</category>
-  <submissionMethod>string</submissionMethod>
-  <programName>string</programName>
-  <practiceId>string</practiceId>
-  <performanceStart>date</performanceStart>
-  <performanceEnd>date</performanceEnd>
-  <measureSet>string</measureSet>
-  <measurements>array(`}
-                <a href='measurements'>Measurements Resource</a>
-                {`)</measurements>
-</data>
-`}
               </pre>
             </TabPanel>
           </Tabs>

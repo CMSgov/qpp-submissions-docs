@@ -32,7 +32,6 @@ export default class Submissions extends React.Component {
             className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
-              <Tab>XML</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -48,23 +47,6 @@ export default class Submissions extends React.Component {
                 <a href='measurement-sets'>MeasurementSets Resource</a>
                 {`)
 }`}
-              </pre>
-            </TabPanel>
-            <TabPanel>
-              <pre>
-                {`<data>
-  <id>string</id>
-  <createdAt>datetime</createdAt>
-  <updatedAt>datetime</updatedAt>
-  <entityType>string</entityType>
-  <taxpayerIdentificationNumber>string</taxpayerIdentificationNumber>
-  <nationalProviderIdentifier>string</nationalProviderIdentifier>
-  <performanceYear>integer</performanceYear>
-  <measurementSets>array(`}
-                <a href='measurement-sets'>MeasurementSets Resource</a>
-                {`)</measurementSets>
-</data>
-`}
               </pre>
             </TabPanel>
           </Tabs>
