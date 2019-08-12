@@ -1,14 +1,22 @@
+// Topics
+import Introduction from './introduction';
+import DeveloperPreview from './developer-preview';
+
+// Guides
 import AdvancedTutorial from './tutorials/advanced-tutorial';
 import BasicTutorial from './tutorials/basic-tutorial';
+import QualifiedRegistriesAndQcdrs from './tutorials/qualified-registries-and-qcdrs';
+import SubmissionsApiAuthenticationAndAuthorization from './tutorials/authorization-and-authentication.js';
+import SubmittingToQppSubmissionApi from './tutorials/submitting-to-submissions-api';
+
+// References
 import Benchmarks from './api-reference/schemas/benchmarks';
-import DeveloperPreview from './developer-preview';
-import Introduction from './introduction';
 import MeasurementSets from './api-reference/schemas/measurement-sets';
 import Measurements from './api-reference/schemas/measurements';
 import Scoring from './api-reference/scoring';
 import Submissions from './api-reference/schemas/submissions';
-import SubmissionsApiAuthenticationAndAuthorization from './tutorials/authorization-and-authentication.js';
-import SubmittingToQppSubmissionApi from './tutorials/submitting-to-submissions-api';
+
+// Resources and Support
 import TermsOfService from './terms-of-service';
 
 const topicsPaths = [
@@ -51,12 +59,12 @@ const guidesPaths = [
     linkText: 'Submissions API Authentication and Authorization',
     component: SubmissionsApiAuthenticationAndAuthorization
   },
-  // {
-  //   path: '/qualified-registries-and-qcdrs',
-  //   exact: false,
-  //   linkText: 'Qualified Registries and QCDRs',
-  //   component: QualifiedRegistriesAndQcdrs
-  // }
+  {
+    path: '/qualified-registries-and-qcdrs',
+    exact: false,
+    linkText: 'Qualified Registries and QCDRs',
+    component: QualifiedRegistriesAndQcdrs
+  }
   // {
   //   path: '/getting-started-with-oauth2',
   //   exact: false,
