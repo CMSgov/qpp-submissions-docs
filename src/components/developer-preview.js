@@ -20,14 +20,15 @@ class DeveloperPreview extends React.Component {
         <h2 className='ds-h2'>Authentication</h2>
         <p className='ds-text'>Both the Developer Preview and the Production environments require a JSON Web Token ("API key") for authentication purposes. If you are a CMS-approved Qualified Registry or QCDR, your token is available for download on <a href='https://qpp.cms.gov/'>qpp.cms.gov</a>.</p>
         <p className='ds-text'>Anyone may continue to test the current iteration of the Developer Preview environment through our Interactive Documentation. A default API token is embedded on this website, which you may also use for testing. To retrieve this token, test any endpoint on the website and then copy it from the API's cURL response. Please keep in mind this token reflect Qualified Registry and QCDR access to the Developer Preview Submissions API endpoints.</p>
-        <p className='ds-text'>OAuth is a new authentication method for the Submissions API beginning with the PY2019 submission window. To learn more about testing OAuth in the Developer Preview, please see Getting Started Using QPP OAuth2 (link to dev docs section).</p>
+        <p className='ds-text'>OAuth is a new authentication method for the Submissions API beginning with the PY2019 submission window. To learn more about testing OAuth in the Developer Preview, please see <a href='/getting-started-with-oauth2'>Getting Started Using QPP OAuth2</a>.</p>
 
         <h1 className='ds-h1' id='special-scoring'>How to Test Special Scoring Scenarios</h1>
         <p className='ds-text'>A submission to the Submissions API requires a Taxpayer Identification Number (TIN) and may include a National Provider Identifier (NPI). These identifiers are used to accurately attribute the submission to a provider. A provider's profile includes information which is used to trigger special scoring scenarios.</p>
         <p className='ds-text'>In order to support the testing of special scoring scenarios, the Submissions API features a provider profile stub in the Developer Preview environment for the <code>/score-preview</code> endpoint. The provider profile stub is not applied to the <code>/score</code> endpoint.</p>
         <p className='ds-text'>In the Developer Preview, there are 23 pre-defined TINs that represent various special scoring scenarios. By using these TINs to submit data, you will be able to see how certain characteristics of a provider's profile can impact a provider's composite score.</p>
         <p className='ds-text'>For Qualified Registries and QCDRs, we recommend using the <code>/score-preview</code> endpoint to test special scoring scenarios.</p>
-        <p className='ds-text'>For applications using OAuth which requires a test user for submissions, please refer to the Test Data Service (link to that part of dev docs).</p>
+        {/* TODO: Need a link to the Test Data Service page which is a link out */}
+        {/* <p className='ds-text'>For applications using OAuth which requires a test user for submissions, please refer to the <a href='/'>Test Data Service</a>.</p> */}
 
         <table className='ds-c-table ds-c-table--borderless ds-u-font-size--small'>
           <thead>
@@ -145,10 +146,9 @@ class DeveloperPreview extends React.Component {
         <h2 className='ds-h2'>Where to go for support</h2>
         <ul>
           <li>Send test Submissions API requests in the <a href='https://preview.qpp.cms.gov/api/submissions/public/docs/'>Interactive Documentation</a>.</li>
-          {/* Need to insert link to register an app */}
-          <li>Register an application to test OAuth in Developer Preview</li>
-          {/* Possibly need a link to service center */}
-          <li>Contact the QPP Service Center.</li>
+          {/* TODO: Need to insert link to register an app */}
+          <li>Register an application to test <a href='https://preview.qpp.cms.gov/'>OAuth in Developer Preview</a></li>
+          <li>Contact the <a href='https://qpp.cms.gov/about/help-and-support#qpp-service-center'>QPP Service Center</a>.</li>
           <li>Post product feedback about the Developer Preview in the <a href='https://groups.google.com/forum/#!forum/qpp-apis' target='_blank' rel='noopener noreferrer'>Google Group for QPP APIs</a>.</li>
         </ul>
       </div>

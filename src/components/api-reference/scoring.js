@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { pd } from 'pretty-data';
 
 import '../../styles/common/example-code-tabs.css';
 
