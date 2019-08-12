@@ -991,7 +991,7 @@ const reformattedCode = (code) => {
     .join('\n');
 };
 
-const CodeBlock = ({json, xml}) => {
+const CodeBlock = ({json}) => {
   const reformattedJSON = reformattedCode(json);
 
   return (
