@@ -46,6 +46,8 @@ Start the example application with:
 npm start
 ```
 
+(Note that changes to the configuration file will require restarting the application manually)
+
 ### Usage
 
 **NOTE**: This client application must be used in the browser. The authentication flow leverages HTTP redirects that are not handled correctly by API development environments such as Postman.
