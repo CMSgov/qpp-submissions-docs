@@ -34,7 +34,7 @@ Many of the fields required for registration may contain arbitrary "dummy" value
     * `web` applications will receive both a client ID and a client secret
     * `native` applications will receive only a client ID
 
-Upon registering the application, use the returned OAuth 2.0 credentials to populate the following values in `config.js`:
+Upon registering the application, copy `config.js.example` to `config.js` and use the returned OAuth 2.0 credentials to populate the following values in `config.js`:
 
   * `CLIENT_ID` - Service registered client id. Required.
   * `CLIENT_SECRET` - Service registered client secret. Required for applications which can securely store a secret. Native or mobile applications will not have a client secret and will use the [PKCE Flow](https://auth0.com/docs/flows/concepts/auth-code-pkce) for authorization.
