@@ -40,19 +40,11 @@ Upon registering the application, use the returned OAuth 2.0 credentials to popu
   * `CLIENT_SECRET` - Service registered client secret. Required for applications which can securely store a secret. Native or mobile applications will not have a client secret and will use the [PKCE Flow](https://auth0.com/docs/flows/concepts/auth-code-pkce) for authorization.
 
 ### Run
-Start the example application, either with:
+Start the example application with:
 
 ```bash
 npm start
 ```
-
-Or, to automatically restart the server upon source changes, start it with:
-
-```bash
-npm run watch
-```
-
-(Note that changes to the configuration file will require restarting the application manually)
 
 ### Usage
 
