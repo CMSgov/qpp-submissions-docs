@@ -27,7 +27,8 @@ const NON_PROPORTION_FIELDS = [
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable'},
   {name: 'numeratorExclusion', value: 'float', description: 'The exclusions from the numerator field as described in the QCDR measure specification.', notes: 'writable, optional'},
   {name: 'denominatorException', value: 'float', description: 'The exceptions from the denominator field as described in the QCDR measure specification.', notes: 'writable, optional'},
-  {name: 'reportingRate', value: 'float', description: 'The data completeness of the measure.', notes: 'writable'}
+  {name: 'reportingRate', value: 'float', description: 'The data completeness of the measure.', notes: ''},
+  {name: 'observationInstances', value: 'integer', description: 'The number of denominator eligible instances that are used as input in the calculation to derive the numerator (i.e. average, ratio).', notes: 'writable'}
 ];
 
 const SINGLE_PERFORMANCE_RATE_FIELDS = [
@@ -217,18 +218,19 @@ class Measurements extends React.PureComponent {
             <TabPanel>
               <pre>
                 {`{
-  "id": string,
-  "measurementSetId": string,
-  "measureId": string,
-  "value": {
-    "numerator": float,
-    "denominator": float,
-    "isEndToEndReported": boolean,
-    "denominatorException": float,
-    "numeratorExclusion": float,
-    "reportingRate": float
-  }
-}`}
+                  "id": string,
+                  "measurementSetId": string,
+                  "measureId": string,
+                  "value": {
+                    "numerator": float,
+                    "denominator": float,
+                    "isEndToEndReported": boolean,
+                    "denominatorException": float,
+                    "numeratorExclusion": float,
+                    "reportingRate": float,
+                    "observationInstances": integer
+                  } 
+                }`}
               </pre>
             </TabPanel>
           </Tabs>
