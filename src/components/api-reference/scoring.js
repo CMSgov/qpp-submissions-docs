@@ -1,7 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import { pd } from 'pretty-data';
 
 import '../../styles/common/example-code-tabs.css';
 
@@ -11,25 +10,13 @@ import ScoringNavigationTable from './common/data-scoring-navigation-table';
 import submissionJsonExampleIa from './common/submission-example-ia.json';
 import submissionJsonExampleAci from './common/submission-example-aci.json';
 import submissionJsonExampleQuality from './common/submission-example-quality.json';
-import submissionXmlExampleIa from './common/submission-example-ia-xml.js';
-import submissionXmlExampleAci from './common/submission-example-aci-xml.js';
-import submissionXmlExampleQuality from './common/submission-example-quality-xml.js';
-import scoringXmlExampleIa from './common/scoring-example-output-ia-xml.js';
-import scoringXmlExampleAci from './common/scoring-example-output-aci-xml.js';
-import scoringXmlExampleQuality from './common/scoring-example-output-quality-xml.js';
 import scoringJsonExampleIa from './common/scoring-example-output-ia.json';
 import scoringJsonExampleAci from './common/scoring-example-output-aci.json';
 import scoringJsonExampleQuality from './common/scoring-example-output-quality.json';
 
-const submissionXmlExampleStringIa = pd.xml(submissionXmlExampleIa);
-const submissionXmlExampleStringAci = pd.xml(submissionXmlExampleAci);
-const submissionXmlExampleStringQuality = pd.xml(submissionXmlExampleQuality);
 const submissionJsonExampleStringIa = JSON.stringify(submissionJsonExampleIa, null, 2);
 const submissionJsonExampleStringAci = JSON.stringify(submissionJsonExampleAci, null, 2);
 const submissionJsonExampleStringQuality = JSON.stringify(submissionJsonExampleQuality, null, 2);
-const scoringXmlExampleStringIa = pd.xml(scoringXmlExampleIa);
-const scoringXmlExampleStringAci = pd.xml(scoringXmlExampleAci);
-const scoringXmlExampleStringQuality = pd.xml(scoringXmlExampleQuality);
 const scoringJsonExampleStringIa = JSON.stringify(scoringJsonExampleIa, null, 2);
 const scoringJsonExampleStringAci = JSON.stringify(scoringJsonExampleAci, null, 2);
 const scoringJsonExampleStringQuality = JSON.stringify(scoringJsonExampleQuality, null, 2);
@@ -48,17 +35,7 @@ const SCORE_RESOURCE = {
       "metadata": object(<a href='#score-resource-meta'>Score Metadata</a>),
       "warnings": array(string),
       "errors": array(string)
-    }`,
-    xml: `<data>
-      <name>string</name>
-      <title>string</title>
-      <detail>string</detail>
-      <value>number</value>
-      <parts>array(<a href='#score-part-resource'>Score Part</a>)</parts>
-      <metadata>object(<a href='#score-resource-meta'>Score Metadata</a>)</metadata>
-      <warnings>array(string)</warnings>
-      <errors>array(string)</errors>
-    </data>`
+    }`
   },
   fields: [
     {
@@ -183,15 +160,7 @@ const SCORE_PART_RESOURCE = {
       "value": number,
       "original": object(<a href='#category-score-resource'>Category Score</a>),
       "metadata": object(<a href='#score-part-resource-meta'>Score Part Metadata</a>)
-    ]`,
-    xml: `<data>
-      <name>string</name>
-      <title>string</title>
-      <detail>string</detail>
-      <value>number</value>
-      <original>object(<a href='#category-score-resource'>Category Score</a>)</original>
-      <metadata>object(<a href='#score-part-resource-meta'>Score Part Metadata</a>)</metadata>
-    </data>`
+    ]`
   },
   fields: [
     {
@@ -259,13 +228,7 @@ const CATEGORY_SCORE_RESOURCE = {
       "value": number,
       "detail": string,
       "parts": array(<a href='#measurement-set-score-part-resource'>Measurement Set Score Part</a>)
-    }`,
-    xml: `<data>
-      <name>string</name>
-      <value>number</value>
-      <detail>string</detail>
-      <parts>array(<a href='#measurement-set-score-part-resource'>Measurement Set Score Part</a>)</parts>
-    </data>`
+    }`
   },
   fields: [
     {
@@ -319,15 +282,7 @@ const MEASUREMENT_SET_SCORE_PART_RESOURCE = {
       "detail": string,
       "parts": array(<a href='#measurement-score-part-resource'>Measurement Score Part</a> | <a href='#measurement-score-resource'>Measurement Score</a>),
       "metadata": object(<a href='#measurement-set-score-part-resource-meta'>Measurement Set Score Part Metadata</a>)
-    ]`,
-    xml: `<data>
-      <name>string</name>
-      <value>number</value>
-      <title>string</title>
-      <detail>string</detail>
-      <parts>array(<a href='#measurement-score-part-resource'>Measurement Score Part</a> | <a href='#measurement-score-resource'>Measurement Score</a>)</parts>
-      <metadata>object(<a href='#measurement-set-score-part-resource-meta'>Measurement Set Score Part Metadata</a>)</metadata>
-    </data>`
+    ]`
   },
   fields: [
     {
@@ -569,15 +524,7 @@ const MEASUREMENT_SCORE_PART_RESOURCE = {
       "parts": array(<a href='#measurement-score-resource'>Measurement Score</a>),
       "metadata": object(<a href='#measurement-score-part-resource-meta'>Measurement Score Part Metadata</a>),
       "warnings": array(string)
-    ]`,
-    xml: `<data>
-      <name>string</name>
-      <value>number</value>
-      <detail>string</detail>
-      <parts>array(<a href='#measurement-score-resource'>Measurement Score</a>)</parts>
-      <metadata>object(<a href='#measurement-score-part-resource-meta'>Measurement Score Part Metadata</a>)</metadata>
-      <warnings>array(string)</warnings>
-    </data>`
+    ]`
   },
   fields: [
     {
@@ -646,14 +593,7 @@ const MEASUREMENT_SCORE_RESOURCE = {
       "value": number,
       "detail": string,
       "metadata": object(<a href='#measurement-score-resource-meta'>Measurement Score Metadata</a>)
-    ]`,
-    xml: `<data>
-      <name>string</name>
-      <title>string</title>
-      <value>number</value>
-      <detail>string</detail>
-      <metadata>object(<a href='#measurement-score-resource-meta'>Measurement Score Metadata</a>)</metadata>
-    </data>`
+    ]`
   },
   fields: [
     {
@@ -1050,31 +990,23 @@ const reformattedCode = (code) => {
     .join('\n');
 };
 
-const CodeBlock = ({json, xml}) => {
+const CodeBlock = ({json}) => {
   const reformattedJSON = reformattedCode(json);
-  // Extra processing is used to format '<' and '>' into HTML character entity references for XML snippets
-  // so React doesn't process XML tags as JSX inside 'dangerouslySetInnerHTML' in <pre></pre> tags
-  const reformattedXML = reformattedCode(xml.replace(/<(?!a|\/a)/g, '&lt;').replace(/(!<\/a)>/g, '&gt;'));
 
   return (
     <Tabs className='example-code-tabs'>
       <TabList>
         <Tab>JSON</Tab>
-        <Tab>XML</Tab>
       </TabList>
       <TabPanel>
         <pre dangerouslySetInnerHTML={{__html: `${reformattedJSON}`}} />
-      </TabPanel>
-      <TabPanel>
-        <pre dangerouslySetInnerHTML={{__html: `${reformattedXML}`}} />
       </TabPanel>
     </Tabs>
   );
 };
 
 CodeBlock.propTypes = {
-  json: PropTypes.string.isRequired,
-  xml: PropTypes.string.isRequired
+  json: PropTypes.string.isRequired
 };
 
 const DataTableWithHeader = ({fields, header}) => {
@@ -1244,18 +1176,14 @@ export default class ScoringEngine extends PureComponent {
             <h2 className='ds-h2' id='IA-Sub'>Example IA Submission</h2>
             <p className='ds-text--lead'>
           The example submission below contains 4 activities. The reported activities contain both High and Medium weighted activities.
-          </p>
+            </p>
             <br />
             <Tabs className='example-code-tabs'>
               <TabList>
                 <Tab>Sample JSON</Tab>
-                <Tab>Sample XML</Tab>
               </TabList>
               <TabPanel>
                 <pre>{`${submissionJsonExampleStringIa}`}</pre>
-              </TabPanel>
-              <TabPanel>
-                <pre>{`${submissionXmlExampleStringIa}`}</pre>
               </TabPanel>
             </Tabs>
           </div>
@@ -1269,13 +1197,9 @@ export default class ScoringEngine extends PureComponent {
           <Tabs className='example-code-tabs'>
             <TabList>
               <Tab>Sample JSON</Tab>
-              <Tab>Sample XML</Tab>
             </TabList>
             <TabPanel>
               <pre>{`${scoringJsonExampleStringIa}`}</pre>
-            </TabPanel>
-            <TabPanel>
-              <pre>{`${scoringXmlExampleStringIa}`}</pre>
             </TabPanel>
           </Tabs>
         </div>
@@ -1295,22 +1219,18 @@ export default class ScoringEngine extends PureComponent {
             <h2 className='ds-h2' id='PI-Sub'>Example PI Submission</h2>
             <p className='ds-text--lead'>
             The measure types available for submission are outlined below. Each measure in the repo will dictate which type is to be utilized.
-            <ul>
-              <li><a href='https://cmsgov.github.io/qpp-submissions-docs/measurements#proportion-measurements'>Proportion Measures</a></li>
-              <li><a href='https://cmsgov.github.io/qpp-submissions-docs/measurements#boolean'>Boolean</a></li>
-            </ul>
+              <ul>
+                <li><a href='https://cmsgov.github.io/qpp-submissions-docs/measurements#proportion-measurements'>Proportion Measures</a></li>
+                <li><a href='https://cmsgov.github.io/qpp-submissions-docs/measurements#boolean'>Boolean</a></li>
+              </ul>
             </p>
             <br />
             <Tabs className='example-code-tabs'>
               <TabList>
                 <Tab>Sample JSON</Tab>
-                <Tab>Sample XML</Tab>
               </TabList>
               <TabPanel>
                 <pre>{`${submissionJsonExampleStringAci}`}</pre>
-              </TabPanel>
-              <TabPanel>
-                <pre>{`${submissionXmlExampleStringAci}`}</pre>
               </TabPanel>
             </Tabs>
           </div>
@@ -1323,13 +1243,9 @@ export default class ScoringEngine extends PureComponent {
             <Tabs className='example-code-tabs'>
               <TabList>
                 <Tab>Sample JSON</Tab>
-                <Tab>Sample XML</Tab>
               </TabList>
               <TabPanel>
                 <pre>{`${scoringJsonExampleStringAci}`}</pre>
-              </TabPanel>
-              <TabPanel>
-                <pre>{`${scoringXmlExampleStringAci}`}</pre>
               </TabPanel>
             </Tabs>
           </div>
@@ -1357,13 +1273,9 @@ export default class ScoringEngine extends PureComponent {
             <Tabs className='example-code-tabs'>
               <TabList>
                 <Tab>Sample JSON</Tab>
-                <Tab>Sample XML</Tab>
               </TabList>
               <TabPanel>
                 <pre>{`${submissionJsonExampleStringQuality}`}</pre>
-              </TabPanel>
-              <TabPanel>
-                <pre>{`${submissionXmlExampleStringQuality}`}</pre>
               </TabPanel>
             </Tabs>
           </div>
@@ -1391,13 +1303,9 @@ export default class ScoringEngine extends PureComponent {
           <Tabs className='example-code-tabs'>
             <TabList>
               <Tab>Sample JSON</Tab>
-              <Tab>Sample XML</Tab>
             </TabList>
             <TabPanel>
               <pre>{`${scoringJsonExampleStringQuality}`}</pre>
-            </TabPanel>
-            <TabPanel>
-              <pre>{`${scoringXmlExampleStringQuality}`}</pre>
             </TabPanel>
           </Tabs>
         </div>
@@ -1405,7 +1313,7 @@ export default class ScoringEngine extends PureComponent {
         <h1 className='ds-h1' id='#More'>Further Resources</h1>
         <p className='ds-text--lead'>
           Detailed information related to all scoring responses can be found below. Each level of the scoring response details the different information and is specific to the information that is listed above.
-          </p>
+        </p>
         <br />
         <ScoringNavigationTable fields={SCORE_NAVIGATION_EXAMPLES} />
         <br />

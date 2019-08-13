@@ -11,7 +11,6 @@ import MeasurementSets from './api-reference/schemas/measurement-sets';
 import Measurements from './api-reference/schemas/measurements';
 import Benchmarks from './api-reference/schemas/benchmarks';
 import Scoring from './api-reference/scoring';
-import ExampleDocs from './api-reference/example-docs';
 
 it('renders without crashing', () => {
   shallow(<App />);
@@ -25,8 +24,7 @@ const expectedRoutes = {
   '/measurement-sets': <MeasurementSets />,
   '/measurements': <Measurements />,
   '/benchmarks': <Benchmarks />,
-  '/scoring': <Scoring />,
-  '/examples': <ExampleDocs />
+  '/scoring': <Scoring />
 };
 
 Object.keys(expectedRoutes).forEach(function(path) {

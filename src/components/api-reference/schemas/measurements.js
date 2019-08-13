@@ -27,7 +27,8 @@ const NON_PROPORTION_FIELDS = [
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable'},
   {name: 'numeratorExclusion', value: 'float', description: 'The exclusions from the numerator field as described in the QCDR measure specification.', notes: 'writable, optional'},
   {name: 'denominatorException', value: 'float', description: 'The exceptions from the denominator field as described in the QCDR measure specification.', notes: 'writable, optional'},
-  {name: 'reportingRate', value: 'float', description: 'The data completeness of the measure.', notes: 'writable'}
+  {name: 'reportingRate', value: 'float', description: 'The data completeness of the measure.', notes: ''},
+  {name: 'observationInstances', value: 'integer', description: 'The number of denominator eligible instances that are used as input in the calculation to derive the numerator (i.e. average, ratio).', notes: 'writable'}
 ];
 
 const SINGLE_PERFORMANCE_RATE_FIELDS = [
@@ -107,9 +108,9 @@ const ALL_CAUSE_READMISSION_FIELDS = [
 ];
 
 const CAHPS_FIELDS = [
-    {name: 'score', value: 'float', description: 'For CAHPS measurements 1 - 12: score for survey question. For CAHPS measurement 321: average of scores for CAHPS measurements 1 - 12 '},
-    {name: 'reliability', value: 'string', description: 'Reliability of the measurement score.'},
-    {name: 'isBelowMinimum', value: 'boolean', description: 'Whether number of answers to survey question is below minimum threshold.'}
+  {name: 'score', value: 'float', description: 'For CAHPS measurements 1 - 12: score for survey question. For CAHPS measurement 321: average of scores for CAHPS measurements 1 - 12 '},
+  {name: 'reliability', value: 'string', description: 'Reliability of the measurement score.'},
+  {name: 'isBelowMinimum', value: 'boolean', description: 'Whether number of answers to survey question is below minimum threshold.'}
 ];
 
 class Measurements extends React.PureComponent {
@@ -137,7 +138,6 @@ class Measurements extends React.PureComponent {
             className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
-              <Tab>XML</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -153,21 +153,6 @@ class Measurements extends React.PureComponent {
 }`}
               </pre>
             </TabPanel>
-            <TabPanel>
-              <pre>
-                {`<data>
-  <id>string</id>
-  <measurementSetId>string</measurementSetId>
-  <measureId>string</measureId>
-  <value>[`}
-                <a href='#boolean-measurements'>Boolean</a> | <a href='#proportion-measurements'>Proportion</a> | <a href='#non-proportion'>Non-Proportion</a> | {`
-  `} <a href='#single-performance-rate-measurements'>Single-Performance Rate</a> | <a href='#multi-performance-rate-measurements'>Multi-Performance Rate</a> | {`
-  `} <a href='#all-cause-readmission-measurements'>All Cause Readmission</a> | <a href='#cahps'>CAHPS </a>
-                {`]</value>
-</data>
-`}
-              </pre>
-            </TabPanel>
           </Tabs>
         </div>
         <DataModelTable fields={FIELDS} />
@@ -180,7 +165,6 @@ class Measurements extends React.PureComponent {
             className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
-              <Tab>XML</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -190,17 +174,6 @@ class Measurements extends React.PureComponent {
   "measureId": string,
   "value": boolean
 }`}
-              </pre>
-            </TabPanel>
-            <TabPanel>
-              <pre>
-                {`<data>
-  <id>string</id>
-  <measurementSetId>string</measurementSetId>
-  <measureId>string</measureId>
-  <value>boolean</value>
-</data>
-`}
               </pre>
             </TabPanel>
           </Tabs>
@@ -215,7 +188,6 @@ class Measurements extends React.PureComponent {
             className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
-              <Tab>XML</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -230,20 +202,6 @@ class Measurements extends React.PureComponent {
 }`}
               </pre>
             </TabPanel>
-            <TabPanel>
-              <pre>
-                {`<data>
-  <id>string</id>
-  <measurementSetId>string</measurementSetId>
-  <measureId>string</measureId>
-  <value>
-    <numerator>integer</numerator>
-    <denominator>integer</denominator>
-  </value>
-</data>
-`}
-              </pre>
-            </TabPanel>
           </Tabs>
         </div>
         <DataModelTable fields={PROPORTION_FIELDS} />
@@ -256,41 +214,23 @@ class Measurements extends React.PureComponent {
             className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
-              <Tab>XML</Tab>
             </TabList>
             <TabPanel>
               <pre>
                 {`{
-  "id": string,
-  "measurementSetId": string,
-  "measureId": string,
-  "value": {
-    "numerator": float,
-    "denominator": float,
-    "isEndToEndReported": boolean,
-    "denominatorException": float,
-    "numeratorExclusion": float,
-    "reportingRate": float
-  }
-}`}
-              </pre>
-            </TabPanel>
-            <TabPanel>
-              <pre>
-                {`<data>
-  <id>string</id>
-  <measurementSetId>string</measurementSetId>
-  <measureId>string</measureId>
-  <value>
-    <numerator>float</numerator>
-    <denominator>float</denominator>
-    <isEndToEndReported>boolean</isEndToEndReported>
-    <denominatorException>float</denominatorException>
-    <numeratorExclusion>float</numeratorExclusion>
-    <reportingRate>float</reportingRate>
-  </value>
-</data>
-`}
+                  "id": string,
+                  "measurementSetId": string,
+                  "measureId": string,
+                  "value": {
+                    "numerator": float,
+                    "denominator": float,
+                    "isEndToEndReported": boolean,
+                    "denominatorException": float,
+                    "numeratorExclusion": float,
+                    "reportingRate": float,
+                    "observationInstances": integer
+                  } 
+                }`}
               </pre>
             </TabPanel>
           </Tabs>
@@ -305,7 +245,6 @@ class Measurements extends React.PureComponent {
             className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
-              <Tab>XML</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -326,26 +265,6 @@ class Measurements extends React.PureComponent {
 }`}
               </pre>
             </TabPanel>
-            <TabPanel>
-              <pre>
-                {`<data>
-  <id>string</id>
-  <measurementSetId>string</measurementSetId>
-  <measureId>string</measureId>
-  <value>
-    <isEndToEndReported>boolean</isEndToEndReported>
-    <performanceMet>integer</performanceMet>
-    <performanceNotMet>integer</performanceNotMet>
-    <eligiblePopulationExclusion>integer</eligiblePopulationExclusion>
-    <eligiblePopulationException>integer</eligiblePopulationException>
-    <eligiblePopulation>integer</eligiblePopulation>
-    <performanceRate>float</performanceRate>
-    <reportingRate>float</reportingRate>
-  </value>
-</data>
-`}
-              </pre>
-            </TabPanel>
           </Tabs>
         </div>
         <DataModelTable fields={SINGLE_PERFORMANCE_RATE_FIELDS} />
@@ -358,7 +277,6 @@ class Measurements extends React.PureComponent {
             className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
-              <Tab>XML</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -377,24 +295,6 @@ class Measurements extends React.PureComponent {
 }`}
               </pre>
             </TabPanel>
-            <TabPanel>
-              <pre>
-                {`<data>
-  <id>string</id>
-  <measurementSetId>string</measurementSetId>
-  <measureId>string</measureId>
-  <value>
-    <isEndToEndReported>boolean</isEndToEndReported>
-    <performanceRate>float</performanceRate>
-    <reportingRate>float</reportingRate>
-    <strata>array(`}
-                <a href='#stratum'>Performance Rate Stratum</a>
-                {`)</strata>
-  </value>
-</data>
-`}
-              </pre>
-            </TabPanel>
           </Tabs>
         </div>
         <DataModelTable fields={MULTI_PERFORMANCE_RATE_FIELDS} />
@@ -407,7 +307,6 @@ class Measurements extends React.PureComponent {
             className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
-              <Tab>XML</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -420,20 +319,6 @@ class Measurements extends React.PureComponent {
   "eligiblePopulation": integer,
   "stratum": string
 }`}
-              </pre>
-            </TabPanel>
-            <TabPanel>
-              <pre>
-                {`<data>
-  <measurementId>string</measurementId>
-  <performanceMet>integer</performanceMet>
-  <performanceNotMet>integer</performanceNotMet>
-  <eligiblePopulationExclusion>integer</eligiblePopulationExclusion>
-  <eligiblePopulationException>integer</eligiblePopulationException>
-  <eligiblePopulation>integer</eligiblePopulation>
-  <stratum>string</stratum>
-</data>
-`}
               </pre>
             </TabPanel>
           </Tabs>
@@ -451,7 +336,6 @@ class Measurements extends React.PureComponent {
             className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
-              <Tab>XML</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -489,37 +373,6 @@ class Measurements extends React.PureComponent {
 }`}
               </pre>
             </TabPanel>
-            <TabPanel>
-              <pre>
-                {`<data>
-  <id>string</id>
-  <measurementSetId>string</measurementSetId>
-  <measureId>string</measureId>
-  <value>
-    <score>float</score>
-    <details>
-      <numberOfIndexAdmissions>integer</numberOfIndexAdmissions>
-      <numberOfReadmissions>integer</numberOfReadmissions>
-      <plannedReadmissions>integer</plannedReadmissions>
-      <indexReadmissionDiagnosisPairCounts>
-        <indexAdmissionCode>string</indexAdmissionCode>
-        <readmissionCode>string</readmissionCode>
-        <count>integer</count>
-      </indexReadmissionDiagnosisPairCounts>
-      <indexAdmissionCountByDiagnosis>
-        <code>string</code>
-        <count>integer</count>
-      </indexAdmissionCountByDiagnosis>
-      <readmissionCountByDiagnosis>
-        <code>string</code>
-        <count>integer</count>
-      </readmissionCountByDiagnosis>
-    </details>
-  </value>
-</data>
-`}
-              </pre>
-            </TabPanel>
           </Tabs>
         </div>
 
@@ -536,7 +389,6 @@ class Measurements extends React.PureComponent {
             className='example-code-tabs'>
             <TabList>
               <Tab>JSON</Tab>
-              <Tab>XML</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -553,25 +405,8 @@ class Measurements extends React.PureComponent {
 }`}
               </pre>
             </TabPanel>
-            <TabPanel>
-              <pre>
-                {`<data>
-  <id>string</id>
-  <measurementSetId>string</measurementSetId>
-  <measureId>string</measureId>
-  <value>
-    <score>float</score>
-    <reliability>string</reliability>
-    <mask>boolean</mask>
-    <isBelowMinimum>boolean</isBelowMinimum>
-  </value>
-</data>
-`}
-              </pre>
-            </TabPanel>
           </Tabs>
         </div>
-
         <DataModelTable fields={CAHPS_FIELDS} />
 
       </div>
