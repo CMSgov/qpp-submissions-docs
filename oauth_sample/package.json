@@ -1,0 +1,24 @@
+{
+  "name": "oauth-sample-app",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "CC0-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CMSgov/qpp-submissions-docs.git"
+  },
+  "homepage": "https://cmsgov.github.io/qpp-submissions-docs/oauth_sample",
+  "dependencies": {
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
+    "url-join": "^4.0.0",
+    "uuid": "^3.3.2"
+  }
+}
