@@ -23,8 +23,7 @@ class GettingStartedUsingQppOauth2 extends React.Component {
         <p className='ds-text'>You can register your application at <a href='https://preview.qpp.cms.gov/'>https://preview.qpp.cms.gov/</a>.</p>
 
         <h1 className='ds-h1' id='create-user'>Create test users in the Developer Preview</h1>
-        {/* TODO: Need link to datafaker swagger */}
-        <p className='ds-text'>To support Developer Preview integration and testing, we created the Test Data Service. Using this API, you can reserve specific scenarios in the Test Data Service to test granting access to their QPP authorizations and try out different special scoring scenarios. Please visit the Interactive Documentation to learn more about setting up test users in Developer Preview.</p>
+        <p className='ds-text'>To support Developer Preview integration and testing, we created the <a href='https://preview.qpp.cms.gov/api/data-faker/synthetic-data/docs/index.html'>Test Data Service</a>. Using this API, you can reserve specific scenarios in the Test Data Service to test granting access to their QPP authorizations and try out different special scoring scenarios. Please visit the Interactive Documentation to learn more about setting up test users in Developer Preview.</p>
 
         <h1 className='ds-h1' id='production-api-access'>Production API Access</h1>
 
