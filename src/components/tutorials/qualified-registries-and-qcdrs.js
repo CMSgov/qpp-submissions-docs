@@ -8,7 +8,7 @@ class SubmittingToSubmissionsApi extends React.Component {
         <p className='ds-text'>Tokens are specific to your organization and are specific to the environment within the Submissions API. Developer Preview tokens are for testing against the Submissions API in the Developer Preview environment. Production token are for submitting during the specific performance year's submissions window to the production environment of the Submissions API.</p>
         <p className='ds-text'>If you are a Registry or QCDR using the Developer Preview, you have an API key that is associated with an 'organization'. This affects what endpoints you are authorized to use, and what behavior each endpoint has. </p>
         <p className='ds-text'>At a high level, your API key allows you to create and edit data using the <code>/measurement-sets</code> and <code>/measurements</code> endpoints. You cannot create data using the <code>/submissions</code> endpoint. For more information about what you're authorized to do with the Submissions API, click <a href='/qpp-submissions-docs/developer-preview#authorization'>here</a>.</p>
-        
+
         <h1 className='ds-h1' id='authentication'>Authentication</h1>
         <p className='ds-text'>You must authenticate your account when using the Submissions API. Authenticate via bearer auth by adding your API token to the header of every request using the key value: <strong>Authorization: Bearer [YOUR API TOKEN]</strong>.</p>
         <p className='ds-text'>API keys carry many privileges, and must not be shared in publicly accessible areas such as GitHub and in client-side code.  Even within organizations, access must be limited to staff embedding it in software.</p>
