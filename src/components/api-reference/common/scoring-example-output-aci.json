@@ -1,123 +1,299 @@
 {
-    "data": {
-      "score": {
-        "name": "total",
-        "title": "Total Score",
-        "detail": "0.29.0",
-        "value": 25,
+  "name": "total",
+  "title": "Total Score",
+  "detail": "0.75.0",
+  "value": 16,
+  "parts": [
+    {
+      "name": "pi",
+      "title": "PI component of total score",
+      "detail": "Scoring based on weight of 25%.",
+      "value": 16,
+      "original": {
+        "name": "pi",
+        "value": 64,
+        "detail": "Picked the highest scoring measurement set: electronicHealthRecord",
         "parts": [
           {
             "name": "pi",
-            "title": "PI component of final score",
-            "detail": "Scoring based on weight of 25%.",
-            "value": 25,
-            "original": {
-              "name": "pi",
-              "value": 100,
-              "detail": "Picked the highest scoring measurement set electronicHealthRecord",
-              "parts": [
+            "title": "Promoting Interoperability Score",
+            "value": 64,
+            "detail": "electronicHealthRecord",
+            "parts": [
+              {
+                "name": "PI_PPHI_1",
+                "value": true,
+                "instrumentations": [
+                  "PI-012"
+                ],
+                "metadata": {
+                  "objective": "protectPatientHealthInformation",
+                  "processingStatus": "PICKED",
+                  "reportingCategory": "required"
+                }
+              },
+              {
+                "name": "PI_ONCACB_1",
+                "value": true,
+                "instrumentations": [],
+                "metadata": {
+                  "objective": "attestation",
+                  "processingStatus": "PICKED",
+                  "reportingCategory": null
+                }
+              },
+              {
+                "name": "PI_INFBLO_1",
+                "value": true,
+                "instrumentations": [
+                  "PI-010"
+                ],
+                "metadata": {
+                  "objective": "attestation",
+                  "processingStatus": "PICKED",
+                  "reportingCategory": "required"
+                }
+              },
+              {
+                "name": "PI_ONCDIR_1",
+                "value": true,
+                "instrumentations": [
+                  "PI-010"
+                ],
+                "metadata": {
+                  "objective": "attestation",
+                  "processingStatus": "PICKED",
+                  "reportingCategory": "required"
+                }
+              },
+              {
+                "name": "PI_EP_1",
+                "value": 4,
+                "instrumentations": [],
+                "metadata": {
+                  "formula": "((49/115)*10) = 4",
+                  "maxContribution": 10,
+                  "objective": "electronicPrescribing",
+                  "processingStatus": "PICKED",
+                  "reportingCategory": "required",
+                  "mipsMinimumScore": 1
+                }
+              },
+              {
+                "name": "PI_HIE_1",
+                "value": 12,
+                "instrumentations": [],
+                "metadata": {
+                  "formula": "((1123/1951)*20) = 12",
+                  "maxContribution": 20,
+                  "objective": "healthInformationExchangeSending",
+                  "processingStatus": "PICKED",
+                  "reportingCategory": "required",
+                  "mipsMinimumScore": 1
+                }
+              },
+              {
+                "name": "PI_HIE_4",
+                "value": 19,
+                "instrumentations": [],
+                "metadata": {
+                  "formula": "((923/951)*20) = 19",
+                  "maxContribution": 20,
+                  "objective": "healthInformationExchangeReceiving",
+                  "processingStatus": "PICKED",
+                  "reportingCategory": "required",
+                  "mipsMinimumScore": 1
+                }
+              },
+              {
+                "name": "PI_PEA_1",
+                "value": 19,
+                "instrumentations": [],
+                "metadata": {
+                  "formula": "((861/1809)*40) = 19",
+                  "maxContribution": 40,
+                  "objective": "providerToPatientExchange",
+                  "processingStatus": "PICKED",
+                  "reportingCategory": "required",
+                  "mipsMinimumScore": 1
+                }
+              },
+              {
+                "name": "PI_PHCDRR_1",
+                "value": 5,
+                "instrumentations": [],
+                "metadata": {
+                  "objective": "publicHealthAndClinicalDataExchange",
+                  "processingStatus": "PICKED",
+                  "reportingCategory": "required",
+                  "mipsMinimumScore": 1
+                }
+              },
+              {
+                "name": "PI_PHCDRR_1_MULTI",
+                "value": 5,
+                "instrumentations": [],
+                "metadata": {
+                  "objective": "publicHealthAndClinicalDataExchange",
+                  "processingStatus": "PICKED",
+                  "reportingCategory": "required",
+                  "mipsMinimumScore": 1
+                }
+              }
+            ],
+            "instrumentations": [
+              "PI-025",
+              "PI-010",
+              "PI-012"
+            ],
+            "metadata": {
+              "performancePeriod": 364,
+              "hasCehrtId": true,
+              "messages": {
+                "cehrtId": "Measurement set submitted together with CEHRT ID, so will receive score",
+                "attestationStatus": "attestation is complete",
+                "protectPatientHealthInformationStatus": "protectPatientHealthInformation is complete",
+                "electronicPrescribingStatus": "electronicPrescribing is complete",
+                "electronicPrescribingPDMPBonusStatus": "Query of Prescription Drug Monitoring Program (PDMP) Bonus Not Received",
+                "electronicPrescribingOpioidBonusStatus": "Verify Opioid Treatment Agreement Bonus Not Received",
+                "healthInformationExchangeSendingStatus": "healthInformationExchangeSending is complete",
+                "healthInformationExchangeReceivingStatus": "healthInformationExchangeReceiving is complete",
+                "providerToPatientExchangeStatus": "providerToPatientExchange is complete",
+                "publicHealthAndClinicalDataExchangeStatus": "publicHealthAndClinicalDataExchange is complete"
+              },
+              "measuresPicked": [
                 {
-                  "name": "pi",
-                  "title": "Promoting Interoperability Score",
-                  "value": 100,
-                  "detail": "electronicHealthRecord",
-                  "parts": [
-                    {
-                      "name": "PI_base",
-                      "value": 80,
-                      "detail": "",
-                      "metadata": {
-                        "maxContribution": 100
-                      },
-                      "parts": [
-                        {
-                          "name": "PI_PEA_1",
-                          "value": 10,
-                          "metadata": {
-                            "maxContribution": 10
-                          }
-                        },
-                        {
-                          "name": "PI_HIE_1",
-                          "value": 10,
-                          "metadata": {
-                            "maxContribution": 10
-                          }
-                        },
-                        {
-                          "name": "PI_HIE_2",
-                          "value": 10,
-                          "metadata": {
-                            "maxContribution": 10
-                          }
-                        }
-                      ],
-                      "warnings": []
-                    },
-                    {
-                      "name": "PI_performance",
-                      "value": 20,
-                      "detail": "",
-                      "metadata": {
-                        "maxContribution": 100
-                      },
-                      "parts": [
-                        {
-                          "name": "PI_HIE_3",
-                          "value": 10,
-                          "metadata": {
-                            "maxContribution": 10
-                          }
-                        },
-                        {
-                          "name": "PI_PHCDRR_1",
-                          "value": 10,
-                          "metadata": {
-                            "maxContribution": 10
-                          }
-                        }
-                      ],
-                      "warnings": []
-                    },
-                    {
-                      "name": "PI_bonus",
-                      "value": 0,
-                      "detail": "",
-                      "metadata": {
-                        "maxContribution": 100
-                      },
-                      "parts": [],
-                      "warnings": []
-                    },
-                    {
-                      "name": "cehrt_bonus",
-                      "value": 10,
-                      "detail": "",
-                      "metadata": {
-                        "maxContribution": 100
-                      },
-                      "parts": [],
-                      "warnings": []
-                    }
-                  ],
-                  "metadata": {
-                    "messages": {
-                      "attestationStatementCheck": "Attestation Statements are complete",
-                      "baseMeasureCheck": "Base measures are complete"
-                    },
-                    "maxContribution": 100,
-                    "measurementSetPicked": true
-                  },
-                  "warnings": []
+                  "measureId": "PI_INFBLO_1",
+                  "message": "attestation is complete"
+                },
+                {
+                  "measureId": "PI_ONCACB_1",
+                  "message": "attestation is complete"
+                },
+                {
+                  "measureId": "PI_ONCDIR_1",
+                  "message": "attestation is complete"
+                },
+                {
+                  "measureId": "PI_EP_1",
+                  "message": "electronicPrescribing is complete"
+                },
+                {
+                  "measureId": "PI_HIE_1",
+                  "message": "healthInformationExchangeSending is complete"
+                },
+                {
+                  "measureId": "PI_HIE_4",
+                  "message": "healthInformationExchangeReceiving is complete"
+                },
+                {
+                  "measureId": "PI_PEA_1",
+                  "message": "providerToPatientExchange is complete"
+                },
+                {
+                  "measureId": "PI_PPHI_1",
+                  "message": "protectPatientHealthInformation is complete"
+                },
+                {
+                  "measureId": "PI_PHCDRR_1",
+                  "message": "publicHealthAndClinicalDataExchange is complete"
+                },
+                {
+                  "measureId": "PI_PHCDRR_1_MULTI",
+                  "message": "publicHealthAndClinicalDataExchange is complete"
                 }
               ],
-              "warnings": []
+              "measuresExcluded": [],
+              "measuresSkipped": [],
+              "maxContribution": 25,
+              "objectiveScores": {
+                "electronicPrescribing": 4,
+                "healthInformationExchangeSending": 12,
+                "healthInformationExchangeReceiving": 19,
+                "providerToPatientExchange": 19,
+                "publicHealthAndClinicalDataExchange": 10
+              },
+              "bonuses": {}
             },
-            "metadata": {
-              "maxContribution": 25
-            }
+            "warnings": []
           }
-        ]
+        ],
+        "warnings": [],
+        "instrumentations": [
+          "PI-025",
+          "PI-010",
+          "PI-012"
+        ],
+        "metadata": {
+          "unroundedScoreValue": 64
+        }
+      },
+      "metadata": {
+        "maxContribution": 25,
+        "unroundedScoreValue": 16
+      }
+    },
+    {
+      "name": "bonuses",
+      "value": 0,
+      "parts": []
     }
-    }
+  ],
+  "instrumentations": [],
+  "metadata": {
+    "messages": {},
+    "maxTotalScore": 100,
+    "maxHighContributionIA": 40,
+    "maxMediumContributionIA": 20,
+    "maxContributionIA": 15,
+    "maxContributionQuality": 60,
+    "maxContributionCost": 0,
+    "maxContributionPI": 25,
+    "piRollupBase": 0,
+    "piRollupBonus": 0,
+    "iaCategoryScoreUnrounded": 0,
+    "iaCategoryScore": 0,
+    "iaWeightedScore": 0,
+    "piCategoryScore": 64,
+    "piWeightedScore": 16,
+    "piCategoryScoreUnrounded": 64,
+    "piObjectives": {
+      "piElectronicPrescribing": 4,
+      "piHealthInformationExchangeSending": 12,
+      "piHealthInformationExchangeReceiving": 19,
+      "piProviderToPatientExchange": 19,
+      "piPublicHealthAndClinicalDataExchange": 10
+    },
+    "piBonuses": {},
+    "isSubmissionFabricated": true,
+    "hasIAMeasures": false,
+    "hasQualityMeasures": false,
+    "hasACIMeasures": false,
+    "hasPIMeasures": true,
+    "hasCostMeasures": false,
+    "hasACRMeasure": false,
+    "hasCAHPSMeasure": false,
+    "hasScorableIAMeasures": false,
+    "hasScorableACIMeasures": false,
+    "hasScorablePIMeasures": true,
+    "hasScorableCostMeasures": false,
+    "hasScorableQualityMeasures": false,
+    "numberOfCategoriesHavingExternalMeasures": 1,
+    "hasDiscardedReweight": false,
+    "hasSkippedWIMSet": false,
+    "hasMergedRegistryMSet": false,
+    "givenIAStudyCredit": false,
+    "hasIAWeightStatus": "SPECIAL",
+    "givenAPMParticipationCredit": false,
+    "givenIACreditPCMH": false,
+    "hasMinimumACIPerformancePeriod": false,
+    "hasMinimumPIPerformancePeriod": true,
+    "hasIncompleteAPMWISubmission": false,
+    "unroundedScoreValue": 16,
+    "runtimeInMillis": 41.92
+  },
+  "warnings": [
+    "Disclaimer: Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments."
+  ],
+  "errors": []
 }
