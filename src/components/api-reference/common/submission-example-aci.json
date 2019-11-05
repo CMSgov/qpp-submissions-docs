@@ -1,67 +1,66 @@
 {
-    "entityType": "individual", 
-    "taxpayerIdentificationNumber": "000456789", 
-    "nationalProviderIdentifier": "9876543210",
-    "performanceYear": 2018,
-    "measurementSets": [
-        {
-            "category": "pi",
-            "submissionMethod": "registry",
-            "performanceStart": "2018-01-01",
-            "performanceEnd": "2018-06-01",
-            "measurements": [
-              {
-                "measureId": "PI_INFBLO_1",
-                "value": true
-              },
-              {
-                "measureId": "PI_ONCDIR_1",
-                "value": true
-              },
-              {
-                "measureId": "PI_EP_1",
-                "value": {
-                  "numerator": 150,
-                  "denominator": 200
-                }
-              },
-              {
-                "measureId": "PI_PEA_1",
-                "value": {
-                  "numerator": 110,
-                  "denominator": 110
-                }
-              },
-              {
-                "measureId": "PI_PPHI_1",
-                "value": true
-              },
-              {
-                "measureId": "PI_HIE_1",
-                "value": {
-                  "numerator": 150,
-                  "denominator": 150
-                }
-              },
-              {
-                "measureId": "PI_HIE_2",
-                "value": {
-                  "numerator": 130,
-                  "denominator": 130
-                }
-              },
-              {
-                "measureId": "PI_HIE_3",
-                "value": {
-                  "numerator": 100,
-                  "denominator": 100
-                }
-              },
-              {
-                "measureId": "PI_IACEHRT_1",
-                "value": true 
-                }
-              ]
-          }
-        ]
-    }
+	"entityType": "individual",
+	"taxpayerIdentificationNumber": "000456789",
+	"nationalProviderIdentifier": "9876543210",
+	"performanceYear": 2019,
+	"measurementSets": [{
+		"category": "pi",
+		"submissionMethod": "electronicHealthRecord",
+		"performanceStart": "2019-01-01",
+		"performanceEnd": "2019-12-31",
+		"cehrtId": "0015EJR3MPX3HHA",
+		"measurements": [{
+				"measureId": "PI_INFBLO_1",
+				"value": true
+			},
+			{
+				"measureId": "PI_ONCACB_1",
+				"value": true
+			},
+			{
+				"measureId": "PI_ONCDIR_1",
+				"value": true
+			},
+			{
+				"measureId": "PI_EP_1",
+				"value": {
+					"numerator": 49,
+					"denominator": 115
+				}
+			},
+			{
+				"measureId": "PI_HIE_1",
+				"value": {
+					"numerator": 1123,
+					"denominator": 1951
+				}
+			},
+			{
+				"measureId": "PI_HIE_4",
+				"value": {
+					"numerator": 923,
+					"denominator": 951
+				}
+			},
+			{
+				"measureId": "PI_PEA_1",
+				"value": {
+					"numerator": 861,
+					"denominator": 1809
+				}
+			},
+			{
+				"measureId": "PI_PPHI_1",
+				"value": false
+			},
+			{
+				"measureId": "PI_PHCDRR_1",
+				"value": true
+			},
+			{
+				"measureId": "PI_PHCDRR_1_MULTI",
+				"value": true
+			}
+		]
+	}]
+}
