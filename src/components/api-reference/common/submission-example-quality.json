@@ -7,7 +7,7 @@
 		"category": "quality",
 		"submissionMethod": "registry",
 		"performanceStart": "2019-01-01",
-		"performanceEnd": "2016-12-31",
+		"performanceEnd": "2019-12-31",
 		"measurements": [{
 				"measureId": "046",
 				"value": {
