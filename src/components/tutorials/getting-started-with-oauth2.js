@@ -48,7 +48,7 @@ class GettingStartedUsingQppOauth2 extends React.Component {
         <p className='ds-text'><strong>Step 4</strong></p>
         <p className='ds-text'>Once you’ve completed this process, log in to Developer Preview at: <a href='https://preview.qpp.cms.gov'>https://preview.qpp.cms.gov</a>.</p>
         <p className='ds-text'>Upon login, you’ll be prompted to go back to HARP to set up multi-factor authentication (MFA).</p>
-        
+
         <h2 className='ds-h2' id='oauth'>Connect to EHR or reporting application</h2>
         <p className='ds-text'>YLog into Developer Preview at <a href='https://preview.qpp.cms.gov'>https://preview.qpp.cms.gov</a>.</p>
         <p className='ds-text'>Locate your EHR (search by the EHR name as it appears in the <a href='https://chpl.healthit.gov/'>CHPL database</a>).</p>
