@@ -1,67 +1,66 @@
 {
-    "entityType": "individual",
-    "taxpayerIdentificationNumber": "000456789",
-    "nationalProviderIdentifier": "9876543210",
-    "performanceYear": 2018,
-    "measurementSets": [
-{
-    "category": "quality",
-    "submissionMethod": "registry",
-    "performanceStart": "2016-01-01",
-    "performanceEnd": "2016-06-01",
-    "measurements": [
-        {
-            "measureId": "046",
-            "value": {
-                "strata": [
-                    {
-                        "eligiblePopulationExclusion": 0,
-                        "eligiblePopulation": 60,
-                        "performanceMet": 47,
-                        "eligiblePopulationException": 0,
-                        "performanceNotMet": 13,
-                        "stratum": "18-64"
-                    },
-                    {
-                        "eligiblePopulationExclusion": 0,
-                        "eligiblePopulation": 86,
-                        "performanceMet": 73,
-                        "eligiblePopulationException": 0,
-                        "performanceNotMet": 13,
-                        "stratum": "65+"
-                    },
-                    {
-                        "eligiblePopulationExclusion": 0,
-                        "eligiblePopulation": 147,
-                        "performanceMet": 121,
-                        "eligiblePopulationException": 0,
-                        "performanceNotMet": 26,
-                        "stratum": "overall"
-                    }
-                ],
-                "isEndToEndReported": true
-            }
-        },
-        {
-            "measureId": "110",
-            "value": {
-                "eligiblePopulationExclusion": 0,
-                "eligiblePopulation": 562,
-                "performanceMet": 305,
-                "eligiblePopulationException": 2,
-                "performanceNotMet": 255,
-                "isEndToEndReported": true
-            }
-        },
-        {
-            "measureId": "ACEP32",
-            "value": {
-                "numerator": 150,
-                "denominator": 5320,
-                "isEndToEndReported": true
-            }
-        }
-    ]
-  }
-]
+	"entityType": "individual",
+	"taxpayerIdentificationNumber": "000456789",
+	"nationalProviderIdentifier": "9876543210",
+	"performanceYear": 2019,
+	"measurementSets": [{
+		"category": "quality",
+		"submissionMethod": "registry",
+		"performanceStart": "2019-01-01",
+		"performanceEnd": "2016-12-31",
+		"measurements": [{
+				"measureId": "046",
+				"value": {
+					"strata": [{
+							"eligiblePopulationExclusion": 0,
+							"eligiblePopulation": 60,
+							"performanceMet": 47,
+							"eligiblePopulationException": 0,
+							"performanceNotMet": 13,
+							"stratum": "18-64"
+						},
+						{
+							"eligiblePopulationExclusion": 0,
+							"eligiblePopulation": 86,
+							"performanceMet": 73,
+							"eligiblePopulationException": 0,
+							"performanceNotMet": 13,
+							"stratum": "65+"
+						},
+						{
+							"eligiblePopulationExclusion": 0,
+							"eligiblePopulation": 147,
+							"performanceMet": 121,
+							"eligiblePopulationException": 0,
+							"performanceNotMet": 26,
+							"stratum": "overall"
+						}
+					],
+					"isEndToEndReported": true
+				}
+			},
+			{
+				"measureId": "110",
+				"value": {
+					"eligiblePopulationExclusion": 0,
+					"eligiblePopulation": 562,
+					"performanceMet": 305,
+					"eligiblePopulationException": 2,
+					"performanceNotMet": 255,
+					"isEndToEndReported": true
+				}
+			},
+			{
+				"measureId": "ACRAD15",
+				"value": {
+					"numerator": 3,
+					"denominator": 1000,
+					"isEndToEndReported": false,
+					"denominatorException": 30,
+					"numeratorExclusion": 0,
+					"observationInstances": 80
+				}
+			}
+		]
+	}]
 }
