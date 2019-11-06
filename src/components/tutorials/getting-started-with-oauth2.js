@@ -32,7 +32,6 @@ class GettingStartedUsingQppOauth2 extends React.Component {
           <li>Valid home address</li>
           <li>Test social security number (000-00-0000 will work)</li>
         </ul>
-    
         <p className='ds-text'><strong>Step 2</strong></p>
         <p className='ds-text'>On the second page of Account Registration, create:</p>
         <ul>
@@ -43,14 +42,13 @@ class GettingStartedUsingQppOauth2 extends React.Component {
         <p className='ds-text'>Click Next —the next page may take a minute to load.</p>
         <p className='ds-text'>You will see the error message: “We were unable to verify the information you provided. If you think you have entered the correct information…” This is the expected outcome.</p>
         <p className='ds-text'>You can close the page.</p>
-                                                                                                                                       <p className='ds-text'><strong>Step 3</strong></p>
+        <p className='ds-text'><strong>Step 3</strong></p>
         <p className='ds-text'>Call or email QPP Service Desk (1-866-288-8292 or QPP@cms.hhs.gov).</p>
         <p className='ds-text'>Tell them you’re trying to register for a Developer Preview account and give them the username you just created. The agent will verify your account and identity.</p>
-    
         <p className='ds-text'><strong>Step 4</strong></p>
         <p className='ds-text'>Once you’ve completed this process, log in to Developer Preview at: <a href='https://preview.qpp.cms.gov'>https://preview.qpp.cms.gov</a>.</p>
         <p className='ds-text'>Upon login, you’ll be prompted to go back to HARP to set up multi-factor authentication (MFA).</p>
-    
+        
         <h2 className='ds-h2' id='oauth'>Connect to EHR or reporting application</h2>
         <p className='ds-text'>YLog into Developer Preview at <a href='https://preview.qpp.cms.gov'>https://preview.qpp.cms.gov</a>.</p>
         <p className='ds-text'>Locate your EHR (search by the EHR name as it appears in the <a href='https://chpl.healthit.gov/'>CHPL database</a>).</p>
@@ -60,13 +58,13 @@ class GettingStartedUsingQppOauth2 extends React.Component {
         <h2 className='ds-h2' id='oauth'>Register an Application</h2>
         <p className='ds-text'>To register the application, you will need:</p>
         <ul>
-              <li>Application name</li>
-              <li>Application URL</li>
-              <li>Logo URI</li>
-              <li>Client Type</li>
-              <li>Redirect URIs</li>
-              <li>Terms of Service and Privacy Policy are optional for the test environment, but required for production.</li>
-            </ul>
+          <li>Application name</li>
+          <li>Application URL</li>
+          <li>Logo URI</li>
+          <li>Client Type</li>
+          <li>Redirect URIs</li>
+          <li>Terms of Service and Privacy Policy are optional for the test environment, but required for production.</li>
+        </ul>
         <p className='ds-text'>In the test environment, a registered application is assigned a client ID and, if applicable, a client secret. The secret should only be used if it can be kept confidential, such as for communication between your server and the Submissions API.</p>
         <p className='ds-text'>Additional support along with a sample OAuth Client, can be found in the QPP Github at: <a href='https://github.com/CMSgov/qpp-submissions-docs/tree/master/oauth_sample'>https://github.com/CMSgov/qpp-submissions-docs/tree/master/oauth_sample</a>.</p>
         <p className='ds-text'>Registering and testing your application within the Developer Preview is required prior to being granted production OAuth access.</p>
