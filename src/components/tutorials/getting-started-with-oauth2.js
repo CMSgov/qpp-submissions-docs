@@ -54,7 +54,7 @@ class GettingStartedUsingQppOauth2 extends React.Component {
         <p className='ds-text'>Locate your EHR (search by the EHR name as it appears in the <a href='https://chpl.healthit.gov/'>CHPL database</a>).</p>
         <p className='ds-text'>If you cannot locate your EHR or are a registry user, create one manually. </p>
         <p className='ds-text'>After requesting the role, it may take a few minutes to populate.</p>
-    
+
         <h2 className='ds-h2' id='oauth'>Register an Application</h2>
         <p className='ds-text'>To register the application, you will need:</p>
         <ul>
