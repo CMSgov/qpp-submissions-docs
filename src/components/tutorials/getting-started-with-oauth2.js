@@ -17,13 +17,56 @@ class GettingStartedUsingQppOauth2 extends React.Component {
         <p className='ds-text'>Once you've successfully completed your integration in the Developer Preview, you can request access to the production Submissions API. We will provide details on this production access process this fall.</p>
 
         <h1 className='ds-h1' id='oauth'>Using OAuth in the Developer Preview</h1>
-        <p className='ds-text'>To use the QPP Submissions API with OAuth, a developer must first create an account in Developer Preview, and then register their application.</p>
-        <p className='ds-text'>Developer Preview accounts are separate from the ones used to log in to the main QPP website. To create a Developer Preview account, please follow the process at <a href='https://impl.harp.qualitynet.org/register/profile-info'>https://impl.harp.qualitynet.org/register/profile-info/</a>.</p>
-        <p className='ds-text'>Once you’ve created this account (identify verification is required), you will be able to log in to our Developer Preview environment at <a href='https://preview.qpp.cms.gov'>https://preview.qpp.cms.gov/</a>.</p>
-        <p className='ds-text'>Once logged in, you will have the ability to connect to your EHR. The EHR will have the name registered in the <a href='https://chpl.healthit.gov/'>CHPL</a> database. If your EHR does not show up, you can create one using manual text input.</p>
-        <p className='ds-text'>Once you’ve created your EHR, you can register an application. Application registration requires: an application name, application URI, logo URI, Client Type, and redirect URIs. Terms of Service and Privacy Policy are optional for the test environment, but will be required for production.</p>
-        <p className='ds-text'>A registered application is given a client ID and, if applicable, a client secret for the testing environment. The secret should only be used if it can be kept confidential, such as for communication between your server and the Submissions API.</p>
-        <p className='ds-text'>Once set up, additional support, along with a sample OAuth Client, can be found in the QPP Github at <a href='https://github.com/CMSgov/qpp-submissions-docs/tree/master/oauth_sample'>https://github.com/CMSgov/qpp-submissions-docs/tree/master/oauth_sample/</a>.</p>
+        <p className='ds-text'>To use the QPP Submissions API with OAuth, you must create a Developer Preview account and register the application.</p>
+        <h2 className='ds-h2' id='oauth'>Create Developer Preview Account</h2>
+        <p className='ds-text'>You will need to create a new HARP account to use with Developer Preview.</p>
+        <p className='ds-text'>The Developer Preview account is separate from your account used on the main QPP website.</p>
+        <p className='ds-text'><em>Please note: remote identity proofing will not work in Developer Preview.</em></p>
+        <p className='ds-text'><strong>Step 1</strong></p>
+        <p className='ds-text'>Go to <a href='https://impl.harp.qualitynet.org/register/profile-info'>https://impl.harp.qualitynet.org/register/profile-info</a>.</p>
+        <p className='ds-text'>On the first page of Account Registration, enter:</p>
+        <ul>
+          <li>Valid name</li>
+          <li>Valid email address</li>
+          <li>Valid phone number</li>
+          <li>Valid home address</li>
+          <li>Test social security number (000-00-0000 will work)</li>
+        </ul>
+        <p className='ds-text'><strong>Step 2</strong></p>
+        <p className='ds-text'>On the second page of Account Registration, create:</p>
+        <ul>
+          <li>Username</li>
+          <li>Password - which must be at least 12 characters and include a lowercase letter, uppercase letter, number (0-9), and symbol (!@#$%^&*)</li>
+          <li>Challenge question</li>
+        </ul>
+        <p className='ds-text'>Click Next —the next page may take a minute to load.</p>
+        <p className='ds-text'>You will see the error message: “We were unable to verify the information you provided. If you think you have entered the correct information…” This is the expected outcome.</p>
+        <p className='ds-text'>You can close the page.</p>
+        <p className='ds-text'><strong>Step 3</strong></p>
+        <p className='ds-text'>Call or email QPP Service Desk (1-866-288-8292 or QPP@cms.hhs.gov).</p>
+        <p className='ds-text'>Tell them you’re trying to register for a Developer Preview account and give them the username you just created. The agent will verify your account and identity.</p>
+        <p className='ds-text'><strong>Step 4</strong></p>
+        <p className='ds-text'>Once you’ve completed this process, log in to Developer Preview at: <a href='https://preview.qpp.cms.gov'>https://preview.qpp.cms.gov</a>.</p>
+        <p className='ds-text'>Upon login, you’ll be prompted to go back to HARP to set up multi-factor authentication (MFA).</p>
+
+        <h2 className='ds-h2' id='oauth'>Connect to EHR or reporting application</h2>
+        <p className='ds-text'>YLog into Developer Preview at <a href='https://preview.qpp.cms.gov'>https://preview.qpp.cms.gov</a>.</p>
+        <p className='ds-text'>Locate your EHR (search by the EHR name as it appears in the <a href='https://chpl.healthit.gov/'>CHPL database</a>).</p>
+        <p className='ds-text'>If you cannot locate your EHR or are a registry user, create one manually. </p>
+        <p className='ds-text'>After requesting the role, it may take a few minutes to populate.</p>
+
+        <h2 className='ds-h2' id='oauth'>Register an Application</h2>
+        <p className='ds-text'>To register the application, you will need:</p>
+        <ul>
+          <li>Application name</li>
+          <li>Application URL</li>
+          <li>Logo URI</li>
+          <li>Client Type</li>
+          <li>Redirect URIs</li>
+          <li>Terms of Service and Privacy Policy are optional for the test environment, but required for production.</li>
+        </ul>
+        <p className='ds-text'>In the test environment, a registered application is assigned a client ID and, if applicable, a client secret. The secret should only be used if it can be kept confidential, such as for communication between your server and the Submissions API.</p>
+        <p className='ds-text'>Additional support along with a sample OAuth Client, can be found in the QPP Github at: <a href='https://github.com/CMSgov/qpp-submissions-docs/tree/master/oauth_sample'>https://github.com/CMSgov/qpp-submissions-docs/tree/master/oauth_sample</a>.</p>
         <p className='ds-text'>Registering and testing your application within the Developer Preview is required prior to being granted production OAuth access.</p>
 
         <h1 className='ds-h1' id='create-user'>Create test users in the Developer Preview</h1>

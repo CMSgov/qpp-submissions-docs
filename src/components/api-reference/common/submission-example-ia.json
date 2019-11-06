@@ -7,8 +7,8 @@
     {
       "category": "ia",
       "submissionMethod": "registry",
-      "performanceStart": "2018-01-01",
-      "performanceEnd": "2018-06-01",
+      "performanceStart": "2019-01-01",
+      "performanceEnd": "2019-06-01",
       "measurements": [
           {
             "measureId": "IA_EPA_4",
