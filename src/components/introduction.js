@@ -8,7 +8,7 @@ class Introduction extends React.Component {
         <p className='ds-text'>The Submissions API enables submissions and real-time performance scoring of Quality Payment Program (QPP) data.</p>
         <p className='ds-text'>The Submissions API is a RESTful API. It has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. It uses standard HTTP features, like HTTPS authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients.</p>
         <p className='ds-text'>The Submissions API supports cross-origin resource sharing, allowing you to interact securely with the API from a client-side web application (though you should never expose your secret API key in any public website’s client-side code).</p>
-        <p className='ds-text'>API responses can be returned in JSON or XML, including errors.</p>
+        <p className='ds-text'>API responses are returned in JSON, including errors.</p>
 
         <h2 className='ds-h2'>Explore and integrate with the Submissions API</h2>
         <p className='ds-text'>To make the API as explorable as possible, we have <a href='https://preview.qpp.cms.gov/api/submissions/public/docs/'>Interactive Documentation</a>, which not only documents the endpoints available but also allows you to make requests to the API and see what response you would get. The Interactive Documentation is connected to the Developer Preview, which is an integration environment.</p>
