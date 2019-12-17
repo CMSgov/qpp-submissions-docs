@@ -28,7 +28,7 @@ class AdvancedTutorial extends React.Component {
             </a>
             </h2>
             <p>Previously, we created a measurement set containing one Improvement Activity. Let's try adding another Improvement Activity to this measurement set.</p>
-            <p>Here's a <code>PATCH</code> request to add more measures to an existing measurement set. You can pass an <code>Accept</code> header to specify the API version and the desired response format by using our custom mime type, <code>application/vnd.qpp.cms.gov.v1+json</code>. We support JSON and XML by using <code>+json</code> or <code>+xml</code>. Right now, only version <code>v1</code> is supported. You can also continue to use a standard <code>application/json</code> or <code>application/xml</code> header, which will point to the latest version (currently v1). Check out the response and request below!</p>
+            <p>Here's a <code>PATCH</code> request to add more measures to an existing measurement set. You can pass an <code>Accept</code> header to specify the API version and the desired response format by using our custom mime type, <code>application/vnd.qpp.cms.gov.v1+json</code>. We support JSON by using <code>+json</code>. Right now, only version <code>v1</code> is supported. You can also continue to use a standard <code>application/json</code> header, which will point to the latest version (currently v1). Check out the response and request below!</p>
             <InlineApiExample
               verb='PATCH'
               url='/measurement-sets/:id'
