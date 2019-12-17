@@ -74,7 +74,19 @@ class GettingStartedUsingQppOauth2 extends React.Component {
 
         <h1 className='ds-h1' id='production-api-access'>Production API Access</h1>
 
-        <p className='ds-text'>To submit data via OAuth and the Submissions API during the submission window, your application must be approved for production use by QPP. QPP will release more information about the production access process this fall.</p>
+        <p className='ds-text'>To submit data via OAuth and the Submissions API during the submission window, your application must be approved for production use by QPP. To apply for production access, you must demonstrate your application to QPP and attest that your organization:</p>
+        <ul>
+          <li>Is a US-based company</li>
+          <li>Agrees to CMS API Terms of Use</li>
+          <li>Participated in the CMS QPP Submissions API Developer Preview</li>
+        </ul>
+        <p className='ds-text'>You will also be asked to provide:</p>
+        <ul>
+          <li>A company website</li>
+          <li>A point of contact</li>
+          <li>URL to Application Privacy or Terms of Use</li>
+        </ul>
+        <p className='ds-text'>To request production access, please email the QPP Help Desk at QPP@cms.hhs.gov to set up a demonstration with the QPP team.</p>
       </div>
     );
   }
