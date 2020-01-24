@@ -72,6 +72,10 @@ class DeveloperPreview extends React.Component {
               </ul>
               </td>
             </tr>
+            <tr>
+              <td>000000008</td>
+              <td>Group has a Complex Patient Bonus</td>
+            </tr> 
           </tbody>
         </table>
 
