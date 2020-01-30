@@ -18,14 +18,14 @@ class DeveloperPreview extends React.Component {
         </p>
 
         <h2 className='ds-h2'>Authentication</h2>
-        <p className='ds-text'>Both the Developer Preview and the Production environments require a JSON Web Token ("API key") for authentication purposes. If you are a CMS-approved Qualified Registry or QCDR, your token is available for download on <a href='https://qpp.cms.gov/'>qpp.cms.gov</a>.</p>
+        <p className='ds-text'>Both the Developer Preview and the Production environments require a JSON Web Token ("API key") for authentication purposes. If you are a CMS-approved Qualified Registry or QCDR, your token is available for download on <a href='https://qpp.cms.gov/'>qpp.cms.gov</a>.  Instructions on how to download a Dev-Pre and Production Registry token can be found <a href='https://groups.google.com/forum/#!msg/qpp-apis/IQvcL7M-ZqE/MrufMCFTAgAJ'>here</a>.</p>
         <p className='ds-text'>Anyone may continue to test the current iteration of the Developer Preview environment through our Interactive Documentation. A default API token is embedded on this website, which you may also use for testing. To retrieve this token, test any endpoint on the website and then copy it from the API's cURL response. Please keep in mind this token reflect Qualified Registry and QCDR access to the Developer Preview Submissions API endpoints.</p>
         <p className='ds-text'>OAuth is a new authentication method for the Submissions API beginning with the PY2019 submission window. To learn more about testing OAuth in the Developer Preview, please see <a href='/getting-started-with-oauth2'>Getting Started Using QPP OAuth2</a>.</p>
 
         <h1 className='ds-h1' id='special-scoring'>How to Test Special Scoring Scenarios</h1>
         <p className='ds-text'>A submission to the Submissions API requires a Taxpayer Identification Number (TIN) and may include a National Provider Identifier (NPI). These identifiers are used to accurately attribute the submission to a provider. A provider's profile includes information which is used to trigger special scoring scenarios.</p>
         <p className='ds-text'>In order to support the testing of special scoring scenarios, the Submissions API features a provider profile stub in the Developer Preview environment for the <code>/score-preview</code> endpoint. The provider profile stub is not applied to the <code>/score</code> endpoint.</p>
-        <p className='ds-text'>In the Developer Preview, there are 23 pre-defined TINs that represent various special scoring scenarios. By using these TINs to submit data, you will be able to see how certain characteristics of a provider's profile can impact a provider's composite score.</p>
+        <p className='ds-text'>In the Developer Preview, there are 7 pre-defined TINs that represent various special scoring scenarios. By using these TINs to submit data, you will be able to see how certain characteristics of a provider's profile can impact a provider's composite score.</p>
         <p className='ds-text'>For Qualified Registries and QCDRs, we recommend using the <code>/score-preview</code> endpoint to test special scoring scenarios.</p>
         <p className='ds-text'>For applications using OAuth which requires a test user for submissions, please refer to the <a href='https://preview.qpp.cms.gov/api/data-faker/synthetic-data/docs/index.html'>Test Data Service</a>.</p>
 
@@ -39,99 +39,42 @@ class DeveloperPreview extends React.Component {
           <tbody>
             <tr>
               <td>000000001</td>
-              <td>Participates in a Shared Savings Plan (SSP) APM, and has both primary and secondary provider relationships to the SSP APM</td>
+              <td>Standard Scoring scenario to reflect current categories weights and no special scenarios</td>
             </tr>
             <tr>
               <td>000000002</td>
-              <td>Does not participate in an APM</td>
+              <td>Group is a Small Practice</td>
             </tr>
             <tr>
               <td>000000003</td>
-              <td>Participates in a Shared Savings Plan (SSP) APM, and has only primary provider relationships to the SSP APM</td>
+              <td>Group is a Rural Practice</td>
             </tr>
             <tr>
               <td>000000004</td>
-              <td>Participates in a NextGen APM, and has both primary and secondary provider relationships to the NextGen APM</td>
+              <td>Group is in a Health Professional Shortage Area (HSPA) </td>
             </tr>
             <tr>
               <td>000000005</td>
-              <td>Does not participate in an APM</td>
+              <td>Group is identified as located in an area deemed to be impacted by Extreme and Uncontrollable Circumstances</td>
             </tr>
             <tr>
               <td>000000006</td>
-              <td>Is a small practice</td>
+              <td>Group is an Improvement Activity Study Participant</td>
             </tr>
             <tr>
               <td>000000007</td>
-              <td>Is a non-patient facing practice</td>
+              <td>Group has been identified in a circumstance to cause the PI Category to be reweighted:
+              <ul>
+                <li>Approved PI Hardship Application</li>
+                <li>Non-Patient Facing Practice</li>
+                <li>Hospital-based Practice</li>
+                <li>Ambulatory Surgical Center Practice</li>
+              </ul>
+              </td>
             </tr>
             <tr>
               <td>000000008</td>
-              <td>Is a rural practice</td>
-            </tr>
-            <tr>
-              <td>000000009</td>
-              <td>Is in a Health Professional Shortage Area (HPSA)</td>
-            </tr>
-            <tr>
-              <td>000000010</td>
-              <td>Is affected by the Extreme and Uncontrollable Circumstances Policy</td>
-            </tr>
-            <tr>
-              <td>000000011</td>
-              <td>Has hospital-based MIPS-eligible clinicians</td>
-            </tr>
-            <tr>
-              <td>000000012</td>
-              <td>Participates in an Improvement Activity Study</td>
-            </tr>
-            <tr>
-              <td>000000013</td>
-              <td>Has ambulatory surgical center (ASC)-based MIPS-eligible clinicians</td>
-            </tr>
-            <tr>
-              <td>000000014</td>
-              <td>Has MIPS-eligible clinicians whose specialty is eligible for ACI reweighting</td>
-            </tr>
-            <tr>
-              <td>000000015</td>
-              <td>Is eligible for ACI reweighting</td>
-            </tr>
-            <tr>
-              <td>000000016</td>
-              <td>Qualifies for Promoting Interoperability hardship exception</td>
-            </tr>
-            <tr>
-              <td>000000017</td>
-              <td>Is a small practice, and qualifies for Promoting Interoperability hardship exception</td>
-            </tr>
-            <tr>
-              <td>000000018</td>
-              <td>Is a non-patient-facing practice, and qualifies for Promoting Interoperability hardship exception</td>
-            </tr>
-            <tr>
-              <td>000000019</td>
-              <td>Has hospital-based MIPS-eligible clinicians, and qualifies for Promoting Interoperability hardship exception</td>
-            </tr>
-            <tr>
-              <td>000000020</td>
-              <td>Participates in a standard MIPS APM</td>
-            </tr>
-            <tr>
-              <td>000000021</td>
-              <td>Participates in a Comprehensive End Stage Renal Disease Care APM</td>
-            </tr>
-            <tr>
-              <td>000000022</td>
-              <td>Participates in an Oncology Care Model APM</td>
-            </tr>
-            <tr>
-              <td>000000023</td>
-              <td>Participates in a Shared Savings Plan (SSP) APM, has only primary provider relationships to the SSP APM, and participates in an Improvement Activity Study</td>
-            </tr>
-            <tr>
-              <td>000000024</td>
-              <td>Participates in a standard MIPS APM, and participates in an Improvement Activity Study</td>
+              <td>Group has a Complex Patient Bonus</td>
             </tr>
           </tbody>
         </table>
@@ -147,7 +90,7 @@ class DeveloperPreview extends React.Component {
           <li>Send test Submissions API requests in the <a href='https://preview.qpp.cms.gov/api/submissions/public/docs/'>Interactive Documentation</a>.</li>
           <li>Register an application to test <a href='https://preview.qpp.cms.gov/'>OAuth in Developer Preview</a></li>
           <li>Contact the <a href='https://qpp.cms.gov/about/help-and-support#qpp-service-center'>QPP Service Center</a>.</li>
-          <li>Post product feedback about the Developer Preview in the <a href='https://groups.google.com/forum/#!forum/qpp-apis' target='_blank' rel='noopener noreferrer'>Google Group for QPP APIs</a>.</li>
+          <li>Refer to the <a href='https://groups.google.com/forum/#!forum/qpp-apis' target='_blank' rel='noopener noreferrer'>Google Group for QPP APIs</a> to search for answers to FAQ.</li>
         </ul>
       </div>
     );
