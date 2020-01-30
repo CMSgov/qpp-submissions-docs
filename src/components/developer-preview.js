@@ -18,7 +18,7 @@ class DeveloperPreview extends React.Component {
         </p>
 
         <h2 className='ds-h2'>Authentication</h2>
-        <p className='ds-text'>Both the Developer Preview and the Production environments require a JSON Web Token ("API key") for authentication purposes. If you are a CMS-approved Qualified Registry or QCDR, your token is available for download on <a href='https://qpp.cms.gov/'>qpp.cms.gov</a>.</p>
+        <p className='ds-text'>Both the Developer Preview and the Production environments require a JSON Web Token ("API key") for authentication purposes. If you are a CMS-approved Qualified Registry or QCDR, your token is available for download on <a href='https://qpp.cms.gov/'>qpp.cms.gov</a>.  Instructions on how to download a Dev-Pre and Production Registry token can be found <a href='https://groups.google.com/forum/#!msg/qpp-apis/IQvcL7M-ZqE/MrufMCFTAgAJ'>here</a>.</p>
         <p className='ds-text'>Anyone may continue to test the current iteration of the Developer Preview environment through our Interactive Documentation. A default API token is embedded on this website, which you may also use for testing. To retrieve this token, test any endpoint on the website and then copy it from the API's cURL response. Please keep in mind this token reflect Qualified Registry and QCDR access to the Developer Preview Submissions API endpoints.</p>
         <p className='ds-text'>OAuth is a new authentication method for the Submissions API beginning with the PY2019 submission window. To learn more about testing OAuth in the Developer Preview, please see <a href='/getting-started-with-oauth2'>Getting Started Using QPP OAuth2</a>.</p>
 
@@ -90,6 +90,7 @@ class DeveloperPreview extends React.Component {
           <li>Send test Submissions API requests in the <a href='https://preview.qpp.cms.gov/api/submissions/public/docs/'>Interactive Documentation</a>.</li>
           <li>Register an application to test <a href='https://preview.qpp.cms.gov/'>OAuth in Developer Preview</a></li>
           <li>Contact the <a href='https://qpp.cms.gov/about/help-and-support#qpp-service-center'>QPP Service Center</a>.</li>
+          <li>Refer to the <a href='https://groups.google.com/forum/#!forum/qpp-apis' target='_blank' rel='noopener noreferrer'>Google Group for QPP APIs</a> to search for answers to FAQ.</li>
         </ul>
       </div>
     );
