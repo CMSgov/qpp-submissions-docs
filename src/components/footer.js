@@ -32,8 +32,7 @@ class Footer extends React.PureComponent {
                   <li>
                     <a href='https://qpp.cms.gov/accessibility'>Accessibility</a>
                   </li>
-                  <li>1-866-288-8292</li>
-                  <li>TTY: 1-877-715-6222</li>
+                  <li>1-866-288-8292 (TRS: 711)</li>
                 </ul>
               </div>
             </div>

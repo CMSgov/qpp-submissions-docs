@@ -133,12 +133,6 @@ const supportPaths = [
   //   external: true
   // },
   {
-    path: 'https://groups.google.com/forum/#!forum/qpp-apis',
-    exact: false,
-    linkText: 'Developer Group for QPP APIs',
-    external: true
-  },
-  {
     path: '/terms-of-service',
     exact: false,
     linkText: 'Terms of Service',
