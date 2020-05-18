@@ -35,7 +35,7 @@ const SINGLE_PERFORMANCE_RATE_FIELDS = [
   {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable'},
   {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>eligiblePopulation</b>', notes: 'writable'},
   {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},
-  {name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure. In the measures specifications for claims measures and eCQMs, this field is also referred to as "Denominator Exclusion". In measures specifications for registry and QCDR measures, this field is referred to as "Numerator Exclusion".', notes: 'writable, optional'},
+  {name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure. eligiblePopulationExclusion should be 0 for all CQM measures as excluded populations should already have been subtracted out of the eligible population in the denominator. eligiblePopulationExclusion can have a value for eCQM measures where no human intervention is allowed. In the measures specifications for claims measures and eCQMs, this field is also referred to as "Denominator Exclusion". In measures specifications for registry and QCDR measures, this field is referred to as "Numerator Exclusion".', notes: 'writable, optional'},
   {name: 'eligiblePopulationException', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure. In the measures specifications, this field is also referred to as "Denominator Exception".', notes: 'writable, optional'},
   {name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Denominator".', notes: 'writable'},
   {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100. This is also referred to as data completeness.', notes: 'calculated by API and returned in response'},
@@ -158,7 +158,7 @@ class Measurements extends React.PureComponent {
         <DataModelTable fields={FIELDS} />
 
         <h1 className='ds-h1' id='boolean-measurements'>Boolean Measurements</h1>
-        <p className='ds-text--lead'>Boolean Measurements are applicable to Improvement Activity (IA) and Promoting Interoperability (PI) measures.</p>
+        <p className='ds-text--lead'>Boolean Measurements are applicable to Improvement Activity (IA) and Promoting Interoperability (PI) measures. For PI Measures, if a Measure has an Exclusion Measure ID listed, this means that the Exclusion Measure ID cannot be submitted in the same Measurement Set as the original Measure because they have opposite meanings and cannot both be true.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
@@ -181,7 +181,7 @@ class Measurements extends React.PureComponent {
         <DataModelTable fields={BOOLEAN_FIELDS} />
 
         <h1 className='ds-h1' id='proportion-measurements'>Proportion Measurements</h1>
-        <p className='ds-text--lead'>Proportion Measurements are applicable to Promoting Interoperability (PI) measures.</p>
+        <p className='ds-text--lead'>Proportion Measurements are applicable to Promoting Interoperability (PI) measures. For PI Measures, if a Measure has an Exclusion Measure ID listed, this means that the Exclusion Measure ID cannot be submitted in the same Measurement Set as the original Measure because they have opposite meanings and cannot both be true.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
@@ -229,7 +229,7 @@ class Measurements extends React.PureComponent {
                     "numeratorExclusion": float,
                     "reportingRate": float,
                     "observationInstances": integer
-                  } 
+                  }
                 }`}
               </pre>
             </TabPanel>
