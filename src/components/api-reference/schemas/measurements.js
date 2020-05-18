@@ -158,7 +158,7 @@ class Measurements extends React.PureComponent {
         <DataModelTable fields={FIELDS} />
 
         <h1 className='ds-h1' id='boolean-measurements'>Boolean Measurements</h1>
-        <p className='ds-text--lead'>Boolean Measurements are applicable to Improvement Activity (IA) and Promoting Interoperability (PI) measures.</p>
+        <p className='ds-text--lead'>Boolean Measurements are applicable to Improvement Activity (IA) and Promoting Interoperability (PI) measures. For PI Measures, if a Measure has an Exclusion Measure ID listed, this means that the Exclusion Measure ID cannot be submitted in the same Measurement Set as the original Measure because they have opposite meanings and cannot both be true.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
@@ -181,7 +181,7 @@ class Measurements extends React.PureComponent {
         <DataModelTable fields={BOOLEAN_FIELDS} />
 
         <h1 className='ds-h1' id='proportion-measurements'>Proportion Measurements</h1>
-        <p className='ds-text--lead'>Proportion Measurements are applicable to Promoting Interoperability (PI) measures.</p>
+        <p className='ds-text--lead'>Proportion Measurements are applicable to Promoting Interoperability (PI) measures. For PI Measures, if a Measure has an Exclusion Measure ID listed, this means that the Exclusion Measure ID cannot be submitted in the same Measurement Set as the original Measure because they have opposite meanings and cannot both be true.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs
