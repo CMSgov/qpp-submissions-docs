@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tab, Tabs, TabPanel } from 'react-tabs';
 
 import '../../../../styles/common/example-code-tabs.css';
 
@@ -9,9 +9,7 @@ class Advanced5 extends React.PureComponent {
   render() {
     return (
       <Tabs className={cssClass}>
-        <TabList>
-          <Tab>Response</Tab>
-        </TabList>
+        <Tab selected>Response</Tab>
         <TabPanel>
           <p>Response code:</p>
           <pre>200 OK</pre>

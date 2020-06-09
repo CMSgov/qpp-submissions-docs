@@ -1,5 +1,5 @@
 import React, {PureComponent} from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tab, Tabs, TabPanel } from 'react-tabs';
 
 import '../../../styles/common/example-code-tabs.css';
 
@@ -31,11 +31,8 @@ export default class Benchmarks extends PureComponent {
         <p className='ds-text--lead'><a href='https://preview.qpp.cms.gov/api/submissions/public/docs/#/Benchmarks'>Try it out!</a></p>
         <h3 className='ds-h2'>Resource Representation</h3>
         <div>
-          <Tabs
-            className='example-code-tabs'>
-            <TabList>
-              <Tab>JSON</Tab>
-            </TabList>
+          <Tabs className='example-code-tabs'>
+            <Tab selected>Sample JSON</Tab>
             <TabPanel>
               <pre>
                 {`{

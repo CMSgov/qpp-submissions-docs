@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tab, Tabs, TabPanel } from 'react-tabs';
 
 import '../../../styles/common/example-code-tabs.css';
 
@@ -134,11 +134,8 @@ class Measurements extends React.PureComponent {
         <p className='ds-text--lead'><a href='https://preview.qpp.cms.gov/api/submissions/public/docs/#/Measurements'>Try it out!</a></p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
-            <TabList>
-              <Tab>JSON</Tab>
-            </TabList>
+          <Tabs className='example-code-tabs'>
+            <Tab selected>Sample JSON</Tab>
             <TabPanel>
               <pre>
                 {`{
@@ -161,11 +158,8 @@ class Measurements extends React.PureComponent {
         <p className='ds-text--lead'>Boolean Measurements are applicable to Improvement Activity (IA) and Promoting Interoperability (PI) measures. For PI Measures, if a Measure has an Exclusion Measure ID listed, this means that the Exclusion Measure ID cannot be submitted in the same Measurement Set as the original Measure because they have opposite meanings and cannot both be true.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
-            <TabList>
-              <Tab>JSON</Tab>
-            </TabList>
+          <Tabs className='example-code-tabs'>
+            <Tab selected>Sample JSON</Tab>
             <TabPanel>
               <pre>
                 {`{
@@ -184,11 +178,8 @@ class Measurements extends React.PureComponent {
         <p className='ds-text--lead'>Proportion Measurements are applicable to Promoting Interoperability (PI) measures. For PI Measures, if a Measure has an Exclusion Measure ID listed, this means that the Exclusion Measure ID cannot be submitted in the same Measurement Set as the original Measure because they have opposite meanings and cannot both be true.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
-            <TabList>
-              <Tab>JSON</Tab>
-            </TabList>
+          <Tabs className='example-code-tabs'>
+            <Tab selected>Sample JSON</Tab>
             <TabPanel>
               <pre>
                 {`{
@@ -210,11 +201,8 @@ class Measurements extends React.PureComponent {
         <p className='ds-text--lead'>Non-Proportion Measurements are applicable to quality measures. Most are authored by QCDRs and are used to attest to measures that are otherwise categorized as 'ratio', 'continuous variable', or a combination of 'proportion' and the former. Note this means that having a false value in the proportion field of QCDR documentation is sufficient to determine that a measure as non-proportional, but having a true value for proportion is insufficient to determine that measure as proportional. Non-proportion measurements are unconstrained, so while the fields are 'numerator' and 'denominator' there is no validation that the numerator must be less than or equal to the denominator or that the denominator is greater than 0, as is the case for proportion measurements.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
-            <TabList>
-              <Tab>JSON</Tab>
-            </TabList>
+          <Tabs className='example-code-tabs'>
+            <Tab selected>Sample JSON</Tab>
             <TabPanel>
               <pre>
                 {`{
@@ -241,11 +229,8 @@ class Measurements extends React.PureComponent {
         <p className='ds-text--lead'>Single-Performance Rate Measurements are applicable to Quality measures. There are two types of Single-Performance Rate Measurements: registry and normal. The difference between the two is that for Registry Single-Performance Rate Measurements, the performanceRate field is both writable and required.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
-            <TabList>
-              <Tab>JSON</Tab>
-            </TabList>
+          <Tabs className='example-code-tabs'>
+            <Tab selected>Sample JSON</Tab>
             <TabPanel>
               <pre>
                 {`{
@@ -273,11 +258,8 @@ class Measurements extends React.PureComponent {
         <p className='ds-text--lead'>Multi-Performance Rate Measurements are applicable to Quality measures. There are two types of Multi-Performance Rate Measurements: registry and normal. The difference between the two is that for Registry Multi-Performance Rate Measurements, the performanceRate field is both writable and required. Multi-Performance Rate Measurements contain multiple strata and the stratum field is required for each.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
-            <TabList>
-              <Tab>JSON</Tab>
-            </TabList>
+          <Tabs className='example-code-tabs'>
+            <Tab selected>Sample JSON</Tab>
             <TabPanel>
               <pre>
                 {`{
@@ -303,11 +285,8 @@ class Measurements extends React.PureComponent {
         <p className='ds-text--lead'>A Multi-Performance Rate Stratum represents the performance data for a specified subset of the population, as described by the stratum field.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
-            <TabList>
-              <Tab>JSON</Tab>
-            </TabList>
+          <Tabs className='example-code-tabs'>
+            <Tab selected>Sample JSON</Tab>
             <TabPanel>
               <pre>
                 {`{
@@ -332,11 +311,8 @@ class Measurements extends React.PureComponent {
         </p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
-            <TabList>
-              <Tab>JSON</Tab>
-            </TabList>
+          <Tabs className='example-code-tabs'>
+            <Tab selected>Sample JSON</Tab>
             <TabPanel>
               <pre>
                 {`{
@@ -385,11 +361,8 @@ class Measurements extends React.PureComponent {
         </p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
-            <TabList>
-              <Tab>JSON</Tab>
-            </TabList>
+          <Tabs className='example-code-tabs'>
+            <Tab selected>Sample JSON</Tab>
             <TabPanel>
               <pre>
                 {`{

@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import { Tab, Tabs, TabPanel } from 'react-tabs';
 
 import '../../styles/common/example-code-tabs.css';
 
@@ -44,9 +44,7 @@ const CodeBlock = ({json}) => {
 
   return (
     <Tabs className='example-code-tabs'>
-      <TabList>
-        <Tab>JSON</Tab>
-      </TabList>
+      <Tab selected>Sample JSON</Tab>
       <TabPanel>
         <pre dangerouslySetInnerHTML={{__html: `${reformattedJSON}`}} />
       </TabPanel>
@@ -218,7 +216,7 @@ export default class ScoringEngine extends PureComponent {
             </p>
             <br />
             <Tabs className='example-code-tabs'>
-              <Tab>Sample JSON</Tab>
+              <Tab selected>Sample JSON</Tab>
               <TabPanel>
                 <pre>{`${submissionJsonExampleStringIa}`}</pre>
               </TabPanel>
@@ -232,7 +230,7 @@ export default class ScoringEngine extends PureComponent {
           The output below shows the score at multiple levels. Although the IA category score has exceed the maximum points, you can never receive a score higher than the max. Activities that are High weighted are receiving a <code>"value": 20</code> at the actvity level in the response. Medium weighted activities are receiving <code>"value": 10</code>. The category has a <code>"maxContribution"</code> of 40 and the a <code>"maxContribution"</code> of 15 toward Overall Score.
           </p>
           <Tabs className='example-code-tabs'>
-            <Tab>Sample JSON</Tab>
+            <Tab selected>Sample JSON</Tab>
             <TabPanel>
               <pre>{`${scoringJsonExampleStringIa}`}</pre>
             </TabPanel>
@@ -262,7 +260,7 @@ export default class ScoringEngine extends PureComponent {
             </p>
             <br />
             <Tabs className='example-code-tabs'>
-              <Tab>Sample JSON</Tab>
+              <Tab selected>Sample JSON</Tab>
               <TabPanel>
                 <pre>{`${submissionJsonExampleStringAci}`}</pre>
               </TabPanel>
@@ -275,7 +273,7 @@ export default class ScoringEngine extends PureComponent {
             The output below shows the score at multiple levels. Although the PI category score has exceed the maximum points, you can never receive a score higher than the max. If no score is return, check the <code>"attestationStatementCheck"</code> and <code>"baseMeasureCheck</code> wihin the <code>"metadata</code>. If either of these are listed as incomplete, the submission must be fixed to receive a score. The category has a <code>"maxContribution"</code> of 100 and the a <code>"maxContribution"</code> of 25 toward Overall Score.
             </p>
             <Tabs className='example-code-tabs'>
-              <Tab>Sample JSON</Tab>
+              <Tab selected>Sample JSON</Tab>
               <TabPanel>
                 <pre>{`${scoringJsonExampleStringAci}`}</pre>
               </TabPanel>
@@ -303,7 +301,7 @@ export default class ScoringEngine extends PureComponent {
               In the sample below, measure 046 is a multi-strata, 110 is a single performance measure, ACRAD15 is a non-proportion measure.
             </p>
             <Tabs className='example-code-tabs'>
-              <Tab>Sample JSON</Tab>
+              <Tab selected>Sample JSON</Tab>
               <TabPanel>
                 <pre>{`${submissionJsonExampleStringQuality}`}</pre>
               </TabPanel>
@@ -331,7 +329,7 @@ export default class ScoringEngine extends PureComponent {
             <br />
           </div>
           <Tabs className='example-code-tabs'>
-            <Tab>Sample JSON</Tab>
+            <Tab selected>Sample JSON</Tab>
             <TabPanel>
               <pre>{`${scoringJsonExampleStringQuality}`}</pre>
             </TabPanel>
