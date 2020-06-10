@@ -31,10 +31,9 @@ export default class Benchmarks extends PureComponent {
         <p className='ds-text--lead'><a href='https://preview.qpp.cms.gov/api/submissions/public/docs/#/Benchmarks'>Try it out!</a></p>
         <h3 className='ds-h2'>Resource Representation</h3>
         <div>
-          <Tabs
-            className='example-code-tabs'>
+          <Tabs className='example-code-tabs'>
             <TabList>
-              <Tab>JSON</Tab>
+              <Tab>Sample JSON</Tab>
             </TabList>
             <TabPanel>
               <pre>
