@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, Tabs, TabPanel } from 'react-tabs';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 import '../../../styles/common/example-code-tabs.css';
 
@@ -33,7 +33,9 @@ export default class MeasurementSets extends React.PureComponent {
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
           <Tabs className='example-code-tabs'>
-            <Tab selected>Sample JSON</Tab>
+            <TabList>
+              <Tab>Sample JSON</Tab>
+            </TabList>
             <TabPanel>
               <pre>
                 {`{
