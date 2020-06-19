@@ -20,7 +20,7 @@ class Introduction extends React.Component {
         <h2 className='ds-h2'>Stay Up Date</h2>
         <p className='ds-text'>The developer documentation is a living document that is constantly maintained to stay in sync with policy, technical changes, and test data changes. Additionally we update the content to provide answers to frequently asked questions.  Please refer back to this regularly to keep aware of recent changes.</p>
         <p className='ds-text'>We are no longer able to dedicate resources to moderate and maintain the Google Group forum.  However, you will be able to search for information in the <a href='https://groups.google.com/forum/#!forum/qpp-apis' target='_blank' rel='noopener noreferrer'>QPP APIs Google Group</a>, which will continue in a read-only state through March 31, 2020 when the 2019 MIPs submission period closes.</p>
-        <p className='ds-text'>Please bring any questions not answered by our available documentation to the monthly support calls/Virtual Office Hours, or contact the Quality Payment Program at 1-866-288-8292, Monday through Friday, 8:00 AM-8:00 PM ET or by e-mail at: <a href='QPP@cms.hhs.gov'>QPP@cms.hhs.gov</a></p>
+        <p className='ds-text'>Please bring any questions not answered by our available documentation to the monthly support calls/Virtual Office Hours, or contact the Quality Payment Program at 1-866-288-8292, Monday through Friday, 8:00 AM-8:00 PM ET or by e-mail at: <a href='mailto:QPP@cms.hhs.gov'>QPP@cms.hhs.gov</a></p>
       </div>
     );
   }
