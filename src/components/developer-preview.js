@@ -5,7 +5,7 @@ class DeveloperPreview extends React.Component {
     return (
       <div>
         <p className='ds-text'>The Developer Preview allows developers to build direct integrations with other software to test programmatically submitting Quality Payment Program (QPP) performance data to CMS. The API’s functionality in the Developer Preview closely matches that of the QPP system that is in production.</p>
-        <p className='ds-text'>The Submissions API base URL for the Developer Preview is: <strong><a href='https://preview.qpp.cms.gov/api/submissions/public/docs/'>https://preview.qpp.cms.gov/api/submissions/public/docs/</a></strong></p>
+        <p className='ds-text'>The Submissions API base URL for the Developer Preview is: <strong><a href='https://preview.qpp.cms.gov/api/submissions'>preview.qpp.cms.gov/api/submissions</a></strong></p>
 
         <h2 className='ds-h2'>What 3rd party developers can do with the Submissions API</h2>
         <p className='ds-text'>Using the data exposed through the API, developers can:
