@@ -37,10 +37,10 @@ class SubmittingToSubmissionsApi extends React.Component {
             <tr>
               <td>/submissions</td>
               <td>GET</td>
-                <td>
-                    <p>Returns all submissions that you have submitted measurement sets for, and within those submissions, returns only the measurement sets that you have  submitted. If <code>qpp-taxpayer-identification-number</code> is specified in the header as a query parameter, and you haven't submitted any measurement sets for the specified TIN, this endpoint returns a submission object with an empty measurement sets array.</p>
-                    <p>A Registry token is allowed to see only the measurementSets and measurements that were submitted by that Registry.  A Registry token cannot see quality data submitted through other submissionMethods.</p>
-                </td>
+              <td>
+                <p>Returns all submissions that you have submitted measurement sets for, and within those submissions, returns only the measurement sets that you have  submitted. If <code>qpp-taxpayer-identification-number</code> is specified in the header as a query parameter, and you haven't submitted any measurement sets for the specified TIN, this endpoint returns a submission object with an empty measurement sets array.</p>
+                <p>A Registry token is allowed to see only the measurementSets and measurements that were submitted by that Registry.  A Registry token cannot see quality data submitted through other submissionMethods.</p>
+              </td>
             </tr>
             <tr>
               <td>/submissions/:id</td>
