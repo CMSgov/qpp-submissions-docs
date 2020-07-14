@@ -60,12 +60,12 @@ class DeveloperPreview extends React.Component {
             <tr>
               <td>000000006</td>
               <td>Group has been identified in a circumstance to cause the PI Category to be reweighted:
-              <ul>
-                <li>Approved PI Hardship Application</li>
-                <li>Non-Patient Facing Practice</li>
-                <li>Hospital-based Practice</li>
-                <li>Ambulatory Surgical Center Practice</li>
-              </ul>
+                <ul>
+                  <li>Approved PI Hardship Application</li>
+                  <li>Non-Patient Facing Practice</li>
+                  <li>Hospital-based Practice</li>
+                  <li>Ambulatory Surgical Center Practice</li>
+                </ul>
               </td>
             </tr>
             <tr>
