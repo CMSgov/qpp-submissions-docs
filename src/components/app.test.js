@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import App from './app';
 
 import Introduction from './introduction';
+import ChangeLog from './change-log';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
 import Submissions from './api-reference/schemas/submissions';
@@ -18,6 +19,7 @@ it('renders without crashing', () => {
 
 const expectedRoutes = {
   '/': <Introduction />,
+  '/change-log': <ChangeLog />,
   '/tutorial': <BasicTutorial />,
   '/advanced-tutorial': <AdvancedTutorial />,
   '/submissions': <Submissions />,

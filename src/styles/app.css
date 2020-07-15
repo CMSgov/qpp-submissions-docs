@@ -53,6 +53,10 @@ h2:hover a.tutorial-header-link {
   text-decoration: underline;
 }
 
+.display--inline-block {
+  display: inline-block;
+}
+
 .qpp-docs-title-container {
   background: #036;
   padding-top: 30px;
