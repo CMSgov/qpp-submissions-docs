@@ -37,7 +37,10 @@ class SubmittingToSubmissionsApi extends React.Component {
             <tr>
               <td>/submissions</td>
               <td>GET</td>
-              <td>Returns all submissions that you have submitted measurement sets for, and within those submissions, returns only the measurement sets that you have  submitted. If <code>qpp-taxpayer-identification-number</code> is specified in the header as a query parameter, and you haven't submitted any measurement sets for the specified TIN, this endpoint returns a submission object with an empty measurement sets array.</td>
+              <td>
+                <p>Returns all submissions that you have submitted measurement sets for, and within those submissions, returns only the measurement sets that you have  submitted. If <code>qpp-taxpayer-identification-number</code> is specified in the header as a query parameter, and you haven't submitted any measurement sets for the specified TIN, this endpoint returns a submission object with an empty measurement sets array.</p>
+                <p>A Registry token is allowed to see only the measurementSets and measurements that were submitted by that Registry.  A Registry token cannot see quality data submitted through other submissionMethods.</p>
+              </td>
             </tr>
             <tr>
               <td>/submissions/:id</td>
@@ -47,7 +50,7 @@ class SubmittingToSubmissionsApi extends React.Component {
             <tr>
               <td>/submissions</td>
               <td>POST</td>
-              <td>Returns '401 Unauthorized'.</td>
+              <td>Returns '401 Unauthorized'.  Registry tokens are NOT allowed to do a POST /submission, as there are other users, as well as external systems, that POST /measurement-sets data for an entity which would cause the submission object to already be created for a TIN, TIN+NPI, or an entity.  Once a submission object is created for an entity a POST /submissions request would result in a duplicate entry error.  A submission object contains all of the submission data for an entity from all submissionMethods for a given Performance Year.</td>
             </tr>
             <tr>
               <td>/measurement-sets</td>

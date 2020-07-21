@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import {Tab, Tabs, TabPanel, TabList} from 'react-tabs';
 
 import '../../../styles/common/example-code-tabs.css';
 
@@ -8,43 +8,43 @@ import DataModelTable from '../common/data-model-table';
 const FIELDS = [
   {name: 'id', value: 'string', description: 'The id of the measurement.'},
   {name: 'measurementSetId', value: 'string', description: 'The id of the measurement set in which the measurement belongs.'},
-  {name: 'measureId', value: 'string', description: 'The id of the measure to which the measurement is attesting. All measures and their IDs are available in <a href="https://github.com/CMSgov/qpp-measures-data/blob/master/measures/measures-data.json">qpp-measures-data</a>. For quality measures, the measureId is the same as the quality number. For a promoting interoperability (PI) measure, the measureId is the measure identifier for the PI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.', notes: 'writable'},
-  {name: 'value', value: 'object', description: 'Different measurements will have different values. Acceptable measurement types are <b>boolean</b>, <b>proportion</b>, <b>non-proportion</b>, and <b>performance rate</b>.', notes: 'writable'}
+  {name: 'measureId', value: 'string', description: 'The id of the measure to which the measurement is attesting. All measures and their IDs are available in <a href="https://github.com/CMSgov/qpp-measures-data/blob/master/measures/measures-data.json">qpp-measures-data</a>. For quality measures, the measureId is the same as the quality number. For a promoting interoperability (PI) measure, the measureId is the measure identifier for the PI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.', notes: 'writable, required'},
+  {name: 'value', value: 'object', description: 'Different measurements will have different values. Acceptable measurement types are <b>boolean</b>, <b>proportion</b>, <b>non-proportion</b>, and <b>performance rate</b>.', notes: 'writable, required'}
 ];
 
 const BOOLEAN_FIELDS = [
-  {name: 'value', value: 'boolean', description: 'True if attesting to the associated measure.', notes: 'writable'}
+  {name: 'value', value: 'boolean', description: 'True if attesting to the associated measure.', notes: 'writable, required'}
 ];
 
 const PROPORTION_FIELDS = [
-  {name: 'numerator', value: 'integer', description: 'The number of patients or episodes of care for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>denominator</b>.', notes: 'writable'},
-  {name: 'denominator', value: 'integer', description: 'The total number of patients or episodes of care as described by the measure. Must be greater than or equal to zero. Can only be 0 if the numerator is 0 as well.', notes: 'writable'}
+  {name: 'numerator', value: 'integer', description: 'The number of patients or episodes of care for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>denominator</b>.', notes: 'writable, required'},
+  {name: 'denominator', value: 'integer', description: 'The total number of patients or episodes of care as described by the measure. Must be greater than or equal to zero. Can only be 0 if the numerator is 0 as well.', notes: 'writable, required'}
 ];
 
 const NON_PROPORTION_FIELDS = [
-  {name: 'numerator', value: 'float', description: 'The numerator as described in the QCDR measure specification.', notes: 'writable'},
-  {name: 'denominator', value: 'float', description: 'The denominator as described in the QCDR measure specification.', notes: 'writable'},
-  {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable'},
+  {name: 'numerator', value: 'float', description: 'The numerator as described in the QCDR measure specification.', notes: 'writable, required'},
+  {name: 'denominator', value: 'float', description: 'The denominator as described in the QCDR measure specification.', notes: 'writable, required'},
+  {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable, required'},
   {name: 'numeratorExclusion', value: 'float', description: 'The exclusions from the numerator field as described in the QCDR measure specification.', notes: 'writable, optional'},
   {name: 'denominatorException', value: 'float', description: 'The exceptions from the denominator field as described in the QCDR measure specification.', notes: 'writable, optional'},
-  {name: 'reportingRate', value: 'float', description: 'The data completeness of the measure.', notes: ''},
-  {name: 'observationInstances', value: 'integer', description: 'The number of denominator eligible instances that are used as input in the calculation to derive the numerator (i.e. average, ratio).', notes: 'writable'}
+  {name: 'reportingRate', value: 'float', description: 'The data completeness of the measure.', notes: 'calculated by API and returned in response'},
+  {name: 'observationInstances', value: 'integer', description: 'The number of denominator eligible instances that are used as input in the calculation to derive the numerator (i.e. average, ratio).', notes: 'writable, required'}
 ];
 
 const SINGLE_PERFORMANCE_RATE_FIELDS = [
-  {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable'},
-  {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>eligiblePopulation</b>', notes: 'writable'},
+  {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable, required'},
+  {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>eligiblePopulation</b>', notes: 'writable, required'},
   {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},
-  {name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure. In the measures specifications for claims measures and eCQMs, this field is also referred to as "Denominator Exclusion". In measures specifications for registry and QCDR measures, this field is referred to as "Numerator Exclusion".', notes: 'writable, optional'},
+  {name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure. eligiblePopulationExclusion should be 0 for all CQM measures as excluded populations should already have been subtracted out of the eligible population in the denominator. eligiblePopulationExclusion can have a value for eCQM measures where no human intervention is allowed. In the measures specifications for claims measures and eCQMs, this field is also referred to as "Denominator Exclusion". In measures specifications for registry and QCDR measures, this field is referred to as "Numerator Exclusion".', notes: 'writable, optional'},
   {name: 'eligiblePopulationException', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure. In the measures specifications, this field is also referred to as "Denominator Exception".', notes: 'writable, optional'},
-  {name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Denominator".', notes: 'writable'},
-  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100. This is also referred to as data completeness.'},
-  {name: 'performanceRate', value: 'float', description: 'The performance rate for a single performance rate measurement, ranging from zero to one-hundred and representing a percentage, is equal to (performanceMet / (performanceMet + performanceNotMet)) * 100.', notes: 'writable for registry single-performance rate only'}
+  {name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Denominator".', notes: 'writable, required'},
+  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100. This is also referred to as data completeness.', notes: 'calculated by API and returned in response'},
+  {name: 'performanceRate', value: 'float', description: 'The performance rate for a single performance rate measurement, ranging from zero to one-hundred and representing a percentage, is equal to (performanceMet / (performanceMet + performanceNotMet)) * 100.', notes: 'writable, calculated by API and returned in response, for single-performance rate only'}
 ];
 
 const MULTI_PERFORMANCE_RATE_FIELDS = [
-  {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported  via certified EHR technology without any manual interference.', notes: 'writable'},
-  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100. This is also referred to as data completeness.'},
+  {name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported  via certified EHR technology without any manual interference.', notes: 'writable, required'},
+  {name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100. This is also referred to as data completeness.', notes: 'calculated by API and returned in response'},
   {
     name: 'performanceRate',
     value: 'float',
@@ -57,18 +57,18 @@ const MULTI_PERFORMANCE_RATE_FIELDS = [
       '<li><b>weightedAverage:</b> <samp>((sum strata\'s performanceMet) / (sum strata\'s performanceMet and performanceNotMet)) * 100</samp>, or,</li>' +
       '<li><b>sumNumerators:</b> <samp>sum strata\'s performanceMet</samp>, or,</li>' +
       '<li><b>overallStratumOnly:</b> performance rate of the "overall" stratum.</li></ul>',
-    notes: 'writable for registry multi-performance rate only'},
-  {name: 'strata', value: 'array(performanceRateStratum)', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data</a>.', notes: 'writable'}
+    notes: 'writable, calculated by API and returned in response, for multi-performance rate only'},
+  {name: 'strata', value: 'array(performanceRateStratum)', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data">qpp-measures-data</a>.', notes: 'writable, required'}
 ];
 
 const STRATA_FIELDS = [
   {name: 'measurementId', value: 'string', description: 'The id of the measurement in which the stratum belongs.'},
-  {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>eligiblePopulation</b>', notes: 'writable'},
+  {name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>eligiblePopulation</b>', notes: 'writable, required'},
   {name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional'},
   {name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure. In the measures specifications, this field is also referred to as "Numerator Exclusion".', notes: 'writable, optional'},
   {name: 'eligiblePopulationException', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure. In the measures specifications, this field is also referred to as "Denominator Exception".', notes: 'writable, optional'},
-  {name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Numerator/Denominator".', notes: 'writable'},
-  {name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable'}
+  {name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Numerator/Denominator".', notes: 'writable, required'},
+  {name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable, required'}
 ];
 
 const ALL_CAUSE_READMISSION_FIELDS = [
@@ -134,10 +134,9 @@ class Measurements extends React.PureComponent {
         <p className='ds-text--lead'><a href='https://preview.qpp.cms.gov/api/submissions/public/docs/#/Measurements'>Try it out!</a></p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
+          <Tabs className='example-code-tabs'>
             <TabList>
-              <Tab>JSON</Tab>
+              <Tab>Sample JSON</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -158,13 +157,12 @@ class Measurements extends React.PureComponent {
         <DataModelTable fields={FIELDS} />
 
         <h1 className='ds-h1' id='boolean-measurements'>Boolean Measurements</h1>
-        <p className='ds-text--lead'>Boolean Measurements are applicable to Improvement Activity (IA) and Promoting Interoperability (PI) measures.</p>
+        <p className='ds-text--lead'>Boolean Measurements are applicable to Improvement Activity (IA) and Promoting Interoperability (PI) measures. For PI Measures, if a Measure has an Exclusion Measure ID listed, this means that the Exclusion Measure ID cannot be submitted in the same Measurement Set as the original Measure because they have opposite meanings and cannot both be true.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
+          <Tabs className='example-code-tabs'>
             <TabList>
-              <Tab>JSON</Tab>
+              <Tab>Sample JSON</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -181,13 +179,12 @@ class Measurements extends React.PureComponent {
         <DataModelTable fields={BOOLEAN_FIELDS} />
 
         <h1 className='ds-h1' id='proportion-measurements'>Proportion Measurements</h1>
-        <p className='ds-text--lead'>Proportion Measurements are applicable to Promoting Interoperability (PI) measures.</p>
+        <p className='ds-text--lead'>Proportion Measurements are applicable to Promoting Interoperability (PI) measures. For PI Measures, if a Measure has an Exclusion Measure ID listed, this means that the Exclusion Measure ID cannot be submitted in the same Measurement Set as the original Measure because they have opposite meanings and cannot both be true.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
+          <Tabs className='example-code-tabs'>
             <TabList>
-              <Tab>JSON</Tab>
+              <Tab>Sample JSON</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -210,10 +207,9 @@ class Measurements extends React.PureComponent {
         <p className='ds-text--lead'>Non-Proportion Measurements are applicable to quality measures. Most are authored by QCDRs and are used to attest to measures that are otherwise categorized as 'ratio', 'continuous variable', or a combination of 'proportion' and the former. Note this means that having a false value in the proportion field of QCDR documentation is sufficient to determine that a measure as non-proportional, but having a true value for proportion is insufficient to determine that measure as proportional. Non-proportion measurements are unconstrained, so while the fields are 'numerator' and 'denominator' there is no validation that the numerator must be less than or equal to the denominator or that the denominator is greater than 0, as is the case for proportion measurements.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
+          <Tabs className='example-code-tabs'>
             <TabList>
-              <Tab>JSON</Tab>
+              <Tab>Sample JSON</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -229,7 +225,7 @@ class Measurements extends React.PureComponent {
                     "numeratorExclusion": float,
                     "reportingRate": float,
                     "observationInstances": integer
-                  } 
+                  }
                 }`}
               </pre>
             </TabPanel>
@@ -241,10 +237,9 @@ class Measurements extends React.PureComponent {
         <p className='ds-text--lead'>Single-Performance Rate Measurements are applicable to Quality measures. There are two types of Single-Performance Rate Measurements: registry and normal. The difference between the two is that for Registry Single-Performance Rate Measurements, the performanceRate field is both writable and required.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
+          <Tabs className='example-code-tabs'>
             <TabList>
-              <Tab>JSON</Tab>
+              <Tab>Sample JSON</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -273,10 +268,9 @@ class Measurements extends React.PureComponent {
         <p className='ds-text--lead'>Multi-Performance Rate Measurements are applicable to Quality measures. There are two types of Multi-Performance Rate Measurements: registry and normal. The difference between the two is that for Registry Multi-Performance Rate Measurements, the performanceRate field is both writable and required. Multi-Performance Rate Measurements contain multiple strata and the stratum field is required for each.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
+          <Tabs className='example-code-tabs'>
             <TabList>
-              <Tab>JSON</Tab>
+              <Tab>Sample JSON</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -303,10 +297,9 @@ class Measurements extends React.PureComponent {
         <p className='ds-text--lead'>A Multi-Performance Rate Stratum represents the performance data for a specified subset of the population, as described by the stratum field.</p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
+          <Tabs className='example-code-tabs'>
             <TabList>
-              <Tab>JSON</Tab>
+              <Tab>Sample JSON</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -332,10 +325,9 @@ class Measurements extends React.PureComponent {
         </p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
+          <Tabs className='example-code-tabs'>
             <TabList>
-              <Tab>JSON</Tab>
+              <Tab>Sample JSON</Tab>
             </TabList>
             <TabPanel>
               <pre>
@@ -385,10 +377,9 @@ class Measurements extends React.PureComponent {
         </p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
+          <Tabs className='example-code-tabs'>
             <TabList>
-              <Tab>JSON</Tab>
+              <Tab>Sample JSON</Tab>
             </TabList>
             <TabPanel>
               <pre>

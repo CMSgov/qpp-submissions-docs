@@ -28,10 +28,9 @@ export default class Submissions extends React.Component {
         <p className='ds-text--lead'><a href='https://preview.qpp.cms.gov/api/submissions/public/docs/#/Submissions'>Try it out!</a></p>
         <h2 className='ds-h2'>Resource Representation</h2>
         <div>
-          <Tabs
-            className='example-code-tabs'>
+          <Tabs className='example-code-tabs'>
             <TabList>
-              <Tab>JSON</Tab>
+              <Tab>Sample JSON</Tab>
             </TabList>
             <TabPanel>
               <pre>
