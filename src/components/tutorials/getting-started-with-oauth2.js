@@ -9,7 +9,6 @@ class GettingStartedUsingQppOauth2 extends React.Component {
         <p className='ds-text'>
           <ol>
             <li>Read through the <a href='https://qpp.cms.gov/api/auth/docs/#/'>GitHub documentation</a>.</li>
-            <li>Join our <a href='https://groups.google.com/forum/#!forum/qpp-apis'>Developer Group for QPP APIs</a> to ask questions.</li>
             <li><a href='#oauth'>Register your application</a> in the Developer Preview</li>
             <li><a href='#create-user'>Test Submissions API integration</a> with test users from our Test Data Service</li>
           </ol>
