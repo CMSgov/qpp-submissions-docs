@@ -5,8 +5,8 @@ const htmlRegex = /<\/?[a-z][\s\S]*>/i;
 const submissionChangesTable = [
   ['8/2020', 'Add "eligiblePopulationExclusion" validation for CQM measures', `For "category": "quality" AND "submissionMethod": "registry" AND "isRegistryMeasure": "false", add validation so that "eligiblePopulationExclusion" MUST be 0 or NULL.  Note: Per the Measure Specification, Registries should already have reduced the denominator for excluded populations.  See details here: <a href='https://cmsgov.github.io/qpp-submissions-docs/measurements#single-performance-rate-measurements' target='_blank' rel='noopener noreferrer'>cmsgov.github.io/qpp-submissions-docs/measurements#single-performance-rate-measurements</a>`],
   ['8/2020', 'Add "exclusion" validation for PI measures', `For "category": "pi", add validation so that the "exclusion": measure cannot be submitted in the same measurementSet as the original measure.  This is because the exclusion is attesting to the opposite condition as the original measure.  See details:
-  <a className='display--inline-block' href='https://cmsgov.github.io/qpp-submissions-docs/measurements#boolean-measurements' target='_blank' rel='noopener noreferrer'>cmsgov.github.io/qpp-submissions-docs/measurements#boolean-measurements</a>
-  <br><br><a className='display--inline-block' href='https://cmsgov.github.io/qpp-submissions-docs/measurements#proportion-measurements' target='_blank' rel='noopener noreferrer'>cmsgov.github.io/qpp-submissions-docs/measurements#proportion-measurements</a>`],
+  <br><br><a href='https://cmsgov.github.io/qpp-submissions-docs/measurements#boolean-measurements' target='_blank' rel='noopener noreferrer'>cmsgov.github.io/qpp-submissions-docs/measurements#boolean-measurements</a>
+  <br><br><a href='https://cmsgov.github.io/qpp-submissions-docs/measurements#proportion-measurements' target='_blank' rel='noopener noreferrer'>cmsgov.github.io/qpp-submissions-docs/measurements#proportion-measurements</a>`],
   ['8/2020', 'Support APM Entity ID submissions through "submissionMethod": "registry".', `
   <ul>
     <li>
