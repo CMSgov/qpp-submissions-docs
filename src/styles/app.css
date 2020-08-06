@@ -83,3 +83,7 @@ a.qpp-docs-title-back {
 a.ds-c-button:visited {
   color: white;
 }
+
+.ds-c-table td > ul {
+  padding-left: 0;
+}
