@@ -6,11 +6,11 @@ import App from './app';
 import Introduction from './introduction';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
-import Submissions from './reference/schemas/submissions';
-import MeasurementSets from './reference/schemas/measurement-sets';
-import Measurements from './reference/schemas/measurements';
-import Benchmarks from './reference/schemas/benchmarks';
-import Scoring from './reference/scoring';
+import Submissions from './references/schemas/submissions';
+import MeasurementSets from './references/schemas/measurement-sets';
+import Measurements from './references/schemas/measurements';
+import Benchmarks from './references/schemas/benchmarks';
+import Scoring from './references/scoring';
 
 it('renders without crashing', () => {
   shallow(<App />);
