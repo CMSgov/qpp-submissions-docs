@@ -12,11 +12,11 @@ import SubmissionsApiAuthenticationAndAuthorization from './tutorials/authorizat
 import SubmittingToQppSubmissionApi from './tutorials/submitting-to-submissions-api';
 
 // References
-import Benchmarks from './api-reference/schemas/benchmarks';
-import MeasurementSets from './api-reference/schemas/measurement-sets';
-import Measurements from './api-reference/schemas/measurements';
-import Scoring from './api-reference/scoring';
-import Submissions from './api-reference/schemas/submissions';
+import Benchmarks from './references/schemas/benchmarks';
+import MeasurementSets from './references/schemas/measurement-sets';
+import Measurements from './references/schemas/measurements';
+import Scoring from './references/scoring';
+import Submissions from './references/schemas/submissions';
 import References from './references/references';
 
 // Resources and Support
