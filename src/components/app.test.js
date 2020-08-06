@@ -7,11 +7,11 @@ import Introduction from './introduction';
 import ChangeLog from './change-log';
 import BasicTutorial from './tutorials/basic-tutorial';
 import AdvancedTutorial from './tutorials/advanced-tutorial';
-import Submissions from './api-reference/schemas/submissions';
-import MeasurementSets from './api-reference/schemas/measurement-sets';
-import Measurements from './api-reference/schemas/measurements';
-import Benchmarks from './api-reference/schemas/benchmarks';
-import Scoring from './api-reference/scoring';
+import Submissions from './references/schemas/submissions';
+import MeasurementSets from './references/schemas/measurement-sets';
+import Measurements from './references/schemas/measurements';
+import Benchmarks from './references/schemas/benchmarks';
+import Scoring from './references/scoring';
 
 it('renders without crashing', () => {
   shallow(<App />);

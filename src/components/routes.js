@@ -1,5 +1,6 @@
 // Topics
 import Introduction from './introduction';
+import Announcements from './topics/announcements';
 import DeveloperPreview from './developer-preview';
 import ChangeLog from './change-log';
 
@@ -12,13 +13,16 @@ import SubmissionsApiAuthenticationAndAuthorization from './tutorials/authorizat
 import SubmittingToQppSubmissionApi from './tutorials/submitting-to-submissions-api';
 
 // References
-import Benchmarks from './api-reference/schemas/benchmarks';
-import MeasurementSets from './api-reference/schemas/measurement-sets';
-import Measurements from './api-reference/schemas/measurements';
-import Scoring from './api-reference/scoring';
-import Submissions from './api-reference/schemas/submissions';
+import Benchmarks from './references/schemas/benchmarks';
+import MeasurementSets from './references/schemas/measurement-sets';
+import Measurements from './references/schemas/measurements';
+import Scoring from './references/scoring';
+import Submissions from './references/schemas/submissions';
+import References from './references/references';
 
 // Resources and Support
+import Help from './resources/help';
+import FrequentlyAskedQuestions from './resources/frequently-asked-questions';
 import TermsOfService from './terms-of-service';
 
 const topicsPaths = [
@@ -29,8 +33,14 @@ const topicsPaths = [
     component: Introduction
   },
   {
+    path: '/announcements',
+    exact: false,
+    linkText: 'Announcements',
+    component: Announcements
+  },
+  {
     path: '/developer-preview',
-    exact: true,
+    exact: false,
     linkText: 'Developer Preview',
     component: DeveloperPreview
   }, {
@@ -110,39 +120,26 @@ const referencePaths = [
     exact: false,
     linkText: 'Scoring',
     component: Scoring
+  }, {
+    path: '/references',
+    exact: false,
+    linkText: 'References',
+    component: References
   }
 ];
 
 const supportPaths = [
   {
-    path: 'https://github.com/CMSgov/qpp-measures-data',
+    path: '/frequently-asked-questions',
     exact: false,
-    linkText: 'QPP Measures Data Repository',
-    external: true
+    linkText: 'Frequently Asked Questions',
+    component: FrequentlyAskedQuestions
   },
   {
-    path: 'https://preview.qpp.cms.gov/api/submissions/public/docs/',
+    path: '/help',
     exact: false,
-    linkText: 'Interactive QPP Submissions API Documentation',
-    external: true
-  },
-  {
-    path: 'https://qpp.cms.gov/api/auth/docs/#/',
-    exact: false,
-    linkText: 'Interactive QPP Auth Service API Documentation',
-    external: true
-  },
-  // {
-  //   path: 'example.com',
-  //   exact: false,
-  //   linkText: 'Interactive Test Data Service Documentation',
-  //   external: true
-  // },
-  {
-    path: 'https://groups.google.com/forum/#!forum/qpp-apis',
-    exact: false,
-    linkText: 'Developer Group for QPP APIs',
-    external: true
+    linkText: 'Help',
+    component: Help
   },
   {
     path: '/terms-of-service',
