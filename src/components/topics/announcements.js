@@ -21,7 +21,7 @@ class Announcements extends React.Component {
               Registries can now submit MIPs Quality data for APM Entities through the Submissions API
             </li>
             <li>
-              2020 Measures are published and available here: <a href='https://github.com/CMSgov/qpp-measures-data' target='_blank' rel='noopener noreferrer'> https: //github.com/CMSgov/qpp-measures-data</a>
+              2020 Measures are published and available here: <a href='https://github.com/CMSgov/qpp-measures-data' target='_blank' rel='noopener noreferrer'>github.com/CMSgov/qpp-measures-data</a>
             </li>
           </ul>
           <li>
@@ -35,6 +35,9 @@ class Announcements extends React.Component {
               Error messages were improved for the Submissions API
             </li>
           </ul>
+          <li>
+            See <a href='#change-log' target='_blank' rel='noopener noreferrer'>Change Log</a> for specific details
+          </li>
         </ul>
 
         <h3 className='ds-h3'>Measures Repository</h3>
@@ -48,7 +51,7 @@ class Announcements extends React.Component {
             </li>
           </ul>
           <li>
-            See <a href='https://cmsgov.github.io/qpp-submissions-docs/change-log' target='_blank' rel='noopener noreferrer'>Submissions API Change</a>
+            See <a href='#change-log' target='_blank' rel='noopener noreferrer'>Change Log</a> for specific details
           </li>
         </ul>
       </div>
