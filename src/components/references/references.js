@@ -28,9 +28,6 @@ class References extends React.Component {
             Explore Measures page: <a href='https://qpp.cms.gov/mips/explore-measures/quality-measures' target='_blank' rel='noopener noreferrer'>qpp.cms.gov/mips/explore-measures/quality-measures</a>
           </li>
           <li>
-            QRDA III to JSON Conversion Tool for Developer Preview Testing: <a href='https://preview.qpp.cms.gov/developers/conversion-tool-sandbox' target='_blank' rel='noopener noreferrer'>preview.qpp.cms.gov/developers/conversion-tool-sandbox</a>
-          </li>
-          <li>
             QRDA III to JSON Conversion Tool in Production: <a href='https://github.com/CMSgov/qpp-conversion-tool' target='_blank' rel='noopener noreferrer'>github.com/CMSgov/qpp-conversion-tool</a>
           </li>
         </ul>
