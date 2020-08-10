@@ -1,8 +1,8 @@
 // Topics
 import Introduction from './introduction';
 import Announcements from './topics/announcements';
-import DeveloperPreview from './developer-preview';
 import ChangeLog from './change-log';
+import DeveloperPreview from './developer-preview';
 
 // Guides
 import AdvancedTutorial from './tutorials/advanced-tutorial';
@@ -39,15 +39,16 @@ const topicsPaths = [
     component: Announcements
   },
   {
-    path: '/developer-preview',
-    exact: false,
-    linkText: 'Developer Preview',
-    component: DeveloperPreview
-  }, {
     path: '/change-log',
     exact: true,
     linkText: 'Change Log',
     component: ChangeLog
+  },
+  {
+    path: '/developer-preview',
+    exact: false,
+    linkText: 'Developer Preview',
+    component: DeveloperPreview
   }
 ];
 
