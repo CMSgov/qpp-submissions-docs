@@ -15,7 +15,7 @@ class Help extends React.Component {
         </p>
 
         <p className='ds-text'>
-          For frequently asked questions regarding Developer Preview API’s please see the <a href='/frequently-asked-questions'>FAQ Section</a>
+          For frequently asked questions regarding APIs please see the <a href='frequently-asked-questions'>FAQ Section</a>
         </p>
 
         <p className='ds-text'>
