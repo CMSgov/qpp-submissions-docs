@@ -36,7 +36,7 @@ class Announcements extends React.Component {
             </li>
           </ul>
           <li>
-            See <a href='#change-log' target='_blank' rel='noopener noreferrer'>Change Log</a> for specific details
+            See <a href='change-log'>Change Log</a> for specific details
           </li>
         </ul>
 
@@ -51,7 +51,7 @@ class Announcements extends React.Component {
             </li>
           </ul>
           <li>
-            See <a href='#change-log' target='_blank' rel='noopener noreferrer'>Change Log</a> for specific details
+            See <a href='change-log'>Change Log</a> for specific details
           </li>
         </ul>
       </div>

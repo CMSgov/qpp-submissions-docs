@@ -6,7 +6,7 @@ class DeveloperPreview extends React.Component {
       <div>
         <h2 className='ds-h2'>Developer Preview</h2>
         <p className='ds-text'>
-          See updated documents <a href='https://cmsgov.github.io/qpp-developer-preview/introduction' target='_blank' rel='noopener noreferrer'>Developer Preview Testing Environment</a>
+          See updated documents <a href='https://cmsgov.github.io/qpp-developer-preview-docs' target='_blank' rel='noopener noreferrer'>Developer Preview Testing Environment</a>
         </p>
       </div>
     );
