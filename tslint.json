@@ -1,0 +1,33 @@
+{
+  "extends": ["tslint:recommended", "tslint-react"],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**/*.ts",
+      "src/serviceWorker.ts",
+      "src/index.tsx"
+    ]
+  },
+  "rules": {
+    "quotemark": [
+      true,
+      "single",
+      "avoid-escape"
+    ],
+    "ordered-imports": false,
+    "jsx-boolean-value": ["never"],
+    "jsx-no-multiline-js": false,
+    "jsx-wrap-multiline": false,
+    "jsx-no-lambda": false,
+    "interface-over-type-literal": false,
+    "arrow-parens": false,
+    "trailing-comma": [true, {
+      "multiline": "always",
+      "singleline": "never"
+    }],
+    "member-access": false,
+    "object-literal-sort-keys": false,
+    "object-literal-key-quotes": false,
+    "no-namespace": false,
+    "semicolon": true
+  }
+}

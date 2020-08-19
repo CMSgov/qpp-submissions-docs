@@ -1,51 +1,68 @@
 {
   "name": "qpp-submissions-docs",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "CC0-1.0",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "pretest": "eslint src",
+    "pretest": "npm run lint",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "lint": "npm run lint:ts && npm run lint:css",
+    "lint:ts": "tslint --format verbose --project tsconfig.json './src/**/*.{ts,tsx}'",
+    "lint:css": "stylelint './src/**/*.scss'"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/CMSgov/qpp-submissions-docs.git"
   },
-  "author": "kenshiro@navahq.com",
   "bugs": {
     "url": "https://github.com/CMSgov/qpp-submissions-docs/issues"
   },
   "homepage": "https://cmsgov.github.io/qpp-submissions-docs",
-  "devDependencies": {
-    "@cmsgov/design-system-core": "^1.0.0",
+  "dependencies": {
+    "@cmsgov/design-system-core": "^3.0.0",
     "@cmsgov/design-system-layout": "^1.0.0",
-    "bootstrap": "3.4.1",
-    "enzyme": "2.9.1",
-    "eslint": "3.19.0",
-    "eslint-config-nava": "^2.0.0",
-    "gh-pages": "1.2.0",
-    "jquery": "3.4.1",
-    "js-file-download": "0.4.1",
-    "pretty-data": "0.40.0",
-    "prop-types": "^15.5.10",
-    "qpp-style": "1.4.2",
-    "react": "15.6.1",
-    "react-copy-to-clipboard": "5.0.0",
-    "react-dom": "15.6.1",
-    "react-router-dom": "^4.1.2",
-    "react-scripts": "1.1.4",
-    "react-tabs": "0.8.3",
-    "react-test-renderer": "15.6.1",
-    "uswds": "1.0.0"
+    "node-sass": "^4.14.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "5.2.0",
+    "react-router-hash-link": "1.2.2",
+    "react-scripts": "3.4.1",
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {
+    "@types/enzyme": "3.10.5",
+    "@types/enzyme-adapter-react-16": "1.0.6",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^12.12.47",
+    "@types/react": "^16.9.41",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-hash-link": "1.2.1",
+    "@types/react-router-dom": "5.1.5",
+    "enzyme": "3.11.0",
+    "enzyme-adapter-react-16": "1.15.2",
+    "eslint": "6.6.0",
+    "gh-pages": "3.1.0",
+    "stylelint": "13.6.1",
+    "tslint": "6.1.2",
+    "tslint-react": "5.0.0"
   },
   "eslintConfig": {
-    "extends": [
-      "nava",
-      "react-app"
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
   }
 }

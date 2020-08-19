@@ -1,0 +1,71 @@
+$lightBlue: rgb(66, 123, 149);
+$blue: rgb(4, 80, 115);
+$offWhite: rgb(243, 243, 243);
+$border: 1px solid $lightBlue;
+
+#api-example {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  border: $border;
+
+  div {
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+
+    &:not(:last-child) {
+      border-bottom: $border;
+    }
+  }
+
+  .verb,
+  .url {
+    padding: 0.6em;
+  }
+
+  .verb {
+    color: white;
+  }
+
+  .url {
+    color: $blue;
+  }
+
+  table {
+    margin: 0;
+    padding: 1em;
+    color: $blue;
+    background-color: $offWhite;
+
+    tr {
+      &:first-child td {
+        border-top: none;
+      }
+
+      &:last-child td {
+        border-bottom: none;
+      }
+    }
+
+    td {
+      padding: 0.5em;
+      border-color: $lightBlue;
+      background-color: $offWhite;
+
+      &.nested-once {
+        padding-left: 1em;
+      }
+
+      &.nested-twice {
+        padding-left: 2em;
+      }
+
+      &:first-child {
+        border-left: none;
+      }
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+}
