@@ -184,6 +184,10 @@ const allPaths: IAllPath[] = [
   },
 ];
 
-export const combinedRoutes = allPaths.flatMap(r => r.paths);
+export const combinedRoutes = allPaths.reduce((acc: IPath[], cur) => {
+  cur.paths.forEach((p) => acc.push(p));
+
+  return acc;
+}, []);
 
 export default allPaths;
