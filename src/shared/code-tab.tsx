@@ -19,7 +19,7 @@ export const CodeTab = ({ data }: { data: ICodeTab[] }) => {
   const [selectedTab, setSelectedTab] = useState(data[0].tab);
 
   return (
-    <div id='request-response-code-tabs'>
+    <div id='code-tabs'>
 
       {data.map(({ tab }, i) =>
         <button
