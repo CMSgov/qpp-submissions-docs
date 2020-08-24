@@ -24,8 +24,8 @@ const initGA = (appHistory: History) => {
 
   // allow cross-domain tracking from qpp.cms.gov to cmsgov.github.io
   window.ga('create', 'UA-15356370-63', 'auto', { 'allowLinker': true });
-  window.ga('require', 'linker', true);
-  window.ga('linker:autoLink', ['qpp.cms.gov']);
+  window.ga('require', 'linker');
+  window.ga('linker:autoLink', ['qpp.cms.gov'], true);
 
   appHistory.listen((location) => {
     window.ga('send', 'pageview', envConfig.baseUrl + location.pathname);
