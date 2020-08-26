@@ -1,0 +1,97 @@
+import React from 'react';
+
+import { DataModelTable, LinkToId, ExternalLink, CodeTab } from '../../../shared';
+import { measurementsTitleAndId, measurementsTabs, measurementsFields } from './data';
+import envConfig from '../../../envConfig';
+
+const Measurements = () => {
+  return (
+    <>
+      <h2 className='ds-h2'>Measurements</h2>
+      <ul>
+        {Object.entries(measurementsTitleAndId).map(([title, id], i) =>
+          <li key={i}>
+            <LinkToId to={`#${id}`} text={title} />
+          </li>,
+        )}
+      </ul>
+      <p className='ds-text--lead'>
+        The Measurements resource represents performance data for a specific measure within a MeasurementSet. There are five types of Measurements: Boolean, Proportion, Non-Proportion, Single-Performance Rate, and Multi-Performance Rate. Each MeasurementSet can have multiple Measurements. No two Measurements in a given MeasurementSet can have the same measureId.
+      </p>
+      <p className='ds-text--lead'>
+        <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/submissions/public/docs/#/Measurements`} text='Try it out!' />
+      </p>
+
+      <h3 className='ds-h3'>Resource Representation</h3>
+      <CodeTab data={measurementsTabs.fields} />
+      <DataModelTable data={measurementsFields.fields} />
+
+      <h2 className='ds-h2' id={measurementsTitleAndId.Boolean}>Boolean Measurements</h2>
+      <p className='ds-text--lead'>
+        Boolean Measurements are applicable to Improvement Activity (IA) and Promoting Interoperability (PI) measures. For PI Measures, if a Measure has an Exclusion Measure ID listed, this means that the Exclusion Measure ID cannot be submitted in the same Measurement Set as the original Measure because they have opposite meanings and cannot both be true.
+      </p>
+      <h3 className='ds-h3'>Resource Representation</h3>
+      <CodeTab data={measurementsTabs.boolean} />
+      <DataModelTable data={measurementsFields.boolean} />
+
+      <h2 className='ds-h2' id={measurementsTitleAndId.Proportion}>Proportion Measurements</h2>
+      <p className='ds-text--lead'>
+        Proportion Measurements are applicable to Promoting Interoperability (PI) measures. For PI Measures, if a Measure has an Exclusion Measure ID listed, this means that the Exclusion Measure ID cannot be submitted in the same Measurement Set as the original Measure because they have opposite meanings and cannot both be true.
+      </p>
+      <h3 className='ds-h3'>Resource Representation</h3>
+      <CodeTab data={measurementsTabs.proportion} />
+      <DataModelTable data={measurementsFields.proportion} />
+
+      <h2 className='ds-h2' id={measurementsTitleAndId['Non-Proportion']}>Non-Proportion Measurements</h2>
+      <p className='ds-text--lead'>
+        Non-Proportion Measurements are applicable to quality measures. Most are authored by QCDRs and are used to attest to measures that are otherwise categorized as 'ratio', 'continuous variable', or a combination of 'proportion' and the former. Note this means that having a false value in the proportion field of QCDR documentation is sufficient to determine that a measure as non-proportional, but having a true value for proportion is insufficient to determine that measure as proportional. Non-proportion measurements are unconstrained, so while the fields are 'numerator' and 'denominator' there is no validation that the numerator must be less than or equal to the denominator or that the denominator is greater than 0, as is the case for proportion measurements.
+      </p>
+      <h3 className='ds-h3'>Resource Representation</h3>
+      <CodeTab data={measurementsTabs.nonProportion} />
+      <DataModelTable data={measurementsFields.nonProportion} />
+
+      <h2 className='ds-h2' id={measurementsTitleAndId['Single-Performance Rate']}>Single-Performance Rate Measurements</h2>
+      <p className='ds-text--lead'>
+        Single-Performance Rate Measurements are applicable to Quality measures. There are two types of Single-Performance Rate Measurements: registry and normal. The difference between the two is that for Registry Single-Performance Rate Measurements, the performanceRate field is both writable and required.
+      </p>
+      <h3 className='ds-h3'>Resource Representation</h3>
+      <CodeTab data={measurementsTabs.singlePerformanceRate} />
+      <DataModelTable data={measurementsFields.singlePerformanceRate} />
+
+      <h2 className='ds-h2' id={measurementsTitleAndId['Multi-Performance Rate']}>Multi-Performance Rate Measurements</h2>
+      <p className='ds-text--lead'>
+        Multi-Performance Rate Measurements are applicable to Quality measures. There are two types of Multi-Performance Rate Measurements: registry and normal. The difference between the two is that for Registry Multi-Performance Rate Measurements, the performanceRate field is both writable and required. Multi-Performance Rate Measurements contain multiple strata and the stratum field is required for each.
+      </p>
+      <h3 className='ds-h3'>Resource Representation</h3>
+      <CodeTab data={measurementsTabs.multiPerformanceRate} />
+      <DataModelTable data={measurementsFields.multiPerformanceRate} />
+
+      <h2 className='ds-h2' id={measurementsTitleAndId['Multi-Performance Rate Stratum']}>Multi-Performance Rate Stratum</h2>
+      <p className='ds-text--lead'>
+        A Multi-Performance Rate Stratum represents the performance data for a specified subset of the population, as described by the stratum field.
+      </p>
+      <h3 className='ds-h3'>Resource Representation</h3>
+      <CodeTab data={measurementsTabs.stratum} />
+      <DataModelTable data={measurementsFields.stratum} />
+
+      <h2 className='ds-h2' id={measurementsTitleAndId['All Cause Readmission']}>All Cause Readmission Measurements</h2>
+      <p className='ds-text--lead'>
+        An All Cause Readmission Measurement represents beneficiaries aged 65 and older that were hospitalized at a short-stay acute-care hospital and were readmitted to an acute-care hospital for any reason within 90 days of being discharged from the original hospital. Third party integrators cannot submit All Cause Readmission measurements.
+        </p>
+      <h3 className='ds-h3'>Resource Representation</h3>
+      <CodeTab data={measurementsTabs.allCauseReadmission} />
+      <DataModelTable data={measurementsFields.allCauseReadmission} />
+
+      <h2 className='ds-h2' id={measurementsTitleAndId.CAHPS}>CAHPS Measurements</h2>
+      <p className='ds-text--lead'>
+        CAHPS (Consumer Assessment of Healthcare Providers and Systems) is a series of patient surveys rating
+        health care experiences is an optional Quality measure that groups participating in MIPS can elect to administer. Third party integrators cannot submit CAHPS measurements.
+      </p>
+      <h3 className='ds-h3'>Resource Representation</h3>
+      <CodeTab data={measurementsTabs.allCauseReadmission} />
+      <DataModelTable data={measurementsFields.allCauseReadmission} />
+    </>
+  );
+};
+
+export default Measurements;

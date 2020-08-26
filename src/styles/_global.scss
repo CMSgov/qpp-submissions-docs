@@ -1,0 +1,122 @@
+@import './variables';
+
+body {
+  margin: 0;
+  padding-top: 85px;
+  background: $offWhite;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+table {
+  border-collapse: collapse;
+  min-width: 100%;
+  border-spacing: 0;
+}
+
+table td {
+  border: 1px solid #5b616b;
+}
+
+.list-style--lower-alpha {
+  list-style-type: lower-alpha;
+}
+
+/* qpp-styles implements a margin-top of -25px scss/vendor/qpp-styles.css */
+ul,
+ol {
+  margin-top: 0 !important;
+}
+
+.content-block {
+  border-radius: 3px;
+  border: 1px solid #dcdcdc;
+  background: white;
+}
+
+section {
+  padding: 3rem 0;
+}
+
+h1 {
+  margin-top: 1em;
+}
+
+h2 a.tutorial-header-link {
+  text-decoration: none;
+  color: #000000;
+}
+
+h2:hover a.tutorial-header-link {
+  text-decoration: underline;
+}
+
+.show {
+  display: block;
+}
+
+.qpp-docs-title-container {
+  background: #036;
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+a.qpp-docs-title-back {
+  color: #ffffff;
+}
+
+.qpp-docs-title-text {
+  color: #ffffff;
+}
+
+/* Design System Overrides */
+.ds-base {
+  font-family: Rubik, Arial, 'Helvetica Neue', Helvetica, sans-serif;
+}
+
+.ds-h1,
+.ds-h2,
+.ds-h3,
+.ds-h4 {
+  font-weight: normal;
+}
+
+.ds-u-font-weight--semibold {
+  font-weight: 500 !important;
+}
+
+a.ds-c-button:visited {
+  color: #ffffff;
+}
+
+a:focus {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.ds-c-vertical-nav__label.ds-c-vertical-nav__label--current:visited:focus,
+.ds-c-vertical-nav__label:visited:focus {
+  background-color: $offWhite;
+  text-decoration: none;
+  color: $qppNavy;
+}
+
+.ds-c-vertical-nav > .ds-c-vertical-nav__item {
+  border-top: 0;
+}
+
+.ds-c-table td > ul {
+  padding-left: 12px;
+}
+
+@media (max-width: 534px) {
+  .ds-c-field:focus {
+    outline: none;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 108px;
+  }
+}

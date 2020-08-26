@@ -40,4 +40,4 @@ Before merging to master, PR should have been approved following code review.
 		the individual fields as well as explains the difference between
 		historical and current benchmarks.
 
-		Reviewer: @samskeller
+		Reviewer: @reviewer
