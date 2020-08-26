@@ -12,7 +12,9 @@
     "deploy": "gh-pages -d build",
     "lint": "npm run lint:ts && npm run lint:css",
     "lint:ts": "tslint --format verbose --project tsconfig.json './src/**/*.{ts,tsx}'",
-    "lint:css": "stylelint './src/**/*.scss'"
+    "lint:css": "stylelint './src/**/*.scss'",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -31,8 +33,9 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "5.2.0",
     "react-router-hash-link": "1.2.2",
-    "react-scripts": "3.4.1",
-    "typescript": "^3.7.5"
+    "react-scripts": "3.4.3",
+    "typescript": "^3.7.5",
+    "snyk": "^1.385.0"
   },
   "devDependencies": {
     "@types/enzyme": "3.10.5",
@@ -65,5 +68,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "snyk": true
 }

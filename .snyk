@@ -1,0 +1,42 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.19.0
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-567746:
+    - node-sass > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - node-sass > sass-graph > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > @babel/core > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > eslint > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > eslint-plugin-flowtype > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > html-webpack-plugin > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > webpack-manifest-plugin > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - node-sass > gaze > globule > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > @babel/core > @babel/helper-module-transforms > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > eslint > table > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > optimize-css-assets-webpack-plugin > last-call-webpack-plugin > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > react-dev-utils > inquirer > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > webpack-dev-server > http-proxy-middleware > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > @typescript-eslint/eslint-plugin > @typescript-eslint/experimental-utils > @typescript-eslint/typescript-estree > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > webpack-dev-server > portfinder > async > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-transform-classes > @babel/helper-define-map > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > @svgr/webpack > @babel/preset-env > @babel/plugin-proposal-unicode-property-regex > @babel/helper-create-regexp-features-plugin > @babel/helper-regex > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
+    - react-scripts > jest > jest-cli > @jest/core > @jest/reporters > jest-runtime > jest-config > jest-environment-jsdom > jsdom > request-promise-native > request-promise-core > lodash:
+        patched: '2020-08-26T15:32:24.569Z'
