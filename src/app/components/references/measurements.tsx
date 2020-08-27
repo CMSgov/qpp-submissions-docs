@@ -73,23 +73,6 @@ const Measurements = () => {
       <h3 className='ds-h3'>Resource Representation</h3>
       <CodeTab data={measurementsTabs.stratum} />
       <DataModelTable data={measurementsFields.stratum} />
-
-      <h2 className='ds-h2' id={measurementsTitleAndId['All Cause Readmission']}>All Cause Readmission Measurements</h2>
-      <p className='ds-text--lead'>
-        An All Cause Readmission Measurement represents beneficiaries aged 65 and older that were hospitalized at a short-stay acute-care hospital and were readmitted to an acute-care hospital for any reason within 90 days of being discharged from the original hospital. Third party integrators cannot submit All Cause Readmission measurements.
-        </p>
-      <h3 className='ds-h3'>Resource Representation</h3>
-      <CodeTab data={measurementsTabs.allCauseReadmission} />
-      <DataModelTable data={measurementsFields.allCauseReadmission} />
-
-      <h2 className='ds-h2' id={measurementsTitleAndId.CAHPS}>CAHPS Measurements</h2>
-      <p className='ds-text--lead'>
-        CAHPS (Consumer Assessment of Healthcare Providers and Systems) is a series of patient surveys rating
-        health care experiences is an optional Quality measure that groups participating in MIPS can elect to administer. Third party integrators cannot submit CAHPS measurements.
-      </p>
-      <h3 className='ds-h3'>Resource Representation</h3>
-      <CodeTab data={measurementsTabs.allCauseReadmission} />
-      <DataModelTable data={measurementsFields.allCauseReadmission} />
     </>
   );
 };

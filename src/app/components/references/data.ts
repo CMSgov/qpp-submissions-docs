@@ -26,14 +26,12 @@ export const measurementsTitleAndId = {
   'Single-Performance Rate': 'single-performance-rate-measurements',
   'Multi-Performance Rate': 'multi-performance-rate-measurements',
   'Multi-Performance Rate Stratum': 'stratum',
-  'All Cause Readmission': 'all-cause-readmission-measurements',
-  'CAHPS': 'cahps',
 };
 
 export const measurementsFields: IFields = {
   fields: [
-    { name: 'id', value: 'string', description: 'The id of the measurement.' },
-    { name: 'measurementSetId', value: 'string', description: 'The id of the measurement set in which the measurement belongs.' },
+    { name: 'id', value: 'string', description: 'The id of the measurement.', notes: ' '},
+    { name: 'measurementSetId', value: 'string', description: 'The id of the measurement set in which the measurement belongs.', notes: ' ' },
     { name: 'measureId', value: 'string', description: 'The id of the measure to which the measurement is attesting. All measures and their IDs are available in <a href="https://github.com/CMSgov/qpp-measures-data/blob/master/measures/measures-data.json" rel="noopener noreferrer" target="_blank">qpp-measures-data</a>. For quality measures, the measureId is the same as the quality number. For a promoting interoperability (PI) measure, the measureId is the measure identifier for the PI measure, and for an improvement activity (IA) measure, the measureId is the measure identifier for the IA measure.', notes: 'writable, required' },
     { name: 'value', value: 'object', description: 'Different measurements will have different values. Acceptable measurement types are <b>boolean</b>, <b>proportion</b>, <b>non-proportion</b>, and <b>performance rate</b>.', notes: 'writable, required' },
   ],
@@ -80,10 +78,10 @@ export const measurementsFields: IFields = {
         '<li><b>overallStratumOnly:</b> performance rate of the "overall" stratum.</li></ul>',
       notes: 'writable, calculated by API and returned in response, for multi-performance rate only',
     },
-    { name: 'strata', value: 'array(performanceRateStratum)', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data" rel="noopener noreferrer" target="_blank">qpp-measures-data</a>.', notes: 'writable, required' },
+    { name: 'strata', value: 'Array(performanceRateStratum)', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data" rel="noopener noreferrer" target="_blank">qpp-measures-data</a>.', notes: 'writable, required' },
   ],
   stratum: [
-    { name: 'measurementId', value: 'string', description: 'The id of the measurement in which the stratum belongs.' },
+    { name: 'measurementId', value: 'string', description: 'The id of the measurement in which the stratum belongs.', notes: ' ' },
     { name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>eligiblePopulation</b>', notes: 'writable, required' },
     { name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional' },
     { name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure. In the measures specifications, this field is also referred to as "Numerator Exclusion".', notes: 'writable, optional' },
@@ -91,48 +89,7 @@ export const measurementsFields: IFields = {
     { name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Numerator/Denominator".', notes: 'writable, required' },
     { name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable, required' },
   ],
-  allCauseReadmission: [
-    { name: 'score', value: 'float', description: 'The score of the measurement' },
-    {
-      name: 'numberOfIndexAdmissions',
-      value: 'integer',
-      description: 'Eligible (index) admissions include acute care hospitalizations for Medicare Fee-for-Service\n' +
-        '(FFS) beneficiaries age 65 or older at non-federal, short-stay, acute-care or critical access\n' +
-        'hospitals that occurred during the performance period and are not excluded.',
-    },
-    {
-      name: 'numberOfReadmissions',
-      value: 'integer',
-      description: 'Readmissions during a 30-day period that followed an initial hospitalization.',
-    },
-    {
-      name: 'plannedReadmissions',
-      value: 'integer',
-      description: 'Planned readmissions, which do not counted in the outcome.',
-    },
-    {
-      name: 'indexReadmissionDiagnosisPairCounts',
-      value: 'Array({indexAdmissionCode: string, ',
-      description: 'Code for the initial admission, code for the readmission, and the number of occurrences.',
-    },
-    {
-      name: 'indexAdmissionCountByDiagnosis',
-      value: 'object',
-      description: 'Code for an initial admission and the number of occurrences.',
-    },
-    {
-      name: 'readmissionCountByDiagnosis',
-      value: 'object',
-      description: 'Code for a readmission and the number of occurrences.',
-    },
-  ],
-  cahps: [
-    { name: 'score', value: 'float', description: 'For CAHPS measurements 1 - 12: score for survey question. For CAHPS measurement 321: average of scores for CAHPS measurements 1 - 12 ' },
-    { name: 'reliability', value: 'string', description: 'Reliability of the measurement score.' },
-    { name: 'isBelowMinimum', value: 'boolean', description: 'Whether number of answers to survey question is below minimum threshold.' },
-  ],
 };
-
 
 export const measurementsTabs: ITabs = {
   fields: [
@@ -261,19 +218,19 @@ export const measurementsTabs: ITabs = {
           "readmissionCode": string,
           "count": integer
           }
-       ],
-       "indexAdmissionCountByDiagnosis": [
+      ],
+      "indexAdmissionCountByDiagnosis": [
           {
           "code": string,
           "count": integer
           }
         ],
-       "readmissionCountByDiagnosis": [
+      "readmissionCountByDiagnosis": [
           {
           "code": string,
           "count": integer
           }
-       ]
+      ]
     }
   }
 }`,
@@ -299,10 +256,10 @@ export const measurementsTabs: ITabs = {
 
 export const measurementSetsFields: IFields = {
   fields: [
-    { name: 'id', value: 'string', description: 'The id of the measurement set.' },
-    { name: 'createdAt', value: 'datetime', description: 'The creation time of the measurement set in <a href="https://www.ietf.org/rfc/rfc3339.txt" rel="noopener noreferrer" target="_blank">RFC 3339</a> format.' },
-    { name: 'updatedAt', value: 'datetime', description: 'The modification time of the measurement set in <a href="https://www.ietf.org/rfc/rfc3339.txt" rel="noopener noreferrer" target="_blank">RFC 3339</a> format.' },
-    { name: 'submissionId', value: 'string', description: 'The id of the submission in which the measurement set belongs.' },
+    { name: 'id', value: 'string', description: 'The id of the measurement set.', notes: ' ' },
+    { name: 'createdAt', value: 'datetime', description: 'The creation time of the measurement set in <a href="https://www.ietf.org/rfc/rfc3339.txt" rel="noopener noreferrer" target="_blank">RFC 3339</a> format.', notes: ' ' },
+    { name: 'updatedAt', value: 'datetime', description: 'The modification time of the measurement set in <a href="https://www.ietf.org/rfc/rfc3339.txt" rel="noopener noreferrer" target="_blank">RFC 3339</a> format.', notes: ' ' },
+    { name: 'submissionId', value: 'string', description: 'The id of the submission in which the measurement set belongs.', notes: ' ' },
     { name: 'category', value: 'string', description: 'The category of the measurement set. Acceptable values are <b>"ia"</b>, <b>"pi"</b> and <b>"quality"</b>.  Note you cannot submit "pi" measurement sets for "apm" entity types.', notes: 'writable, required' },
     { name: 'chertId', value: 'string', description: 'The CMS EHR Certification Identification Number is generated by the CHPL. This is only applicable to Promoting Interoperability measurement sets.', notes: 'writable, required' },
     { name: 'submissionMethod', value: 'string', description: 'The method by which the measurement set data was submitted. Acceptable values are <b>"cmsWebInterface"</b>, <b>"electronicHealthRecord"</b>, <b>"claims"</b>, <b>"registry"</b>, <b>"certifiedSurveyVendor"</b> and <b>"administrativeClaims"</b>.', notes: 'writable, required' },
@@ -311,7 +268,7 @@ export const measurementSetsFields: IFields = {
     { name: 'performanceStart', value: 'string', description: 'A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). The first date when the measurement data is applicable.', notes: 'writable, required' },
     { name: 'performanceEnd', value: 'string', description: 'A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). The last date when the measurement data is applicable.', notes: 'writable, required' },
     { name: 'measureSet', value: 'string', description: 'The speciality set which the measurement set is attesting. Will need a different measurementSet for each specialty set.  Only 0 to 1 measureSets are accepted per measurementSet.  Acceptable values are <b>"allergyImmunology"</b>, <b>"anesthesiology"</b>, <b>"cardiology"</b>, <b>"dermatology"</b>, <b>"diagnosticRadiology"</b>, <b>"electrophysiologyCardiacSpecialist"</b>, <b>"emergencyMedicine"</b>, <b>"gastroenterology"</b>, <b>"generalOncology"</b>, <b>"generalPracticeFamilyMedicine"</b>, <b>"generalSurgery"</b>, <b>"hospitalists"</b>, <b>"internalMedicine"</b>, <b>"interventionalRadiology"</b>, <b>"mentalBehavioralHealth"</b>, <b>"neurology"</b>, <b>"obstetricsGynecology"</b>, <b>"ophthalmology"</b>, <b>"orthopedicSurgery"</b>, <b>"otolaryngology"</b>, <b>"pathology"</b>, <b>"pediatrics"</b>, <b>"physicalMedicine"</b>, <b>"plasticSurgery"</b>, <b>"preventiveMedicine"</b>, <b>"radiationOncology"</b>, <b>"rheumatology"</b>, <b>"thoracicSurgery"</b>, <b>"urology"</b>, or <b>"vascularSurgery"</b>.', notes: 'writable, optional' },
-    { name: 'measurements', value: 'array<measurements>', description: 'Measurements associated with the measurement set.', notes: 'writable, optional' },
+    { name: 'measurements', value: 'Array(measurements)', description: 'Measurements associated with the measurement set.', notes: 'writable, optional' },
   ],
 };
 
@@ -340,15 +297,15 @@ export const measurementSetsTabs: ITabs = {
 
 export const submissionsFields: IFields = {
   fields: [
-    { name: 'id', value: 'string', description: 'The id of the submission.' },
-    { name: 'createdAt', value: 'datetime', description: 'The creation time of the submission in <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a> format.' },
-    { name: 'updatedAt', value: 'datetime', description: 'The modification time of the submission in <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a> format.' },
+    { name: 'id', value: 'string', description: 'The id of the submission.', notes: ' ' },
+    { name: 'createdAt', value: 'datetime', description: 'The creation time of the submission in <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a> format.', notes: ' ' },
+    { name: 'updatedAt', value: 'datetime', description: 'The modification time of the submission in <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a> format.', notes: ' ' },
     { name: 'entityType', value: 'string', description: 'Acceptable values are <b>"apm"</b>, <b>"group"</b>, <b>"individual"</b>, <b>"virtualGroup"</b>', notes: 'writable, required' },
     { name: 'entityId', value: 'string', description: 'The unique identifier for the virtual group or APM associated with the submission.  If a CPC+ APM, the entityID is the CPC+ PracticeID', notes: 'writable, required if entityType is "apm" or "virtualGroup" ' },
     { name: 'taxpayerIdentificationNumber', value: 'string', description: 'The 9-digit identifier of the provider associated with the submission.', notes: 'writable if entityType is "individual" or "group"' },
     { name: 'nationalProviderIdentifier', value: 'string', description: 'The 10-digit identifier of the provider associated with the submission.', notes: 'writable only if entityType is "individual"' },
     { name: 'performanceYear', value: 'integer', description: 'The year in which performance data for the submission was collected.', notes: 'writable, required' },
-    { name: 'measurementSets', value: 'array(measurementSet)', description: 'Measurement sets associated with the submission.', notes: 'writable, optional' },
+    { name: 'measurementSets', value: 'Array(measurementSet)', description: 'Measurement sets associated with the submission.', notes: 'writable, optional' },
   ],
 };
 

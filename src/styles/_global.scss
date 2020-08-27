@@ -18,6 +18,10 @@ table td {
   border: 1px solid #5b616b;
 }
 
+table td pre {
+  display: inline-block;
+}
+
 .list-style--lower-alpha {
   list-style-type: lower-alpha;
 }
@@ -103,6 +107,14 @@ a:focus {
 
 .ds-c-vertical-nav > .ds-c-vertical-nav__item {
   border-top: 0;
+}
+
+.ds-c-table td {
+  padding: 16px 0;
+
+  &:not(:first-of-type) {
+    padding-left: 12px;
+  }
 }
 
 .ds-c-table td > ul {
