@@ -6,7 +6,7 @@ export interface IDataModelTable {
   name: string;
   value: string;
   description: string;
-  notes?: string;
+  notes: string;
 }
 
 const checkTDforHTML = (val: string) =>
@@ -20,14 +20,13 @@ export const DataModelTable = ({ data }: { data: IDataModelTable[] }) => {
       <table className='ds-c-table ds-c-table--borderless ds-u-font-size--small'>
         <thead>
           <tr>
-            {['Property Name', 'Value', 'Description', 'Notes'].map((h, i) => <th key={i}>{h}</th>)}
+            {['Property Name: Type', 'Description', 'Notes'].map((h, i) => <th key={i}>{h}</th>)}
           </tr>
         </thead>
         <tbody>
           {data && data.map(({ name, value, description, notes }, i) =>
             <tr key={i}>
-              <td><pre>{name}</pre></td>
-              <td><pre>{value}</pre></td>
+              <td><pre>{name}: {value}</pre></td>
               {checkTDforHTML(description)}
               {notes && checkTDforHTML(notes)}
             </tr>,

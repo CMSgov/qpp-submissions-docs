@@ -15,8 +15,8 @@ const GettingStartedUsingQppOauth = () => {
       <ol>
         <li>Read through the <ExternalLink href={`${envConfig.qppCmsUrl}/api/auth/docs`} text='GitHub documentation' />.</li>
         <li>Join our <ExternalLink href={envConfig.googleGroupUrl}  text='Developer Group for QPP APIs' /> to ask questions.</li>
-        <li><LinkToId to='oauth' text='Register your application' /> in the Developer Preview</li>
-        <li><LinkToId to='create-user' text='Test Submissions API integration' /> with test users from our Test Data Service</li>
+        <li><LinkToId to='#oauth' text='Register your application' offset='120' /> in the Developer Preview</li>
+        <li><LinkToId to='#create-user' text='Test Submissions API integration' offset='120' /> with test users from our Test Data Service</li>
       </ol>
       <p className='ds-text'>
         Once you've successfully completed your integration in the Developer Preview, you can request access to the production Submissions API. We will provide details on this production access process this fall.
