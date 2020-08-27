@@ -26,8 +26,6 @@ export const measurementsTitleAndId = {
   'Single-Performance Rate': 'single-performance-rate-measurements',
   'Multi-Performance Rate': 'multi-performance-rate-measurements',
   'Multi-Performance Rate Stratum': 'stratum',
-  'All Cause Readmission': 'all-cause-readmission-measurements',
-  'CAHPS': 'cahps',
 };
 
 export const measurementsFields: IFields = {
