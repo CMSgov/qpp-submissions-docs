@@ -9,7 +9,7 @@ const Header = () => {
         <div className='ds-l-container'>
           <div className='navbar-header'>
             <div className='header-mobile-brand'>
-              <a className='header-brand' href={envConfig.qppCmsUrl}>
+              <a className='header-brand' href={envConfig.qppCmsUrl} target='_blank' rel='noopener noreferrer'>
                 <img className='qpp-logo' src={`${envConfig.qppCmsUrl}/images/qpp_logo_rgb_color.png`} alt='qpp logo' />
               </a>
             </div>
