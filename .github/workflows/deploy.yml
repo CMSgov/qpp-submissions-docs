@@ -1,0 +1,50 @@
+#
+# Will deploy the application to Github pages
+#
+
+name: Publish - Github Pages
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        required: true
+        description: 'The branch to deploy'
+        default: 'master'
+
+jobs:
+
+  # Will publish to github pages, can be performed by any user with wite access to the repo
+  publish-pages:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: "Check if user has write access"
+        uses: "lannonbr/repo-permission-check-action@b23b656f0dfb810f0c5e224a264d621a92a6f271" # pin@2.0.0
+        with:
+          permission: "write"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout Codebase
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.branch }}
+
+      - name: Configure Node version and registry
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.4.0
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install Dependencies
+        run: |
+          npm ci
+          npm run build
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@54066045208a389f6e16e9030494962f8afb4dfc # pin@3.5.9
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build
