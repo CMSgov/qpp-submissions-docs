@@ -8,7 +8,7 @@ const DeveloperPreview = () => {
     <>
       <h2 className='ds-h2'>Developer Preview</h2>
       <p className='ds-text'>
-        See updated documents <ExternalLink href={`${envConfig.cmsGithubIo}/qpp-developer-preview/introduction`} text='Developer Preview Testing Environment' />
+        See updated documents <ExternalLink href={`${envConfig.cmsGithubIo}/qpp-developer-preview-docs`} text='Developer Preview Testing Environment' />
       </p>
     </>
   );

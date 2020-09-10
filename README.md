@@ -34,7 +34,7 @@ We use Travis CI for testing - add a test if it makes sense, and make sure the b
 
 These docs are hosted on GitHub Pages.
 
-To deploy changes, you'll need to be a collaborator on the GitHub repo, merge a feature branch into to the master branch (see [CONTRIBUTING.md#merging-to-master](CONTRIBUTING.md#merging-to-master)), and deploy the master branch with the following command:
+To deploy changes, you'll need to be a collaborator on the GitHub repo, merge a feature branch into to the master branch, and deploy the master branch with the following command:
 
 ```bash
 git checkout master
@@ -44,8 +44,20 @@ npm run deploy
 
 Under the hood, the [gh-pages](https://github.com/tschaub/gh-pages) library is used for managing the gh-pages branch.
 
-## Licenses
 
-This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
 
-All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to comply with this waiver of copyright interest.
+## Want to Contribute?
+
+Want to file a bug or contribute some code? Read up on our guidelines for [contributing].
+
+[contributing]: /.github/CONTRIBUTING.md
+
+## Public Domain
+This project is in the public domain within the United States, and copyright and related rights in the work worldwide are waived
+through the CC0 1.0 Universal public domain dedication.		
+
+All contributions to this project will be released under the CC0 dedication. By submitting a pull request, you are agreeing to
+comply with this waiver of copyright interest.		
+
+See the [formal LICENSE file](/LICENSE).
+
