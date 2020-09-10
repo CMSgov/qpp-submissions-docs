@@ -9,6 +9,7 @@ import LeftNav from './left-nav';
 import Footer from './footer';
 import SubscribeModal from './subscribe-modal';
 import envConfig from '../../envConfig';
+import { ExternalLink } from '../../shared';
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
@@ -20,7 +21,7 @@ const App = () => {
 
         <div className='qpp-docs-title-container'>
           <div className='ds-l-container'>
-            <a className='qpp-docs-title-back' href={`${envConfig.qppCmsUrl}/developers`}>&lt; back to QPP Developer Tools</a>
+            <ExternalLink href={`${envConfig.qppCmsUrl}/developers`} text='&lt; back to QPP Developer Tools' attrs={{ className: 'qpp-docs-title-back'}} />
             <h3 className='qpp-docs-title-text'>QPP Submissions API Documentation</h3>
           </div>
         </div>
