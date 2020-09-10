@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f987794d03d7f14e14ce3d61c1af241c",
+    "revision": "be812b959d4f0e96def9b7a4355b6210",
     "url": "/qpp-submissions-docs/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/qpp-submissions-docs/static/css/2.cb718935.chunk.css"
   },
   {
-    "revision": "d8a79e5a647d1c4e7afb",
-    "url": "/qpp-submissions-docs/static/css/main.026e8e42.chunk.css"
+    "revision": "6115a5ee04ccdcc70fc8",
+    "url": "/qpp-submissions-docs/static/css/main.5e6c2600.chunk.css"
   },
   {
     "revision": "b38e1e63fd3eee766179",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/qpp-submissions-docs/static/js/2.beccaffa.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d8a79e5a647d1c4e7afb",
-    "url": "/qpp-submissions-docs/static/js/main.f51235fc.chunk.js"
+    "revision": "6115a5ee04ccdcc70fc8",
+    "url": "/qpp-submissions-docs/static/js/main.b9f45734.chunk.js"
   },
   {
     "revision": "5b2b247535fe5cdbadc1",
