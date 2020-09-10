@@ -3,6 +3,8 @@ import React from 'react';
 import envConfig from '../../envConfig';
 import { ExternalLink } from '../../shared';
 
+import '../../styles/components/footer.scss';
+
 const Footer = ({ openModal }: { openModal: CallableFunction }) => {
   return (
     <footer>

@@ -67,6 +67,11 @@ h2:hover a.tutorial-header-link {
 
 a.qpp-docs-title-back {
   color: #ffffff;
+
+  &:focus {
+    color: #ffffff;
+    outline: 0;
+  }
 }
 
 .qpp-docs-title-text {
