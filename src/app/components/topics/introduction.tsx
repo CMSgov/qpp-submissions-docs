@@ -20,10 +20,10 @@ const Introduction = () => {
         API responses are returned in JSON, including errors.
       </p>
       <p className='ds-text'>
-        The link to submit Quality data using the API in Production is: <ExternalLink href={`${envConfig.qppCmsUrl}/api/submissions`} />
+        The base URL to submit Quality data using the API in Production is: <code>{`${envConfig.qppCmsUrl}/api/submissions`}</code>
       </p>
       <p className='ds-text'>
-        The link to submit LVT Opt-In decisions using the Eligibility API in Production is: <ExternalLink href={`${envConfig.qppCmsUrl}/api/eligibility`} />
+        The base URL to submit LVT Opt-In decisions using the Eligibility API in Production is: <code>{`${envConfig.qppCmsUrl}/api/eligibility`}</code>
       </p>
 
       <h2 className='ds-h2'>Explore and integrate with the Submissions API</h2>
