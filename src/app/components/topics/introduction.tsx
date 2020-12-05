@@ -42,9 +42,6 @@ const Introduction = () => {
         The developer documentation is a living document that is constantly maintained to stay in sync with policy, technical changes, and test data changes. Additionally we update the content to provide answers to frequently asked questions.  Please refer back to this regularly to keep aware of recent changes.
       </p>
       <p className='ds-text'>
-        We are no longer able to dedicate resources to moderate and maintain the Google Group forum.  However, you will be able to search for information in the <ExternalLink href={envConfig.googleGroupUrl}  text='QPP APIs Google Group' />, which will continue in a read-only state through March 31, 2020 when the 2019 MIPs submission period closes.
-      </p>
-      <p className='ds-text'>
         Please bring any questions not answered by our available documentation to the monthly support calls/Virtual Office Hours, or contact the Quality Payment Program at {envConfig.phoneNumber}, Monday through Friday, 8:00 AM-8:00 PM ET or by e-mail at: <a href={`mailto:${envConfig.qppEmail}`}>{envConfig.qppEmail}</a>
       </p>
     </>
