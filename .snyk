@@ -2,9 +2,6 @@
 version: v1.14.1
 ignore:
   SNYK-JS-NODENOTIFIER-1035794:
-    - '* > node-notifier':
-        reason: 'v4.0.0 of react-scripts is code breaking'
-        expires: '2021-04-01T00:00:00.000Z'
     - '* > react-scripts':
         reason: 'v4.0.0 of react-scripts is code breaking'
         expires: '2021-04-01T00:00:00.000Z'
