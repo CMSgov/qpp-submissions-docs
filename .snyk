@@ -1,0 +1,7 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.14.1
+ignore:
+  SNYK-JS-NODENOTIFIER-1035794:
+    - '* > react-scripts':
+        reason: 'v4.0.0 of react-scripts is code breaking'
+        expires: '2021-04-01T00:00:00.000Z'
