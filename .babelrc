@@ -5,12 +5,12 @@
         {
           "rules": [
             {
-              "search": "Like the previous tutorial",
-              "replace": "test"
+              "search": "searchString",
+              "searchTemplateStrings": true,
+              "replace": "replacement"
             }
           ]
         }
       ]
     ]
   }
-  
