@@ -32,6 +32,8 @@ const submissionChangesTable = [
   </ul>`],
 ];
 const measuresChangeTable = [
+  ['12/2020', '"icdImpacted" added', 'List of submissionMethods where ICD 10 codes for the measure changed during the submission year.  Used to truncate submissions data to only the first nine months of the performance year when the ICD 10 codes were unchanged. Typically impacts claims submissionMethod.  Does not impact registry submissionMethod.  Note: isIcdImpacted = "true" where at least one submission method is listed in "icdImpacted".  Note: Added to the PY2020 and PY2021 Measures Repository schema.'],
+  ['12/2020', '"benchmarks" array added, in the following format "benchmarks": { <submissionMethod>: "removed" }', 'List of submissionMethods where the measure is known to have changed from the previous performance year before the data collection period opens. Used to trigger removal of historical benchmarks as the meaning of the measure changed significantly from the previous Performance Year.  Performance year benchmarks may still be generated once all submissions data is received.  Note: Added only to the PY2021 Measures Repository schema.'],
   ['8/2020', '"isToppedOut" is removed', `For all Measures, "isToppedOut": attribute is removed and moved to the <code>/benchmarks</code> file`],
   ['8/2020', '"weight" attribute is removed for PI measures', 'Where "category": "pi" "weight": attribute is removed'],
 ];
