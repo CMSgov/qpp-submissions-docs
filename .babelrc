@@ -1,0 +1,16 @@
+{
+    "plugins": [
+      [
+        "search-and-replace",
+        {
+          "rules": [
+            {
+              "search": "Like the previous tutorial",
+              "replace": "test"
+            }
+          ]
+        }
+      ]
+    ]
+  }
+  

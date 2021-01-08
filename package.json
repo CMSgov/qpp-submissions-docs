@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "license": "CC0-1.0",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
     "pretest": "npm run lint",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-app-rewired test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
@@ -31,8 +31,8 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "5.2.0",
     "react-router-hash-link": "1.2.2",
-    "react-scripts": "3.4.4",
-    "typescript": "^3.7.5"
+    "react-scripts": "4.0.1",
+    "typescript": "3.8.3"
   },
   "devDependencies": {
     "@types/enzyme": "3.10.5",
@@ -41,12 +41,14 @@
     "@types/node": "^12.12.47",
     "@types/react": "^16.9.41",
     "@types/react-dom": "^16.9.8",
-    "@types/react-router-hash-link": "1.2.1",
     "@types/react-router-dom": "5.1.5",
+    "@types/react-router-hash-link": "1.2.1",
+    "babel-plugin-search-and-replace": "1.1.0",
+    "customize-cra": "1.0.0",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.2",
-    "eslint": "6.6.0",
     "gh-pages": "3.1.0",
+    "react-app-rewired": "2.1.8",
     "stylelint": "13.6.1",
     "tslint": "6.1.2",
     "tslint-react": "5.0.0"
