@@ -6,7 +6,8 @@ import envConfig from '../../../envConfig';
 const References = () => {
   return (
     <>
-      <h2 className='ds-h2' id='references'>References</h2>
+      <p className='qpp-docs-page-updated'>Last Updated: 08/26/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <h2 className='ds-h2' style={{marginTop: 0}} id='references'>References</h2>
 
       <h3 className='ds-h3'>General References</h3>
       <ul>

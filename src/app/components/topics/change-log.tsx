@@ -62,7 +62,8 @@ const buildTableBody = (data: string[][]) =>
 const ChangeLog = () => {
   return (
     <>
-      <h2 className='ds-h2' id='change-log'>ChangeLog</h2>
+      <p className='qpp-docs-page-updated'>Last Updated: 01/05/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <h2 className='ds-h2' style={{marginTop: 0}} id='change-log'>ChangeLog</h2>
       <p className='ds-text'>
         The Change log is updated with each significant change to the API with the details that you need to be aware of.
       </p>

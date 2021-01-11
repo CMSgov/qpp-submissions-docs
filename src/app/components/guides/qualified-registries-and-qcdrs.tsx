@@ -59,6 +59,8 @@ const tableData = [
 const QualifiedRegistriesAndQcdrs = () => {
   return (
     <>
+      <p className='qpp-docs-page-updated'>Last Updated: 01/05/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <h2 className='ds-h2' style={{marginTop: 0}}>Qualified Registries and QCDRs</h2>
       <p className='ds-text'>
         Qualified Registries and QCDRs entities that are authorized by the Centers for Medicare &amp; Medicaid Services (CMS) to submit Quality Measures, Promoting Interoperability Measures, and/or Improvement Activities on behalf of MIPS eligible clinicians, groups, and/or virtual groups for a specified performance year can submit directly to the Submissions API using an API token.
       </p>

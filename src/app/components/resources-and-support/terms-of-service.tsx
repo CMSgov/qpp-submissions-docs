@@ -6,7 +6,8 @@ import envConfig from '../../../envConfig';
 const TermsOfService = () => {
   return (
     <>
-      <h2 className='ds-h2'>API Terms of Service Agreement</h2>
+      <p className='qpp-docs-page-updated'>Last Updated: 08/26/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <h2 className='ds-h2' style={{marginTop: 0}}>API Terms of Service Agreement</h2>
       <p className='ds-text'>
         Thank you for using The Centers for Medicare and Medicaid Services ("CMS") APIs and other developer services (collectively, "APIs"). By accessing or using our APIs, you are agreeing to the terms below as well as any relevant sections of CMS's <ExternalLink href={`${envConfig.cmsUrl}/About-CMS/Agency-Information/Aboutwebsite/Privacy-Policy.html`} text='Website Policies' />.
       </p>

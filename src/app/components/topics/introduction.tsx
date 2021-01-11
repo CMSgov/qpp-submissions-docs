@@ -6,7 +6,8 @@ import envConfig from '../../../envConfig';
 const Introduction = () => {
   return (
     <>
-      <h2 className='ds-h2'>Easily submit and score QPP data in real-time via API</h2>
+      <p className='qpp-docs-page-updated'>Last Updated: 12/05/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <h2 className='ds-h2' style={{marginTop: 0}}>Easily submit and score QPP data in real-time via API</h2>
       <p className='ds-text'>
         The Submissions API enables submissions and real-time performance scoring of Quality Payment Program (QPP) data.
       </p>

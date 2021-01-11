@@ -6,7 +6,8 @@ import envConfig from '../../../envConfig';
 const SubmittingToQppSubmissionApi = () => {
   return (
     <>
-      <h2 className='ds-h2'>The Submissions API enables submissions and real-time performance scoring of Quality Payment Program (QPP) data. </h2>
+      <p className='qpp-docs-page-updated'>Last Updated: 01/05/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <h2 className='ds-h2' style={{marginTop: 0}}>The Submissions API enables submissions and real-time performance scoring of Quality Payment Program (QPP) data. </h2>
       <p className='ds-text'>
         The Submissions API is a RESTful API. It has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. It uses standard HTTP features, like HTTPS authentication and HTTP verbs, which are understood by off-the-shelf HTTP clients.
       </p>
