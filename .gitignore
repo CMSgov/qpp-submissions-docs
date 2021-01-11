@@ -21,3 +21,6 @@ npm-debug.log
 !.vscode/tasks.example.json
 !.vscode/launch.example.json
 !.vscode/extensions.example.json
+
+# Temporary - can be removed when upgraded to react-scripts@4.0.2
+.eslintcache
