@@ -6,6 +6,8 @@ import envConfig from '../../../envConfig';
 const GettingStartedUsingQppOauth = () => {
   return (
     <>
+      <p className='qpp-docs-page-updated'>Last Updated: 08/26/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <h2 className='ds-h2' style={{marginTop: 0}}>Getting Started Using QPP OAuth</h2>
       <p className='ds-text'>
         Using OAuth with the Submissions API allows QPP participants to use their own QPP credentials to login through your application to submit their data to and view performance feedback from QPP.
         </p>

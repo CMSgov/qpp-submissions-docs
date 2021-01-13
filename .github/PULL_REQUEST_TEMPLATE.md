@@ -23,6 +23,7 @@
 ## Checklist:
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
 <!--- If you're unsure about any of these, don't hesitate to ask. We're here to help! -->
+- [ ] I have updated the Last-Updated value on all documentation pages where I changed content.
 - [ ] My code follows the code style of this project.
 - [ ] My change requires a change to the documentation.
 - [ ] Updated documentation (`README.md`, etc.) depending if the changes require it.

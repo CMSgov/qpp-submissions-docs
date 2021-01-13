@@ -6,7 +6,8 @@ import envConfig from '../../../envConfig';
 const Help = () => {
   return (
     <>
-      <h2 className='ds-h2'>Help</h2>
+      <p className='qpp-docs-page-updated'>Last Updated: 08/26/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <h2 className='ds-h2' style={{marginTop: 0}}>Help</h2>
 
       <p className='ds-text'>
         Please contact the Quality Payment Program Service Center <ExternalLink href={`${envConfig.qppCmsUrl}/about/help-and-support`} /> if you have policy or API questions.
