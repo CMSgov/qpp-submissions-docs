@@ -76,7 +76,7 @@ export const measurementsFields: IFields = {
         '<li><b>weightedAverage:</b> <samp>((sum strata\'s performanceMet) / (sum strata\'s performanceMet and performanceNotMet)) * 100</samp>, or,</li>' +
         '<li><b>sumNumerators:</b> <samp>sum strata\'s performanceMet</samp>, or,</li>' +
         '<li><b>overallStratumOnly:</b> performance rate of the "overall" stratum.</li></ul>',
-      notes: 'writable, calculated by API and returned in response, for multi-performance rate only',
+      notes: `If <code>metricType = registryMulti-PerformanceRate</code> then writable and <i>required</i>.<br> If <code>metricType = multiPerformance-Rate</code>, then writeable and <i>optional</i>.`,
     },
     { name: 'strata', value: 'Array(performanceRateStratum)', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data" rel="noopener noreferrer" target="_blank">qpp-measures-data</a>.', notes: 'writable, required' },
   ],
