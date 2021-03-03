@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/qpp-submissions-docs/static/css/main.e715cb47.chunk.css",
-    "main.js": "/qpp-submissions-docs/static/js/main.08252bee.chunk.js",
-    "main.js.map": "/qpp-submissions-docs/static/js/main.08252bee.chunk.js.map",
+    "main.js": "/qpp-submissions-docs/static/js/main.50e6a7be.chunk.js",
+    "main.js.map": "/qpp-submissions-docs/static/js/main.50e6a7be.chunk.js.map",
     "runtime-main.js": "/qpp-submissions-docs/static/js/runtime-main.daf3a4e0.js",
     "runtime-main.js.map": "/qpp-submissions-docs/static/js/runtime-main.daf3a4e0.js.map",
     "static/css/2.76cd0464.chunk.css": "/qpp-submissions-docs/static/css/2.76cd0464.chunk.css",
@@ -19,6 +19,6 @@
     "static/css/2.76cd0464.chunk.css",
     "static/js/2.2ceb06a8.chunk.js",
     "static/css/main.e715cb47.chunk.css",
-    "static/js/main.08252bee.chunk.js"
+    "static/js/main.50e6a7be.chunk.js"
   ]
 }
