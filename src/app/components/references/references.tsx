@@ -6,7 +6,7 @@ import envConfig from '../../../envConfig';
 const References = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/26/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 05/12/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}} id='references'>References</h2>
 
       <h3 className='ds-h3'>General References</h3>
@@ -23,6 +23,9 @@ const References = () => {
       <ul>
         <li>
           Interactive QPP Submissions API Documentation: <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/submissions/public/docs`} />
+        </li>
+        <li>
+          Interactive QPP Scoring API Documentation: <ExternalLink href={`${envConfig.qppCmsUrl}/api/scoring/docs`} />
         </li>
         <li>
           Measures, Activities, and Benchmarks Repository: <ExternalLink href={`https://github.com/CMSgov/qpp-measures-data`} />
