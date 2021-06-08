@@ -7,7 +7,7 @@ import { measurementSetsFields, measurementSetsTabs } from './data';
 const MeasurementSets = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/26/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 06/08/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Measurement Sets</h2>
       <p className='ds-text--lead'>
         The MeasurementSets resource represents performance data for a specified category. Each Submission can have multiple MeasurementSets. Each MeasurementSet in a given Submission must be uniquely identified by category and submission method and measureSet (specialties). MeasurementSets contain Measurements, which can be accessed both via MeasurementSets methods and Measurements methods.

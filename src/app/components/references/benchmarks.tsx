@@ -13,7 +13,7 @@ const titleAndId = {
 const Benchmarks = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/26/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 06/08/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}} id='current-benchmarks'>Benchmarks</h2>
       <ul>
         {Object.entries(titleAndId).map(([title, id], i) =>
