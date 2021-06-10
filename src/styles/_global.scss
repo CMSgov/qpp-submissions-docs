@@ -81,6 +81,10 @@ a.qpp-docs-title-back {
   }
 }
 
+.qpp-table-text-align {
+  vertical-align: top;
+}
+
 .qpp-docs-title-text {
   color: #ffffff;
 }
@@ -122,7 +126,7 @@ a:focus {
 }
 
 .ds-c-table td {
-  padding: 16px 0;
+  padding: 16px 10px;
 
   &:not(:first-of-type) {
     padding-left: 12px;

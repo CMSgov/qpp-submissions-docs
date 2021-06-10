@@ -43,10 +43,10 @@ const FrequentlyAskedQuestions = () => {
         <tbody>
           {Object.entries(tableData).map(([question, answer], i) =>
             <tr key={i}>
-              <td>{question}</td>
+              <td className='qpp-table-text-align'>{question}</td>
               {envConfig.htmlRegex.test(answer)
-                ? <td dangerouslySetInnerHTML={{ __html: answer }} />
-                : <td>{answer}</td>
+                ? <td className='qpp-table-text-align' dangerouslySetInnerHTML={{ __html: answer }} />
+                : <td className='qpp-table-text-align' >{answer}</td>
               }
             </tr>,
           )}

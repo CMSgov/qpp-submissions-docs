@@ -6,7 +6,7 @@ import envConfig from '../../../envConfig';
 const Announcements = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 06/08/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 06/08/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Announcements</h2>
 
       <h3 className='ds-h3'>General</h3>
@@ -33,7 +33,7 @@ const Announcements = () => {
       <h3 className='ds-h3'>Measures Repository</h3>
       <ul>
         <li>
-          2021 Measures are published and available here: <ExternalLink href='https://github.com/CMSgov/qpp-measures-data' />
+          2021 Measures are published and available here: <ExternalLink href='https://github.com/CMSgov/qpp-measures-data/tree/develop/measures' />
           </li>
         <li>
           Additional attributes are added to support PY2021 submissions. See <LinkToId to='change-log' text='Change Log' /> for specific details.

@@ -29,7 +29,7 @@ const Measurements = () => {
 
       <h2 className='ds-h2' id={measurementsTitleAndId.Boolean}>Boolean Measurements</h2>
       <p className='ds-text--lead'>
-        Boolean Measurements are applicable to Improvement Activity (IA) and Promoting Interoperability (PI) measures. For PI Measures, if a Measure has an Exclusion Measure ID listed, this means that the Exclusion Measure ID cannot be submitted in the same Measurement Set as the original Measure because they have opposite meanings and cannot both be true.
+        Boolean Measurements are applicable to Improvement Activity (IA) and Promoting Interoperability (PI) measures. For PI Measures, if a measure has an Exclusion measure ID listed, this means that the Exclusion measure ID cannot be submitted in the same Measurement Set as the original measure because they have opposite meanings and cannot both be true.
       </p>
       <h3 className='ds-h3'>Resource Representation</h3>
       <CodeTab data={measurementsTabs.boolean} />
@@ -37,7 +37,7 @@ const Measurements = () => {
 
       <h2 className='ds-h2' id={measurementsTitleAndId.Proportion}>Proportion Measurements</h2>
       <p className='ds-text--lead'>
-        Proportion Measurements are applicable to Promoting Interoperability (PI) measures. For PI Measures, if a Measure has an Exclusion Measure ID listed, this means that the Exclusion Measure ID cannot be submitted in the same Measurement Set as the original Measure because they have opposite meanings and cannot both be true.
+        Proportion Measurements are applicable to Promoting Interoperability (PI) measures. For PI Measures, if a measure has an Exclusion measure ID listed, this means that the Exclusion measure ID cannot be submitted in the same Measurement Set as the original measure because they have opposite meanings and cannot both be true.
       </p>
       <h3 className='ds-h3'>Resource Representation</h3>
       <CodeTab data={measurementsTabs.proportion} />
