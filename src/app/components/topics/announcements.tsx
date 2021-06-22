@@ -23,7 +23,7 @@ const Announcements = () => {
           For APM participants only, APP submissions and scoring rules for PY2021 are now available.
           </li>
         <li>
-          For APM participants who participate in the Primary Care First  (PCF) APM model, PCF model submissions to meet PCF model reporting requirements for PY2021 are now available.
+          PCF models that are required to report can now report to QPP.
           </li>
         <li>
           See <LinkToId to='change-log' text='Change Log' /> for specific details.

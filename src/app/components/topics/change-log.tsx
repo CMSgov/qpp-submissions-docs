@@ -30,7 +30,7 @@ const submissionChangesTable = [
         Only eligible APM participants are allowed to submit to the APP program. Includes: APM entities, Groups, and Individuals who are eligible APM participants.
       </li>
       <li>
-        APM participants MUST be above the LVT threshold OR they must be LVT Opt-In eligible and have elected to Opt-In to submit to the APP program.
+        Group and Individual APM participants MUST be above the LVT threshold OR they must be LVT Opt-In eligible and have elected to Opt-In to submit to the APP program.
       </li>
       <li>
         Only the following 3 quality measures can be submitted to the APP program through the registry submissionMethod: 001, 134, 236.
@@ -51,7 +51,7 @@ const submissionChangesTable = [
         For measurementSets object, added new optional attribute for practiceDetails which is the list of TINs or TIN:NPIs that the data is being submitted for. Optional: if provided, must follow the correct format for TINs and NPIs.
       </li>
       <li>
-        Quality measure ID 47 is required to be submitted to PCF through the registry measurementSet for PY 2021. Note: other quality measures are optional.
+        Quality measure ID 47 is required to be submitted to PCF through the registry measurementSet for PY 2021.
       </li>
       <li>
         See the <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/tutorial-pcf-submissions' target='_blank' rel='noopener noreferrer'>Tutorial: PCF Submissions</a> for an example of how to submit to PCF.
