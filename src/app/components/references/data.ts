@@ -296,15 +296,14 @@ export const measurementSetsTabs: ITabs = {
 
 export const submissionsFields: IFields = {
   fields: [
-    { name: 'id', value: 'string', description: 'The id of the submission.', notes: ' ' },
-    { name: 'createdAt', value: 'datetime', description: 'The creation time of the submission in <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a> format.', notes: ' ' },
-    { name: 'updatedAt', value: 'datetime', description: 'The modification time of the submission in <a href="https://www.ietf.org/rfc/rfc3339.txt">RFC 3339</a> format.', notes: ' ' },
-    { name: 'entityType', value: 'string', description: 'Acceptable values are <b>"apm"</b>, <b>"group"</b>, <b>"individual"</b>, <b>"virtualGroup"</b>', notes: 'writable, required' },
-    { name: 'entityId', value: 'string', description: 'The unique identifier for the virtual group or APM associated with the submission.  If a CPC+ or PCF APM, the entityId is the PracticeID', notes: 'writable, required if entityType is "apm" or "virtualGroup" ' },
-    { name: 'taxpayerIdentificationNumber', value: 'string', description: 'The 9-digit identifier of the provider associated with the submission.', notes: 'writable if entityType is "individual" or "group"' },
-    { name: 'nationalProviderIdentifier', value: 'string', description: 'The 10-digit identifier of the provider associated with the submission.', notes: 'writable only if entityType is "individual"' },
-    { name: 'performanceYear', value: 'integer', description: 'The year in which performance data for the submission was collected.', notes: 'writable, required' },
-    { name: 'measurementSets', value: 'Array(measurementSet)', description: 'Measurement sets associated with the submission.', notes: 'writable, optional' },
+    { name: 'measureId', value: 'string', description: 'The id of the measurement.	', notes: ' ' },
+    { name: 'benchmarkYear', value: 'integer', description: 'The performance year\'s data from which the benchmark deciles are calculated.	', notes: ' ' },
+    { name: 'performanceYear', value: 'integer', description: 'The year in which the benchmark applies.	', notes: ' ' },
+    { name: 'submissionMethod', value: 'string', description: 'The submissionMethod for which the benchmark is applicable.	', notes: ' ' },
+    { name: 'isToppedOut', value: 'boolean', description: 'Indicates if the benchmark is topped out for the current Performance Year	', notes: ' ' },
+    { name: 'isHighPriority', value: 'boolean', description: 'Indicates the measure is a high priority measure within the program. 	', notes: ' ' },
+    { name: 'isToppedOutByProgram', value: 'boolean', description: 'Indicates if the benchmark is topped out for 2 consecutive years. This results in a 7 point cap applied to the measure for scoring.	', notes: ' ' },
+    { name: 'deciles', value: 'numeric array', description: 'List of deciles starting with the lower bound limit of the range then 3 to 10.  See the Benchmarks Overview above for more info.	', notes: ' ' },
   ],
 };
 
@@ -313,14 +312,14 @@ export const submissionsTabs: ITabs = {
     {
       tab: 'Sample JSON',
       code: `{
-  "id": string,
-  "createdAt": datetime,
-  "updatedAt": datetime,
-  "entityType": string,
-  "taxpayerIdentificationNumber": string,
-  "nationalProviderIdentifier": string,
-  "performanceYear": integer,
-  "measurementSets": array(<a href='measurement-sets'>MeasurementSets Resource</a>)
+  "measureId": "001",
+  "benchmarkYear": 2019,
+  "performanceYear": 2021,
+  "submissionMethod": "registry",
+  "isToppedOut": false,
+  "isHighPriority": true,
+  "isToppedOutByProgram": false,
+  "deciles": [...]
 }`,
     },
   ],

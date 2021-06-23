@@ -5,6 +5,7 @@ const envConfig = {
   qppCmsUrl: 'https://qpp.cms.gov',
   qppCmsPreviewUrl: 'https://preview.qpp.cms.gov',
   cmsGithubIo: 'https://cmsgov.github.io',
+  amazoneawsUrl: 'https://qpp-cm-prod-content.s3.amazonaws.com',
   htmlRegex: /<\/?[a-z][\s\S]*>/i,
   phoneNumber: '1-866-288-8292',
   TTYPhoneNumber: '1-877-715-6222',
