@@ -24,7 +24,7 @@ const submissionChangesTable = [
         Added the ability to submit measurementSets to the APP program (<code>programName = app1</code>).
       </li>
       <li>
-        MeasurementSets can be submitted to the APP program for entityType(s) = apm, group, or individual. (Virtual Groups cannot submit to the APP program as they cannot be APM participants). 
+        MeasurementSets can be submitted to the APP program for entityType(s) = apm, group, or individual. (Virtual Groups cannot submit to the APP program as they cannot be APM participants).
       </li>
       <li>
         Only eligible APM participants are allowed to submit to the APP program. Includes: APM entities, Groups, and Individuals who are eligible APM participants.

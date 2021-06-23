@@ -42,37 +42,31 @@ const Scoring = () => {
     <>
       <p className='qpp-docs-page-updated'>Last Updated: 06/23/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Scoring</h2>
-      <a href="https://preview.qpp.cms.gov/api/submissions/public/docs/#Submissions/scoreSubmission">Test</a>
-
+      <a href='https://preview.qpp.cms.gov/api/submissions/public/docs/#Submissions/scoreSubmission'>Test</a>
       <p className='ds-text--lead'>
         The scoring engine is responsible for interpreting submissions and outputting a score. Each category score is utilized to create the QPP score object.
       </p>
       <p className='ds-text--lead'>
         Note: Registries and QCDRs submitting on behalf of others will only have access to view the score for the data they submitted.  If they need to see the complete score, they will need permission from the practice.
       </p>
-
       <h3 className='ds-h3'>Developer Preview Testing Environment</h3>
       <p className='ds-text--lead'>
-        In the Developer Preview Testing Environment you can use the <code>POST .../score-preview</code> endpoint to view the scoring object returned for the data you are proposing to submit. 
+        In the Developer Preview Testing Environment you can use the <code>POST .../score-preview</code> endpoint to view the scoring object returned for the data you are proposing to submit.
         The data is not saved. Try the <code>POST .../submissions/score-preview</code> endpoint <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/submissions/public/docs/#/Submissions/scoreSubmission`} text='here' />.
       </p>
-      <p className="ds-text--lead">
+      <p className='ds-text--lead'>
         Note: You can use the <ExternalLink href={`${envConfig.cmsGithubIo}/qpp-developer-preview-docs/tutorial-special-scoring-scenarios`}text='special scoring scenarios test data'/> to see the score responses for different types of eligibility profiles.
       </p>
-
-
-      <h3 className="ds-h3">During Submissions Window</h3>
+      <h3 className='ds-h3'>During Submissions Window</h3>
       <p>
-        Once submitting quality data during the Submission window you can use the <code>GET .../submissions/&#123;id&#125;/score</code> to view the score for the data after it is submitted. 
-        This submission data is saved under the submissionId and retrieved to view the score. 
+        Once submitting quality data during the Submission window you can use the <code>GET .../submissions/&#123;id&#125;/score</code> to view the score for the data after it is submitted.
+        This submission data is saved under the submissionId and retrieved to view the score.
         Try the <code>GET .../submissions/&#123;id&#125;/score</code> endpoint <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/submissions/public/docs#/Submissions/getSubmissionScore`} text='here' />.
       </p>
-
-
       <br/>
       <h2 className='ds-h2' id={textAndId['Improvement Activities'].id}>Improvement Activities (IA) Scoring</h2>
       <p className='ds-text--lead'>
-        The only available option for reporting Improvement Activities is boolean, and only Activities completed need to be reported. 
+        The only available option for reporting Improvement Activities is boolean, and only Activities completed need to be reported.
       </p>
       <ul>
         <li>
@@ -92,7 +86,7 @@ const Scoring = () => {
       <p>
         Use the <code>.../submisisons/score-preview</code> endpoint (above) to see the scoring response.
       </p>
-      
+
 
       <br/>
       <h2 className='ds-h2'>Promoting Interoperability (PI) Scoring</h2>
@@ -159,7 +153,7 @@ const Scoring = () => {
       <p>
         Use the <code>.../submisisons/score-preview</code> endpoint (above) to see the scoring response.
       </p>
-      
+
     </>
   );
 };
