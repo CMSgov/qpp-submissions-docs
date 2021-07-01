@@ -23,12 +23,7 @@ const FrequentlyAskedQuestions = () => {
       <p className='qpp-docs-page-updated'>Last Updated: 08/26/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Frequently Asked Questions</h2>
 
-      <h3 className='ds-h3'>General</h3>
-      <p>
-        See <ExternalLink href={`${envConfig.cmsGithubIo}/qpp-developer-preview-docs/frequently-asked-questions`} text='Developer Preview Frequently Asked Questions' />
-      </p>
-
-      <h3 className='ds-h3'>Developer Preview</h3>
+      <h3 className='ds-h3'>General and Developer Preview</h3>
       <p>
         See <ExternalLink href={`${envConfig.cmsGithubIo}/qpp-developer-preview-docs/frequently-asked-questions`} text='Developer Preview Frequently Asked Questions' />
       </p>
