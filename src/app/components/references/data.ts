@@ -303,7 +303,7 @@ export const submissionsFields: IFields = {
     { name: 'isToppedOut', value: 'boolean', description: 'Indicates if the benchmark is topped out for the current Performance Year	', notes: ' ' },
     { name: 'isHighPriority', value: 'boolean', description: 'Indicates the measure is a high priority measure within the program. 	', notes: ' ' },
     { name: 'isToppedOutByProgram', value: 'boolean', description: 'Indicates if the benchmark is topped out for 2 consecutive years. This results in a 7 point cap applied to the measure for scoring.	', notes: ' ' },
-    { name: 'deciles', value: 'numeric array', description: 'List of deciles starting with the lower bound limit of the range then 3 to 10.  See the Benchmarks Overview above for more info.	', notes: ' ' },
+    { name: 'deciles', value: 'numeric array', description: 'List of values starting with the lower bound limit of the range then 3 to 10.	', notes: ' ' },
   ],
 };
 

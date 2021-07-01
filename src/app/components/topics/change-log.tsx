@@ -30,7 +30,7 @@ const submissionChangesTable = [
         Only eligible APM participants are allowed to submit to the APP program. Includes: APM entities, Groups, and Individuals who are eligible APM participants.
       </li>
       <li>
-        Group and Individual APM participants MUST be above the LVT threshold OR they must be LVT Opt-In eligible and have elected to Opt-In to submit to the APP program.
+        Group or Individual APM participants MUST be above the LVT threshold OR they must be LVT Opt-In eligible and have elected to Opt-In to submit to the APP program.
       </li>
       <li>
         Only the following 3 quality measures can be submitted to the APP program through the registry submissionMethod: 001, 134, 236.
