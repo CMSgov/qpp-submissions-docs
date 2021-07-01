@@ -7,13 +7,13 @@ import { steps, apiExamples } from './data';
 const BasicTutorial = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/26/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
-      <h2 className='ds-h2' style={{marginTop: 0}}>Tutorial: Create and Score Data</h2>
+      <p className='qpp-docs-page-updated'>Last Updated: 07/01/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <h2 className='ds-h2' style={{marginTop: 0}}>Tutorial: Create and Score Data via API</h2>
       <p>
-        The Submissions API is an easy way to manage your performance data with CMS. Performance data is organized into submissions, which can have many measurements. Measurements within a submission are also grouped by category (e.g. Quality) and submission method (e.g. registry) into measurement sets.
+        The Submissions API is an easy way to manage your performance data with CMS. Performance data is organized into submissions, which can have many measurements. Measurements within a submission are also grouped by category (e.g. quality) and submission method (e.g. registry) and program name (e.g. mips) into measurement sets.
       </p>
       <p>
-        Since the API and scoring logic are updated on a regular basis as per the annual publication of the QPP Final Rule, please note that some numbers (especially scoring) in the tutorial below may be inaccurate. The <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/submissions/public/docs`} text='Interactive Docs' /> and Developer Preview will always reflect the latest design.
+        Since the API and scoring logic are updated on a regular basis as per the annual publication of the QPP Final Rule, please use the <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/submissions/public/docs`} text='Interactive Docs' /> and the Developer Preview Testing Environment as they will be updated annually to reflect the QPP Final Rule.
       </p>
       <p>
         Let's walk through an example of how you might submit performance data as a registry API user!
@@ -24,13 +24,13 @@ const BasicTutorial = () => {
         We need to create a <em>measurement set</em> first. We can do that by asking the API to create a measurement set record in the CMS database. In API terms, this means making a <code>POST</code> (synonym for <em>create</em>) request to the <code>/measurement-sets</code> endpoint.
       </p>
       <p>
-        When submitting, you can pass an <code>Accept</code> header to specify the API version and type of response back by using our custom mime type, <code>application/vnd.qpp.cms.gov.v1+json</code>. We support JSON by using <code>+json</code>. Right now, only version <code>v1</code> is supported. You can also continue to use a standard <code>application/json</code> header, which will point to the latest version (currently v1).
+        When submitting, you can pass an <code>Accept</code> header to specify the API version and type of response back by using our custom mime type, <code>application/vnd.qpp.cms.gov.v1+json</code>. We support JSON by using <code>+json</code>. Right now, only version <code>v1</code> is supported. You can also continue to use a standard <code>application/json</code> header, which will point to the latest version.
       </p>
       <p>
-        We'll also need to supply some information to tell CMS how to identify this particular submission, which you can see below. Every submission is unique to the combination of the fields provided. Note that we enforce fake TINs (starting with <code>000</code>) in the Developer Preview to avoid accidentally collecting personally identifiable information.
+        We'll also need to supply some information to tell CMS how to identify this particular submission, which you can see below. Every submission is unique to the combination of the fields provided. Note that we enforce fake TINs (starting with <code>000</code>) in the Developer Preview Testing Environment to avoid accidentally collecting personally identifiable information.
       </p>
       <p>
-        In this first request, we will submit one Improvement Activity. Take a look at the request below, and then click the 'Response' tab to see what the API returns when we submit this request!
+        Take a look at the request below, and then click the 'Response' tab to see what the API returns when we submit this request!
       </p>
       <ApiExample data={apiExamples.measurementSets} />
       <CodeTab data={steps.basic1} />
@@ -43,18 +43,6 @@ const BasicTutorial = () => {
       <CodeTab data={steps.basic2} />
 
       <p>
-        Our API response includes a bunch of new info this time, so let's break it down.
-      </p>
-      <p>
-        The <code>Final Score</code> has a value of <code>7.5</code>. <code>Final</code> here doesn't mean it's the final end of year score for this submission - think of this instead as the <em>current aggregate estimate</em> of your total score.
-      </p>
-      <p>
-        If you look at the first chunk of <code>JSON</code> in the <code>"parts"</code> list, the IA component of final score reads <code>7.5</code>. The <code>"detail"</code> makes clear that the scoring is based on the measurement set we submitted earlier (check the <code>id</code>s, they match!).
-      </p>
-      <p>
-        That's it! We've used three API requests to (1) create a submission and (2) get the score, all in minutes. Each API response gives us useful information for the next step.
-      </p>
-      <p>
         In general, we can think about the Submissions API as a way to have a live conversation with CMS about performance measurements. Rather than waiting months to hear back about missing information or a score, the API gives us feedback that is immediate, specific, and actionable - we can easily make another API request if necessary.
       </p>
       <p>
@@ -66,9 +54,8 @@ const BasicTutorial = () => {
 
       <h3>Next steps</h3>
       <p>
-        Updating and correcting performance data is also easy - avoid losing time by solving issues as they arise, rather than reacting months later. Go to the next tutorial to see how you can update a measurement set that you've previously submitted.
+        Updating and correcting performance data is also easy - avoid losing time by solving issues as they arise, rather than reacting months later. Go to <LinkToId to='advanced-tutorial' text='Tutorial: Add and Update data via API' offset='130' /> to see how you can update a measurement set that you've previously submitted.
       </p>
-      <LinkToId to='advanced-tutorial' text='Add and update data' attrs={{ className: 'ds-c-button ds-c-button--primary' }} offset='130' />
     </>
   );
 };
