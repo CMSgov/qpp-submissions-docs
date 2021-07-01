@@ -10,55 +10,28 @@ interface IApiExamples {
 }
 
 export const steps: ISteps = {
-  advanced1: [
-    {
-      tab: 'Request',
-      code: `{
-  "submissionId": "0313d351-624d-409b-837f-500d603819aa",
-  "measurements": [
-    {
-      "measureId": "IA_EPA_10",
-      "value": true
-    }
-  ],
-  "category": "ia",
-  "submissionMethod": "registry",
-  "performanceStart": "2018-01-01",
-  "performanceEnd": "2018-06-01"
-}`,
-    },
-    {
-      tab: 'Response',
-      code: `{
-  "error": {
-    "type": "ValidationError",
-    "message": "invalid measurement-set object",
-    "details": [
-      {
-        "message": "field 'measureId' in MeasurementSet.measurements[0] is invalid: IA_EPA_10 does not exist, see qpp-measures-data for list of valid measureIds",
-        "path": "$.measurements[0].measureId"
-      }
-    ]
-  }
-}`,
-      response: '422 Un-processable Entity',
-    },
-  ],
   advanced2: [
     {
       tab: 'Request',
       code: `{
-  "submissionId": "0313d351-624d-409b-837f-500d603819aa",
+  "submissionId": "086dad28-0477-4b41-8c05-77dd98d41d6f",
   "measurements": [
     {
-      "measureId": "IA_EPA_3",
-      "value": true
+      "measureId": "001",
+      "value": {
+        "isEndToEndReported": false,
+        "performanceMet": 36,
+        "eligiblePopulationExclusion": 0,
+        "eligiblePopulationException": 0,
+        "performanceNotMet": 120,
+        "eligiblePopulation": 156
+      }
     }
   ],
-  "category": "ia",
+  "category": "quality",
   "submissionMethod": "registry",
-  "performanceStart": "2018-01-01",
-  "performanceEnd": "2018-06-01"
+  "performanceStart": "2021-01-01",
+  "performanceEnd": "2021-12-31"
 }`,
     },
     {
@@ -67,33 +40,53 @@ export const steps: ISteps = {
       code: `{
   "data": {
     "measurementSet": {
-      "id": "0313d351-a094-4dc2-b632-23cd88bffb5e",
-      "createdAt": "2018-08-21T13:55:29Z",
-      "updatedAt": "2018-08-21T14:07:51Z",
-      "submissionId": "0313d351-624d-409b-837f-500d603819aa",
-      "category": "ia",
+      "id": "086dad28-907a-4e88-af73-5c7ed2e6764e",
+      "createdAt": "2021-06-25T15:18:00Z",
+      "updatedAt": "2021-06-25T15:35:08Z",
+      "submissionId": "086dad28-0477-4b41-8c05-77dd98d41d6f",
+      "category": "quality",
       "submissionMethod": "registry",
       "measureSet": null,
-      "submitterId": "1234567",
+      "submitterId": "12c6258f-86db-492c-8637-4ff2668164b5",
       "submitterType": "organization",
-      "performanceStart": "2018-01-01",
-      "performanceEnd": "2018-06-01",
+      "programName": "mips",
+      "practiceId": null,
+      "practiceDetails": null,
+      "cehrtId": null,
+      "suppressed": false,
+      "source": null,
+      "performanceStart": "2021-01-01",
+      "performanceEnd": "2021-12-31",
       "measurements": [
         {
-          "id": "0313d5c6-1a2d-4564-9ac3-d006bf03efac",
-          "measurementSetId": "0313d351-a094-4dc2-b632-23cd88bffb5e",
-          "measureId": "IA_EPA_3",
-          "value": true,
-          "performanceStart": null,
-          "performanceEnd": null
+          "id": "086db12c-490d-484d-8c7a-1d378bf0a71f",
+          "measurementSetId": "086dad28-907a-4e88-af73-5c7ed2e6764e",
+          "measureId": "001",
+          "value": {
+            "isEndToEndReported": false,
+            "performanceMet": 36,
+            "eligiblePopulationExclusion": 0,
+            "eligiblePopulationException": 0,
+            "performanceNotMet": 120,
+            "eligiblePopulation": 156,
+            "reportingRate": 100,
+            "performanceRate": 23.08
+          }
         },
         {
-          "id": "0313d351-10bd-4419-a593-ece163a67520",
-          "measurementSetId": "0313d351-a094-4dc2-b632-23cd88bffb5e",
-          "measureId": "IA_EPA_4",
-          "value": true,
-          "performanceStart": null,
-          "performanceEnd": null
+          "id": "086dad28-4bcb-4649-a4fd-04ad8426df77",
+          "measurementSetId": "086dad28-907a-4e88-af73-5c7ed2e6764e",
+          "measureId": "047",
+          "value": {
+            "isEndToEndReported": false,
+            "performanceMet": 12,
+            "eligiblePopulationExclusion": 0,
+            "eligiblePopulationException": 0,
+            "performanceNotMet": 61,
+            "eligiblePopulation": 156,
+            "reportingRate": 46.79,
+            "performanceRate": 16.44
+          }
         }
       ]
     }
@@ -600,66 +593,34 @@ export const steps: ISteps = {
 };
 
 export const apiExamples: IApiExamples = {
-  measurementSetsId1: {
-    verb: 'PATCH',
-    url: '/measurement-sets/:id',
-    rows: [
-      {
-        row: ['Submission ID', '0313d351-624d-409b-837f-500d603819aa'],
-      },
-      {
-        row: ['Measurement Set ID', '0313d351-a094-4dc2-b632-23cd88bffb5e'],
-      },
-      {
-        row: ['Category', 'IA'],
-      },
-      {
-        row: ['Submission Method', 'Registry'],
-      },
-      {
-        row: ['Performance Start', '2018-01-01'],
-      },
-      {
-        row: ['Performance End', '2018-06-01'],
-      },
-      {
-        row: ['Measurements'],
-        classes: ['nested-once'],
-      },
-      {
-        row: ['Measure <code>IA_EPA_10</code>', '<code>true</code>'],
-        classes: ['nested-twice'],
-      },
-    ],
-  },
   measurementSetsId2: {
     verb: 'PATCH',
     url: '/measurement-sets/:id',
     rows: [
       {
-        row: ['Submission ID', '0313d351-624d-409b-837f-500d603819aa'],
+        row: ['Submission ID', '086dad28-0477-4b41-8c05-77dd98d41d6f'],
       },
       {
-        row: ['Measurement Set ID', '0313d351-a094-4dc2-b632-23cd88bffb5e'],
+        row: ['Measurement Set ID', '086dad28-907a-4e88-af73-5c7ed2e6764e'],
       },
       {
-        row: ['Category', 'IA'],
+        row: ['Category', 'Quality'],
       },
       {
         row: ['Submission Method', 'Registry'],
       },
       {
-        row: ['Performance Start', '2018-01-01'],
+        row: ['Performance Start', '2021-01-01'],
       },
       {
-        row: ['Performance End', '2018-06-01'],
+        row: ['Performance End', '2021-12-31'],
       },
       {
         row: ['Measurements'],
         classes: ['nested-once'],
       },
       {
-        row: ['Measure <code>IA_EPA_3</code>', '<code>true</code>'],
+        row: ['Measure <code>001</code>', '<code>true</code>'],
         classes: ['nested-twice'],
       },
     ],
