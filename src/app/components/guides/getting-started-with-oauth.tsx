@@ -11,96 +11,15 @@ const GettingStartedUsingQppOauth = () => {
       <p className='ds-text'>
         Using OAuth with the Submissions API allows QPP participants to use their own QPP credentials to login through your application to submit their data to and view performance feedback from QPP.
         </p>
-      <p className='ds-text'>
-        To get started using OAuth:
-      </p>
-      <ol>
-        <li>Read through the <ExternalLink href={`${envConfig.qppCmsUrl}/api/auth/docs`} text='GitHub documentation' />.</li>
-        <li>Join our <ExternalLink href={envConfig.googleGroupUrl}  text='Developer Group for QPP APIs' /> to ask questions.</li>
-        <li><LinkToId to='#oauth' text='Register your application' offset='120' /> in the Developer Preview</li>
-        <li><LinkToId to='#create-user' text='Test Submissions API integration' offset='120' /> with test users from our Test Data Service</li>
-      </ol>
-      <p className='ds-text'>
-        Once you've successfully completed your integration in the Developer Preview, you can request access to the production Submissions API. We will provide details on this production access process this fall.
-      </p>
 
       <h2 className='ds-h2' id='oauth'>Using OAuth in the Developer Preview</h2>
       <p className='ds-text'>
         To use the QPP Submissions API with OAuth, you must create a Developer Preview account and register the application.
       </p>
-
-      <h3 className='ds-h3'>Create Developer Preview Account</h3>
-      <p className='ds-text'>
-        You will need to create a new HARP account to use with Developer Preview.
-      </p>
-      <p className='ds-text'>
-        The Developer Preview account is separate from your account used on the main QPP website.
-      </p>
-      <p className='ds-text'>
-        <em>Please note: remote identity proofing will not work in Developer Preview.</em>
-      </p>
-
-      <p className='ds-text'>
-        <strong>Step 1</strong>
-      </p>
-      <p className='ds-text'>
-        Go to <ExternalLink href='https://impl.harp.qualitynet.org/register/profile-info' />.
-      </p>
-      <p className='ds-text'>
-        On the first page of Account Registration, enter:
-      </p>
-      <ul>
-        <li>Valid name</li>
-        <li>Valid email address</li>
-        <li>Valid phone number</li>
-        <li>Valid home address</li>
-        <li>Test social security number (000-00-0000 will work)</li>
-      </ul>
-
-      <p className='ds-text'>
-        <strong>Step 2</strong>
-      </p>
-      <p className='ds-text'>
-        On the second page of Account Registration, create:
-      </p>
-      <ul>
-        <li>Username</li>
-        <li>Password - which must be at least 12 characters and include a lowercase letter, uppercase letter, number (0-9), and symbol (!@#$%^&*)</li>
-        <li>Challenge question</li>
-      </ul>
-      <p className='ds-text'>
-        Click Next - the next page may take a minute to load.
-      </p>
-      <p className='ds-text'>
-        You will see the error message: "We were unable to verify the information you provided. If you think you have entered the correct information" This is the expected outcome.
-      </p>
-      <p className='ds-text'>
-        You can close the page.
-      </p>
-
-      <p className='ds-text'>
-        <strong>Step 3</strong>
-      </p>
-      <p className='ds-text'>
-        Call or email QPP Service Desk ({envConfig.phoneNumber} or <a href={`mailto:${envConfig.qppEmail}`}>{envConfig.qppEmail}</a> ).
-      </p>
-      <p className='ds-text'>
-        Tell them you're trying to register for a Developer Preview account and give them the username you just created. The agent will verify your account and identity.
-      </p>
-
-      <p className='ds-text'>
-        <strong>Step 4</strong>
-      </p>
-      <p className='ds-text'>
-        Once you've completed this process, log in to Developer Preview at: <ExternalLink href={envConfig.qppCmsPreviewUrl} />.
-      </p>
-      <p className='ds-text'>
-        Upon login, you'll be prompted to go back to HARP to set up multi-factor authentication (MFA).
-      </p>
-
+      
       <h3 className='ds-h3'>Connect to EHR or reporting application</h3>
       <p className='ds-text'>
-        Log into Developer Preview at <ExternalLink href={envConfig.qppCmsPreviewUrl} />.
+        Log in to Developer Preview or create an account at <ExternalLink href={envConfig.qppCmsPreviewUrl} />.
       </p>
       <p className='ds-text'>
         Locate your EHR (search by the EHR name as it appears in the <ExternalLink href={envConfig.chplHealthItUrl} text='CHPL database' />).
@@ -113,6 +32,12 @@ const GettingStartedUsingQppOauth = () => {
       </p>
 
       <h3 className='ds-h3'>Register an Application</h3>
+      <p className='ds-text'>
+        Once you are connected, you can use the OAuth APIs directly on the <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/auth/docs/#/OAuth`} text='Auth API' />. Also, Development Preview contains a UI (<ExternalLink href={`${envConfig.qppCmsPreviewUrl}/user/applications`} text='here' />) where you can create and manage your OAuth applications.
+      </p>
+      <p className='ds-text'>
+        Registering and testing your application within the Developer Preview is required prior to being granted production OAuth access.
+      </p>
       <p className='ds-text'>
         To register the application, you will need:
       </p>
@@ -131,9 +56,6 @@ const GettingStartedUsingQppOauth = () => {
       </p>
       <p className='ds-text'>
         Additional support along with a sample OAuth Client, can be found in the QPP Github at: <ExternalLink href='https://github.com/CMSgov/qpp-submissions-docs/tree/master/oauth_sample' />.
-      </p>
-      <p className='ds-text'>
-        Registering and testing your application within the Developer Preview is required prior to being granted production OAuth access.
       </p>
 
       <h2 className='ds-h2' id='create-user'>Create test users in the Developer Preview</h2>

@@ -10,7 +10,7 @@ const tableData = {
         Submissions UI: EHRs can submit via the Submissions UI by logging into the QPP site <a href='https://qpp.cms.gov' target='_blank' rel='noopener noreferrer'>qpp.cms.gov</a>. They will have to be connected as a Staff user for each of the Individuals and Groups they need to submit quality data for. Submissions for each individual or group could be uploaded as an excel file for efficiency.
       </li>
       <li>
-        Burden Reduction: EHRs may apply for Burden Reduction which allows them to obtain a registry token to use to submit via the Submissions API. See the process outline in this <a href='https://groups.google.com/forum/#!msg/qpp-apis/EKqpKejepwY/uPrgllFiDQAJ' target='_blank' rel='noopener noreferrer'>Google Group post</a>
+        Burden Reduction: EHRs may apply for Burden Reduction which allows them to obtain a registry token to use to submit via the Submissions API.
       </li>
     </ul>
   `,

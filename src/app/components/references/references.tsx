@@ -14,9 +14,6 @@ const References = () => {
         <li>
           Resource Library: <ExternalLink href={`${envConfig.qppCmsUrl}/about/resource-library`} />
         </li>
-        <li>
-          Developer Group for QPP APIs: <ExternalLink href={envConfig.googleGroupUrl} />
-        </li>
       </ul>
 
       <h3 className='ds-h3'>Submissions and Scoring API</h3>
