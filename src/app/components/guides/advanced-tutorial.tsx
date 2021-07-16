@@ -10,9 +10,9 @@ const AdvancedTutorial = () => {
   return (
     <>
       <p className='qpp-docs-page-updated'>Last Updated: 08/26/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
-      <h2 className='ds-h2' style={{marginTop: 0}} id='advanced-tutorial'>Tutorial: Add and update Data</h2>
+      <h2 className='ds-h2' style={{marginTop: 0}} id='advanced-tutorial'>Tutorial: Add and update data via API</h2>
       <p>
-        In the <LinkToId to='tutorial' text='first tutorial' /> we covered how to create a measurement set, and retrieve the score in two different API requests. We're now going to build on the previous tutorial by adding another measure to the measurement set we created in the previous tutorial. All of these examples serve to illustrate how the Submissions API can make it easier to react to and fix issues that arise.
+        In the <LinkToId to='tutorial' text='first tutorial' /> we covered how to create a measurement set and retrieve the score in two different API requests. We're now going to build on the previous tutorial by adding another measure to the measurement set we created in the previous tutorial. All of these examples serve to illustrate how the Submissions API can make it easier to react to and fix issues that arise.
       </p>
 
       <h3 className='tutorial-header-link' id='add-more-measures'>Add more measures to an existing measurement set</h3>

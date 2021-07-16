@@ -294,13 +294,13 @@ export const steps: ISteps = {
       code: `{
   "category": "quality",
   "submissionMethod": "registry",
-  "performanceStart": "2020-01-01",
-  "performanceEnd": "2020-12-31",
+  "performanceStart": "2021-01-01",
+  "performanceEnd": "2021-12-31",
   "programName": "mips",
   "submission": {
     "entityType": "group",
     "taxpayerIdentificationNumber": "000000002",
-    "performanceYear": 2020
+    "performanceYear": 2021
   },
   "measurements": [
     {
@@ -338,8 +338,8 @@ export const steps: ISteps = {
       "cehrtId": null,
       "suppressed": false,
       "source": null,
-      "performanceStart": "2020-01-01",
-      "performanceEnd": "2020-12-31",
+      "performanceStart": "2021-01-01",
+      "performanceEnd": "2021-12-31",
       "measurements": [
         {
           "id": "086dad28-4bcb-4649-a4fd-04ad8426df77",
@@ -426,8 +426,8 @@ export const steps: ISteps = {
                       "eMeasureId": null,
                       "toppedOut": false,
                       "isGhost": false,
-                      "performanceStart": "2020-01-01",
-                      "performanceEnd": "2020-12-31",
+                      "performanceStart": "2021-01-01",
+                      "performanceEnd": "2021-12-31",
                       "isCpcPlus": false,
                       "skippedDuplicate": false,
                       "unroundedScoreValue": 5.8733
@@ -651,7 +651,7 @@ export const apiExamples: IApiExamples = {
         row: ['Taxpayer Identification Number', '000000002'],
       },
       {
-        row: ['Performance Year', '2020'],
+        row: ['Performance Year', '2021'],
       },
     ],
   },
