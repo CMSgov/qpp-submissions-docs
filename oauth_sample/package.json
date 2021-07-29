@@ -16,9 +16,9 @@
   "homepage": "https://cmsgov.github.io/qpp-submissions-docs/oauth_sample",
   "dependencies": {
     "express": "^4.16.4",
-    "request": "^2.88.0",
     "request-promise": "^4.2.6",
+    "request": "^2.88.2",
     "url-join": "^4.0.0",
-    "uuid": "^3.3.2"
+    "uuid": "^3.4.0"
   }
 }
