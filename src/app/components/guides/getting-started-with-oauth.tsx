@@ -19,7 +19,7 @@ const GettingStartedUsingQppOauth = () => {
       <p className='ds-text'>
         Create an account for Developer Preview at <ExternalLink href={envConfig.qppCmsPreviewUrl} />.
       </p>
-      
+
       <h3 className='ds-h3'>Connect to EHR or reporting application</h3>
       <p className='ds-text'>
         Log in to Developer Preview (<ExternalLink href={envConfig.qppCmsPreviewUrl} />).
