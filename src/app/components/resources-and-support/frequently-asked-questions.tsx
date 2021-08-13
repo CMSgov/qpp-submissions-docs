@@ -10,7 +10,7 @@ const tableData = {
         Submissions UI: EHRs can submit via the Submissions UI by logging into the QPP site <a href='https://qpp.cms.gov' target='_blank' rel='noopener noreferrer'>qpp.cms.gov</a>. They will have to be connected as a Staff user for each of the Individuals and Groups they need to submit quality data for. Submissions for each individual or group could be uploaded as an excel file for efficiency.
       </li>
       <li>
-        Burden Reduction: EHRs may apply for Burden Reduction which allows them to obtain a registry token to use to submit via the Submissions API. See the process outline in this <a href='https://groups.google.com/forum/#!msg/qpp-apis/EKqpKejepwY/uPrgllFiDQAJ' target='_blank' rel='noopener noreferrer'>Google Group post</a>
+        Burden Reduction: EHRs may apply for Burden Reduction which allows them to obtain a registry token to use to submit via the Submissions API.
       </li>
     </ul>
   `,
@@ -23,12 +23,7 @@ const FrequentlyAskedQuestions = () => {
       <p className='qpp-docs-page-updated'>Last Updated: 08/26/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Frequently Asked Questions</h2>
 
-      <h3 className='ds-h3'>General</h3>
-      <p>
-        See <ExternalLink href={`${envConfig.cmsGithubIo}/qpp-developer-preview-docs/frequently-asked-questions`} text='Developer Preview Frequently Asked Questions' />
-      </p>
-
-      <h3 className='ds-h3'>Developer Preview</h3>
+      <h3 className='ds-h3'>General and Developer Preview</h3>
       <p>
         See <ExternalLink href={`${envConfig.cmsGithubIo}/qpp-developer-preview-docs/frequently-asked-questions`} text='Developer Preview Frequently Asked Questions' />
       </p>
@@ -43,10 +38,10 @@ const FrequentlyAskedQuestions = () => {
         <tbody>
           {Object.entries(tableData).map(([question, answer], i) =>
             <tr key={i}>
-              <td>{question}</td>
+              <td className='qpp-table-text-align'>{question}</td>
               {envConfig.htmlRegex.test(answer)
-                ? <td dangerouslySetInnerHTML={{ __html: answer }} />
-                : <td>{answer}</td>
+                ? <td className='qpp-table-text-align' dangerouslySetInnerHTML={{ __html: answer }} />
+                : <td className='qpp-table-text-align' >{answer}</td>
               }
             </tr>,
           )}

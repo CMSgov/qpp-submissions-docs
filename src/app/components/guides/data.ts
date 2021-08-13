@@ -10,55 +10,28 @@ interface IApiExamples {
 }
 
 export const steps: ISteps = {
-  advanced1: [
-    {
-      tab: 'Request',
-      code: `{
-  "submissionId": "0313d351-624d-409b-837f-500d603819aa",
-  "measurements": [
-    {
-      "measureId": "IA_EPA_10",
-      "value": true
-    }
-  ],
-  "category": "ia",
-  "submissionMethod": "registry",
-  "performanceStart": "2018-01-01",
-  "performanceEnd": "2018-06-01"
-}`,
-    },
-    {
-      tab: 'Response',
-      code: `{
-  "error": {
-    "type": "ValidationError",
-    "message": "invalid measurement-set object",
-    "details": [
-      {
-        "message": "field 'measureId' in MeasurementSet.measurements[0] is invalid: IA_EPA_10 does not exist, see qpp-measures-data for list of valid measureIds",
-        "path": "$.measurements[0].measureId"
-      }
-    ]
-  }
-}`,
-      response: '422 Un-processable Entity',
-    },
-  ],
   advanced2: [
     {
       tab: 'Request',
       code: `{
-  "submissionId": "0313d351-624d-409b-837f-500d603819aa",
+  "submissionId": "086dad28-0477-4b41-8c05-77dd98d41d6f",
   "measurements": [
     {
-      "measureId": "IA_EPA_3",
-      "value": true
+      "measureId": "001",
+      "value": {
+        "isEndToEndReported": false,
+        "performanceMet": 36,
+        "eligiblePopulationExclusion": 0,
+        "eligiblePopulationException": 0,
+        "performanceNotMet": 120,
+        "eligiblePopulation": 156
+      }
     }
   ],
-  "category": "ia",
+  "category": "quality",
   "submissionMethod": "registry",
-  "performanceStart": "2018-01-01",
-  "performanceEnd": "2018-06-01"
+  "performanceStart": "2021-01-01",
+  "performanceEnd": "2021-12-31"
 }`,
     },
     {
@@ -67,33 +40,53 @@ export const steps: ISteps = {
       code: `{
   "data": {
     "measurementSet": {
-      "id": "0313d351-a094-4dc2-b632-23cd88bffb5e",
-      "createdAt": "2018-08-21T13:55:29Z",
-      "updatedAt": "2018-08-21T14:07:51Z",
-      "submissionId": "0313d351-624d-409b-837f-500d603819aa",
-      "category": "ia",
+      "id": "086dad28-907a-4e88-af73-5c7ed2e6764e",
+      "createdAt": "2021-06-25T15:18:00Z",
+      "updatedAt": "2021-06-25T15:35:08Z",
+      "submissionId": "086dad28-0477-4b41-8c05-77dd98d41d6f",
+      "category": "quality",
       "submissionMethod": "registry",
       "measureSet": null,
-      "submitterId": "1234567",
+      "submitterId": "12c6258f-86db-492c-8637-4ff2668164b5",
       "submitterType": "organization",
-      "performanceStart": "2018-01-01",
-      "performanceEnd": "2018-06-01",
+      "programName": "mips",
+      "practiceId": null,
+      "practiceDetails": null,
+      "cehrtId": null,
+      "suppressed": false,
+      "source": null,
+      "performanceStart": "2021-01-01",
+      "performanceEnd": "2021-12-31",
       "measurements": [
         {
-          "id": "0313d5c6-1a2d-4564-9ac3-d006bf03efac",
-          "measurementSetId": "0313d351-a094-4dc2-b632-23cd88bffb5e",
-          "measureId": "IA_EPA_3",
-          "value": true,
-          "performanceStart": null,
-          "performanceEnd": null
+          "id": "086db12c-490d-484d-8c7a-1d378bf0a71f",
+          "measurementSetId": "086dad28-907a-4e88-af73-5c7ed2e6764e",
+          "measureId": "001",
+          "value": {
+            "isEndToEndReported": false,
+            "performanceMet": 36,
+            "eligiblePopulationExclusion": 0,
+            "eligiblePopulationException": 0,
+            "performanceNotMet": 120,
+            "eligiblePopulation": 156,
+            "reportingRate": 100,
+            "performanceRate": 23.08
+          }
         },
         {
-          "id": "0313d351-10bd-4419-a593-ece163a67520",
-          "measurementSetId": "0313d351-a094-4dc2-b632-23cd88bffb5e",
-          "measureId": "IA_EPA_4",
-          "value": true,
-          "performanceStart": null,
-          "performanceEnd": null
+          "id": "086dad28-4bcb-4649-a4fd-04ad8426df77",
+          "measurementSetId": "086dad28-907a-4e88-af73-5c7ed2e6764e",
+          "measureId": "047",
+          "value": {
+            "isEndToEndReported": false,
+            "performanceMet": 12,
+            "eligiblePopulationExclusion": 0,
+            "eligiblePopulationException": 0,
+            "performanceNotMet": 61,
+            "eligiblePopulation": 156,
+            "reportingRate": 46.79,
+            "performanceRate": 16.44
+          }
         }
       ]
     }
@@ -299,22 +292,29 @@ export const steps: ISteps = {
     {
       tab: 'Request',
       code: `{
+  "category": "quality",
+  "submissionMethod": "registry",
+  "performanceStart": "2021-01-01",
+  "performanceEnd": "2021-12-31",
+  "programName": "mips",
   "submission": {
-    "entityType": "individual",
-    "taxpayerIdentificationNumber": "000456789",
-    "nationalProviderIdentifier": "000000002",
-    "performanceYear": 2018
+    "entityType": "group",
+    "taxpayerIdentificationNumber": "000000002",
+    "performanceYear": 2021
   },
   "measurements": [
     {
-      "measureId": "IA_EPA_4",
-      "value": true
+      "measureId": "047",
+      "value": {
+        "isEndToEndReported": false,
+        "performanceMet": 120,
+        "eligiblePopulationExclusion": 0,
+        "eligiblePopulationException": 0,
+        "performanceNotMet": 36,
+        "eligiblePopulation": 156
+      }
     }
-  ],
-  "category": "ia",
-  "submissionMethod": "registry",
-  "performanceStart": "2018-01-01",
-  "performanceEnd": "2018-06-01"
+  ]
 }`,
     },
     {
@@ -323,28 +323,42 @@ export const steps: ISteps = {
       code: `{
   "data": {
     "measurementSet": {
-      "id": "0313d351-a094-4dc2-b632-23cd88bffb5e",
-      "createdAt": "2018-08-21T13:55:29Z",
-      "updatedAt": "2018-08-21T13:55:29Z",
-      "submissionId": "0313d351-624d-409b-837f-500d603819aa",
-      "category": "ia",
+      "id": "086dad28-907a-4e88-af73-5c7ed2e6764e",
+      "createdAt": "2021-06-25T15:18:00Z",
+      "updatedAt": "2021-06-25T15:18:00Z",
+      "submissionId": "086dad28-0477-4b41-8c05-77dd98d41d6f",
+      "category": "quality",
       "submissionMethod": "registry",
       "measureSet": null,
-      "submitterId": "1234567",
+      "submitterId": "12c6258f-86db-492c-8637-4ff2668164b5",
       "submitterType": "organization",
-      "performanceStart": "2018-01-01",
-      "performanceEnd": "2018-06-01",
+      "programName": "mips",
+      "practiceId": null,
+      "practiceDetails": null,
+      "cehrtId": null,
+      "suppressed": false,
+      "source": null,
+      "performanceStart": "2021-01-01",
+      "performanceEnd": "2021-12-31",
       "measurements": [
         {
-          "id": "0313d351-10bd-4419-a593-ece163a67520",
-          "measurementSetId": "0313d351-a094-4dc2-b632-23cd88bffb5e",
-          "measureId": "IA_EPA_4",
-          "value": true,
-          "performanceStart": null,
-          "performanceEnd": null
+          "id": "086dad28-4bcb-4649-a4fd-04ad8426df77",
+          "measurementSetId": "086dad28-907a-4e88-af73-5c7ed2e6764e",
+          "measureId": "047",
+          "value": {
+            "isEndToEndReported": false,
+            "performanceMet": 12,
+            "eligiblePopulationExclusion": 0,
+            "eligiblePopulationException": 0,
+            "performanceNotMet": 61,
+            "eligiblePopulation": 156,
+            "reportingRate": 46.79,
+            "performanceRate": 16.44
+          }
         }
       ]
-    }
+    },
+    "warnings": []
   }
 }`,
     },
@@ -358,73 +372,214 @@ export const steps: ISteps = {
     "score": {
       "name": "total",
       "title": "Total Score",
-      "detail": "0.45.0",
-      "value": 7.5,
+      "detail": "13.3.0",
+      "value": 4.405,
       "parts": [
         {
-          "name": "ia",
-          "title": "IA component of total score",
-          "detail": "Scoring based on weight of 15%.",
-          "value": 7.5,
+          "name": "quality",
+          "title": "QUALITY component of total score",
+          "detail": "Scoring based on weight of 45%.",
+          "value": 4.405,
           "original": {
-            "name": "ia",
-            "value": 20,
+            "name": "quality",
+            "value": 9.7888,
             "detail": "Picked the highest scoring measurement set registry",
             "parts": [
               {
-                "name": "ia",
-                "value": 20,
-                "title": "Improvement Activities Score",
+                "name": "quality",
+                "value": 9.7888,
                 "detail": "registry",
                 "parts": [
                   {
-                    "name": "IA_EPA_4",
-                    "title": "Additional improvements in access as a result of QIN/QIO TA",
-                    "value": 20,
+                    "detail": "Contributing 5.8733",
                     "metadata": {
-                      "measurementId": "0313d351-10bd-4419-a593-ece163a67520",
-                      "maxContribution": 40,
-                      "weight": "medium"
-                    }
+                      "highPriorityBonus": 0,
+                      "highPriorityBonusIgnored": true,
+                      "decileScore": 5.8733,
+                      "benchmarkType": "registry",
+                      "performanceRate": 76.9231,
+                      "reportingRate": 100,
+                      "measureClass": "Class 1",
+                      "measureTitle": "Advance Care Plan",
+                      "highPriorityBonusEligible": true,
+                      "endToEndBonusEligible": false,
+                      "endToEndBonus": 0,
+                      "outcomeOrPatientExperienceBonus": 0,
+                      "performanceDenominator": 156,
+                      "performanceNumerator": 120,
+                      "eligiblePopulation": 156,
+                      "partialDecileScore": 0.8733,
+                      "partialPoints": 40.7731,
+                      "decile": 5,
+                      "deciles": [ ... ],
+                      "processingStatus": "PICKED",
+                      "totalMeasurementPoints": 5.8733,
+                      "totalBonusPoints": 0,
+                      "messages": {
+                        "measurementClass": "Eligible population is greater than or equal to 20, reporting rate is greater than 70% and has benchmarks",
+                        "e2eBonusScore": "Default E2E bonus score",
+                        "highPriorityBonus": "Measure having highest decile score is not eligible for high priority bonus",
+                        "measurementPicker": "Picked at 1",
+                        "totalMeasurementPoints": "Measurement points for PICKED measure include decile score with all bonus points"
+                      },
+                      "noBenchmarks": false,
+                      "eMeasureId": null,
+                      "toppedOut": false,
+                      "isGhost": false,
+                      "performanceStart": "2021-01-01",
+                      "performanceEnd": "2021-12-31",
+                      "isCpcPlus": false,
+                      "skippedDuplicate": false,
+                      "unroundedScoreValue": 5.8733
+                    },
+                    "name": "047",
+                    "value": 5.8733,
+                    "instrumentations": [
+                      "QUALITY-009",
+                      "QUALITY-051",
+                      "QUALITY-078",
+                      "QUALITY-091",
+                      "QUALITY-093",
+                      "QUALITY-111",
+                      "QUALITY-113",
+                      "QUALITY-117",
+                      "QUALITY-005"
+                    ]
                   }
                 ],
+                "instrumentations": [
+                  "QUALITY-031",
+                  "QUALITY-032",
+                  "QUALITY-060",
+                  "QUALITY-025",
+                  "QUALITY-026",
+                  "QUALITY-061",
+                  "QUALITY-071",
+                  "QUALITY-101",
+                  "QUALITY-116"
+                ],
                 "metadata": {
-                  "messages": {},
-                  "maxContribution": 40,
-                  "measurementSetId": "0313d351-a094-4dc2-b632-23cd88bffb5e",
-                  "measurementSetPicked": true
+                  "messages": {
+                    "denominator": "At least 1 high or outcome or patient experience measure available. So denominator is 60.",
+                    "totalDecileScore": "Decile score points for measurements included in measurement set score, excluding bonus points",
+                    "totalBonusPoints": "Sum of measurement bonus points included in the measurement set score",
+                    "totalMeasurementPoints": "Sum of applicable measurement points.",
+                    "picked": "Measurement set selected for category score."
+                  },
+                  "maxContribution": 100,
+                  "measuresPicked": [
+                    "047"
+                  ],
+                  "measuresSubmittedCount": 1,
+                  "measuresSubmitted": [
+                    "047"
+                  ],
+                  "totalDecileScore": 5.8733,
+                  "totalBonusPoints": 0,
+                  "totalMeasurementPoints": 5.8733,
+                  "denominator": 60,
+                  "e2eBonusScore": 0,
+                  "maxMeasurementsAllowed": 6,
+                  "mergedWithCahps": false,
+                  "processingStatus": "PICKED",
+                  "smallPracticeBonusEligible": false,
+                  "smallPracticeBonus": 0,
+                  "dataCompletenessExemption": false,
+                  "qualityAutocredit": 0,
+                  "unroundedScoreValue": 5.8733,
+                  "measurementSetPicked": true,
+                  "reweightedScore": 4.405
                 }
               }
-            ]
+            ],
+            "metadata": {
+              "unroundedScoreValue": 9.788833333333335
+            },
+            "instrumentations": [
+              "QUALITY-031",
+              "QUALITY-032",
+              "QUALITY-060",
+              "QUALITY-025",
+              "QUALITY-026",
+              "QUALITY-061",
+              "QUALITY-071",
+              "QUALITY-101",
+              "QUALITY-116"
+            ],
+            "warnings": null
           },
           "metadata": {
-            "unroundedScoreValue": 7.5,
-            "maxContribution": 15
+            "maxContribution": 45,
+            "unroundedScoreValue": 4.404975
           }
         },
         {
-          "name": "feedback-ia",
+          "name": "feedback-quality",
           "parts": [
             {
-              "name": "ia-feedback-message",
-              "detail": "You could achieve full credit for this category by submitting 1 additional Medium Weighted Activity."
-            },
-            {
-              "name": "ia-feedback-message",
-              "detail": "You could achieve full credit for this category by submitting 1 additional High Weighted Activity."
+              "name": "047",
+              "detail": "Focus on improving measure 047"
             }
           ]
+        },
+        {
+          "name": "bonuses",
+          "value": 0,
+          "parts": []
         }
       ],
+      "instrumentations": [],
       "metadata": {
         "messages": {},
         "maxTotalScore": 100,
-        "maxHighContributionIA": 40,
-        "maxMediumContributionIA": 20,
+        "maxHighContributionIA": 20,
+        "maxMediumContributionIA": 10,
         "maxContributionIA": 15,
-        "maxContributionACI": 25,
-        "maxContributionQuality": 60,
-        "maxContributionCost": 0
+        "maxContributionQuality": 45,
+        "maxContributionCost": 15,
+        "maxContributionPI": 25,
+        "piRollupBase": 0,
+        "piRollupBonus": 0,
+        "iaCategoryScoreUnrounded": 0,
+        "iaCategoryScore": 0,
+        "iaWeightedScore": 0,
+        "qualityImprovementBonus": 0,
+        "previousYearQualityScore": 0,
+        "previousYearNumerator": 0,
+        "previousYearDenominator": 0,
+        "qualityCategoryScoreUnrounded": 9.788833333333335,
+        "qualityCategoryScore": 9.7888,
+        "qualityWeightedScore": 4.405,
+        "isSubmissionFabricated": true,
+        "hasIAMeasures": false,
+        "hasQualityMeasures": true,
+        "hasACIMeasures": false,
+        "hasPIMeasures": false,
+        "hasCostMeasures": false,
+        "hasACRMeasure": false,
+        "hasCAHPSMeasure": false,
+        "hasScorableIAMeasures": false,
+        "hasScorableACIMeasures": false,
+        "hasScorablePIMeasures": false,
+        "hasScorableCostMeasures": false,
+        "hasScorableQualityMeasures": true,
+        "numberOfCategoriesHavingExternalMeasures": 1,
+        "hasSkippedWIMSet": false,
+        "hasMergedRegistryMSet": false,
+        "givenIAStudyCredit": false,
+        "hasIAWeightStatus": "NORMAL",
+        "givenAPMParticipationCredit": false,
+        "givenIACreditPCMH": false,
+        "hasClaimsOnlyMeasures": false,
+        "hasMinimumACIPerformancePeriod": false,
+        "hasMinimumPIPerformancePeriod": false,
+        "hasIncompleteAPMWISubmission": false,
+        "qualityReweighted": false,
+        "piReweighted": false,
+        "iaReweighted": false,
+        "costReweighted": true,
+        "unroundedScoreValue": 4.404975,
+        "runtimeInMillis": 4.176
       },
       "warnings": [
         "Disclaimer: Scoring is subject to change, based on periodic policy updates, eligibility reviews, and technical integration developments."
@@ -438,66 +593,34 @@ export const steps: ISteps = {
 };
 
 export const apiExamples: IApiExamples = {
-  measurementSetsId1: {
-    verb: 'PATCH',
-    url: '/measurement-sets/:id',
-    rows: [
-      {
-        row: ['Submission ID', '0313d351-624d-409b-837f-500d603819aa'],
-      },
-      {
-        row: ['Measurement Set ID', '0313d351-a094-4dc2-b632-23cd88bffb5e'],
-      },
-      {
-        row: ['Category', 'IA'],
-      },
-      {
-        row: ['Submission Method', 'Registry'],
-      },
-      {
-        row: ['Performance Start', '2018-01-01'],
-      },
-      {
-        row: ['Performance End', '2018-06-01'],
-      },
-      {
-        row: ['Measurements'],
-        classes: ['nested-once'],
-      },
-      {
-        row: ['Measure <code>IA_EPA_10</code>', '<code>true</code>'],
-        classes: ['nested-twice'],
-      },
-    ],
-  },
   measurementSetsId2: {
     verb: 'PATCH',
     url: '/measurement-sets/:id',
     rows: [
       {
-        row: ['Submission ID', '0313d351-624d-409b-837f-500d603819aa'],
+        row: ['Submission ID', '086dad28-0477-4b41-8c05-77dd98d41d6f'],
       },
       {
-        row: ['Measurement Set ID', '0313d351-a094-4dc2-b632-23cd88bffb5e'],
+        row: ['Measurement Set ID', '086dad28-907a-4e88-af73-5c7ed2e6764e'],
       },
       {
-        row: ['Category', 'IA'],
+        row: ['Category', 'Quality'],
       },
       {
         row: ['Submission Method', 'Registry'],
       },
       {
-        row: ['Performance Start', '2018-01-01'],
+        row: ['Performance Start', '2021-01-01'],
       },
       {
-        row: ['Performance End', '2018-06-01'],
+        row: ['Performance End', '2021-12-31'],
       },
       {
         row: ['Measurements'],
         classes: ['nested-once'],
       },
       {
-        row: ['Measure <code>IA_EPA_3</code>', '<code>true</code>'],
+        row: ['Measure <code>001</code>', '<code>true</code>'],
         classes: ['nested-twice'],
       },
     ],
@@ -522,16 +645,13 @@ export const apiExamples: IApiExamples = {
     url: '/measurement-sets',
     rows: [
       {
-        row: ['Entity', 'Individual'],
+        row: ['Entity', 'Group'],
       },
       {
-        row: ['Taxpayer Identification Number', '000456789'],
+        row: ['Taxpayer Identification Number', '000000002'],
       },
       {
-        row: ['National Provider Identifier', '000000002'],
-      },
-      {
-        row: ['Performance Year', '2018'],
+        row: ['Performance Year', '2021'],
       },
     ],
   },

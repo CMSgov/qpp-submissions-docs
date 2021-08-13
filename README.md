@@ -10,7 +10,7 @@ These are static tutorials designed to illustrate some common workflows when com
 
 It's also useful to describe the data being submitted and updated through the API, so these data schemas list the fields belonging to each resource type as well as some supplementary details about concepts like scoring.
 
-References to [qpp-measures-data](https://github.com/CMSgov/qpp-measures-data), the [interactive API reference](https://preview.qpp.cms.gov/api/submissions/public/docs/), and the Google Group are also listed.
+References to [qpp-measures-data](https://github.com/CMSgov/qpp-measures-data), the [interactive API reference](https://preview.qpp.cms.gov/api/submissions/public/docs/).
 
 ## Development
 
