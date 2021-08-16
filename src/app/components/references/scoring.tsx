@@ -42,7 +42,6 @@ const Scoring = () => {
     <>
       <p className='qpp-docs-page-updated'>Last Updated: 06/23/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Scoring</h2>
-      <a href='https://preview.qpp.cms.gov/api/submissions/public/docs/#Submissions/scoreSubmission'>Test</a>
       <p className='ds-text--lead'>
         The scoring engine is responsible for interpreting submissions and outputting a score. Each category score is utilized to create the QPP score object.
       </p>
