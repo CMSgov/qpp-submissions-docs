@@ -312,7 +312,7 @@ export const submissionsTabs: ITabs = {
   fields: [
     {
       tab: 'Sample JSON',
-      code: `{  
+      code: `{
       "id": string,
       "createdAt": datetime,
       "updatedAt": datetime,
