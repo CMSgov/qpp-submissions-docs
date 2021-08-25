@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/qpp-submissions-docs/static/css/main.35463fd1.chunk.css",
+    "main.js": "/qpp-submissions-docs/static/js/main.f2240949.chunk.js",
+    "main.js.map": "/qpp-submissions-docs/static/js/main.f2240949.chunk.js.map",
+    "runtime-main.js": "/qpp-submissions-docs/static/js/runtime-main.a12dae7e.js",
+    "runtime-main.js.map": "/qpp-submissions-docs/static/js/runtime-main.a12dae7e.js.map",
+    "static/css/2.f424121e.chunk.css": "/qpp-submissions-docs/static/css/2.f424121e.chunk.css",
+    "static/js/2.6a734b8e.chunk.js": "/qpp-submissions-docs/static/js/2.6a734b8e.chunk.js",
+    "static/js/2.6a734b8e.chunk.js.map": "/qpp-submissions-docs/static/js/2.6a734b8e.chunk.js.map",
+    "index.html": "/qpp-submissions-docs/index.html",
+    "static/css/2.f424121e.chunk.css.map": "/qpp-submissions-docs/static/css/2.f424121e.chunk.css.map",
+    "static/css/main.35463fd1.chunk.css.map": "/qpp-submissions-docs/static/css/main.35463fd1.chunk.css.map",
+    "static/js/2.6a734b8e.chunk.js.LICENSE.txt": "/qpp-submissions-docs/static/js/2.6a734b8e.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/qpp-submissions-docs/static/media/glyphicons-halflings-regular.be810be3.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a12dae7e.js",
+    "static/css/2.f424121e.chunk.css",
+    "static/js/2.6a734b8e.chunk.js",
+    "static/css/main.35463fd1.chunk.css",
+    "static/js/main.f2240949.chunk.js"
+  ]
+}
