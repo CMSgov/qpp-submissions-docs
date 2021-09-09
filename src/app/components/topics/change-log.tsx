@@ -48,7 +48,7 @@ const submissionChangesTable = [
         For measurementSets object, added new <code>programName = pcf</code>. (Note: for PCF submissions the programName can be upper or lowercase.)
       </li>
       <li>
-        For measurementSets object, added new optional attribute for practiceDetails which is the list of TINs or TIN:NPIs that the data is being submitted for. Optional: if provided, must follow the correct format for TINs and NPIs.
+        For measurementSets object, added new optional attribute for practiceDetails which is a TIN or TIN:NPIs that the data is being submitted for. Optional: if provided, must follow the correct format for TINs and NPIs.
       </li>
       <li>
         Quality measure ID 47 is required to be submitted to PCF through the registry measurementSet for PY 2021.
