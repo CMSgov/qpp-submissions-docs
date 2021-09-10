@@ -287,7 +287,6 @@ export const measurementSetsTabs: ITabs = {
   "practiceId": string,
   "performanceStart": date,
   "performanceEnd": date,
-  "measureSet": string,
   "measurements": array(<a href='measurements'>Measurements Resource</a>)
 }`,
     },
@@ -317,6 +316,7 @@ export const submissionsTabs: ITabs = {
       "createdAt": datetime,
       "updatedAt": datetime,
       "entityType": string,
+      "entityId": string,
       "taxpayerIdentificationNumber": string,
       "nationalProviderIdentifier": string,
       "performanceYear": integer,
