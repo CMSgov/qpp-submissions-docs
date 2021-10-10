@@ -137,6 +137,15 @@ a:focus {
   padding-left: 12px;
 }
 
+code {
+  background-color: white;
+  color: black;
+}
+
+.svg {
+  background-color: transparent;
+}
+
 @media (max-width: 534px) {
   .ds-c-field:focus {
     outline: none;
@@ -146,5 +155,9 @@ a:focus {
 @media (min-width: 768px) {
   body {
     padding-top: 108px;
+  }
+
+    .ds-l-container {
+    max-width: 1400px;
   }
 }
