@@ -99,9 +99,7 @@ export const measurementsTabs: ITabs = {
   "id": string,
   "measurementSetId": string,
   "measureId": string,
-  "value": [
-    ${Object.entries(measurementsTitleAndId).map(([title, id]) => `<a href='#${id}'>${title}</a>`).join(' | ')}
-  ]
+  "value": ${Object.entries(measurementsTitleAndId).map(([title, id]) => `<a href='#${id}'>${title}</a>` ).join(' | ')}
 }`,
     },
   ],
