@@ -44,15 +44,15 @@ export const CodeTab = ({ data }: { data: ICodeTab[] }) => {
           <p>{tab} body:</p>
           <CopyBlock
             text={code}
-            language={"typescript"}
+            language={'typescript'}
             {...{ showLineNumbers, codeBlock }}
             theme={customCodeTheme}
             customStyle={{
               fontFamily: 'Menlo,Monaco,Consolas,"Courier New",monospace',
-              fontSize: "0.9rem",
+              fontSize: '0.9rem',
             }}
           />
-        </div>
+        </div>,
       )}
 
     </div>
