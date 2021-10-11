@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import envConfig from '../envConfig';
+
 import '../styles/shared/code-tab.scss';
 
 import { CopyBlock } from 'react-code-blocks';
@@ -11,9 +13,35 @@ export interface ICodeTab {
   response?: string;
 }
 
+const showLineNumbers = false;
+const codeBlock = true;
+
+// If the code block contains HTML, do not implement CopyBlock
+const checkPreForHTML = (code: string) =>
+  envConfig.htmlRegex.test(code) ? (
+    <pre
+      dangerouslySetInnerHTML={{ __html: code }}
+      style={{
+        fontFamily: 'Menlo,Monaco,Consolas,"Courier New",monospace',
+        fontSize: '0.9rem',
+        background: 'white',
+        color: 'black',
+      }}
+    />
+  ) : (
+    <CopyBlock
+      text={code}
+      language={'typescript'}
+      {...{ showLineNumbers, codeBlock }}
+      theme={customCodeTheme}
+      customStyle={{
+        fontFamily: 'Menlo,Monaco,Consolas,"Courier New",monospace',
+        fontSize: '0.9rem',
+      }}
+    />
+  );
+
 export const CodeTab = ({ data }: { data: ICodeTab[] }) => {
-  const showLineNumbers = false;
-  const codeBlock = true;
   const [selectedTab, setSelectedTab] = useState(data[0].tab);
 
   return (
@@ -42,16 +70,7 @@ export const CodeTab = ({ data }: { data: ICodeTab[] }) => {
           }
 
           <p>{tab} body:</p>
-          <CopyBlock
-            text={code}
-            language={'typescript'}
-            {...{ showLineNumbers, codeBlock }}
-            theme={customCodeTheme}
-            customStyle={{
-              fontFamily: 'Menlo,Monaco,Consolas,"Courier New",monospace',
-              fontSize: '0.9rem',
-            }}
-          />
+          {checkPreForHTML(code)}
         </div>,
       )}
 
