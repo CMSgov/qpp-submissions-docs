@@ -16,7 +16,6 @@ const MeasurementSets = () => {
         <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/submissions/public/docs/#/MeasurementSets`} text='Try it out!' />
       </p>
 
-      <h3 className='ds-h3'>Resource Representation</h3>
       <CodeTab data={measurementSetsTabs.fields} />
       <DataModelTable data={measurementSetsFields.fields} />
     </>

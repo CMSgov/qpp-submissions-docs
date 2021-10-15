@@ -23,7 +23,6 @@ const Measurements = () => {
         <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/submissions/public/docs/#/Measurements`} text='Try it out!' />
       </p>
 
-      <h3 className='ds-h3'>Resource Representation</h3>
       <CodeTab data={measurementsTabs.fields} />
       <DataModelTable data={measurementsFields.fields} />
 
@@ -31,7 +30,6 @@ const Measurements = () => {
       <p className='ds-text--lead'>
         Boolean Measurements are applicable to Improvement Activity (IA) and Promoting Interoperability (PI) measures. For PI Measures, if a measure has an Exclusion measure ID listed, this means that the Exclusion measure ID cannot be submitted in the same Measurement Set as the original measure because they have opposite meanings and cannot both be true.
       </p>
-      <h3 className='ds-h3'>Resource Representation</h3>
       <CodeTab data={measurementsTabs.boolean} />
       <DataModelTable data={measurementsFields.boolean} />
 
@@ -39,7 +37,6 @@ const Measurements = () => {
       <p className='ds-text--lead'>
         Proportion Measurements are applicable to Promoting Interoperability (PI) measures. For PI Measures, if a measure has an Exclusion measure ID listed, this means that the Exclusion measure ID cannot be submitted in the same Measurement Set as the original measure because they have opposite meanings and cannot both be true.
       </p>
-      <h3 className='ds-h3'>Resource Representation</h3>
       <CodeTab data={measurementsTabs.proportion} />
       <DataModelTable data={measurementsFields.proportion} />
 
@@ -47,7 +44,6 @@ const Measurements = () => {
       <p className='ds-text--lead'>
         Non-Proportion Measurements are applicable to quality measures. Most are authored by QCDRs and are used to attest to measures that are otherwise categorized as 'ratio', 'continuous variable', or a combination of 'proportion' and the former. Note this means that having a false value in the proportion field of QCDR documentation is sufficient to determine that a measure as non-proportional, but having a true value for proportion is insufficient to determine that measure as proportional. Non-proportion measurements are unconstrained, so while the fields are 'numerator' and 'denominator' there is no validation that the numerator must be less than or equal to the denominator or that the denominator is greater than 0, as is the case for proportion measurements.
       </p>
-      <h3 className='ds-h3'>Resource Representation</h3>
       <CodeTab data={measurementsTabs.nonProportion} />
       <DataModelTable data={measurementsFields.nonProportion} />
 
@@ -55,7 +51,6 @@ const Measurements = () => {
       <p className='ds-text--lead'>
         Single-Performance Rate Measurements are applicable to Quality measures. There are two types of Single-Performance Rate Measurements: registry and normal. The difference between the two is that for Registry Single-Performance Rate Measurements, the performanceRate field is both writable and required.
       </p>
-      <h3 className='ds-h3'>Resource Representation</h3>
       <CodeTab data={measurementsTabs.singlePerformanceRate} />
       <DataModelTable data={measurementsFields.singlePerformanceRate} />
 
@@ -63,7 +58,6 @@ const Measurements = () => {
       <p className='ds-text--lead'>
         Multi-Performance Rate Measurements are applicable to Quality measures. There are two types of Multi-Performance Rate Measurements: registry and normal. The difference between the two is that for Registry Multi-Performance Rate Measurements, the performanceRate field is both writable and required. Multi-Performance Rate Measurements contain multiple strata and the stratum field is required for each.
       </p>
-      <h3 className='ds-h3'>Resource Representation</h3>
       <CodeTab data={measurementsTabs.multiPerformanceRate} />
       <DataModelTable data={measurementsFields.multiPerformanceRate} />
 
@@ -71,7 +65,6 @@ const Measurements = () => {
       <p className='ds-text--lead'>
         A Multi-Performance Rate Stratum represents the performance data for a specified subset of the population, as described by the stratum field.
       </p>
-      <h3 className='ds-h3'>Resource Representation</h3>
       <CodeTab data={measurementsTabs.stratum} />
       <DataModelTable data={measurementsFields.stratum} />
     </>

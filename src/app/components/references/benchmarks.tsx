@@ -18,7 +18,6 @@ const Benchmarks = () => {
       <p>
         You can view the benchmarks for a Performance Year using the publicly accessible <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/submissions/public/docs/#/Public%20Endpoints/listBenchmarks`} text='benchmarks endpoint' />.
       </p>
-      <h3 className='ds-h3'>Resource Representation</h3>
       <CodeTab data={benchmarksTabs.fields} />
       <DataModelTable data={benchmarksFields.fields} />
 
