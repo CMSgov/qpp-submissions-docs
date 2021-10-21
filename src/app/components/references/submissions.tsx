@@ -17,7 +17,6 @@ const Submissions = () => {
       <p className='ds-text--lead'>
         <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/submissions/public/docs/#/Submissions`} text='Try it out!' />
       </p>
-      <h3 className='ds-h3'>Resource Representation</h3>
       <CodeTab data={submissionsTabs.fields} />
       <DataModelTable data={submissionsFields.fields} />
     </>

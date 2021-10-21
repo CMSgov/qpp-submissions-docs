@@ -137,6 +137,19 @@ a:focus {
   padding-left: 12px;
 }
 
+.ds-c-table--borderless {
+  thead {
+    th,
+    tr {
+      background-color: #f1f1f1;
+    }
+  }
+
+  td {
+    background-color: #fff;
+  }
+}
+
 @media (max-width: 534px) {
   .ds-c-field:focus {
     outline: none;
@@ -146,5 +159,9 @@ a:focus {
 @media (min-width: 768px) {
   body {
     padding-top: 108px;
+  }
+
+  .ds-l-container {
+    max-width: 1400px;
   }
 }

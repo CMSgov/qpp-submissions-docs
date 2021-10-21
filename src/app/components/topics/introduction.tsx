@@ -38,7 +38,7 @@ const Introduction = () => {
         Requests made in the Interactive Documentation and Developer Preview are not officially submitted to CMS.
       </p>
 
-      <h2 className='ds-h2'>Stay Up Date</h2>
+      <h2 className='ds-h2'>Stay Up To Date</h2>
       <p className='ds-text'>
         The developer documentation is a living document that is constantly maintained to stay in sync with policy, technical changes, and test data changes. Additionally we update the content to provide answers to frequently asked questions.  Please refer back to this regularly to keep aware of recent changes.
       </p>

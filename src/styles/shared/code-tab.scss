@@ -4,7 +4,7 @@ $darkBlue: rgb(17, 46, 81);
 #code-tabs {
   margin-bottom: 20px;
 
-  button {
+  .tab-button {
     background-color: white;
     color: $blue;
     text-transform: capitalize;
@@ -40,5 +40,10 @@ $darkBlue: rgb(17, 46, 81);
         margin-bottom: 20px;
       }
     }
+  }
+
+  code {
+    background-color: white;
+    color: black;
   }
 }

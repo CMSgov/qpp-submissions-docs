@@ -59,7 +59,7 @@ export const measurementsFields: IFields = {
     { name: 'eligiblePopulationException', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure. In the measures specifications, this field is also referred to as "Denominator Exception".', notes: 'writable, optional' },
     { name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Denominator".', notes: 'writable, required' },
     { name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100. This is also referred to as data completeness.', notes: 'calculated by API and returned in response' },
-    { name: 'performanceRate', value: 'float', description: 'The performance rate for a single performance rate measurement, ranging from zero to one-hundred and representing a percentage, is equal to (performanceMet / (performanceMet + performanceNotMet)) * 100.', notes: `If <code>metricType = registrySingle-PerformanceRate</code> then writable and <i>required</i>.<br> If <code>metricType = singlePerformance-Rate</code>, then calculated by API and returned in response.` },
+    { name: 'performanceRate', value: 'float', description: 'The performance rate for a single performance rate measurement, ranging from zero to one-hundred and representing a percentage, is equal to (performanceMet / (performanceMet + performanceNotMet)) * 100.', notes: `If <code>metricType = registrySinglePerformanceRate</code> then writable and <i>required</i>.<br> If <code>metricType = singlePerformanceRate</code>, then calculated by API and returned in response.` },
   ],
   multiPerformanceRate: [
     { name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported  via certified EHR technology without any manual interference.', notes: 'writable, required' },
@@ -76,7 +76,7 @@ export const measurementsFields: IFields = {
         '<li><b>weightedAverage:</b> <samp>((sum strata\'s performanceMet) / (sum strata\'s performanceMet and performanceNotMet)) * 100</samp>, or,</li>' +
         '<li><b>sumNumerators:</b> <samp>sum strata\'s performanceMet</samp>, or,</li>' +
         '<li><b>overallStratumOnly:</b> performance rate of the "overall" stratum.</li></ul>',
-      notes: `If <code>metricType = registryMulti-PerformanceRate</code> then writable and <i>required</i>.<br> If <code>metricType = multiPerformance-Rate</code>, then calculated by API and returned in response.`,
+      notes: `If <code>metricType = registryMultiPerformanceRate</code> then writable and <i>required</i>.<br> If <code>metricType = multiPerformanceRate</code>, then calculated by API and returned in response.`,
     },
     { name: 'strata', value: 'Array(performanceRateStratum)', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data" rel="noopener noreferrer" target="_blank">qpp-measures-data</a>.', notes: 'writable, required' },
   ],
@@ -99,9 +99,7 @@ export const measurementsTabs: ITabs = {
   "id": string,
   "measurementSetId": string,
   "measureId": string,
-  "value": [
-    ${Object.entries(measurementsTitleAndId).map(([title, id]) => `<a href='#${id}'>${title}</a>`).join(' | ')}
-  ]
+  "value": ${Object.entries(measurementsTitleAndId).map(([title, id]) => `<a href='#${id}'>${title}</a>` ).join(' | ')}
 }`,
     },
   ],
