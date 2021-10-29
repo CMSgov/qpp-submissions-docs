@@ -1,0 +1,2 @@
+(this["webpackJsonpqpp-submissions-docs"]=this["webpackJsonpqpp-submissions-docs"]||[]).push([[60],{524:function(s,t,i){"use strict";function n(s){s.languages.ini={comment:/^[ \t]*[;#].*$/m,selector:/^[ \t]*\[.*?\]/m,constant:/^[ \t]*[^\s=]+?(?=[ \t]*=)/m,"attr-value":{pattern:/=.*/,inside:{punctuation:/^[=]/}}}}s.exports=n,n.displayName="ini",n.aliases=[]}}]);
+//# sourceMappingURL=react-syntax-highlighter_languages_refractor_ini.4fd2bba1.chunk.js.map

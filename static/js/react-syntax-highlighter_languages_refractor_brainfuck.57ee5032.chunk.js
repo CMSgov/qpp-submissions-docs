@@ -1,0 +1,2 @@
+(this["webpackJsonpqpp-submissions-docs"]=this["webpackJsonpqpp-submissions-docs"]||[]).push([[18],{486:function(s,a,e){"use strict";function n(s){s.languages.brainfuck={pointer:{pattern:/<|>/,alias:"keyword"},increment:{pattern:/\+/,alias:"inserted"},decrement:{pattern:/-/,alias:"deleted"},branching:{pattern:/\[|\]/,alias:"important"},operator:/[.,]/,comment:/\S+/}}s.exports=n,n.displayName="brainfuck",n.aliases=[]}}]);
+//# sourceMappingURL=react-syntax-highlighter_languages_refractor_brainfuck.57ee5032.chunk.js.map
