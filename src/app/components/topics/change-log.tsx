@@ -17,7 +17,7 @@ const submissionChangesTable = [
       <li>
         See the <a href='https://preview.qpp.cms.gov/api/submissions/public/docs/#/Submissions/getSubmissionScore' target='_blank' rel='noopener noreferrer'>Submissions API Swagger Documentation</a> for more details.
       </li>
-    </ul>`,],
+    </ul>`],
   ['8/15/21', 'Updates for Y5 Traditional MIPS Submissions and Scoring for PY2021 are now supported.', `
     <ul>
       <li>
