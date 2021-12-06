@@ -3,6 +3,21 @@ import React from 'react';
 import envConfig from '../../../envConfig';
 
 const submissionChangesTable = [
+  ['11/22/21', 'Update to retrieve score by program name', `
+    <ul>
+      <li>
+        Updated the <code>GET /submissions/{id}/score</code> endpoint with the ability to filter results by program name using a query parameter.
+      </li>
+      <li>
+        For example, by querying the endpoint with <code>?program=mips</code>, the API returns all of the user's scores related to the MIPS program.
+      </li>
+      <li>
+        If no program is provided, the API returns the user's scores for all programs, which maintains legacy behavior.
+      </li>
+      <li>
+        See the <a href='https://preview.qpp.cms.gov/api/submissions/public/docs/#/Submissions/getSubmissionScore' target='_blank' rel='noopener noreferrer'>Submissions API Swagger Documentation</a> for more details.
+      </li>
+    </ul>`],
   ['8/15/21', 'Updates for Y5 Traditional MIPS Submissions and Scoring for PY2021 are now supported.', `
     <ul>
       <li>
@@ -123,8 +138,8 @@ const buildTableBody = (data: string[][]) =>
 const ChangeLog = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 06/08/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
-      <h2 className='ds-h2' style={{marginTop: 0}} id='change-log'>ChangeLog</h2>
+      <p className='qpp-docs-page-updated'>Last Updated: 12/06/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <h2 className='ds-h2' style={{marginTop: 0}} id='change-log'>Change Log</h2>
       <p className='ds-text'>
         The Change log is updated with each significant change to the API with the details that you need to be aware of.
       </p>
