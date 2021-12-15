@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/qpp-submissions-docs/static/css/main.7b6783e3.chunk.css",
-    "main.js": "/qpp-submissions-docs/static/js/main.f7594f27.chunk.js",
-    "main.js.map": "/qpp-submissions-docs/static/js/main.f7594f27.chunk.js.map",
+    "main.js": "/qpp-submissions-docs/static/js/main.8dab9966.chunk.js",
+    "main.js.map": "/qpp-submissions-docs/static/js/main.8dab9966.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_abap.js": "/qpp-submissions-docs/static/js/react-syntax-highlighter_languages_refractor_abap.bf0d6bbd.chunk.js",
     "react-syntax-highlighter_languages_refractor_abap.js.map": "/qpp-submissions-docs/static/js/react-syntax-highlighter_languages_refractor_abap.bf0d6bbd.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_actionscript.js": "/qpp-submissions-docs/static/js/react-syntax-highlighter_languages_refractor_actionscript.5f8ef774.chunk.js",
@@ -323,6 +323,6 @@
     "static/css/153.981c1ae6.chunk.css",
     "static/js/153.896c5598.chunk.js",
     "static/css/main.7b6783e3.chunk.css",
-    "static/js/main.f7594f27.chunk.js"
+    "static/js/main.8dab9966.chunk.js"
   ]
 }
