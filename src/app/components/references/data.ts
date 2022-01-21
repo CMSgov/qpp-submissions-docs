@@ -52,7 +52,7 @@ export const measurementsFields: IFields = {
     { name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable, required' },
     { name: 'numeratorExclusion', value: 'float', description: 'The exclusions from the numerator field as described in the QCDR measure specification.', notes: 'writable, optional' },
     { name: 'denominatorException', value: 'float', description: 'The exceptions from the denominator field as described in the QCDR measure specification.', notes: 'writable, optional' },
-    { name: 'reportingRate', value: 'float', description: 'The data completeness of the measure.', notes: 'calculated by API and returned in response' },
+    { name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((observationInstances + denominatorException + numeratorExclusion) / denominator) * 100. This is also referred to as data completeness.', notes: 'calculated by API and returned in response' },
     { name: 'observationInstances', value: 'integer', description: 'The number of denominator eligible instances that are used as input in the calculation to derive the numerator (i.e. average, ratio).', notes: 'writable, required' },
   ],
   singlePerformanceRate: [
