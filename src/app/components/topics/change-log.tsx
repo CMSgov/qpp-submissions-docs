@@ -3,6 +3,15 @@ import React from 'react';
 import envConfig from '../../../envConfig';
 
 const submissionChangesTable = [
+  ['12/29/21', `<code>performanceRate</code> value validation - negative values are not allowed`, `
+    <ul>
+      <li>
+        Added validation when <code>metricType</code> = <code>registrySinglePerformanceRate</code> OR <code>registryMultiPerformanceRate</code>, then <code>performanceRate</code> is stored and represented as a percentage with a value between 0 and 100. A negative <code>performanceRate</code> value is not allowed.
+      </li>
+      <li>
+        For details, see <a href='${envConfig.cmsGithubIo}/qpp-submissions-docs/measurements#single-performance-rate-measurements' target='_blank' rel='noopener noreferrer'>Single-Performance Rate Measurements</a> and <a href='${envConfig.cmsGithubIo}/qpp-submissions-docs/measurements#multi-performance-rate-measurements' target='_blank' rel='noopener noreferrer'>Multi-Performance Rate Measurements</a>.
+      </li>
+    </ul>`],
   ['11/22/21', 'Update to retrieve score by program name', `
     <ul>
       <li>
@@ -138,7 +147,7 @@ const buildTableBody = (data: string[][]) =>
 const ChangeLog = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 12/06/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 01/21/2022</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}} id='change-log'>Change Log</h2>
       <p className='ds-text'>
         The Change log is updated with each significant change to the API with the details that you need to be aware of.
