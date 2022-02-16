@@ -35,6 +35,9 @@ const Footer = ({ openModal }: { openModal: CallableFunction }) => {
               <li>
                 <ExternalLink href={`${envConfig.qppCmsUrl}/accessibility`} text='Accessibility' />
               </li>
+              <li>
+                <ExternalLink href={`${envConfig.cmsQualitySupportUrl}/ccsq_support_central`} text='Create or Track a Support Central Ticket' />
+              </li>
               <li>{envConfig.phoneNumber}</li>
               <li>TTY: {envConfig.TTYPhoneNumber}</li>
             </ul>
