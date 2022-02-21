@@ -19,6 +19,7 @@ We use [`create-react-app`](https://github.com/facebookincubator/create-react-ap
 We also rely on the [CMSGov Design System](https://github.com/CMSgov/design-system) and the [U.S. Web Design Standards](https://standards.usa.gov/) to help ensure consistency with other government properties.
 
 ```bash
+nvm use
 npm install
 npm start
 ```
