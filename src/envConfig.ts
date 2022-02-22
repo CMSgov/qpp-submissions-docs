@@ -10,6 +10,7 @@ const envConfig = {
   phoneNumber: '1-866-288-8292',
   TTYPhoneNumber: '1-877-715-6222',
   chplHealthItUrl: 'https://chpl.healthit.gov',
+  cmsQualitySupportUrl: 'https://cmsqualitysupport.servicenowservices.com',
 };
 
 export default envConfig;
