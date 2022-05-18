@@ -1,2 +1,0 @@
-(this["webpackJsonpqpp-submissions-docs"]=this["webpackJsonpqpp-submissions-docs"]||[]).push([[106],{564:function(s,t,n){"use strict";function p(s){s.languages.properties={comment:/^[ \t]*[#!].*$/m,"attr-value":{pattern:/(^[ \t]*(?:\\(?:\r\n|[\s\S])|[^\\\s:=])+?(?: *[=:] *| ))(?:\\(?:\r\n|[\s\S])|[^\\\r\n])+/m,lookbehind:!0},"attr-name":/^[ \t]*(?:\\(?:\r\n|[\s\S])|[^\\\s:=])+?(?= *[=:] *| )/m,punctuation:/[=:]/}}s.exports=p,p.displayName="properties",p.aliases=[]}}]);
-//# sourceMappingURL=react-syntax-highlighter_languages_refractor_properties.5ccb2078.chunk.js.map
