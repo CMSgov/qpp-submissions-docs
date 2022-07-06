@@ -1,0 +1,5 @@
+{
+  "printWidth": 90,
+  "singleQuote": true,
+  "overrides": [{ "files": "*.js", "options": { "tabWidth": 4 } }]
+}
