@@ -50,7 +50,6 @@ export const steps: ISteps = {
       "submitterId": "12c6258f-86db-492c-8637-4ff2668164b5",
       "submitterType": "organization",
       "programName": "mips",
-      "practiceId": null,
       "practiceDetails": null,
       "cehrtId": null,
       "suppressed": false,
@@ -333,7 +332,6 @@ export const steps: ISteps = {
       "submitterId": "12c6258f-86db-492c-8637-4ff2668164b5",
       "submitterType": "organization",
       "programName": "mips",
-      "practiceId": null,
       "practiceDetails": null,
       "cehrtId": null,
       "suppressed": false,
@@ -428,7 +426,6 @@ export const steps: ISteps = {
                       "isGhost": false,
                       "performanceStart": "2021-01-01",
                       "performanceEnd": "2021-12-31",
-                      "isCpcPlus": false,
                       "skippedDuplicate": false,
                       "unroundedScoreValue": 5.8733
                     },
