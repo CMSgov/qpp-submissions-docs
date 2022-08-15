@@ -3,6 +3,27 @@ import React from 'react';
 import envConfig from '../../../envConfig';
 
 const submissionChangesTable = [
+  ['08/31/22', `Updates to Special Scoring Scenarios`, `
+  <ul>
+    <li>
+      Test Scenario 2 (TIN 000000002) has been updated to reflect the PY2022 policy around Small Practice ACI Reweighting
+    </li>
+    <li>
+      Test Scenario 5 (TIN 000000005) has been updated to reflect the PY2022 policy for Groups impacted by Extreme and Uncontrollable Circumstances
+    </li>
+    <li>
+      Test Scenario 9 (TIN 000000009) has been updated to reflect the PY2022 policy around scoring for Small Practices
+    </li>
+    <li>
+      Test Scenario 10 (TIN 000000010) has been added to reflect the PY2022 policy for a MIPS Group with MIPS APM participants located in a Rural/HPSA area
+    </li>
+    <li>
+      See the <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/tutorial-special-scoring-scenarios' target='_blank' rel='noopener noreferrer'>Special Scoring Scenarios</a>.
+    </li>
+    <li>
+      Additional information for scoring changes for Small Practices for Performance Year 2022/2024 MIPS Payment year can be found here <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/tutorial-special-scoring-scenarios' target='_blank' rel='noopener noreferrer'>here</a>.
+    </li>
+  </ul>`],
   ['08/31/22', `For APM participants who participate in the Primary Care First (PCF) APM model, there is no longer a registry requirement to report to the PCF program.`,`Quality Measure ID 047 is no longer required to be submitted to PCF through the registry <code>measurementSet</code> for PY 2022.`],
   ['08/31/22', `For APMs who participated in the CPC+ APM model, this model is no longer an active program starting in PY2022`, `
   <ul>
