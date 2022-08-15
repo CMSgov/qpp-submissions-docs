@@ -3,6 +3,19 @@ import React from 'react';
 import envConfig from '../../../envConfig';
 
 const submissionChangesTable = [
+  ['08/31/22', `For APM participants who participate in the Primary Care First (PCF) APM model, there is no longer a registry requirement to report to the PCF program.`,`Quality Measure ID 047 is no longer required to be submitted to PCF through the registry <code>measurementSet</code> for PY 2022.`],
+  ['08/31/22', `For APMs who participated in the CPC+ APM model, this model is no longer an active program starting in PY2022`, `
+  <ul>
+    <li>
+      <code>cpcPlus</code> has been removed from the Progam list.
+    </li>
+    <li>
+      Property Name <code>practiceId</code> is no longer a valid property.
+    </li>
+    <li>
+      For details, see <a href='${envConfig.cmsGithubIo}/qpp-submissions-docs/measurement-sets' target='_blank' rel='noopener noreferrer'>Measurement Sets</a>.
+    </li>
+  </ul>`],
   ['12/29/21', `<code>performanceRate</code> value validation - negative values are not allowed`, `
     <ul>
       <li>
@@ -147,7 +160,7 @@ const buildTableBody = (data: string[][]) =>
 const ChangeLog = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 01/21/2022</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/31/2022</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}} id='change-log'>Change Log</h2>
       <p className='ds-text'>
         The Change log is updated with each significant change to the API with the details that you need to be aware of.
