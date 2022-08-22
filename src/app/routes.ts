@@ -21,6 +21,7 @@ import Measurements from './components/references/measurements';
 import Scoring from './components/references/scoring';
 import Submissions from './components/references/submissions';
 import References from './components/references/references';
+import ErrorCodes from './components/references/error-codes';
 
 // Resources and Support
 import FrequentlyAskedQuestions from './components/resources-and-support/frequently-asked-questions';
@@ -107,40 +108,46 @@ const guidesPaths: IPath[] = [
 
 const referencePaths: IPath[] = [
   {
-    path: '/measurements',
+    path: "/measurements",
     exact: false,
-    linkText: 'Measurements',
+    linkText: "Measurements",
     component: Measurements,
   },
   {
-    path: '/measurement-sets',
+    path: "/measurement-sets",
     exact: false,
-    linkText: 'Measurement Sets',
+    linkText: "Measurement Sets",
     component: MeasurementSets,
   },
   {
-    path: '/submissions',
+    path: "/submissions",
     exact: false,
-    linkText: 'Submissions',
+    linkText: "Submissions",
     component: Submissions,
   },
   {
-    path: '/benchmarks',
+    path: "/benchmarks",
     exact: false,
-    linkText: 'Benchmarks',
+    linkText: "Benchmarks",
     component: Benchmarks,
   },
   {
-    path: '/scoring',
+    path: "/scoring",
     exact: false,
-    linkText: 'Scoring',
+    linkText: "Scoring",
     component: Scoring,
   },
   {
-    path: '/references',
+    path: "/references",
     exact: false,
-    linkText: 'References',
+    linkText: "References",
     component: References,
+  },
+  {
+    path: "/error-codes",
+    exact: false,
+    linkText: "Error Codes",
+    component: ErrorCodes,
   },
 ];
 
