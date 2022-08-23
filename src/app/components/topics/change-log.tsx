@@ -12,7 +12,7 @@ const submissionChangesTable = [
       Production will be updated prior to Submissions Opening in Jan 2023.
     </li>
     <li>
-      See <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/error-codes' target='_blank' rel='noopener noreferrer'>Error Codes</a> for addition details.
+      See <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/error-codes' target='_blank' rel='noopener noreferrer'>Error Codes</a> for additional details.
     </li>
   </ul>`],
   ['08/31/22', `For APM participants who participate in the Primary Care First (PCF) APM model, there is no longer a registry requirement to report to the PCF program.`,`Quality Measure ID 047 is no longer required to be submitted to PCF through the registry <code>measurementSet</code> for PY 2022.`],
