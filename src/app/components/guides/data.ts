@@ -426,6 +426,7 @@ export const steps: ISteps = {
                       "isGhost": false,
                       "performanceStart": "2021-01-01",
                       "performanceEnd": "2021-12-31",
+                      "isCpcPlus": false,
                       "skippedDuplicate": false,
                       "unroundedScoreValue": 5.8733
                     },
