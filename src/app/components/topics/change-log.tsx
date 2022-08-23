@@ -3,6 +3,18 @@ import React from 'react';
 import envConfig from '../../../envConfig';
 
 const submissionChangesTable = [
+  ['08/31/22', `Submissions API Infrastructure Update in Developer Preview`, `
+  <ul>
+    <li>
+      Developer Preview has been updated to utilize a modern API framework.
+    </li>
+    <li>
+      Production will be updated prior to Submissions Opening in Jan 2023.
+    </li>
+    <li>
+      See <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/error-codes' target='_blank' rel='noopener noreferrer'>Error Codes</a> for addition details.
+    </li>
+  </ul>`],
   ['08/31/22', `For APM participants who participate in the Primary Care First (PCF) APM model, there is no longer a registry requirement to report to the PCF program.`,`Quality Measure ID 047 is no longer required to be submitted to PCF through the registry <code>measurementSet</code> for PY 2022.`],
   ['08/31/22', `For APMs who participated in the CPC+ APM model, this model is no longer an active program starting in PY2022`, `
   <ul>
