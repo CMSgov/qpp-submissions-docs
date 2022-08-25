@@ -3,6 +3,12 @@ import React from 'react';
 import envConfig from '../../../envConfig';
 
 const submissionChangesTable = [
+  ['08/31/22', `APP Submissions tutorial updated`, `
+  <ul>
+  <li>The How to Test Submissions and Scoring Scenarios table has been updated to reflect current scenarios.</li>
+  <li>See the <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/tutorial-app-submissions' target='_blank' rel='noopener noreferrer'>Developer Preview Documentation</a> for details.</li>
+  <ul>
+  `],
   ['08/31/22', `Updates to Special Scoring Scenarios`, `
   <ul>
     <li>
