@@ -360,8 +360,8 @@ export const benchmarksTabs: ITabs = {
       tab: 'Sample JSON',
       code: `{
   "measureId": "001",
-  "benchmarkYear": 2019,
-  "performanceYear": 2021,
+  "benchmarkYear": 2020,
+  "performanceYear": 2022,
   "submissionMethod": "registry",
   "isToppedOut": false,
   "isHighPriority": true,
