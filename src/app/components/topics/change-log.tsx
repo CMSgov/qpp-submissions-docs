@@ -24,6 +24,18 @@ const submissionChangesTable = [
       Additional information for scoring changes for Small Practices for Performance Year 2022/2024 MIPS Payment year can be found <a href='https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-B/part-414/subpart-O#p-414.1380(c)(2)(ii)(G)' target='_blank' rel='noopener noreferrer'>here</a>.
     </li>
   </ul>`],
+  ['08/31/22', `Submissions API Infrastructure Update in Developer Preview`, `
+  <ul>
+    <li>
+      Developer Preview has been updated to utilize a modern API framework.
+    </li>
+    <li>
+      Production will be updated prior to Submissions Opening in Jan 2023.
+    </li>
+    <li>
+      See <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/error-codes' target='_blank' rel='noopener noreferrer'>Error Codes</a> for additional details.
+    </li>
+  </ul>`],
   ['08/31/22', `For APM participants who participate in the Primary Care First (PCF) APM model, there is no longer a registry requirement to report to the PCF program.`,`Quality Measure ID 047 is no longer required to be submitted to PCF through the registry <code>measurementSet</code> for PY 2022.`],
   ['08/31/22', `For APMs who participated in the CPC+ APM model, this model is no longer an active program starting in PY2022`, `
   <ul>
