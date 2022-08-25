@@ -21,6 +21,7 @@ import Measurements from './components/references/measurements';
 import Scoring from './components/references/scoring';
 import Submissions from './components/references/submissions';
 import References from './components/references/references';
+import ErrorCodes from './components/references/error-codes';
 
 // Resources and Support
 import FrequentlyAskedQuestions from './components/resources-and-support/frequently-asked-questions';
@@ -141,6 +142,12 @@ const referencePaths: IPath[] = [
     exact: false,
     linkText: 'References',
     component: References,
+  },
+  {
+    path: '/error-codes',
+    exact: false,
+    linkText: 'Error Codes',
+    component: ErrorCodes,
   },
 ];
 
