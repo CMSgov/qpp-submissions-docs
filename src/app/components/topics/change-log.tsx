@@ -21,7 +21,7 @@ const submissionChangesTable = [
       See the <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/tutorial-special-scoring-scenarios' target='_blank' rel='noopener noreferrer'>Special Scoring Scenarios</a>.
     </li>
     <li>
-      Additional information for scoring changes for Small Practices for Performance Year 2022/2024 MIPS Payment year can be found here <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/tutorial-special-scoring-scenarios' target='_blank' rel='noopener noreferrer'>here</a>.
+      Additional information for scoring changes for Small Practices for Performance Year 2022/2024 MIPS Payment year can be found <a href='https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-B/part-414/subpart-O#p-414.1380(c)(2)(ii)(G)' target='_blank' rel='noopener noreferrer'>here</a>.
     </li>
   </ul>`],
   ['08/31/22', `For APM participants who participate in the Primary Care First (PCF) APM model, there is no longer a registry requirement to report to the PCF program.`,`Quality Measure ID 047 is no longer required to be submitted to PCF through the registry <code>measurementSet</code> for PY 2022.`],
