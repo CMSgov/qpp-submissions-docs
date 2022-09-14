@@ -3,6 +3,12 @@ import React from 'react';
 import envConfig from '../../../envConfig';
 
 const submissionChangesTable = [
+  ['09/14/22', `Updates to Special Scoring Scenarios`, `
+  <ul>
+  <li>The Special Scoring Scenarios have been simplified and several retired</li>
+  <li>See the <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/tutorial-special-scoring-scenarios' target='_blank' rel='noopener noreferrer'>Special Scoring Scenarios</a>.</li>
+  <ul>
+  `],
   ['08/31/22', `APP Submissions tutorial updated`, `
   <ul>
   <li>The How to Test Submissions and Scoring Scenarios table has been updated to reflect current scenarios.</li>
@@ -199,7 +205,7 @@ const buildTableBody = (data: string[][]) =>
 const ChangeLog = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/31/2022</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 09/14/2022</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}} id='change-log'>Change Log</h2>
       <p className='ds-text'>
         The Change log is updated with each significant change to the API with the details that you need to be aware of.
