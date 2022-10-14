@@ -43,7 +43,7 @@ const tableData1 = {
         PI_PHCDRR_5
       </li>
     </ul>
-      `,  
+      `,
 };
 
 const FrequentlyAskedQuestions = () => {
