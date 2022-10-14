@@ -16,6 +16,7 @@ const tableData = {
   `,
   'What is the performance threshold for the Submissions API?': '25 rps avg threshold, 40 rps burst threshold.',
 };
+
 const tableData1 = {
   'How to report Measure 238 / CMS156': `
     <ul>
@@ -42,7 +43,7 @@ const tableData1 = {
         PI_PHCDRR_5
       </li>
     </ul>
-      `  
+      `,  
 };
 
 const FrequentlyAskedQuestions = () => {
