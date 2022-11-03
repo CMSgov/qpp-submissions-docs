@@ -44,12 +44,14 @@ const tableData1 = {
       </li>
     </ul>
       `,
+      'PI_PCHDRR Bonus Measures redistributing weight to PI_PEA_1':'If the exclusions are claimed for both PI_PHCDRR_1 and PI_PHCDRR_3, and PI_PHCDRR_2, PI_PHCDRR_4, and / or PI_PHCDRR_5 is reported, 5 points are being added to the maxContribution of PI_PEA_1 incorrectly. '
+      ,
 };
 
 const FrequentlyAskedQuestions = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 10/14/2022</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 11/03/2022</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Frequently Asked Questions</h2>
 
       <h3 className='ds-h3'>General and Developer Preview</h3>
