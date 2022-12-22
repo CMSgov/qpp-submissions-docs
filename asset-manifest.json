@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/qpp-submissions-docs/static/css/main.60c2ccad.css",
-    "main.js": "/qpp-submissions-docs/static/js/main.a18306e6.js",
+    "main.js": "/qpp-submissions-docs/static/js/main.16d1dbfa.js",
     "react-syntax-highlighter/refractor-core-import.js": "/qpp-submissions-docs/static/js/react-syntax-highlighter/refractor-core-import.d6bafc2e.chunk.js",
     "react-syntax-highlighter_languages_refractor_abap.js": "/qpp-submissions-docs/static/js/react-syntax-highlighter_languages_refractor_abap.d9fb8fef.chunk.js",
     "react-syntax-highlighter_languages_refractor_actionscript.js": "/qpp-submissions-docs/static/js/react-syntax-highlighter_languages_refractor_actionscript.534ee646.chunk.js",
@@ -222,7 +222,7 @@
     "static/media/add.svg": "/qpp-submissions-docs/static/media/add.516c6a2c3fbed108925b.svg",
     "static/media/remove.svg": "/qpp-submissions-docs/static/media/remove.4daa5f4087fce0791f34.svg",
     "main.60c2ccad.css.map": "/qpp-submissions-docs/static/css/main.60c2ccad.css.map",
-    "main.a18306e6.js.map": "/qpp-submissions-docs/static/js/main.a18306e6.js.map",
+    "main.16d1dbfa.js.map": "/qpp-submissions-docs/static/js/main.16d1dbfa.js.map",
     "refractor-core-import.d6bafc2e.chunk.js.map": "/qpp-submissions-docs/static/js/react-syntax-highlighter/refractor-core-import.d6bafc2e.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_abap.d9fb8fef.chunk.js.map": "/qpp-submissions-docs/static/js/react-syntax-highlighter_languages_refractor_abap.d9fb8fef.chunk.js.map",
     "react-syntax-highlighter_languages_refractor_actionscript.534ee646.chunk.js.map": "/qpp-submissions-docs/static/js/react-syntax-highlighter_languages_refractor_actionscript.534ee646.chunk.js.map",
@@ -378,6 +378,6 @@
   },
   "entrypoints": [
     "static/css/main.60c2ccad.css",
-    "static/js/main.a18306e6.js"
+    "static/js/main.16d1dbfa.js"
   ]
 }
