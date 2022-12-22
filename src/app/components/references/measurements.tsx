@@ -7,7 +7,7 @@ import envConfig from '../../../envConfig';
 const Measurements = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 01/21/2022</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 12/21/2022</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Measurements</h2>
       <ul>
         {Object.entries(measurementsTitleAndId).map(([title, id], i) =>
