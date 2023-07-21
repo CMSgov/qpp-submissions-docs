@@ -34,7 +34,7 @@ jobs:
       - name: Configure Node version and registry
         uses: actions/setup-node@v1
         with:
-          node-version: 14.19.0
+          node-version: 18.16.1
           registry-url: 'https://registry.npmjs.org'
 
       - name: Install Dependencies

@@ -1,6 +1,10 @@
-export const customCodeTheme = {
+import { Theme, ThemeModes } from 'react-code-blocks/dist/types';
+
+const mode: ThemeModes = 'light';
+
+export const customCodeTheme: Theme = {
   lineNumberColor: `black`,
-  lineNumberBgColor: `black`,
+  lineNumberBgColor: `white`,
   backgroundColor: `white`,
   textColor: `black`,
   substringColor: `black`,
@@ -33,4 +37,5 @@ export const customCodeTheme = {
   metaColor: `black`,
   functionColor: `black`,
   numberColor: `black`,
+  mode,
 };
