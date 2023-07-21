@@ -38,6 +38,9 @@ const checkPreForHTML = (code: string) =>
         fontFamily: 'Menlo,Monaco,Consolas,"Courier New",monospace',
         fontSize: '0.9rem',
       }}
+      copied={true}
+      wrapLongLines={true}
+      onCopy={()=>{ return; }}
     />
   );
 
