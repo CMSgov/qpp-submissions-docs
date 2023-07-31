@@ -1,9 +1,9 @@
 import OktaJwtVerifier from '@okta/jwt-verifier';
-import fetch from 'node-fetch';
+import fetch, { Headers } from 'node-fetch';
 
 import Config from './config.js';
 
-const QPP_ACCEPT_HEADER = 'application/vnd.qpp.cms.gov.v1+json';
+const QPP_ACCEPT_HEADER = 'application/vnd.qpp.cms.gov.v2+json';
 
 let oauthEndpoints;
 let oktaJwtVerifier;
@@ -27,7 +27,9 @@ export default {
             const response = await fetch(`${Config.qppBaseUrl}/api/auth/oauth`, {
                 headers: new Headers({ accept: QPP_ACCEPT_HEADER }),
             });
-            oauthEndpoints = (await response.json()).data;
+            const body = await response.json();
+
+            oauthEndpoints = body.data;
         }
 
         // We explicitly enumerate properties here for extra type info.
@@ -92,7 +94,7 @@ export default {
         if (!response.ok) {
             const body = await response.json();
             throw new Error(
-                `Failed to get tokens: ${body.error_description} (${body.error})`
+                `Failed to get tokens: ${body.error_description} (${body.error})`,
             );
         }
 
@@ -146,7 +148,7 @@ export default {
         if (!response.ok) {
             const body = await response.json();
             throw new Error(
-                `Failed to refresh token: ${body.error_description} (${body.error})`
+                `Failed to refresh token: ${body.error_description} (${body.error})`,
             );
         }
 
@@ -190,7 +192,7 @@ export default {
         if (!response.ok) {
             const body = await response.json();
             throw new Error(
-                `Failed to revoke token: ${body.error_description} (${body.error})`
+                `Failed to revoke token: ${body.error_description} (${body.error})`,
             );
         }
     },
