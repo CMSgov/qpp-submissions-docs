@@ -362,7 +362,7 @@ export const benchmarksTabs: ITabs = {
       code: `{
   "benchmarkYear": 2021,
   "performanceYear": 2023,
-  "percentiles": [...],
+  "percentiles": {...},
   "status": "historical",
   "isToppedOut": false,
   "isToppedOutByProgram": false,
