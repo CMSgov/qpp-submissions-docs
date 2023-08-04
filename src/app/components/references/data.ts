@@ -351,7 +351,7 @@ export const benchmarksFields: IFields = {
     { name: 'isToppedOutByProgram', value: 'boolean', description: 'Indicates if the benchmark is topped out for 2 consecutive years. This results in a 7 point cap applied to the measure for scoring.	', notes: ' ' },
     { name: 'isHighPriority', value: 'boolean', description: 'Indicates the measure is a high priority measure within the program. 	', notes: ' ' },
     { name: 'submissionMethod', value: 'string', description: 'The submissionMethod for which the benchmark is applicable.	', notes: ' ' },
-    { name: 'measureId', value: 'string', description: 'The id of the measurement.	', notes: ' ' }
+    { name: 'measureId', value: 'string', description: 'The id of the measurement.	', notes: ' ' },
   ],
 };
 
