@@ -343,14 +343,15 @@ export const submissionsTabs: ITabs = {
 
 export const benchmarksFields: IFields = {
   fields: [
-    { name: 'measureId', value: 'string', description: 'The id of the measurement.	', notes: ' ' },
     { name: 'benchmarkYear', value: 'integer', description: 'The performance year\'s data from which the benchmark deciles are calculated.	', notes: ' ' },
     { name: 'performanceYear', value: 'integer', description: 'The year in which the benchmark applies.	', notes: ' ' },
-    { name: 'submissionMethod', value: 'string', description: 'The submissionMethod for which the benchmark is applicable.	', notes: ' ' },
+    { name: 'percentiles', value: 'numeric array', description: 'List of values with the lower bound limit of ranges for the 1st through 99th percentile.', notes: ' ' },
+    { name: 'status', value: 'string', description: 'Indicates if the benchmark is based on historical data, current performance period data, or if there was insufficient data to calculate a benchmark.', notes: ' ' },
     { name: 'isToppedOut', value: 'boolean', description: 'Indicates if the benchmark is topped out for the current Performance Year	', notes: ' ' },
-    { name: 'isHighPriority', value: 'boolean', description: 'Indicates the measure is a high priority measure within the program. 	', notes: ' ' },
     { name: 'isToppedOutByProgram', value: 'boolean', description: 'Indicates if the benchmark is topped out for 2 consecutive years. This results in a 7 point cap applied to the measure for scoring.	', notes: ' ' },
-    { name: 'deciles', value: 'numeric array', description: 'List of values starting with the lower bound limit of the range then 3 to 10.	', notes: ' ' },
+    { name: 'isHighPriority', value: 'boolean', description: 'Indicates the measure is a high priority measure within the program. 	', notes: ' ' },
+    { name: 'submissionMethod', value: 'string', description: 'The submissionMethod for which the benchmark is applicable.	', notes: ' ' },
+    { name: 'measureId', value: 'string', description: 'The id of the measurement.	', notes: ' ' }
   ],
 };
 
@@ -359,14 +360,15 @@ export const benchmarksTabs: ITabs = {
     {
       tab: 'Sample JSON',
       code: `{
-  "measureId": "001",
-  "benchmarkYear": 2020,
-  "performanceYear": 2022,
-  "submissionMethod": "registry",
+  "benchmarkYear": 2021,
+  "performanceYear": 2023,
+  "percentiles": [...],
+  "status": "historical",
   "isToppedOut": false,
-  "isHighPriority": true,
   "isToppedOutByProgram": false,
-  "deciles": [...]
+  "isHighPriority": true,
+  "submissionMethod": "registry",
+  "measureId": "001"
 }`,
     },
   ],

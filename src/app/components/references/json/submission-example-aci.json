@@ -2,12 +2,12 @@
 	"entityType": "individual",
 	"taxpayerIdentificationNumber": "000456789",
 	"nationalProviderIdentifier": "9876543210",
-	"performanceYear": 2022,
+	"performanceYear": 2023,
 	"measurementSets": [{
 		"category": "pi",
 		"submissionMethod": "electronicHealthRecord",
-		"performanceStart": "2022-01-01",
-		"performanceEnd": "2022-12-31",
+		"performanceStart": "2023-01-01",
+		"performanceEnd": "2023-12-31",
 		"cehrtId": "XX15EXXXXXXXXXX",
 		"measurements": [{
 				"measureId": "PI_INFBLO_1",
@@ -58,7 +58,7 @@
 				"value": true
 			},
 			{
-				"measureId": "PI_PHCDRR_1_MULTI",
+				"measureId": "PI_PHCDRR_1_PRE",
 				"value": true
 			}
 		]
