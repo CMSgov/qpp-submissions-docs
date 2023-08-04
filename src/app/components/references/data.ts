@@ -345,7 +345,7 @@ export const benchmarksFields: IFields = {
   fields: [
     { name: 'benchmarkYear', value: 'integer', description: 'The performance year\'s data from which the benchmark deciles are calculated.	', notes: ' ' },
     { name: 'performanceYear', value: 'integer', description: 'The year in which the benchmark applies.	', notes: ' ' },
-    { name: 'percentiles', value: 'numeric array', description: 'List of values with the lower bound limit of ranges for the 1st through 99th percentile.', notes: ' ' },
+    { name: 'percentiles', value: 'object', description: 'List of values for the 1st through 99th percentiles.', notes: ' ' },
     { name: 'status', value: 'string', description: 'Indicates if the benchmark is based on historical data, current performance period data, or if there was insufficient data to calculate a benchmark.', notes: ' ' },
     { name: 'isToppedOut', value: 'boolean', description: 'Indicates if the benchmark is topped out for the current Performance Year	', notes: ' ' },
     { name: 'isToppedOutByProgram', value: 'boolean', description: 'Indicates if the benchmark is topped out for 2 consecutive years. This results in a 7 point cap applied to the measure for scoring.	', notes: ' ' },
