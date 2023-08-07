@@ -6,7 +6,7 @@ import envConfig from '../../../envConfig';
 const Announcements = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/31/2022</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Announcements</h2>
 
       <h3 className='ds-h3'>General</h3>
@@ -17,10 +17,10 @@ const Announcements = () => {
       <h3 className='ds-h3'>Submission API</h3>
       <ul>
         <li>
-          Updates for traditional MIPS submissions and scoring for PY 2022 are now available.
+          Updates for traditional MIPS submissions and scoring for PY 2023 are now available.
           </li>
         <li>
-          For APM participants only, APP submissions and scoring rules for PY2022 are now available.
+          For APM participants only, APP submissions and scoring rules for PY 2023 are now available.
           </li>
         <li>
           The Submissions API has received infastructure updates with minor changes to end users.
@@ -33,7 +33,7 @@ const Announcements = () => {
       <h3 className='ds-h3'>Measures Repository</h3>
       <ul>
         <li>
-          2022 Measures are published and available here: <ExternalLink href='https://github.com/CMSgov/qpp-measures-data/tree/develop/measures' />
+          2023 Measures are published and available here: <ExternalLink href='https://github.com/CMSgov/qpp-measures-data/tree/develop/measures' />
           </li>
       </ul>
     </>
