@@ -28,30 +28,12 @@ const tableData1 = {
       </li>
     </ul>
   `,
-  'How to report Measure 409':'The initial rate in the specifications should be followed to determine if the second rate used for performance can be submitted. If the thresholds outlined in the first strata are not met, this measure should not be reported.',
-  'Quality Measure Sort Order Issue':'This issue was resolved and deployed 10/6/2022.',
-  'PI Public Health and Clinical Data Exchange Bonus Submission':`
-  <p>Currently working on a fix to allow for the submission of any combination of:</p>
-    <ul>
-      <li>
-        PI_PHCDRR_2
-      </li>
-      <li>
-        PI_PHCDRR_4
-      </li>
-      <li>
-        PI_PHCDRR_5
-      </li>
-    </ul>
-      `,
-      'PI_PCHDRR Bonus Measures redistributing weight to PI_PEA_1':'If the exclusions are claimed for both PI_PHCDRR_1 and PI_PHCDRR_3, and PI_PHCDRR_2, PI_PHCDRR_4, and / or PI_PHCDRR_5 is reported, 5 points are being added to the maxContribution of PI_PEA_1 incorrectly. '
-      ,
 };
 
 const FrequentlyAskedQuestions = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 11/03/2022</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Frequently Asked Questions</h2>
 
       <h3 className='ds-h3'>General and Developer Preview</h3>
@@ -78,7 +60,7 @@ const FrequentlyAskedQuestions = () => {
           )}
         </tbody>
       </table>
-      <h3 className='ds-h3'>PY22 Questions and Known Issues</h3>
+      <h3 className='ds-h3'>PY23 Questions and Known Issues</h3>
       <table className='ds-c-table ds-u-font-size--small faq-table'>
         <thead>
           <tr>
