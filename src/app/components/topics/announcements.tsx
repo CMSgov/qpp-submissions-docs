@@ -34,7 +34,10 @@ const Announcements = () => {
       <ul>
         <li>
           2023 Measures are published and available here: <ExternalLink href='https://github.com/CMSgov/qpp-measures-data/tree/develop/measures' />
-          </li>
+        </li>
+        <li>
+          2023 MVP Measures are published and available here: <ExternalLink href='https://github.com/CMSgov/qpp-measures-data/tree/develop/mvp' />
+        </li>
       </ul>
     </>
   );
