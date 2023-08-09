@@ -8,7 +8,8 @@ import middleware from './middleware.js';
 import qppAuth from './qpp-auth.js';
 
 // Decorator to allow async route handlers. Won't be necessary once Express v5 is released.
-const asyncHandler = (fn) => (req, res, next) =>
+const asyncHandler = fn => (req, res, next) =>
+    // eslint-disable-next-line promise/no-callback-in-promise
     Promise.resolve(fn(req, res, next)).catch(next);
 
 const app = express();
@@ -24,11 +25,11 @@ app.get(
         if (req.auth) {
             const { name, preferred_username, exp } = req.auth;
             const expiration = new Date(exp * 1000);
-            const secsRemaining = Math.round((expiration - new Date()) / 1000);
+            const secsRemaining = Math.round((expiration - Date.now()) / 1000);
             const authorizations = JSON.stringify(
                 await qppAuth.getAuthorizations(req.cookies.qpp_access_token),
                 null,
-                2
+                2,
             );
             res.send(
                 `<h1>Example Application</h1>
@@ -37,7 +38,7 @@ app.get(
                  <a href="/verify">Verify</a>&nbsp;
                  <a href="/refresh">Refresh</a>&nbsp;
                  <a href="/logout">Log Out</a>
-                 <p>User authorizations: <pre>${authorizations}</pre></p>`
+                 <p>User authorizations: <pre>${authorizations}</pre></p>`,
             );
         } else {
             let loginLink = Config.clientSecret
@@ -46,10 +47,10 @@ app.get(
             res.send(
                 `<h1>Example Application</h1>
                  <h2>You are currently logged out.</h2>
-                 <p>To log in, go to ${loginLink}.</p>`
+                 <p>To log in, go to ${loginLink}.</p>`,
             );
         }
-    })
+    }),
 );
 
 // Begin the authorization code flow.
@@ -60,7 +61,7 @@ app.get(
         const { authorization_endpoint } = await qppAuth.discoverOAuthEndpoints();
         req.log.info('redirecting to authorization_endpoint');
         res.redirect(`${authorization_endpoint}?${qppAuth.authorizationParams(req.id)}`);
-    })
+    }),
 );
 
 // Begin the authorization code flow with PKCE.
@@ -79,7 +80,7 @@ app.get(
         req.log.info('redirecting to authorization_endpoint');
         res.cookie('qpp_pkce_code_verifier', codeVerifier);
         res.redirect(`${authorization_endpoint}?${authorizationParams}`);
-    })
+    }),
 );
 
 // Login redirect endpoint. Path should match what's in Config.loginRedirectUrl.
@@ -88,7 +89,7 @@ app.get(
     asyncHandler(async (req, res) => {
         if (!req.query.code) {
             throw new Error(
-                `Failed to log in. Details from IDM: ${JSON.stringify(req.query)}`
+                `Failed to log in. Details from IDM: ${JSON.stringify(req.query)}`,
             );
         }
 
@@ -101,7 +102,7 @@ app.get(
         res.cookie('qpp_id_token', id_token, { maxAge: expires_in * 1000 });
         res.clearCookie('qpp_pkce_code_verifier');
         res.redirect('/');
-    })
+    }),
 );
 
 // Token verification endpoint, returns the token claims as JSON.
@@ -121,7 +122,7 @@ app.get(
         res.cookie('qpp_refresh_token', refresh_token);
         res.cookie('qpp_id_token', id_token, { maxAge: expires_in * 1000 });
         res.redirect('/');
-    })
+    }),
 );
 
 // Revoke access/refresh tokens and end the user's Okta browser session.
@@ -148,7 +149,7 @@ app.get(
 
         req.log.info('redirecting to end_session_endpoint');
         res.redirect(`${end_session_endpoint}?${params}`);
-    })
+    }),
 );
 
 // Logout redirect endpoint. Path should match what's in Config.logoutRedirectUrl.
@@ -159,13 +160,14 @@ app.get(
         req.log.info('successfully logged out');
         res.clearCookie('qpp_id_token');
         res.redirect('/');
-    })
+    }),
 );
 
 // Simple 404 handler
-app.use((_req, res, _next) => res.status(404).send('<h1>404 Not Found</h1>'));
+app.use((_req, res) => res.status(404).send('<h1>404 Not Found</h1>'));
 
 // Default error handler
+// eslint-disable-next-line no-unused-vars
 app.use((err, req, res, _next) => {
     if (res.statusCode < 400) res.status(500);
     const error = { status: res.statusCode, message: err.message, stack: err.stack };

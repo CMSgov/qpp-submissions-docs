@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:n/recommended",
+    "plugin:security/recommended",
+    "plugin:import/recommended",
+    "plugin:promise/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "unicorn/prevent-abbreviations": "off",
+    "unicorn/no-null": "off"
+  }
+}
