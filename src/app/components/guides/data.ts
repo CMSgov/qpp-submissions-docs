@@ -14,7 +14,6 @@ export const steps: ISteps = {
     {
       tab: 'Request',
       code: `{
-  "submissionId": "086dad28-0477-4b41-8c05-77dd98d41d6f",
   "measurements": [
     {
       "measureId": "001",
@@ -28,8 +27,6 @@ export const steps: ISteps = {
       }
     }
   ],
-  "category": "quality",
-  "submissionMethod": "registry",
   "performanceStart": "2023-01-01",
   "performanceEnd": "2023-12-31"
 }`,
@@ -41,8 +38,8 @@ export const steps: ISteps = {
   "data": {
     "measurementSet": {
       "id": "086dad28-907a-4e88-af73-5c7ed2e6764e",
-      "createdAt": "2023-06-25T15:18:00Z",
-      "updatedAt": "2023-06-25T15:35:08Z",
+      "createdAt": "2023-08-17T11:18:00Z",
+      "updatedAt": "2023-08-17T11:32:15Z",
       "submissionId": "086dad28-0477-4b41-8c05-77dd98d41d6f",
       "category": "quality",
       "submissionMethod": "registry",
@@ -50,41 +47,48 @@ export const steps: ISteps = {
       "submitterId": "12c6258f-86db-492c-8637-4ff2668164b5",
       "submitterType": "organization",
       "programName": "mips",
+      "practiceId": "",
       "practiceDetails": null,
-      "cehrtId": null,
+      "cehrtId": "",
       "suppressed": false,
       "source": null,
       "performanceStart": "2023-01-01",
       "performanceEnd": "2023-12-31",
       "measurements": [
         {
-          "id": "086db12c-490d-484d-8c7a-1d378bf0a71f",
-          "measurementSetId": "086dad28-907a-4e88-af73-5c7ed2e6764e",
-          "measureId": "001",
-          "value": {
-            "isEndToEndReported": false,
-            "performanceMet": 36,
-            "eligiblePopulationExclusion": 0,
-            "eligiblePopulationException": 0,
-            "performanceNotMet": 120,
-            "eligiblePopulation": 156,
-            "reportingRate": 100,
-            "performanceRate": 23.08
-          }
-        },
-        {
           "id": "086dad28-4bcb-4649-a4fd-04ad8426df77",
           "measurementSetId": "086dad28-907a-4e88-af73-5c7ed2e6764e",
           "measureId": "047",
           "value": {
             "isEndToEndReported": false,
-            "performanceMet": 12,
             "eligiblePopulationExclusion": 0,
             "eligiblePopulationException": 0,
-            "performanceNotMet": 61,
+            "performanceNotMet": 36,
             "eligiblePopulation": 156,
-            "reportingRate": 46.79,
-            "performanceRate": 16.44
+            "performanceMet": 120,
+            "performanceRate": 76.92,
+            "reportingRate": 100,
+            "caseCount": 156,
+            "performanceRateNumerator": 76.92,
+            "performanceRateDenominator": 1
+          }
+        },
+        {
+          "id": "086db12c-490d-484d-8c7a-1d378bf0a71f",
+          "measurementSetId": "086dad28-907a-4e88-af73-5c7ed2e6764e",
+          "measureId": "001",
+          "value": {
+            "isEndToEndReported": false,
+            "eligiblePopulationExclusion": 0,
+            "eligiblePopulationException": 0,
+            "performanceNotMet": 120,
+            "eligiblePopulation": 156,
+            "performanceMet": 36,
+            "performanceRate": 23.08,
+            "reportingRate": 100,
+            "caseCount": 156,
+            "performanceRateNumerator": 23.08,
+            "performanceRateDenominator": 1
           }
         }
       ]
