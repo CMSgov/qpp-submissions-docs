@@ -7,7 +7,7 @@ import { steps, apiExamples } from './data';
 const BasicTutorial = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/31/2022</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Tutorial: Create and Score Data via API</h2>
       <p>
         The Submissions API is an easy way to manage your performance data with CMS. Performance data is organized into submissions, which can have many measurements. Measurements within a submission are also grouped by category (e.g. quality) and submission method (e.g. registry) and program name (e.g. mips) into measurement sets.
