@@ -7,7 +7,7 @@ import envConfig from '../../../envConfig';
 const Measurements = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 12/21/2022</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/15/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Measurements</h2>
       <ul>
         {Object.entries(measurementsTitleAndId).map(([title, id], i) =>
@@ -47,12 +47,19 @@ const Measurements = () => {
       <CodeTab data={measurementsTabs.nonProportion} />
       <DataModelTable data={measurementsFields.nonProportion} />
 
-      <h2 className='ds-h2' id={measurementsTitleAndId['Single-Performance Rate']}>Single-Performance Rate Measurements</h2>
+      <h2 className='ds-h2' id={measurementsTitleAndId['CQM Single-Performance Rate']}>MIPS CQM Single-Performance Rate Measurements</h2>
       <p className='ds-text--lead'>
-        Single-Performance Rate Measurements are applicable to Quality measures. There are two types of Single-Performance Rate Measurements: registry and normal. The difference between the two is that for Registry Single-Performance Rate Measurements, the performanceRate field is both writable and required.
+        Single-Performance Rate Measurements are applicable to MIPS CQM Quality measures.
       </p>
-      <CodeTab data={measurementsTabs.singlePerformanceRate} />
-      <DataModelTable data={measurementsFields.singlePerformanceRate} />
+      <CodeTab data={measurementsTabs.cqmSinglePerformanceRate} />
+      <DataModelTable data={measurementsFields.cqmSinglePerformanceRate} />
+
+      <h2 className='ds-h2' id={measurementsTitleAndId['QCDR Single-Performance Rate']}>QCDR Single-Performance Rate Measurements</h2>
+      <p className='ds-text--lead'>
+        Single-Performance Rate Measurements are applicable to QCDR Quality measures. The performanceRate field is both writable and required for these measures.
+      </p>
+      <CodeTab data={measurementsTabs.qcdrSinglePerformanceRate} />
+      <DataModelTable data={measurementsFields.qcdrSinglePerformanceRate} />
 
       <h2 className='ds-h2' id={measurementsTitleAndId['Multi-Performance Rate']}>Multi-Performance Rate Measurements</h2>
       <p className='ds-text--lead'>
@@ -63,7 +70,7 @@ const Measurements = () => {
 
       <h2 className='ds-h2' id={measurementsTitleAndId['Multi-Performance Rate Stratum']}>Multi-Performance Rate Stratum</h2>
       <p className='ds-text--lead'>
-        A Multi-Performance Rate Stratum represents the performance data for a specified subset of the population, as described by the stratum field.
+        A Multi-Performance Rate Stratum represents the performance data for a specified subset of the population, as described by the stratum field. Submissions should follow the specifications for population and stratum name, below is an example submission.
       </p>
       <CodeTab data={measurementsTabs.stratum} />
       <DataModelTable data={measurementsFields.stratum} />

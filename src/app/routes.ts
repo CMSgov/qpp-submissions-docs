@@ -9,6 +9,7 @@ import DeveloperPreview from './components/topics/developer-preview';
 // Guides
 import AdvancedTutorial from './components/guides/advanced-tutorial';
 import BasicTutorial from './components/guides/basic-tutorial';
+import MvpTutorial from './components/guides/mvp-submissions';
 import GettingStartedUsingQppOauth from './components/guides/getting-started-with-oauth';
 import QualifiedRegistriesAndQcdrs from './components/guides/qualified-registries-and-qcdrs';
 import AuthorizationAndAuthentication from './components/guides/authorization-and-authentication';
@@ -85,6 +86,12 @@ const guidesPaths: IPath[] = [
     exact: false,
     linkText: 'Tutorial: Add and update data via API',
     component: AdvancedTutorial,
+  },
+  {
+    path: '/mvp-tutorial',
+    exact: false,
+    linkText: 'Tutorial: MVP Submissions',
+    component: MvpTutorial,
   },
   {
     path: '/authorization-and-authentication',
