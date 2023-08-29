@@ -3,6 +3,9 @@ import React from 'react';
 import envConfig from '../../../envConfig';
 
 const submissionChangesTable = [
+  ['08/31/2023', `Fields added to the Submission Response`, `
+  3 fields have been added to the Submission Response:  caseCount, performanceRateNumerator and performanceRateDenominator.
+  `],
   ['10/05/2022', `Updates to Strata validation for QCDR measures`, `
   Validation has been added for QCDR measures to ensure that the strata name is valid and that the appropriate number of strata are included in the submission.  For example, if there are 3 strata defined for the measure, then 3 valid strata need to be submitted.
   `],
@@ -208,7 +211,7 @@ const buildTableBody = (data: string[][]) =>
 const ChangeLog = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 10/05/2022</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}} id='change-log'>Change Log</h2>
       <p className='ds-text'>
         The Change log is updated with each significant change to the API with the details that you need to be aware of.
