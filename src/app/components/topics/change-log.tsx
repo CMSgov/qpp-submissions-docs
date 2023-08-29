@@ -3,6 +3,12 @@ import React from 'react';
 import envConfig from '../../../envConfig';
 
 const submissionChangesTable = [
+  ['08/31/2023', `Updates to Developer Documentation for Performance Year 2023`, `
+  <ul>
+  <li>Added Scenarios for MVP Reporting, See the <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/tutorial-special-scoring-scenarios' target='_blank' rel='noopener noreferrer'>Special Scoring Scenarios</a>.</li>
+  <li>Added Schema Updates for QCDR Measure Reporting</li>
+  </ul>
+  `],
   ['08/31/2023', `Fields added to the Submission Response`, `
   3 fields have been added to the Submission Response:  caseCount, performanceRateNumerator and performanceRateDenominator.
   `],

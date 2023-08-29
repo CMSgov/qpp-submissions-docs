@@ -27,7 +27,8 @@ export const measurementsTitleAndId = {
   'Boolean': 'boolean-measurements',
   'Proportion': 'proportion-measurements',
   'Non-Proportion': 'non-proportion-measurements',
-  'Single-Performance Rate': 'single-performance-rate-measurements',
+  'CQM Single-Performance Rate': 'single-performance-rate-measurements',
+  'QCDR Single-Performance Rate': 'single-performance-rate-measurements',
   'Multi-Performance Rate': 'multi-performance-rate-measurements',
   'Multi-Performance Rate Stratum': 'stratum',
 };
@@ -55,15 +56,26 @@ export const measurementsFields: IFields = {
     { name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((observationInstances + denominatorException + numeratorExclusion) / denominator) * 100. This is also referred to as data completeness.', notes: 'calculated by API and returned in response' },
     { name: 'observationInstances', value: 'integer', description: 'The number of denominator eligible instances that are used as input in the calculation to derive the numerator (i.e. average, ratio).', notes: 'writable, required' },
   ],
-  singlePerformanceRate: [
+  cqmSinglePerformanceRate: [
     { name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable, required' },
     { name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>eligiblePopulation</b>', notes: 'writable, required' },
     { name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional' },
-    { name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure. eligiblePopulationExclusion should be 0 for all CQM measures as excluded populations should already have been subtracted out of the eligible population in the denominator. eligiblePopulationExclusion can have a value for eCQM measures where no human intervention is allowed. In the measures specifications for claims measures and eCQMs, this field is also referred to as "Denominator Exclusion". In measures specifications for registry and QCDR measures, this field is referred to as "Numerator Exclusion".', notes: 'writable, optional' },
+    { name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure. eligiblePopulationExclusion should be 0 for all CQM measures as excluded populations should already have been subtracted out of the eligible population in the denominator.', notes: 'writable, optional' },
     { name: 'eligiblePopulationException', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure. In the measures specifications, this field is also referred to as "Denominator Exception".', notes: 'writable, optional' },
     { name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Denominator".', notes: 'writable, required' },
     { name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100. This is also referred to as data completeness.', notes: 'calculated by API and returned in response' },
-    { name: 'performanceRate', value: 'float', description: 'The performance rate for a single performance rate measurement, ranging from zero to one-hundred and representing a percentage, is equal to (performanceMet / (performanceMet + performanceNotMet)) * 100.', notes: `If <code>metricType = registrySinglePerformanceRate</code> then writable and <i>required</i>.<br> If <code>metricType = singlePerformanceRate</code>, then calculated by API and returned in response.` },
+    { name: 'performanceRate', value: 'float', description: 'The performance rate for a single performance rate measurement, ranging from zero to one-hundred and representing a percentage, is equal to (performanceMet / (performanceMet + performanceNotMet)) * 100.', notes: `For <code>metricType = singlePerformanceRate</code>, then calculated by API and returned in response.` },
+  ],
+  qcdrSinglePerformanceRate: [
+    { name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported via certified EHR technology without any manual interference.', notes: 'writable, required' },
+    { name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>eligiblePopulation</b>', notes: 'writable, required' },
+    { name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional' },
+    { name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure. eligiblePopulationExclusion should be 0 for all CQM measures as excluded populations should already have been subtracted out of the eligible population in the denominator.', notes: 'writable, optional' },
+    { name: 'eligiblePopulationException', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure. In the measures specifications, this field is also referred to as "Denominator Exception".', notes: 'writable, optional' },
+    { name: 'numeratorExclusion', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure. In the measures specifications, this field is also referred to as "Numerator Exclusion".', notes: 'writable, optional' },
+    { name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Denominator".', notes: 'writable, required' },
+    { name: 'reportingRate', value: 'float', description: 'The reporting rate, ranging from zero to one-hundred and representing a percentage, is equal to ((performanceMet + eligiblePopulationExclusion + eligiblePopulationException + performanceNotMet) / eligiblePopulation) * 100. This is also referred to as data completeness.', notes: 'calculated by API and returned in response' },
+    { name: 'performanceRate', value: 'float', description: 'The performance rate for a single performance rate measurement, ranging from zero to one-hundred and representing a percentage, is equal to (performanceMet / (performanceMet + performanceNotMet)) * 100.', notes: `For <code>metricType = registrySinglePerformanceRate</code> then writable and <i>required</i>` },
   ],
   multiPerformanceRate: [
     { name: 'isEndToEndReported', value: 'boolean', description: 'True if the measure was reported  via certified EHR technology without any manual interference.', notes: 'writable, required' },
@@ -79,12 +91,13 @@ export const measurementsFields: IFields = {
         '<li><b>simpleAverage:</b> <samp>(sum strata\'s performance rates) / (number of strata) * 100</samp>,</li>' +
         '<li><b>weightedAverage:</b> <samp>((sum strata\'s performanceMet) / (sum strata\'s performanceMet and performanceNotMet)) * 100</samp>, or,</li>' +
         '<li><b>sumNumerators:</b> <samp>sum strata\'s performanceMet</samp>, or,</li>' +
-        '<li><b>overallStratumOnly:</b> performance rate of the "overall" stratum.</li></ul>',
+        '<li><b>overallStratumOnly:</b> performance rate of the "overall" stratum.</li>' +
+        '<li><b>split:</b> reporting strata will be used for data completenesss, performance will be used for performance rate.</li></ul>',
       notes: `If <code>metricType = registryMultiPerformanceRate</code> then writable and <i>required</i>.<br> If <code>metricType = multiPerformanceRate</code>, then calculated by API and returned in response.`,
     },
     { name: 'strata', value: 'Array(performanceRateStratum)', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data" rel="noopener noreferrer" target="_blank">qpp-measures-data</a>.', notes: 'writable, required' },
   ],
-  stratum: [
+  /*stratum: [
     { name: 'measurementId', value: 'string', description: 'The id of the measurement in which the stratum belongs.', notes: ' ' },
     { name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>eligiblePopulation</b>', notes: 'writable, required' },
     { name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional' },
@@ -92,7 +105,7 @@ export const measurementsFields: IFields = {
     { name: 'eligiblePopulationException', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure. In the measures specifications, this field is also referred to as "Denominator Exception".', notes: 'writable, optional' },
     { name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Numerator/Denominator".', notes: 'writable, required' },
     { name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable, required' },
-  ],
+  ],*/
 };
 
 export const measurementsTabs: ITabs = {
@@ -151,7 +164,7 @@ export const measurementsTabs: ITabs = {
 }`,
     },
   ],
-  singlePerformanceRate: [
+  cqmSinglePerformanceRate: [
     {
       tab: 'Sample JSON',
       code: `{
@@ -164,6 +177,27 @@ export const measurementsTabs: ITabs = {
     "performanceNotMet": integer,
     "eligiblePopulationExclusion": integer,
     "eligiblePopulationException": integer,
+    "eligiblePopulation": integer,
+    "performanceRate": float,
+    "reportingRate": float
+  }
+}`,
+    },
+  ],
+  qcdrSinglePerformanceRate: [
+    {
+      tab: 'Sample JSON',
+      code: `{
+  "id": string,
+  "measurementSetId": string,
+  "measureId": string,
+  "value": {
+    "isEndToEndReported": boolean,
+    "performanceMet": integer,
+    "performanceNotMet": integer,
+    "eligiblePopulationExclusion": integer,
+    "eligiblePopulationException": integer,
+    "numeratorExclusion": integer,
     "eligiblePopulation": integer,
     "performanceRate": float,
     "reportingRate": float
@@ -191,14 +225,28 @@ export const measurementsTabs: ITabs = {
     {
       tab: 'Sample JSON',
       code: `{
-  "measurementId": string,
-  "performanceMet": integer,
-  "performanceNotMet": integer,
-  "eligiblePopulationExclusion": integer,
-  "eligiblePopulationException": integer,
-  "eligiblePopulation": integer,
-  "stratum": string
-}`,
+          "measureId": string,
+          "isEndToEndReported": false,
+          "value": {
+              "strata": [
+                  {
+                      "performanceMet": integer,
+                      "eligiblePopulationExclusion": integer,
+                      "eligiblePopulationException": integer,
+                      "performanceNotMet": integer,
+                      "eligiblePopulation": integer,
+                      "stratum": string
+                  },
+                  {
+                      "performanceMet": integer,
+                      "eligiblePopulationExclusion": integer,
+                      "eligiblePopulationException": integer,
+                      "performanceNotMet": integer,
+                      "eligiblePopulation": integer,
+                      "stratum": string
+              ]
+          }
+      }`,
     },
   ],
   allCauseReadmission: [
