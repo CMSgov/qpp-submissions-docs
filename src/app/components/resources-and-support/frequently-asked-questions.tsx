@@ -30,6 +30,7 @@ const tableData1 = {
   `,
   'How do I report SubGroups?': 'We will be updating the Developer Preview environment again at the end of September to add subgroup identifier capability.  A Tutorial will be added at that time.',
   'PI Electronic Prescribing Objective Exclusion Reweighting': `The exclusions for <code>PI_EP_2</code> (<code>PI_EP_2_EX_1</code>, <code>PI_EP_2_EX_2</code>, <code>PI_EP_2_EX_3</code>) are not reweighing to <code>PI_EP_1</code>. It is incorrectly reweighing to next objective <code>healthInformationExchange</code>.  We are currently working on a fix.`,
+  'Score-preview endpoint returns a score for a MVP submission for a non-MVP registered entity.': 'Currently working on a fix to ensure MVP registration is validated when testing using the score-preview endpoint.' 
 };
 
 const FrequentlyAskedQuestions = () => {
