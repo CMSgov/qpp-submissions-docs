@@ -1,5 +1,3 @@
-import React from 'react';
-
 import envConfig from '../../../envConfig';
 import { ExternalLink } from '../../../shared';
 
@@ -29,13 +27,13 @@ const tableData1 = {
     </ul>
   `,
   'How do I report SubGroups?': 'We will be updating the Developer Preview environment again at the end of September to add subgroup identifier capability.  A Tutorial will be added at that time.',
-  'Score-preview endpoint returns a score for a MVP submission for a non-MVP registered entity.': 'Currently working on a fix to ensure MVP registration is validated when testing using the score-preview endpoint.',
+  'Score-preview endpoint returns a score for a MVP submission for a non-MVP registered entity.': 'Resolved as of 09/12/2023',
 };
 
 const FrequentlyAskedQuestions = () => {
   return (
     <>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 09/12/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Frequently Asked Questions</h2>
 
       <h3 className='ds-h3'>General and Developer Preview</h3>
