@@ -28,6 +28,7 @@ import ErrorCodes from './components/references/error-codes';
 import FrequentlyAskedQuestions from './components/resources-and-support/frequently-asked-questions';
 import Help from './components/resources-and-support/help';
 import TermsOfService from './components/resources-and-support/terms-of-service';
+import SubgroupTutorial from './components/guides/subgroup-tutorial';
 
 export interface IPath {
   path: string;
@@ -92,6 +93,12 @@ const guidesPaths: IPath[] = [
     exact: false,
     linkText: 'Tutorial: MVP Submissions',
     component: MvpTutorial,
+  },
+  {
+    path: '/subgroup-tutorial',
+    exact: false,
+    linkText: 'Tutorial: MVP Subgroup Submissions',
+    component: SubgroupTutorial,
   },
   {
     path: '/authorization-and-authentication',

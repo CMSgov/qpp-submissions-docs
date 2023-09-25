@@ -621,15 +621,15 @@ export const steps: ISteps = {
   "submissionMethod": "registry",
   "performanceStart": "2023-01-01",
   "performanceEnd": "2023-12-31",
-  "programName": "G0054",
+  "programName": "G0053",
   "submission": {
     "entityType": "group",
-    "taxpayerIdentificationNumber": "000000002",
+    "taxpayerIdentificationNumber": "000000011",
     "performanceYear": 2023
   },
   "measurements": [
     {
-      "measureId": "047",
+      "measureId": "130",
       "value": {
         "isEndToEndReported": false,
         "performanceMet": 120,
@@ -668,7 +668,80 @@ export const steps: ISteps = {
         {
           "id": "086dad28-4bcb-4649-a4fd-04ad8426df77",
           "measurementSetId": "086dad28-907a-4e88-af73-5c7ed2e6764e",
-          "measureId": "047",
+          "measureId": "130",
+          "value": {
+            "isEndToEndReported": false,
+            "performanceMet": 120,
+            "eligiblePopulationExclusion": 0,
+            "eligiblePopulationException": 0,
+            "performanceNotMet": 36,
+            "eligiblePopulation": 156,
+            "reportingRate": 100,
+            "performanceRate": 76.92
+          }
+        }
+      ]
+    }
+  }
+}`,
+    },
+  ],
+  subgroup1: [
+    {
+      tab: 'Request',
+      code: `{
+  "category": "quality",
+  "submissionMethod": "registry",
+  "performanceStart": "2023-01-01",
+  "performanceEnd": "2023-12-31",
+  "programName": "G0053",
+  "submission": {
+    "entityType": "subgroup",
+    "entityId": "SG-00000001",
+    "performanceYear": 2023
+  },
+  "measurements": [
+    {
+      "measureId": "130",
+      "value": {
+        "isEndToEndReported": false,
+        "performanceMet": 120,
+        "eligiblePopulationExclusion": 0,
+        "eligiblePopulationException": 0,
+        "performanceNotMet": 36,
+        "eligiblePopulation": 156
+      }
+    }
+  ]
+}`,
+    },
+    {
+      tab: 'Response',
+      response: '201 Created',
+      code: `{
+  "data": {
+    "measurementSet": {
+      "id": "086dad28-907a-4e88-af73-5c7ed2e6764e",
+      "createdAt": "2022-06-25T15:18:00Z",
+      "updatedAt": "2022-06-25T15:18:00Z",
+      "submissionId": "086dad28-0477-4b41-8c05-77dd98d41d6f",
+      "category": "quality",
+      "submissionMethod": "registry",
+      "measureSet": null,
+      "submitterId": "12c6258f-86db-492c-8637-4ff2668164b5",
+      "submitterType": "organization",
+      "programName": "G0053",
+      "practiceDetails": null,
+      "cehrtId": null,
+      "suppressed": false,
+      "source": null,
+      "performanceStart": "2022-01-01",
+      "performanceEnd": "2022-12-31",
+      "measurements": [
+        {
+          "id": "086dad28-4bcb-4649-a4fd-04ad8426df77",
+          "measurementSetId": "086dad28-907a-4e88-af73-5c7ed2e6764e",
+          "measureId": "130",
           "value": {
             "isEndToEndReported": false,
             "performanceMet": 120,
@@ -759,7 +832,25 @@ export const apiExamples: IApiExamples = {
         row: ['Entity', 'Group'],
       },
       {
-        row: ['Taxpayer Identification Number', '000000002'],
+        row: ['Taxpayer Identification Number', '000000011'],
+      },
+      {
+        row: ['Performance Year', '2023'],
+      },
+      {
+        row: ['Program Name', 'G0053'],
+      },
+    ],
+  },
+  subgroup: {
+    verb: 'POST',
+    url: '/measurement-sets',
+    rows: [
+      {
+        row: ['Entity', 'Subgroup'],
+      },
+      {
+        row: ['Subgroup Identifier', 'SG-00000001'],
       },
       {
         row: ['Performance Year', '2023'],
