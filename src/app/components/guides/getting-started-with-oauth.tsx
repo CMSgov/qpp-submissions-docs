@@ -63,7 +63,7 @@ const GettingStartedUsingQppOauth = () => {
 
       <h2 className='ds-h2' id='create-user'>Create test users in the Developer Preview</h2>
       <p className='ds-text'>
-        To support Developer Preview integration and testing, we created the <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/data-faker/synthetic-data/docs/index.html`} text='Test Data Service' />. Using this API, you can reserve specific scenarios in the Test Data Service to test granting access to their QPP authorizations and try out different special scoring scenarios. Please visit the Interactive Documentation to learn more about setting up test users in Developer Preview.
+        To support Developer Preview integration and testing, we created the <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/synthetic-data/docs/index.html`} text='Test Data Service' />. Using this API, you can reserve specific scenarios in the Test Data Service to test granting access to their QPP authorizations and try out different special scoring scenarios. Please visit the Interactive Documentation to learn more about setting up test users in Developer Preview.
       </p>
 
       <h2 className='ds-h2' id='production-api-access'>Production API Access</h2>
