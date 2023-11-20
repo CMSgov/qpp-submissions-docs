@@ -97,15 +97,14 @@ export const measurementsFields: IFields = {
     },
     { name: 'strata', value: 'Array(performanceRateStratum)', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data" rel="noopener noreferrer" target="_blank">qpp-measures-data</a>.', notes: 'writable, required' },
   ],
-  /*stratum: [
-    { name: 'measurementId', value: 'string', description: 'The id of the measurement in which the stratum belongs.', notes: ' ' },
-    { name: 'performanceMet', value: 'integer', description: 'The number of patients for which the measure criteria are satisfied. Must be greater than or equal to zero and less than or equal to the <b>eligiblePopulation</b>', notes: 'writable, required' },
-    { name: 'performanceNotMet', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied.', notes: 'writable, optional' },
-    { name: 'eligiblePopulationExclusion', value: 'integer', description: 'The number of patients who are excluded from the measure. eligiblePopulationExclusion should be 0 for all CQM measures as excluded populations should already have been subtracted out of the eligible population in the denominator. eligiblePopulationExclusion can have a value for eCQM measures where no human intervention is allowed. In the measures specifications for claims measures and eCQMs, this field is also referred to as "Denominator Exclusion". In measures specifications for registry and QCDR measures, this field is referred to as "Numerator Exclusion".', notes: 'writable, optional' },
-    { name: 'eligiblePopulationException', value: 'integer', description: 'The number of patients for which the measure criteria are not satisfied but who are excluded from the measure. In the measures specifications, this field is also referred to as "Denominator Exception".', notes: 'writable, optional' },
-    { name: 'eligiblePopulation', value: 'integer', description: 'The total number of eligible patients as described by the measure. Must be greater than or equal to zero. In the measures specifications, this field is also referred to as "Eligible Population Numerator/Denominator".', notes: 'writable, required' },
-    { name: 'stratum', value: 'string', description: 'The strata associated with the performance rate measurement.', notes: 'writable, required' },
-  ],*/
+  stratum: [
+    { name: 'performanceMet', value: 'integer', description: 'Refer to the individual measure specification for instructions on how to report.', notes: 'writable, required' },
+    { name: 'eligiblePopulationExclusion', value: 'integer', description: 'Refer to the individual measure specification for instructions on how to report.', notes: 'writable, optional' },
+    { name: 'eligiblePopulationException', value: 'integer', description: 'Refer to the individual measure specification for instructions on how to report.', notes: 'writable, optional' },
+    { name: 'performanceNotMet', value: 'integer', description: 'Refer to the individual measure specification for instructions on how to report.', notes: 'writable, optional' },
+    { name: 'eligiblePopulation', value: 'integer', description: 'Refer to the individual measure specification for instructions on how to report.', notes: 'writable, required' },
+    { name: 'stratum', value: 'string', description: 'Refer to the individual measure specification for applicable stratum name.', notes: 'writable, required' },
+  ],
 };
 
 export const measurementsTabs: ITabs = {
