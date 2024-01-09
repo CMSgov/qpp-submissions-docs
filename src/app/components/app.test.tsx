@@ -30,7 +30,10 @@ import References from '../components/references/references';
 import FrequentlyAskedQuestions from '../components/resources-and-support/frequently-asked-questions';
 import Help from '../components/resources-and-support/help';
 import TermsOfService from '../components/resources-and-support/terms-of-service';
+import { configure } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
 
+configure({ adapter: new Adapter() });
 const expectedRoutes = {
   '/': <Introduction />,
   '/announcements': <Announcements />,
