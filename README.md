@@ -14,7 +14,7 @@ References to [qpp-measures-data](https://github.com/CMSgov/qpp-measures-data), 
 
 ## Development
 
-We use [`create-react-app`](https://github.com/facebookincubator/create-react-app) to avoid having to make tooling decisions.
+We use [`vite`](https://vitejs.dev/guide/) to avoid having to make tooling decisions.
 
 We also rely on the [CMSGov Design System](https://github.com/CMSgov/design-system) and the [U.S. Web Design Standards](https://standards.usa.gov/) to help ensure consistency with other government properties.
 
@@ -27,9 +27,7 @@ npm start
 
 ## Testing
 
-We use Travis CI for testing - add a test if it makes sense, and make sure the build is green before merging.
-
-[Read about how tests are written and run](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#running-tests). Following the linked recommendations, we use [Enzyme](http://airbnb.io/enzyme/) for testing components in isolation and put test files alongside app files - see app.test.js and api-reference.test.js for examples.
+We use Jest for testing, but haven't fleshed out thorough unit tests for this repo.
 
 ## Deploy
 

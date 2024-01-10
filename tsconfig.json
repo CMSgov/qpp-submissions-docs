@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ESNext",
     "lib": [
       "dom",
       "dom.iterable",
@@ -21,6 +21,7 @@
     "experimentalDecorators": true,
     "downlevelIteration": true,
     "typeRoots": [
+      "./vite/client",
       "./@types",
       "./node_modules/@types"
     ],
