@@ -14,6 +14,7 @@ export default defineConfig({
         port: 3000,
     },
     build: {
+        chunkSizeWarningLimit: 1000,
         target: browserslistToEsbuild([
             '>0.2%',
             'not dead',
