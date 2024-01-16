@@ -5,7 +5,7 @@ import browserslistToEsbuild from 'browserslist-to-esbuild'
 
 export default defineConfig({
     // depending on your application, base can also be "/"
-    base: '',
+    base: '/qpp-submissions-docs/',
     plugins: [react(), viteTsconfigPaths()],
     server: {
         // this ensures that the browser opens upon server start

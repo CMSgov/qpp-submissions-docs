@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ExternalLink, DataModelTable, CodeTab } from '../../../shared';
 import envConfig from '../../../envConfig';
 import { measurementSetsFields, measurementSetsTabs, measurementSetPracticeDetails } from './data';

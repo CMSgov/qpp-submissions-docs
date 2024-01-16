@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { CodeTab, LinkToId, ExternalLink, ApiExample } from '../../../shared';
 import { steps, apiExamples } from './data';
 import envConfig from '../../../envConfig';

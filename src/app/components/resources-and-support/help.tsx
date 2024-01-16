@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ExternalLink, LinkToId } from '../../../shared';
 import envConfig from '../../../envConfig';
 

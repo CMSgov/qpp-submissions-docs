@@ -1,4 +1,3 @@
-import React from 'react';
 import { ExternalLink, CodeTab, DataModelTable } from '../../../shared';
 import envConfig from '../../../envConfig';
 import { submissionsTabs, submissionsFields } from './data';

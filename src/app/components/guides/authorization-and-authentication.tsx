@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { LinkToId } from '../../../shared';
 
 const AuthenticationAndAuthorization = () => {

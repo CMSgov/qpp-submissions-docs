@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { ExternalLink, CodeTab, LinkToId } from '../../../shared';
 import { scoringData } from './data';
 import envConfig from '../../../envConfig';

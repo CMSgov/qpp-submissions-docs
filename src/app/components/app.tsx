@@ -1,15 +1,15 @@
-import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
+import { useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { combinedRoutes } from '../routes';
 
 import Header from './header';
-import DropdownNav from './dropdown-nav';
 import LeftNav from './left-nav';
 import Footer from './footer';
 import SubscribeModal from './subscribe-modal';
 import envConfig from '../../envConfig';
 import { ExternalLink } from '../../shared';
+import NotFound from './notFound/not-found';
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
@@ -21,7 +21,7 @@ const App = () => {
 
         <div className='qpp-docs-title-container'>
           <div className='ds-l-container'>
-            <ExternalLink href={`${envConfig.qppCmsUrl}/developers`} text='&lt; back to QPP Developer Tools' attrs={{ className: 'qpp-docs-title-back'}} />
+            <ExternalLink href={`${envConfig.qppCmsUrl}/developers`} text='&lt; back to QPP Developer Tools' attrs={{ className: 'qpp-docs-title-back' }} />
             <h3 className='qpp-docs-title-text'>QPP Submissions API Documentation</h3>
           </div>
         </div>
@@ -29,26 +29,26 @@ const App = () => {
         <div className='ds-l-container'>
           <div className='ds-l-row'>
 
-            <div className='ds-l-col--12 ds-u-padding-top--3 ds-u-display--block ds-u-sm-display--none'>
-              <DropdownNav />
-            </div>
-
             <div className='ds-l-col--3 ds-u-padding-top--4 ds-u-display--none ds-u-sm-display--block'>
               <div className='content-block'>
                 <LeftNav />
               </div>
             </div>
-
             <div className='ds-u-padding-top--4 ds-l-col--12 ds-l-sm-col--9'>
               <div className='content-block ds-u-padding--3'>
-                {combinedRoutes.map(({ path, exact, component }, i) => (
+                <Switch>
+                  {combinedRoutes.map(({ path, exact, component }, i) =>
+                    <Route
+                      key={i}
+                      path={path}
+                      exact={exact}
+                      component={component}
+                    />,
+                  )}
                   <Route
-                    key={i}
-                    path={path}
-                    exact={exact}
-                    component={component}
+                    component={NotFound}
                   />
-                ))}
+                </Switch>
               </div>
             </div>
           </div>

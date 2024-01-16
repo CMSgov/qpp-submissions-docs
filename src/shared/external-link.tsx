@@ -1,4 +1,4 @@
-import React, { HTMLAttributes } from 'react';
+import { HTMLAttributes } from 'react';
 
 export const ExternalLink = ({ href, text, attrs }: { href: string, text?: string, attrs?: HTMLAttributes<{}> }) => {
   if (!text) {

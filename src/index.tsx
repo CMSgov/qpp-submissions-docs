@@ -2,15 +2,15 @@
 import './polyfills';
 
 import ReactDOM from 'react-dom';
-import { Router } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from './app/components/app';
-import history from './history';
 
 import './index.scss';
+import envConfig from './envConfig';
 
 ReactDOM.render(
-  <Router history={history}>
+  <Router basename = {envConfig.baseUrl}>
     <App />
   </Router>,
   document.getElementById('root')
