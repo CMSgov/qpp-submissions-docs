@@ -1,5 +1,3 @@
-import React from 'react';
-
 import envConfig from '../envConfig';
 
 import '../styles/shared/api-example.scss';
