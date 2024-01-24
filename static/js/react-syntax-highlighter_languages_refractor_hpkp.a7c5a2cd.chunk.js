@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkqpp_submissions_docs=self.webpackChunkqpp_submissions_docs||[]).push([[6749],{85727:function(s){function p(s){s.languages.hpkp={directive:{pattern:/\b(?:includeSubDomains|max-age|pin-sha256|preload|report-to|report-uri|strict)(?=[\s;=]|$)/i,alias:"property"},operator:/=/,punctuation:/;/}}s.exports=p,p.displayName="hpkp",p.aliases=[]}}]);
-//# sourceMappingURL=react-syntax-highlighter_languages_refractor_hpkp.a7c5a2cd.chunk.js.map

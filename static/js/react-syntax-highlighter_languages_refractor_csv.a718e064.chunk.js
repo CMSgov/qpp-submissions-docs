@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkqpp_submissions_docs=self.webpackChunkqpp_submissions_docs||[]).push([[2526],{10691:function(s){function n(s){s.languages.csv={value:/[^\r\n,"]+|"(?:[^"]|"")*"(?!")/,punctuation:/,/}}s.exports=n,n.displayName="csv",n.aliases=[]}}]);
-//# sourceMappingURL=react-syntax-highlighter_languages_refractor_csv.a718e064.chunk.js.map
