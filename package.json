@@ -30,6 +30,7 @@
     "@cmsgov/design-system": "2.8.0",
     "@vitejs/plugin-react": "4.2.1",
     "core-js": "3.31.1",
+    "font-awesome": "4.7.0",
     "postcss": "8.4.31",
     "react": "^16.13.1",
     "react-code-blocks": "0.1.2",
