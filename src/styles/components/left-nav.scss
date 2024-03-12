@@ -4,17 +4,17 @@
   border-top: none;
 }
 
-.left-nav .ds-c-vertical-nav__label:visited {
-  color: $qppNavy;
-}
-
 .left-nav .ds-c-vertical-nav__label {
   border: none;
 }
 
+.left-nav .ds-c-vertical-nav__label:visited {
+  color: $qpp-navy;
+}
+
 .left-nav .ds-c-vertical-nav__label--current {
-  border-left: 4px solid $qppMediumTeal !important;
+  border-left: 4px solid $qpp-medium-teal !important;
   font-weight: normal;
-  background: $offWhite;
-  color: $qppNavy;
+  background: $off-white;
+  color: $qpp-navy;
 }

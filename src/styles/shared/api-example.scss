@@ -1,7 +1,7 @@
-$lightBlue: rgb(66, 123, 149);
-$blue: rgb(4, 80, 115);
-$offWhite: rgb(243, 243, 243);
-$border: 1px solid $lightBlue;
+$light-blue: rgb(66 123 149);
+$blue: rgb(4 80 115);
+$off-white: rgb(243 243 243);
+$border: 1px solid $light-blue;
 
 #api-example {
   margin-top: 2em;
@@ -34,7 +34,29 @@ $border: 1px solid $lightBlue;
     margin: 0;
     padding: 1em;
     color: $blue;
-    background-color: $offWhite;
+    background-color: $off-white;
+    
+    td {
+      padding: 0.5em;
+      border-color: $light-blue;
+      background-color: $off-white;
+  
+      &.nested-once {
+        padding-left: 1em;
+      }
+  
+      &.nested-twice {
+        padding-left: 2em;
+      }
+  
+      &:first-child {
+        border-left: none;
+      }
+  
+      &:last-child {
+        border-right: none;
+      }
+    }
 
     tr {
       &:first-child td {
@@ -43,28 +65,6 @@ $border: 1px solid $lightBlue;
 
       &:last-child td {
         border-bottom: none;
-      }
-    }
-
-    td {
-      padding: 0.5em;
-      border-color: $lightBlue;
-      background-color: $offWhite;
-
-      &.nested-once {
-        padding-left: 1em;
-      }
-
-      &.nested-twice {
-        padding-left: 2em;
-      }
-
-      &:first-child {
-        border-left: none;
-      }
-
-      &:last-child {
-        border-right: none;
       }
     }
   }

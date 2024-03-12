@@ -4,7 +4,7 @@
 body {
   margin: 0;
   padding-top: 85px;
-  background: $offWhite;
+  background: $off-white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -49,7 +49,7 @@ h1 {
 
 h2 a.tutorial-header-link {
   text-decoration: none;
-  color: #000000;
+  color: #000;
 }
 
 h2:hover a.tutorial-header-link {
@@ -74,10 +74,10 @@ h2:hover a.tutorial-header-link {
 }
 
 a.qpp-docs-title-back {
-  color: #ffffff;
+  color: #fff;
 
   &:focus {
-    color: #ffffff;
+    color: #fff;
     outline: 0;
   }
 }
@@ -87,7 +87,7 @@ a.qpp-docs-title-back {
 }
 
 .qpp-docs-title-text {
-  color: #ffffff;
+  color: #fff;
 }
 
 /* Design System Overrides */
@@ -107,7 +107,7 @@ a.qpp-docs-title-back {
 }
 
 a.ds-c-button:visited {
-  color: #ffffff;
+  color: #fff;
 }
 
 a:focus {
@@ -117,25 +117,13 @@ a:focus {
 
 .ds-c-vertical-nav__label.ds-c-vertical-nav__label--current:visited:focus,
 .ds-c-vertical-nav__label:visited:focus {
-  background-color: $offWhite;
+  background-color: $off-white;
   text-decoration: none;
-  color: $qppNavy;
+  color: $qpp-navy;
 }
 
 .ds-c-vertical-nav > .ds-c-vertical-nav__item {
   border-top: 0;
-}
-
-.ds-c-table td {
-  padding: 16px 10px;
-
-  &:not(:first-of-type) {
-    padding-left: 12px;
-  }
-}
-
-.ds-c-table td > ul {
-  padding-left: 12px;
 }
 
 .ds-c-table--borderless {
@@ -151,13 +139,25 @@ a:focus {
   }
 }
 
-@media (max-width: 534px) {
+.ds-c-table td {
+  padding: 16px 10px;
+
+  &:not(:first-of-type) {
+    padding-left: 12px;
+  }
+}
+
+.ds-c-table td > ul {
+  padding-left: 12px;
+}
+
+@media (width <= 534px) {
   .ds-c-field:focus {
     outline: none;
   }
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   body {
     padding-top: 108px;
   }
