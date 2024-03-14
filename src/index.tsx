@@ -1,4 +1,3 @@
-// @ts-nocheck
 import './polyfills';
 
 import { StrictMode } from "react";

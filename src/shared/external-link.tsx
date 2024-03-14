@@ -1,6 +1,6 @@
 import { HTMLAttributes } from 'react';
 
-export const ExternalLink = ({ href, text, attrs }: { href: string, text?: string, attrs?: HTMLAttributes<{}> }) => {
+export const ExternalLink = ({ href, text, attrs }: { href: string, text?: string, attrs?: HTMLAttributes<object> }) => {
   if (!text) {
     switch (true) {
       case href.indexOf('https:') === 0:

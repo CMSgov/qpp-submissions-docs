@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 import Header from './header';
 import LeftNav from './left-nav';
@@ -37,7 +37,7 @@ export default function Layout() {
                     </div>
                 </div>
             </main>
-                <Footer openModal={() => setShowModal(true)} />
+            <Footer openModal={() => setShowModal(true)} />
 
             {showModal &&
                 <>
@@ -46,5 +46,5 @@ export default function Layout() {
                 </>
             }
         </>
-    )
+    );
 }
