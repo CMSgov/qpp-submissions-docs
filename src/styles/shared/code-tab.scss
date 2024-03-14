@@ -1,5 +1,5 @@
-$blue: rgb(4, 80, 115);
-$darkBlue: rgb(17, 46, 81);
+$blue: rgb(4 80 115);
+$dark-blue: rgb(17 46 81);
 
 #code-tabs {
   margin-bottom: 20px;
@@ -13,7 +13,7 @@ $darkBlue: rgb(17, 46, 81);
     padding: 10px 16px;
 
     &.selected {
-      background-color: $darkBlue;
+      background-color: $dark-blue;
       color: white;
       font-weight: 500;
     }
@@ -24,7 +24,7 @@ $darkBlue: rgb(17, 46, 81);
   }
 
   .code-section {
-    background-color: $darkBlue;
+    background-color: $dark-blue;
     color: white;
     padding: 25px;
 

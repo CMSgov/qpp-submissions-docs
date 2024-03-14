@@ -1,4 +1,9 @@
 {
+  "types": [
+    "node",
+    "jest",
+    "@testing-library/jest-dom"
+  ],
   "compilerOptions": {
     "target": "ESNext",
     "lib": [

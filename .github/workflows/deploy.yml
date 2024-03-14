@@ -20,19 +20,19 @@ jobs:
     steps:
 
       - name: "Check if user has write access"
-        uses: "lannonbr/repo-permission-check-action@b23b656f0dfb810f0c5e224a264d621a92a6f271" # pin@2.0.0
+        uses: "lannonbr/repo-permission-check-action@2.0.0"
         with:
           permission: "write"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout Codebase
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.event.inputs.branch }}
 
       - name: Configure Node version and registry
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 18.16.1
           registry-url: 'https://registry.npmjs.org'
