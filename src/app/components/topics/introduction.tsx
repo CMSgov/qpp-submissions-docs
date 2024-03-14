@@ -1,7 +1,8 @@
 import { ExternalLink } from '../../../shared';
 import envConfig from '../../../envConfig';
+import { FunctionComponent } from 'react';
 
-const Introduction = () => {
+export default function Introduction() {
   return (
     <>
       <p className='qpp-docs-page-updated'>Last Updated: 12/05/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
@@ -46,5 +47,3 @@ const Introduction = () => {
     </>
   );
 };
-
-export default Introduction;

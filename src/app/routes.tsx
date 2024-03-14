@@ -1,4 +1,4 @@
-import { FunctionComponent } from 'react';
+import { ReactElement } from 'react';
 
 // Topics
 import Introduction from './components/topics/introduction';
@@ -30,9 +30,8 @@ import TermsOfService from './components/resources-and-support/terms-of-service'
 
 export interface IPath {
   path: string;
-  exact: boolean;
   linkText: string;
-  component: FunctionComponent;
+  element: ReactElement;
 }
 
 export interface IAllPath {
@@ -43,132 +42,112 @@ export interface IAllPath {
 const topicsPaths: IPath[] = [
   {
     path: '/',
-    exact: true,
     linkText: 'Introduction',
-    component: Introduction,
+    element: <Introduction />,
   },
   {
     path: '/announcements',
-    exact: false,
     linkText: 'Announcements',
-    component: Announcements,
+    element: <Announcements />,
   },
   {
     path: '/change-log',
-    exact: false,
     linkText: 'Change Log',
-    component: ChangeLog,
+    element: <ChangeLog />,
   },
   {
     path: '/developer-preview',
-    exact: false,
     linkText: 'Developer Preview',
-    component: DeveloperPreview,
+    element: <DeveloperPreview />,
   },
 ];
 
 const guidesPaths: IPath[] = [
   {
     path: '/submitting-to-submissions-api',
-    exact: false,
     linkText: 'Submitting to QPP using the Submission API',
-    component: SubmittingToQppSubmissionApi,
+    element: <SubmittingToQppSubmissionApi />,
   },
   {
     path: '/tutorial',
-    exact: false,
     linkText: 'Tutorial: Create and score data via API',
-    component: BasicTutorial,
+    element: <BasicTutorial />,
   },
   {
     path: '/advanced-tutorial',
-    exact: false,
     linkText: 'Tutorial: Add and update data via API',
-    component: AdvancedTutorial,
+    element: <AdvancedTutorial />,
   },
   {
     path: '/authorization-and-authentication',
-    exact: false,
     linkText: 'Submissions API Authentication and Authorization',
-    component: AuthorizationAndAuthentication,
+    element: <AuthorizationAndAuthentication />,
   },
   {
     path: '/qualified-registries-and-qcdrs',
-    exact: false,
     linkText: 'Qualified Registries and QCDRs',
-    component: QualifiedRegistriesAndQcdrs,
+    element: <QualifiedRegistriesAndQcdrs />,
   },
   {
     path: '/getting-started-with-oauth',
-    exact: false,
     linkText: 'Getting Started Using QPP OAuth',
-    component: GettingStartedUsingQppOauth,
+    element: <GettingStartedUsingQppOauth />,
   },
 ];
 
 const referencePaths: IPath[] = [
   {
     path: '/measurements',
-    exact: false,
     linkText: 'Measurements',
-    component: Measurements,
+    element: <Measurements />,
   },
   {
     path: '/measurement-sets',
-    exact: false,
     linkText: 'Measurement Sets',
-    component: MeasurementSets,
+    element: <MeasurementSets />,
   },
   {
     path: '/submissions',
-    exact: false,
     linkText: 'Submissions',
-    component: Submissions,
+    element: <Submissions />,
   },
   {
     path: '/benchmarks',
-    exact: false,
     linkText: 'Benchmarks',
-    component: Benchmarks,
+    element: <Benchmarks />,
   },
   {
     path: '/scoring',
-    exact: false,
     linkText: 'Scoring',
-    component: Scoring,
+    element: <Scoring />,
   },
   {
     path: '/references',
-    exact: false,
     linkText: 'References',
-    component: References,
+    element: <References />,
   },
   {
     path: '/error-codes',
-    exact: false,
     linkText: 'Error Codes',
-    component: ErrorCodes,
+    element: <ErrorCodes />,
   },
 ];
 
 const resourcesAndSupport: IPath[] = [
   {
     path: '/frequently-asked-questions',
-    exact: false,
     linkText: 'Frequently Asked Questions',
-    component: FrequentlyAskedQuestions,
+    element: <FrequentlyAskedQuestions />,
   },
   {
     path: '/help',
-    exact: false,
     linkText: 'Help',
-    component: Help,
+    element: <Help />,
   },
   {
     path: '/terms-of-service',
-    exact: false,
     linkText: 'Terms of Service',
-    component: TermsOfService,
+    element: <TermsOfService />,
   },
 ];
 
@@ -196,5 +175,9 @@ export const combinedRoutes = allPaths.reduce((acc: IPath[], cur) => {
 
   return acc;
 }, []);
+
+export const routesWithoutLinkText = combinedRoutes.map(({path, element}) => {
+  return { path, element };
+});
 
 export default allPaths;

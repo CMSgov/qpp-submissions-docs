@@ -1,7 +1,7 @@
 import { ExternalLink, LinkToId } from '../../../shared';
 import envConfig from '../../../envConfig';
 
-const Announcements = () => {
+export default function Announcements() {
   return (
     <>
       <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
@@ -40,5 +40,3 @@ const Announcements = () => {
     </>
   );
 };
-
-export default Announcements;
