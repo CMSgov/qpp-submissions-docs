@@ -23,7 +23,7 @@ combinedRoutes.forEach(route => {
       <StrictMode>
         <App />
       </StrictMode>
-      );
+    );
     const routeLink = screen.getAllByRole('link', { name: route.linkText })[0];
     expect(routeLink).toBeInTheDocument();
     expect(routeLink).toHaveAttribute('href', route.path);
