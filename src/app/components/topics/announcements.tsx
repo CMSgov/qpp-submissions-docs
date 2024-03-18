@@ -24,7 +24,7 @@ const Announcements = () => {
           The Submissions API has received infastructure updates with minor changes to end users.
         </li>
         <li>
-          See <LinkToId to='change-log' text='Change Log' /> and <LinkToId to='error-codes' text='Error Codes' /> pages for specific details.
+          See <LinkToId to='/change-log' text='Change Log' /> and <LinkToId to='/error-codes' text='Error Codes' /> pages for specific details.
         </li>
       </ul>
 

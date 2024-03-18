@@ -69,7 +69,7 @@ const QualifiedRegistriesAndQcdrs = () => {
         If you are a Registry or QCDR using the Developer Preview, you have an API key that is associated with an 'organization'. This affects what endpoints you are authorized to use, and what behavior each endpoint has.
       </p>
       <p className='ds-text'>
-        At a high level, your API key allows you to create and edit data using the <code>/measurement-sets</code> and <code>/measurements</code> endpoints. You cannot create data using the <code>/submissions</code> endpoint. For more information about what you're authorized to do with the Submissions API, click <LinkToId to='developer-preview#authorization' text='here' offset='130' />.
+        At a high level, your API key allows you to create and edit data using the <code>/measurement-sets</code> and <code>/measurements</code> endpoints. You cannot create data using the <code>/submissions</code> endpoint. For more information about what you're authorized to do with the Submissions API, click <LinkToId to='/developer-preview#authorization' text='here' offset='130' />.
       </p>
 
       <h2 className='ds-h2' id='authentication'>Authentication</h2>

@@ -16,7 +16,7 @@ const Help = () => {
       </p>
 
       <p className='ds-text'>
-        For frequently asked questions regarding APIs please see the <LinkToId to='frequently-asked-questions' text='FAQ Section' />
+        For frequently asked questions regarding APIs please see the <LinkToId to='/frequently-asked-questions' text='FAQ Section' />
       </p>
 
       <p className='ds-text'>
