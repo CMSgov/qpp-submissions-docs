@@ -1,17 +1,16 @@
-// @ts-nocheck
 import './polyfills';
 
+import { StrictMode } from "react";
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router } from 'react-router-dom';
 
 import App from './app/components/app';
 
 import './index.scss';
-import envConfig from './envConfig';
+
 
 ReactDOM.render(
-  <Router basename = {envConfig.baseUrl}>
-    <App />
-  </Router>,
+  <StrictMode>
+    <App />,
+  </StrictMode>,
   document.getElementById('root')
 );

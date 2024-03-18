@@ -67,7 +67,7 @@ const Scoring = () => {
       </p>
       <ul>
         <li>
-          <LinkToId to='measurements#boolean-measurements' text='Boolean Measures' offset='120' />
+          <LinkToId to='/measurements#boolean-measurements' text='Boolean Measures' offset='120' />
         </li>
       </ul>
 
@@ -108,10 +108,10 @@ const Scoring = () => {
       </p>
       <ul>
         <li>
-          <LinkToId to='measurements#proportion-measurements' text='Proportion Measures' offset='120' />
+          <LinkToId to='/measurements#proportion-measurements' text='Proportion Measures' offset='120' />
         </li>
         <li>
-          <LinkToId to='measurements#boolean-measurements' text='Boolean' offset='120' />
+          <LinkToId to='/measurements#boolean-measurements' text='Boolean' offset='120' />
         </li>
       </ul>
       <CodeTab data={scoringData.submissionJsonExampleStringAci} />
@@ -135,13 +135,13 @@ const Scoring = () => {
       </p>
       <ul>
         <li>
-          <LinkToId to='measurements#non-proportion-measurements' text='Non-Proportion Measures' offset='120' />
+          <LinkToId to='/measurements#non-proportion-measurements' text='Non-Proportion Measures' offset='120' />
         </li>
         <li>
-          <LinkToId to='measurements#single-performance-rate-measurements' text='Single Performance Rates' offset='120' />
+          <LinkToId to='/measurements#single-performance-rate-measurements' text='Single Performance Rates' offset='120' />
         </li>
         <li>
-          <LinkToId to='measurements#multi-performance-rate-measurements' text='Multi-Performance Rates' offset='120' />
+          <LinkToId to='/measurements#multi-performance-rate-measurements' text='Multi-Performance Rates' offset='120' />
         </li>
       </ul>
       <p className='ds-text--lead'>

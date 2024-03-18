@@ -1,25 +1,28 @@
 import { render, screen } from '@testing-library/react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import '@testing-library/jest-dom';
 
 import App from './app';
 import { combinedRoutes } from '../routes';
+import { StrictMode } from 'react';
+import envConfig from '../../envConfig';
 
 
 test('should render without crashing', () => {
+  envConfig.baseUrl = '';
   render(
-    <Router>
+    <StrictMode>
       <App />
-    </Router>,
+    </StrictMode>
   );
 });
 
 combinedRoutes.forEach(route => {
   test(`should have a link for ${route.path}`, () => {
+    envConfig.baseUrl = '';
     render(
-      <Router>
+      <StrictMode>
         <App />
-      </Router>,
+      </StrictMode>
     );
     const routeLink = screen.getAllByRole('link', { name: route.linkText })[0];
     expect(routeLink).toBeInTheDocument();

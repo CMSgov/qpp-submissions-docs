@@ -52,7 +52,7 @@ const BasicTutorial = () => {
 
       <h3>Next steps</h3>
       <p>
-        Updating and correcting performance data is also easy - avoid losing time by solving issues as they arise, rather than reacting months later. Go to <LinkToId to='advanced-tutorial' text='Tutorial: Add and Update data via API' offset='130' /> to see how you can update a measurement set that you've previously submitted.
+        Updating and correcting performance data is also easy - avoid losing time by solving issues as they arise, rather than reacting months later. Go to <LinkToId to='/advanced-tutorial' text='Tutorial: Add and Update data via API' offset='130' /> to see how you can update a measurement set that you've previously submitted.
       </p>
     </>
   );

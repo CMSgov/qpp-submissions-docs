@@ -1,8 +1,8 @@
 import { HTMLAttributes } from 'react';
 
-import { HashLink } from 'react-router-hash-link';
+import { HashLink } from '@xzar90/react-router-hash-link';
 
-export const LinkToId = ({ to, text, offset = '1', attrs }: { to: string, text: string, offset?: string, attrs?: HTMLAttributes<{}> }) => {
+export const LinkToId = ({ to, text, offset = '1', attrs }: { to: string, text: string, offset?: string, attrs?: HTMLAttributes<object> }) => {
   return (
     <HashLink
       to={!to.includes('#') ? `${to}#${to}` : to}

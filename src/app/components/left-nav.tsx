@@ -14,7 +14,7 @@ const scrollToTop = () => {
   });
 };
 
-const buildLinkListItem = ({ path, exact, linkText }: IPath) =>
+const buildLinkListItem = ({ path, linkText }: IPath) =>
   <li
     key={path}
     className='ds-c-vertical-nav__item'
@@ -22,9 +22,11 @@ const buildLinkListItem = ({ path, exact, linkText }: IPath) =>
   >
     <NavLink
       to={path}
-      exact={exact}
-      className={`ds-c-vertical-nav__label ${leftNavPaddingClasses}`}
-      activeClassName='ds-c-vertical-nav__label--current'
+      className={({isActive}) => 
+        isActive
+          ? `ds-c-vertical-nav__label ds-c-vertical-nav__label--current ${leftNavPaddingClasses}`
+          : `ds-c-vertical-nav__label ${leftNavPaddingClasses}`
+      }
     >
       {linkText}
     </NavLink>
