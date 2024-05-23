@@ -1,5 +1,6 @@
 import { LinkToId, ExternalLink } from '../../../shared';
 import envConfig from '../../../envConfig';
+import { DocPageProps } from '../../../shared/types';
 
 const tableData = [
   {
@@ -54,9 +55,9 @@ const tableData = [
   },
 ];
 
-const QualifiedRegistriesAndQcdrs = () => {
+const QualifiedRegistriesAndQcdrs: React.FC<DocPageProps> = ({dataTestId}) => {
   return (
-    <>
+    <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 07/01/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Qualified Registries and QCDRs</h2>
       <p className='ds-text'>
@@ -129,7 +130,7 @@ const QualifiedRegistriesAndQcdrs = () => {
       <p className='ds-text'>
         To retrieve your Developer Preview and production tokens, you must have a HARP account that has a Security Official role for your Qualified Registry or QCDR. Please see <ExternalLink href={`${envConfig.cmsGithubIo}/qpp-developer-preview-docs/getting-started`} text='Getting Started'/> for instructions on how to download your registry token..
       </p>
-    </>
+    </div>
   );
 };
 

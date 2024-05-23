@@ -27,11 +27,12 @@ import ErrorCodes from './components/references/error-codes';
 import FrequentlyAskedQuestions from './components/resources-and-support/frequently-asked-questions';
 import Help from './components/resources-and-support/help';
 import TermsOfService from './components/resources-and-support/terms-of-service';
+import { DocPageProps } from '../shared/types';
 
 export interface IPath {
   path: string;
   linkText: string;
-  element: ReactElement;
+  component: React.FC<DocPageProps>;
 }
 
 export interface IAllPath {
@@ -43,22 +44,22 @@ const topicsPaths: IPath[] = [
   {
     path: '/',
     linkText: 'Introduction',
-    element: <Introduction />,
+    component: Introduction
   },
   {
     path: '/announcements',
     linkText: 'Announcements',
-    element: <Announcements />,
+    component: Announcements
   },
   {
     path: '/change-log',
     linkText: 'Change Log',
-    element: <ChangeLog />,
+    component: ChangeLog
   },
   {
     path: '/developer-preview',
     linkText: 'Developer Preview',
-    element: <DeveloperPreview />,
+    component: DeveloperPreview
   },
 ];
 
@@ -66,32 +67,32 @@ const guidesPaths: IPath[] = [
   {
     path: '/submitting-to-submissions-api',
     linkText: 'Submitting to QPP using the Submission API',
-    element: <SubmittingToQppSubmissionApi />,
+    component: SubmittingToQppSubmissionApi
   },
   {
     path: '/tutorial',
     linkText: 'Tutorial: Create and score data via API',
-    element: <BasicTutorial />,
+    component: BasicTutorial
   },
   {
     path: '/advanced-tutorial',
     linkText: 'Tutorial: Add and update data via API',
-    element: <AdvancedTutorial />,
+    component: AdvancedTutorial
   },
   {
     path: '/authorization-and-authentication',
     linkText: 'Submissions API Authentication and Authorization',
-    element: <AuthorizationAndAuthentication />,
+    component: AuthorizationAndAuthentication
   },
   {
     path: '/qualified-registries-and-qcdrs',
     linkText: 'Qualified Registries and QCDRs',
-    element: <QualifiedRegistriesAndQcdrs />,
+    component: QualifiedRegistriesAndQcdrs
   },
   {
     path: '/getting-started-with-oauth',
     linkText: 'Getting Started Using QPP OAuth',
-    element: <GettingStartedUsingQppOauth />,
+    component: GettingStartedUsingQppOauth
   },
 ];
 
@@ -99,37 +100,37 @@ const referencePaths: IPath[] = [
   {
     path: '/measurements',
     linkText: 'Measurements',
-    element: <Measurements />,
+    component: Measurements
   },
   {
     path: '/measurement-sets',
     linkText: 'Measurement Sets',
-    element: <MeasurementSets />,
+    component: MeasurementSets
   },
   {
     path: '/submissions',
     linkText: 'Submissions',
-    element: <Submissions />,
+    component: Submissions
   },
   {
     path: '/benchmarks',
     linkText: 'Benchmarks',
-    element: <Benchmarks />,
+    component: Benchmarks
   },
   {
     path: '/scoring',
     linkText: 'Scoring',
-    element: <Scoring />,
+    component: Scoring
   },
   {
     path: '/references',
     linkText: 'References',
-    element: <References />,
+    component: References
   },
   {
     path: '/error-codes',
     linkText: 'Error Codes',
-    element: <ErrorCodes />,
+    component: ErrorCodes
   },
 ];
 
@@ -137,17 +138,17 @@ const resourcesAndSupport: IPath[] = [
   {
     path: '/frequently-asked-questions',
     linkText: 'Frequently Asked Questions',
-    element: <FrequentlyAskedQuestions />,
+    component: FrequentlyAskedQuestions
   },
   {
     path: '/help',
     linkText: 'Help',
-    element: <Help />,
+    component: Help
   },
   {
     path: '/terms-of-service',
     linkText: 'Terms of Service',
-    element: <TermsOfService />,
+    component: TermsOfService
   },
 ];
 
@@ -176,8 +177,8 @@ export const combinedRoutes = allPaths.reduce((acc: IPath[], cur) => {
   return acc;
 }, []);
 
-export const routesWithoutLinkText = combinedRoutes.map(({path, element}) => {
-  return { path, element };
+export const routesWithoutLinkText = combinedRoutes.map(({path, component}) => {
+  return { path, component };
 });
 
 export default allPaths;

@@ -1,10 +1,11 @@
 import { ExternalLink, CodeTab, ApiExample, LinkToId } from '../../../shared';
 import envConfig from '../../../envConfig';
 import { steps, apiExamples } from './data';
+import { DocPageProps } from '../../../shared/types';
 
-const BasicTutorial = () => {
+const BasicTutorial: React.FC<DocPageProps> = ({dataTestId}) => {
   return (
-    <>
+    <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Tutorial: Create and Score Data via API</h2>
       <p>
@@ -54,7 +55,7 @@ const BasicTutorial = () => {
       <p>
         Updating and correcting performance data is also easy - avoid losing time by solving issues as they arise, rather than reacting months later. Go to <LinkToId to='/advanced-tutorial' text='Tutorial: Add and Update data via API' offset='130' /> to see how you can update a measurement set that you've previously submitted.
       </p>
-    </>
+    </div>
   );
 };
 

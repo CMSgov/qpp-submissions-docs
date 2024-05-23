@@ -1,9 +1,10 @@
 import { ExternalLink } from '../../../shared';
 import envConfig from '../../../envConfig';
+import { DocPageProps } from '../../../shared/types';
 
-const TermsOfService = () => {
+const TermsOfService: React.FC<DocPageProps> = ({dataTestId}) => {
   return (
-    <>
+    <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 08/26/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>API Terms of Service Agreement</h2>
       <p className='ds-text'>
@@ -71,7 +72,7 @@ const TermsOfService = () => {
       <p className='ds-text'>
         Return to the <ExternalLink href={`${envConfig.qppCmsUrl}/resources/developers`} text='QPP Developer Tools' />.
       </p>
-    </>
+    </div>
   );
 };
 

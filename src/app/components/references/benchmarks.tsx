@@ -2,10 +2,11 @@
 import { ExternalLink, CodeTab, DataModelTable } from '../../../shared';
 import envConfig from '../../../envConfig';
 import { benchmarksTabs, benchmarksFields } from './data';
+import { DocPageProps } from '../../../shared/types';
 
-const Benchmarks = () => {
+const Benchmarks: React.FC<DocPageProps> = ({dataTestId}) => {
   return (
-    <>
+    <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}} id='current-benchmarks'>Benchmarks</h2>
       <p className='ds-text--lead'>
@@ -21,7 +22,7 @@ const Benchmarks = () => {
       <CodeTab data={benchmarksTabs.fields} />
       <DataModelTable data={benchmarksFields.fields} />
 
-    </>
+    </div>
   );
 };
 

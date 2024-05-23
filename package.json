@@ -47,6 +47,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "6.4.2",
     "@testing-library/react": "12.1.5",
+    "@testing-library/user-event": "14.5.2",
     "@types/jest": "29.5.12",
     "@types/node": "^20.11.25",
     "@types/react": "^17.0.11",
@@ -86,6 +87,21 @@
     },
     "modulePaths": [
       "<rootDir>/src"
-    ]
+    ],
+    "coverageDirectory": "<rootDir>/coverage",
+    "coverageReporters": [
+      "text",
+      "text-summary",
+      "cobertura",
+      "html"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 74,
+        "branches": 10,
+        "functions": 19,
+        "lines": 74
+      }
+    }
   }
 }

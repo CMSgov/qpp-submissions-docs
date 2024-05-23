@@ -1,10 +1,11 @@
 import { ExternalLink, DataModelTable, CodeTab } from '../../../shared';
 import envConfig from '../../../envConfig';
 import { measurementSetsFields, measurementSetsTabs, measurementSetPracticeDetails } from './data';
+import { DocPageProps } from '../../../shared/types';
 
-const MeasurementSets = () => {
+const MeasurementSets: React.FC<DocPageProps> = ({dataTestId}) => {
   return (
-    <>
+    <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 07/06/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Measurement Sets</h2>
       <p className='ds-text--lead'>
@@ -27,7 +28,7 @@ const MeasurementSets = () => {
       </p>
       <CodeTab data={measurementSetsTabs.practiceDetails} />
       <DataModelTable data={measurementSetsFields.practiceDetails} />
-    </>
+    </div>
   );
 };
 

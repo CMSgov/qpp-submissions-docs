@@ -1,9 +1,10 @@
 import { ExternalLink } from '../../../shared';
 import envConfig from '../../../envConfig';
+import { DocPageProps } from '../../../shared/types';
 
-const References = () => {
+const References: React.FC<DocPageProps> = ({dataTestId}) => {
   return (
-    <>
+    <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 05/12/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}} id='references'>References</h2>
 
@@ -56,7 +57,7 @@ const References = () => {
           Interactive Web Interface Documentation: <ExternalLink href={`${envConfig.qppCmsUrl}/api/submissions/web-interface/docs`} />
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 

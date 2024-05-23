@@ -1,6 +1,7 @@
 import { ExternalLink, CodeTab, LinkToId } from '../../../shared';
 import { scoringData } from './data';
 import envConfig from '../../../envConfig';
+import { DocPageProps } from '../../../shared/types';
 
 interface ITextAndId {
   [k: string]: {
@@ -35,9 +36,9 @@ const textAndId: ITextAndId = {
   },
 };
 
-const Scoring = () => {
+const Scoring: React.FC<DocPageProps> = ({dataTestId}) => {
   return (
-    <>
+    <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Scoring</h2>
       <p className='ds-text--lead'>
@@ -155,7 +156,7 @@ const Scoring = () => {
         Use the <code>.../submisisons/score-preview</code> endpoint (above) to see the scoring response.
       </p>
 
-    </>
+    </div>
   );
 };
 
