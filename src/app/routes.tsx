@@ -177,8 +177,4 @@ export const combinedRoutes = allPaths.reduce((acc: IPath[], cur) => {
   return acc;
 }, []);
 
-export const routesWithoutLinkText = combinedRoutes.map(({path, component}) => {
-  return { path, component };
-});
-
 export default allPaths;
