@@ -1,13 +1,10 @@
-import { MemoryRouter,  } from 'react-router-dom';
-import {render, screen} from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { MemoryRouter } from 'react-router-dom';
+import {render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import App from './app';
 import LeftNav from './left-nav';
 import { combinedRoutes } from '../routes';
-
-window.scroll = jest.fn();
 
 describe('App tests', () => {
   afterAll(() => {
@@ -36,17 +33,102 @@ describe('App tests', () => {
 
   combinedRoutes.forEach((route) => {
     it(`Clicking LeftNav link for ${route.path} should render component ${route.component.name}`, async () => {
-      const user = userEvent.setup();
-      render(
+      const {getAllByRole, getByTestId, getByText } = render(
         <MemoryRouter>
           <App />
         </MemoryRouter>,
       );
 
-      await user.click(screen.getAllByRole('link', { name: route.linkText })[0]);
-      const component = screen.getByTestId(route.component.name);
+      fireEvent.click(getAllByRole('link',{ name: route.linkText } )[0]);
+      const component = getByTestId(route.component.name);
       expect(component).toBeInTheDocument();
-      expect(screen.getByText('Last Updated:', {exact: false})).toBeInTheDocument();
+      expect(getByText('Last Updated:', {exact: false})).toBeInTheDocument();
+    });
+  });
+
+  describe('Subscribe Modal', () => {
+
+    const modalText = 'To sign up for updates or to access your subscriber preferences, please enter your contact information below.';
+
+    it("Opening the modal should reveal modal text", async () => {
+      const { getByRole, getByText, queryByText, getByTestId } = render(
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      );
+      expect(
+        queryByText(
+          modalText,
+          { exact: true }
+        )
+      ).not.toBeInTheDocument();
+      fireEvent.click(getByRole("link", { name: "Subscribe to Updates" }));
+      expect(
+        getByText(
+          modalText,
+          { exact: true }
+        )
+      ).toBeInTheDocument();
+      fireEvent.click(getByTestId('close-button'));
+      setTimeout(
+        () =>
+          expect(
+            queryByText(
+              modalText,
+              { exact: true }
+            )
+          ).not.toBeInTheDocument(),
+        500
+      );
+    });
+  
+    it("Using the cancel button should close the modal", async () => {
+      const { getByRole, queryByText, getByTestId } = render(
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      );
+
+      fireEvent.click(getByRole("link", { name: "Subscribe to Updates" }));
+      fireEvent.click(getByTestId('cancel-button'));
+      setTimeout(
+        () =>
+          expect(
+            queryByText(
+              modalText,
+              { exact: true }
+            )
+          ).not.toBeInTheDocument(),
+        500
+      );
+    });
+  
+    it("Using the onMouseEnter and onMouseLeave events should open and close modal respectively", async () => {
+      const { getByRole, getByText, queryByText, getByTestId } = render(
+        <MemoryRouter>
+          <App />
+        </MemoryRouter>
+      );
+
+      fireEvent.click(getByRole("link", { name: "Subscribe to Updates" }));
+      fireEvent.mouseEnter(getByTestId('modal-toggle'));
+      expect(
+        getByText(
+          modalText,
+          { exact: true }
+        )
+      ).toBeInTheDocument();
+      fireEvent.mouseLeave(getByTestId('modal-toggle'));
+      setTimeout(
+        () =>
+          expect(
+            queryByText(
+              modalText,
+              { exact: true }
+            )
+          ).not.toBeInTheDocument(),
+        500
+      );
     });
   });
 });
