@@ -5,7 +5,7 @@ import envConfig from '../../../envConfig';
 import '../../../styles/components/tutorial.scss';
 import { DocPageProps } from '../../../shared/types';
 
-const AdvancedTutorial: React.FC<DocPageProps> = ({dataTestId}) => {
+const AdvancedTutorial: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}

@@ -3,7 +3,7 @@ import { measurementsTitleAndId, measurementsTabs, measurementsFields } from './
 import envConfig from '../../../envConfig';
 import { DocPageProps } from '../../../shared/types';
 
-const Measurements: React.FC<DocPageProps> = ({dataTestId}) => {
+const Measurements: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 08/15/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}

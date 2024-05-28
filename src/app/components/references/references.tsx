@@ -2,7 +2,7 @@ import { ExternalLink } from '../../../shared';
 import envConfig from '../../../envConfig';
 import { DocPageProps } from '../../../shared/types';
 
-const References: React.FC<DocPageProps> = ({dataTestId}) => {
+const References: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 05/12/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}

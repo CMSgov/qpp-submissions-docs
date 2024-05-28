@@ -36,7 +36,7 @@ const textAndId: ITextAndId = {
   },
 };
 
-const Scoring: React.FC<DocPageProps> = ({dataTestId}) => {
+const Scoring: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
