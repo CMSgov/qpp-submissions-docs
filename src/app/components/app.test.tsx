@@ -1,5 +1,5 @@
 import { MemoryRouter } from 'react-router-dom';
-import {render, screen, fireEvent } from '@testing-library/react';
+import {render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import App from './app';
@@ -21,13 +21,13 @@ describe('App tests', () => {
 
   combinedRoutes.forEach((route) => {
     it(`LeftNav should have a link for ${route.path}`, () => {
-      render(
+      const {getByRole} = render(
         <MemoryRouter>
           <LeftNav />
         </MemoryRouter>,
       );
 
-      expect(screen.getByRole('link', { name: route.linkText })).toHaveAttribute('href', route.path);
+      expect(getByRole('link', { name: route.linkText })).toHaveAttribute('href', route.path);
     });
   });
 
