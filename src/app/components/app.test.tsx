@@ -32,7 +32,7 @@ describe('App tests', () => {
   });
 
   combinedRoutes.forEach((route) => {
-    it(`Clicking LeftNav link for ${route.path} should render component ${route.component.name}`, async () => {
+    it(`Clicking LeftNav link for ${route.path} should render component ${route.component.name}`, () => {
       const {getAllByRole, getByTestId, getByText } = render(
         <MemoryRouter>
           <App />
@@ -50,7 +50,7 @@ describe('App tests', () => {
 
     const modalText = 'To sign up for updates or to access your subscriber preferences, please enter your contact information below.';
 
-    it("Opening the modal should reveal modal text", async () => {
+    it("Opening the modal should reveal modal text", () => {
       const { getByRole, getByText, queryByText, getByTestId } = render(
         <MemoryRouter>
           <App />
@@ -82,7 +82,7 @@ describe('App tests', () => {
       );
     });
   
-    it("Using the cancel button should close the modal", async () => {
+    it("Using the cancel button should close the modal", () => {
       const { getByRole, queryByText, getByTestId } = render(
         <MemoryRouter>
           <App />
@@ -103,7 +103,7 @@ describe('App tests', () => {
       );
     });
   
-    it("Using the onMouseEnter and onMouseLeave events should open and close modal respectively", async () => {
+    it("Using the onMouseEnter and onMouseLeave events should open and close modal respectively", () => {
       const { getByRole, getByText, queryByText, getByTestId } = render(
         <MemoryRouter>
           <App />
