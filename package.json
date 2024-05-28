@@ -9,7 +9,7 @@
     "pretest": "npm run lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage .",
+    "test:cov": "jest --coverage .",
     "test:debug": "jest --inspect-brk --runInBand --no-cache",
     "serve:local": "npx serve dist",
     "predeploy": "npm run build",
