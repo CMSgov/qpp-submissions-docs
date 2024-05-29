@@ -7,7 +7,7 @@ For your application, you will only need to support **one** of these flows.
 
 ## Requirements
 
-This application has been tested on Node.js v20.5.0.
+This application has been tested on Node.js v22.2.0.
 
 ## Getting started
 

@@ -1,12 +1,11 @@
-import OktaJwtVerifier from '@okta/jwt-verifier';
-import fetch, { Headers } from 'node-fetch';
+import * as jose from 'jose';
 
 import Config from './config.js';
 
 const QPP_ACCEPT_HEADER = 'application/vnd.qpp.cms.gov.v2+json';
 
 let oauthEndpoints;
-let oktaJwtVerifier;
+let JWKS;
 
 export default {
     /**
@@ -116,11 +115,13 @@ export default {
      * server, and that the aud claim matches the configured client ID.
      */
     async verifyIdToken(idToken) {
-        if (!oktaJwtVerifier) {
-            const { issuer } = await this.discoverOAuthEndpoints();
-            oktaJwtVerifier = new OktaJwtVerifier({ issuer, clientId: Config.clientId });
+        const { issuer, jwks_uri } = await this.discoverOAuthEndpoints();
+
+        if (!JWKS) {
+            JWKS = jose.createRemoteJWKSet(new URL(jwks_uri));
         }
-        return oktaJwtVerifier.verifyIdToken(idToken, Config.clientId);
+
+        return jose.jwtVerify(idToken, JWKS, { issuer, audience: Config.clientId });
     },
 
     /**

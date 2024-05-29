@@ -9,7 +9,6 @@ import qppAuth from './qpp-auth.js';
 
 // Decorator to allow async route handlers. Won't be necessary once Express v5 is released.
 const asyncHandler = fn => (req, res, next) =>
-    // eslint-disable-next-line promise/no-callback-in-promise
     Promise.resolve(fn(req, res, next)).catch(next);
 
 const app = express();
