@@ -9,7 +9,7 @@
     "pretest": "npm run lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage .",
+    "test:cov": "jest --coverage .",
     "test:debug": "jest --inspect-brk --runInBand --no-cache",
     "serve:local": "npx serve dist",
     "predeploy": "npm run build",
@@ -47,6 +47,7 @@
   "devDependencies": {
     "@testing-library/jest-dom": "6.4.2",
     "@testing-library/react": "12.1.5",
+    "@testing-library/user-event": "14.5.2",
     "@types/jest": "29.5.12",
     "@types/node": "^20.11.25",
     "@types/react": "^17.0.11",
@@ -86,6 +87,21 @@
     },
     "modulePaths": [
       "<rootDir>/src"
-    ]
+    ],
+    "coverageDirectory": "<rootDir>/coverage",
+    "coverageReporters": [
+      "text",
+      "text-summary",
+      "cobertura",
+      "html"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 96,
+        "branches": 95,
+        "functions": 91,
+        "lines": 96
+      }
+    }
   }
 }

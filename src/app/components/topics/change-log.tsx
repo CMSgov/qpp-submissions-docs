@@ -1,4 +1,5 @@
 import envConfig from '../../../envConfig';
+import { DocPageProps } from '../../../shared/types';
 
 const submissionChangesTable = [
   ['08/31/2023', `Updates to Developer Documentation for Performance Year 2023`, `
@@ -212,9 +213,9 @@ const buildTableBody = (data: string[][]) =>
     )}
   </tbody>;
 
-const ChangeLog = () => {
+const ChangeLog: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) =>{
   return (
-    <>
+    <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}} id='change-log'>Change Log</h2>
       <p className='ds-text'>
@@ -232,7 +233,7 @@ const ChangeLog = () => {
         {buildTableHeader()}
         {buildTableBody(measuresChangeTable)}
       </table>
-    </>
+    </div>
   );
 };
 

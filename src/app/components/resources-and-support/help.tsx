@@ -1,9 +1,10 @@
 import { ExternalLink, LinkToId } from '../../../shared';
 import envConfig from '../../../envConfig';
+import { DocPageProps } from '../../../shared/types';
 
-const Help = () => {
+const Help: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
-    <>
+    <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 08/26/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Help</h2>
 
@@ -22,7 +23,7 @@ const Help = () => {
       <p className='ds-text'>
         Please bring any questions not answered by our available documentation to the monthly support calls/Virtual Office Hours.  Or contact the Quality Payment Program service center: <ExternalLink href={`${envConfig.qppCmsUrl}/about/help-and-support`} />
       </p>
-    </>
+    </div>
   );
 };
 
