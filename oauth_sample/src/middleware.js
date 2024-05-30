@@ -34,8 +34,8 @@ export default {
         const idToken = req.cookies.qpp_id_token;
         if (idToken) {
             try {
-                const { claims } = await qppAuth.verifyIdToken(idToken);
-                req.auth = claims;
+                const { payload } = await qppAuth.verifyIdToken(idToken);
+                req.auth = payload;
                 req.log.info('authenticated user', {
                     username: req.auth.preferred_username,
                 });
