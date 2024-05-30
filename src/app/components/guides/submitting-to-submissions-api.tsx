@@ -1,9 +1,10 @@
 import { ExternalLink } from '../../../shared';
 import envConfig from '../../../envConfig';
+import { DocPageProps } from '../../../shared/types';
 
-const SubmittingToQppSubmissionApi = () => {
+const SubmittingToQppSubmissionApi: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
-    <>
+    <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 01/05/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>The Submissions API enables submissions and real-time performance scoring of Quality Payment Program (QPP) data. </h2>
       <p className='ds-text'>
@@ -30,7 +31,7 @@ const SubmittingToQppSubmissionApi = () => {
       <p className='ds-text'>
         Visit the <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/submissions/public/docs`} text='Interactive Documentation' /> to learn more about the endpoints available in the Submissions API.
       </p>
-    </>
+    </div>
   );
 };
 

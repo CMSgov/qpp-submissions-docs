@@ -29,11 +29,11 @@ const SubscribeModal = ({ closeModal }: { closeModal: CallableFunction }) => {
   LockBodyScroll();
 
   return (
-    <div id='modal-subscribe' className='modal fade show' tabIndex={-1} role='dialog' aria-labelledby='modal-subscribe-label' onClick={closeModalOnClickOutsideModal}>
-      <div className='modal-dialog modal-lg' onMouseEnter={() => setOnModal(true)} onMouseLeave={() => setOnModal(false)}>
+    <div id='modal-subscribe' className='modal fade show' tabIndex={-1}  role='dialog' aria-labelledby='modal-subscribe-label' onClick={closeModalOnClickOutsideModal}>
+      <div className='modal-dialog modal-lg' data-testid='modal-toggle' onMouseEnter={() => setOnModal(true)} onMouseLeave={() => setOnModal(false)}>
         <div className='modal-content'>
           <div className='modal-header'>
-            <button className='close' type='button' data-dismiss='modal' aria-label='Close' onClick={() => removeInClassAndClose()}><span aria-hidden='true'>x</span></button>
+            <button className='close' type='button' data-dismiss='modal' aria-label='Close' data-testid='close-button' onClick={() => removeInClassAndClose()}><span aria-hidden='true'>x</span></button>
             <h4 className='modal-title' id='modal-subscribe-label'>Subscribe to Email Updates</h4>
           </div>
           <div className='modal-body'>
@@ -50,7 +50,11 @@ const SubscribeModal = ({ closeModal }: { closeModal: CallableFunction }) => {
               <p>To sign up for updates or to access your subscriber preferences, please enter your contact information below.</p>
               <div className='row'>
                 <div className='col-sm-6 form-group'><label className='control-label' htmlFor='email'>* Email Address</label><input className='form-control' id='email' type='email' name='email' /></div>
-                <div className='col-sm-12'><button className='btn btn-primary js-subscribe-submit' type='submit' name='commit' >Submit</button><br /><br /><button className='btn btn-tertiary' type='button' data-dismiss='modal' onClick={() => removeInClassAndClose()}>Cancel</button></div>
+                <div className='col-sm-12'>
+                  <button className='btn btn-primary js-subscribe-submit' type='submit' name='commit' >Submit</button>
+                  <br />
+                  <br />
+                  <button className='btn btn-tertiary' type='button' data-dismiss='modal' data-testid='cancel-button' onClick={() => removeInClassAndClose()}>Cancel</button></div>
               </div>
               <div className='row'>
                 <div className='col-sm-12'>

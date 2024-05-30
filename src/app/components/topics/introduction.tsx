@@ -1,9 +1,10 @@
 import { ExternalLink } from '../../../shared';
 import envConfig from '../../../envConfig';
+import { DocPageProps } from '../../../shared/types';
 
-const Introduction = () => {
+const Introduction: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
-    <>
+    <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 12/05/2020</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Easily submit and score QPP data in real-time via API</h2>
       <p className='ds-text'>
@@ -43,7 +44,7 @@ const Introduction = () => {
       <p className='ds-text'>
         Please bring any questions not answered by our available documentation to the monthly support calls/Virtual Office Hours, or contact the Quality Payment Program at {envConfig.phoneNumber}, Monday through Friday, 8:00 AM-8:00 PM ET or by e-mail at: <a href={`mailto:${envConfig.qppEmail}`}>{envConfig.qppEmail}</a>
       </p>
-    </>
+    </div>
   );
 };
 

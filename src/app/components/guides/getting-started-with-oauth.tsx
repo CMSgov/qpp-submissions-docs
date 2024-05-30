@@ -1,9 +1,10 @@
 import { ExternalLink } from '../../../shared';
 import envConfig from '../../../envConfig';
+import { DocPageProps } from '../../../shared/types';
 
-const GettingStartedUsingQppOauth = () => {
+const GettingStartedUsingQppOauth: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
-    <>
+    <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Getting Started Using QPP OAuth</h2>
       <p className='ds-text'>
@@ -84,7 +85,7 @@ const GettingStartedUsingQppOauth = () => {
       <p className='ds-text'>
         To request production access, please email the QPP Help Desk at QPP@cms.hhs.gov to set up a demonstration with the QPP team. In order to have sufficient time to go through the approval process, requests for production access for an upcoming submission period should be made no later than November 1 prior to submissions opening.
       </p>
-    </>
+    </div>
   );
 };
 

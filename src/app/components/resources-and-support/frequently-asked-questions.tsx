@@ -1,5 +1,6 @@
 import envConfig from '../../../envConfig';
 import { ExternalLink } from '../../../shared';
+import { DocPageProps } from '../../../shared/types';
 
 const tableData = {
   'If I am an EHR, how can I submit MIPS Quality data for my clients?': `
@@ -30,9 +31,9 @@ const tableData1 = {
   'Score-preview endpoint returns a score for a MVP submission for a non-MVP registered entity.': 'Resolved as of 09/12/2023',
 };
 
-const FrequentlyAskedQuestions = () => {
+const FrequentlyAskedQuestions: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
-    <>
+    <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 09/29/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Frequently Asked Questions</h2>
 
@@ -79,7 +80,7 @@ const FrequentlyAskedQuestions = () => {
           )}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 

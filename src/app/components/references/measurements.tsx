@@ -1,10 +1,11 @@
 import { DataModelTable, LinkToId, ExternalLink, CodeTab } from '../../../shared';
 import { measurementsTitleAndId, measurementsTabs, measurementsFields } from './data';
 import envConfig from '../../../envConfig';
+import { DocPageProps } from '../../../shared/types';
 
-const Measurements = () => {
+const Measurements: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
-    <>
+    <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 08/15/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-h2' style={{marginTop: 0}}>Measurements</h2>
       <ul>
@@ -72,7 +73,7 @@ const Measurements = () => {
       </p>
       <CodeTab data={measurementsTabs.stratum} />
       <DataModelTable data={measurementsFields.stratum} />
-    </>
+    </div>
   );
 };
 
