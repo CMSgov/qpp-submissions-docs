@@ -6,16 +6,16 @@ const References: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 05/12/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
-      <h2 className='ds-h2' style={{marginTop: 0}} id='references'>References</h2>
+      <h2 className='ds-text-heading--2xl' style={{marginTop: 0}} id='references'>References</h2>
 
-      <h3 className='ds-h3'>General References</h3>
+      <h3 className='ds-text-heading--xl'>General References</h3>
       <ul>
         <li>
           Resource Library: <ExternalLink href={`${envConfig.qppCmsUrl}/about/resource-library`} />
         </li>
       </ul>
 
-      <h3 className='ds-h3'>Submissions and Scoring API</h3>
+      <h3 className='ds-text-heading--xl'>Submissions and Scoring API</h3>
       <ul>
         <li>
           Interactive QPP Submissions API Documentation: <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/submissions/public/docs`} />
@@ -34,7 +34,7 @@ const References: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
         </li>
       </ul>
 
-      <h3 className='ds-h3'>Eligibility API</h3>
+      <h3 className='ds-text-heading--xl'>Eligibility API</h3>
       <ul>
         <li>
           QPP Participation Status Lookup Tool: <ExternalLink href={`${envConfig.qppCmsUrl}/participation-lookup`} />
@@ -44,14 +44,14 @@ const References: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
         </li>
       </ul>
 
-      <h3 className='ds-h3'>Authentication and Authorization API</h3>
+      <h3 className='ds-text-heading--xl'>Authentication and Authorization API</h3>
       <ul>
         <li>
           Interactive AUTH API Documentation: <ExternalLink href={`${envConfig.qppCmsUrl}/api/auth/docs`} />
         </li>
       </ul>
 
-      <h3 className='ds-h3'>CMS Web Interface API</h3>
+      <h3 className='ds-text-heading--xl'>CMS Web Interface API</h3>
       <ul>
         <li>
           Interactive Web Interface Documentation: <ExternalLink href={`${envConfig.qppCmsUrl}/api/submissions/web-interface/docs`} />

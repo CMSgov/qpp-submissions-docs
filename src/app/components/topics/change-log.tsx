@@ -217,18 +217,18 @@ const ChangeLog: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) =>{
   return (
     <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
-      <h2 className='ds-h2' style={{marginTop: 0}} id='change-log'>Change Log</h2>
-      <p className='ds-text'>
+      <h2 className='ds-text-heading--2xl' style={{marginTop: 0}} id='change-log'>Change Log</h2>
+      <p className='ds-text-body--md'>
         The Change log is updated with each significant change to the API with the details that you need to be aware of.
       </p>
 
-      <h3 className='ds-h3'>Submission API</h3>
+      <h3 className='ds-text-heading--xl'>Submission API</h3>
       <table className='ds-c-table ds-u-font-size--small'>
         {buildTableHeader()}
         {buildTableBody(submissionChangesTable)}
       </table>
 
-      <h3 className='ds-h3'>Measures Repository</h3>
+      <h3 className='ds-text-heading--xl'>Measures Repository</h3>
       <table className='ds-c-table ds-u-font-size--small'>
         {buildTableHeader()}
         {buildTableBody(measuresChangeTable)}

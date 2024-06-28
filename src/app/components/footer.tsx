@@ -12,7 +12,7 @@ const Footer = ({ openModal }: { openModal: CallableFunction }) => {
             <div className='logo-container'>
               <img className='qpp-logo' src={`${envConfig.qppCmsUrl}/images/qpp_logo_reversed.png`} alt='qpp logo' />
             </div>
-            <ul>
+            <ul className='ds-u-display--block'>
               <li>
                 <ExternalLink href={`${envConfig.qppCmsUrl}/developers`} text='Developer Tools' />
               </li>
@@ -26,7 +26,7 @@ const Footer = ({ openModal }: { openModal: CallableFunction }) => {
                 <a href='#modal-subscribe' data-toggle='modal' data-target='#modal-subscribe' onClick={() => openModal()}>Subscribe to Updates</a>
               </li>
             </ul>
-            <ul className='small'>
+            <ul className='ds-u-display--block small'>
               <li>
                 <ExternalLink href={`${envConfig.qppCmsUrl}/privacy`} text='CMS Privacy Notice' />
               </li>
