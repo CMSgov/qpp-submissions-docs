@@ -35,14 +35,14 @@ const FrequentlyAskedQuestions: React.FC<DocPageProps> = ({dataTestId}: DocPageP
   return (
     <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 09/29/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
-      <h2 className='ds-h2' style={{marginTop: 0}}>Frequently Asked Questions</h2>
+      <h2 className='ds-text-heading--2xl' style={{marginTop: 0}}>Frequently Asked Questions</h2>
 
-      <h3 className='ds-h3'>General and Developer Preview</h3>
+      <h3 className='ds-text-heading--xl'>General and Developer Preview</h3>
       <p>
         See <ExternalLink href={`${envConfig.cmsGithubIo}/qpp-developer-preview-docs/frequently-asked-questions`} text='Developer Preview Frequently Asked Questions' />
       </p>
 
-      <h3 className='ds-h3'>Submissions API</h3>
+      <h3 className='ds-text-heading--xl'>Submissions API</h3>
       <table className='ds-c-table ds-u-font-size--small faq-table'>
         <thead>
           <tr>
@@ -61,7 +61,7 @@ const FrequentlyAskedQuestions: React.FC<DocPageProps> = ({dataTestId}: DocPageP
           )}
         </tbody>
       </table>
-      <h3 className='ds-h3'>PY23 Questions and Known Issues</h3>
+      <h3 className='ds-text-heading--xl'>PY23 Questions and Known Issues</h3>
       <table className='ds-c-table ds-u-font-size--small faq-table'>
         <thead>
           <tr>

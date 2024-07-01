@@ -6,14 +6,14 @@ const Announcements: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
-      <h2 className='ds-h2' style={{marginTop: 0}}>Announcements</h2>
+      <h2 className='ds-text-heading--2xl' style={{marginTop: 0}}>Announcements</h2>
 
-      <h3 className='ds-h3'>General</h3>
-      <p className='ds-text'>
+      <h3 className='ds-text-heading--xl'>General</h3>
+      <p className='ds-text-body--md'>
         See <ExternalLink href={`${envConfig.cmsGithubIo}/qpp-developer-preview-docs/announcements`} text='Developer Preview Announcements' />
       </p>
 
-      <h3 className='ds-h3'>Submission API</h3>
+      <h3 className='ds-text-heading--xl'>Submission API</h3>
       <ul>
         <li>
           Updates for traditional MIPS submissions and scoring for PY 2023 are now available.
@@ -29,7 +29,7 @@ const Announcements: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
         </li>
       </ul>
 
-      <h3 className='ds-h3'>Measures Repository</h3>
+      <h3 className='ds-text-heading--xl'>Measures Repository</h3>
       <ul>
         <li>
           2023 Measures are published and available here: <ExternalLink href='https://github.com/CMSgov/qpp-measures-data/tree/develop/measures' />

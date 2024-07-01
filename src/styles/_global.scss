@@ -1,5 +1,7 @@
 @import './variables';
 @import 'font-awesome/css/font-awesome.min.css';
+@import '@cmsgov/design-system/css/index';
+@import '@cmsgov/design-system/css/core-theme';
 
 body {
   margin: 0;
@@ -88,6 +90,9 @@ a.qpp-docs-title-back {
 
 .qpp-docs-title-text {
   color: #fff;
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 /* Design System Overrides */
@@ -95,10 +100,9 @@ a.qpp-docs-title-back {
   font-family: Rubik, Arial, 'Helvetica Neue', Helvetica, sans-serif;
 }
 
-.ds-h1,
-.ds-h2,
-.ds-h3,
-.ds-h4 {
+.ds-text-heading--2xl,
+.ds-text-heading--xl,
+.ds-text-heading--lg {
   font-weight: normal;
 }
 

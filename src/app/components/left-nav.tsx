@@ -37,7 +37,7 @@ const LeftNav = () => {
     <ul className='ds-c-list--bare ds-u-padding-top--2'>
       {Routes && Routes.map(({ groupTitle, paths }, i) =>
         <li key={i}>
-          <ul className='ds-c-vertical-nav left-nav'>
+          <ul role='list' className='ds-c-vertical-nav left-nav'>
             <li className={`ds-c-vertical-nav__item ds-u-font-weight--semibold ${leftNavPaddingClasses}`}>
               {groupTitle.toUpperCase()}
             </li>

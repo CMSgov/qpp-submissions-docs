@@ -59,42 +59,42 @@ const QualifiedRegistriesAndQcdrs: React.FC<DocPageProps> = ({dataTestId}: DocPa
   return (
     <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 07/01/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
-      <h2 className='ds-h2' style={{marginTop: 0}}>Qualified Registries and QCDRs</h2>
-      <p className='ds-text'>
+      <h2 className='ds-text-heading--2xl' style={{marginTop: 0}}>Qualified Registries and QCDRs</h2>
+      <p className='ds-text-body--md'>
         Qualified Registries and QCDRs entities that are authorized by the Centers for Medicare &amp; Medicaid Services (CMS) to submit Quality Measures, Promoting Interoperability Measures, and/or Improvement Activities on behalf of MIPS eligible clinicians, groups, and/or virtual groups for a specified performance year can submit directly to the Submissions API using an API token.
       </p>
-      <p className='ds-text'>
+      <p className='ds-text-body--md'>
         Tokens are specific to your organization and are specific to the environment within the Submissions API. Developer Preview tokens are for testing against the Submissions API in the Developer Preview environment. Production token are for submitting during the specific performance year's submissions window to the production environment of the Submissions API.
       </p>
-      <p className='ds-text'>
+      <p className='ds-text-body--md'>
         If you are a Registry or QCDR using the Developer Preview, you have an API key that is associated with an 'organization'. This affects what endpoints you are authorized to use, and what behavior each endpoint has.
       </p>
-      <p className='ds-text'>
+      <p className='ds-text-body--md'>
         At a high level, your API key allows you to create and edit data using the <code>/measurement-sets</code> and <code>/measurements</code> endpoints. You cannot create data using the <code>/submissions</code> endpoint. For more information about what you're authorized to do with the Submissions API, click <LinkToId to='/developer-preview#authorization' text='here' offset='130' />.
       </p>
 
-      <h2 className='ds-h2' id='authentication'>Authentication</h2>
-      <p className='ds-text'>
+      <h2 className='ds-text-heading--2xl' id='authentication'>Authentication</h2>
+      <p className='ds-text-body--md'>
         You must authenticate your account when using the Submissions API. Authenticate via bearer auth by adding your API token to the header of every request using the key value: <strong>Authorization: Bearer [YOUR API TOKEN]</strong>.
       </p>
-      <p className='ds-text'>
+      <p className='ds-text-body--md'>
         API keys carry many privileges, and must not be shared in publicly accessible areas such as GitHub and in client-side code.  Even within organizations, access must be limited to staff embedding it in software.
       </p>
-      <p className='ds-text'>
+      <p className='ds-text-body--md'>
         Your API key carries many privileges, so be sure to keep it secret! Do not share your secret API key in publicly accessible areas such GitHub, client-side code, and so forth.
       </p>
-      <p className='ds-text'>
+      <p className='ds-text-body--md'>
         All API requests must be made over HTTPS. Calls made over plain HTTP will fail. API requests in the Developer Preview without authentication will also fail.
       </p>
-      <p className='ds-text'>
+      <p className='ds-text-body--md'>
         Please see <ExternalLink href={`${envConfig.cmsGithubIo}/qpp-developer-preview-docs/getting-started`} text='Getting Started'/> for instructions on how to download your registry token.
       </p>
 
-      <h2 className='ds-h2' id='authorization'>Authorization</h2>
-      <p className='ds-text'>
+      <h2 className='ds-text-heading--2xl' id='authorization'>Authorization</h2>
+      <p className='ds-text-body--md'>
         If you are a current Qualified Registry or QCDR using the Submissions API, you have an API key that is associated with an 'organization'. This affects what endpoints you are authorized to use, and what behavior each endpoint has.
       </p>
-      <p className='ds-text'>
+      <p className='ds-text-body--md'>
         In general, if you have an organization-type API key, you can:
       </p>
       <ul>
@@ -103,7 +103,7 @@ const QualifiedRegistriesAndQcdrs: React.FC<DocPageProps> = ({dataTestId}: DocPa
         <li>View scores based on data you've submitted</li>
       </ul>
 
-      <p className='ds-text'>
+      <p className='ds-text-body--md'>
         Below is a comprehensive list of how each endpoint behaves if you are using an organization-type API key:
       </p>
       <table className='ds-c-table ds-c-table--borderless ds-u-font-size--small'>
@@ -126,8 +126,8 @@ const QualifiedRegistriesAndQcdrs: React.FC<DocPageProps> = ({dataTestId}: DocPa
         </tbody>
       </table>
 
-      <h2 className='ds-h2'>Retrieve your API tokens</h2>
-      <p className='ds-text'>
+      <h2 className='ds-text-heading--2xl'>Retrieve your API tokens</h2>
+      <p className='ds-text-body--md'>
         To retrieve your Developer Preview and production tokens, you must have a HARP account that has a Security Official role for your Qualified Registry or QCDR. Please see <ExternalLink href={`${envConfig.cmsGithubIo}/qpp-developer-preview-docs/getting-started`} text='Getting Started'/> for instructions on how to download your registry token..
       </p>
     </div>

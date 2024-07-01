@@ -7,7 +7,7 @@ const BasicTutorial: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
       <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
-      <h2 className='ds-h2' style={{marginTop: 0}}>Tutorial: Create and Score Data via API</h2>
+      <h2 className='ds-text-heading--2xl' style={{marginTop: 0}}>Tutorial: Create and Score Data via API</h2>
       <p>
         The Submissions API is an easy way to manage your performance data with CMS. Performance data is organized into submissions, which can have many measurements. Measurements within a submission are also grouped by category (e.g. quality) and submission method (e.g. registry) and program name (e.g. mips) into measurement sets.
       </p>
@@ -18,7 +18,7 @@ const BasicTutorial: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
         Let's walk through an example of how you might submit performance data as a registry API user!
       </p>
 
-      <h3 className='ds-h3' id='creating-a-measurement-set'>Create a new measurement set</h3>
+      <h3 className='ds-text-heading--xl' id='creating-a-measurement-set'>Create a new measurement set</h3>
       <p>
         We need to create a <em>measurement set</em> first. We can do that by asking the API to create a measurement set record in the CMS database. In API terms, this means making a <code>POST</code> (synonym for <em>create</em>) request to the <code>/measurement-sets</code> endpoint.
       </p>
@@ -34,7 +34,7 @@ const BasicTutorial: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
       <ApiExample data={apiExamples.measurementSets} />
       <CodeTab data={steps.basic1} />
 
-      <h3 className='ds-h3' id='scoring-a-submission'>Scoring a submission</h3>
+      <h3 className='ds-text-heading--xl' id='scoring-a-submission'>Scoring a submission</h3>
       <p>
         With the submission <code>id</code> we were given, we can ask the API to calculate the submission score with a GET request. We don't need to include a request body this time since we're only interested in retrieving the score, and CMS doesn't need any information other than the submission <code>id</code>.
       </p>
