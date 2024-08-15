@@ -1,10 +1,12 @@
 import { MemoryRouter } from 'react-router-dom';
-import {render, fireEvent } from '@testing-library/react';
+import {render, fireEvent, getByText } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import App from './app';
 import LeftNav from './left-nav';
 import { combinedRoutes } from '../routes';
+import envConfig from '../../envConfig';
+import { ExternalLink } from '../../shared';
 
 describe('App tests', () => {
   afterAll(() => {
@@ -18,6 +20,22 @@ describe('App tests', () => {
       </MemoryRouter>,
     );
   });
+
+  it('should render link to http urls without link text provided', () => {
+    const {getByText} = render(
+      <ExternalLink href="http://sometest.com" />
+    );
+    const linkElement = getByText('sometest.com');
+    expect(linkElement.getAttribute('href')).toContain('http://');
+  })
+
+  it('should render link to urls without a url type', () => {
+    const {getByText} = render(
+      <ExternalLink href="sometestnohttp.com" />
+    );
+    const linkElement = getByText('sometestnohttp.com');
+    expect(linkElement.getAttribute('href')).toContain('sometestnohttp');
+  })  
 
   combinedRoutes.forEach((route) => {
     it(`LeftNav should have a link for ${route.path}`, () => {
