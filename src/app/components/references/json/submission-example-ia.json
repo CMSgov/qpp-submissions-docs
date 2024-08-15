@@ -2,13 +2,13 @@
   "entityType": "individual",
   "taxpayerIdentificationNumber": "000456789",
   "nationalProviderIdentifier": "9876543210",
-  "performanceYear": 2023,
+  "performanceYear": "< performanceYearToBeReported >",
   "measurementSets": [
     {
       "category": "ia",
       "submissionMethod": "registry",
-      "performanceStart": "2023-01-01",
-      "performanceEnd": "2023-06-01",
+      "performanceStart": "< performanceYearToBeReported >-01-01",
+      "performanceEnd": "< performanceYearToBeReported >-06-01",
       "measurements": [
           {
             "measureId": "IA_EPA_4",

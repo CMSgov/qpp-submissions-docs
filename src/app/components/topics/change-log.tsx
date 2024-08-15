@@ -2,6 +2,12 @@ import envConfig from '../../../envConfig';
 import { DocPageProps } from '../../../shared/types';
 
 const submissionChangesTable = [
+  ['08/28/2024', `Updates to Developer Documentation for Performance Year 2024`, `
+  <ul>
+    <li>Added new Scenarios for MVP Reporting. See the <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/tutorial-special-scoring-scenarios' target='_blank' rel='noopener noreferrer'>Special Scoring Scenarios</a>.</li>
+    <li>Allowed CEHRT ID format change. See <a href='${envConfig.cmsGithubIo}/qpp-submissions-docs/scoring' target='_blank' rel='noopener noreferrer'>Scoring</a>.</li>
+  </ul>
+  `],
   ['08/31/2023', `Updates to Developer Documentation for Performance Year 2023`, `
   <ul>
   <li>Added Scenarios for MVP Reporting, See the <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/tutorial-special-scoring-scenarios' target='_blank' rel='noopener noreferrer'>Special Scoring Scenarios</a>.</li>
@@ -180,6 +186,7 @@ const submissionChangesTable = [
     </ul>`],
 ];
 const measuresChangeTable = [
+  ['08/01/24', `<code>companionMeasureId</code> is added to all quality Measures.`, `For <code>category: "quality"</code>, <code>companionMeasureId</code>  is added to list the corresponding CQM or Medicare CQM measure id.`],
   ['8/15/21', `<code>allowedPrograms</code> is added to all quality Measures.`, `For <code>category: "quality"</code>, <code>allowedPrograms</code> is added to list the programs to which the measure <i>can</i> be submitted.`],
   ['8/15/21', `<code>requiredForPrograms</code> is added to all quality Measures.`, `For <code>category: "quality"</code>, <code>requiredForPrograms</code> is added to list the programs to which the measure <i>must</i> be submitted.`],
   ['8/15/21', `<code>allowedVendors</code> is added to all QCDR Measures.`, `For QCDR Measures (<code>isRegistryMeasure = true</code>), <code>allowedVendors</code> is added to list the VendorIDs that are allowed to submit that measure.`],
@@ -216,7 +223,7 @@ const buildTableBody = (data: string[][]) =>
 const ChangeLog: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) =>{
   return (
     <div data-testid={dataTestId}>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/28/2024</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-text-heading--2xl' style={{marginTop: 0}} id='change-log'>Change Log</h2>
       <p className='ds-text-body--md'>
         The Change log is updated with each significant change to the API with the details that you need to be aware of.

@@ -2,14 +2,14 @@
 	"entityType": "individual",
 	"taxpayerIdentificationNumber": "000456789",
 	"nationalProviderIdentifier": "9876543210",
-	"performanceYear": 2023,
+	"performanceYear": "< performanceYearToBeReported >",
 	"measurementSets": [{
 		"category": "quality",
 		"submissionMethod": "registry",
-		"performanceStart": "2023-01-01",
-		"performanceEnd": "2023-12-31",
+		"performanceStart": "< performanceYearToBeReported >-01-01",
+		"performanceEnd": "< performanceYearToBeReported >-12-31",
 		"measurements": [{
-				"measureId": "226",
+				"measureId": "305",
 				"value": {
 					"strata": [{
 							"eligiblePopulationExclusion": 0,
@@ -17,7 +17,7 @@
 							"performanceMet": 47,
 							"eligiblePopulationException": 0,
 							"performanceNotMet": 13,
-							"stratum": "screenedForUse"
+							"stratum": "14days"
 						},
 						{
 							"eligiblePopulationExclusion": 0,
@@ -25,22 +25,14 @@
 							"performanceMet": 121,
 							"eligiblePopulationException": 0,
 							"performanceNotMet": 26,
-							"stratum": "overall"
-						},
-						{
-							"eligiblePopulationExclusion": 0,
-							"eligiblePopulation": 86,
-							"performanceMet": 73,
-							"eligiblePopulationException": 0,
-							"performanceNotMet": 13,
-							"stratum": "tobacco"
+							"stratum": "34days"
 						}
 					],
 					"isEndToEndReported": true
 				}
 			},
 			{
-				"measureId": "112",
+				"measureId": "102",
 				"value": {
 					"eligiblePopulationExclusion": 0,
 					"eligiblePopulation": 562,
