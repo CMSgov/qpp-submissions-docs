@@ -1,11 +1,10 @@
 import { MemoryRouter } from 'react-router-dom';
-import {render, fireEvent, getByText } from '@testing-library/react';
+import {render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 
 import App from './app';
 import LeftNav from './left-nav';
 import { combinedRoutes } from '../routes';
-import envConfig from '../../envConfig';
 import { ExternalLink } from '../../shared';
 
 describe('App tests', () => {
@@ -21,21 +20,18 @@ describe('App tests', () => {
     );
   });
 
-  it('should render link to http urls without link text provided', () => {
-    const {getByText} = render(
-      <ExternalLink href="http://sometest.com" />
-    );
-    const linkElement = getByText('sometest.com');
-    expect(linkElement.getAttribute('href')).toContain('http://');
-  })
+  it('should render external links properly with http urls and no protocol suffix', () => {
+      const renderAndCheckHref = (url: string, elementText: string, hrefContains: string) => {
+        const {getByText} = render(
+          <ExternalLink href={url} />
+        );
+        const linkElement = getByText(elementText);
+        expect(linkElement.getAttribute('href')).toContain(hrefContains);
+      };
 
-  it('should render link to urls without a url type', () => {
-    const {getByText} = render(
-      <ExternalLink href="sometestnohttp.com" />
-    );
-    const linkElement = getByText('sometestnohttp.com');
-    expect(linkElement.getAttribute('href')).toContain('sometestnohttp');
-  })  
+      renderAndCheckHref('http://sometest.com', 'sometest.com', 'http://');
+      renderAndCheckHref('sometestnohttp.com', 'sometestnohttp.com', 'sometestnohttp.com');
+  });
 
   combinedRoutes.forEach((route) => {
     it(`LeftNav should have a link for ${route.path}`, () => {
