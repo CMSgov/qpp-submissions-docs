@@ -5,6 +5,7 @@ import '@testing-library/jest-dom';
 import App from './app';
 import LeftNav from './left-nav';
 import { combinedRoutes } from '../routes';
+import { ExternalLink } from '../../shared';
 
 describe('App tests', () => {
   afterAll(() => {
@@ -17,6 +18,19 @@ describe('App tests', () => {
         <App />
       </MemoryRouter>,
     );
+  });
+
+  it('should render external links properly with http urls and no protocol suffix', () => {
+      const renderAndCheckHref = (url: string, elementText: string, hrefContains: string) => {
+        const {getByText} = render(
+          <ExternalLink href={url} />
+        );
+        const linkElement = getByText(elementText);
+        expect(linkElement.getAttribute('href')).toContain(hrefContains);
+      };
+
+      renderAndCheckHref('http://sometest.com', 'sometest.com', 'http://');
+      renderAndCheckHref('sometestnohttp.com', 'sometestnohttp.com', 'sometestnohttp.com');
   });
 
   combinedRoutes.forEach((route) => {

@@ -39,7 +39,7 @@ const textAndId: ITextAndId = {
 const Scoring: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/28/2024</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-text-heading--2xl' style={{marginTop: 0}}>Scoring</h2>
       <p className='ds-text--lead'>
         The scoring engine is responsible for interpreting submissions and outputting a score. Each category score is utilized to create the QPP score object.
@@ -94,10 +94,9 @@ const Scoring: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
       <ul>
         <li>Utilization of 2015 CEHRT and the reporting of the corresponding CMS CEHRT ID in the submission</li>
           <ul>
-            <li>XX15EXXXXXXXXXX</li>
             <li>XX15CXXXXXXXXXX</li>
           </ul>
-        <li>Minimum 90 day performance period</li>
+        <li>Minimum 180 day performance period</li>
         <li>Completion of Required Attestation Statements</li>
         <li>Completion of All Required Measures</li>
         <li>Bonus Measures</li>
@@ -146,7 +145,7 @@ const Scoring: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
         </li>
       </ul>
       <p className='ds-text--lead'>
-        In the sample below, measure 226 is a multi-strata, 110 is a single performance measure, ACRAD15 is a non-proportion measure.
+        In the sample below, measure 305 is a multi-strata performance measure, 102 is a single performance measure, ACRAD15 is a non-proportion measure.
       </p>
       <CodeTab data={scoringData.submissionJsonExampleStringQuality} />
 

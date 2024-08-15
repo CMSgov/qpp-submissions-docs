@@ -28,13 +28,12 @@ const tableData1 = {
     </ul>
   `,
   'How do I report SubGroups?': `SubGroups are available for testing in DevPre as of 9/29/23.  See the tutorial here <a href='https://cmsgov.github.io/qpp-developer-preview-docs/tutorial-subgroup-submissions' target='_blank' rel='noopener noreferrer'>QPP Developer Preview Documentation</a>`,
-  'Score-preview endpoint returns a score for a MVP submission for a non-MVP registered entity.': 'Resolved as of 09/12/2023',
 };
 
 const FrequentlyAskedQuestions: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
-      <p className='qpp-docs-page-updated'>Last Updated: 09/29/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/28/2024</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-text-heading--2xl' style={{marginTop: 0}}>Frequently Asked Questions</h2>
 
       <h3 className='ds-text-heading--xl'>General and Developer Preview</h3>
@@ -61,7 +60,7 @@ const FrequentlyAskedQuestions: React.FC<DocPageProps> = ({dataTestId}: DocPageP
           )}
         </tbody>
       </table>
-      <h3 className='ds-text-heading--xl'>PY23 Questions and Known Issues</h3>
+      <h3 className='ds-text-heading--xl'>PY24 Questions and Known Issues</h3>
       <table className='ds-c-table ds-u-font-size--small faq-table'>
         <thead>
           <tr>

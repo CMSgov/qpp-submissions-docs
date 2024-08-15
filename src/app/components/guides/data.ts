@@ -27,8 +27,8 @@ export const steps: ISteps = {
       }
     }
   ],
-  "performanceStart": "2023-01-01",
-  "performanceEnd": "2023-12-31"
+  "performanceStart": "< performanceYearToBeReported >-01-01",
+  "performanceEnd": "< performanceYearToBeReported >-12-31"
 }`,
     },
     {
@@ -38,8 +38,8 @@ export const steps: ISteps = {
   "data": {
     "measurementSet": {
       "id": "086dad28-907a-4e88-af73-5c7ed2e6764e",
-      "createdAt": "2023-08-17T11:18:00Z",
-      "updatedAt": "2023-08-17T11:32:15Z",
+      "createdAt": "2024-08-17T11:18:00Z",
+      "updatedAt": "2024-08-17T11:32:15Z",
       "submissionId": "086dad28-0477-4b41-8c05-77dd98d41d6f",
       "category": "quality",
       "submissionMethod": "registry",
@@ -52,8 +52,8 @@ export const steps: ISteps = {
       "cehrtId": "",
       "suppressed": false,
       "source": null,
-      "performanceStart": "2023-01-01",
-      "performanceEnd": "2023-12-31",
+      "performanceStart": "< performanceYearToBeReported >-01-01",
+      "performanceEnd": "< performanceYearToBeReported >-12-31",
       "measurements": [
         {
           "id": "086dad28-4bcb-4649-a4fd-04ad8426df77",
@@ -298,13 +298,13 @@ export const steps: ISteps = {
       code: `{
   "category": "quality",
   "submissionMethod": "registry",
-  "performanceStart": "2023-01-01",
-  "performanceEnd": "2023-12-31",
+  "performanceStart": "< performanceYearToBeReported >-01-01",
+  "performanceEnd": "< performanceYearToBeReported >-12-31",
   "programName": "mips",
   "submission": {
     "entityType": "group",
     "taxpayerIdentificationNumber": "000000002",
-    "performanceYear": 2023
+    "performanceYear": "< performanceYearToBeReported >"
   },
   "measurements": [
     {
@@ -328,8 +328,8 @@ export const steps: ISteps = {
   "data": {
     "measurementSet": {
       "id": "086dad28-907a-4e88-af73-5c7ed2e6764e",
-      "createdAt": "2023-08-17T11:18:19Z",
-      "updatedAt": "2023-08-17T11:18:19Z",
+      "createdAt": "2024-08-17T11:18:19Z",
+      "updatedAt": "2024-08-17T11:18:19Z",
       "submissionId": "086dad28-0477-4b41-8c05-77dd98d41d6f",
       "category": "quality",
       "submissionMethod": "registry",
@@ -342,8 +342,8 @@ export const steps: ISteps = {
       "cehrtId": "",
       "suppressed": false,
       "source": null,
-      "performanceStart": "2023-01-01",
-      "performanceEnd": "2023-12-31",
+      "performanceStart": "< performanceYearToBeReported >-01-01",
+      "performanceEnd": "< performanceYearToBeReported >-12-31",
       "measurements": [
         {
           "id": "086dad28-4bcb-4649-a4fd-04ad8426df77",
@@ -432,8 +432,8 @@ export const steps: ISteps = {
                       "toppedOut": false,
                       "isGhost": false,
                       "programName": "mips",
-                      "performanceStart": "2023-01-01",
-                      "performanceEnd": "2023-12-31",
+                      "performanceStart": "< performanceYearToBeReported >-01-01",
+                      "performanceEnd": "< performanceYearToBeReported >-12-31",
                       "isCpcPlus": false,
                       "isPcf": false,
                       "skippedDuplicate": false,
@@ -633,10 +633,10 @@ export const apiExamples: IApiExamples = {
         row: ['Submission Method', 'Registry'],
       },
       {
-        row: ['Performance Start', '2023-01-01'],
+        row: ['Performance Start', '2024-01-01'],
       },
       {
-        row: ['Performance End', '2023-12-31'],
+        row: ['Performance End', '2024-12-31'],
       },
       {
         row: ['Measurements'],
@@ -674,7 +674,7 @@ export const apiExamples: IApiExamples = {
         row: ['Taxpayer Identification Number', '000000002'],
       },
       {
-        row: ['Performance Year', '2023'],
+        row: ['Performance Year', '2024'],
       },
     ],
   },
