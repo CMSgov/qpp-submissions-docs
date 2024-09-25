@@ -27,7 +27,7 @@
   },
   "homepage": "https://cmsgov.github.io/qpp-submissions-docs",
   "dependencies": {
-    "@cmsgov/design-system": "10.1.1",
+    "@cmsgov/design-system": "11.0.0",
     "@vitejs/plugin-react": "4.2.1",
     "@xzar90/react-router-hash-link": "6.0.4",
     "core-js": "3.36.0",

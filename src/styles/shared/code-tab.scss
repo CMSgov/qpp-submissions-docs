@@ -1,20 +1,19 @@
-$blue: rgb(4 80 115);
-$dark-blue: rgb(17 46 81);
+@import '../variables';
 
 #code-tabs {
   margin-bottom: 20px;
 
   .tab-button {
-    background-color: white;
-    color: $blue;
+    background-color: $qpp-gray-00;
+    color: $qpp-primary-70;
     text-transform: capitalize;
     border-radius: 0;
     border: 0;
     padding: 10px 16px;
 
     &.selected {
-      background-color: $dark-blue;
-      color: white;
+      background-color: $qpp-primary-80;
+      color: $qpp-gray-00;
       font-weight: 500;
     }
 
@@ -24,8 +23,8 @@ $dark-blue: rgb(17 46 81);
   }
 
   .code-section {
-    background-color: $dark-blue;
-    color: white;
+    background-color: $qpp-primary-80;
+    color: $qpp-gray-00;
     padding: 25px;
 
     p {
@@ -43,7 +42,7 @@ $dark-blue: rgb(17 46 81);
   }
 
   code {
-    background-color: white;
-    color: black;
+    background-color: $qpp-gray-00;
+    color: $qpp-gray-100;
   }
 }

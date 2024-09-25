@@ -230,13 +230,13 @@ const ChangeLog: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) =>{
       </p>
 
       <h3 className='ds-text-heading--xl'>Submission API</h3>
-      <table className='ds-c-table ds-u-font-size--small'>
+      <table className='ds-c-table ds-u-font-size--sm'>
         {buildTableHeader()}
         {buildTableBody(submissionChangesTable)}
       </table>
 
       <h3 className='ds-text-heading--xl'>Measures Repository</h3>
-      <table className='ds-c-table ds-u-font-size--small'>
+      <table className='ds-c-table ds-u-font-size--sm'>
         {buildTableHeader()}
         {buildTableBody(measuresChangeTable)}
       </table>

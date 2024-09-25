@@ -1,7 +1,9 @@
+@import '../variables';
+
 footer {
   a:focus,
   a:focus:visited {
-    color: #80cbc4;
+    color: $qpp-secondary-30;
     outline: 0;
   }
 }

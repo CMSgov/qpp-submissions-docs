@@ -1,7 +1,6 @@
-$light-blue: rgb(66 123 149);
-$blue: rgb(4 80 115);
-$off-white: rgb(243 243 243);
-$border: 1px solid $light-blue;
+@import '../variables';
+
+$border: 1px solid $qpp-primary-80;
 
 #api-example {
   margin-top: 2em;
@@ -23,23 +22,23 @@ $border: 1px solid $light-blue;
   }
 
   .verb {
-    color: white;
+    color: $qpp-gray-00;
   }
 
   .url {
-    color: $blue;
+    color: $qpp-primary-80;
   }
 
   table {
     margin: 0;
     padding: 1em;
-    color: $blue;
-    background-color: $off-white;
+    color: $qpp-primary-80;
+    background-color: $qpp-gray-04;
     
     td {
       padding: 0.5em;
-      border-color: $light-blue;
-      background-color: $off-white;
+      border-color: $qpp-primary-80;
+      background-color: $qpp-gray-04;
   
       &.nested-once {
         padding-left: 1em;

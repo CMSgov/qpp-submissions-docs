@@ -38,7 +38,7 @@ const LeftNav = () => {
       {Routes && Routes.map(({ groupTitle, paths }, i) =>
         <li key={i}>
           <ul role='list' className='ds-c-vertical-nav left-nav'>
-            <li className={`ds-c-vertical-nav__item ds-u-font-weight--semibold ${leftNavPaddingClasses}`}>
+            <li className={`ds-c-vertical-nav__item ${leftNavPaddingClasses}`}>
               {groupTitle.toUpperCase()}
             </li>
             {paths.map((p) => buildLinkListItem(p))}

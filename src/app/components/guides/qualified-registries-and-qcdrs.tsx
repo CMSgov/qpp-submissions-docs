@@ -106,7 +106,7 @@ const QualifiedRegistriesAndQcdrs: React.FC<DocPageProps> = ({dataTestId}: DocPa
       <p className='ds-text-body--md'>
         Below is a comprehensive list of how each endpoint behaves if you are using an organization-type API key:
       </p>
-      <table className='ds-c-table ds-c-table--borderless ds-u-font-size--small'>
+      <table className='ds-c-table ds-c-table--borderless ds-u-font-size--sm'>
         <thead>
           <tr>
             {['Endpoint', 'HTTP Method', 'Description'].map((h, i) => <th key={i}>{h}</th>)}

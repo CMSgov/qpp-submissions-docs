@@ -42,7 +42,7 @@ const FrequentlyAskedQuestions: React.FC<DocPageProps> = ({dataTestId}: DocPageP
       </p>
 
       <h3 className='ds-text-heading--xl'>Submissions API</h3>
-      <table className='ds-c-table ds-u-font-size--small faq-table'>
+      <table className='ds-c-table ds-u-font-size--sm faq-table'>
         <thead>
           <tr>
             {['Question', 'Answer'].map((h, i) => <th key={i}>{h}</th>)}
@@ -61,7 +61,7 @@ const FrequentlyAskedQuestions: React.FC<DocPageProps> = ({dataTestId}: DocPageP
         </tbody>
       </table>
       <h3 className='ds-text-heading--xl'>PY24 Questions and Known Issues</h3>
-      <table className='ds-c-table ds-u-font-size--small faq-table'>
+      <table className='ds-c-table ds-u-font-size--sm faq-table'>
         <thead>
           <tr>
             {['Question', 'Answer'].map((h, i) => <th key={i}>{h}</th>)}
