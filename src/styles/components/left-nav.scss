@@ -9,12 +9,12 @@
 }
 
 .left-nav .ds-c-vertical-nav__label:visited {
-  color: $qpp-navy;
+  color: $qpp-primary-70;
 }
 
 .left-nav .ds-c-vertical-nav__label--current {
-  border-left: 4px solid $qpp-medium-teal !important;
+  border-left: 4px solid $qpp-secondary-40 !important;
   font-weight: normal;
-  background: $off-white;
-  color: $qpp-navy;
+  background: $qpp-gray-04;
+  color: $qpp-primary-70;
 }

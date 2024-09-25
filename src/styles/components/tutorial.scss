@@ -1,5 +1,6 @@
-$blue1: rgb(66 123 149);
-$border: 1px solid $blue1;
+@import '../variables';
+
+$border: 1px solid $qpp-primary-80;
 
 .tutorial-header-link {
   text-decoration: none;
