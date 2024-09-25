@@ -4,8 +4,8 @@
   margin-bottom: 20px;
 
   .tab-button {
-    background-color: white;
-    color: $qpp-primary-80;
+    background-color: $qpp-gray-00;
+    color: $qpp-primary-70;
     text-transform: capitalize;
     border-radius: 0;
     border: 0;
@@ -13,7 +13,7 @@
 
     &.selected {
       background-color: $qpp-primary-80;
-      color: white;
+      color: $qpp-gray-00;
       font-weight: 500;
     }
 
@@ -24,7 +24,7 @@
 
   .code-section {
     background-color: $qpp-primary-80;
-    color: white;
+    color: $qpp-gray-00;
     padding: 25px;
 
     p {
@@ -42,7 +42,7 @@
   }
 
   code {
-    background-color: white;
-    color: black;
+    background-color: $qpp-gray-00;
+    color: $qpp-gray-100;
   }
 }

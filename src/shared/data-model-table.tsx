@@ -15,7 +15,7 @@ const checkTDforHTML = (val: string) =>
 export const DataModelTable = ({ data }: { data: IDataModelTable[] }) => {
   return (
     <>
-      <table className='ds-c-table ds-c-table--borderless ds-u-font-size--small'>
+      <table className='ds-c-table ds-c-table--borderless ds-u-font-size--sm'>
         <thead>
           <tr>
             {['Property Name: Type', 'Description', 'Notes'].map((h, i) => <th key={i}>{h}</th>)}
