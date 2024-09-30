@@ -1,5 +1,3 @@
-import { ReactElement } from 'react';
-
 // Topics
 import Introduction from './components/topics/introduction';
 import Announcements from './components/topics/announcements';
