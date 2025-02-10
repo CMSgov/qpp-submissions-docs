@@ -215,6 +215,7 @@ export const measurementsTabs: ITabs = {
   "value": {
     "isEndToEndReported": boolean,
     "performanceRate": float,
+    "caseCount": float,
     "reportingRate": float,
     "strata": array(<a href='#${measurementsTitleAndId['Multi-Performance Rate Stratum']}'>Performance Rate Stratum</a>)
   }
