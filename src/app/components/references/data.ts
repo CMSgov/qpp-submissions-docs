@@ -95,7 +95,7 @@ export const measurementsFields: IFields = {
         '<li><b>split:</b> reporting strata will be used for data completenesss, performance will be used for performance rate.</li></ul>',
       notes: `If <code>metricType = registryMultiPerformanceRate</code> then writable and <i>required</i>.<br> If <code>metricType = multiPerformanceRate</code>, then calculated by API and returned in response.`,
     },
-    { name: 'caseCount', value: 'float', description: 'shiva', notes: 'shiva' },
+    { name: 'caseCount', value: 'float', description: 'tbd', notes: 'tbd' },
     { name: 'strata', value: 'Array(performanceRateStratum)', description: 'The strata name associated with the performance rate measurement. Needs to match with the measure strata names in <a href="https://github.com/CMSgov/qpp-measures-data" rel="noopener noreferrer" target="_blank">qpp-measures-data</a>.', notes: 'writable, required' },
   ],
   stratum: [
