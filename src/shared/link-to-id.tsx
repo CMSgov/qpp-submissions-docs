@@ -1,16 +1,12 @@
-import { HTMLAttributes } from 'react';
-
 import { HashLink } from '@xzar90/react-router-hash-link';
 
-export const LinkToId = ({ to, text, offset = '1', attrs }: { to: string, text: string, offset?: string, attrs?: HTMLAttributes<object> }) => {
+export const LinkToId = ({ to, text, offset = '1' }: { to: string, text: string, offset?: string }) => {
   return (
     <HashLink
-      to={!to.includes('#') ? `${to}#${to}` : to}
+      smooth to={!to.includes('#') ? `${to}#${to}` : to}
       scroll={el => {
-        el.scrollIntoView(true);
-        window.scrollBy({ top: -Number(offset), behavior: 'smooth' });
+        window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - Number(offset)  });
       }}
-      {...attrs}
     >
       {text}
     </HashLink>
