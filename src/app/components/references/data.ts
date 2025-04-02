@@ -28,7 +28,7 @@ export const measurementsTitleAndId = {
   'Proportion': 'proportion-measurements',
   'Non-Proportion': 'non-proportion-measurements',
   'CQM Single-Performance Rate': 'single-performance-rate-measurements',
-  'QCDR Single-Performance Rate': 'single-performance-rate-measurements',
+  'QCDR Single-Performance Rate': 'single-performance-rate-measurements-qcdr',
   'Multi-Performance Rate': 'multi-performance-rate-measurements',
   'Multi-Performance Rate Stratum': 'stratum',
 };

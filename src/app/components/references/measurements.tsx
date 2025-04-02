@@ -11,7 +11,7 @@ const Measurements: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
       <ul>
         {Object.entries(measurementsTitleAndId).map(([title, id], i) =>
           <li key={i}>
-            <LinkToId to={`#${id}`} text={title} />
+            <LinkToId to={`#${id}`} text={title} offset='120' />
           </li>,
         )}
       </ul>
