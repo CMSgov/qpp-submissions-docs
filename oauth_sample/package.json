@@ -5,27 +5,19 @@
   "type": "module",
   "license": "CC0-1.0",
   "scripts": {
-    "start": "node src/server.js",
-    "lint": "eslint ."
+    "start": "tsx src/server.ts"
   },
   "engines": {
-    "node": "^22.2.0",
-    "npm": "^10.7.0"
+    "node": "^22",
+    "npm": "^10"
   },
   "dependencies": {
-    "cookie-parser": "^1",
+    "@hono/node-server": "^1",
     "dotenv": "^16",
-    "express": "^4",
-    "jose": "^5"
+    "hono": "^4",
+    "jose": "^6"
   },
   "devDependencies": {
-    "@eslint/js": "^9",
-    "eslint": "^9",
-    "eslint-config-prettier": "^9",
-    "eslint-plugin-n": "^17",
-    "eslint-plugin-prettier": "^5",
-    "eslint-plugin-security": "^3",
-    "eslint-plugin-unicorn": "^56",
-    "prettier": "^3"
+    "tsx": "^4"
   }
 }
