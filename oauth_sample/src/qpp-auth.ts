@@ -1,6 +1,6 @@
 import * as jose from 'jose';
 
-import Config from './config.js';
+import config from './config';
 
 const QPP_ACCEPT_HEADER = 'application/vnd.qpp.cms.gov.v2+json';
 
@@ -9,7 +9,7 @@ let JWKS;
 
 export default {
     /**
-     * Scopes for access tokens issued by the authorization server.
+     * Scopes for tokens issued by the authorization server.
      * `openid`         - REQUIRED, indicates that the OpenID connect protocol is used
      * `offline_access` - OPTIONAL, enables the use of refresh tokens
      * `profile`        - OPTIONAL, includes user profile information in the ID token
@@ -23,12 +23,13 @@ export default {
      */
     async discoverOAuthEndpoints() {
         if (!oauthEndpoints) {
-            const response = await fetch(`${Config.qppBaseUrl}/api/auth/oauth`, {
-                headers: new Headers({ accept: QPP_ACCEPT_HEADER }),
-            });
-            const body = await response.json();
-
+            const response = await fetch(
+                `${config.qppBaseUrl}/api/auth/oauth`,
+                { headers: new Headers({ accept: QPP_ACCEPT_HEADER }) }
+            );
+            const body: any = await response.json();
             oauthEndpoints = body.data;
+            JWKS = jose.createRemoteJWKSet(new URL(oauthEndpoints.jwks_uri));
         }
 
         // We explicitly enumerate properties here for extra type info.
@@ -40,64 +41,54 @@ export default {
             jwks_uri: oauthEndpoints.jwks_uri,
             registration_endpoint: oauthEndpoints.registration_endpoint,
             revocation_endpoint: oauthEndpoints.revocation_endpoint,
-            token_endpoint: oauthEndpoints.token_endpoint,
+            token_endpoint: oauthEndpoints.token_endpoint
         };
     },
 
     /**
      * Generate query string parameters for a request to begin the authorization code
      * flow.
-     *
-     * codeChallenge can also be provided if you're using the authorization code flow
-     * with PKCE.
      */
-    authorizationParams(state, codeChallenge = null) {
+    authorizationParams(state: string, codeChallenge: string) {
         return new URLSearchParams({
-            client_id: Config.clientId,
+            client_id: config.clientId,
             response_type: 'code',
             scope: this.TOKEN_SCOPES.join(' '),
-            redirect_uri: Config.loginRedirectUrl,
+            redirect_uri: config.loginRedirectUrl,
             state,
-            ...(codeChallenge && {
-                code_challenge_method: 'S256',
-                code_challenge: codeChallenge,
-            }),
+            code_challenge_method: 'S256',
+            code_challenge: codeChallenge
         });
     },
 
     /**
      * Fetch a new set of tokens from the authorization server's token_endpoint.
-     *
-     * codeVerifier can also be provided if you're using the authorization code flow with
-     * PKCE.
      */
-    async getTokens(code, codeVerifier = null) {
+    async getTokens(code: string, codeVerifier: string) {
         const { token_endpoint } = await this.discoverOAuthEndpoints();
         const form = new URLSearchParams({
-            client_id: Config.clientId,
-            // For PKCE, we pass a code verifier. Otherwise, pass the client secret.
-            ...(codeVerifier
-                ? { code_verifier: codeVerifier }
-                : { client_secret: Config.clientSecret }),
+            client_id: config.clientId,
+            ...(config.clientSecret && { client_secret: config.clientSecret }),
+            code_verifier: codeVerifier,
             grant_type: 'authorization_code',
-            redirect_uri: Config.loginRedirectUrl,
-            code,
+            redirect_uri: config.loginRedirectUrl,
+            code
         });
 
         const response = await fetch(token_endpoint, {
             method: 'POST',
             headers: new Headers({ accept: 'application/json' }),
-            body: form,
+            body: form
         });
 
         if (!response.ok) {
-            const body = await response.json();
+            const body: any = await response.json();
             throw new Error(
-                `Failed to get tokens: ${body.error_description} (${body.error})`,
+                `Failed to get tokens: ${body.error_description} (${body.error})`
             );
         }
 
-        const tokenInfo = await response.json();
+        const tokenInfo: any = await response.json();
 
         // We explicitly enumerate properties here for extra type info.
         return {
@@ -106,54 +97,51 @@ export default {
             access_token: tokenInfo.access_token,
             scope: tokenInfo.scope,
             refresh_token: tokenInfo.refresh_token,
-            id_token: tokenInfo.id_token,
+            id_token: tokenInfo.id_token
         };
     },
 
     /**
-     * Verify that an ID token has a valid signature, was issued by the authorization
-     * server, and that the aud claim matches the configured client ID.
+     * Verify that an ID token has a valid signature, was issued by the authorization server, and
+     * that the aud claim matches the configured client ID.
      */
-    async verifyIdToken(idToken) {
-        const { issuer, jwks_uri } = await this.discoverOAuthEndpoints();
-
-        if (!JWKS) {
-            JWKS = jose.createRemoteJWKSet(new URL(jwks_uri));
-        }
-
-        return jose.jwtVerify(idToken, JWKS, { issuer, audience: Config.clientId });
+    async verifyIdToken(idToken: string) {
+        const { issuer } = await this.discoverOAuthEndpoints();
+        return jose.jwtVerify(idToken, JWKS, {
+            issuer,
+            audience: config.clientId
+        });
     },
 
     /**
-     * Refresh an existing set of tokens by providing a refresh token to the authorization
-     * server's token_endpoint.
+     * Refresh an existing set of tokens by providing a refresh token to the authorization server's
+     * token_endpoint.
      */
-    async refreshAccessToken(refreshToken) {
+    async refreshAccessToken(refreshToken: string) {
         const { token_endpoint } = await this.discoverOAuthEndpoints();
         const form = new URLSearchParams({
-            client_id: Config.clientId,
-            // Client secret may be omitted for refresh tokens obtained w/ PKCE
-            ...(Config.clientSecret && { client_secret: Config.clientSecret }),
+            client_id: config.clientId,
+            ...(config.clientSecret && { client_secret: config.clientSecret }),
             grant_type: 'refresh_token',
-            redirect_uri: Config.loginRedirectUrl,
+            redirect_uri: config.loginRedirectUrl,
             scope: this.TOKEN_SCOPES.join(' '),
-            refresh_token: refreshToken,
+            refresh_token: refreshToken
         });
 
         const response = await fetch(token_endpoint, {
             method: 'POST',
             headers: new Headers({ accept: 'application/json' }),
-            body: form,
+            body: form
         });
 
         if (!response.ok) {
-            const body = await response.json();
+            const body: any = await response.json();
             throw new Error(
-                `Failed to refresh token: ${body.error_description} (${body.error})`,
+                `Failed to refresh token: ${body.error_description} (${body.error})`
             );
         }
 
-        const tokenInfo = await response.json();
+        const tokenInfo: any = await response.json();
 
         // We explicitly enumerate properties here for extra type info.
         return {
@@ -162,59 +150,62 @@ export default {
             access_token: tokenInfo.access_token,
             scope: tokenInfo.scope,
             refresh_token: tokenInfo.refresh_token,
-            id_token: tokenInfo.id_token,
+            id_token: tokenInfo.id_token
         };
     },
 
     /**
-     * Revoke the given token with the given token type. Token type can be one of
-     * 'access_token', 'refresh_token'.
+     * Revoke the given token with the given token type.
      *
-     * This does not delete the user's session in IDM - it just revokes your
-     * client-specific tokens. If you'd like to log the user out of IDM as well, refer to
-     * the /logout endpoint.
+     * This does not end the user's session - it just revokes your client-specific tokens. If you'd
+     * like to log the user out, refer to the /logout endpoint.
      */
-    async revokeToken(tokenType, token) {
+    async revokeToken(
+        tokenType: 'access_token' | 'refresh_token',
+        token?: string
+    ) {
+        if (!token) return;
+
         const { revocation_endpoint } = await this.discoverOAuthEndpoints();
         const form = new URLSearchParams({
-            client_id: Config.clientId,
-            // Client secret may be omitted for tokens obtained w/ PKCE
-            ...(Config.clientSecret && { client_secret: Config.clientSecret }),
+            client_id: config.clientId,
+            ...(config.clientSecret && { client_secret: config.clientSecret }),
             token_type_hint: tokenType,
-            token,
+            token
         });
 
         const response = await fetch(revocation_endpoint, {
             method: 'POST',
             headers: new Headers({ accept: 'application/json' }),
-            body: form,
+            body: form
         });
 
         if (!response.ok) {
-            const body = await response.json();
+            const body: any = await response.json();
             throw new Error(
-                `Failed to revoke token: ${body.error_description} (${body.error})`,
+                `Failed to revoke token: ${body.error_description} (${body.error})`
             );
         }
     },
 
     /**
-     * Fetch the list of user authorizations from the QPP Auth service using the given
-     * access token.
+     * Fetch the list of user authorizations from the QPP Auth service using the given access token.
      */
-    async getAuthorizations(accessToken) {
-        const response = await fetch(`${Config.qppBaseUrl}/api/auth/authz`, {
+    async getAuthorizations(accessToken?: string) {
+        const response = await fetch(`${config.qppBaseUrl}/api/auth/authz`, {
             headers: new Headers({
                 accept: QPP_ACCEPT_HEADER,
-                authorization: `Bearer ${accessToken}`,
-            }),
+                authorization: `Bearer ${accessToken}`
+            })
         });
-        const body = await response.json();
+        const body: any = await response.json();
 
         if (response.ok) {
             return body.data.authorizations;
         } else {
-            throw new Error(`Failed to fetch authorizations: ${body.error.message}`);
+            throw new Error(
+                `Failed to fetch authorizations: ${body.error.message}`
+            );
         }
-    },
+    }
 };

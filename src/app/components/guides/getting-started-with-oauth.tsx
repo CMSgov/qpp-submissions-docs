@@ -1,89 +1,95 @@
-import { ExternalLink } from '../../../shared';
+import { ExternalLink, LinkToId } from '../../../shared';
 import envConfig from '../../../envConfig';
 import { DocPageProps } from '../../../shared/types';
 
 const GettingStartedUsingQppOauth: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/31/2023</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
-      <h2 className='ds-text-heading--2xl' style={{marginTop: 0}}>Getting Started Using QPP OAuth</h2>
+      <p className='qpp-docs-page-updated'>Last Updated: 04/28/2025</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <h2 className='ds-text-heading--2xl' style={{marginTop: 0}} id='getting-started-oauth'>Getting Started Using QPP OAuth</h2>
       <p className='ds-text-body--md'>
-        Using OAuth with the Submissions API allows QPP participants to use their own QPP credentials to login through your application to submit their data to and view performance feedback from QPP. Before you can request production access, you will need to use the Developer Preview Environment to build, test and demo your OAuth application.
-        </p>
-
-      <h2 className='ds-text-heading--2xl' id='oauth'>Using OAuth in the Developer Preview</h2>
-      <p className='ds-text-body--md'>
-        To use the QPP Submissions API with OAuth, you must create a Developer Preview account and register the application.
+        Using OAuth with the Submissions API allows QPP participants to use their own QPP credentials to login through your application to submit their data to and view performance feedback from QPP.
       </p>
       <p className='ds-text-body--md'>
-        Create an account for Developer Preview at <ExternalLink href={envConfig.qppCmsPreviewUrl} />.
+        Since OAuth is such a broad and complex topic, be sure your team has a good understanding of <ExternalLink href='https://www.oauth.com/' text='OAuth 2.0' /> and <ExternalLink href='https://openid.net/developers/how-connect-works/' text='OpenID Connect' /> before proceeding with your implementation. Before you can request production access, you will need to use the Developer Preview Environment to build, test, and demonstrate your application.
       </p>
 
-      <h3 className='ds-text-heading--xl'>Connect to EHR or reporting application</h3>
+      <h2 className='ds-text-heading--2xl' id='using-oauth'>Using OAuth in Developer Preview</h2>
       <p className='ds-text-body--md'>
-        Log in to Developer Preview (<ExternalLink href={envConfig.qppCmsPreviewUrl} />).
-      </p>
-      <p className='ds-text-body--md'>
-        Locate your EHR (search by the EHR name as it appears in the <ExternalLink href={envConfig.chplHealthItUrl} text='CHPL database' />).
-      </p>
-      <p className='ds-text-body--md'>
-        If you cannot locate your EHR or are a registry user, create one manually.
-      </p>
-      <p className='ds-text-body--md'>
-        After requesting the role, it may take a few minutes to populate.
+        To use QPP APIs with OAuth, you must first create a Developer Preview account by navigating to the <ExternalLink href={envConfig.qppCmsPreviewUrl} text='Developer Preview website' /> and clicking the "Register for Developer Preview" button.
       </p>
 
-      <h3 className='ds-text-heading--xl'>Register an Application</h3>
+      <h3 className='ds-text-heading--xl' id='connect-to-ehr'>Connect to EHR or reporting application</h3>
       <p className='ds-text-body--md'>
-        Once you are connected, you can use the OAuth APIs directly on the <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/auth/docs/#/OAuth`} text='Auth API' />. Also, Development Preview contains a UI (<ExternalLink href={`${envConfig.qppCmsPreviewUrl}/user/applications`} text='here' />) where you can create and manage your OAuth applications.
+        <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/login`} text='Log into your Developer Preview account' /> using your credentials.
       </p>
       <p className='ds-text-body--md'>
-        Registering and testing your application within the Developer Preview is required prior to being granted production OAuth access.
+        On the "Manage Access" page, click "Connect to another EHR", and then search using your organization name as it appears in the <ExternalLink href={envConfig.chplHealthItUrl} text='CHPL database' />. If you cannot locate your organization, you may create one manually.
       </p>
       <p className='ds-text-body--md'>
-        To register the application, you will need:
+        Once you complete the request form, it may take a minute or so for the role to be added to your account. If you are the first person in your organization to request access, it will be granted automatically. If someone else from your organization has already connected using their Developer Preview account, they must sign in and approve your request in order for your account to receive access.
       </p>
-      <ul>
+
+      <h3 className='ds-text-heading--xl' id='register-app'>Register an application</h3>
+      <p className='ds-text-body--md'>
+        Once you are connected, navigate to the <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/user/applications`} text='My Applications' /> page and click on "Register Application". Complete the form to receive your OAuth credentials.
+      </p>
+      <p className='ds-text-body--md'>
+        To complete the form, you will need to provide the following:
+      </p>
+      <ul className='ds-text-body--md'>
         <li>Application name</li>
-        <li>Application URL</li>
+        <li>Application URI</li>
         <li>Logo URI</li>
-        <li>Client Type</li>
-        <li>Redirect URIs</li>
-        <li>
-          Terms of Service and Privacy Policy are optional for the test environment, but required for production.
-        </li>
+        <li>Client Type ('web' or 'native')</li>
+        <li>Post-login & post-logout redirect URIs</li>
+        <li>Terms of Service and Privacy Policy URIs (these are optional for Developer Preview, but will be required for production)</li>
       </ul>
       <p className='ds-text-body--md'>
-        In the test environment, a registered application is assigned a client ID and, if applicable, a client secret. The secret should only be used if it can be kept confidential, such as for communication between your server and the Submissions API.
-      </p>
-      <p className='ds-text-body--md'>
-        Additional support along with a sample OAuth Client, can be found in the QPP Github at: <ExternalLink href='https://github.com/CMSgov/qpp-submissions-docs/tree/master/oauth_sample' />.
+        Submitting the form will provide you with an OAuth client ID, and, if applicable, a client secret. If you recieve a client secret, treat it the same as you would a password: keep it confidential, and never share it publicly.
       </p>
 
-      <h2 className='ds-text-heading--2xl' id='create-user'>Create test users in the Developer Preview</h2>
+      <h3 className='ds-text-heading--xl' id='reserve-test-data'>Reserve test data in Developer Preview</h3>
       <p className='ds-text-body--md'>
-        To support Developer Preview integration and testing, we created the <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/synthetic-data/docs/index.html`} text='Test Data Service' />. Using this API, you can reserve specific scenarios in the Test Data Service to test granting access to their QPP authorizations and try out different special scoring scenarios. Please visit the Interactive Documentation to learn more about setting up test users in Developer Preview.
+        You must reserve test data to test with the Developer Preview environment. Navigate to the <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/user/test-data`} text='My Test Data' /> page and click on "Connect another scenario".
+      </p>
+      <p className='ds-text-body--md'>
+        Choose whichever scenario from the gallery most closely matches your application's expected use case. You may reserve multiple scenarios, if desired. After selecting a password for your scenario's users, click on "Manage Scenario" from the "My Test Data" page to view information about the test users and organizations within the scenario.
+      </p>
+
+      <h3 className='ds-text-heading--xl' id='test-app'>Test your application in Developer Preview</h3>
+      <p className='ds-text-body--md'>
+        Once you have reserved some test data, test your application's functionality by signing in using the username and password of a test user from any reserved scenario. You can find more information on using the Submissions API <LinkToId to='/submitting-to-submissions-api' text='here' />.
+      </p>
+      <p className='ds-text-body--md'>
+        QPP provides a simple OAuth-enabled application that you may use as a reference when implementing and testing your own functionality. You can find the source code in our <ExternalLink href='https://github.com/CMSgov/qpp-submissions-docs/tree/master/oauth_sample' text='GitHub repository' />.
       </p>
 
       <h2 className='ds-text-heading--2xl' id='production-api-access'>Production API Access</h2>
       <p className='ds-text-body--md'>
-        To submit data via OAuth and the Submissions API during the submission window, your application must be approved for production use by QPP. To apply for production access, you must demonstrate your application to QPP and attest that your organization:
+        <strong>Please note:</strong> you must register and test your application within the Developer Preview environment first before applying for OAuth access in production.
       </p>
-      <ul>
+      <p className='ds-text-body--md'>
+        To submit data via OAuth and the Submissions API during the submission window, your application must be approved for production use by QPP. To apply for production access, you must present a live demonstration of your application's functionality to QPP engineers and attest that your organization:
+      </p>
+      <ul className='ds-text-body--md'>
         <li>Is a US-based company</li>
-        <li>Agrees to CMS API Terms of Use</li>
-        <li>Participated in the CMS QPP Submissions API Developer Preview</li>
+        <li>Agrees to the <ExternalLink href='https://cmsgov.github.io/qpp-developer-preview-docs/terms-of-service' text='CMS API Terms of Use' /></li>
+        <li>Has completed testing in the QPP Developer Preview environment</li>
       </ul>
       <p className='ds-text-body--md'>
         You will also be asked to provide:
       </p>
-      <ul>
+      <ul className='ds-text-body--md'>
         <li>A company website</li>
         <li>A point of contact</li>
-        <li>URL to Application Privacy or Terms of Use</li>
+        <li>URLs to your application's privacy policy and terms of use</li>
       </ul>
       <p className='ds-text-body--md'>
-        To request production access, please email the QPP Help Desk at QPP@cms.hhs.gov to set up a demonstration with the QPP team. In order to have sufficient time to go through the approval process, requests for production access for an upcoming submission period should be made no later than November 1 prior to submissions opening.
+        To request production access, please email the QPP Service Center at <ExternalLink href='mailto:QPP@cms.hhs.gov' text='QPP@cms.hhs.gov' /> to set up a demonstration with the QPP team.
+      </p>
+      <p className='ds-text-body--md'>
+        <strong>Important:</strong> In order to have sufficient time to go through the approval process, requests for production access for an upcoming submission period should be made no later than November 1 prior to submissions opening.
       </p>
     </div>
   );
