@@ -1,4 +1,4 @@
-import { HashLink } from '@xzar90/react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 
 export const LinkToId = ({ to, text, offset = '1' }: { to: string, text: string, offset?: string }) => {
   return (
