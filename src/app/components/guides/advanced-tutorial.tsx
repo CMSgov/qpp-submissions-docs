@@ -15,7 +15,7 @@ const AdvancedTutorial: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) =>
 
       <h3 className='tutorial-header-link' id='add-more-measures'>Add more measures to an existing measurement set</h3>
       <p>
-        Here's a <code>PATCH</code> request to add more measures to an existing measurement set. You can pass an <code>Accept</code> header to specify the API version and the desired response format by using our custom mime type, <code>application/vnd.qpp.cms.gov.v1+json</code>. We support JSON by using <code>+json</code>. You can also continue to use a standard <code>application/json</code> header, which will point to the latest version.
+        You can use a <code>PATCH</code> request to add more measures to an existing measurement set. You can pass an <code>Accept</code> header to specify the API version and the desired response format by using our custom mime type, <code>application/vnd.qpp.cms.gov.v1+json</code>. We support JSON by using <code>+json</code>. You can also continue to use a standard <code>application/json</code> header, which will point to the latest version.
       </p>
       <p>
         To see an example request and response, please see the <code>PATCH /measurement-sets/:id</code> section within the <ExternalLink href={`${envConfig.qppCmsPreviewUrl}/api/submissions/public/docs`} text='Interactive Docs' />.

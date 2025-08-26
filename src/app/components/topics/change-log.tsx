@@ -5,8 +5,11 @@ const submissionChangesTable = [
   ['08/28/2025', `Updates to Developer Documentation for Performance Year 2025 Description`, `
   <ul>
     <li>Simplified Scenarios for MVP Reporting in Developer Preview. See the <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/tutorial-special-scoring-scenarios' target='_blank' rel='noopener noreferrer'>Special Scoring Scenarios</a>.</li>
-    <li>There is now 1 TIN and 1 Subgroup that will work when testing any MVP that is valid for the performance year.</li>
-    <li>Negative use tests can be completed using any other TIN/Subgroup.</li>
+    <li>There is now 1 TIN and 1 Subgroup that will work when testing any MVP that is valid for the performance year.
+      <ul>
+        <li>Negative use tests can be completed using any other TIN/Subgroup.</li>
+      </ul>
+    </li>
     <li>Added support for APP Plus Reporting. See the <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/tutorial-special-scoring-scenarios' target='_blank' rel='noopener noreferrer'>Special Scoring Scenarios</a>.</li>
     <li>Allowed CEHRT ID format change for Promoting Interoperability. See <a href='${envConfig.cmsGithubIo}/qpp-submissions-docs/measurement-sets' target='_blank' rel='noopener noreferrer'>Measurement Sets</a>.</li>
     <li>Quality eCQM reporting now requires the inclusion of a CEHRT ID.</li>

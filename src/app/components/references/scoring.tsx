@@ -125,13 +125,8 @@ const Scoring: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
       </ul>
 
       <p className='ds-text-body--lg'>
-        eCQMs require the utilization of CEHRT and the reporting of the corresponding CMS CEHRT ID in the submission
+        eCQMs require the utilization of CEHRT and the reporting of the corresponding CMS CEHRT ID in the submission.
       </p>
-      <ul>
-        <li>2025CXXXXXXXXXX</li>
-        <li>XX15CXXXXXXXXXX</li>
-      </ul>
-
     </div>
   );
 };
