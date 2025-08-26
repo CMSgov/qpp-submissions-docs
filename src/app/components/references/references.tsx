@@ -5,7 +5,7 @@ import { DocPageProps } from '../../../shared/types';
 const References: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
-      <p className='qpp-docs-page-updated'>Last Updated: 05/12/2021</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/28/2025</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-text-heading--2xl' style={{marginTop: 0}} id='references'>References</h2>
 
       <h3 className='ds-text-heading--xl'>General References</h3>
@@ -48,13 +48,6 @@ const References: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
       <ul>
         <li>
           Interactive AUTH API Documentation: <ExternalLink href={`${envConfig.qppCmsUrl}/api/auth/docs`} />
-        </li>
-      </ul>
-
-      <h3 className='ds-text-heading--xl'>CMS Web Interface API</h3>
-      <ul>
-        <li>
-          Interactive Web Interface Documentation: <ExternalLink href={`${envConfig.qppCmsUrl}/api/submissions/web-interface/docs`} />
         </li>
       </ul>
     </div>
