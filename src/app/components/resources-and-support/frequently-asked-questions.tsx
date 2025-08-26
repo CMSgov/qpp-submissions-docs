@@ -8,12 +8,9 @@ const tableData = {
       <li>
         Submissions UI: EHRs can submit via the Submissions UI by logging into the QPP site <a href='https://qpp.cms.gov' target='_blank' rel='noopener noreferrer'>qpp.cms.gov</a>. They will have to be connected as a Staff user for each of the Individuals and Groups they need to submit quality data for. Submissions for each individual or group could be uploaded as an excel file for efficiency.
       </li>
-      <li>
-        Burden Reduction: EHRs may apply for Burden Reduction which allows them to obtain a registry token to use to submit via the Submissions API.
-      </li>
     </ul>
   `,
-  'What is the performance threshold for the Submissions API?': '25 rps avg threshold, 40 rps burst threshold.',
+  'What is the performance response threshold for the Submissions API?': '25 rps avg threshold, 40 rps burst threshold.',
 };
 
 const tableData1 = {
@@ -27,13 +24,12 @@ const tableData1 = {
       </li>
     </ul>
   `,
-  'How do I report SubGroups?': `SubGroups are available for testing in DevPre as of 9/29/23.  See the tutorial here <a href='https://cmsgov.github.io/qpp-developer-preview-docs/tutorial-subgroup-submissions' target='_blank' rel='noopener noreferrer'>QPP Developer Preview Documentation</a>`,
 };
 
 const FrequentlyAskedQuestions: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/28/2024</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/28/2025</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-text-heading--2xl' style={{marginTop: 0}}>Frequently Asked Questions</h2>
 
       <h3 className='ds-text-heading--xl'>General and Developer Preview</h3>
@@ -60,7 +56,7 @@ const FrequentlyAskedQuestions: React.FC<DocPageProps> = ({dataTestId}: DocPageP
           )}
         </tbody>
       </table>
-      <h3 className='ds-text-heading--xl'>PY24 Questions and Known Issues</h3>
+      <h3 className='ds-text-heading--xl'>PY25 Questions and Known Issues</h3>
       <table className='ds-c-table ds-u-font-size--sm faq-table'>
         <thead>
           <tr>
