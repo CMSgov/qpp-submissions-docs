@@ -11,6 +11,20 @@ import { CodeTab, ICodeTab } from '../../shared/code-tab';
 import NotFound from './notFound/not-found';
 
 describe('App tests', () => {
+  beforeAll(() => {
+    // Mock window.scroll which is not implemented in JSDOM
+    Object.defineProperty(window, "scroll", {
+      value: jest.fn(),
+      writable: true,
+    });
+
+    // Also mock scrollTo in case it's used
+    Object.defineProperty(window, "scrollTo", {
+      value: jest.fn(),
+      writable: true,
+    });
+  });
+  
   afterAll(() => {
     jest.clearAllMocks();
   });
