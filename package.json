@@ -28,9 +28,7 @@
   "homepage": "https://cmsgov.github.io/qpp-submissions-docs",
   "overrides": {
     "react-day-picker": "^9.6.7",
-    "ts-jest": {
-      "glob": "^10.3.10"
-    }
+    "glob": "^10.5.0"
   },
   "dependencies": {
     "@cmsgov/design-system": "12.4.1",
