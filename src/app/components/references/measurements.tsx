@@ -6,7 +6,7 @@ import { DocPageProps } from '../../../shared/types';
 const Measurements: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
-      <p className='qpp-docs-page-updated'>Last Updated: 02/11/2025</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 12/12/2025</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-text-heading--2xl' style={{marginTop: 0}}>Measurements</h2>
       <ul>
         {Object.entries(measurementsTitleAndId).map(([title, id], i) =>
@@ -41,7 +41,7 @@ const Measurements: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
 
       <h2 className='ds-text-heading--2xl' id={measurementsTitleAndId['Non-Proportion']}>Non-Proportion Measurements</h2>
       <p className='ds-text-body--lg'>
-        Non-Proportion Measurements are applicable to quality measures. Most are authored by QCDRs and are used to attest to measures that are otherwise categorized as 'ratio', 'continuous variable', or a combination of 'proportion' and the former. Note this means that having a false value in the proportion field of QCDR documentation is sufficient to determine that a measure as non-proportional, but having a true value for proportion is insufficient to determine that measure as proportional. Non-proportion measurements are unconstrained, so while the fields are 'numerator' and 'denominator' there is no validation that the numerator must be less than or equal to the denominator or that the denominator is greater than 0, as is the case for proportion measurements.
+        Non-Proportion Measurements are applicable to quality measures and are denoted as <code>"metricType": "nonProportion"</code>.  Most are authored by QCDRs and are used to attest to measures that are otherwise categorized as 'ratio' 'continuous variable', or a combination of 'proportion' and the former.  Non-proportion measurements are unconstrained, so while the fields are 'numerator' and 'denominator' there is no validation that the numerator must be less than or equal to the denominator or that the denominator is greater than 0, as is the case for proportion measurements.
       </p>
       <CodeTab data={measurementsTabs.nonProportion} />
       <DataModelTable data={measurementsFields.nonProportion} />
