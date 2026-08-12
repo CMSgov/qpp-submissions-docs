@@ -1,7 +1,7 @@
-@import './variables';
-@import 'font-awesome/css/font-awesome.min.css';
-@import '@cmsgov/design-system/css/index';
-@import '@cmsgov/design-system/css/core-theme';
+@use './variables' as *;
+@use 'font-awesome/css/font-awesome.min.css';
+@use '@cmsgov/design-system/css/index';
+@use '@cmsgov/design-system/css/core-theme';
 
 body {
   margin: 0;

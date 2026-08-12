@@ -1,4 +1,4 @@
-@import '../node_modules/@cmsgov/design-system/dist/css/index.css';
-@import 'styles/vendor/bootstrap.min.css';
-@import 'styles/vendor/qpp-style';
-@import 'styles/global';
+@use '../node_modules/@cmsgov/design-system/dist/css/index.css';
+@use 'styles/vendor/bootstrap.min.css';
+@use 'styles/vendor/qpp-style';
+@use 'styles/global';
