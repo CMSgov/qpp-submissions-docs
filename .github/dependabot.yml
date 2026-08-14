@@ -1,0 +1,15 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    open-pull-requests-limit: 3
+    schedule:
+      interval: "daily"
+      time: "02:00"
+    allow:
+      - dependency-name: "*"
+        dependency-type: "production"
+    reviewers:
+      - "CMSgov/cis-qppa-developers"
+    assignees:
+      - "nicholas-gates"
