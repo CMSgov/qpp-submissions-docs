@@ -5,7 +5,7 @@ import { DocPageProps } from '../../../shared/types';
 const Announcements: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/28/2025</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/27/2026</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-text-heading--2xl' style={{marginTop: 0}}>Announcements</h2>
 
       <h3 className='ds-text-heading--xl'>General</h3>
@@ -16,10 +16,10 @@ const Announcements: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
       <h3 className='ds-text-heading--xl'>Submission API</h3>
       <ul>
         <li>
-          Updates for traditional MIPS submissions and scoring for PY 2025 are now available.
+          Updates for traditional MIPS submissions and scoring for PY 2026 are now available.
           </li>
         <li>
-          For APM participants only, APP submissions and scoring rules (app1 and appPlus programs) for PY 2025 are now available.
+          For APM participants only, APP submissions and scoring rules (app1 and appPlus programs) for PY 2026 are now available.
           </li>
         <li>
           The Submissions API has received infastructure updates with minor changes to end users.
@@ -32,10 +32,10 @@ const Announcements: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
       <h3 className='ds-text-heading--xl'>Measures Repository</h3>
       <ul>
         <li>
-          2025 Measures are published and available here: <ExternalLink href='https://github.com/CMSgov/qpp-measures-data/tree/master/measures' />
+          2026 Measures are published and available here: <ExternalLink href='https://github.com/CMSgov/qpp-measures-data/tree/master/measures' />
         </li>
         <li>
-          2025 MVP Measures are published and available here: <ExternalLink href='https://github.com/CMSgov/qpp-measures-data/tree/master/mvp' />
+          2026 MVP Measures are published and available here: <ExternalLink href='https://github.com/CMSgov/qpp-measures-data/tree/master/mvp' />
         </li>
       </ul>
     </div>

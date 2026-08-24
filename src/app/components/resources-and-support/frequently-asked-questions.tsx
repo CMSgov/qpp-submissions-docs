@@ -29,7 +29,7 @@ const tableData1 = {
 const FrequentlyAskedQuestions: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/28/2025</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/27/2026</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-text-heading--2xl' style={{marginTop: 0}}>Frequently Asked Questions</h2>
 
       <h3 className='ds-text-heading--xl'>General and Developer Preview</h3>
@@ -56,7 +56,7 @@ const FrequentlyAskedQuestions: React.FC<DocPageProps> = ({dataTestId}: DocPageP
           )}
         </tbody>
       </table>
-      <h3 className='ds-text-heading--xl'>PY25 Questions and Known Issues</h3>
+      <h3 className='ds-text-heading--xl'>PY26 Questions and Known Issues</h3>
       <table className='ds-c-table ds-u-font-size--sm faq-table'>
         <thead>
           <tr>

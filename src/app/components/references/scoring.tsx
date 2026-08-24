@@ -38,7 +38,7 @@ const textAndId: ITextAndId = {
 const Scoring: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/28/2025</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/27/2026</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-text-heading--2xl' style={{marginTop: 0}}>Scoring</h2>
       <p className='ds-text-body--lg'>
         The scoring engine is responsible for interpreting submissions and outputting a score. Each category score is utilized to create the QPP score object.
@@ -82,9 +82,9 @@ const Scoring: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
         For additional information on reporting Promoting Interoperability, visit the Resource Library for your specific program needs.
       </p>
       <ul>
-        <li><ExternalLink href='https://qpp.cms.gov/mips/promoting-interoperability?py=2025' text='Traditional MIPS' /></li>
-        <li><ExternalLink href='https://qpp.cms.gov/mips/explore-mips-value-pathways' text='Explore MVPs' /></li>
-        <li><ExternalLink href='https://qpp.cms.gov/mips/app-promoting-interoperability' text='PI: APP Requirements' /></li>
+        <li><ExternalLink href='https://qpp.cms.gov/reporting-requirements/ways-to-report/traditional-mips/promoting-interoperability' text='PI: Traditional MIPS Requirements' /></li>
+        <li><ExternalLink href='https://qpp.cms.gov/reporting-requirements/ways-to-report/mvp/promoting-interoperability' text='PI: MVP Requirements' /></li>
+        <li><ExternalLink href='https://qpp.cms.gov/reporting-requirements/ways-to-report/app/promoting-interoperability' text='PI: APP Requirements' /></li>
       </ul>
 
       <p className='ds-text-body--lg'>
@@ -104,9 +104,9 @@ const Scoring: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
         For additional information on reporting Quality, visit the <ExternalLink href={`${envConfig.qppCmsUrl}/resources/resource-library`} text='Resource Library' /> for your specific program needs.
       </p>
       <ul>
-        <li><ExternalLink href={`${envConfig.qppCmsUrl}/mips/quality-requirements?py=2025`} text='Traditional MIPS' /></li>
-        <li><ExternalLink href={`${envConfig.qppCmsUrl}/mips/explore-mips-value-pathways`} text='Explore MVPs' /></li>
-        <li><ExternalLink href={`${envConfig.qppCmsUrl}/mips/app-quality-requirements`} text='Quality: APP Requirements' /></li>
+        <li><ExternalLink href={`${envConfig.qppCmsUrl}/reporting-requirements/ways-to-report/traditional-mips/quality`} text='Quality: Traditional MIPS Requirements' /></li>
+        <li><ExternalLink href={`${envConfig.qppCmsUrl}/reporting-requirements/ways-to-report/mvp/quality`} text='Quality: MVP Requirements' /></li>
+        <li><ExternalLink href={`${envConfig.qppCmsUrl}/reporting-requirements/ways-to-report/app/quality`} text='Quality: APP Requirements' /></li>
       </ul>
 
       <p className='ds-text-body--lg'>
