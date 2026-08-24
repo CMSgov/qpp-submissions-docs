@@ -4,8 +4,8 @@ import { DocPageProps } from '../../../shared/types';
 const submissionChangesTable = [
   ['08/27/26', `Updates to Developer Documentation for Performance Year 2026`, `
   <ul>
-    <li>Ability to test MVP submissions against the <code>/measurement-set</code> and <code>/measurement</code> endpoints. Note: to allow this testing in the shared Developer Preview environment, the check for a valid MVP registration will not occur in this sandbox environment only.</li>
     <li>MVP negative use tests can be completed using an invalid <code>programName</code> or invalid measure for the given MVP program.</li>
+    <li>Ability to test MVP submissions against the <code>/measurement-set</code> and <code>/measurement</code> endpoints. Note: to allow this testing in the shared Developer Preview environment, the check for a valid MVP registration will not occur in this sandbox environment only.</li>
     <li>Allowed CEHRT ID format change for Promoting Interoperability and Quality eCQM. See <a href='${envConfig.cmsGithubIo}/qpp-submissions-docs/measurement-sets' target='_blank' rel='noopener noreferrer'>Measurement Sets</a>.</li>
   </ul>
   `],
