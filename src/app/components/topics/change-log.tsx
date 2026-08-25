@@ -2,6 +2,15 @@ import envConfig from '../../../envConfig';
 import { DocPageProps } from '../../../shared/types';
 
 const submissionChangesTable = [
+  ['08/27/26', `Updates to Developer Documentation for Performance Year 2026`, `
+  <ul>
+    <li>Ability to test MVP submissions against the <code>/measurement-set</code> and <code>/measurement</code> endpoints. Note: to allow this testing in the shared Developer Preview environment, the check for a valid MVP registration will not occur in this sandbox environment only.</li>
+    <ul>
+        <li>MVP negative use tests can be completed using an invalid <code>programName</code> or invalid measure for the given MVP program.</li>
+    </ul>
+    <li>Allowed CEHRT ID format change for Promoting Interoperability and Quality eCQM. See <a href='${envConfig.cmsGithubIo}/qpp-submissions-docs/measurement-sets' target='_blank' rel='noopener noreferrer'>Measurement Sets</a>.</li>
+  </ul>
+  `],
   ['08/28/2025', `Updates to Developer Documentation for Performance Year 2025 Description`, `
   <ul>
     <li>Simplified Scenarios for MVP Reporting in Developer Preview. See the <a href='${envConfig.cmsGithubIo}/qpp-developer-preview-docs/tutorial-special-scoring-scenarios' target='_blank' rel='noopener noreferrer'>Special Scoring Scenarios</a>.</li>
@@ -242,7 +251,7 @@ const buildTableBody = (data: string[][]) =>
 const ChangeLog: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) =>{
   return (
     <div data-testid={dataTestId}>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/28/2025</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/27/2026</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-text-heading--2xl' style={{marginTop: 0}} id='change-log'>Change Log</h2>
       <p className='ds-text-body--md'>
         The Change log is updated with each significant change to the API with the details that you need to be aware of.

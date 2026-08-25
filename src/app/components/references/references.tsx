@@ -5,7 +5,7 @@ import { DocPageProps } from '../../../shared/types';
 const References: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
   return (
     <div data-testid={dataTestId}>
-      <p className='qpp-docs-page-updated'>Last Updated: 08/28/2025</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
+      <p className='qpp-docs-page-updated'>Last Updated: 08/27/2026</p> {/* IMPORTANT: update this Last-Updated value if you have made any changes to this page's content. */}
       <h2 className='ds-text-heading--2xl' style={{marginTop: 0}} id='references'>References</h2>
 
       <h3 className='ds-text-heading--xl'>General References</h3>
@@ -37,7 +37,7 @@ const References: React.FC<DocPageProps> = ({dataTestId}: DocPageProps) => {
       <h3 className='ds-text-heading--xl'>Eligibility API</h3>
       <ul>
         <li>
-          QPP Participation Status Lookup Tool: <ExternalLink href={`${envConfig.qppCmsUrl}/participation-lookup`} />
+          QPP Participation Status Lookup Tool: <ExternalLink href={`${envConfig.qppCmsUrl}/eligibility-participation/eligibility/check`} />
         </li>
         <li>
           Interactive QPP Eligibility API Documentation: <ExternalLink href={`${envConfig.qppCmsUrl}/api/eligibility/docs`} />
