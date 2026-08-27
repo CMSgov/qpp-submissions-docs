@@ -1,1 +1,0 @@
-import{t as e}from"./index-BHVGaAp9.js";var t=e(((e,t)=>{t.exports=n,n.displayName=`hsts`,n.aliases=[];function n(e){e.languages.hsts={directive:{pattern:/\b(?:includeSubDomains|max-age|preload)(?=[\s;=]|$)/i,alias:`property`},operator:/=/,punctuation:/;/}}}));export default t();

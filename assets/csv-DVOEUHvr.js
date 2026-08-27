@@ -1,1 +1,0 @@
-import{t as e}from"./index-BHVGaAp9.js";var t=e(((e,t)=>{t.exports=n,n.displayName=`csv`,n.aliases=[];function n(e){e.languages.csv={value:/[^\r\n,"]+|"(?:[^"]|"")*"(?!")/,punctuation:/,/}}}));export default t();
