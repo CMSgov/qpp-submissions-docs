@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@cmsgov/design-system": "18.1.0",
-    "@vitejs/plugin-react": "6.1.0",
+    "@vitejs/plugin-react": "6.1.1",
     "core-js": "3.50.0",
     "font-awesome": "4.7.0",
     "postcss": "8.5.26",
