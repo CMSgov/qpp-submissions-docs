@@ -6,6 +6,12 @@ updates:
     schedule:
       interval: "daily"
       time: "02:00"
+    cooldown:
+      default-days: 7
+      exclude:
+        - "@cmsgov/qpp-scoring-engines"
+        - "qpp-measures-data"
+        - "qpp-shared-logger-node"
     allow:
       - dependency-name: "*"
         dependency-type: "production"
