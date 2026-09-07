@@ -36,7 +36,7 @@
     "@vitejs/plugin-react": "6.1.1",
     "core-js": "3.50.0",
     "font-awesome": "4.7.0",
-    "postcss": "8.5.26",
+    "postcss": "8.5.28",
     "postcss-scss": "4.0.9",
     "react": "19.2.8",
     "react-code-blocks": "0.1.6",
